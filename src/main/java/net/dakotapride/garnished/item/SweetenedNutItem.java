@@ -7,13 +7,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class SweetenedNutItem extends Item {
 	public SweetenedNutItem(Properties properties) {
-		super(properties.food(new FoodProperties.Builder().saturationMod(0.3F).nutrition(5).build()));
+		super(properties.food(new FoodProperties.Builder().saturationMod(0.6F).nutrition(4).build()));
 	}
 
 	@Override
