@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "priority": 1100,
+  "package": "net.dakotapride.garnished.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "refmap": "garnished.refmap.json",
+  "mixins": [],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
