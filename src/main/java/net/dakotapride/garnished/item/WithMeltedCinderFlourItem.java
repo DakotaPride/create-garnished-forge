@@ -14,7 +14,6 @@ import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -28,7 +27,7 @@ public class WithMeltedCinderFlourItem extends GarnishedNutItem {
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 		tooltip.add(Component.translatable("text.garnished.nut.cinder_flour.melted").withStyle(ChatFormatting.RED));
 		if (getEffect() != null) {
-			tooltip.add(Component.translatable("text.garnished.nut.cinder_flour.effect", getEffect().getDescriptionId()).withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.translatable("text.garnished.nut.cinder_flour.effect", getEffect().getDisplayName()).withStyle(ChatFormatting.GRAY));
 		}
 	}
 
@@ -37,6 +36,10 @@ public class WithMeltedCinderFlourItem extends GarnishedNutItem {
 
 		if (this.getDefaultInstance().getItem() == GarnishedItems.SPEED_CINDER_CASHEW.get()) {
 			effect = MobEffects.MOVEMENT_SPEED;
+		} else if (this.getDefaultInstance().getItem() == GarnishedItems.STRENGTH_CINDER_WALNUT.get()) {
+			effect = MobEffects.DAMAGE_BOOST;
+		} else if (this.getDefaultInstance().getItem() == GarnishedItems.HASTE_CINDER_ALMOND.get()) {
+			effect = MobEffects.DIG_SPEED;
 		}
 
 		return effect;

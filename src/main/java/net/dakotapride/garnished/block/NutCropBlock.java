@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.block;
 
+import net.dakotapride.garnished.registry.GarnishedBlocks;
 import net.dakotapride.garnished.registry.GarnishedItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
@@ -30,7 +31,15 @@ public class NutCropBlock extends CropBlock {
 
 	@Override
 	protected @NotNull ItemLike getBaseSeedId() {
-		return GarnishedItems.CRACKED_CASHEW.get();
+		if (this == GarnishedBlocks.CASHEW_CROP.get()) {
+			return GarnishedItems.CRACKED_CASHEW.get();
+		} else if (this == GarnishedBlocks.WALNUT_CROP.get()) {
+			return GarnishedItems.CRACKED_WALNUT.get();
+		} else if (this == GarnishedBlocks.ALMOND_CROP.get()) {
+			return GarnishedItems.CRACKED_ALMOND.get();
+		} else {
+			return GarnishedItems.CRACKED_CASHEW.get();
+		}
 	}
 
 	@Override

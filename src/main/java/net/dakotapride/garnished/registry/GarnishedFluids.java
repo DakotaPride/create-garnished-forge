@@ -19,8 +19,7 @@ public class GarnishedFluids {
 
 	public static final FluidEntry<ForgeFlowingFluid.Flowing> GARNISHED_WATER =
 			REGISTRATE.standardFluid("garnished_water", GarnishedFluids.NoColorFluidAttributes::new)
-					.properties(b -> b.viscosity(1500)
-							.density(800))
+					.properties(b -> b.viscosity(1500).density(800))
 					.fluidProperties(p -> p.levelDecreasePerBlock(1)
 							.tickRate(5)
 							.slopeFindDistance(2)
