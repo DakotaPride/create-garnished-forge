@@ -1,24 +1,21 @@
 package net.dakotapride.garnished.item;
 
-import java.util.List;
-
 import net.dakotapride.garnished.registry.GarnishedItems;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
-
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class WithMeltedCinderFlourItem extends GarnishedNutItem {
+import java.util.List;
+
+public class WithMeltedCinderFlourItem extends GarnishedFoodItem {
 	public WithMeltedCinderFlourItem(Properties properties) {
 		super(properties);
 	}
@@ -40,6 +37,8 @@ public class WithMeltedCinderFlourItem extends GarnishedNutItem {
 			effect = MobEffects.DAMAGE_BOOST;
 		} else if (this.getDefaultInstance().getItem() == GarnishedItems.HASTE_CINDER_ALMOND.get()) {
 			effect = MobEffects.DIG_SPEED;
+		} else if (this.getDefaultInstance().getItem() == GarnishedItems.RESISTANCE_CINDER_PECAN.get()) {
+			effect = MobEffects.DAMAGE_RESISTANCE;
 		}
 
 		return effect;

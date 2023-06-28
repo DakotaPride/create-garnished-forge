@@ -5,14 +5,14 @@
       "item": "garnished:garnished_soil"
     },
     {
-      "amount": 81000,
+      "amount": 1000,
       "fluid": "minecraft:water",
       "nbt": {}
     }
   ],
   "results": [
     {
-      "amount": 81000,
+      "amount": 1000,
       "fluid": "garnished:garnished_water"
     }
   ]

@@ -9,7 +9,7 @@ import net.dakotapride.garnished.block.NutCropBlock;
 @SuppressWarnings({"unused"})
 public class GarnishedBlocks {
 	private static final CreateRegistrate REGISTRATE = CreateGarnished.registrate()
-			.creativeModeTab(() -> GarnishedTabs.GARNISHED);
+		.creativeModeTab(() -> GarnishedTabs.GARNISHED);
 
 	public static final BlockEntry<NutCropBlock> CASHEW_CROP =
 			REGISTRATE.block("cashew_crop", NutCropBlock::new)
@@ -26,6 +26,10 @@ public class GarnishedBlocks {
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.register();
 
-	public static void setRegister() {}
+	public static final BlockEntry<NutCropBlock> PECAN_CROP =
+			REGISTRATE.block("pecan_crop", NutCropBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.register();
 
+	public static void setRegister() {}
 }
