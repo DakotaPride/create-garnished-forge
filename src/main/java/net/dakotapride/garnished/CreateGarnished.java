@@ -82,6 +82,7 @@ public class CreateGarnished
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.CASHEW_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.WALNUT_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.ALMOND_CROP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PECAN_CROP.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedFluids.GARNISHED_WATER.get(), RenderType.cutout());
         }

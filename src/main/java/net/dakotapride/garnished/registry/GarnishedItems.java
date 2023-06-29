@@ -8,6 +8,7 @@ import net.dakotapride.garnished.item.cracked.CrackedAlmondItem;
 import net.dakotapride.garnished.item.cracked.CrackedCashewItem;
 import net.dakotapride.garnished.item.cracked.CrackedPecanItem;
 import net.dakotapride.garnished.item.cracked.CrackedWalnutItem;
+import net.minecraft.world.item.Item;
 
 @SuppressWarnings({"unused"})
 public class GarnishedItems {
@@ -83,12 +84,19 @@ public class GarnishedItems {
 	public static final ItemEntry<WithMeltedCinderFlourItem> RESISTANCE_CINDER_PECAN =
 			REGISTRATE.item("cinder_pecan_resistance", WithMeltedCinderFlourItem::new).register();
 
+	// Nut mix
+	public static final ItemEntry<NutMixItem> NUT_MIX =
+			REGISTRATE.item("nut_mix", NutMixItem::new).register();
+	public static final ItemEntry<SweetenedNutMixItem> SWEETENED_NUT_MIX =
+			REGISTRATE.item("sweetened_nut_mix", SweetenedNutMixItem::new).register();
+
+	// Misc
+	public static final ItemEntry<Item> VANILLA =
+			REGISTRATE.item("vanilla", Item::new).register();
+
 	// Sweet Berries
 	public static final ItemEntry<GarnishedFoodItem> GARNISHED_SWEET_BERRIES =
 			REGISTRATE.item("garnished_sweet_berries", GarnishedFoodItem::new).register();
-
-	public static final ItemEntry<GarnishedSoilItem> GARNISHED_SOIL =
-			REGISTRATE.item("garnished_soil", GarnishedSoilItem::new).register();
 
 	public static final ItemEntry<GarnishmentTemplateItem> GARNISHMENT_TEMPLATE =
 			REGISTRATE.item("template", GarnishmentTemplateItem::new).register();

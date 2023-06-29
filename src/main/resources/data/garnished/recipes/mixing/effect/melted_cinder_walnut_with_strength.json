@@ -1,13 +1,17 @@
 {
   "type": "create:mixing",
+  "heatRequirement": "super_heated",
   "ingredients": [
     {
       "item": "garnished:cinder_walnut"
     },
     {
-      "amount": 333,
-      "fluid": "minecraft:lava",
+      "amount": 14000,
+      "fluid": "minecraft:water",
       "nbt": {}
+    },
+    {
+      "item": "minecraft:netherwart"
     },
     {
       "item": "minecraft:sugar"
