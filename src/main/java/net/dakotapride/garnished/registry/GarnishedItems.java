@@ -4,11 +4,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.item.*;
-import net.dakotapride.garnished.item.cracked.CrackedAlmondItem;
-import net.dakotapride.garnished.item.cracked.CrackedCashewItem;
-import net.dakotapride.garnished.item.cracked.CrackedPecanItem;
-import net.dakotapride.garnished.item.cracked.CrackedWalnutItem;
-import net.minecraft.world.item.Item;
+import net.dakotapride.garnished.item.cracked.*;
 
 @SuppressWarnings({"unused"})
 public class GarnishedItems {
@@ -28,10 +24,10 @@ public class GarnishedItems {
 			REGISTRATE.item("cinder_cashew", WithCinderFlourItem::new).register();
 	public static final ItemEntry<WithMeltedCinderFlourItem> MELTED_CINDER_FLOUR_CASHEW =
 			REGISTRATE.item("melted_cinder_cashew", WithMeltedCinderFlourItem::new).register();
-	public static final ItemEntry<SweetenedNutItem> SWEETENED_CASHEW =
-			REGISTRATE.item("sweetened_cashew", SweetenedNutItem::new).register();
 	public static final ItemEntry<WithMeltedCinderFlourItem> SPEED_CINDER_CASHEW =
 			REGISTRATE.item("cinder_cashew_speed", WithMeltedCinderFlourItem::new).register();
+	public static final ItemEntry<SweetenedNutItem> SWEETENED_CASHEW =
+			REGISTRATE.item("sweetened_cashew", SweetenedNutItem::new).register();
 
 	// Walnuts
 	public static final ItemEntry<CrackedWalnutItem> CRACKED_WALNUT =
@@ -45,10 +41,10 @@ public class GarnishedItems {
 			REGISTRATE.item("cinder_walnut", WithCinderFlourItem::new).register();
 	public static final ItemEntry<WithMeltedCinderFlourItem> MELTED_CINDER_FLOUR_WALNUT =
 			REGISTRATE.item("melted_cinder_walnut", WithMeltedCinderFlourItem::new).register();
-	public static final ItemEntry<SweetenedNutItem> SWEETENED_WALNUT =
-			REGISTRATE.item("sweetened_walnut", SweetenedNutItem::new).register();
 	public static final ItemEntry<WithMeltedCinderFlourItem> STRENGTH_CINDER_WALNUT =
 			REGISTRATE.item("cinder_walnut_strength", WithMeltedCinderFlourItem::new).register();
+	public static final ItemEntry<SweetenedNutItem> SWEETENED_WALNUT =
+			REGISTRATE.item("sweetened_walnut", SweetenedNutItem::new).register();
 
 	// Almonds
 	public static final ItemEntry<CrackedAlmondItem> CRACKED_ALMOND =
@@ -62,10 +58,10 @@ public class GarnishedItems {
 			REGISTRATE.item("cinder_almond", WithCinderFlourItem::new).register();
 	public static final ItemEntry<WithMeltedCinderFlourItem> MELTED_CINDER_FLOUR_ALMOND =
 			REGISTRATE.item("melted_cinder_almond", WithMeltedCinderFlourItem::new).register();
-	public static final ItemEntry<SweetenedNutItem> SWEETENED_ALMOND =
-			REGISTRATE.item("sweetened_almond", SweetenedNutItem::new).register();
 	public static final ItemEntry<WithMeltedCinderFlourItem> HASTE_CINDER_ALMOND =
 			REGISTRATE.item("cinder_almond_haste", WithMeltedCinderFlourItem::new).register();
+	public static final ItemEntry<SweetenedNutItem> SWEETENED_ALMOND =
+			REGISTRATE.item("sweetened_almond", SweetenedNutItem::new).register();
 
 	// Pecans
 	public static final ItemEntry<CrackedPecanItem> CRACKED_PECAN =
@@ -79,10 +75,27 @@ public class GarnishedItems {
 			REGISTRATE.item("cinder_pecan", WithCinderFlourItem::new).register();
 	public static final ItemEntry<WithMeltedCinderFlourItem> MELTED_CINDER_FLOUR_PECAN =
 			REGISTRATE.item("melted_cinder_pecan", WithMeltedCinderFlourItem::new).register();
-	public static final ItemEntry<SweetenedNutItem> SWEETENED_PECAN =
-			REGISTRATE.item("sweetened_pecan", SweetenedNutItem::new).register();
 	public static final ItemEntry<WithMeltedCinderFlourItem> RESISTANCE_CINDER_PECAN =
 			REGISTRATE.item("cinder_pecan_resistance", WithMeltedCinderFlourItem::new).register();
+	public static final ItemEntry<SweetenedNutItem> SWEETENED_PECAN =
+			REGISTRATE.item("sweetened_pecan", SweetenedNutItem::new).register();
+
+	// Pistachios
+	public static final ItemEntry<CrackedPistachioItem> CRACKED_PISTACHIO =
+			REGISTRATE.item("cracked_pistachio", CrackedPistachioItem::new).register();
+
+	public static final ItemEntry<UngarnishedNutItem> UNGARNISHED_PISTACHIO =
+			REGISTRATE.item("ungarnished_pistachio", UngarnishedNutItem::new).register();
+	public static final ItemEntry<GarnishedNutFoodItem> PISTACHIO =
+			REGISTRATE.item("pistachio", GarnishedNutFoodItem::new).register();
+	public static final ItemEntry<WithCinderFlourItem> CINDER_FLOUR_PISTACHIO =
+			REGISTRATE.item("cinder_pistachio", WithCinderFlourItem::new).register();
+	public static final ItemEntry<WithMeltedCinderFlourItem> MELTED_CINDER_FLOUR_PISTACHIO =
+			REGISTRATE.item("melted_cinder_pistachio", WithMeltedCinderFlourItem::new).register();
+	public static final ItemEntry<WithMeltedCinderFlourItem> NIGHT_VISION_CINDER_PISTACHIO =
+			REGISTRATE.item("cinder_pistachio_night_vision", WithMeltedCinderFlourItem::new).register();
+	public static final ItemEntry<SweetenedNutItem> SWEETENED_PISTACHIO =
+			REGISTRATE.item("sweetened_pistachio", SweetenedNutItem::new).register();
 
 	// Nut mix
 	public static final ItemEntry<NutMixItem> NUT_MIX =
@@ -90,24 +103,11 @@ public class GarnishedItems {
 	public static final ItemEntry<SweetenedNutMixItem> SWEETENED_NUT_MIX =
 			REGISTRATE.item("sweetened_nut_mix", SweetenedNutMixItem::new).register();
 
-	// Misc
-	public static final ItemEntry<Item> VANILLA =
-			REGISTRATE.item("vanilla", Item::new).register();
-
 	// Sweet Berries
 	public static final ItemEntry<GarnishedFoodItem> GARNISHED_SWEET_BERRIES =
 			REGISTRATE.item("garnished_sweet_berries", GarnishedFoodItem::new).register();
-
-	public static final ItemEntry<GarnishmentTemplateItem> GARNISHMENT_TEMPLATE =
-			REGISTRATE.item("template", GarnishmentTemplateItem::new).register();
-	public static final ItemEntry<GarnishmentTemplateItem> CASHEW_TEMPLATE =
-			REGISTRATE.item("cashew_template", GarnishmentTemplateItem::new).register();
-	public static final ItemEntry<GarnishmentTemplateItem> WALNUT_TEMPLATE =
-			REGISTRATE.item("walnut_template", GarnishmentTemplateItem::new).register();
-	public static final ItemEntry<GarnishmentTemplateItem> ALMOND_TEMPLATE =
-			REGISTRATE.item("almond_template", GarnishmentTemplateItem::new).register();
-	public static final ItemEntry<GarnishmentTemplateItem> PECAN_TEMPLATE =
-			REGISTRATE.item("pecan_template", GarnishmentTemplateItem::new).register();
+	public static final ItemEntry<HoneyedSweetBerriesItem> HONEYED_SWEET_BERRIES =
+			REGISTRATE.item("honeyed_sweet_berries", HoneyedSweetBerriesItem::new).register();
 
 	public static void setRegister() {
 	}

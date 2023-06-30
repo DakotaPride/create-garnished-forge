@@ -1,0 +1,28 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heating",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    [
+      {
+        "item": "minecraft:pumpkin"
+      },
+      {
+        "tag": "c:seeds"
+      }
+    ],
+    {
+      "amount": 333,
+      "fluid": "minecraft:water",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "amount": 333,
+      "fluid": "garnished:garnish"
+    }
+  ]
+}

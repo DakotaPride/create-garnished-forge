@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#garnished:allows_for_nuts",
+  "features": "garnished:nut_plant_placed",
+  "step": "vegetal_decoration"
+}

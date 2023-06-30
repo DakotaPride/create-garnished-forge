@@ -17,8 +17,8 @@ public class GarnishedFluids {
 	private static final CreateRegistrate REGISTRATE = CreateGarnished.registrate()
 			.creativeModeTab(() -> GarnishedTabs.GARNISHED);
 
-	public static final FluidEntry<ForgeFlowingFluid.Flowing> GARNISHED_WATER =
-			REGISTRATE.standardFluid("garnished_water", GarnishedFluids.NoColorFluidAttributes::new)
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> GARNISH =
+			REGISTRATE.standardFluid("garnish", GarnishedFluids.NoColorFluidAttributes::new)
 					.properties(b -> b.viscosity(1500).density(800))
 					.fluidProperties(p -> p.levelDecreasePerBlock(1)
 							.tickRate(5)
@@ -26,7 +26,7 @@ public class GarnishedFluids {
 							.explosionResistance(100f))
 					.source(ForgeFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
 					.bucket()
-					.tag(AllTags.forgeItemTag("buckets/garnished_water"))
+					.tag(AllTags.forgeItemTag("buckets/garnish"))
 					.build()
 					.register();
 

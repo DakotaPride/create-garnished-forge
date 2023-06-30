@@ -12,6 +12,6 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
 
 	@Override
 	public @NotNull ItemStack makeIcon() {
-		return new ItemStack(GarnishedItems.GARNISHMENT_TEMPLATE.get());
+		return new ItemStack(GarnishedItems.NUT_MIX.get());
 	}
 }

@@ -2,12 +2,11 @@ package net.dakotapride.garnished;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
-import net.dakotapride.garnished.registry.GarnishedBlocks;
-import net.dakotapride.garnished.registry.GarnishedFluids;
-import net.dakotapride.garnished.registry.GarnishedItems;
-import net.dakotapride.garnished.registry.GarnishedTabs;
+import net.dakotapride.garnished.registry.*;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,6 +39,8 @@ public class CreateGarnished
         GarnishedBlocks.setRegister();
         GarnishedFluids.setRegister();
         GarnishedTabs.setRegister();
+        GarnishedFeatures.setRegister(eventBus);
+
         REGISTRATE.get().registerEventListeners(eventBus);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -83,8 +84,11 @@ public class CreateGarnished
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.WALNUT_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.ALMOND_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PECAN_CROP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PISTACHIO_CROP.get(), RenderType.cutout());
 
-            ItemBlockRenderTypes.setRenderLayer(GarnishedFluids.GARNISHED_WATER.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_PLANT.get(), RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(GarnishedFluids.GARNISH.get(), RenderType.cutout());
         }
     }
 
