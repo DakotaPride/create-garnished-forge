@@ -10,7 +10,7 @@
         "item": "minecraft:pumpkin"
       },
       {
-        "tag": "c:seeds"
+        "tag": "forge:seeds"
       }
     ],
     {
