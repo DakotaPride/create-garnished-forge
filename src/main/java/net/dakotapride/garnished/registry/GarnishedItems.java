@@ -97,6 +97,23 @@ public class GarnishedItems {
 	public static final ItemEntry<SweetenedNutItem> SWEETENED_PISTACHIO =
 			REGISTRATE.item("sweetened_pistachio", SweetenedNutItem::new).register();
 
+	// Macadamia
+	public static final ItemEntry<CrackedMacadamiaItem> CRACKED_MACADAMIA =
+			REGISTRATE.item("cracked_macadamia", CrackedMacadamiaItem::new).register();
+
+	public static final ItemEntry<UngarnishedNutItem> UNGARNISHED_MACADAMIA =
+			REGISTRATE.item("ungarnished_macadamia", UngarnishedNutItem::new).register();
+	public static final ItemEntry<GarnishedNutFoodItem> MACADAMIA =
+			REGISTRATE.item("macadamia", GarnishedNutFoodItem::new).register();
+	public static final ItemEntry<WithCinderFlourItem> CINDER_FLOUR_MACADAMIA =
+			REGISTRATE.item("cinder_macadamia", WithCinderFlourItem::new).register();
+	public static final ItemEntry<WithMeltedCinderFlourItem> MELTED_CINDER_FLOUR_MACADAMIA =
+			REGISTRATE.item("melted_cinder_macadamia", WithMeltedCinderFlourItem::new).register();
+	public static final ItemEntry<WithMeltedCinderFlourItem> NIGHT_VISION_CINDER_MACADAMIA =
+			REGISTRATE.item("cinder_macadamia_fire_resistance", WithMeltedCinderFlourItem::new).register();
+	public static final ItemEntry<SweetenedNutItem> SWEETENED_MACADAMIA =
+			REGISTRATE.item("sweetened_macadamia", SweetenedNutItem::new).register();
+
 	// Nut mix
 	public static final ItemEntry<NutMixItem> NUT_MIX =
 			REGISTRATE.item("nut_mix", NutMixItem::new).register();
