@@ -11,13 +11,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class GarnishedNutFoodItem extends Item implements IGarnishedItem {
-	public GarnishedNutFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.GARNISHED_NUT));
+public class MeltedCinderFlourNutFoodItem extends Item implements IGarnishedItem {
+	public MeltedCinderFlourNutFoodItem(Properties properties) {
+		super(properties.food(GarnishedFoods.MELTED_CINDER_FLOUR_NUT));
 	}
 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
-		tooltip.add(Component.translatable(garnishedText()).withStyle(getStandardColouring()));
+		tooltip.add(Component.translatable(meltedCinderFlourText()).withStyle(getCinderFlourColouring()));
 	}
 }

@@ -11,9 +11,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class GarnishedNutFoodItem extends Item implements IGarnishedItem {
-	public GarnishedNutFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.GARNISHED_NUT));
+public class GarnishedSweetBerriesFoodItem extends Item implements IGarnishedItem {
+	public GarnishedSweetBerriesFoodItem(Properties properties) {
+		super(properties.food(GarnishedFoods.GARNISHED_BERRIES));
 	}
 
 	@Override
