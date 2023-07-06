@@ -14,14 +14,14 @@
       }
     ],
     {
-      "amount": 333,
+      "amount": 250,
       "fluid": "minecraft:water",
       "nbt": {}
     }
   ],
   "results": [
     {
-      "amount": 333,
+      "amount": 250,
       "fluid": "garnished:garnish"
     }
   ]

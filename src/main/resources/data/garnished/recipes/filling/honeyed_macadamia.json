@@ -5,8 +5,8 @@
       "item": "garnished:macadamia"
     },
     {
-      "amount": 20250,
-      "fluidTag": "c:honey"
+      "amount": 250,
+      "fluidTag": "forge:honey"
     }
   ],
   "results": [

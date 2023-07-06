@@ -20,13 +20,26 @@ public class GarnishedFluids {
 	public static final FluidEntry<ForgeFlowingFluid.Flowing> GARNISH =
 			REGISTRATE.standardFluid("garnish", GarnishedFluids.NoColorFluidAttributes::new)
 					.properties(b -> b.viscosity(1500).density(800))
-					.fluidProperties(p -> p.levelDecreasePerBlock(1)
-							.tickRate(5)
-							.slopeFindDistance(2)
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
 							.explosionResistance(100f))
 					.source(ForgeFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
 					.bucket()
 					.tag(AllTags.forgeItemTag("buckets/garnish"))
+					.build()
+					.register();
+
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> APPLE_CIDER =
+			REGISTRATE.standardFluid("apple_cider", GarnishedFluids.NoColorFluidAttributes::new)
+					.properties(b -> b.viscosity(1500).density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/apple_cider"))
 					.build()
 					.register();
 

@@ -6,6 +6,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.block.NutCropBlock;
 import net.dakotapride.garnished.block.NutPlantBlock;
+import net.dakotapride.garnished.block.SolidifiedGarnishBlock;
 
 @SuppressWarnings({"unused"})
 public class GarnishedBlocks {
@@ -46,6 +47,11 @@ public class GarnishedBlocks {
 			REGISTRATE.block("nut_plant", NutPlantBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.register();
+
+	public static final BlockEntry<SolidifiedGarnishBlock> SOLIDIFIED_GARNISH_BLOCK =
+			REGISTRATE.block("solidified_garnish", SolidifiedGarnishBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem().register();
 
 	public static void setRegister() {}
 }

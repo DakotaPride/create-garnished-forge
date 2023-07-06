@@ -39,6 +39,7 @@ public class CreateGarnished
         GarnishedBlocks.setRegister();
         GarnishedFluids.setRegister();
         GarnishedTabs.setRegister();
+        GarnishedFoods.setRegister();
         GarnishedFeatures.setRegister(eventBus);
 
         REGISTRATE.get().registerEventListeners(eventBus);
