@@ -91,6 +91,7 @@ public class CreateGarnished
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_PLANT.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedFluids.GARNISH.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedFluids.APPLE_CIDER.get(), RenderType.cutout());
         }
     }
 

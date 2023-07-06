@@ -6,42 +6,53 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+
+import static com.simibubi.create.Create.REGISTRATE;
+import static net.minecraft.world.item.Items.BUCKET;
 
 @SuppressWarnings({"unused"})
 public class GarnishedFluids {
 	private static final CreateRegistrate REGISTRATE = CreateGarnished.registrate()
 			.creativeModeTab(() -> GarnishedTabs.GARNISHED);
 
-	public static final FluidEntry<ForgeFlowingFluid.Flowing> GARNISH =
-			REGISTRATE.standardFluid("garnish", GarnishedFluids.NoColorFluidAttributes::new)
-					.properties(b -> b.viscosity(1500).density(800))
-					.fluidProperties(p -> p.levelDecreasePerBlock(2)
-							.tickRate(25)
-							.slopeFindDistance(3)
-							.explosionResistance(100f))
-					.source(ForgeFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
-					.bucket()
-					.tag(AllTags.forgeItemTag("buckets/garnish"))
-					.build()
-					.register();
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> GARNISH;
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> APPLE_CIDER;
 
-	public static final FluidEntry<ForgeFlowingFluid.Flowing> APPLE_CIDER =
-			REGISTRATE.standardFluid("apple_cider", GarnishedFluids.NoColorFluidAttributes::new)
-					.properties(b -> b.viscosity(1500).density(800))
-					.fluidProperties(p -> p.levelDecreasePerBlock(2)
-							.tickRate(25)
-							.slopeFindDistance(3)
-							.explosionResistance(100f))
-					.source(ForgeFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
-					.bucket()
-					.tag(AllTags.forgeItemTag("buckets/apple_cider"))
-					.build()
-					.register();
+	static {
+		GARNISH = REGISTRATE
+				.fluid("garnish",
+						new ResourceLocation(CreateGarnished.ID, "fluid/garnish_still"),
+						new ResourceLocation(CreateGarnished.ID, "fluid/garnish_flowing")
+				)
+				.fluidProperties(p -> p.levelDecreasePerBlock(2)
+						.tickRate(25)
+						.slopeFindDistance(3)
+						.explosionResistance(100f))
+				.properties(b -> b.viscosity(1500).density(800).descriptionId("fluid.liquid_garnish"))
+				.source(ForgeFlowingFluid.Source::new)
+				.bucket().build()
+				.register();
+		APPLE_CIDER = REGISTRATE
+				.fluid("apple_cider",
+						new ResourceLocation(CreateGarnished.ID, "fluid/apple_cider_still"),
+						new ResourceLocation(CreateGarnished.ID, "fluid/apple_cider_flowing")
+				)
+				.fluidProperties(p -> p.levelDecreasePerBlock(2)
+						.tickRate(25)
+						.slopeFindDistance(3)
+						.explosionResistance(100f))
+				.properties(b -> b.viscosity(1500).density(800).descriptionId("fluid.apple_cider"))
+				.source(ForgeFlowingFluid.Source::new)
+				.bucket().build()
+				.register();
+	}
 
 
 	private static class NoColorFluidAttributes extends AllFluids.TintedFluidType {
