@@ -29,12 +29,14 @@ public class CrypticAppleCiderFoodItem extends Item implements IGarnishedItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 		if (!Screen.hasShiftDown()) {
 			tooltip.add(Component.translatable(crypticAppleCiderText()).withStyle(getStandardColouring()));
 		}
 
 		if (Screen.hasShiftDown()) {
+			tooltip.add(Component.literal(""));
+			tooltip.add(Component.translatable("text.garnished.cider.cryptic.desc.wither").withStyle(ChatFormatting.DARK_PURPLE));
 			tooltip.add(Component.literal(""));
 			tooltip.add(Component.translatable("text.garnished.cider.cryptic.desc").withStyle(ChatFormatting.DARK_PURPLE));
 			tooltip.add(Component.translatable("text.garnished.cider.cryptic.desc.secondary").withStyle(ChatFormatting.DARK_PURPLE));
