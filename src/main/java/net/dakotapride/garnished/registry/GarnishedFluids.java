@@ -2,6 +2,7 @@ package net.dakotapride.garnished.registry;
 
 import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllTags;
+import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.dakotapride.garnished.CreateGarnished;
@@ -9,10 +10,16 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+
+import javax.annotation.Nullable;
 
 import static com.simibubi.create.Create.REGISTRATE;
 import static net.minecraft.world.item.Items.BUCKET;
@@ -75,4 +82,28 @@ public class GarnishedFluids {
 	}
 
 	public static void setRegister() {}
+
+	public static void registerFluidInteractions() {
+		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
+				GARNISH.get().getFluidType(),
+				fluidState -> Blocks.CALCITE.defaultBlockState()
+		));
+
+		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
+				APPLE_CIDER.get().getFluidType(),
+				fluidState -> AllPaletteStoneTypes.OCHRUM.getBaseBlock().get().defaultBlockState()
+		));
+	}
+
+	@Nullable
+	public static BlockState getLavaInteraction(FluidState fluidState) {
+		Fluid fluid = fluidState.getType();
+		if (fluid.isSame(GARNISH.get()))
+			return Blocks.CALCITE.defaultBlockState();
+		if (fluid.isSame(APPLE_CIDER.get()))
+			return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		return null;
+	}
 }
