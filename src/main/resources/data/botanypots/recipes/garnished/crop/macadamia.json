@@ -1,0 +1,49 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "botanypots"
+              }
+            },
+            {
+              "type": "forge:false"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "botanypots:crop",
+        "seed": {
+          "item": "garnished:cracked_macadamia"
+        },
+        "categories": [
+          "dirt",
+          "farmland"
+        ],
+        "growthTicks": 1200,
+        "display": {
+          "type": "botanypots:aging",
+          "block": "garnished:macadamia_crop"
+        },
+        "drops": [
+          {
+            "chance": 1.00,
+            "output": {
+              "item": "garnished:ungarnished_macadamia"
+            },
+            "minRolls": 1,
+            "maxRolls": 2
+          }
+        ]
+      }
+    }
+  ]
+}
