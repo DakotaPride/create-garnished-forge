@@ -2,7 +2,7 @@
   "type": "create:milling",
   "ingredients": [
     {
-      "tag": "garnished:crushable/almond"
+      "tag": "garnished:crushable/peanut"
     }
   ],
   "processingTime": 150,
