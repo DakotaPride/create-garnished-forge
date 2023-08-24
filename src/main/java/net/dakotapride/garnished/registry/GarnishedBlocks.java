@@ -4,9 +4,9 @@ import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.garnished.CreateGarnished;
-import net.dakotapride.garnished.block.NutCropBlock;
-import net.dakotapride.garnished.block.NutPlantBlock;
-import net.dakotapride.garnished.block.SolidifiedGarnishBlock;
+import net.dakotapride.garnished.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LeavesBlock;
 
 @SuppressWarnings({"unused"})
 public class GarnishedBlocks {
@@ -52,6 +52,16 @@ public class GarnishedBlocks {
 			REGISTRATE.block("nut_plant", NutPlantBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.register();
+
+	public static final BlockEntry<NutSaplingBlock> NUT_SAPLING =
+			REGISTRATE.block("nut_sapling", NutSaplingBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem().register();
+
+	public static final BlockEntry<NutLeavesBlock> NUT_LEAVES =
+			REGISTRATE.block("nut_leaves", NutLeavesBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem().register();
 
 	public static final BlockEntry<SolidifiedGarnishBlock> SOLIDIFIED_GARNISH_BLOCK =
 			REGISTRATE.block("solidified_garnish", SolidifiedGarnishBlock::new)

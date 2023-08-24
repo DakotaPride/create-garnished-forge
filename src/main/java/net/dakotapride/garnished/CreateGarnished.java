@@ -3,10 +3,19 @@ package net.dakotapride.garnished;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.registry.*;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.color.item.ItemColors;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -77,7 +86,7 @@ public class CreateGarnished
         // Do something when the server starts
     }
 
-    @Mod.EventBusSubscriber(modid = ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(modid = ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
@@ -90,10 +99,35 @@ public class CreateGarnished
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BUHG_CROP.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_PLANT.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_LEAVES.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedFluids.GARNISH.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedFluids.APPLE_CIDER.get(), RenderType.cutout());
         }
+        @SubscribeEvent
+        public static void onBlockColourProvider(RegisterColorHandlersEvent.Block event) {
+            blockColourProvider(event.getBlockColors());
+        }
+        @SubscribeEvent
+        public static void onItemColourProvider(RegisterColorHandlersEvent.Item event) {
+            itemColourProvider(event.getBlockColors(), event.getItemColors());
+        }
+    }
+
+    private static synchronized void blockColourProvider(BlockColors colors) {
+        colors.register((unknown, lightReader, pos, unknown2) -> lightReader != null && pos != null ?
+                        BiomeColors.getAverageFoliageColor(lightReader, pos) : FoliageColor.get(0.5D, 1.0D),
+                GarnishedBlocks.NUT_LEAVES.get());
+    }
+
+    private static synchronized void itemColourProvider(BlockColors colors, ItemColors itemColors) {
+        ItemColor itemBlockColourHandler = (stack, tintIndex) -> {
+            BlockState state = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
+            return colors.getColor(state, null, null, tintIndex);
+        };
+
+        itemColors.register(itemBlockColourHandler, GarnishedBlocks.NUT_LEAVES.get());
     }
 
     public static CreateRegistrate registrate() {

@@ -113,7 +113,8 @@
   "fluid.garnished.garnish": "Liquid Garnish",
   "fluid.garnished.apple_cider": "Apple Cider",
 
-  "block.garnished.nut_plant": "Nut Growth",
+  "block.garnished.nut_plant": "[Legacy] Nut Growth",
+  "block.garnished.nut_sapling": "Nut Tree Sapling",
 
   "block.garnished.solidified_garnish": "Solidified Garnish Block",
   "item.garnished.garnish_compound": "Garnish Compound",
