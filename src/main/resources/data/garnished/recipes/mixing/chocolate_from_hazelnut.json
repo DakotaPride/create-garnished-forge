@@ -13,7 +13,8 @@
     },
     {
       "amount": 250,
-      "fluidTag": "c:milk"
+      "fluid": "forge:milk",
+      "nbt": {}
     }
   ],
   "results": [
