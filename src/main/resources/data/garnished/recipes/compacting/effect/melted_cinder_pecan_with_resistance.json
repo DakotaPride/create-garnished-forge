@@ -1,21 +1,25 @@
 {
-  "type": "create:mixing",
-  "heatRequirement": "superheated",
+  "type": "create:compacting",
   "ingredients": [
     {
-      "item": "garnished:cinder_peanut"
+      "item": "garnished:cinder_pecan"
     },
     {
       "amount": 100,
-      "fluid": "minecraft:water",
+      "fluid": "minecraft:lava",
       "nbt": {}
-    },
-    {
-      "item": "minecraft:sugar"
     },
     {
       "item": "minecraft:nether_wart"
     },
+    [
+      {
+        "item": "garnished:garnish_powder"
+      },
+      {
+        "item": "garnished:salt_compound"
+      }
+    ],
     [
       {
         "item": "minecraft:iron_nugget"
@@ -33,7 +37,7 @@
   ],
   "results": [
     {
-      "item": "garnished:cinder_peanut_effect"
+      "item": "garnished:cinder_pecan_resistance"
     }
   ]
 }

@@ -1,18 +1,22 @@
 {
-  "type": "create:mixing",
-  "heatRequirement": "superheated",
+  "type": "create:compacting",
   "ingredients": [
     {
-      "item": "garnished:cinder_almond"
+      "item": "garnished:cinder_hazelnut"
     },
     {
       "amount": 100,
-      "fluid": "minecraft:water",
+      "fluid": "minecraft:lava",
       "nbt": {}
     },
-    {
-      "item": "minecraft:sugar"
-    },
+    [
+      {
+        "item": "garnished:garnish_powder"
+      },
+      {
+        "item": "garnished:salt_compound"
+      }
+    ],
     {
       "item": "minecraft:nether_wart"
     },
@@ -33,7 +37,7 @@
   ],
   "results": [
     {
-      "item": "garnished:cinder_almond_haste"
+      "item": "garnished:cinder_hazelnut_speed_potent"
     }
   ]
 }
