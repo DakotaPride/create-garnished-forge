@@ -21,6 +21,8 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFol
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -50,6 +52,71 @@ public class GarnishedFeatures {
     public static final RegistryObject<PlacedFeature> NUT_TREE_PLACED = PLACED_FEATURES.register("nut_tree_placed",
             () -> new PlacedFeature(NUT_TREE_CONFIGURED.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(8),
                     InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> BUHG_TREE_CONFIGURED = CONFIGURED_FEATURES.register("peanut_tree_configured",
+            () -> new ConfiguredFeature<>(Feature.TREE,
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                            new StraightTrunkPlacer(1, 1, 0),
+                            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
+                                    .add(GarnishedBlocks.BUHG_LEAVES.get().defaultBlockState(), 1)),
+                            new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 30),
+                            new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> WALNUT_TREE_CONFIGURED = CONFIGURED_FEATURES.register("walnut_tree_configured",
+            () -> new ConfiguredFeature<>(Feature.TREE,
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                            new BendingTrunkPlacer(6, 3, 4, 4, ConstantInt.of(3)),
+                            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
+                                    .add(GarnishedBlocks.WALNUT_LEAVES.get().defaultBlockState(), 1)),
+                            new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 45),
+                            new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> ALMOND_TREE_CONFIGURED = CONFIGURED_FEATURES.register("almond_tree_configured",
+            () -> new ConfiguredFeature<>(Feature.TREE,
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                            new ForkingTrunkPlacer(3, 1, 2),
+                            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
+                                    .add(GarnishedBlocks.ALMOND_LEAVES.get().defaultBlockState(), 1)),
+                            new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 25),
+                            new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CASHEW_TREE_CONFIGURED = CONFIGURED_FEATURES.register("cashew_tree_configured",
+            () -> new ConfiguredFeature<>(Feature.TREE,
+            new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                    new BendingTrunkPlacer(2, 1, 2, 2, ConstantInt.of(2)),
+                    new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
+                            .add(GarnishedBlocks.CASHEW_LEAVES.get().defaultBlockState(), 1)),
+                    new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 25),
+                    new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> HAZELNUT_TREE_CONFIGURED = CONFIGURED_FEATURES.register("hazelnut_tree_configured",
+            () -> new ConfiguredFeature<>(Feature.TREE,
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                            new ForkingTrunkPlacer(3, 2, 3),
+                            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
+                                    .add(GarnishedBlocks.HAZELNUT_LEAVES.get().defaultBlockState(), 1)),
+                            new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 35),
+                            new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MACADAMIA_TREE_CONFIGURED = CONFIGURED_FEATURES.register("macadamia_tree_configured",
+            () -> new ConfiguredFeature<>(Feature.TREE,
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                            new BendingTrunkPlacer(4, 2, 4, 4, ConstantInt.of(2)),
+                            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
+                                    .add(GarnishedBlocks.MACADAMIA_LEAVES.get().defaultBlockState(), 1)),
+                            new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 40),
+                            new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PECAN_TREE_CONFIGURED = CONFIGURED_FEATURES.register("pecan_tree_configured",
+            () -> new ConfiguredFeature<>(Feature.TREE,
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                            new ForkingTrunkPlacer(4, 2, 3),
+                            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
+                                    .add(GarnishedBlocks.PECAN_LEAVES.get().defaultBlockState(), 1)),
+                            new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 40),
+                            new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PISTACHIO_TREE_CONFIGURED = CONFIGURED_FEATURES.register("pistachio_tree_configured",
+            () -> new ConfiguredFeature<>(Feature.TREE,
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                            new BendingTrunkPlacer(3, 2, 3, 3, ConstantInt.of(2)),
+                            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
+                                    .add(GarnishedBlocks.PISTACHIO_LEAVES.get().defaultBlockState(), 1)),
+                            new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 30),
+                            new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
 
     public static void setRegister(IEventBus eventBus) {
         CONFIGURED_FEATURES.register(eventBus);

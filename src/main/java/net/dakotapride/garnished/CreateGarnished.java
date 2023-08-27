@@ -90,20 +90,26 @@ public class CreateGarnished
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.CASHEW_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.WALNUT_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.ALMOND_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PECAN_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PISTACHIO_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MACADAMIA_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BUHG_CROP.get(), RenderType.cutout());
-
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_PLANT.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_SAPLING.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_LEAVES.get(), RenderType.cutout());
 
-            ItemBlockRenderTypes.setRenderLayer(GarnishedFluids.GARNISH.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedFluids.APPLE_CIDER.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.ALMOND_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.CASHEW_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.WALNUT_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PECAN_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BUHG_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PISTACHIO_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MACADAMIA_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.HAZELNUT_LEAVES.get(), RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.ALMOND_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.CASHEW_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.WALNUT_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PECAN_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BUHG_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PISTACHIO_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MACADAMIA_SAPLING.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.HAZELNUT_SAPLING.get(), RenderType.cutout());
         }
         @SubscribeEvent
         public static void onBlockColourProvider(RegisterColorHandlersEvent.Block event) {
@@ -115,19 +121,25 @@ public class CreateGarnished
         }
     }
 
-    private static synchronized void blockColourProvider(BlockColors colors) {
+    public static synchronized void blockColourProvider(BlockColors colors) {
         colors.register((unknown, lightReader, pos, unknown2) -> lightReader != null && pos != null ?
                         BiomeColors.getAverageFoliageColor(lightReader, pos) : FoliageColor.get(0.5D, 1.0D),
-                GarnishedBlocks.NUT_LEAVES.get());
+                GarnishedBlocks.NUT_LEAVES.get(),
+                GarnishedBlocks.ALMOND_LEAVES.get(), GarnishedBlocks.CASHEW_LEAVES.get(), GarnishedBlocks.WALNUT_LEAVES.get(),
+                GarnishedBlocks.PECAN_LEAVES.get(), GarnishedBlocks.BUHG_LEAVES.get(), GarnishedBlocks.PISTACHIO_LEAVES.get(),
+                GarnishedBlocks.MACADAMIA_LEAVES.get(), GarnishedBlocks.HAZELNUT_LEAVES.get());
     }
 
-    private static synchronized void itemColourProvider(BlockColors colors, ItemColors itemColors) {
+    public static synchronized void itemColourProvider(BlockColors colors, ItemColors itemColors) {
         ItemColor itemBlockColourHandler = (stack, tintIndex) -> {
             BlockState state = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
             return colors.getColor(state, null, null, tintIndex);
         };
 
-        itemColors.register(itemBlockColourHandler, GarnishedBlocks.NUT_LEAVES.get());
+        itemColors.register(itemBlockColourHandler, GarnishedBlocks.NUT_LEAVES.get(),
+                GarnishedBlocks.ALMOND_LEAVES.get(), GarnishedBlocks.CASHEW_LEAVES.get(), GarnishedBlocks.WALNUT_LEAVES.get(),
+                GarnishedBlocks.PECAN_LEAVES.get(), GarnishedBlocks.BUHG_LEAVES.get(), GarnishedBlocks.PISTACHIO_LEAVES.get(),
+                GarnishedBlocks.MACADAMIA_LEAVES.get(), GarnishedBlocks.HAZELNUT_LEAVES.get());
     }
 
     public static CreateRegistrate registrate() {

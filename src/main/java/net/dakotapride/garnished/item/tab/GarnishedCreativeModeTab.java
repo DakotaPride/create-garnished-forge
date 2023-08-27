@@ -1,12 +1,15 @@
 package net.dakotapride.garnished.item.tab;
 
 import net.dakotapride.garnished.registry.GarnishedBlocks;
+
 import net.dakotapride.garnished.registry.GarnishedFluids;
-import net.dakotapride.garnished.registry.GarnishedItems;
 import net.minecraft.core.NonNullList;
+
+import org.jetbrains.annotations.NotNull;
+
+import net.dakotapride.garnished.registry.GarnishedItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import org.jetbrains.annotations.NotNull;
 
 public class GarnishedCreativeModeTab extends CreativeModeTab {
 	public GarnishedCreativeModeTab() {
@@ -85,28 +88,44 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
 		items.add(61, GarnishedItems.CHOCOLATE_GLAZED_BUHG.asStack());
 		items.add(62, GarnishedItems.HONEYED_BUHG.asStack());
 
-		items.add(63, GarnishedItems.NUT_MIX.asStack());
-		items.add(64, GarnishedItems.SWEETENED_NUT_MIX.asStack());
-		items.add(65, GarnishedItems.CHOCHOLATE_GLAZED_NUT_MIX.asStack());
-		items.add(66, GarnishedItems.HONEYED_NUT_MIX.asStack());
+		items.add(63, GarnishedItems.CRACKED_HAZELNUT.asStack());
+		items.add(64, GarnishedItems.UNGARNISHED_HAZELNUT.asStack());
+		items.add(65, GarnishedItems.HAZELNUT.asStack());
+		items.add(66, GarnishedItems.CINDER_FLOUR_HAZELNUT.asStack());
+		items.add(67, GarnishedItems.MELTED_CINDER_FLOUR_HAZELNUT.asStack());
+		items.add(68, GarnishedItems.POTENT_SPEED_CINDER_HAZELNUT.asStack());
+		items.add(69, GarnishedItems.SWEETENED_HAZELNUT.asStack());
+		items.add(70, GarnishedItems.CHOCOLATE_GLAZED_HAZELNUT.asStack());
+		items.add(71, GarnishedItems.HONEYED_HAZELNUT.asStack());
 
-		items.add(67, GarnishedItems.GARNISHED_MEAL.asStack());
+		items.add(72, GarnishedItems.NUT_MIX.asStack());
+		items.add(73, GarnishedItems.SWEETENED_NUT_MIX.asStack());
+		items.add(74, GarnishedItems.CHOCHOLATE_GLAZED_NUT_MIX.asStack());
+		items.add(75, GarnishedItems.HONEYED_NUT_MIX.asStack());
 
-		items.add(68, GarnishedItems.GARNISHED_SWEET_BERRIES.asStack());
-		items.add(69, GarnishedItems.HONEYED_SWEET_BERRIES.asStack());
+		items.add(76, GarnishedItems.GARNISHED_MEAL.asStack());
 
-		items.add(70, GarnishedItems.APPLE_CIDER.asStack());
-		items.add(71, GarnishedItems.CRYPTIC_APPLE_CIDER.asStack());
+		items.add(77, GarnishedItems.GARNISHED_SWEET_BERRIES.asStack());
+		items.add(78, GarnishedItems.HONEYED_SWEET_BERRIES.asStack());
 
-		items.add(72, GarnishedItems.GARNISH_COMPOUND.asStack());
-		items.add(73, GarnishedBlocks.SOLIDIFIED_GARNISH_BLOCK.asStack());
+		items.add(79, GarnishedItems.SALAD.asStack());
+		items.add(80, GarnishedItems.PHANTOM_STEAK.asStack());
 
-		items.add(74, GarnishedFluids.GARNISH.getBucket().get().getDefaultInstance());
-		items.add(75, GarnishedFluids.APPLE_CIDER.getBucket().get().getDefaultInstance());
+		items.add(81, GarnishedItems.CRUSHED_SALT_COMPOUND.asStack());
+		items.add(82, GarnishedItems.SALT_COMPOUND.asStack());
+
+		items.add(83, GarnishedItems.APPLE_CIDER.asStack());
+		items.add(84, GarnishedItems.CRYPTIC_APPLE_CIDER.asStack());
+
+		items.add(85, GarnishedItems.GARNISH_COMPOUND.asStack());
+		items.add(86, GarnishedBlocks.SOLIDIFIED_GARNISH_BLOCK.asStack());
+
+		items.add(87, GarnishedFluids.GARNISH.getBucket().get().getDefaultInstance());
+		items.add(88, GarnishedFluids.APPLE_CIDER.getBucket().get().getDefaultInstance());
 	}
 
 	@Override
 	public @NotNull ItemStack makeIcon() {
-		return new ItemStack(GarnishedItems.NUT_MIX.get());
+		return GarnishedItems.NUT_MIX.asStack();
 	}
 }

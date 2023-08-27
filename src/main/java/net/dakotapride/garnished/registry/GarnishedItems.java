@@ -140,6 +140,27 @@ public class GarnishedItems {
 	public static final ItemEntry<HoneyedNutFoodItem> HONEYED_MACADAMIA =
 			REGISTRATE.item("honeyed_macadamia", HoneyedNutFoodItem::new).register();
 
+	// Hazelnut
+	public static final ItemEntry<CrackedHazelnutItem> CRACKED_HAZELNUT =
+			REGISTRATE.item("cracked_hazelnut", CrackedHazelnutItem::new).register();
+
+	public static final ItemEntry<UngarnishedNutFoodItem> UNGARNISHED_HAZELNUT =
+			REGISTRATE.item("ungarnished_hazelnut", UngarnishedNutFoodItem::new).register();
+	public static final ItemEntry<GarnishedNutFoodItem> HAZELNUT =
+			REGISTRATE.item("hazelnut", GarnishedNutFoodItem::new).register();
+	public static final ItemEntry<CinderFlourNutFoodItem> CINDER_FLOUR_HAZELNUT =
+			REGISTRATE.item("cinder_hazelnut", CinderFlourNutFoodItem::new).register();
+	public static final ItemEntry<MeltedCinderFlourNutFoodItem> MELTED_CINDER_FLOUR_HAZELNUT =
+			REGISTRATE.item("melted_cinder_hazelnut", MeltedCinderFlourNutFoodItem::new).register();
+	public static final ItemEntry<MeltedCinderFlourNutWithEffectFoodItem> POTENT_SPEED_CINDER_HAZELNUT =
+			REGISTRATE.item("cinder_hazelnut_speed_potent", MeltedCinderFlourNutWithEffectFoodItem::new).register();
+	public static final ItemEntry<SweetenedNutFoodItem> SWEETENED_HAZELNUT =
+			REGISTRATE.item("sweetened_hazelnut", SweetenedNutFoodItem::new).register();
+	public static final ItemEntry<ChocholateGlazedNutFoodItem> CHOCOLATE_GLAZED_HAZELNUT =
+			REGISTRATE.item("chocolate_glazed_hazelnut", ChocholateGlazedNutFoodItem::new).register();
+	public static final ItemEntry<HoneyedNutFoodItem> HONEYED_HAZELNUT =
+			REGISTRATE.item("honeyed_hazelnut", HoneyedNutFoodItem::new).register();
+
 	// Ina, why?
 	// Buhgs
 	public static final ItemEntry<CrackedBuhgItem> CRACKED_BUHG =
@@ -186,20 +207,28 @@ public class GarnishedItems {
 			REGISTRATE.item("apple_cider", AppleCiderFoodItem::new).register();
 	public static final ItemEntry<CrypticAppleCiderFoodItem> CRYPTIC_APPLE_CIDER =
 			REGISTRATE.item("cryptic_apple_cider", CrypticAppleCiderFoodItem::new).register();
-	
-	// Salad
-	public static final ItemEntry<SaltedFoodItem> SALAD =
-			REGISTRATE.item("salad", SaltedFoodItem::new).register();
 
 	// Salt Compounds
 	public static final ItemEntry<Item> CRUSHED_SALT_COMPOUND =
 			REGISTRATE.item("crushed_salt", Item::new).register();
 	public static final ItemEntry<Item> SALT_COMPOUND =
 			REGISTRATE.item("salt_compound", Item::new).register();
+	public static final ItemEntry<Item> UNPROCESSED_SALT_COMPOUND =
+			REGISTRATE.item("unprocessed_salt_compound", Item::new).register();
 
 	// Misc
 	public static final ItemEntry<Item> GARNISH_COMPOUND =
 			REGISTRATE.item("garnish_compound", Item::new).register();
+	public static final ItemEntry<Item> GARNISH_POWDER =
+			REGISTRATE.item("garnish_powder", Item::new).register();
+
+	// Misc Foods
+	public static final ItemEntry<SaladFoodItem> SALAD =
+			REGISTRATE.item("salad", SaladFoodItem::new).register();
+	public static final ItemEntry<SaltedFoodItem> INCOMPLETE_PHANTOM_STEAK =
+			REGISTRATE.item("incomplete_phantom_steak", SaltedFoodItem::new).register();
+	public static final ItemEntry<PhantomSteakFoodItem> PHANTOM_STEAK =
+			REGISTRATE.item("phantom_steak", PhantomSteakFoodItem::new).register();
 
 	public static void setRegister() {}
 
