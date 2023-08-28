@@ -86,7 +86,7 @@ public class GarnishedFluids {
 	public static void registerFluidInteractions() {
 		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
 				GARNISH.get().getFluidType(),
-				fluidState -> AllPaletteStoneTypes.LIMESTONE.getBaseBlock().get().defaultBlockState()
+				fluidState -> Blocks.CALCITE.defaultBlockState()
 		));
 
 		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
@@ -99,7 +99,7 @@ public class GarnishedFluids {
 	public static BlockState getLavaInteraction(FluidState fluidState) {
 		Fluid fluid = fluidState.getType();
 		if (fluid.isSame(GARNISH.get()))
-			return AllPaletteStoneTypes.LIMESTONE.getBaseBlock().get().defaultBlockState();
+			return Blocks.CALCITE.defaultBlockState();
 		if (fluid.isSame(APPLE_CIDER.get()))
 			return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
 					.get()
