@@ -22,6 +22,7 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import javax.annotation.Nullable;
 
 import static com.simibubi.create.Create.REGISTRATE;
+import static net.minecraft.world.item.Items.APPLE;
 import static net.minecraft.world.item.Items.BUCKET;
 
 @SuppressWarnings({"unused"})
@@ -86,12 +87,28 @@ public class GarnishedFluids {
 	public static void registerFluidInteractions() {
 		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
 				GARNISH.get().getFluidType(),
-				fluidState -> Blocks.CALCITE.defaultBlockState()
+				fluidState -> {
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
+						return AllPaletteStoneTypes.CALCITE.getBaseBlock()
+								.get()
+								.defaultBlockState();
+					}
+				}
 		));
 
 		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
 				APPLE_CIDER.get().getFluidType(),
-				fluidState -> AllPaletteStoneTypes.OCHRUM.getBaseBlock().get().defaultBlockState()
+				fluidState -> {
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
+						return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
+								.get()
+								.defaultBlockState();
+					}
+				}
 		));
 	}
 

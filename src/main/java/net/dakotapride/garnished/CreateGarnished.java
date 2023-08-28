@@ -1,6 +1,14 @@
 package net.dakotapride.garnished;
 
+import com.simibubi.create.AllFluids;
+import com.simibubi.create.AllPackets;
+import com.simibubi.create.content.equipment.potatoCannon.BuiltinPotatoProjectileTypes;
+import com.simibubi.create.content.fluids.tank.BoilerHeaters;
+import com.simibubi.create.content.schematics.SchematicInstances;
+import com.simibubi.create.foundation.advancement.AllAdvancements;
+import com.simibubi.create.foundation.advancement.AllTriggers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.utility.AttachedRegistry;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.registry.*;
 import net.minecraft.client.color.block.BlockColor;
@@ -65,6 +73,8 @@ public class CreateGarnished
 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
+
+        event.enqueueWork(GarnishedFluids::registerFluidInteractions);
 
     }
 
