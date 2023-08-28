@@ -86,7 +86,7 @@ public class GarnishedFluids {
 	public static void registerFluidInteractions() {
 		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
 				GARNISH.get().getFluidType(),
-				fluidState -> Blocks.CALCITE.defaultBlockState()
+				fluidState -> AllPaletteStoneTypes.LIMESTONE.getBaseBlock().get().defaultBlockState()
 		));
 
 		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
