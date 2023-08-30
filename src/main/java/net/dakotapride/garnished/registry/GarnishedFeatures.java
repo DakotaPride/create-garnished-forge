@@ -13,6 +13,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -49,8 +51,16 @@ public class GarnishedFeatures {
                             new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 50),
                             new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
 
+    public static final RegistryObject<PlacedFeature> NUT_TREE_CHECKED = PLACED_FEATURES.register("nut_tree_checked",
+            () -> new PlacedFeature(NUT_TREE_CONFIGURED.getHolder().get(),
+                    List.of(PlacementUtils.filteredByBlockSurvival(GarnishedBlocks.CASHEW_SAPLING.get()))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> TREE_SPAWN_CONDITIONS = CONFIGURED_FEATURES.register("spawn_conditions",
+            () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(List.of(
+                    new WeightedPlacedFeature(NUT_TREE_CHECKED.getHolder().get(), 0.5F)), NUT_TREE_CHECKED.getHolder().get())));
+
     public static final RegistryObject<PlacedFeature> NUT_TREE_PLACED = PLACED_FEATURES.register("nut_tree_placed",
-            () -> new PlacedFeature(NUT_TREE_CONFIGURED.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(8),
+            () -> new PlacedFeature(TREE_SPAWN_CONDITIONS.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(12),
                     InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> BUHG_TREE_CONFIGURED = CONFIGURED_FEATURES.register("peanut_tree_configured",

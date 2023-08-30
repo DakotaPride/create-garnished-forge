@@ -9,6 +9,7 @@ import com.simibubi.create.foundation.advancement.AllAdvancements;
 import com.simibubi.create.foundation.advancement.AllTriggers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.utility.AttachedRegistry;
+import com.simibubi.create.foundation.utility.ColorHandlers;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.registry.*;
 import net.minecraft.client.color.block.BlockColor;
@@ -121,35 +122,6 @@ public class CreateGarnished
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MACADAMIA_SAPLING.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.HAZELNUT_SAPLING.get(), RenderType.cutout());
         }
-        @SubscribeEvent
-        public static void onBlockColourProvider(RegisterColorHandlersEvent.Block event) {
-            blockColourProvider(event.getBlockColors());
-        }
-        @SubscribeEvent
-        public static void onItemColourProvider(RegisterColorHandlersEvent.Item event) {
-            itemColourProvider(event.getBlockColors(), event.getItemColors());
-        }
-    }
-
-    public static synchronized void blockColourProvider(BlockColors colors) {
-        colors.register((unknown, lightReader, pos, unknown2) -> lightReader != null && pos != null ?
-                        BiomeColors.getAverageFoliageColor(lightReader, pos) : FoliageColor.get(0.5D, 1.0D),
-                GarnishedBlocks.NUT_LEAVES.get(),
-                GarnishedBlocks.ALMOND_LEAVES.get(), GarnishedBlocks.CASHEW_LEAVES.get(), GarnishedBlocks.WALNUT_LEAVES.get(),
-                GarnishedBlocks.PECAN_LEAVES.get(), GarnishedBlocks.BUHG_LEAVES.get(), GarnishedBlocks.PISTACHIO_LEAVES.get(),
-                GarnishedBlocks.MACADAMIA_LEAVES.get(), GarnishedBlocks.HAZELNUT_LEAVES.get());
-    }
-
-    public static synchronized void itemColourProvider(BlockColors colors, ItemColors itemColors) {
-        ItemColor itemBlockColourHandler = (stack, tintIndex) -> {
-            BlockState state = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
-            return colors.getColor(state, null, null, tintIndex);
-        };
-
-        itemColors.register(itemBlockColourHandler, GarnishedBlocks.NUT_LEAVES.get(),
-                GarnishedBlocks.ALMOND_LEAVES.get(), GarnishedBlocks.CASHEW_LEAVES.get(), GarnishedBlocks.WALNUT_LEAVES.get(),
-                GarnishedBlocks.PECAN_LEAVES.get(), GarnishedBlocks.BUHG_LEAVES.get(), GarnishedBlocks.PISTACHIO_LEAVES.get(),
-                GarnishedBlocks.MACADAMIA_LEAVES.get(), GarnishedBlocks.HAZELNUT_LEAVES.get());
     }
 
     public static CreateRegistrate registrate() {
