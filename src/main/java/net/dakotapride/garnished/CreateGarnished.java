@@ -1,30 +1,11 @@
 package net.dakotapride.garnished;
 
-import com.simibubi.create.AllFluids;
-import com.simibubi.create.AllPackets;
-import com.simibubi.create.content.equipment.potatoCannon.BuiltinPotatoProjectileTypes;
-import com.simibubi.create.content.fluids.tank.BoilerHeaters;
-import com.simibubi.create.content.schematics.SchematicInstances;
-import com.simibubi.create.foundation.advancement.AllAdvancements;
-import com.simibubi.create.foundation.advancement.AllTriggers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.simibubi.create.foundation.utility.AttachedRegistry;
-import com.simibubi.create.foundation.utility.ColorHandlers;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.registry.*;
-import net.minecraft.client.color.block.BlockColor;
-import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.color.item.ItemColor;
-import net.minecraft.client.color.item.ItemColors;
-import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.FoliageColor;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -47,7 +28,7 @@ public class CreateGarnished
     public static final String ID = "garnished";
     public static final String NAME = "Create: Garnished";
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
-    private static final NonNullSupplier<CreateRegistrate> REGISTRATE =
+    public static final NonNullSupplier<CreateRegistrate> REGISTRATE =
             NonNullSupplier.lazy(() -> CreateRegistrate.create(ID));
 
     public CreateGarnished() {
@@ -56,9 +37,9 @@ public class CreateGarnished
         GarnishedItems.setRegister();
         GarnishedBlocks.setRegister();
         GarnishedFluids.setRegister();
-        GarnishedTabs.setRegister();
+        GarnishedTabs.setRegister(eventBus);
         GarnishedFoods.setRegister();
-        GarnishedFeatures.setRegister(eventBus);
+        GarnishedFeatures.setRegister();
 
         REGISTRATE.get().registerEventListeners(eventBus);
         // Register the setup method for modloading

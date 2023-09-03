@@ -3,11 +3,11 @@ package net.dakotapride.garnished.registry;
 import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
-import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.utility.Color;
+import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Blocks;
@@ -18,49 +18,57 @@ import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+import org.joml.Vector3f;
 
 import javax.annotation.Nullable;
-
-import static com.simibubi.create.Create.REGISTRATE;
-import static net.minecraft.world.item.Items.APPLE;
-import static net.minecraft.world.item.Items.BUCKET;
+import java.util.function.Supplier;
 
 @SuppressWarnings({"unused"})
 public class GarnishedFluids {
-	private static final CreateRegistrate REGISTRATE = CreateGarnished.registrate()
-			.creativeModeTab(() -> GarnishedTabs.GARNISHED);
 
-	public static final FluidEntry<ForgeFlowingFluid.Flowing> GARNISH;
-	public static final FluidEntry<ForgeFlowingFluid.Flowing> APPLE_CIDER;
+	private static ResourceLocation createLocation(String fluid, boolean isFlowing) {
+		String getMotion;
 
-	static {
-		GARNISH = REGISTRATE
-				.fluid("garnish",
-						new ResourceLocation(CreateGarnished.ID, "fluid/garnish_still"),
-						new ResourceLocation(CreateGarnished.ID, "fluid/garnish_flowing")
-				)
-				.fluidProperties(p -> p.levelDecreasePerBlock(2)
-						.tickRate(25)
-						.slopeFindDistance(3)
-						.explosionResistance(100f))
-				.properties(b -> b.viscosity(1500).density(800).descriptionId("fluid.liquid_garnish"))
-				.source(ForgeFlowingFluid.Source::new)
-				.bucket().build()
-				.register();
-		APPLE_CIDER = REGISTRATE
-				.fluid("apple_cider",
-						new ResourceLocation(CreateGarnished.ID, "fluid/apple_cider_still"),
-						new ResourceLocation(CreateGarnished.ID, "fluid/apple_cider_flowing")
-				)
-				.fluidProperties(p -> p.levelDecreasePerBlock(2)
-						.tickRate(25)
-						.slopeFindDistance(3)
-						.explosionResistance(100f))
-				.properties(b -> b.viscosity(1500).density(800).descriptionId("fluid.apple_cider"))
-				.source(ForgeFlowingFluid.Source::new)
-				.bucket().build()
-				.register();
+		if (isFlowing) {
+			getMotion = "_flow";
+		} else {
+			getMotion = "_still";
+		}
+
+		return new ResourceLocation(CreateGarnished.ID, "fluid/" + fluid + getMotion);
 	}
+
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> GARNISH =
+			CreateGarnished.registrate().fluid("garnish",
+							createLocation("garnish", false),
+							createLocation("garnish", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/garnish"))
+					.build()
+					.register();
+
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> APPLE_CIDER =
+			CreateGarnished.registrate().fluid("apple_cider",
+							createLocation("apple_cider", false),
+							createLocation("apple_cider", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/apple_cider"))
+					.build()
+					.register();
 
 
 	private static class NoColorFluidAttributes extends AllFluids.TintedFluidType {
@@ -122,5 +130,51 @@ public class GarnishedFluids {
 					.get()
 					.defaultBlockState();
 		return null;
+	}
+
+	private static class SolidRenderedPlaceableFluidType extends AllFluids.TintedFluidType {
+
+		private Vector3f fogColor;
+		private Supplier<Float> fogDistance;
+
+		public static FluidBuilder.FluidTypeFactory create(int fogColor, Supplier<Float> fogDistance) {
+			return (p, s, f) -> {
+				SolidRenderedPlaceableFluidType fluidType = new SolidRenderedPlaceableFluidType(p, s, f);
+				fluidType.fogColor = new Color(fogColor, false).asVectorF();
+				fluidType.fogDistance = fogDistance;
+				return fluidType;
+			};
+		}
+
+		private SolidRenderedPlaceableFluidType(Properties properties, ResourceLocation stillTexture,
+												ResourceLocation flowingTexture) {
+			super(properties, stillTexture, flowingTexture);
+		}
+
+		@Override
+		protected int getTintColor(FluidStack stack) {
+			return NO_TINT;
+		}
+
+		/*
+		 * Removing alpha from tint prevents optifine from forcibly applying biome
+		 * colors to modded fluids (this workaround only works for fluids in the solid
+		 * render layer)
+		 */
+		@Override
+		public int getTintColor(FluidState state, BlockAndTintGetter world, BlockPos pos) {
+			return 0x00ffffff;
+		}
+
+		@Override
+		protected Vector3f getCustomFogColor() {
+			return fogColor;
+		}
+
+		@Override
+		protected float getFogDistanceModifier() {
+			return fogDistance.get();
+		}
+
 	}
 }
