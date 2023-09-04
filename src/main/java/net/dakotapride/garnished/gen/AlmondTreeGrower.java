@@ -1,6 +1,7 @@
 package net.dakotapride.garnished.gen;
 
 import net.minecraft.resources.ResourceKey;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
 import net.dakotapride.garnished.registry.GarnishedFeatures;
@@ -13,7 +14,7 @@ public class AlmondTreeGrower extends AbstractTreeGrower {
 
 	@Nullable
 	@Override
-	protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean largeHive) {
-		return GarnishedFeatures.ALMOND_TREE_CONFIGURED;
+	protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean largeHive) {
+		return GarnishedFeatures.ALMOND_TREE_CONFIGURED.getHolder().get();
 	}
 }

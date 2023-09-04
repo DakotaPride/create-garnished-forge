@@ -37,9 +37,9 @@ public class CreateGarnished
         GarnishedItems.setRegister();
         GarnishedBlocks.setRegister();
         GarnishedFluids.setRegister();
-        GarnishedTabs.setRegister(eventBus);
+        GarnishedTabs.setRegister();
         GarnishedFoods.setRegister();
-        GarnishedFeatures.setRegister();
+        GarnishedFeatures.setRegister(eventBus);
 
         REGISTRATE.get().registerEventListeners(eventBus);
         // Register the setup method for modloading

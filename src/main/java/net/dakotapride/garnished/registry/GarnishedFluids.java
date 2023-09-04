@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.registry;
 
+import com.mojang.math.Vector3f;
 import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
@@ -18,7 +19,6 @@ import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
-import org.joml.Vector3f;
 
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
@@ -130,51 +130,5 @@ public class GarnishedFluids {
 					.get()
 					.defaultBlockState();
 		return null;
-	}
-
-	private static class SolidRenderedPlaceableFluidType extends AllFluids.TintedFluidType {
-
-		private Vector3f fogColor;
-		private Supplier<Float> fogDistance;
-
-		public static FluidBuilder.FluidTypeFactory create(int fogColor, Supplier<Float> fogDistance) {
-			return (p, s, f) -> {
-				SolidRenderedPlaceableFluidType fluidType = new SolidRenderedPlaceableFluidType(p, s, f);
-				fluidType.fogColor = new Color(fogColor, false).asVectorF();
-				fluidType.fogDistance = fogDistance;
-				return fluidType;
-			};
-		}
-
-		private SolidRenderedPlaceableFluidType(Properties properties, ResourceLocation stillTexture,
-												ResourceLocation flowingTexture) {
-			super(properties, stillTexture, flowingTexture);
-		}
-
-		@Override
-		protected int getTintColor(FluidStack stack) {
-			return NO_TINT;
-		}
-
-		/*
-		 * Removing alpha from tint prevents optifine from forcibly applying biome
-		 * colors to modded fluids (this workaround only works for fluids in the solid
-		 * render layer)
-		 */
-		@Override
-		public int getTintColor(FluidState state, BlockAndTintGetter world, BlockPos pos) {
-			return 0x00ffffff;
-		}
-
-		@Override
-		protected Vector3f getCustomFogColor() {
-			return fogColor;
-		}
-
-		@Override
-		protected float getFogDistanceModifier() {
-			return fogDistance.get();
-		}
-
 	}
 }

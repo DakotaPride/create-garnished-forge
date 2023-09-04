@@ -2,7 +2,6 @@ package net.dakotapride.garnished.registry;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.ItemEntry;
-
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.item.*;
 import net.dakotapride.garnished.item.cracked.*;
@@ -12,7 +11,7 @@ import net.minecraft.world.item.Item;
 public class GarnishedItems {
 
 	private static final CreateRegistrate REGISTRATE = CreateGarnished.registrate()
-			.useCreativeTab(GarnishedTabs.GARNISHED);
+			.creativeModeTab(() -> GarnishedTabs.GARNISHED);
 
 	// Cashews
 	public static final ItemEntry<CrackedCashewItem> CRACKED_CASHEW =
