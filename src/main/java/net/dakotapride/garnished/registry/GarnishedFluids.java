@@ -70,6 +70,22 @@ public class GarnishedFluids {
 					.build()
 					.register();
 
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> PEANUT_OIL =
+			CreateGarnished.registrate().fluid("peanut_oil",
+							createLocation("peanut_oil", false),
+							createLocation("peanut_oil", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/peanut_oil"))
+					.build()
+					.register();
+
 
 	private static class NoColorFluidAttributes extends AllFluids.TintedFluidType {
 
@@ -115,6 +131,17 @@ public class GarnishedFluids {
 						return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
 								.get()
 								.defaultBlockState();
+					}
+				}
+		));
+
+		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
+				PEANUT_OIL.get().getFluidType(),
+				fluidState -> {
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
+						return Blocks.DRIPSTONE_BLOCK.defaultBlockState();
 					}
 				}
 		));
