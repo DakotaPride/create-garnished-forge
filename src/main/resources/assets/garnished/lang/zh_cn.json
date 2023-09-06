@@ -135,8 +135,8 @@
   "item.garnished.garnish_compound": "装食复合物",
   "item.garnished.garnish_powder": "粉状装食",
 
-  "advancement.garnished.nut_growth.title": "广袤荒野",
-  "advancement.garnished.nut_growth.description": "通过探索世界获得未装食的坚果",
+  "advancement.garnished.nut_tree.title": "广袤荒野",
+  "advancement.garnished.nut_tree.description": "通过探索世界获得未装食的坚果",
   "advancement.garnished.cracked_nuts.title": "胡桃夹子！",
   "advancement.garnished.cracked_nuts.description": "粉碎你的坚果，向自动化前进",
   "advancement.garnished.garnished_nuts.title": "装食",
