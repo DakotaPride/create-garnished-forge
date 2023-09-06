@@ -12,10 +12,10 @@
     },
     "frame": "task",
     "show_toast": true,
-    "announce_to_chat": false,
+    "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "garnished:nut_growth",
+  "parent": "garnished:nut_tree",
   "criteria": {
     "obtain_bucket_of_garnish": {
       "trigger": "minecraft:inventory_changed",

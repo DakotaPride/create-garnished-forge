@@ -4,15 +4,15 @@
       "item": "garnished:ungarnished_walnut"
     },
     "title": {
-      "translate": "advancement.garnished.nut_growth.title"
+      "translate": "advancement.garnished.nut_tree.title"
     },
     "description": {
-      "translate": "advancement.garnished.nut_growth.description",
+      "translate": "advancement.garnished.nut_tree.description",
       "color": "#DBA213"
     },
     "frame": "task",
     "show_toast": true,
-    "announce_to_chat": false,
+    "announce_to_chat": true,
     "hidden": false
   },
   "parent": "create:steam_engine_maxed",
