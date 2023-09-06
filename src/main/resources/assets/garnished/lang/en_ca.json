@@ -135,8 +135,8 @@
   "item.garnished.garnish_compound": "Garnish Compound",
   "item.garnished.garnish_powder": "Powdered Garnish",
 
-  "advancement.garnished.nut_growth.title": "Vast Wilderness",
-  "advancement.garnished.nut_growth.description": "Obtain Ungarnished Nuts by exploring the world",
+  "advancement.garnished.nut_tree.title": "Vast Wilderness",
+  "advancement.garnished.nut_tree.description": "Obtain Ungarnished Nuts by exploring the world",
   "advancement.garnished.cracked_nuts.title": "Nutcracker!",
   "advancement.garnished.cracked_nuts.description": "Crack your nuts open and make way for automation",
   "advancement.garnished.garnished_nuts.title": "Garnishment",
@@ -162,5 +162,7 @@
   "advancement.garnished.cryptic_apple_cider.title": "Gambling",
   "advancement.garnished.cryptic_apple_cider.description": "Apply a flower to Bottled Apple Cider",
   "advancement.garnished.ina_buhg.title": "It's a Buhg",
-  "advancement.garnished.ina_buhg.description": "Obtain some variation of a Peanut"
+  "advancement.garnished.ina_buhg.description": "Obtain some variation of a Peanut",
+  "advancement.garnished.walnut_brownie.title": "Don't be Mad",
+  "advancement.garnished.walnut_brownie.description": "Obtain a Brownie With Walnuts"
 }
