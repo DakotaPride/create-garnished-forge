@@ -249,6 +249,8 @@ public class GarnishedItems {
 			REGISTRATE.item("incomplete_brownie_walnuts", Item::new).register();
 	public static final ItemEntry<Item> INCOMPLETE_COOKIE =
 			REGISTRATE.item("incomplete_cookie", Item::new).register();
+	public static final ItemEntry<Item> INCOMPLETE_CASHEW_COOKIE =
+			REGISTRATE.item("incomplete_cashew_cookie", Item::new).register();
 
 	public static void setRegister() {}
 
