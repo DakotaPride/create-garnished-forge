@@ -229,6 +229,8 @@ public class GarnishedItems {
 			REGISTRATE.item("brownie_walnuts", WalnutBrownieFoodItem::new).register();
 	public static final ItemEntry<PecanPieFoodItem> PECAN_PIE =
 			REGISTRATE.item("pecan_pie", PecanPieFoodItem::new).register();
+	public static final ItemEntry<CashewCookieFoodItem> CASHEW_COOKIE =
+			REGISTRATE.item("cashew_cookie", CashewCookieFoodItem::new).register();
 
 	// Misc
 	public static final ItemEntry<Item> GARNISH_COMPOUND =
