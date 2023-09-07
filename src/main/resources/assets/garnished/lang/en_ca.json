@@ -136,6 +136,8 @@
   "item.garnished.incomplete_brownie_walnuts": "Incomplete Brownie with Walnuts",
   "item.garnished.incomplete_cookie": "Incomplete Cookie",
   "item.garnished.pecan_pie": "Pecan Pie",
+  "item.garnished.cashew_cookie": "Cashew Cookie",
+  "item.garnished.incomplete_cashew_cookie": "Incomplete Cashew Cookie",
 
   "item.garnished.garnish_bucket": "Bucket of Garnish",
   "item.garnished.apple_cider_bucket": "Bucket of Apple Cider",
@@ -143,8 +145,6 @@
   "fluid.garnished.garnish": "Liquid Garnish",
   "fluid.garnished.apple_cider": "Apple Cider",
   "fluid.garnished.peanut_oil": "Peanut Oil",
-  "fluid.garnished.cashew_cookie": "Cashew Cookie",
-  "fluid.garnished.incomplete_cashew_cookie": "Incomplete Cashew Cookie",
 
   "block.garnished.nut_plant": "[Legacy] Nut Growth",
   "block.garnished.nut_sapling": "Nut Tree Sapling",

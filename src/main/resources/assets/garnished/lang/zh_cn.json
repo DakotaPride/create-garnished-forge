@@ -136,8 +136,8 @@
   "item.garnished.incomplete_brownie_walnuts": "Incomplete Brownie with Walnuts", //
   "item.garnished.incomplete_cookie": "Incomplete Cookie", //
   "item.garnished.pecan_pie": "Pecan Pie", //
-  "fluid.garnished.cashew_cookie": "Cashew Cookie", //
-  "fluid.garnished.incomplete_cashew_cookie": "Incomplete Cashew Cookie", //
+  "item.garnished.cashew_cookie": "Cashew Cookie", //
+  "item.garnished.incomplete_cashew_cookie": "Incomplete Cashew Cookie", //
 
   "item.garnished.garnish_bucket": "装食桶",
   "item.garnished.apple_cider_bucket": "苹果西打桶",
