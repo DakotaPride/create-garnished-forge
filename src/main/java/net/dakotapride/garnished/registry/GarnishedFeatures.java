@@ -63,7 +63,7 @@ public class GarnishedFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> BUHG_TREE_CONFIGURED = CONFIGURED_FEATURES.register("peanut_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                            new StraightTrunkPlacer(1, 1, 0),
+                            new StraightTrunkPlacer(4, 2, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
                                     .add(GarnishedBlocks.BUHG_LEAVES.get().defaultBlockState(), 1)),
                             new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 30),
@@ -71,7 +71,7 @@ public class GarnishedFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> WALNUT_TREE_CONFIGURED = CONFIGURED_FEATURES.register("walnut_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                            new StraightTrunkPlacer(1, 1, 0),
+                            new StraightTrunkPlacer(4, 2, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
                                     .add(GarnishedBlocks.WALNUT_LEAVES.get().defaultBlockState(), 1)),
                             new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
@@ -79,7 +79,7 @@ public class GarnishedFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> ALMOND_TREE_CONFIGURED = CONFIGURED_FEATURES.register("almond_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                            new StraightTrunkPlacer(1, 1, 0),
+                            new StraightTrunkPlacer(4, 2, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
                                     .add(GarnishedBlocks.ALMOND_LEAVES.get().defaultBlockState(), 1)),
                             new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
@@ -87,7 +87,7 @@ public class GarnishedFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> CASHEW_TREE_CONFIGURED = CONFIGURED_FEATURES.register("cashew_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                            new StraightTrunkPlacer(1, 1, 0),
+                            new StraightTrunkPlacer(4, 2, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
                                     .add(GarnishedBlocks.CASHEW_LEAVES.get().defaultBlockState(), 1)),
                             new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
@@ -95,7 +95,7 @@ public class GarnishedFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> HAZELNUT_TREE_CONFIGURED = CONFIGURED_FEATURES.register("hazelnut_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                            new StraightTrunkPlacer(1, 1, 0),
+                            new StraightTrunkPlacer(4, 2, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
                                     .add(GarnishedBlocks.HAZELNUT_LEAVES.get().defaultBlockState(), 1)),
                             new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
@@ -103,7 +103,7 @@ public class GarnishedFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> MACADAMIA_TREE_CONFIGURED = CONFIGURED_FEATURES.register("macadamia_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                            new StraightTrunkPlacer(1, 1, 0),
+                            new StraightTrunkPlacer(4, 2, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
                                     .add(GarnishedBlocks.MACADAMIA_LEAVES.get().defaultBlockState(), 1)),
                             new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
@@ -111,7 +111,7 @@ public class GarnishedFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> PECAN_TREE_CONFIGURED = CONFIGURED_FEATURES.register("pecan_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                            new StraightTrunkPlacer(1, 1, 0),
+                            new StraightTrunkPlacer(4, 2, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
                                     .add(GarnishedBlocks.PECAN_LEAVES.get().defaultBlockState(), 1)),
                             new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
@@ -119,7 +119,7 @@ public class GarnishedFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> PISTACHIO_TREE_CONFIGURED = CONFIGURED_FEATURES.register("pistachio_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                            new StraightTrunkPlacer(1, 1, 0),
+                            new StraightTrunkPlacer(4, 2, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
                                     .add(GarnishedBlocks.PISTACHIO_LEAVES.get().defaultBlockState(), 1)),
                             new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
