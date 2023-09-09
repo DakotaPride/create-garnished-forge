@@ -63,10 +63,10 @@ public class GarnishedFeatures {
     public static final RegistryObject<ConfiguredFeature<?, ?>> BUHG_TREE_CONFIGURED = CONFIGURED_FEATURES.register("peanut_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                            new StraightTrunkPlacer(4, 2, 0),
+                            new StraightTrunkPlacer(1, 1, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 3)
                                     .add(GarnishedBlocks.BUHG_LEAVES.get().defaultBlockState(), 1)),
-                            new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 30),
+                            new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                             new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
     public static final RegistryObject<ConfiguredFeature<?, ?>> WALNUT_TREE_CONFIGURED = CONFIGURED_FEATURES.register("walnut_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
