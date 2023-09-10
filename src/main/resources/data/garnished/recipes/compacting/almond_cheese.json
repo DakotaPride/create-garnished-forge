@@ -9,8 +9,11 @@
       "item": "garnished:salt_compound"
     },
     {
-      "amount": 100,
-      "fluidTag": "forge:milk",
+      "item": "garnished:salt_compound"
+    },
+    {
+      "amount": 500,
+      "fluid": "minecraft:water",
       "nbt": {}
     }
   ],
