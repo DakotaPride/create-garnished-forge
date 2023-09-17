@@ -86,6 +86,22 @@ public class GarnishedFluids {
 					.build()
 					.register();
 
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> CASHEW_MIXTURE =
+			CreateGarnished.registrate().fluid("cashew_mixture",
+							createLocation("cashew_mixture", false),
+							createLocation("cashew_mixture", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/cashew_mixture"))
+					.build()
+					.register();
+
 
 	private static class NoColorFluidAttributes extends AllFluids.TintedFluidType {
 
