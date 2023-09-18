@@ -114,7 +114,7 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(85, GarnishedItems.CASHEW_COOKIE.asStack());
 
         items.add(86, GarnishedItems.PEANUT_OIL_AND_CINDER_SANDWICH.asStack());
-        items.add(87, GarnishedItems.TROPHET_BREW.asStack());
+        items.add(87, GarnishedItems.TOPHET_BREW.asStack());
         items.add(88, GarnishedItems.GRIM_STEW.asStack());
         items.add(89, GarnishedItems.CINDER_ROLL.asStack());
         items.add(90, GarnishedItems.WRAPPED_CRIMSON_TANGLE.asStack());
@@ -139,12 +139,13 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(107, GarnishedItems.FERMENTED_CASHEW_MIXTURE.asStack());
 
         items.add(108, GarnishedItems.GARNISH_COMPOUND.asStack());
-        items.add(109, GarnishedBlocks.SOLIDIFIED_GARNISH_BLOCK.asStack());
+        items.add(109, GarnishedItems.GARNISH_POWDER.asStack());
+        items.add(110, GarnishedBlocks.SOLIDIFIED_GARNISH_BLOCK.asStack());
 
-        items.add(110, GarnishedFluids.GARNISH.getBucket().get().getDefaultInstance());
-        items.add(111, GarnishedFluids.APPLE_CIDER.getBucket().get().getDefaultInstance());
-        items.add(112, GarnishedFluids.PEANUT_OIL.getBucket().get().getDefaultInstance());
-        items.add(113, GarnishedFluids.CASHEW_MIXTURE.getBucket().get().getDefaultInstance());
+        items.add(111, GarnishedFluids.GARNISH.getBucket().get().getDefaultInstance());
+        items.add(112, GarnishedFluids.APPLE_CIDER.getBucket().get().getDefaultInstance());
+        items.add(113, GarnishedFluids.PEANUT_OIL.getBucket().get().getDefaultInstance());
+        items.add(114, GarnishedFluids.CASHEW_MIXTURE.getBucket().get().getDefaultInstance());
     }
 
     @Override
