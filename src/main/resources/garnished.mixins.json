@@ -4,7 +4,9 @@
   "package": "net.dakotapride.garnished.mixin",
   "compatibilityLevel": "JAVA_16",
   "refmap": "garnished.refmap.json",
-  "mixins": [],
+  "mixins": [
+    "ItemStackMixin"
+  ],
   "client": [],
   "injectors": {
     "defaultRequire": 1

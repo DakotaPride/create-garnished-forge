@@ -5,6 +5,9 @@ import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.registry.*;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -32,16 +35,18 @@ public class CreateGarnished
             NonNullSupplier.lazy(() -> CreateRegistrate.create(ID));
 
     public CreateGarnished() {
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         GarnishedItems.setRegister();
         GarnishedBlocks.setRegister();
         GarnishedFluids.setRegister();
         GarnishedTabs.setRegister();
         GarnishedFoods.setRegister();
-        GarnishedFeatures.setRegister(eventBus);
+        GarnishedFeatures.setRegister(bus);
+        GarnishedEffects.setRegister(bus);
+        GarnishedTags.setRegister();
 
-        REGISTRATE.get().registerEventListeners(eventBus);
+        REGISTRATE.get().registerEventListeners(bus);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -54,7 +59,8 @@ public class CreateGarnished
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
+        PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.BRITTLE_DUST.get(), GarnishedEffects.AVERSION_POTION.get());
+        PotionBrewing.addMix(GarnishedEffects.AVERSION_POTION.get(), Items.REDSTONE, GarnishedEffects.LONG_AVERSION_POTION.get());
 
         event.enqueueWork(GarnishedFluids::registerFluidInteractions);
 
