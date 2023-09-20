@@ -20,7 +20,7 @@ public class ItemStackMixin {
 		ItemStack activeItem = entity.getUseItem();
 
 
-		if (entity.hasEffect(GarnishedEffects.AVERSION.get()) && activeItem.is(GarnishedTags.NUTS_TAG)) {
+		if (entity.hasEffect(GarnishedEffects.AVERSION.get()) && activeItem.is(GarnishedTags.AVERSION_FOODS_TAG)) {
 
 			entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400, 2));
 
