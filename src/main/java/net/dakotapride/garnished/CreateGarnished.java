@@ -5,6 +5,9 @@ import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.registry.*;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -18,6 +21,8 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static net.minecraft.world.item.alchemy.PotionBrewing.*;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("garnished")
@@ -40,6 +45,8 @@ public class CreateGarnished
         GarnishedTabs.setRegister(eventBus);
         GarnishedFoods.setRegister();
         GarnishedFeatures.setRegister();
+        GarnishedEffects.setRegister(eventBus);
+        GarnishedTags.setRegister();
 
         REGISTRATE.get().registerEventListeners(eventBus);
         // Register the setup method for modloading
@@ -53,8 +60,10 @@ public class CreateGarnished
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
+    private void setup(FMLCommonSetupEvent event) {
+
+        PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.BRITTLE_DUST.get(), GarnishedEffects.AVERSION_POTION.get());
+        PotionBrewing.addMix(GarnishedEffects.AVERSION_POTION.get(), Items.REDSTONE, GarnishedEffects.LONG_AVERSION_POTION.get());
 
         event.enqueueWork(GarnishedFluids::registerFluidInteractions);
 
