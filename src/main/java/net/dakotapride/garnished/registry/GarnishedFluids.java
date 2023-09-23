@@ -131,7 +131,9 @@ public class GarnishedFluids {
 					if (fluidState.isSource()) {
 						return Blocks.OBSIDIAN.defaultBlockState();
 					} else {
-						return Blocks.CALCITE.defaultBlockState();
+						return AllPaletteStoneTypes.CALCITE.getBaseBlock()
+								.get()
+								.defaultBlockState();
 					}
 				}
 		));
@@ -155,24 +157,12 @@ public class GarnishedFluids {
 					if (fluidState.isSource()) {
 						return Blocks.OBSIDIAN.defaultBlockState();
 					} else {
-						return Blocks.DRIPSTONE_BLOCK.defaultBlockState();
+						return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock()
+								.get()
+								.defaultBlockState();
 					}
 				}
 		));
-	}
-
-	@Nullable
-	public static BlockState getLavaInteraction(FluidState fluidState) {
-		Fluid fluid = fluidState.getType();
-		if (fluid.isSame(GARNISH.get()))
-			return Blocks.CALCITE.defaultBlockState();
-		if (fluid.isSame(APPLE_CIDER.get()))
-			return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
-					.get()
-					.defaultBlockState();
-		if (fluid.isSame(PEANUT_OIL.get()))
-			return Blocks.DRIPSTONE_BLOCK.defaultBlockState();
-		return null;
 	}
 
 	private static class SolidRenderedPlaceableFluidType extends AllFluids.TintedFluidType {
