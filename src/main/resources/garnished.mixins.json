@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "garnished.refmap.json",
   "mixins": [
-    "ItemStackMixin"
+    "ItemStackMixin",
+    "LivingEntityMixin"
   ],
   "client": [],
   "injectors": {

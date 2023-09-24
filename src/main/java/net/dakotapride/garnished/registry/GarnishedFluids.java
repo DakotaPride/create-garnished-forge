@@ -138,8 +138,34 @@ public class GarnishedFluids {
 				}
 		));
 
+		FluidInteractionRegistry.addInteraction(GARNISH.getType(), new FluidInteractionRegistry.InteractionInformation(
+				ForgeMod.LAVA_TYPE.get(),
+				fluidState -> {
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
+						return AllPaletteStoneTypes.CALCITE.getBaseBlock()
+								.get()
+								.defaultBlockState();
+					}
+				}
+		));
+
 		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
 				APPLE_CIDER.get().getFluidType(),
+				fluidState -> {
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
+						return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
+								.get()
+								.defaultBlockState();
+					}
+				}
+		));
+
+		FluidInteractionRegistry.addInteraction(APPLE_CIDER.getType(), new FluidInteractionRegistry.InteractionInformation(
+				ForgeMod.LAVA_TYPE.get(),
 				fluidState -> {
 					if (fluidState.isSource()) {
 						return Blocks.OBSIDIAN.defaultBlockState();
@@ -157,6 +183,17 @@ public class GarnishedFluids {
 					if (fluidState.isSource()) {
 						return Blocks.OBSIDIAN.defaultBlockState();
 					} else {
+						return Blocks.DRIPSTONE_BLOCK.defaultBlockState();
+					}
+				}
+		));
+
+		FluidInteractionRegistry.addInteraction(PEANUT_OIL.getType(), new FluidInteractionRegistry.InteractionInformation(
+				ForgeMod.LAVA_TYPE.get(),
+				fluidState -> {
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
 						return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock()
 								.get()
 								.defaultBlockState();
@@ -165,49 +202,21 @@ public class GarnishedFluids {
 		));
 	}
 
-	private static class SolidRenderedPlaceableFluidType extends AllFluids.TintedFluidType {
-
-		private Vector3f fogColor;
-		private Supplier<Float> fogDistance;
-
-		public static FluidBuilder.FluidTypeFactory create(int fogColor, Supplier<Float> fogDistance) {
-			return (p, s, f) -> {
-				SolidRenderedPlaceableFluidType fluidType = new SolidRenderedPlaceableFluidType(p, s, f);
-				fluidType.fogColor = new Color(fogColor, false).asVectorF();
-				fluidType.fogDistance = fogDistance;
-				return fluidType;
-			};
-		}
-
-		private SolidRenderedPlaceableFluidType(Properties properties, ResourceLocation stillTexture,
-												ResourceLocation flowingTexture) {
-			super(properties, stillTexture, flowingTexture);
-		}
-
-		@Override
-		protected int getTintColor(FluidStack stack) {
-			return NO_TINT;
-		}
-
-		/*
-		 * Removing alpha from tint prevents optifine from forcibly applying biome
-		 * colors to modded fluids (this workaround only works for fluids in the solid
-		 * render layer)
-		 */
-		@Override
-		public int getTintColor(FluidState state, BlockAndTintGetter world, BlockPos pos) {
-			return 0x00ffffff;
-		}
-
-		@Override
-		protected Vector3f getCustomFogColor() {
-			return fogColor;
-		}
-
-		@Override
-		protected float getFogDistanceModifier() {
-			return fogDistance.get();
-		}
-
+	@Nullable
+	public static BlockState getLavaInteraction(FluidState fluidState) {
+		Fluid fluid = fluidState.getType();
+		if (fluid.isSame(GARNISH.get()))
+			return AllPaletteStoneTypes.CALCITE.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(APPLE_CIDER.get()))
+			return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(PEANUT_OIL.get()))
+			return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		return null;
 	}
 }
