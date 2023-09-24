@@ -138,8 +138,34 @@ public class GarnishedFluids {
 				}
 		));
 
+		FluidInteractionRegistry.addInteraction(GARNISH.getType(), new FluidInteractionRegistry.InteractionInformation(
+				ForgeMod.LAVA_TYPE.get(),
+				fluidState -> {
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
+						return AllPaletteStoneTypes.CALCITE.getBaseBlock()
+								.get()
+								.defaultBlockState();
+					}
+				}
+		));
+
 		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
 				APPLE_CIDER.get().getFluidType(),
+				fluidState -> {
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
+						return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
+								.get()
+								.defaultBlockState();
+					}
+				}
+		));
+
+		FluidInteractionRegistry.addInteraction(APPLE_CIDER.getType(), new FluidInteractionRegistry.InteractionInformation(
+				ForgeMod.LAVA_TYPE.get(),
 				fluidState -> {
 					if (fluidState.isSource()) {
 						return Blocks.OBSIDIAN.defaultBlockState();
@@ -161,15 +187,34 @@ public class GarnishedFluids {
 					}
 				}
 		));
+
+		FluidInteractionRegistry.addInteraction(PEANUT_OIL.getType(), new FluidInteractionRegistry.InteractionInformation(
+				ForgeMod.LAVA_TYPE.get(),
+				fluidState -> {
+					if (fluidState.isSource()) {
+						return Blocks.OBSIDIAN.defaultBlockState();
+					} else {
+						return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock()
+								.get()
+								.defaultBlockState();
+					}
+				}
+		));
 	}
 
 	@Nullable
 	public static BlockState getLavaInteraction(FluidState fluidState) {
 		Fluid fluid = fluidState.getType();
 		if (fluid.isSame(GARNISH.get()))
-			return Blocks.CALCITE.defaultBlockState();
+			return AllPaletteStoneTypes.CALCITE.getBaseBlock()
+					.get()
+					.defaultBlockState();
 		if (fluid.isSame(APPLE_CIDER.get()))
 			return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(PEANUT_OIL.get()))
+			return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock()
 					.get()
 					.defaultBlockState();
 		return null;
