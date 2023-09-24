@@ -2,6 +2,7 @@ package net.dakotapride.garnished.registry;
 
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.effect.AversionMobEffect;
+import net.dakotapride.garnished.effect.SpiritedResistanceMobEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -21,6 +22,8 @@ public class GarnishedEffects {
 					-0.25, AttributeModifier.Operation.MULTIPLY_TOTAL)
 			.addAttributeModifier(Attributes.ATTACK_DAMAGE, "9f2c068e-013e-4413-8df6-6a08f19cdcc2",
 					-0.15, AttributeModifier.Operation.MULTIPLY_TOTAL));
+
+	public static RegistryObject<MobEffect> SPIRITED_RESISTANCE = EFFECTS.register("spirited_resistance", SpiritedResistanceMobEffect::new);
 
 	public static final RegistryObject<Potion> AVERSION_POTION = POTIONS.register("aversion",
 			() -> new Potion(new MobEffectInstance(AVERSION.get(), 2400)));

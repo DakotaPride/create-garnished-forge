@@ -1,7 +1,9 @@
 package net.dakotapride.garnished.registry;
 
 import net.dakotapride.garnished.CreateGarnished;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -10,8 +12,11 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -124,6 +129,24 @@ public class GarnishedFeatures {
                                     .add(GarnishedBlocks.PISTACHIO_LEAVES.get().defaultBlockState(), 1)),
                             new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                             new TwoLayersFeatureSize(1, 0, 1)).dirt(BlockStateProvider.simple(Blocks.DIRT)).forceDirt().build()));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PATCH_SEPIA_FUNGUS_CONFIGURED =
+            CONFIGURED_FEATURES.register("patch_sepia_fungus_configured", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                    FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GarnishedBlocks.SEPIA_FUNGUS.get())))));
+    public static final RegistryObject<PlacedFeature> PATCH_SEPIA_FUNGUS_PLACED = PLACED_FEATURES.register("patch_sepia_fungus_placed",
+            () -> new PlacedFeature(PATCH_SEPIA_FUNGUS_CONFIGURED.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(12),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+    public static final RegistryObject<ConfiguredFeature<HugeFungusConfiguration, ?>> SEPIA_FUNGUS_TREE_CONFIGURED =
+            CONFIGURED_FEATURES.register("sepia_fungus_tree_configured", () -> new ConfiguredFeature<>(Feature.HUGE_FUNGUS, new HugeFungusConfiguration(Blocks.SOUL_SOIL.defaultBlockState(),
+                    GarnishedBlocks.SEPIA_STEM.getDefaultState(), GarnishedBlocks.SEPIA_WART_BLOCK.getDefaultState(),
+                    Blocks.SHROOMLIGHT.defaultBlockState(), false)));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PATCH_SOUL_ROOTS_CONFIGURED =
+            CONFIGURED_FEATURES.register("patch_soul_roots_configured", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH,
+                    FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GarnishedBlocks.SOUL_ROOTS.get())))));
+    public static final RegistryObject<PlacedFeature> PATCH_SOUL_ROOTS_PLACED = PLACED_FEATURES.register("patch_soul_roots_placed",
+            () -> new PlacedFeature(PATCH_SOUL_ROOTS_CONFIGURED.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(12),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
 
     public static void setRegister(IEventBus eventBus) {
         CONFIGURED_FEATURES.register(eventBus);

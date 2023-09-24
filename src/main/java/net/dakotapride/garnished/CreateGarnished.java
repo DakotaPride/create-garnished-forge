@@ -37,13 +37,13 @@ public class CreateGarnished
     public CreateGarnished() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        GarnishedEffects.setRegister(bus);
         GarnishedItems.setRegister();
         GarnishedBlocks.setRegister();
-        GarnishedFluids.setRegister();
         GarnishedTabs.setRegister();
+        GarnishedFluids.setRegister();
         GarnishedFoods.setRegister();
         GarnishedFeatures.setRegister(bus);
-        GarnishedEffects.setRegister(bus);
         GarnishedTags.setRegister();
 
         REGISTRATE.get().registerEventListeners(bus);
@@ -108,6 +108,10 @@ public class CreateGarnished
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PISTACHIO_SAPLING.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MACADAMIA_SAPLING.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.HAZELNUT_SAPLING.get(), RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SEPIA_FUNGUS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SOUL_ROOTS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SEPIA_TRAPDOOR.get(), RenderType.cutout());
         }
     }
 
