@@ -8,6 +8,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Items;
@@ -22,6 +23,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class GarnishedEffects {
 	public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, CreateGarnished.ID);
 	public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS, CreateGarnished.ID);
+	public static final DeferredRegister<Potion> VANILLA_POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS, "minecraft");
 
 	public static final RegistryObject<MobEffect> AVERSION = EFFECTS.register("aversion", () -> new AversionMobEffect()
 			.addAttributeModifier(Attributes.MOVEMENT_SPEED, "8280b3f7-933d-426e-8398-a171d2339dc6",
@@ -36,9 +38,13 @@ public class GarnishedEffects {
 	public static RegistryObject<Potion> LONG_AVERSION_POTION = POTIONS.register("long_aversion",
 			() -> new Potion("aversion", new MobEffectInstance(AVERSION.get(), 3600)));
 
+	public static RegistryObject<Potion> BLINDNESS_POTION = VANILLA_POTIONS.register("blindness",
+			() -> new Potion(new MobEffectInstance(MobEffects.BLINDNESS, 2400)));
+
 	public static void setRegister(IEventBus bus) {
 		EFFECTS.register(bus);
 		POTIONS.register(bus);
+		VANILLA_POTIONS.register(bus);
 	}
 
 }
