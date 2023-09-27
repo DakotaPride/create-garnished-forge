@@ -309,6 +309,8 @@ public class GarnishedItems {
 			REGISTRATE.item("brittle_dust", Item::new).register();
 	public static final ItemEntry<Item> SENILE_DUST =
 			REGISTRATE.item("senile_dust", Item::new).register();
+	public static final ItemEntry<Item> SENILE_SPREAD =
+			REGISTRATE.item("senile_spread", Item::new).register();
 
 	public static final ItemEntry<Item> CRUSHED_SEPIA_FUNGUS =
 			REGISTRATE.item("crushed_sepia_fungus", Item::new).register();

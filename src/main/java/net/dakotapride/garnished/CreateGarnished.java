@@ -43,7 +43,7 @@ public class CreateGarnished
         GarnishedTabs.setRegister();
         GarnishedFluids.setRegister();
         GarnishedFoods.setRegister();
-        GarnishedFeatures.setRegister(bus);
+        GarnishedFeatures.setRegister();
         GarnishedTags.setRegister();
 
         REGISTRATE.get().registerEventListeners(bus);
