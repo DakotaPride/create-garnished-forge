@@ -1,47 +1,29 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "farmersdelight:cooking",
+  "container": {
+    "tag": "garnished:crimson_tusks"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:mod_loaded",
-                "modid": "farmersdelight"
-              }
-            },
-            {
-              "type": "forge:false"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "farmersdelight:cooking",
-        "container": {
-          "tag": "garnished:crimson_tusks"
-        },
-        "cookingtime": 200,
-        "experience": 1.0,
-        "ingredients": [
-          {
-            "item": "garnished:enflamed_mandible"
-          },
-          {
-            "item": "garnished:crushed_shroomlight"
-          },
-          {
-            "item": "garnished:crushed_ender_pearl"
-          }
-        ],
-        "recipe_book_tab": "misc",
-        "result": {
-          "item": "garnished:blazing_delight"
-        }
-      }
+      "item": "garnished:enflamed_mandible"
+    },
+    {
+      "item": "garnished:crushed_shroomlight"
+    },
+    {
+      "item": "garnished:crushed_ender_pearl"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "garnished:blazing_delight"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
     }
   ]
 }

@@ -1,56 +1,38 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:mod_loaded",
-                "modid": "farmersdelight"
-              }
-            },
-            {
-              "type": "forge:false"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "farmersdelight:cooking",
-        "container": {
-          "item": "minecraft:bowl"
-        },
-        "cookingtime": 200,
-        "experience": 1.0,
-        "ingredients": [
-          {
-            "item": "garnished:crushed_warped_fungus"
-          },
-          {
-            "item": "garnished:crushed_crimson_fungus"
-          },
-          {
-            "item": "garnished:crushed_sepia_fungus"
-          },
-          {
-            "item": "garnished:soul_roots"
-          },
-          {
-            "item": "garnished:senile_dust"
-          },
-          {
-            "item": "garnished:senile_dust"
-          }
-        ],
-        "recipe_book_tab": "meals",
-        "result": {
-          "item": "garnished:spirited_concoction"
-        }
-      }
+      "item": "garnished:crushed_warped_fungus"
+    },
+    {
+      "item": "garnished:crushed_crimson_fungus"
+    },
+    {
+      "item": "garnished:crushed_sepia_fungus"
+    },
+    {
+      "item": "garnished:soul_roots"
+    },
+    {
+      "item": "garnished:senile_dust"
+    },
+    {
+      "item": "garnished:senile_dust"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "garnished:spirited_concoction"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
     }
   ]
 }

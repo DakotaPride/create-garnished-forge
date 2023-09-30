@@ -1,41 +1,23 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "farmersdelight:cutting",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:mod_loaded",
-                "modid": "farmersdelight"
-              }
-            },
-            {
-              "type": "forge:false"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "farmersdelight:cutting",
-        "ingredients": [
-          {
-            "item": "garnished:phantom_steak"
-          }
-        ],
-        "result": [
-          {
-            "count": 2,
-            "item": "farmersdelight:minced_beef"
-          }
-        ],
-        "tool": {
-          "tag": "forge:tools/knives"
-        }
-      }
+      "item": "garnished:phantom_steak"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "farmersdelight:minced_beef"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
     }
   ]
 }

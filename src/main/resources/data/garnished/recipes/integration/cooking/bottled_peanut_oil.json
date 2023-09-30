@@ -1,50 +1,32 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:mod_loaded",
-                "modid": "farmersdelight"
-              }
-            },
-            {
-              "type": "forge:false"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "farmersdelight:cooking",
-        "container": {
-          "item": "minecraft:glass_bottle"
-        },
-        "cookingtime": 200,
-        "experience": 1.0,
-        "ingredients": [
-          {
-            "item": "garnished:peanut"
-          },
-          {
-            "item": "garnished:peanut"
-          },
-          {
-            "item": "garnished:garnish_powder"
-          },
-          {
-            "item": "garnished:garnish_powder"
-          }
-        ],
-        "recipe_book_tab": "drinks",
-        "result": {
-          "item": "garnished:peanut_oil"
-        }
-      }
+      "item": "garnished:peanut"
+    },
+    {
+      "item": "garnished:peanut"
+    },
+    {
+      "item": "garnished:garnish_powder"
+    },
+    {
+      "item": "garnished:garnish_powder"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "garnished:peanut_oil"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
     }
   ]
 }
