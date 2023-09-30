@@ -1,53 +1,35 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:mod_loaded",
-                "modid": "farmersdelight"
-              }
-            },
-            {
-              "type": "forge:false"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "farmersdelight:cooking",
-        "container": {
-          "item": "minecraft:bowl"
-        },
-        "cookingtime": 200,
-        "experience": 1.0,
-        "ingredients": [
-          {
-            "item": "garnished:crushed_shroomlight"
-          },
-          {
-            "item": "garnished:crushed_shroomlight"
-          },
-          {
-            "item": "minecraft:ghast_tear"
-          },
-          {
-            "item": "garnished:crushed_warped_fungus"
-          },
-          {
-            "item": "garnished:crushed_crimson_fungus"
-          }
-        ],
-        "recipe_book_tab": "meals",
-        "result": {
-          "item": "garnished:grim_stew"
-        }
-      }
+      "item": "garnished:crushed_shroomlight"
+    },
+    {
+      "item": "garnished:crushed_shroomlight"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "garnished:crushed_warped_fungus"
+    },
+    {
+      "item": "garnished:crushed_crimson_fungus"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "garnished:grim_stew"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
     }
   ]
 }

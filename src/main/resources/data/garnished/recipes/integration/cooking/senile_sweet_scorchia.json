@@ -1,47 +1,29 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "create:scorchia"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:mod_loaded",
-                "modid": "farmersdelight"
-              }
-            },
-            {
-              "type": "forge:false"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "farmersdelight:cooking",
-        "container": {
-          "item": "create:scorchia"
-        },
-        "cookingtime": 200,
-        "experience": 1.0,
-        "ingredients": [
-          {
-            "item": "garnished:salt_compound"
-          },
-          {
-            "item": "garnished:garnish_powder"
-          },
-          {
-            "item": "garnished:senile_spread"
-          }
-        ],
-        "recipe_book_tab": "misc",
-        "result": {
-          "item": "garnished:senile_sweet_scorchia"
-        }
-      }
+      "item": "garnished:salt_compound"
+    },
+    {
+      "item": "garnished:garnish_powder"
+    },
+    {
+      "item": "garnished:senile_spread"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "garnished:senile_sweet_scorchia"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
     }
   ]
 }
