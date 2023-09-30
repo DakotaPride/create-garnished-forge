@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
   "type": "farmersdelight:cooking",
   "container": {
     "item": "create:scorchia"
@@ -19,11 +25,5 @@
   "recipe_book_tab": "misc",
   "result": {
     "item": "garnished:senile_sweet_scorchia"
-  },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farmersdelight"
-    }
-  ]
+  }
 }
