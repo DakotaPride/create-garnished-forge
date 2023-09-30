@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
   "type": "farmersdelight:cooking",
   "container": {
     "item": "minecraft:glass_bottle"
@@ -25,11 +31,5 @@
   "recipe_book_tab": "drinks",
   "result": {
     "item": "garnished:bitter_apple_cider"
-  },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farmersdelight"
-    }
-  ]
+  }
 }

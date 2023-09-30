@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
   "type": "farmersdelight:cooking",
   "container": {
     "item": "minecraft:cooked_beef"
@@ -28,11 +34,5 @@
   "recipe_book_tab": "misc",
   "result": {
     "item": "garnished:phantom_steak"
-  },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farmersdelight"
-    }
-  ]
+  }
 }

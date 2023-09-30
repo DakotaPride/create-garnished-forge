@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
   "type": "farmersdelight:cooking",
   "cookingtime": 200,
   "experience": 1.0,
@@ -25,11 +31,5 @@
   "recipe_book_tab": "misc",
   "result": {
     "item": "garnished:salad"
-  },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farmersdelight"
-    }
-  ]
+  }
 }

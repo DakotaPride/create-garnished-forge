@@ -1,4 +1,10 @@
 {
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
   "type": "farmersdelight:cooking",
   "container": {
     "item": "minecraft:bowl"
@@ -22,11 +28,5 @@
   "recipe_book_tab": "meals",
   "result": {
     "item": "garnished:soul_khana"
-  },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "farmersdelight"
-    }
-  ]
+  }
 }
