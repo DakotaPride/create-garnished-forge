@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "garnished:nut_nacho"
+    },
+    {
+      "item": "garnished:nut_nacho"
+    },
+    {
+      "item": "minecraft:nut_nacho"
+    },
+    {
+      "item": "garnished:nut_nacho"
+    },
+    {
+      "item": "garnished:almond_cheese"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "garnished:nut_nacho_bowl"
+  }
+}
