@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class SpiritedConcoctionFoodItem extends Item implements IGarnishedItem {
 	public SpiritedConcoctionFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.SPIRITED_CONCOCTION));
+		super(properties.food(GarnishedFoods.SPIRITED_CONCOCTION).stacksTo(1));
 	}
 
 	@Override
