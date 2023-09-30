@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class SoulKhanaFoodItem extends Item implements IGarnishedItem {
 	public SoulKhanaFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.SOUL_KHANA));
+		super(properties.food(GarnishedFoods.SOUL_KHANA).stacksTo(1));
 	}
 
 	@Override

@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "farmersdelight"
+              }
+            },
+            {
+              "type": "forge:false"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "item": "minecraft:slime_ball"
+          },
+          {
+            "item": "minecraft:slime_ball"
+          },
+          {
+            "item": "minecraft:bone"
+          },
+          {
+            "item": "minecraft:rotten_flesh"
+          }
+        ],
+        "recipe_book_tab": "meals",
+        "result": {
+          "item": "garnished:putrid_stew"
+        }
+      }
+    }
+  ]
+}
