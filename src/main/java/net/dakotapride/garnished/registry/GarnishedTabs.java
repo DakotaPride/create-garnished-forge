@@ -20,7 +20,7 @@ public class GarnishedTabs {
 	public static final RegistryObject<CreativeModeTab> GARNISHED = TAB_REGISTER.register("create.garnished",
 			() -> CreativeModeTab.builder().title(Component.translatable("itemGroup.create.garnished"))
 					.icon(() -> GarnishedItems.NUT_MIX.get().getDefaultInstance())
-					.withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
+					.withTabsBefore(AllCreativeModeTabs.BUILDING_BLOCKS_TAB.getKey())
 					.displayItems(new GarnishedDisplayItemsGenerator()).build());
 
 	public static void setRegister(IEventBus modEventBus) {
