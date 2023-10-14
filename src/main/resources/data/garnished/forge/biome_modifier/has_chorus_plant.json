@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_end",
-  "features": "garnished:patch_chorus_plant_configured",
+  "features": "garnished:patch_chorus_plant_placed",
   "step": "vegetal_decoration"
 }
