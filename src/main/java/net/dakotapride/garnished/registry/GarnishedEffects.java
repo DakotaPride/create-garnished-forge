@@ -2,6 +2,8 @@ package net.dakotapride.garnished.registry;
 
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.effect.AversionMobEffect;
+import net.dakotapride.garnished.effect.CognateMobEffect;
+import net.dakotapride.garnished.effect.FlagrantMobEffect;
 import net.dakotapride.garnished.effect.SpiritedResistanceMobEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -27,10 +29,16 @@ public class GarnishedEffects {
 
 	public static RegistryObject<MobEffect> SPIRITED_RESISTANCE = EFFECTS.register("spirited_resistance", SpiritedResistanceMobEffect::new);
 
+	public static RegistryObject<MobEffect> COGNATE = EFFECTS.register("cognate", CognateMobEffect::new);
+	public static RegistryObject<MobEffect> FLAGRANT = EFFECTS.register("flagrant", FlagrantMobEffect::new);
+
 	public static final RegistryObject<Potion> AVERSION_POTION = POTIONS.register("aversion",
 			() -> new Potion(new MobEffectInstance(AVERSION.get(), 2400)));
 	public static RegistryObject<Potion> LONG_AVERSION_POTION = POTIONS.register("long_aversion",
 			() -> new Potion("aversion", new MobEffectInstance(AVERSION.get(), 3600)));
+
+	public static final RegistryObject<Potion> FLAGRANT_POTION = POTIONS.register("flagrant",
+			() -> new Potion(new MobEffectInstance(FLAGRANT.get(), 2400)));
 
 	public static RegistryObject<Potion> BLINDNESS_POTION = VANILLA_POTIONS.register("blindness",
 			() -> new Potion(new MobEffectInstance(MobEffects.BLINDNESS, 2400)));

@@ -19,6 +19,7 @@ public interface IGarnishedItem {
 	int getBitterAlmondEffectDuration = baseTick * 25;
 	int getWrappedTangleEffectDuration = baseTick * 45;
 	int getFermentedCashewMixtureEffectDuration = baseTick * 180;
+	int getCognateEffectBaseTick = baseTick * 60;
 
 
 	default String garnishedText() {
