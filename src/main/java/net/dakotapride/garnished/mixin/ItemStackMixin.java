@@ -1,6 +1,8 @@
 package net.dakotapride.garnished.mixin;
 
+import net.dakotapride.garnished.registry.GarnishedDamageSource;
 import net.dakotapride.garnished.registry.GarnishedEffects;
+import net.dakotapride.garnished.registry.GarnishedItems;
 import net.dakotapride.garnished.registry.GarnishedTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -19,13 +21,16 @@ public class ItemStackMixin {
 	private void finishUsingItem(Level level, LivingEntity entity, CallbackInfoReturnable<ItemStack> cir) {
 		ItemStack activeItem = entity.getUseItem();
 
-
 		if (entity.hasEffect(GarnishedEffects.AVERSION.get()) && activeItem.is(GarnishedTags.AVERSION_FOODS_TAG)) {
-
 			entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400, 2));
+		}
 
+		if (activeItem.is(GarnishedItems.MULCH.get())) {
+			entity.hurt(level.damageSources().source(GarnishedDamageSource.MULCH_MUNCHING), 2.0F);
+		}
 
-
+		if (activeItem.is(GarnishedItems.MUD_PIE.get())) {
+			entity.hurt(level.damageSources().source(GarnishedDamageSource.MULCH_MUNCHING), 1.0F);
 		}
 
 	}

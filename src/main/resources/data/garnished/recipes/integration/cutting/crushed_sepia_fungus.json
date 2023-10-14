@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:sepia_fungus"
+    }
+  ],
+  "result": [
+    {
+      "count": 3,
+      "item": "garnished:crushed_sepia_fungus"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}
