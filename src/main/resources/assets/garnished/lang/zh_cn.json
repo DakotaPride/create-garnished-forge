@@ -235,6 +235,8 @@
   "block.garnished.ender_jelly_block": "Block of Ender Jelly", //
   "block.garnished.ungarnished_nut_block": "Block of Ungarnished Nuts", //
   "block.garnished.garnished_nut_block": "Block of Garnished Nuts", //
+  "block.garnished.small_chorus_plant": "Small Chorus Plant", //
+  "block.garnished.barren_roots": "Barren Roots", //
   "effect.garnished.cognate": "Cognate", //
   "effect.garnished.flagrant": "Flagrant",
   "item.minecraft.potion.effect.flagrant": "Potion of Flagrance", //
@@ -268,6 +270,7 @@
   "block.garnished.macadamia_leaves": "坚果树叶",
   "block.garnished.pistachio_leaves": "坚果树叶",
   "block.garnished.hazelnut_leaves": "坚果树叶",
+  "block.garnished.pecan_leaves": "坚果树叶",
 
   "item.garnished.garnish_bucket": "装食桶",
   "item.garnished.apple_cider_bucket": "苹果西打桶",
