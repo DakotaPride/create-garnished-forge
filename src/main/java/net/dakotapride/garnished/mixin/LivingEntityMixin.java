@@ -51,9 +51,9 @@ public abstract class LivingEntityMixin extends Entity {
 
 	@Inject(method = "dropCustomDeathLoot", at = @At("HEAD"))
 	private void dropsFromHatchet$dropFromLootTable(DamageSource source, int looting, boolean hitByPlayer, CallbackInfo ci) {
-		LivingEntity attacker = (LivingEntity) source.getEntity();
+		// LivingEntity attacker = (LivingEntity) source.getEntity();
 
-		if (attacker instanceof Player player) {
+		if (source.getEntity() instanceof LivingEntity attacker && attacker instanceof Player player) {
 			if (player.getMainHandItem().is(GarnishedTags.HATCHETS_TAG)) {
 				if (isEnchantmentLevelHigherThan(GarnishedEnchantments.SALVAGING.get(), 0)
 						&& entity.getType().is(GarnishedTags.IS_AFFECTED_BY_SALVAGING)) {
@@ -70,16 +70,18 @@ public abstract class LivingEntityMixin extends Entity {
 
 	@Inject(method = "getDamageAfterMagicAbsorb", at = @At("HEAD"))
 	private void spiritedResistanceThorns$getDamageAfterMagicAbsorb(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
-		LivingEntity attacker = (LivingEntity) source.getEntity();
+		// LivingEntity attacker = (LivingEntity) source.getEntity();
 
-		boolean isSkeleton = attacker instanceof Skeleton;
-		boolean isWitherSkeleton = attacker instanceof WitherSkeleton;
-		boolean isWither = attacker instanceof WitherBoss;
-		boolean isGhast = attacker instanceof Ghast;
+		if (source.getEntity() instanceof LivingEntity attacker) {
+			boolean isSkeleton = attacker instanceof Skeleton;
+			boolean isWitherSkeleton = attacker instanceof WitherSkeleton;
+			boolean isWither = attacker instanceof WitherBoss;
+			boolean isGhast = attacker instanceof Ghast;
 
-		if (entity.hasEffect(GarnishedEffects.SPIRITED_RESISTANCE.get())) {
-			if (isSkeleton || isWitherSkeleton || isWither || isGhast) {
-				attacker.hurt(source, amount * 1.336745F);
+			if (entity.hasEffect(GarnishedEffects.SPIRITED_RESISTANCE.get())) {
+				if (isSkeleton || isWitherSkeleton || isWither || isGhast) {
+					attacker.hurt(source, amount * 1.336745F);
+				}
 			}
 		}
 	}
