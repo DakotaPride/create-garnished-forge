@@ -156,8 +156,9 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedItems.ETHEREAL_COMPOUND.asStack());
         items.add(GarnishedItems.COSMIC_POWDER.asStack());
         items.add(GarnishedItems.DESOLATE_SPREAD.asStack());
-        items.add(GarnishedItems.DESOLATE_SPREAD.asStack());
 
+        items.add(GarnishedItems.MOLTEN_REMNANT.asStack());
+        items.add(GarnishedItems.MOLTEN_STEW.asStack());
         items.add(GarnishedItems.MUD_PIE.asStack());
         items.add(GarnishedItems.MULCH.asStack());
 

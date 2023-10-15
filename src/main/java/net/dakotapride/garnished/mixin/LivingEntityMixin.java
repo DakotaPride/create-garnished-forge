@@ -42,7 +42,7 @@ public abstract class LivingEntityMixin extends Entity {
 				entity.removeEffect(MobEffects.BLINDNESS);
 		}
 
-		if (HatchetUtils.canApplyRavaging(entity)) {
+		if (HatchetUtils.canApplyRavagingEffects(entity)) {
 			entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1));
 		}
 	}
@@ -53,11 +53,7 @@ public abstract class LivingEntityMixin extends Entity {
 
 		if (attacker instanceof Player player) {
 			if (player.getMainHandItem().is(GarnishedTags.HATCHETS_TAG)) {
-				if (HatchetUtils.hasSalvaging(attacker) && HatchetUtils.isAffectedBySalvaging(entity)) {
-					HatchetUtils.getDrops(entity, attacker);
-				}
-
-				if (HatchetUtils.hasRavaging(attacker) && HatchetUtils.isAffectedByRavaging(entity)) {
+				if (HatchetUtils.hasSalvaging(attacker) || HatchetUtils.hasRavaging(attacker)) {
 					HatchetUtils.getDrops(entity, attacker);
 				}
 			}

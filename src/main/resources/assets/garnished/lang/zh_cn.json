@@ -253,6 +253,9 @@
   "enchantment.garnished.salvaging": "Salvaging", //
   "enchantment.garnished.ravaging": "Ravaging", //
 
+  "item.garnished.molten_remnant": "Molten Remnant", //
+  "item.garnished.molten_stew": "Molten Stew", //
+
   "block.garnished.peanut_sack": "压实坚果袋",
   "block.garnished.cashew_sack": "压实坚果袋",
   "block.garnished.almond_sack": "压实坚果袋",
