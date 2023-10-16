@@ -1,9 +1,11 @@
 package net.dakotapride.garnished.mixin;
 
+import net.dakotapride.garnished.item.hatchet.HatchetUtils;
 import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.dakotapride.garnished.registry.GarnishedEnchantments;
 import net.dakotapride.garnished.registry.GarnishedTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -42,11 +44,10 @@ public abstract class LivingEntityMixin extends Entity {
 			if (entity.hasEffect(MobEffects.BLINDNESS))
 				entity.removeEffect(MobEffects.BLINDNESS);
 		}
-	}
 
-	@Unique
-	private boolean isEnchantmentLevelHigherThan(Enchantment enchantment, int level) {
-		return EnchantmentHelper.getEnchantmentLevel(enchantment, entity) > level;
+		if (HatchetUtils.canApplyRavagingEffects(entity)) {
+			entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1));
+		}
 	}
 
 	@Inject(method = "dropCustomDeathLoot", at = @At("HEAD"))
@@ -55,14 +56,8 @@ public abstract class LivingEntityMixin extends Entity {
 
 		if (source.getEntity() instanceof LivingEntity attacker && attacker instanceof Player player) {
 			if (player.getMainHandItem().is(GarnishedTags.HATCHETS_TAG)) {
-				if (isEnchantmentLevelHigherThan(GarnishedEnchantments.SALVAGING.get(), 0)
-						&& entity.getType().is(GarnishedTags.IS_AFFECTED_BY_SALVAGING)) {
-					// added loot table goes here
-				}
-
-				if (isEnchantmentLevelHigherThan(GarnishedEnchantments.RAVAGING.get(), 0)
-						&& entity.getType().is(GarnishedTags.IS_AFFECTED_BY_RAVAGING)) {
-					// added loot table goes here
+				if (HatchetUtils.hasSalvaging(attacker) || HatchetUtils.hasRavaging(attacker)) {
+					HatchetUtils.getDrops(entity, attacker);
 				}
 			}
 		}
