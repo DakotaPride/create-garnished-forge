@@ -135,7 +135,6 @@ public class HatchetUtils {
         if (hasRavaging(attacker)) {
             enchant = "Ravaging";
 
-            // Nether Mobs Broken... Except for Ghast... For some reason?
             if (MobHelper.isMagmaCube(entity)) {
                 mob = "MagmaCube";
 
@@ -145,8 +144,6 @@ public class HatchetUtils {
                 int moltenRemnantDropCount = singleCount + random.nextInt(2);
                 int froglightDropChance = random.nextInt(16);
                 int froglightVariant = random.nextInt(3);
-                int froglightDropCount = singleCount + random.nextInt(2);
-                Item froglight = null;
 
                 if (additionalDropChance == 1) {
                     entity.spawnAtLocation(new ItemStack(Items.MAGMA_CREAM, additionalDropCount));
@@ -156,14 +153,12 @@ public class HatchetUtils {
 
                 if (froglightDropChance == 1) {
                     if (froglightVariant == 0) {
-                        froglight = Items.OCHRE_FROGLIGHT;
+                        entity.spawnAtLocation(new ItemStack(Items.OCHRE_FROGLIGHT, singleCount));
                     } else if (froglightVariant == 1) {
-                        froglight = Items.VERDANT_FROGLIGHT;
+                        entity.spawnAtLocation(new ItemStack(Items.VERDANT_FROGLIGHT, singleCount));
                     } else if (froglightVariant == 2) {
-                        froglight = Items.PEARLESCENT_FROGLIGHT;
+                        entity.spawnAtLocation(new ItemStack(Items.PEARLESCENT_FROGLIGHT, singleCount));
                     }
-
-                    entity.spawnAtLocation(new ItemStack(froglight, froglightDropCount));
                 }
             }
 
@@ -190,7 +185,16 @@ public class HatchetUtils {
             if (MobHelper.isGhast(entity)) {
                 mob = "Ghast";
 
-                entity.spawnAtLocation(new ItemStack(Items.DIAMOND, singleCount));
+                int additionalDropChance = random.nextInt(8);
+                int additionalDropCount = singleCount + random.nextInt(3);
+                int ghastTearDropChance = random.nextInt(12);
+                int ghastTearDropCount = singleCount + random.nextInt(2);
+
+                if (additionalDropChance == 1) {
+                    entity.spawnAtLocation(new ItemStack(Items.GUNPOWDER, additionalDropCount));
+                } else if (ghastTearDropChance == 1) {
+                    entity.spawnAtLocation(new ItemStack(Items.GHAST_TEAR, ghastTearDropCount));
+                }
             }
         }
 
