@@ -9,19 +9,19 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class GarnishedColourManager {
     @SubscribeEvent
-    public static void onColourHandlers$blockRegister(RegisterColorHandlersEvent.Block event) {
+    public static void onColourHandlers$blockRegister(ColorHandlerEvent.Block event) {
         blockColourProvider(event.getBlockColors());
     }
 
     @SubscribeEvent
-    public static void onColourHandlers$itemRegister(RegisterColorHandlersEvent.Item event) {
+    public static void onColourHandlers$itemRegister(ColorHandlerEvent.Item event) {
         itemColourProvider(event.getBlockColors(), event.getItemColors());
     }
 

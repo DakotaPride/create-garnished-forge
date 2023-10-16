@@ -68,9 +68,6 @@ public class CreateGarnished
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.SENILE_SWEET_BASALT.get(), Potions.WEAKNESS);
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.SENILE_SWEET_SCORIA.get(), Potions.POISON);
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.SENILE_SWEET_SCORCHIA.get(), Potions.SLOWNESS);
-
-        event.enqueueWork(GarnishedFluids::registerFluidInteractions);
-
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {

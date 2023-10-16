@@ -1,27 +1,27 @@
 package net.dakotapride.garnished.registry;
 
-import com.mojang.math.Vector3f;
-import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
-import com.simibubi.create.foundation.utility.Color;
-import com.tterrag.registrate.builders.FluidBuilder;
+import com.simibubi.create.foundation.fluid.FluidHelper;
+import com.simibubi.create.foundation.utility.Iterate;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.level.BlockAndTintGetter;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.fluids.FluidInteractionRegistry;
-import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 
 import javax.annotation.Nullable;
-import java.util.function.Supplier;
 
 @SuppressWarnings({"unused"})
 public class GarnishedFluids {
@@ -42,9 +42,8 @@ public class GarnishedFluids {
 			CreateGarnished.registrate().fluid("garnish",
 							createLocation("garnish", false),
 							createLocation("garnish", true))
-					.properties(b -> b.viscosity(1500)
-							.density(800))
-					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+					.attributes(b -> b.viscosity(1500).density(800))
+					.properties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
 							.explosionResistance(100f))
@@ -58,9 +57,9 @@ public class GarnishedFluids {
 			CreateGarnished.registrate().fluid("apple_cider",
 							createLocation("apple_cider", false),
 							createLocation("apple_cider", true))
-					.properties(b -> b.viscosity(1500)
+					.attributes(b -> b.viscosity(1500)
 							.density(800))
-					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+					.properties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
 							.explosionResistance(100f))
@@ -74,9 +73,9 @@ public class GarnishedFluids {
 			CreateGarnished.registrate().fluid("peanut_oil",
 							createLocation("peanut_oil", false),
 							createLocation("peanut_oil", true))
-					.properties(b -> b.viscosity(1500)
+					.attributes(b -> b.viscosity(1500)
 							.density(800))
-					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+					.properties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
 							.explosionResistance(100f))
@@ -90,9 +89,9 @@ public class GarnishedFluids {
 			CreateGarnished.registrate().fluid("cashew_mixture",
 							createLocation("cashew_mixture", false),
 							createLocation("cashew_mixture", true))
-					.properties(b -> b.viscosity(1500)
+					.attributes(b -> b.viscosity(1500)
 							.density(800))
-					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+					.properties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
 							.explosionResistance(100f))
@@ -103,104 +102,19 @@ public class GarnishedFluids {
 					.register();
 
 
-	private static class NoColorFluidAttributes extends AllFluids.TintedFluidType {
-
-		public NoColorFluidAttributes(Properties properties, ResourceLocation stillTexture,
-									  ResourceLocation flowingTexture) {
-			super(properties, stillTexture, flowingTexture);
+	private static class NoColorFluidAttributes extends FluidAttributes {
+		protected NoColorFluidAttributes(Builder builder, Fluid fluid) {
+			super(builder, fluid);
 		}
 
 		@Override
-		protected int getTintColor(FluidStack stack) {
-			return NO_TINT;
-		}
-
-		@Override
-		public int getTintColor(FluidState state, BlockAndTintGetter world, BlockPos pos) {
+		public int getColor(BlockAndTintGetter world, BlockPos pos) {
 			return 0x00ffffff;
 		}
 
 	}
 
 	public static void setRegister() {}
-
-	public static void registerFluidInteractions() {
-		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
-				GARNISH.get().getFluidType(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.CALCITE.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
-
-		FluidInteractionRegistry.addInteraction(GARNISH.getType(), new FluidInteractionRegistry.InteractionInformation(
-				ForgeMod.LAVA_TYPE.get(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.CALCITE.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
-
-		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
-				APPLE_CIDER.get().getFluidType(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
-
-		FluidInteractionRegistry.addInteraction(APPLE_CIDER.getType(), new FluidInteractionRegistry.InteractionInformation(
-				ForgeMod.LAVA_TYPE.get(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
-
-		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
-				PEANUT_OIL.get().getFluidType(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return Blocks.DRIPSTONE_BLOCK.defaultBlockState();
-					}
-				}
-		));
-
-		FluidInteractionRegistry.addInteraction(PEANUT_OIL.getType(), new FluidInteractionRegistry.InteractionInformation(
-				ForgeMod.LAVA_TYPE.get(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
-	}
 
 	@Nullable
 	public static BlockState getLavaInteraction(FluidState fluidState) {

@@ -3,17 +3,17 @@ package net.dakotapride.garnished.item.hatchet;
 import net.dakotapride.garnished.registry.GarnishedEnchantments;
 import net.dakotapride.garnished.registry.GarnishedItems;
 import net.dakotapride.garnished.registry.GarnishedTags;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraftforge.fml.loading.FMLLoader;
 import org.spongepowered.asm.mixin.Unique;
+
+import java.util.Random;
 
 @SuppressWarnings("unused")
 public class HatchetUtils {
@@ -30,7 +30,7 @@ public class HatchetUtils {
     // Grants the player PVE/PVP benefits depending on the situation
     static Enchantment ravaging = GarnishedEnchantments.RAVAGING.get();
     // random shit
-    public static final RandomSource random = RandomSource.create();
+    public static final Random random = new Random();
 
     public HatchetUtils() {}
 
@@ -105,30 +105,30 @@ public class HatchetUtils {
                 }
             }
 
-            if (MobHelper.isFrog(entity)) {
-                mob = "Frog";
-
-                int magmaCreamDropChance = random.nextInt(28);
-                int moltenRemnantDropChance = 0;
-
-                if (isCorrectEnchantmentLevel(salvaging, attacker, 1)) {
-                    moltenRemnantDropChance = random.nextInt(60);
-                } else if (isCorrectEnchantmentLevel(salvaging, attacker, 2)) {
-                    moltenRemnantDropChance = random.nextInt(40);
-                }
-
-                if (magmaCreamDropChance == 1) {
-                    int magmaCreamCount = singleCount + random.nextInt(2);
-
-                    entity.spawnAtLocation(new ItemStack(Items.MAGMA_CREAM, magmaCreamCount));
-                }
-
-                if (moltenRemnantDropChance == 1) {
-                    int moltenRemnantCount = singleCount + random.nextInt(1);
-
-                    entity.spawnAtLocation(new ItemStack(GarnishedItems.MOLTEN_REMNANT.get(), moltenRemnantCount));
-                }
-            }
+            // if (MobHelper.isFrog(entity)) {
+            //                mob = "Frog";
+            //
+            //                int magmaCreamDropChance = random.nextInt(28);
+            //                int moltenRemnantDropChance = 0;
+            //
+            //                if (isCorrectEnchantmentLevel(salvaging, attacker, 1)) {
+            //                    moltenRemnantDropChance = random.nextInt(60);
+            //                } else if (isCorrectEnchantmentLevel(salvaging, attacker, 2)) {
+            //                    moltenRemnantDropChance = random.nextInt(40);
+            //                }
+            //
+            //                if (magmaCreamDropChance == 1) {
+            //                    int magmaCreamCount = singleCount + random.nextInt(2);
+            //
+            //                    entity.spawnAtLocation(new ItemStack(Items.MAGMA_CREAM, magmaCreamCount));
+            //                }
+            //
+            //                if (moltenRemnantDropChance == 1) {
+            //                    int moltenRemnantCount = singleCount + random.nextInt(1);
+            //
+            //                    entity.spawnAtLocation(new ItemStack(GarnishedItems.MOLTEN_REMNANT.get(), moltenRemnantCount));
+            //                }
+            //            }
         }
 
         // Ravaging Loot Drops
@@ -151,15 +151,15 @@ public class HatchetUtils {
                     entity.spawnAtLocation(new ItemStack(GarnishedItems.MOLTEN_REMNANT.get(), moltenRemnantDropCount));
                 }
 
-                if (froglightDropChance == 1) {
-                    if (froglightVariant == 0) {
-                        entity.spawnAtLocation(new ItemStack(Items.OCHRE_FROGLIGHT, singleCount));
-                    } else if (froglightVariant == 1) {
-                        entity.spawnAtLocation(new ItemStack(Items.VERDANT_FROGLIGHT, singleCount));
-                    } else if (froglightVariant == 2) {
-                        entity.spawnAtLocation(new ItemStack(Items.PEARLESCENT_FROGLIGHT, singleCount));
-                    }
-                }
+                // if (froglightDropChance == 1) {
+                //                    if (froglightVariant == 0) {
+                //                        entity.spawnAtLocation(new ItemStack(Items.OCHRE_FROGLIGHT, singleCount));
+                //                    } else if (froglightVariant == 1) {
+                //                        entity.spawnAtLocation(new ItemStack(Items.VERDANT_FROGLIGHT, singleCount));
+                //                    } else if (froglightVariant == 2) {
+                //                        entity.spawnAtLocation(new ItemStack(Items.PEARLESCENT_FROGLIGHT, singleCount));
+                //                    }
+                //                }
             }
 
             if (MobHelper.isBlaze(entity)) {
@@ -326,21 +326,21 @@ public class HatchetUtils {
             return isSquid(entity) || isGlowSquid(entity);
         }
 
-        public static boolean isFrog(Entity entity) {
-            return entity.getType() == EntityType.FROG;
-        }
-
-        public static boolean isTadpole(Entity entity) {
-            return entity.getType() == EntityType.TADPOLE;
-        }
-
-        public static boolean isFrogOrSimilar(Entity entity) {
-            return isFrog(entity) || isTadpole(entity);
-        }
-
-        public static boolean isAllay(Entity entity) {
-            return entity.getType() == EntityType.ALLAY;
-        }
+        // public static boolean isFrog(Entity entity) {
+        //            return entity.getType() == EntityType.FROG;
+        //        }
+        //
+        //        public static boolean isTadpole(Entity entity) {
+        //            return entity.getType() == EntityType.TADPOLE;
+        //        }
+        //
+        //        public static boolean isFrogOrSimilar(Entity entity) {
+        //            return isFrog(entity) || isTadpole(entity);
+        //        }
+        //
+        //        public static boolean isAllay(Entity entity) {
+        //            return entity.getType() == EntityType.ALLAY;
+        //        }
     }
 
     public static class DevAssistance {

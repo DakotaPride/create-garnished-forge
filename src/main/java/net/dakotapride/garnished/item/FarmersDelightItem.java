@@ -2,6 +2,7 @@ package net.dakotapride.garnished.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -20,7 +21,7 @@ public class FarmersDelightItem extends Item {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
 
         if (!ModList.get().isLoaded("farmersdelight")) {
-            components.add(Component.translatable("text.garnished.integration.farmersdelight.missing").withStyle(ChatFormatting.GRAY));
+            components.add(new TranslatableComponent("text.garnished.integration.farmersdelight.missing").withStyle(ChatFormatting.GRAY));
         }
 
         super.appendHoverText(stack, level, components, flag);
