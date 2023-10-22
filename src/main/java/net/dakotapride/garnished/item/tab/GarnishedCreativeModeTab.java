@@ -199,6 +199,16 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedBlocks.SEPIA_TRAPDOOR.asStack());
         items.add(GarnishedBlocks.SEPIA_DOOR.asStack());
 
+        items.add(GarnishedBlocks.NUT_LOG.asStack());
+        items.add(GarnishedBlocks.STRIPPED_NUT_LOG.asStack());
+        items.add(GarnishedBlocks.NUT_WOOD.asStack());
+        items.add(GarnishedBlocks.STRIPPED_NUT_WOOD.asStack());
+        items.add(GarnishedBlocks.NUT_PLANKS.asStack());
+        items.add(GarnishedBlocks.NUT_SLAB.asStack());
+        items.add(GarnishedBlocks.NUT_STAIRS.asStack());
+        items.add(GarnishedBlocks.NUT_TRAPDOOR.asStack());
+        items.add(GarnishedBlocks.NUT_DOOR.asStack());
+
         items.add(GarnishedFluids.GARNISH.get().getBucket().getDefaultInstance());
         items.add(GarnishedFluids.APPLE_CIDER.get().getBucket().getDefaultInstance());
         items.add(GarnishedFluids.PEANUT_OIL.get().getBucket().getDefaultInstance());

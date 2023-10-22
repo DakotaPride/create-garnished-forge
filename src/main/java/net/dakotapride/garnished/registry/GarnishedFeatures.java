@@ -50,7 +50,7 @@ public class GarnishedFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> NUT_TREE_CONFIGURED = CONFIGURED_FEATURES.register("nut_tree_configured",
             () -> new ConfiguredFeature<>(Feature.TREE,
-                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(GarnishedBlocks.NUT_LOG.get()),
                             new StraightTrunkPlacer(4, 2, 0),
                             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OAK_LEAVES.defaultBlockState(), 5)
                                     .add(GarnishedBlocks.NUT_LEAVES.get().defaultBlockState(), 1)),

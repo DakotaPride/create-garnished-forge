@@ -18,7 +18,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:oak_log",
+        "Name": "garnished:nut_log",
         "Properties": {
           "axis": "y"
         }
@@ -33,7 +33,8 @@
             "Name": "minecraft:oak_leaves",
             "Properties": {
               "distance": "7",
-              "persistent": "false"
+              "persistent": "false",
+              "waterlogged": "false"
             }
           }
         },
@@ -43,7 +44,8 @@
             "Name": "garnished:pecan_leaves",
             "Properties": {
               "distance": "7",
-              "persistent": "false"
+              "persistent": "false",
+              "waterlogged": "false"
             }
           }
         }

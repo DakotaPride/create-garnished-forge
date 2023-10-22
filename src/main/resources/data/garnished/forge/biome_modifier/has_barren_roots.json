@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_end",
-  "features": "garnished:patch_barren_roots_placed",
-  "step": "vegetal_decoration"
-}
