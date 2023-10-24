@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.block.wood.nut;
 
+import net.dakotapride.garnished.item.hatchet.HatchetUtils;
 import net.dakotapride.garnished.registry.GarnishedBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -33,7 +34,7 @@ public class NutLogBlock extends RotatedPillarBlock {
 
 	@Override
 	public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-		if(context.getItemInHand().getItem() instanceof AxeItem) {
+		if(HatchetUtils.canBeUsedToStripLogs(context.getItemInHand().getItem().getDefaultInstance())) {
 			if(state.is(GarnishedBlocks.NUT_LOG.get())) {
 				return GarnishedBlocks.STRIPPED_NUT_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
 			}
