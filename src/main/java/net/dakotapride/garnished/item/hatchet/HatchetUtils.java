@@ -6,6 +6,7 @@ import net.dakotapride.garnished.registry.GarnishedTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -220,6 +221,10 @@ public class HatchetUtils {
 
     public static boolean canApplyRavagingEffects(LivingEntity entity) {
         return entity.getMainHandItem().is(GarnishedTags.HATCHETS_TAG) && hasEnchantment(ravaging, entity) && entity.getHealth() <= 10;
+    }
+
+    public static boolean canBeUsedToStripLogs(ItemStack stack) {
+        return stack.getItem() instanceof AxeItem || stack.getItem() instanceof HatchetToolItem;
     }
 
 
