@@ -30,13 +30,6 @@ public class IlluminatingCocktailItem extends Item implements IGarnishedItem {
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
 		}
 
-		if (livingEntity instanceof ServerPlayer serverPlayer && getWrappedTangleEffectChance()) {
-			CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
-			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
-
-			livingEntity.addEffect(new MobEffectInstance(GarnishedEffects.COGNATE.get(), getWrappedTangleEffectDuration, 1));
-		}
-
 		if (stack.isEmpty()) {
 			return new ItemStack(Items.GLASS_BOTTLE);
 		} else {
