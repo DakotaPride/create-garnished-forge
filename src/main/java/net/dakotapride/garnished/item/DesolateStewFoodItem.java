@@ -35,7 +35,7 @@ public class DesolateStewFoodItem extends Item implements IGarnishedItem {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
 
-			livingEntity.addEffect(new MobEffectInstance(GarnishedEffects.COGNATE.get(), getWrappedTangleEffectDuration, 1));
+			livingEntity.addEffect(new MobEffectInstance(GarnishedEffects.COGNATE.get(), getCognateEffectBaseTick, 1));
 		}
 
 		if (stack.isEmpty()) {
