@@ -40,7 +40,7 @@ public class GarnishedEffects {
 	public static final RegistryObject<Potion> FLAGRANT_POTION = POTIONS.register("flagrant",
 			() -> new Potion(new MobEffectInstance(FLAGRANT.get(), 2400)));
 
-	public static RegistryObject<Potion> BLINDNESS_POTION = VANILLA_POTIONS.register("blindness",
+	public static final RegistryObject<Potion> BLINDNESS_POTION = VANILLA_POTIONS.register("blindness",
 			() -> new Potion(new MobEffectInstance(MobEffects.BLINDNESS, 2400)));
 
 	public static void setRegister(IEventBus bus) {
