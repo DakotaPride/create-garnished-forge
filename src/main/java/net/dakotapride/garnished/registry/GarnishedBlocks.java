@@ -6,14 +6,8 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.block.*;
 import net.dakotapride.garnished.block.sapling.*;
-import net.dakotapride.garnished.block.wood.nut.NutDoorBlock;
-import net.dakotapride.garnished.block.wood.nut.NutLogBlock;
-import net.dakotapride.garnished.block.wood.nut.NutStairsBlock;
-import net.dakotapride.garnished.block.wood.nut.NutTrapdoorBlock;
-import net.dakotapride.garnished.block.wood.sepia.SepiaDoorBlock;
-import net.dakotapride.garnished.block.wood.sepia.SepiaStairsBlock;
-import net.dakotapride.garnished.block.wood.sepia.SepiaStemBlock;
-import net.dakotapride.garnished.block.wood.sepia.SepiaTrapdoorBlock;
+import net.dakotapride.garnished.block.wood.nut.*;
+import net.dakotapride.garnished.block.wood.sepia.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MaterialColor;
 
@@ -269,6 +263,41 @@ public class GarnishedBlocks {
 					.simpleItem()
 					.initialProperties(() -> Blocks.CRIMSON_STAIRS)
 					.properties(p -> p.color(MaterialColor.TERRACOTTA_BROWN)).register();
+	// v1.3
+	public static final BlockEntry<SepiaSignBlock> SEPIA_SIGN =
+			REGISTRATE.block("sepia_sign", SepiaSignBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.initialProperties(() -> Blocks.CRIMSON_SIGN)
+					.properties(p -> p.color(MaterialColor.TERRACOTTA_BROWN)).register();
+	public static final BlockEntry<SepiaWallSignBlock> SEPIA_WALL_SIGN =
+			REGISTRATE.block("sepia_wall_sign", SepiaWallSignBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.initialProperties(() -> Blocks.CRIMSON_WALL_SIGN)
+					.properties(p -> p.color(MaterialColor.TERRACOTTA_BROWN)).register();
+	public static final BlockEntry<FenceBlock> SEPIA_FENCE =
+			REGISTRATE.block("sepia_fence", FenceBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.CRIMSON_FENCE)
+					.properties(p -> p.color(MaterialColor.TERRACOTTA_BROWN)).register();
+	public static final BlockEntry<SepiaFenceGateBlock> SEPIA_FENCE_GATE =
+			REGISTRATE.block("sepia_fence_gate", SepiaFenceGateBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.CRIMSON_FENCE_GATE)
+					.properties(p -> p.color(MaterialColor.TERRACOTTA_BROWN)).register();
+	public static final BlockEntry<SepiaButtonBlock> SEPIA_BUTTON =
+			REGISTRATE.block("sepia_button", SepiaButtonBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.CRIMSON_BUTTON)
+					.properties(p -> p.color(MaterialColor.TERRACOTTA_BROWN)).register();
+	public static final BlockEntry<SepiaPressurePlateBlock> SEPIA_PRESSURE_PLATE =
+			REGISTRATE.block("sepia_pressure_plate", SepiaPressurePlateBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.CRIMSON_PRESSURE_PLATE)
+					.properties(p -> p.color(MaterialColor.TERRACOTTA_BROWN)).register();
 
 	public static final BlockEntry<SoulPlantBlock> SOUL_ROOTS =
 			REGISTRATE.block("soul_roots", SoulPlantBlock::new)
@@ -336,6 +365,41 @@ public class GarnishedBlocks {
 	public static final BlockEntry<NutTrapdoorBlock> NUT_TRAPDOOR =
 			REGISTRATE.block("nut_trapdoor", NutTrapdoorBlock::new)
 					.initialProperties(() -> Blocks.OAK_TRAPDOOR).simpleItem().register();
+	// v1.3
+	public static final BlockEntry<NutSignBlock> NUT_SIGN =
+			REGISTRATE.block("nut_sign", NutSignBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.initialProperties(() -> Blocks.OAK_SIGN)
+					.properties(p -> p.color(MaterialColor.COLOR_LIGHT_GREEN)).register();
+	public static final BlockEntry<NutWallSignBlock> NUT_WALL_SIGN =
+			REGISTRATE.block("nut_wall_sign", NutWallSignBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.initialProperties(() -> Blocks.OAK_WALL_SIGN)
+					.properties(p -> p.color(MaterialColor.COLOR_LIGHT_GREEN)).register();
+	public static final BlockEntry<FenceBlock> NUT_FENCE =
+			REGISTRATE.block("nut_fence", FenceBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.OAK_FENCE)
+					.properties(p -> p.color(MaterialColor.COLOR_LIGHT_GREEN)).register();
+	public static final BlockEntry<NutFenceGateBlock> NUT_FENCE_GATE =
+			REGISTRATE.block("nut_fence_gate", NutFenceGateBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.OAK_FENCE_GATE)
+					.properties(p -> p.color(MaterialColor.COLOR_LIGHT_GREEN)).register();
+	public static final BlockEntry<NutButtonBlock> NUT_BUTTON =
+			REGISTRATE.block("nut_button", NutButtonBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.OAK_BUTTON)
+					.properties(p -> p.color(MaterialColor.COLOR_LIGHT_GREEN)).register();
+	public static final BlockEntry<NutPressurePlateBlock> NUT_PRESSURE_PLATE =
+			REGISTRATE.block("nut_pressure_plate", NutPressurePlateBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.OAK_PRESSURE_PLATE)
+					.properties(p -> p.color(MaterialColor.COLOR_LIGHT_GREEN)).register();
 
 	public static void setRegister() {}
 }
