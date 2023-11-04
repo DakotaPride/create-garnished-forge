@@ -2,11 +2,17 @@ package net.dakotapride.garnished;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import net.dakotapride.garnished.entity.render.NutBoatRenderer;
 import net.dakotapride.garnished.registry.*;
+import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.ChestBoatModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
@@ -40,6 +46,7 @@ public class CreateGarnished
     public CreateGarnished() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        GarnishedEntities.ENTITIES.register(eventBus);
         GarnishedBlockEntities.BLOCK_ENTITIES.register(eventBus);
         GarnishedEffects.setRegister(eventBus);
         GarnishedEnchantments.setRegister();
@@ -101,6 +108,9 @@ public class CreateGarnished
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(GarnishedEntities.NUT_BOAT.get(), pContext -> new NutBoatRenderer(pContext, false));
+            EntityRenderers.register(GarnishedEntities.NUT_CHEST_BOAT.get(), pContext -> new NutBoatRenderer(pContext, true));
+
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_PLANT.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_LEAVES.get(), RenderType.cutout());
 
@@ -140,6 +150,17 @@ public class CreateGarnished
             // event.registerEntityRenderer(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), context -> new MyquesteBoatRenderer(context, true));
             event.registerBlockEntityRenderer(GarnishedBlockEntities.SIGN.get(), SignRenderer::new);
             event.registerBlockEntityRenderer(GarnishedBlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
+        }
+
+        public static final ModelLayerLocation NUT_BOAT_LAYER = new ModelLayerLocation(
+                new ResourceLocation(CreateGarnished.ID, "boat/nut"), "main");
+        public static final ModelLayerLocation NUT_CHEST_BOAT_LAYER = new ModelLayerLocation(
+                new ResourceLocation(CreateGarnished.ID, "chest_boat/nut"), "main");
+
+        @SubscribeEvent
+        public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(NUT_BOAT_LAYER, BoatModel::createBodyModel);
+            event.registerLayerDefinition(NUT_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
         }
     }
 
