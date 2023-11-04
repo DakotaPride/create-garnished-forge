@@ -27,7 +27,7 @@ public class BoatItem extends Item {
     private final boolean hasChest;
 
     public BoatItem(boolean pHasChest, NutBoatEntity.Type pType, Item.Properties pProperties) {
-        super(pProperties);
+        super(pProperties.stacksTo(1));
         this.hasChest = pHasChest;
         this.type = pType;
     }
