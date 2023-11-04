@@ -6,6 +6,8 @@ import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.item.*;
 import net.dakotapride.garnished.item.cracked.*;
 import net.dakotapride.garnished.item.hatchet.tier.*;
+import net.dakotapride.garnished.item.wood.NutBoatItem;
+import net.dakotapride.garnished.item.wood.NutChestBoatItem;
 import net.dakotapride.garnished.item.wood.NutSignItem;
 import net.dakotapride.garnished.item.wood.SepiaSignItem;
 import net.minecraft.world.item.Item;
@@ -416,10 +418,10 @@ public class GarnishedItems {
 	public static final ItemEntry<NutSignItem> NUT_SIGN =
 			REGISTRATE.item("nut_sign", NutSignItem::new).register();
 
-	// public static final ItemEntry<NutBoatItem> NUT_BOAT =
-	//			REGISTRATE.item("nut_boat", NutBoatItem::new).register();
-	//	public static final ItemEntry<NutChestBoatItem> NUT_CHEST_BOAT =
-	//			REGISTRATE.item("nut_chest_boat", NutChestBoatItem::new).register();
+	public static final ItemEntry<NutBoatItem> NUT_BOAT =
+			REGISTRATE.item("nut_boat", NutBoatItem::new).register();
+	public static final ItemEntry<NutChestBoatItem> NUT_CHEST_BOAT =
+			REGISTRATE.item("nut_chest_boat", NutChestBoatItem::new).register();
 
 	// Farmer's Delight Items
 	public static final ItemEntry<PecanPieSliceFoodItem> PECAN_PIE_SLICE =
