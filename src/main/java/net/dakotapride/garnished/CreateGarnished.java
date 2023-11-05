@@ -4,9 +4,14 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.fluid.FluidHelper;
 import com.simibubi.create.foundation.utility.Iterate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import net.dakotapride.garnished.entity.NutBoatRenderer;
 import net.dakotapride.garnished.registry.*;
+import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -27,6 +32,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
@@ -63,6 +69,8 @@ public class CreateGarnished
     public CreateGarnished() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        GarnishedEntities.ENTITIES.register(bus);
+        GarnishedBlockEntities.BLOCK_ENTITIES.register(bus);
         GarnishedEffects.setRegister(bus);
         GarnishedEnchantments.setRegister();
         GarnishedItems.setRegister();
@@ -119,6 +127,8 @@ public class CreateGarnished
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(GarnishedEntities.NUT_BOAT.get(), NutBoatRenderer::new);
+
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_PLANT.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_LEAVES.get(), RenderType.cutout());
 
@@ -150,6 +160,22 @@ public class CreateGarnished
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_DOOR.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_TRAPDOOR.get(), RenderType.cutout());
+        }
+
+        @SubscribeEvent
+        public static void registerEntityRenderer(EntityRenderersEvent.RegisterRenderers event) {
+            // event.registerEntityRenderer(HibernalEntityTypes.MYQUESTE_BOAT.get(), context -> new MyquesteBoatRenderer(context, false));
+            // event.registerEntityRenderer(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), context -> new MyquesteBoatRenderer(context, true));
+            event.registerBlockEntityRenderer(GarnishedBlockEntities.SIGN.get(), SignRenderer::new);
+            // event.registerBlockEntityRenderer(GarnishedBlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
+        }
+
+        public static final ModelLayerLocation NUT_BOAT_LAYER = new ModelLayerLocation(
+                new ResourceLocation(CreateGarnished.ID, "boat/nut"), "main");
+
+        @SubscribeEvent
+        public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(NUT_BOAT_LAYER, BoatModel::createBodyModel);
         }
     }
 
