@@ -253,6 +253,19 @@
   "enchantment.garnished.salvaging": "回收",
   "enchantment.garnished.ravaging": "破裂",
 
+  "item.garnished.zinc_hatchet": "Zinc Hatchet", //
+  "item.garnished.brass_hatchet": "Brass Hatchet", //
+  "item.garnished.copper_hatchet": "Copper Hatchet", //
+  "item.garnished.rose_quartz_hatchet": "Rose Quartz Hatchet", //
+  "item.garnished.blazing_hatchet": "Blazing Hatchet", //
+  "item.garnished.experience_hatchet": "Experience Hatchet", //
+  "item.garnished.warden_hatchet": "Warden Hatchet", //
+  "item.garnished.rose_gold_hatchet": "Rose Gold Hatchet", //
+  "item.garnished.gilded_netherite_hatchet": "Gilded Netherite Hatchet", //
+  "text.garnished.integration.create_sa.missing": "Please install Create: Stuff & Additions!", //
+  "text.garnished.integration.deeperdarker.missing": "Please install Deeper & Darker!", //
+  "text.garnished.integration.additionaladditions.missing": "Please install Additional Additions!", //
+
   "item.garnished.molten_remnant": "熔火遗物",
   "item.garnished.molten_stew": "熔火炖",
 

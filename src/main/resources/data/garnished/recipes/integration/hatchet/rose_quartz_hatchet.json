@@ -1,0 +1,36 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create_sa"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "hatchet",
+  "pattern": [
+    "AXI",
+    "XZ ",
+    " # "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:string"
+    },
+    "X": {
+      "item": "create:polished_rose_quartz"
+    },
+    "#": {
+      "item": "create_sa:zinc_handle"
+    },
+    "Z": {
+      "tag": "forge:ingots/gold"
+    },
+    "I": {
+      "tag": "forge:plates/iron"
+    }
+  },
+  "result": {
+    "item": "garnished:rose_quartz_hatchet",
+    "count": 1
+  }
+}

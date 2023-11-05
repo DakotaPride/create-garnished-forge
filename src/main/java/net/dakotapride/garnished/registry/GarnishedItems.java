@@ -7,6 +7,7 @@ import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.item.*;
 import net.dakotapride.garnished.item.cracked.*;
 import net.dakotapride.garnished.item.hatchet.tier.*;
+import net.dakotapride.garnished.item.hatchet.tier.integrated.*;
 import net.dakotapride.garnished.item.wood.*;
 import net.minecraft.world.item.Item;
 
@@ -437,6 +438,28 @@ public class GarnishedItems {
 			REGISTRATE.item("glow_ink_roll", GlowInkRollFoodItem::new).register();
 	public static final ItemEntry<GlowInkRollSliceFoodItem> GLOW_INK_ROLL_SLICE =
 			REGISTRATE.item("glow_ink_roll_slice", GlowInkRollSliceFoodItem::new).register();
+
+	// Integrated Hatchets
+	public static final ItemEntry<ZincHatchetToolItem> ZINC_HATCHET =
+			REGISTRATE.item("zinc_hatchet", ZincHatchetToolItem::new).register();
+	public static final ItemEntry<RoseQuartzHatchetToolItem> ROSE_QUARTZ_HATCHET =
+			REGISTRATE.item("rose_quartz_hatchet", RoseQuartzHatchetToolItem::new).register();
+	public static final ItemEntry<ExperienceHatchetToolItem> EXPERIENCE_HATCHET =
+			REGISTRATE.item("experience_hatchet", ExperienceHatchetToolItem::new).register();
+	public static final ItemEntry<CopperHatchetToolItem> COPPER_HATCHET =
+			REGISTRATE.item("copper_hatchet", CopperHatchetToolItem::new).register();
+	public static final ItemEntry<BrassHatchetToolItem> BRASS_HATCHET =
+			REGISTRATE.item("brass_hatchet", BrassHatchetToolItem::new).register();
+	public static final ItemEntry<BlazingHatchetToolItem> BLAZING_HATCHET =
+			REGISTRATE.item("blazing_hatchet", BlazingHatchetToolItem::new).register();
+
+	public static final ItemEntry<WardenHatchetToolItem> WARDEN_HATCHET =
+			REGISTRATE.item("warden_hatchet", WardenHatchetToolItem::new).register();
+
+	public static final ItemEntry<RoseGoldHatchetToolItem> ROSE_GOLD_HATCHET =
+			REGISTRATE.item("rose_gold_hatchet", RoseGoldHatchetToolItem::new).register();
+	public static final ItemEntry<GildedNetheriteHatchetToolItem> GILDED_NETHERITE_HATCHET =
+			REGISTRATE.item("gilded_netherite_hatchet", GildedNetheriteHatchetToolItem::new).register();
 
 	public static void setRegister() {}
 
