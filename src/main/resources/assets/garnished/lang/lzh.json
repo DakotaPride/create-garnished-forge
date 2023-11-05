@@ -269,11 +269,8 @@
   "block.garnished.nut_button": "Nut Button",
   "block.garnished.nut_pressure_plate": "Nut Pressure Plate",
   "block.garnished.nut_sign": "Nut Sign",
-  "block.garnished.nut_hanging_sign": "Nut Hanging Sign",
   "item.garnished.nut_boat": "Nut Boat",
-  "item.garnished.nut_chest_boat": "Nut Boat With Chest",
   "entity.garnished.nut_boat": "Boat",
-  "entity.garnished.nut_chest_boat": "Boat With Chest",
 
   "block.garnished.sepia_fence": "Sepia Fence",
   "block.garnished.sepia_fence_gate": "Sepia Fence Gate",
