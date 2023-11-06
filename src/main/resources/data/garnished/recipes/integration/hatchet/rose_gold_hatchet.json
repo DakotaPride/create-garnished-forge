@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "additionaladditions"
+    }
+  ],
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "minecraft:iron_axe"
+  },
+  "addition": {
+    "item": "additionaladditions:rose_gold_alloy"
+  },
+  "result": {
+    "item": "additionaladditions:rose_gold_axe"
+  },
+  "template": {
+    "item": "additionaladditions:rose_gold_upgrade"
+  }
+}

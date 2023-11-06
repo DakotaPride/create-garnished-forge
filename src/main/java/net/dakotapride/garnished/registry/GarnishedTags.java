@@ -21,7 +21,6 @@ public class GarnishedTags {
 	public static TagKey<Item> ZINC_INGOTS = forgeItemTag("ingots/zinc");
 	public static TagKey<Item> BRASS_INGOTS = forgeItemTag("ingots/brass");
 	public static TagKey<Item> COPPER_INGOTS = forgeItemTag("ingots/copper");
-	public static TagKey<Item> ROSE_QUARTZ = forgeItemTag("rose_quartz");
 	public static TagKey<Item> EXPERIENCE_REPAIRABLE_ITEMS = forgeItemTag("experience_heaps");
 	public static TagKey<Item> BLAZING_REPAIRABLE_ITEMS = forgeItemTag("blazing_repairable_items");
 

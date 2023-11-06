@@ -21,7 +21,7 @@ public enum IntegratedMaterials implements Tier {
         return Ingredient.of(GarnishedTags.BRASS_INGOTS);
     }),
     ROSE_QUARTZ(3, 1644, 9.0F, 7.0F, 14, () -> {
-        return Ingredient.of(GarnishedTags.ROSE_QUARTZ);
+        return Ingredient.of(Items.GOLD_INGOT);
     }),
     EXPERIENCE(2, 270, 7.0F, 5.0F, 800, () -> {
         return Ingredient.of(GarnishedTags.EXPERIENCE_REPAIRABLE_ITEMS);
