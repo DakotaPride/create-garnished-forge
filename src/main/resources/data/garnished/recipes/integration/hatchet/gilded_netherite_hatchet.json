@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "additionaladditions"
+    }
+  ],
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "garnished:netherite_hatchet"
+  },
+  "addition": {
+    "item": "additionaladditions:gold_ring"
+  },
+  "result": {
+    "item": "garnished:gilded_netherite_hatchet"
+  },
+  "template": {
+    "item": "additionaladditions:gilded_netherite_upgrade"
+  }
+}

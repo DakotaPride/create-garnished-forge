@@ -6,6 +6,43 @@
     "garnished:iron_hatchet",
     "garnished:golden_hatchet",
     "garnished:diamond_hatchet",
-    "garnished:netherite_hatchet"
+    "garnished:netherite_hatchet",
+
+    {
+      "id": "garnished:zinc_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:rose_quartz_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:brass_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:copper_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:blazing_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:experience_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:rose_gold_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:gilded_netherite_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:warden_hatchet",
+      "required": false
+    }
   ]
 }
