@@ -1,10 +1,7 @@
 package net.dakotapride.garnished.registry;
 
 import net.dakotapride.garnished.CreateGarnished;
-import net.dakotapride.garnished.effect.AversionMobEffect;
-import net.dakotapride.garnished.effect.CognateMobEffect;
-import net.dakotapride.garnished.effect.FlagrantMobEffect;
-import net.dakotapride.garnished.effect.SpiritedResistanceMobEffect;
+import net.dakotapride.garnished.effect.*;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -38,6 +35,14 @@ public class GarnishedEffects {
 	public static RegistryObject<MobEffect> COGNATE = EFFECTS.register("cognate", CognateMobEffect::new);
 	public static RegistryObject<MobEffect> FLAGRANT = EFFECTS.register("flagrant", FlagrantMobEffect::new);
 
+	public static RegistryObject<MobEffect> SUGAR_HIGH = EFFECTS.register("sugar_high", () -> new SugarHighMobEffect()
+			.addAttributeModifier(Attributes.MOVEMENT_SPEED, "660fa62e-0096-4f99-9b9a-9311d1936b89",
+					0.075, AttributeModifier.Operation.MULTIPLY_TOTAL));
+
+	public static RegistryObject<MobEffect> SANCTITY = EFFECTS.register("sanctity", () -> new SanctityMobEffect()
+			.addAttributeModifier(Attributes.ARMOR, "3a7cbac5-6234-49c8-93d0-fdacad4af501",
+					4.0, AttributeModifier.Operation.ADDITION));
+
 	public static final RegistryObject<Potion> AVERSION_POTION = POTIONS.register("aversion",
 			() -> new Potion(new MobEffectInstance(AVERSION.get(), 2400)));
 	public static RegistryObject<Potion> LONG_AVERSION_POTION = POTIONS.register("long_aversion",
@@ -48,6 +53,9 @@ public class GarnishedEffects {
 
 	public static RegistryObject<Potion> BLINDNESS_POTION = VANILLA_POTIONS.register("blindness",
 			() -> new Potion(new MobEffectInstance(MobEffects.BLINDNESS, 2400)));
+
+	public static final RegistryObject<Potion> SANCTITY_POTION = POTIONS.register("sanctity",
+			() -> new Potion("sanctity", new MobEffectInstance(SANCTITY.get(), 2800)));
 
 	public static void setRegister(IEventBus bus) {
 		EFFECTS.register(bus);

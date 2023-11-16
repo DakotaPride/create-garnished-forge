@@ -13,9 +13,13 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -82,6 +86,8 @@ public class CreateGarnished
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.SENILE_SWEET_SCORIA.get(), Potions.POISON);
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.SENILE_SWEET_SCORCHIA.get(), Potions.SLOWNESS);
 
+        PotionBrewing.addMix(Potions.MUNDANE, GarnishedItems.VOLATILE_DUST.get(), GarnishedEffects.SANCTITY_POTION.get());
+
         event.enqueueWork(GarnishedFluids::registerFluidInteractions);
 
     }
@@ -142,6 +148,14 @@ public class CreateGarnished
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_DOOR.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_TRAPDOOR.get(), RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.RED_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.ORANGE_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.YELLOW_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.GREEN_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BLUE_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PURPLE_MASTIC_BLOCK.get(), RenderType.translucent());
         }
 
         @SubscribeEvent

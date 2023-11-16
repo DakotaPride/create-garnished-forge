@@ -3,28 +3,19 @@ package net.dakotapride.garnished.registry;
 import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllTags;
 import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
-import com.simibubi.create.foundation.utility.Color;
-import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
-import org.joml.Vector3f;
-
-import javax.annotation.Nullable;
-import java.util.function.Supplier;
 
 @SuppressWarnings({"unused"})
-public class GarnishedFluids {
+public class GarnishedFluids implements Fluids {
 
 	private static ResourceLocation createLocation(String fluid, boolean isFlowing) {
 		String getMotion;
@@ -102,6 +93,113 @@ public class GarnishedFluids {
 					.build()
 					.register();
 
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> MASTIC_RESIN =
+			CreateGarnished.registrate().fluid("mastic_resin",
+							createLocation("mastic_resin", false),
+							createLocation("mastic_resin", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/mastic_resin"))
+					.build()
+					.register();
+
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> RED_MASTIC_RESIN =
+			CreateGarnished.registrate().fluid("red_mastic_resin",
+							createLocation("red_mastic_resin", false),
+							createLocation("red_mastic_resin", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/mastic_resin"))
+					.build()
+					.register();
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> ORANGE_MASTIC_RESIN =
+			CreateGarnished.registrate().fluid("orange_mastic_resin",
+							createLocation("orange_mastic_resin", false),
+							createLocation("orange_mastic_resin", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/mastic_resin"))
+					.build()
+					.register();
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> YELLOW_MASTIC_RESIN =
+			CreateGarnished.registrate().fluid("yellow_mastic_resin",
+							createLocation("yellow_mastic_resin", false),
+							createLocation("yellow_mastic_resin", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/mastic_resin"))
+					.build()
+					.register();
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> GREEN_MASTIC_RESIN =
+			CreateGarnished.registrate().fluid("green_mastic_resin",
+							createLocation("green_mastic_resin", false),
+							createLocation("green_mastic_resin", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/mastic_resin"))
+					.build()
+					.register();
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> BLUE_MASTIC_RESIN =
+			CreateGarnished.registrate().fluid("blue_mastic_resin",
+							createLocation("blue_mastic_resin", false),
+							createLocation("blue_mastic_resin", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/mastic_resin"))
+					.build()
+					.register();
+	public static final FluidEntry<ForgeFlowingFluid.Flowing> PURPLE_MASTIC_RESIN =
+			CreateGarnished.registrate().fluid("purple_mastic_resin",
+							createLocation("purple_mastic_resin", false),
+							createLocation("purple_mastic_resin", true))
+					.properties(b -> b.viscosity(1500)
+							.density(800))
+					.fluidProperties(p -> p.levelDecreasePerBlock(2)
+							.tickRate(25)
+							.slopeFindDistance(3)
+							.explosionResistance(100f))
+					.source(ForgeFlowingFluid.Source::new)
+					.bucket()
+					.tag(AllTags.forgeItemTag("buckets/mastic_resin"))
+					.build()
+					.register();
+
 
 	private static class NoColorFluidAttributes extends AllFluids.TintedFluidType {
 
@@ -125,98 +223,16 @@ public class GarnishedFluids {
 	public static void setRegister() {}
 
 	public static void registerFluidInteractions() {
-		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
-				GARNISH.get().getFluidType(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.CALCITE.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), PEANUT_OIL.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get());
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), APPLE_CIDER.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.OCHRUM.getBaseBlock().get());
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), GARNISH.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.CALCITE.getBaseBlock().get());
 
-		FluidInteractionRegistry.addInteraction(GARNISH.getType(), new FluidInteractionRegistry.InteractionInformation(
-				ForgeMod.LAVA_TYPE.get(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.CALCITE.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
-
-		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
-				APPLE_CIDER.get().getFluidType(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
-
-		FluidInteractionRegistry.addInteraction(APPLE_CIDER.getType(), new FluidInteractionRegistry.InteractionInformation(
-				ForgeMod.LAVA_TYPE.get(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
-
-		FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
-				PEANUT_OIL.get().getFluidType(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return Blocks.DRIPSTONE_BLOCK.defaultBlockState();
-					}
-				}
-		));
-
-		FluidInteractionRegistry.addInteraction(PEANUT_OIL.getType(), new FluidInteractionRegistry.InteractionInformation(
-				ForgeMod.LAVA_TYPE.get(),
-				fluidState -> {
-					if (fluidState.isSource()) {
-						return Blocks.OBSIDIAN.defaultBlockState();
-					} else {
-						return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock()
-								.get()
-								.defaultBlockState();
-					}
-				}
-		));
-	}
-
-	@Nullable
-	public static BlockState getLavaInteraction(FluidState fluidState) {
-		Fluid fluid = fluidState.getType();
-		if (fluid.isSame(GARNISH.get()))
-			return AllPaletteStoneTypes.CALCITE.getBaseBlock()
-					.get()
-					.defaultBlockState();
-		if (fluid.isSame(APPLE_CIDER.get()))
-			return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
-					.get()
-					.defaultBlockState();
-		if (fluid.isSame(PEANUT_OIL.get()))
-			return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock()
-					.get()
-					.defaultBlockState();
-		return null;
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), MASTIC_RESIN.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.TUFF.getBaseBlock().get());
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), RED_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.CRIMSITE.getBaseBlock().get());
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), ORANGE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, Blocks.TERRACOTTA);
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), YELLOW_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.CARNOTITE.get());
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), GREEN_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.VERIDIUM.getBaseBlock().get());
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), BLUE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.ASURINE.getBaseBlock().get());
+		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), PURPLE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.ABYSSAL_STONE.get());
 	}
 }
