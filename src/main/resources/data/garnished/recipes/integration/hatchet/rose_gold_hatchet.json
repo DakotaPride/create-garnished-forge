@@ -7,13 +7,13 @@
   ],
   "type": "minecraft:smithing_transform",
   "base": {
-    "item": "minecraft:iron_axe"
+    "item": "garnished:iron_hatchet"
   },
   "addition": {
     "item": "additionaladditions:rose_gold_alloy"
   },
   "result": {
-    "item": "additionaladditions:rose_gold_axe"
+    "item": "garnished:rose_gold_hatchet"
   },
   "template": {
     "item": "additionaladditions:rose_gold_upgrade"

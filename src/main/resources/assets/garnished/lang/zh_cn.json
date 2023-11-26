@@ -258,9 +258,9 @@
   "item.garnished.copper_hatchet": "Copper Hatchet", //
   "item.garnished.rose_quartz_hatchet": "Rose Quartz Hatchet", //
   "item.garnished.blazing_hatchet": "Blazing Hatchet", //
-  "item.garnished.experience_hatchet": "Experience Hatchet", //
+  "item.garnished.experience_hatchet": "§eExperience Hatchet", //
   "item.garnished.warden_hatchet": "Warden Hatchet", //
-  "item.garnished.rose_gold_hatchet": "Rose Gold Hatchet", //
+  "item.garnished.rose_gold_hatchet": "Gilded Gold Hatchet", //
   "item.garnished.gilded_netherite_hatchet": "Gilded Netherite Hatchet", //
   "text.garnished.integration.create_sa.missing": "Please install Create: Stuff & Additions!", //
   "text.garnished.integration.deeperdarker.missing": "Please install Deeper & Darker!", //

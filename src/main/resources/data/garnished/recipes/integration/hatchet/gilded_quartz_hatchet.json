@@ -5,8 +5,8 @@
       "modid": "create_sa"
     }
   ],
-  "type": "minecraft:crafting_shaped",
-  "group": "hatchet",
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": true,
   "pattern": [
     "AXI",
     "XZ ",
