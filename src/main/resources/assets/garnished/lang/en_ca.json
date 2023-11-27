@@ -264,6 +264,8 @@
   "text.garnished.integration.create_sa.missing": "Please install Create: Stuff & Additions!",
   "text.garnished.integration.deeperdarker.missing": "Please install Deeper & Darker!",
   "text.garnished.integration.additionaladditions.missing": "Please install Additional Additions!",
+  "enchantment.garnished.ravaging.desc": "Provides additional drops from certain mobs",
+  "enchantment.garnished.salvaging.desc": "Provides additional drops from certain mobs",
 
   "item.garnished.molten_remnant": "Molten Remnant",
   "item.garnished.molten_stew": "Molten Stew",
