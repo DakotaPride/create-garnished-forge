@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "c:buckets/mastic_resin"
+            "tag": "forge:buckets/mastic_resin"
           }
         ]
       }
