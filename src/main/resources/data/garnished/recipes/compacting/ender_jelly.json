@@ -2,10 +2,10 @@
   "type": "create:compacting",
   "ingredients": [
     {
-      "tag": "c:ender_dusts"
+      "tag": "forge:ender_dusts"
     },
     {
-      "tag": "c:ender_dusts"
+      "tag": "forge:ender_dusts"
     },
     {
       "item": "garnished:salt_compound"
