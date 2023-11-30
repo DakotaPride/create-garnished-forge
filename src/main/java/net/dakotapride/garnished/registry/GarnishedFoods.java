@@ -58,7 +58,7 @@ public class GarnishedFoods implements IGarnishedItem {
 	public static final FoodProperties WRAPPED_CRIMSON_TANGLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.3F)
 			.effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, getWrappedTangleEffectDuration, 1), 0.8F).build();
 	public static final FoodProperties WRAPPED_SEPIA_TANGLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.3F)
-			// .effect(new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE.get(), getWrappedTangleEffectDuration, 1), 0.8F)
+			.effect(() -> new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE.get(), getWrappedTangleEffectDuration, 1), 0.8F)
 			.build();
 	public static final FoodProperties CINDER_ROLL = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build();
 	public static final FoodProperties WEEPING_TANGLE = new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build();
@@ -72,7 +72,7 @@ public class GarnishedFoods implements IGarnishedItem {
 			.effect(new MobEffectInstance(MobEffects.INVISIBILITY, 2400), 1.0F)
 			.effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3000), 1.0F).build();
 	public static final FoodProperties SPIRITED_CONCOCTION = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F)
-			// .effect(new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE.get(), 900), 1.0F)
+			.effect(() -> new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE.get(), 900), 1.0F)
 			.build();
 	public static final FoodProperties SENILE_SWEET = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build();
 	public static final FoodProperties NUT_NACHO = new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).build();
@@ -100,11 +100,13 @@ public class GarnishedFoods implements IGarnishedItem {
 	public static final FoodProperties MASTIC_PASTE = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).fast().build();
 	public static final FoodProperties SLIME_DROP = new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).fast().build();
 	public static final FoodProperties MASTIC_COVERED_SLIME_DROP = new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).fast().build();
-	public static final FoodProperties VENERABLE_DELICACY = new FoodProperties.Builder().nutrition(8).saturationMod(0.4F).fast().build();
+	public static final FoodProperties VENERABLE_DELICACY = new FoodProperties.Builder().nutrition(8).saturationMod(0.4F).build();
 	public static final FoodProperties GALACTIC_CANE = new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build();
 	public static final FoodProperties MERRY_TREAT = new FoodProperties.Builder().nutrition(8).saturationMod(0.4F).build();
 	public static final FoodProperties ICY_MASTIC_CHUNK = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).fast().build();
 	public static final FoodProperties COAL_TRUFFLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.2F).fast().build();
+	public static final FoodProperties STURDY_WAFFLE = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F)
+			.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400), 1.0F).build();
 
 	// Farmer's Delight Foods
 	public static final FoodProperties PECAN_PIE_SLICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build();
