@@ -58,7 +58,7 @@ public class GarnishedFoods implements IGarnishedItem {
 	public static final FoodProperties WRAPPED_CRIMSON_TANGLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.3F)
 			.effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, getWrappedTangleEffectDuration, 1), 0.8F).build();
 	public static final FoodProperties WRAPPED_SEPIA_TANGLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.3F)
-			// .effect(new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE, getWrappedTangleEffectDuration, 1), 0.8F)
+			.effect(() -> new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE.get(), getWrappedTangleEffectDuration, 1), 0.8F)
 			.build();
 	public static final FoodProperties CINDER_ROLL = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build();
 	public static final FoodProperties WEEPING_TANGLE = new FoodProperties.Builder().nutrition(7).saturationMod(0.4F).build();
@@ -72,7 +72,7 @@ public class GarnishedFoods implements IGarnishedItem {
 			.effect(new MobEffectInstance(MobEffects.INVISIBILITY, 2400), 1.0F)
 			.effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3000), 1.0F).build();
 	public static final FoodProperties SPIRITED_CONCOCTION = new FoodProperties.Builder().nutrition(6).saturationMod(0.5F)
-			// .effect(new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE, 900), 1.0F)
+			.effect(() -> new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE.get(), 900), 1.0F)
 			.build();
 	public static final FoodProperties SENILE_SWEET = new FoodProperties.Builder().nutrition(4).saturationMod(0.3F).build();
 	public static final FoodProperties NUT_NACHO = new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).build();
