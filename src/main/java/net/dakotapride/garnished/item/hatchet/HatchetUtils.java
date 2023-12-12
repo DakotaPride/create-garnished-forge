@@ -189,12 +189,26 @@ public class HatchetUtils {
                 int additionalDropCount = singleCount + random.nextInt(3);
                 int ghastTearDropChance = random.nextInt(12);
                 int ghastTearDropCount = singleCount + random.nextInt(2);
+                int ghastTendrilDropChance = random.nextInt(8);
+                int ghastTendrilDropCount = singleCount + random.nextInt(2);
 
                 if (additionalDropChance == 1) {
                     entity.spawnAtLocation(new ItemStack(Items.GUNPOWDER, additionalDropCount));
                 } else if (ghastTearDropChance == 1) {
                     entity.spawnAtLocation(new ItemStack(Items.GHAST_TEAR, ghastTearDropCount));
                 }
+
+                if (ghastTendrilDropChance == 1) {
+                    entity.spawnAtLocation(new ItemStack(GarnishedItems.GHAST_TENDRIL.get(), ghastTendrilDropCount));
+                }
+            }
+
+            if (MobHelper.isWarden(entity)) {
+                mob = "Warden";
+
+                int rawTenebrousMeatDropCount = singleCount + random.nextInt(6);
+
+                entity.spawnAtLocation(new ItemStack(GarnishedItems.RAW_TENEBROUS_MEAT.get(), rawTenebrousMeatDropCount));
             }
         }
 
@@ -241,6 +255,10 @@ public class HatchetUtils {
 
     public static class MobHelper {
         public MobHelper() {}
+
+        public static boolean isWarden(Entity entity) {
+            return entity.getType() == EntityType.WARDEN;
+        }
 
         public static boolean isPhantom(Entity entity) {
             return entity.getType() == EntityType.PHANTOM;

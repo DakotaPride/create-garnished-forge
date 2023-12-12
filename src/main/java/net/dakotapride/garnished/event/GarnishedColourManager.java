@@ -31,7 +31,7 @@ public class GarnishedColourManager {
                 GarnishedBlocks.NUT_LEAVES.get(),
                 GarnishedBlocks.ALMOND_LEAVES.get(), GarnishedBlocks.CASHEW_LEAVES.get(), GarnishedBlocks.WALNUT_LEAVES.get(),
                 GarnishedBlocks.PECAN_LEAVES.get(), GarnishedBlocks.BUHG_LEAVES.get(), GarnishedBlocks.PISTACHIO_LEAVES.get(),
-                GarnishedBlocks.MACADAMIA_LEAVES.get(), GarnishedBlocks.HAZELNUT_LEAVES.get());
+                GarnishedBlocks.MACADAMIA_LEAVES.get(), GarnishedBlocks.HAZELNUT_LEAVES.get(), GarnishedBlocks.CHESTNUT_LEAVES.get());
     }
 
     public static synchronized void itemColourProvider(BlockColors colors, ItemColors itemColors) {
@@ -43,6 +43,6 @@ public class GarnishedColourManager {
         itemColors.register(itemBlockColourHandler, GarnishedBlocks.NUT_LEAVES.get(),
                 GarnishedBlocks.ALMOND_LEAVES.get(), GarnishedBlocks.CASHEW_LEAVES.get(), GarnishedBlocks.WALNUT_LEAVES.get(),
                 GarnishedBlocks.PECAN_LEAVES.get(), GarnishedBlocks.BUHG_LEAVES.get(), GarnishedBlocks.PISTACHIO_LEAVES.get(),
-                GarnishedBlocks.MACADAMIA_LEAVES.get(), GarnishedBlocks.HAZELNUT_LEAVES.get());
+                GarnishedBlocks.MACADAMIA_LEAVES.get(), GarnishedBlocks.HAZELNUT_LEAVES.get(), GarnishedBlocks.CHESTNUT_LEAVES.get());
     }
 }
