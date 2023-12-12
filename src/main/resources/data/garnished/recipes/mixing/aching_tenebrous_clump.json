@@ -19,7 +19,7 @@
     },
     {
       "amount": 1000,
-      "fluidTag": "forge:chocolate",
+      "fluid": "create:chocolate",
       "nbt": {}
     }
   ],
