@@ -108,7 +108,7 @@ public class GarnishedFoods implements IGarnishedItem {
 	public static final FoodProperties STURDY_WAFFLE = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F)
 			.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400), 1.0F).build();
 
-	// Gloomy Meat
+	// Gloomy Meats
 	public static final FoodProperties RAW_TENEBROUS_MEAT = new FoodProperties.Builder().nutrition(7).saturationMod(0.1F)
 			.effect(() -> new MobEffectInstance(MobEffects.DARKNESS, 200), 1.0F).build();
 	public static final FoodProperties COOKED_TENEBROUS_MEAT = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
@@ -118,7 +118,9 @@ public class GarnishedFoods implements IGarnishedItem {
 			.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300), 1.0F).build();
 	public static final FoodProperties ACHING_TENEBROUS_CLUMP = new FoodProperties.Builder().nutrition(10).saturationMod(0.4F).build();
 	public static final FoodProperties GHANDERCKEN = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F).build();
-	public static final FoodProperties FISHY_SURPRISE = new FoodProperties.Builder().nutrition(8).saturationMod(0.4F).build();
+	public static final FoodProperties FISHY_SURPRISE = new FoodProperties.Builder().nutrition(8).saturationMod(0.4F)
+			.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0F)
+			.effect(() -> new MobEffectInstance(MobEffects.POISON, 40), 0.15F).build();
 	public static final FoodProperties WHEAT_GRAZE = new FoodProperties.Builder().nutrition(4).saturationMod(0.2F).build();
 	public static final FoodProperties PORKCHOP_AND_GRAZE = new FoodProperties.Builder().nutrition(10).saturationMod(0.8F).build();
 	public static final FoodProperties CASHEW_SORBET_SCOOP = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).fast().build();
