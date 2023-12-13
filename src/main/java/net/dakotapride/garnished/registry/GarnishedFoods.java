@@ -39,7 +39,7 @@ public class GarnishedFoods implements IGarnishedItem {
 	// Misc
 	public static final FoodProperties GARNISHED_MEAL = new FoodProperties.Builder().nutrition(10).saturationMod(0.7F).build();
 	public static final FoodProperties SALAD = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build();
-	public static final FoodProperties PHANTOM_STEAK = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).build();
+	public static final FoodProperties PHANTOM_STEAK = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).meat().build();
 	public static final FoodProperties PEANUT_OIL = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build();
 	public static final FoodProperties CASHEW_FRUIT = new FoodProperties.Builder().nutrition(4).saturationMod(0.2F).fast().build();
 	public static final FoodProperties BITTER_ALMOND = new FoodProperties.Builder().nutrition(4).saturationMod(0.1F)
@@ -110,7 +110,7 @@ public class GarnishedFoods implements IGarnishedItem {
 
 	// Gloomy Meats
 	public static final FoodProperties RAW_TENEBROUS_MEAT = new FoodProperties.Builder().nutrition(7).saturationMod(0.1F)
-			.effect(() -> new MobEffectInstance(MobEffects.DARKNESS, 200), 1.0F).meat().build();
+			/* .effect(() -> new MobEffectInstance(MobEffects.DARKNESS, 200), 1.0F) */ .meat().build();
 	public static final FoodProperties COOKED_TENEBROUS_MEAT = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
 			.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200), 1.0F).meat().build();
 	public static final FoodProperties GLOOMY_GATHERING = new FoodProperties.Builder().nutrition(14).saturationMod(0.9F)
@@ -130,7 +130,7 @@ public class GarnishedFoods implements IGarnishedItem {
 	// Farmer's Delight Foods
 	public static final FoodProperties PECAN_PIE_SLICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build();
 	public static final FoodProperties PHANTOM_BURGER = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).build();
-	public static final FoodProperties PHANTOM_BEEF_PATTY = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build();
+	public static final FoodProperties PHANTOM_BEEF_PATTY = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).meat().build();
 	public static final FoodProperties GLOW_INK_ROLL = new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build();
 	public static final FoodProperties GLOW_INK_ROLL_SLICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).build();
 
