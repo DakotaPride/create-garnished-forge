@@ -129,7 +129,7 @@ public class GarnishedFoods implements IGarnishedItem {
 
 	// Farmer's Delight Foods
 	public static final FoodProperties PECAN_PIE_SLICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build();
-	public static final FoodProperties PHANTOM_BURGER = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).build();
+	public static final FoodProperties PHANTOM_BURGER = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).meat().build();
 	public static final FoodProperties PHANTOM_BEEF_PATTY = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).meat().build();
 	public static final FoodProperties GLOW_INK_ROLL = new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build();
 	public static final FoodProperties GLOW_INK_ROLL_SLICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).build();
