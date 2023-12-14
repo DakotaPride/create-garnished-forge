@@ -77,6 +77,7 @@ public class GarnishedFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MACADAMIA_TREE_CONFIGURED = configuredResource("macadamia_tree_configured");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PECAN_TREE_CONFIGURED = configuredResource("pecan_tree_configured");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PISTACHIO_TREE_CONFIGURED = configuredResource("pistachio_tree_configured");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CHESTNUT_TREE_CONFIGURED = configuredResource("chestnut_tree_configured");
 
     // public static final ResourceKey<ConfiguredFeature<?, ?>> SEPIA_FUNGUS_CONFIGURED = configuredResource("patch_sepia_fungus_configured");
     public static final RegistryObject<ConfiguredFeature<?, ?>> SEPIA_FUNGUS_CONFIGURED = CONFIGURED_FEATURES.register("patch_sepia_fungus_configured",
