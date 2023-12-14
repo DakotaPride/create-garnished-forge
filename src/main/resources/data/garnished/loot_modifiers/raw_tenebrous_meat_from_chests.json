@@ -1,0 +1,10 @@
+{
+  "type": "garnished:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/ancient_city"
+    }
+  ],
+  "item": "garnished:raw_tenebrous_meat"
+}
