@@ -110,7 +110,7 @@ public class GarnishedFoods implements IGarnishedItem {
 
 	// Gloomy Meats
 	public static final FoodProperties RAW_TENEBROUS_MEAT = new FoodProperties.Builder().nutrition(7).saturationMod(0.1F)
-			/* .effect(() -> new MobEffectInstance(MobEffects.DARKNESS, 200), 1.0F) */ .meat().build();
+			.effect(() -> new MobEffectInstance(MobEffects.DARKNESS, 200), 1.0F).meat().build();
 	public static final FoodProperties COOKED_TENEBROUS_MEAT = new FoodProperties.Builder().nutrition(12).saturationMod(0.9F)
 			.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200), 1.0F).meat().build();
 	public static final FoodProperties GLOOMY_GATHERING = new FoodProperties.Builder().nutrition(14).saturationMod(0.9F)
