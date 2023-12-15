@@ -3,6 +3,7 @@ package net.dakotapride.garnished;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.entity.NutBoatRenderer;
+import net.dakotapride.garnished.forge.LootModifiers;
 import net.dakotapride.garnished.registry.*;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -55,6 +56,7 @@ public class CreateGarnished
         GarnishedFoods.setRegister();
         GarnishedFeatures.setRegister();
         GarnishedTags.setRegister();
+        LootModifiers.register(bus);
 
         REGISTRATE.get().registerEventListeners(bus);
         // Register the setup method for modloading
