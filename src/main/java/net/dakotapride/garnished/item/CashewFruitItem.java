@@ -28,16 +28,16 @@ public class CashewFruitItem extends Item implements IGarnishedItem {
 
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-		if (!Screen.hasShiftDown()) {
-			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.GRAY));
-		}
-
-		if (Screen.hasShiftDown()) {
-			tooltip.add(Component.literal(""));
-			tooltip.add(Component.translatable("text.garnished.cashew_fruit.poisoning").withStyle(ChatFormatting.DARK_PURPLE));
-			tooltip.add(Component.literal(""));
-			tooltip.add(Component.translatable("text.garnished.cashew_fruit.poisoning.chance").withStyle(ChatFormatting.DARK_PURPLE));
-		}
+		// if (!Screen.hasShiftDown()) {
+		//			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.GRAY));
+		//		}
+		//
+		//		if (Screen.hasShiftDown()) {
+		//			tooltip.add(Component.literal(""));
+		//			tooltip.add(Component.translatable("text.garnished.cashew_fruit.poisoning").withStyle(ChatFormatting.DARK_PURPLE));
+		//			tooltip.add(Component.literal(""));
+		//			tooltip.add(Component.translatable("text.garnished.cashew_fruit.poisoning.chance").withStyle(ChatFormatting.DARK_PURPLE));
+		//		}
 	}
 
 	@Override

@@ -2,30 +2,38 @@
   "itemGroup.create.garnished": "Create: Приправлен",
   "text.garnished.nut.ungarnished": "Сырой",
   "text.garnished.nut.garnished": "Приготовленный",
-  "text.garnished.nut.cracked": "Расколот [УДЕРЖИВАЙТЕ SHIFT]",
-  "text.garnished.nut.cracked.desc": "Сломанные орехи используются для разведения!",
-  "text.garnished.nut.cracked.desc.secondary": "Поместите его на любую землю и",
-  "text.garnished.nut.cracked.desc.third": "вырастет уникальное дерево!",
-  "text.garnished.hold_shift": "[УДЕРЖИВАЙТЕ SHIFT]",
+  "text.garnished.nut.cracked": "Расколот",
+  "text.garnished.hold_shift": "Hold [§7Shift§8] for Summary",
+  "text.garnished.holding_shift": "Hold [§fShift§8] for Summary",
   "text.garnished.nut.cinder_flour": "Незераковая мука",
   "text.garnished.nut.cinder_flour.melted": "Незераковая глазурь",
-  "text.garnished.nut.cinder_flour.effect": "Эффект: [%d]",
-  "text.garnished.nut.cinder_flour.effect.multiple": "Эффект: [Несколько эффектов]",
-  "text.garnished.nut.cinder_flour.effect.hazelnut": "Эффект: [Мощная скорость]",
   "text.garnished.nut.sweetened": "Подсахаренный",
   "text.garnished.nut.honeyed": "В меду",
   "text.garnished.nut.chocolate_glazed": "В шоколаде",
-  "text.garnished.cider.cryptic": "Загадочный [УДЕРЖИВАЙТЕ SHIFT]",
-  "text.garnished.cider.bitter": "Горький [УДЕРЖИВАЙТЕ SHIFT]",
-  "text.garnished.cider.cryptic.desc": "Этот яблочный сидр наделяет выпившего",
-  "text.garnished.cider.cryptic.desc.secondary": "Силой или Замедлением",
-  "text.garnished.cider.cryptic.desc.third": "шанс 50/50, выпьете ли вы это?",
-  "text.garnished.cider.cryptic.desc.wither": "Снимает эффект Иссушения после употребления",
-  "text.garnished.peanut_oil.desc.poison": "Снимает эффект Отравления после употребления",
-  "text.garnished.cashew_fruit.poisoning": "Хотите ли вы съесть это?",
-  "text.garnished.cashew_fruit.poisoning.chance": "1/4 шанс отравиться если вы сделаете это",
-  "text.garnished.cider.bitter.desc.secondary": "Замедлением и Сопротивлением",
+  "text.garnished.cider.cryptic": "Загадочный",
+  "text.garnished.cider.bitter": "Горький",
   "text.garnished.salted_food": "Солёный",
+  // new tooltips
+  "text.garnished.nut.cinder_flour.effect_list": "Available Effects:",
+  "text.garnished.nut.cinder_flour.effect_list.strength": "  [Strength]",
+  "text.garnished.nut.cinder_flour.effect_list.strength.desc": "   - Increases user's damage",
+  "text.garnished.nut.cinder_flour.effect_list.slow_falling": "  [Slow Falling]",
+  "text.garnished.nut.cinder_flour.effect_list.slow_falling.desc": "   - Slows user's fall and prevents fall damage",
+  "text.garnished.nut.cinder_flour.effect_list.night_vision": "  [Night Vision]",
+  "text.garnished.nut.cinder_flour.effect_list.night_vision.desc": "   - Grants vision in dark areas",
+  "text.garnished.nut.cinder_flour.effect_list.haste": "  [Haste]",
+  "text.garnished.nut.cinder_flour.effect_list.haste.desc": "   - Increases user's mining speed",
+  "text.garnished.nut.cinder_flour.effect_list.speed": "  [Speed]",
+  "text.garnished.nut.cinder_flour.effect_list.speed.desc": "   - Increases user's movement speed",
+  "text.garnished.nut.cinder_flour.effect_list.potent_speed": "  [Potent Speed]",
+  "text.garnished.nut.cinder_flour.effect_list.potent_speed.desc": "   - Increases user's movement speed x2",
+  "text.garnished.nut.cinder_flour.effect_list.fire_resistance": "  [Fire Resistance]",
+  "text.garnished.nut.cinder_flour.effect_list.fire_resistance.desc": "   - Grants user immunity to fire damage",
+  "text.garnished.nut.cinder_flour.effect_list.resistance": "  [Resistance]",
+  "text.garnished.nut.cinder_flour.effect_list.resistance.desc": "   - Decreases damage taken",
+  "text.garnished.nut.cinder_flour.effect_list.buhg_effects": "  [Slowness, Invisibility]",
+  "text.garnished.nut.cinder_flour.effect_list.buhg_effects.desc.1": "   - Decreases user's movement speed",
+  "text.garnished.nut.cinder_flour.effect_list.buhg_effects.desc.2": "   - Makes user invisible",
 
   "item.garnished.pecan_pie_slice": "Кусок пеканового пирога",
   "item.garnished.phantom_beef_patty": "Фантомная котлета",
@@ -393,6 +401,31 @@
   "item.garnished.cashew_sorbet_delight": "Cashew Sorbet Delight", //
   "item.garnished.wheat_graze": "Wheat Graze", //
   "item.garnished.porkchop_and_graze": "Porkchop & Graze", //
+  "item.garnished.murky_jelly": "Murky Jelly", //
+  "item.garnished.nutty_melody": "Nutty Melody", //
+  "item.garnished.incomplete_nutty_melody": "Incomplete Nutty Melody", //
+  "item.garnished.murky_macadamia_malice": "Murky Macadamia Malice", //
+  "item.garnished.cackling_pie": "Cackling Pie", //
+  "item.garnished.yam_o_glow_puffs": "Yam-O-Glow Puffs", //
+  "item.garnished.shining_dish": "Shining Dish", //
+  "item.garnished.muesli": "Muesli", //
+  "item.garnished.incomplete_muesli": "Incomplete Muesli", //
+
+  "item.garnished.lustrous_pearl": "Lustrous Pearl", //
+  "item.garnished.vast_brew": "Vast Brew", //
+  "item.garnished.vermilion_stew": "Vermilion Stew", //
+  "item.garnished.galvanic_haunting": "Galvanic Haunting", //
+  "item.garnished.coral_wrapping": "Coral Wrapping", //
+  "item.garnished.bewildered_pastry": "Bewildered Pastry", //
+  "item.garnished.dusty_regale": "Dusty Regale", //
+  "item.garnished.incendiary_stew": "Incendiary Stew", //
+  "block.garnished.vermilion_kelp": "Vermilion Kelp", //
+  "item.garnished.dried_vermilion_kelp": "Dried Vermilion Kelp", //
+  "block.garnished.dried_vermilion_kelp_block": "Dried Vermilion Kelp Block", //
+  "block.garnished.dulse_kelp": "Dulse Kelp", //
+  "item.garnished.dried_dulse_kelp": "Dried Dulse Kelp", //
+  "block.garnished.dried_dulse_kelp_block": "Dried Dulse Kelp Block", //
+  "block.garnished.voltaic_seagrass": "Voltaic Seagrass", //
 
   "block.garnished.peanut_sack": "Мешочек орехов",
   "block.garnished.cashew_sack": "Мешочек орехов",

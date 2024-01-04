@@ -5,6 +5,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -31,17 +32,19 @@ public class CrypticAppleCiderFoodItem extends Item implements IGarnishedItem {
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 		if (!Screen.hasShiftDown()) {
-			tooltip.add(Component.translatable(crypticAppleCiderText()).withStyle(getStandardColouring()));
+			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.DARK_GRAY));
+		} else {
+			tooltip.add(Component.translatable("text.garnished.holding_shift").withStyle(ChatFormatting.DARK_GRAY));
 		}
 
 		if (Screen.hasShiftDown()) {
 			tooltip.add(Component.literal(""));
-			tooltip.add(Component.translatable("text.garnished.cider.cryptic.desc.wither").withStyle(ChatFormatting.DARK_PURPLE));
+			tooltip.add(Component.translatable("text.garnished.effect.clears_wither").withStyle(Style.EMPTY.withColor(0xc7954b)));
 			tooltip.add(Component.literal(""));
-			tooltip.add(Component.translatable("text.garnished.cider.cryptic.desc").withStyle(ChatFormatting.DARK_PURPLE));
-			tooltip.add(Component.translatable("text.garnished.cider.cryptic.desc.secondary").withStyle(ChatFormatting.DARK_PURPLE));
-			tooltip.add(Component.literal(""));
-			tooltip.add(Component.translatable("text.garnished.cider.cryptic.desc.third").withStyle(ChatFormatting.DARK_PURPLE));
+			tooltip.add(Component.translatable("text.garnished.apple_cider.cryptic.desc.1").withStyle(Style.EMPTY.withColor(0xc7954b)));
+			tooltip.add(Component.translatable("text.garnished.apple_cider.cryptic.desc.2").withStyle(Style.EMPTY.withColor(0xc7954b)));
+			tooltip.add(Component.translatable("text.garnished.apple_cider.cryptic.desc.3").withStyle(Style.EMPTY.withColor(0xc7954b)));
+			tooltip.add(Component.translatable("text.garnished.apple_cider.cryptic.desc.4").withStyle(Style.EMPTY.withColor(0xc7954b)));
 		}
 	}
 

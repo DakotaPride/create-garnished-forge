@@ -14,13 +14,9 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -38,8 +34,7 @@ import org.slf4j.LoggerFactory;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("garnished")
-public class CreateGarnished
-{
+public class CreateGarnished {
     // Directly reference a slf4j logger
 
     public static final String ID = "garnished";
@@ -47,6 +42,10 @@ public class CreateGarnished
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
     public static final NonNullSupplier<CreateRegistrate> REGISTRATE =
             NonNullSupplier.lazy(() -> CreateRegistrate.create(ID));
+
+    public static ResourceLocation asResource(String path) {
+        return new ResourceLocation(ID, path);
+    }
 
     public CreateGarnished() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -61,7 +60,7 @@ public class CreateGarnished
         GarnishedTabs.setRegister(eventBus);
         GarnishedFluids.setRegister();
         GarnishedFoods.setRegister();
-        GarnishedFeatures.setRegister();
+        GarnishedFeatures.setRegister(eventBus);
         GarnishedTags.setRegister();
         LootModifiers.register(eventBus);
 
@@ -116,6 +115,9 @@ public class CreateGarnished
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            GarnishedPonderIndex.index();
+            GarnishedPonderIndex.Tags.fillPonderTags();
+
             EntityRenderers.register(GarnishedEntities.NUT_BOAT.get(), pContext -> new NutBoatRenderer(pContext, false));
             EntityRenderers.register(GarnishedEntities.NUT_CHEST_BOAT.get(), pContext -> new NutBoatRenderer(pContext, true));
 
@@ -160,6 +162,12 @@ public class CreateGarnished
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.GREEN_MASTIC_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BLUE_MASTIC_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PURPLE_MASTIC_BLOCK.get(), RenderType.translucent());
+
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VERMILION_KELP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VERMILION_KELP_PLANT.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.DULSE_KELP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.DULSE_KELP_PLANT.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VOLTAIC_SEA_GRASS.get(), RenderType.cutout());
         }
 
         @SubscribeEvent

@@ -233,10 +233,31 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.GHANDERCKEN);
 			output.accept(GarnishedItems.WHEAT_GRAZE);
 			output.accept(GarnishedItems.PORKCHOP_AND_GRAZE);
+			output.accept(GarnishedItems.MURKY_JELLY);
+			output.accept(GarnishedItems.CACKLING_PIE);
+			output.accept(GarnishedItems.YAM_O_GLOW_PUFFS);
+			output.accept(GarnishedItems.SHINING_DISH);
+			output.accept(GarnishedItems.MURKY_MACADAMIA_MALICE);
+			output.accept(GarnishedItems.NUTTY_MELODY);
+			output.accept(GarnishedItems.MUESLI);
+			output.accept(GarnishedItems.DUSTY_REGALE);
+			output.accept(GarnishedItems.INCENDIARY_STEW);
+
+			output.accept(GarnishedItems.DRIED_VERMILION_KELP);
+			output.accept(GarnishedItems.DRIED_DULSE_KELP);
+			output.accept(GarnishedItems.BEWILDERED_PASTRY);
+			output.accept(GarnishedItems.VERMILION_STEW);
+			output.accept(GarnishedItems.VAST_BREW);
+			output.accept(GarnishedItems.GALVANIC_HAUNTING);
 
 			output.accept(GarnishedItems.GHAST_TENDRIL);
 
 			output.accept(GarnishedItems.VOLATILE_DUST);
+
+			output.accept(GarnishedBlocks.VERMILION_KELP);
+			output.accept(GarnishedBlocks.DULSE_KELP);
+			output.accept(GarnishedItems.CORAL_WRAPPING);
+			output.accept(GarnishedItems.LUSTROUS_PEARL);
 
 			output.accept(GarnishedBlocks.SEPIA_FUNGUS.asStack());
 			output.accept(GarnishedBlocks.SOUL_ROOTS.asStack());
@@ -332,6 +353,10 @@ public class GarnishedTabs {
 			output.accept(GarnishedBlocks.POLISHED_UNSTABLE_STONE_STAIRS.asStack());
 			output.accept(GarnishedBlocks.POLISHED_UNSTABLE_STONE_WALL.asStack());
 			output.accept(GarnishedBlocks.CHISELED_UNSTABLE_STONE_BRICKS.asStack());
+
+			output.accept(GarnishedBlocks.DRIED_VERMILION_KELP_BLOCK.asStack());
+			output.accept(GarnishedBlocks.DRIED_DULSE_KELP_BLOCK.asStack());
+			output.accept(GarnishedBlocks.VOLTAIC_SEA_GRASS.asStack());
 
 			output.accept(GarnishedFluids.GARNISH.getBucket().get().getDefaultInstance());
 			output.accept(GarnishedFluids.APPLE_CIDER.getBucket().get().getDefaultInstance());
