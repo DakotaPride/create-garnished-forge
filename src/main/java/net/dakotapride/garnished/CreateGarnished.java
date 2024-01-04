@@ -42,6 +42,10 @@ public class CreateGarnished
     public static final NonNullSupplier<CreateRegistrate> REGISTRATE =
             NonNullSupplier.lazy(() -> CreateRegistrate.create(ID));
 
+    public static ResourceLocation asResource(String path) {
+        return new ResourceLocation(ID, path);
+    }
+
     public CreateGarnished() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -54,7 +58,7 @@ public class CreateGarnished
         GarnishedTabs.setRegister();
         GarnishedFluids.setRegister();
         GarnishedFoods.setRegister();
-        GarnishedFeatures.setRegister();
+        GarnishedFeatures.setRegister(bus);
         GarnishedTags.setRegister();
         LootModifiers.register(bus);
 
@@ -108,6 +112,9 @@ public class CreateGarnished
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            GarnishedPonderIndex.index();
+            GarnishedPonderIndex.Tags.fillPonderTags();
+
             EntityRenderers.register(GarnishedEntities.NUT_BOAT.get(), pContext -> new NutBoatRenderer(pContext, false));
             EntityRenderers.register(GarnishedEntities.NUT_CHEST_BOAT.get(), pContext -> new NutBoatRenderer(pContext, true));
 
@@ -141,6 +148,12 @@ public class CreateGarnished
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BLOCK_OF_ENDER_JELLY.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BARREN_ROOTS.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SMALL_CHORUS_PLANT.get(), RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VERMILION_KELP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VERMILION_KELP_PLANT.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.DULSE_KELP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.DULSE_KELP_PLANT.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VOLTAIC_SEA_GRASS.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_DOOR.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_TRAPDOOR.get(), RenderType.cutout());

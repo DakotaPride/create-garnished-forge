@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.item.hatchet;
 
+import net.dakotapride.garnished.registry.GarnishedBlocks;
 import net.dakotapride.garnished.registry.GarnishedEnchantments;
 import net.dakotapride.garnished.registry.GarnishedItems;
 import net.dakotapride.garnished.registry.GarnishedTags;
@@ -127,6 +128,18 @@ public class HatchetUtils {
                     int moltenRemnantCount = singleCount + random.nextInt(1);
 
                     entity.spawnAtLocation(new ItemStack(GarnishedItems.MOLTEN_REMNANT.get(), moltenRemnantCount));
+                }
+            }
+
+            if (MobHelper.isTurtle(entity)) {
+                mob = "Turtle";
+
+                int voltaicSeaGrassDropChance = random.nextInt(12);
+
+                if (voltaicSeaGrassDropChance == 1) {
+                    int volaticSeaGrassDropCount = singleCount + random.nextInt(2);
+
+                    entity.spawnAtLocation(new ItemStack(GarnishedBlocks.VOLTAIC_SEA_GRASS.get(), volaticSeaGrassDropCount));
                 }
             }
         }
@@ -350,6 +363,10 @@ public class HatchetUtils {
 
         public static boolean isFrog(Entity entity) {
             return entity.getType() == EntityType.FROG;
+        }
+
+        public static boolean isTurtle(Entity entity) {
+            return entity.getType() == EntityType.TURTLE;
         }
 
         public static boolean isTadpole(Entity entity) {

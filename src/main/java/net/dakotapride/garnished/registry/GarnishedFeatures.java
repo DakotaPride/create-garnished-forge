@@ -1,6 +1,9 @@
 package net.dakotapride.garnished.registry;
 
 import net.dakotapride.garnished.CreateGarnished;
+import net.dakotapride.garnished.gen.feature.DulseKelpFeature;
+import net.dakotapride.garnished.gen.feature.VermilionKelpFeature;
+import net.dakotapride.garnished.gen.feature.VoltaicSeagrassFeature;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -17,10 +20,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
@@ -35,11 +35,13 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 
 public class GarnishedFeatures {
+    private static final DeferredRegister<Feature<?>> REGISTER = DeferredRegister.create(ForgeRegistries.FEATURES, CreateGarnished.ID);
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> NUT_TREE_CONFIGURED = registerConfiguredKey("nut_tree_configured");
     public static final ResourceKey<PlacedFeature> NUT_TREE_PLACED = registerPlacedKey("nut_tree_placed");
@@ -67,6 +69,13 @@ public class GarnishedFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_STONE_VEGETATION_BONEMEAL_CONFIGURED = registerConfiguredKey("end_stone_vegetation_bonemeal");
 
+    public static final RegistryObject<VermilionKelpFeature> VERMILION_KELP_FEATURE = REGISTER.register("vermilion_kelp", () -> new VermilionKelpFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<DulseKelpFeature> DULSE_KELP_FEATURE = REGISTER.register("dulse_kelp", () -> new DulseKelpFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<VoltaicSeagrassFeature> VOLTAIC_SEAGRASS_FEATURE = REGISTER.register("voltaic_seagrass", () -> new VoltaicSeagrassFeature(ProbabilityFeatureConfiguration.CODEC));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VERMILION_KELP = registerConfiguredKey("vermilion_kelp_configured");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DULSE_KELP = registerConfiguredKey("dulse_kelp_configured");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VOLTAIC_SEAGRASS = registerConfiguredKey("voltaic_seagrass_configured");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerConfiguredKey(String name) {
         return ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, new ResourceLocation(CreateGarnished.ID, name));
@@ -76,5 +85,7 @@ public class GarnishedFeatures {
         return ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, new ResourceLocation(CreateGarnished.ID, name));
     }
 
-    public static void setRegister() {}
+    public static void setRegister(IEventBus bus) {
+        REGISTER.register(bus);
+    }
 }

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:cold_ocean",
+  "features": "garnished:vermilion_kelp_placed",
+  "step": "vegetal_decoration"
+}
