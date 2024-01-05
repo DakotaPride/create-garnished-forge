@@ -5,6 +5,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
@@ -33,12 +34,14 @@ public class AppleCiderFoodItem extends Item {
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level pLevel, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 		if (!Screen.hasShiftDown()) {
-			tooltip.add(new TranslatableComponent("text.garnished.hold_shift").withStyle(ChatFormatting.GRAY));
+			tooltip.add(new TranslatableComponent("text.garnished.hold_shift").withStyle(ChatFormatting.DARK_GRAY));
+		} else {
+			tooltip.add(new TranslatableComponent("text.garnished.holding_shift").withStyle(ChatFormatting.DARK_GRAY));
 		}
 
 		if (Screen.hasShiftDown()) {
 			tooltip.add(new TextComponent(""));
-			tooltip.add(new TranslatableComponent("text.garnished.cider.cryptic.desc.wither").withStyle(ChatFormatting.DARK_PURPLE));
+			tooltip.add(new TranslatableComponent("text.garnished.effect.clears_wither").withStyle(Style.EMPTY.withColor(0xc7954b)));
 		}
 	}
 

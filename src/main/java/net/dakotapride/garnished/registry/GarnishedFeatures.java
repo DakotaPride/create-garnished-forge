@@ -1,11 +1,15 @@
 package net.dakotapride.garnished.registry;
 
 import net.dakotapride.garnished.CreateGarnished;
+import net.dakotapride.garnished.gen.feature.DulseKelpFeature;
+import net.dakotapride.garnished.gen.feature.VermilionKelpFeature;
+import net.dakotapride.garnished.gen.feature.VoltaicSeagrassFeature;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -16,19 +20,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
-import net.minecraft.world.level.levelgen.placement.BiomeFilter;
-import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.RarityFilter;
+import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -38,6 +36,8 @@ import net.minecraftforge.server.ServerLifecycleHooks;
 import java.util.List;
 
 public class GarnishedFeatures {
+    private static final DeferredRegister<Feature<?>> REGISTER = DeferredRegister.create(ForgeRegistries.FEATURES, CreateGarnished.ID);
+
 
     // public static final ResourceKey<ConfiguredFeature<?, ?>> NUT_TREE_CONFIGURED = configuredResource("nut_tree_configured");
     // public static final ResourceKey<PlacedFeature> NUT_TREE_PLACED = placedResource("nut_tree_placed");
@@ -118,6 +118,28 @@ public class GarnishedFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_STONE_VEGETATION_BONEMEAL_CONFIGURED = configuredResource("end_stone_vegetation_bonemeal");
 
+    public static final RegistryObject<VermilionKelpFeature> VERMILION_KELP_FEATURE = REGISTER.register("vermilion_kelp", () -> new VermilionKelpFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<DulseKelpFeature> DULSE_KELP_FEATURE = REGISTER.register("dulse_kelp", () -> new DulseKelpFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<VoltaicSeagrassFeature> VOLTAIC_SEAGRASS_FEATURE = REGISTER.register("voltaic_seagrass", () -> new VoltaicSeagrassFeature(ProbabilityFeatureConfiguration.CODEC));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> VERMILION_KELP_CONFIGURED = CONFIGURED_FEATURES.register("vermilion_kelp_configured",
+            () -> new ConfiguredFeature<>(VERMILION_KELP_FEATURE.get(), FeatureConfiguration.NONE));
+    public static final RegistryObject<PlacedFeature> VERMILION_KELP_PLACED = PLACED_FEATURES.register("vermilion_kelp_placed",
+            () -> new PlacedFeature(VERMILION_KELP_CONFIGURED.getHolder().get(),
+                    List.of(NoiseBasedCountPlacement.of(120, 80.0D, 0.0D),
+                            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome())));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> DULSE_KELP_CONFIGURED = CONFIGURED_FEATURES.register("dulse_kelp_configured",
+            () -> new ConfiguredFeature<>(DULSE_KELP_FEATURE.get(), FeatureConfiguration.NONE));
+    public static final RegistryObject<PlacedFeature> DULSE_KELP_PLACED = PLACED_FEATURES.register("dulse_kelp_placed",
+            () -> new PlacedFeature(DULSE_KELP_CONFIGURED.getHolder().get(),
+                    List.of(NoiseBasedCountPlacement.of(120, 80.0D, 0.0D),
+                            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome())));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> VOLTAIC_SEA_GRASS_CONFIGURED = CONFIGURED_FEATURES.register("voltaic_sea_grass_configured",
+            () -> new ConfiguredFeature<>(GarnishedFeatures.VOLTAIC_SEAGRASS_FEATURE.get(), new ProbabilityFeatureConfiguration(0.3F)));
+    public static final RegistryObject<PlacedFeature> VOLTAIC_SEA_GRASS_PLACED = PLACED_FEATURES.register("voltaic_sea_grass_placed",
+            () -> new PlacedFeature(VOLTAIC_SEA_GRASS_CONFIGURED.getHolder().get(), AquaticPlacements.seagrassPlacement(80)));
 
     public static ResourceKey<ConfiguredFeature<?, ?>> configuredResource(String name) {
         return ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, new ResourceLocation(CreateGarnished.ID, name));
@@ -130,5 +152,6 @@ public class GarnishedFeatures {
     public static void setRegister(IEventBus bus) {
         CONFIGURED_FEATURES.register(bus);
         PLACED_FEATURES.register(bus);
+        REGISTER.register(bus);
     }
 }

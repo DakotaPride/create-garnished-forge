@@ -65,6 +65,15 @@ public class GarnishedEvents {
                 builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GarnishedFeatures.BARREN_ROOTS_PLACED.getHolder().orElseThrow());
                 builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GarnishedFeatures.CHORUS_PLANT_PLACED.getHolder().orElseThrow());
             }
+
+            if (name.equals(Biomes.COLD_OCEAN.location())) {
+                builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GarnishedFeatures.VERMILION_KELP_PLACED.getHolder().orElseThrow());
+                builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GarnishedFeatures.VOLTAIC_SEA_GRASS_PLACED.getHolder().orElseThrow());
+            }
+
+            if (name.equals(Biomes.FROZEN_OCEAN.location())) {
+                builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GarnishedFeatures.DULSE_KELP_PLACED.getHolder().orElseThrow());
+            }
         }
     }
 }
