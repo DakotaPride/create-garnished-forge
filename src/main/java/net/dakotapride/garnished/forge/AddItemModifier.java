@@ -4,6 +4,7 @@ import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.dakotapride.garnished.registry.GarnishedItems;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -29,8 +30,10 @@ public class AddItemModifier extends LootModifier {
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        if(context.getRandom().nextFloat() >= 0.5f) {
+        if(item.getDefaultInstance().is(GarnishedItems.RAW_TENEBROUS_MEAT.get()) && context.getRandom().nextFloat() >= 0.5f) {
             generatedLoot.add(new ItemStack(item, (1 + (RandomSource.create()).nextInt(3))));
+        } else {
+            generatedLoot.add(new ItemStack(item, 1));
         }
 
         return generatedLoot;
