@@ -1,6 +1,7 @@
 package net.dakotapride.garnished.forge;
 
 import com.google.gson.JsonObject;
+import net.dakotapride.garnished.registry.GarnishedItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.Item;
@@ -13,6 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Random;
 
 public class AddItemModifier extends LootModifier {
     private final Item addition;
@@ -25,7 +27,12 @@ public class AddItemModifier extends LootModifier {
     @Nonnull
     @Override
     protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
-        generatedLoot.add(new ItemStack(addition, 1));
+        if(addition.getDefaultInstance().is(GarnishedItems.RAW_TENEBROUS_MEAT.get()) && context.getRandom().nextFloat() >= 0.5f) {
+            generatedLoot.add(new ItemStack(addition, (1 + new Random().nextInt(3))));
+        } else {
+            generatedLoot.add(new ItemStack(addition, 1));
+        }
+
         return generatedLoot;
     }
 

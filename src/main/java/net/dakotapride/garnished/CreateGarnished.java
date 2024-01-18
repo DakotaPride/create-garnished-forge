@@ -107,8 +107,8 @@ public class CreateGarnished {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            GarnishedPonderIndex.index();
-            GarnishedPonderIndex.Tags.fillPonderTags();
+            // GarnishedPonderIndex.index();
+            // GarnishedPonderIndex.Tags.fillPonderTags();
 
             EntityRenderers.register(GarnishedEntities.NUT_BOAT.get(), NutBoatRenderer::new);
 
