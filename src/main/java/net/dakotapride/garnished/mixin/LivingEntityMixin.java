@@ -81,4 +81,15 @@ public abstract class LivingEntityMixin extends Entity {
 		}
 	}
 
+	@Inject(method = "getDamageAfterMagicAbsorb", at = @At("HEAD"))
+	private void applyThornsDamage$getDamageAfterMagicAbsorb(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
+
+		if (source.getDirectEntity() instanceof LivingEntity attacker) {
+			if (entity.hasEffect(GarnishedEffects.THORNS.get())) {
+				attacker.hurt(entity.damageSources().thorns(entity), 6.0F);
+			}
+		}
+
+	}
+
 }

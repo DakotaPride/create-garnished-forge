@@ -1,6 +1,7 @@
 {
   "replace": false,
   "entries": [
-    "garnished:raw_tenebrous_meat_from_chests"
+    "garnished:raw_tenebrous_meat_from_chests",
+    "garnished:lustrous_pearl_from_chests"
   ]
 }

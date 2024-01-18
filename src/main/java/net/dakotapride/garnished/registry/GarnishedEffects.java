@@ -43,6 +43,8 @@ public class GarnishedEffects {
 			.addAttributeModifier(Attributes.ARMOR, "3a7cbac5-6234-49c8-93d0-fdacad4af501",
 					4.0, AttributeModifier.Operation.ADDITION));
 
+	public static RegistryObject<MobEffect> THORNS = EFFECTS.register("thorns", ThornsMobEffect::new);
+
 	public static final RegistryObject<Potion> AVERSION_POTION = POTIONS.register("aversion",
 			() -> new Potion(new MobEffectInstance(AVERSION.get(), 2400)));
 	public static RegistryObject<Potion> LONG_AVERSION_POTION = POTIONS.register("long_aversion",

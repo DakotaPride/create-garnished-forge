@@ -781,5 +781,85 @@ public class GarnishedBlocks {
 					.simpleItem()
 					.initialProperties(() -> Blocks.SEAGRASS).register();
 
+	// v1.6
+	public static final BlockEntry<Block> RITUALISTIC_STONE =
+			REGISTRATE.block("ritualistic_stone", Block::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<SlabBlock> RITUALISTIC_STONE_SLAB =
+			REGISTRATE.block("ritualistic_stone_slab", SlabBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<RitualisticStoneStairsBlock> RITUALISTIC_STONE_STAIRS =
+			REGISTRATE.block("ritualistic_stone_stairs", RitualisticStoneStairsBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<WallBlock> RITUALISTIC_STONE_WALL =
+			REGISTRATE.block("ritualistic_stone_wall", WallBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<Block> POLISHED_RITUALISTIC_STONE =
+			REGISTRATE.block("polished_ritualistic_stone", Block::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<SlabBlock> POLISHED_RITUALISTIC_STONE_SLAB =
+			REGISTRATE.block("polished_ritualistic_stone_slab", SlabBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<RitualisticStoneStairsBlock> POLISHED_RITUALISTIC_STONE_STAIRS =
+			REGISTRATE.block("polished_ritualistic_stone_stairs", RitualisticStoneStairsBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<WallBlock> POLISHED_RITUALISTIC_STONE_WALL =
+			REGISTRATE.block("polished_ritualistic_stone_wall", WallBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<Block> RITUALISTIC_STONE_BRICKS =
+			REGISTRATE.block("ritualistic_stone_bricks", Block::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<SlabBlock> RITUALISTIC_STONE_BRICKS_SLAB =
+			REGISTRATE.block("ritualistic_stone_bricks_slab", SlabBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<RitualisticStoneStairsBlock> RITUALISTIC_STONE_BRICKS_STAIRS =
+			REGISTRATE.block("ritualistic_stone_bricks_stairs", RitualisticStoneStairsBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<WallBlock> RITUALISTIC_STONE_BRICKS_WALL =
+			REGISTRATE.block("ritualistic_stone_bricks_wall", WallBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<Block> CHISELED_RITUALISTIC_STONE_BRICKS =
+			REGISTRATE.block("chiseled_ritualistic_stone_bricks", Block::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+
 	public static void setRegister() {}
 }
