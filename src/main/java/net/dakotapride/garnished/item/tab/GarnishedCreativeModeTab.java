@@ -309,6 +309,10 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedBlocks.POLISHED_ABYSSAL_STONE_SLAB.asStack());
         items.add(GarnishedBlocks.POLISHED_ABYSSAL_STONE_STAIRS.asStack());
         items.add(GarnishedBlocks.POLISHED_ABYSSAL_STONE_WALL.asStack());
+        items.add(GarnishedBlocks.SMOOTH_ABYSSAL_STONE.asStack());
+        items.add(GarnishedBlocks.SMOOTH_ABYSSAL_STONE_SLAB.asStack());
+        items.add(GarnishedBlocks.SMOOTH_ABYSSAL_STONE_STAIRS.asStack());
+        items.add(GarnishedBlocks.SMOOTH_ABYSSAL_STONE_WALL.asStack());
         items.add(GarnishedBlocks.CHISELED_ABYSSAL_STONE_BRICKS.asStack());
 
         items.add(GarnishedBlocks.CARNOTITE.asStack());
@@ -323,6 +327,10 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedBlocks.POLISHED_CARNOTITE_SLAB.asStack());
         items.add(GarnishedBlocks.POLISHED_CARNOTITE_STAIRS.asStack());
         items.add(GarnishedBlocks.POLISHED_CARNOTITE_WALL.asStack());
+        items.add(GarnishedBlocks.SMOOTH_CARNOTITE.asStack());
+        items.add(GarnishedBlocks.SMOOTH_CARNOTITE_SLAB.asStack());
+        items.add(GarnishedBlocks.SMOOTH_CARNOTITE_STAIRS.asStack());
+        items.add(GarnishedBlocks.SMOOTH_CARNOTITE_WALL.asStack());
         items.add(GarnishedBlocks.CHISELED_CARNOTITE_BRICKS.asStack());
 
         items.add(GarnishedBlocks.UNSTABLE_STONE.asStack());
@@ -337,6 +345,10 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedBlocks.POLISHED_UNSTABLE_STONE_SLAB.asStack());
         items.add(GarnishedBlocks.POLISHED_UNSTABLE_STONE_STAIRS.asStack());
         items.add(GarnishedBlocks.POLISHED_UNSTABLE_STONE_WALL.asStack());
+        items.add(GarnishedBlocks.SMOOTH_UNSTABLE_STONE.asStack());
+        items.add(GarnishedBlocks.SMOOTH_UNSTABLE_STONE_SLAB.asStack());
+        items.add(GarnishedBlocks.SMOOTH_UNSTABLE_STONE_STAIRS.asStack());
+        items.add(GarnishedBlocks.SMOOTH_UNSTABLE_STONE_WALL.asStack());
         items.add(GarnishedBlocks.CHISELED_UNSTABLE_STONE_BRICKS.asStack());
 
         items.add(GarnishedFluids.GARNISH.getBucket().get().getDefaultInstance());
