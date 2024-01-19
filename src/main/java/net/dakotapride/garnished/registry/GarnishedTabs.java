@@ -324,6 +324,10 @@ public class GarnishedTabs {
 			output.accept(GarnishedBlocks.POLISHED_ABYSSAL_STONE_SLAB.asStack());
 			output.accept(GarnishedBlocks.POLISHED_ABYSSAL_STONE_STAIRS.asStack());
 			output.accept(GarnishedBlocks.POLISHED_ABYSSAL_STONE_WALL.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_ABYSSAL_STONE.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_ABYSSAL_STONE_SLAB.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_ABYSSAL_STONE_STAIRS.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_ABYSSAL_STONE_WALL.asStack());
 			output.accept(GarnishedBlocks.CHISELED_ABYSSAL_STONE_BRICKS.asStack());
 
 			output.accept(GarnishedBlocks.CARNOTITE.asStack());
@@ -338,6 +342,10 @@ public class GarnishedTabs {
 			output.accept(GarnishedBlocks.POLISHED_CARNOTITE_SLAB.asStack());
 			output.accept(GarnishedBlocks.POLISHED_CARNOTITE_STAIRS.asStack());
 			output.accept(GarnishedBlocks.POLISHED_CARNOTITE_WALL.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_CARNOTITE.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_CARNOTITE_SLAB.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_CARNOTITE_STAIRS.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_CARNOTITE_WALL.asStack());
 			output.accept(GarnishedBlocks.CHISELED_CARNOTITE_BRICKS.asStack());
 
 			output.accept(GarnishedBlocks.UNSTABLE_STONE.asStack());
@@ -352,6 +360,10 @@ public class GarnishedTabs {
 			output.accept(GarnishedBlocks.POLISHED_UNSTABLE_STONE_SLAB.asStack());
 			output.accept(GarnishedBlocks.POLISHED_UNSTABLE_STONE_STAIRS.asStack());
 			output.accept(GarnishedBlocks.POLISHED_UNSTABLE_STONE_WALL.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_UNSTABLE_STONE.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_UNSTABLE_STONE_SLAB.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_UNSTABLE_STONE_STAIRS.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_UNSTABLE_STONE_WALL.asStack());
 			output.accept(GarnishedBlocks.CHISELED_UNSTABLE_STONE_BRICKS.asStack());
 
 			output.accept(GarnishedBlocks.DRIED_VERMILION_KELP_BLOCK.asStack());
