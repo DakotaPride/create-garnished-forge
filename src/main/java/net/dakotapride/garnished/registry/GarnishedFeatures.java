@@ -13,10 +13,12 @@ import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
@@ -27,6 +29,8 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.*;
+import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -141,6 +145,13 @@ public class GarnishedFeatures {
     public static final RegistryObject<PlacedFeature> VOLTAIC_SEA_GRASS_PLACED = PLACED_FEATURES.register("voltaic_sea_grass_placed",
             () -> new PlacedFeature(VOLTAIC_SEA_GRASS_CONFIGURED.getHolder().get(), AquaticPlacements.seagrassPlacement(80)));
 
+    public static final RuleTest REMNANT_REPLACEABLE = new TagMatchTest(GarnishedTags.GENERATION_REPLACEABLES);
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> REMNANT_CONFIGURED = CONFIGURED_FEATURES.register("ores_overworld",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(REMNANT_REPLACEABLE, GarnishedBlocks.RITUALISTIC_STONE.get().defaultBlockState(), 32)));
+    public static final RegistryObject<PlacedFeature> REMNANT_PLACED = PLACED_FEATURES.register("ores_overworld",
+            () -> new PlacedFeature(REMNANT_CONFIGURED.getHolder().get(), rareOrePlacement(6, HeightRangePlacement.uniform(VerticalAnchor.absolute(64), VerticalAnchor.absolute(128)))));
+
     public static ResourceKey<ConfiguredFeature<?, ?>> configuredResource(String name) {
         return ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, new ResourceLocation(CreateGarnished.ID, name));
     }
@@ -153,5 +164,13 @@ public class GarnishedFeatures {
         CONFIGURED_FEATURES.register(bus);
         PLACED_FEATURES.register(bus);
         REGISTER.register(bus);
+    }
+
+    private static List<PlacementModifier> orePlacement(PlacementModifier placementModifier, PlacementModifier placementModifier1) {
+        return List.of(placementModifier, InSquarePlacement.spread(), placementModifier1, BiomeFilter.biome());
+    }
+
+    private static List<PlacementModifier> rareOrePlacement(int chance, PlacementModifier heightRange) {
+        return orePlacement(RarityFilter.onAverageOnceEvery(chance), heightRange);
     }
 }

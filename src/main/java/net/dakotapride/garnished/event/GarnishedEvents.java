@@ -74,6 +74,10 @@ public class GarnishedEvents {
             if (name.equals(Biomes.FROZEN_OCEAN.location())) {
                 builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GarnishedFeatures.DULSE_KELP_PLACED.getHolder().orElseThrow());
             }
+
+            if (name.equals(Biomes.DESERT.location()) || name.equals(Biomes.BADLANDS.location()) || name.equals(Biomes.ERODED_BADLANDS.location()) || name.equals(Biomes.WOODED_BADLANDS.location())) {
+                builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, GarnishedFeatures.REMNANT_PLACED.getHolder().orElseThrow());
+            }
         }
     }
 }

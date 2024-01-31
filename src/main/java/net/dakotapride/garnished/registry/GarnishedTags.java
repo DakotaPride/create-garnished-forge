@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,7 +20,9 @@ public class GarnishedTags {
 	public static final TagKey<EntityType<?>> IS_AFFECTED_BY_SALVAGING = forgeTag("affected_by/salvaging", ForgeRegistries.ENTITIES.getRegistryKey());
 	public static final TagKey<EntityType<?>> IS_AFFECTED_BY_RAVAGING = forgeTag("affected_by/ravaging", ForgeRegistries.ENTITIES.getRegistryKey());
 	public static final TagKey<Block> CARNOTITE_BLOCKS = garnishedTag("carnotite", ForgeRegistries.BLOCKS.getRegistryKey());
+	public static final TagKey<Block> GENERATION_REPLACEABLES = garnishedTag("carnotite", ForgeRegistries.BLOCKS.getRegistryKey());
 	public static final TagKey<Item> ENDER_DUSTS_TAG = forgeTag("ender_dusts", ForgeRegistries.ITEMS.getRegistryKey());
+	public static final TagKey<Biome> HAS_REMNANT_TAG = garnishedTag("has_remnant", ForgeRegistries.BIOMES.getRegistryKey());
 
 	// Integrated Tags
 	public static TagKey<Item> ZINC_INGOTS = forgeTag("ingots/zinc", ForgeRegistries.ITEMS.getRegistryKey());
