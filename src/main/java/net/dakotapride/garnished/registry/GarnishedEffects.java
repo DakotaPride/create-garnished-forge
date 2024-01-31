@@ -46,7 +46,7 @@ public class GarnishedEffects {
 	public static RegistryObject<MobEffect> THORNS = EFFECTS.register("thorns", ThornsMobEffect::new);
 	public static RegistryObject<MobEffect> MUMMIFICATION = EFFECTS.register("mummification", () -> new MummificationMobEffect()
 			.addAttributeModifier(Attributes.MOVEMENT_SPEED, "9bfdc80b-2f5a-4e9f-9ffd-a5880ccf2a09",
-					0.015, AttributeModifier.Operation.MULTIPLY_TOTAL));
+					-0.015, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
 	public static final RegistryObject<Potion> AVERSION_POTION = POTIONS.register("aversion",
 			() -> new Potion(new MobEffectInstance(AVERSION.get(), 2400)));
