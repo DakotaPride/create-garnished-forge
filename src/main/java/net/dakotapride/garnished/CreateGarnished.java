@@ -86,6 +86,8 @@ public class CreateGarnished
 
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.VOLATILE_DUST.get(), GarnishedEffects.SANCTITY_POTION.get());
 
+        PotionBrewing.addMix(Potions.MUNDANE, GarnishedItems.SOLEMN_DUST.get(), GarnishedEffects.MUMMIFICATION_POTION.get());
+
         event.enqueueWork(GarnishedFluids::registerFluidInteractions);
 
     }
