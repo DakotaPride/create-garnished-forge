@@ -77,6 +77,8 @@ public class GarnishedFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DULSE_KELP = registerConfiguredKey("dulse_kelp_configured");
     public static final ResourceKey<ConfiguredFeature<?, ?>> VOLTAIC_SEAGRASS = registerConfiguredKey("voltaic_seagrass_configured");
 
+    public static final ResourceKey<PlacedFeature> REMNANT_PLACED = registerPlacedKey("ores_overworld");
+
     public static ResourceKey<ConfiguredFeature<?, ?>> registerConfiguredKey(String name) {
         return ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, new ResourceLocation(CreateGarnished.ID, name));
     }
