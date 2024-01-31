@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#garnished:has_remnant",
+  "features": "garnished:ores_overworld",
+  "step": "underground_ores"
+}

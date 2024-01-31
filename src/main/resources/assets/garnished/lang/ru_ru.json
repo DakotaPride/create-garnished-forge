@@ -1,5 +1,6 @@
 {
   "itemGroup.create.garnished": "Create: Приправлен",
+  "itemGroup.create.garnished.blocks": "Create: Garnished - Building Blocks", //
   "text.garnished.nut.ungarnished": "Сырой",
   "text.garnished.nut.garnished": "Приготовленный",
   "text.garnished.nut.cracked": "Расколот",
@@ -462,22 +463,42 @@
   "block.garnished.polished_ritualistic_stone_stairs": "Ступеньки из полированного ритуального камня",
   "block.garnished.polished_ritualistic_stone_wall": "Ограда из полированного ритуального камня",
   "block.garnished.chiseled_ritualistic_stone_bricks": "Резные кирпичи из ритуального камня",
-  "block.garnished.smooth_ritualistic_stone": "Smooth Ritualistic Stone", //
-  "block.garnished.smooth_ritualistic_stone_stairs": "Smooth Ritualistic Stone Stairs", //
-  "block.garnished.smooth_ritualistic_stone_slab": "Smooth Ritualistic Stone Slab", //
-  "block.garnished.smooth_ritualistic_stone_wall": "Smooth Ritualistic Stone Wall", //
-  "block.garnished.smooth_unstable_stone": "Smooth Unstable Stone", //
-  "block.garnished.smooth_unstable_stone_stairs": "Smooth Unstable Stone Stairs", //
-  "block.garnished.smooth_unstable_stone_slab": "Smooth Unstable Stone Slab", //
-  "block.garnished.smooth_unstable_stone_wall": "Smooth Unstable Stone Wall", //
-  "block.garnished.smooth_abyssal_stone": "Smooth Abyssal Stone", //
-  "block.garnished.smooth_abyssal_stone_stairs": "Smooth Abyssal Stone Stairs", //
-  "block.garnished.smooth_abyssal_stone_slab": "Smooth Abyssal Stone Slab", //
-  "block.garnished.smooth_abyssal_stone_wall": "Smooth Abyssal Stone Wall", //
-  "block.garnished.smooth_carnotite": "Smooth Carnotite", //
-  "block.garnished.smooth_carnotite_stairs": "Smooth Carnotite Stairs", //
-  "block.garnished.smooth_carnotite_slab": "Smooth Carnotite Slab", //
-  "block.garnished.smooth_carnotite_wall": "Smooth Carnotite Wall", //
+  "block.garnished.smooth_ritualistic_stone": "Гладкий ритуальный камень",
+  "block.garnished.smooth_ritualistic_stone_stairs": "Ступеньки из гладкого ритуального камня",
+  "block.garnished.smooth_ritualistic_stone_slab": "Плита из гладкого ритуального камня",
+  "block.garnished.smooth_ritualistic_stone_wall": "Ограда из гладкого ритуального камня",
+  "block.garnished.smooth_unstable_stone": "Гладкий нестабильный камень",
+  "block.garnished.smooth_unstable_stone_stairs": "Ступеньки из гладкого нестабильного камня",
+  "block.garnished.smooth_unstable_stone_slab": "Плита из гладкого нестабильного камня",
+  "block.garnished.smooth_unstable_stone_wall": "Ограда из гладкого нестабильного камня",
+  "block.garnished.smooth_abyssal_stone": "Гладкий камень бездны",
+  "block.garnished.smooth_abyssal_stone_stairs": "Ступеньки из гладкого камня бездны",
+  "block.garnished.smooth_abyssal_stone_slab": "Плита из гладкого камня бездны",
+  "block.garnished.smooth_abyssal_stone_wall": "Ограда из гладкого камня бездны",
+  "block.garnished.smooth_carnotite": "Гладкий карнотит",
+  "block.garnished.smooth_carnotite_stairs": "Ступеньки из гладкого карнотита",
+  "block.garnished.smooth_carnotite_slab": "Плита из гладкого карнотита",
+  "block.garnished.smooth_carnotite_wall": "Ограда из гладкого карнотита",
+  "block.garnished.garnish_compound_block": "Garnish Compound Block", //
+  "block.garnished.salt_compound_block": "Salt Compound Block", //
+  "block.garnished.ethereal_compound_block": "Ethereal Compound Block", //
+  "block.garnished.mulch_block": "Mulch Block", //
+  "item.garnished.prickly_pear": "Prickly Pear", //
+  "item.garnished.bamboo_clod": "Bamboo Clod", //
+  "item.garnished.nopalito_wrap": "Nopalito Wrap", //
+  "item.garnished.nopalito_wrap_supreme": "Nopalito Wrap Supreme", //
+  "item.garnished.prickly_pear_stew": "Prickly Pear Stew", //
+  "item.garnished.sinopia_rock_sweet": "Sinopia Rock Sweet", //
+  "item.garnished.thorn_on_a_stick": "Thorn on a Stick", //
+  "item.garnished.overgrown_brew": "Overgrown Brew", //
+  "item.garnished.stew_of_the_damned": "Stew of the Damned", //
+  "item.garnished.rosy_cocktail": "Rosy Cocktail", //
+  "item.garnished.antique_swathe": "Antique Swathe", //
+  "item.garnished.amber_remnant": "Amber Remnant", //
+  "item.garnished.shattered_amber_remnant": "Shattered Amber Remnant", //
+  "item.garnished.bristled_flour": "Bristled Flour", //
+  "item.garnished.bristled_tortilla": "Bristled Tortilla", //
+  "item.garnished.solemn_dust": "Solemn Dust", //
   "effect.garnished.thorns": "Колючий",
 
   "block.garnished.peanut_sack": "Мешочек орехов",
@@ -608,10 +629,14 @@
   "advancement.garnished.incendiary_stew.description": "Получите Зажигательное рагу",
   "advancement.garnished.lustrous_pearl.title": "Формы и цвета",
   "advancement.garnished.lustrous_pearl.description": "Получите Глянцевую жемчужину",
-  "advancement.garnished.voltaic_sea_grass.title": "Мозможно вы будете шокированы,  // Но...",
-  "advancement.garnished.voltaic_sea_grass.description": "Обнаружьте Вольтовскую морскую траву (нет Спирит,  // ты не можешь пожевать её)",
+  "advancement.garnished.voltaic_sea_grass.title": "Мозможно вы будете шокированы, Но...",
+  "advancement.garnished.voltaic_sea_grass.description": "Обнаружьте Вольтовскую морскую траву (нет Спирит, ты не можешь пожевать её)",
   "advancement.garnished.dulse_kelp.title": "Псевдобекон",
-  "advancement.garnished.dulse_kelp.description": "Получите красную водоросль",
+  "advancement.garnished.dulse_kelp.description": "Получите красную водоросль", //
+  "advancement.garnished.ritualistic_stone.title": "New Ancient Debris", //
+  "advancement.garnished.ritualistic_stone.description": "Obtain Ritualistic Stone", //
+  "advancement.garnished.rosy_cocktail.title": "Pink Lemonade Served Stone Cold", //
+  "advancement.garnished.rosy_cocktail.description": "Obtain a Rosy Cocktail", //
 
   "garnished.ponder.kelp_garnished.header": "Водорослях из холодной среды",
   "garnished.ponder.dulse_kelp.header": "Красной водоросли",
