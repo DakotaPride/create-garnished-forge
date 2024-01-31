@@ -38,6 +38,9 @@ public class GarnishedEffects {
 					4.0, AttributeModifier.Operation.ADDITION));
 
 	public static RegistryObject<MobEffect> THORNS = EFFECTS.register("thorns", ThornsMobEffect::new);
+	public static RegistryObject<MobEffect> MUMMIFICATION = EFFECTS.register("mummification", () -> new MummificationMobEffect()
+			.addAttributeModifier(Attributes.MOVEMENT_SPEED, "9bfdc80b-2f5a-4e9f-9ffd-a5880ccf2a09",
+					0.015, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
 	public static final RegistryObject<Potion> AVERSION_POTION = POTIONS.register("aversion",
 			() -> new Potion(new MobEffectInstance(AVERSION.get(), 2400)));
@@ -52,6 +55,9 @@ public class GarnishedEffects {
 
 	public static final RegistryObject<Potion> SANCTITY_POTION = POTIONS.register("sanctity",
 			() -> new Potion(new MobEffectInstance(SANCTITY.get(), 2800)));
+
+	public static final RegistryObject<Potion> MUMMIFICATION_POTION = POTIONS.register("mummification",
+			() -> new Potion(new MobEffectInstance(MUMMIFICATION.get(), 1200)));
 
 	public static void setRegister(IEventBus bus) {
 		EFFECTS.register(bus);
