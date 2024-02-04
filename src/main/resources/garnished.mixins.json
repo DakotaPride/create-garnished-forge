@@ -6,6 +6,7 @@
   "refmap": "garnished.refmap.json",
   "mixins": [
     "EnderManMixin",
+    "FluidReactionsMixin",
     "ItemStackMixin",
     "LivingEntityMixin"
   ],

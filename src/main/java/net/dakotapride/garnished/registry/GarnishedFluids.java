@@ -245,4 +245,49 @@ public class GarnishedFluids {
 		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), BLUE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.ASURINE.getBaseBlock().get());
 		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), PURPLE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.ABYSSAL_STONE.get());
 	}
+
+	@Nullable
+	public static BlockState getLavaInteraction(FluidState fluidState) {
+		Fluid fluid = fluidState.getType();
+		if (fluid.isSame(GARNISH.get()))
+			return AllPaletteStoneTypes.CALCITE.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(PEANUT_OIL.get()))
+			return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(APPLE_CIDER.get()))
+			return AllPaletteStoneTypes.OCHRUM.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(CASHEW_MIXTURE.get()))
+			return Blocks.END_STONE.defaultBlockState();
+		if (fluid.isSame(MASTIC_RESIN.get()))
+			return AllPaletteStoneTypes.TUFF.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(RED_MASTIC_RESIN.get()))
+			return AllPaletteStoneTypes.CRIMSITE.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(ORANGE_MASTIC_RESIN.get()))
+			return GarnishedBlocks.RITUALISTIC_STONE.get()
+					.defaultBlockState();
+		if (fluid.isSame(YELLOW_MASTIC_RESIN.get()))
+			return GarnishedBlocks.CARNOTITE.get()
+					.defaultBlockState();
+		if (fluid.isSame(GREEN_MASTIC_RESIN.get()))
+			return AllPaletteStoneTypes.VERIDIUM.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(BLUE_MASTIC_RESIN.get()))
+			return AllPaletteStoneTypes.ASURINE.getBaseBlock()
+					.get()
+					.defaultBlockState();
+		if (fluid.isSame(PURPLE_MASTIC_RESIN.get()))
+			return GarnishedBlocks.ABYSSAL_STONE.get()
+					.defaultBlockState();
+		return null;
+	}
 }
