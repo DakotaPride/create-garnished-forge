@@ -34,7 +34,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("garnish", false),
 							createLocation("garnish", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -50,7 +50,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("apple_cider", false),
 							createLocation("apple_cider", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -66,7 +66,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("peanut_oil", false),
 							createLocation("peanut_oil", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -82,7 +82,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("cashew_mixture", false),
 							createLocation("cashew_mixture", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -98,7 +98,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("mastic_resin", false),
 							createLocation("mastic_resin", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -114,7 +114,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("red_mastic_resin", false),
 							createLocation("red_mastic_resin", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -129,7 +129,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("orange_mastic_resin", false),
 							createLocation("orange_mastic_resin", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -144,7 +144,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("yellow_mastic_resin", false),
 							createLocation("yellow_mastic_resin", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -159,7 +159,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("green_mastic_resin", false),
 							createLocation("green_mastic_resin", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -174,7 +174,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("blue_mastic_resin", false),
 							createLocation("blue_mastic_resin", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
@@ -189,7 +189,7 @@ public class GarnishedFluids implements Fluids {
 							createLocation("purple_mastic_resin", false),
 							createLocation("purple_mastic_resin", true))
 					.properties(b -> b.viscosity(1500)
-							.density(800))
+							.density(1400))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
