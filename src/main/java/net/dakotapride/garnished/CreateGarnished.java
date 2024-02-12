@@ -1,9 +1,12 @@
 package net.dakotapride.garnished;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.item.ItemDescription;
+import com.simibubi.create.foundation.item.TooltipHelper;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.entity.render.NutBoatRenderer;
 import net.dakotapride.garnished.forge.LootModifiers;
+import net.dakotapride.garnished.recipe.GarnishedFanProcessing;
 import net.dakotapride.garnished.registry.*;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
@@ -21,6 +24,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -43,6 +47,10 @@ public class CreateGarnished {
     public static final NonNullSupplier<CreateRegistrate> REGISTRATE =
             NonNullSupplier.lazy(() -> CreateRegistrate.create(ID));
 
+    static {
+        REGISTRATE.get().setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, TooltipHelper.Palette.STANDARD_CREATE));
+    }
+
     public static ResourceLocation asResource(String path) {
         return new ResourceLocation(ID, path);
     }
@@ -62,6 +70,8 @@ public class CreateGarnished {
         GarnishedFoods.setRegister();
         GarnishedFeatures.setRegister(eventBus);
         GarnishedTags.setRegister();
+        GarnishedRecipeTypes.register(eventBus);
+        GarnishedFanProcessing.register();
         LootModifiers.register(eventBus);
 
         REGISTRATE.get().registerEventListeners(eventBus);
@@ -77,7 +87,6 @@ public class CreateGarnished {
     }
 
     private void setup(FMLCommonSetupEvent event) {
-
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.BRITTLE_DUST.get(), GarnishedEffects.AVERSION_POTION.get());
         PotionBrewing.addMix(GarnishedEffects.AVERSION_POTION.get(), Items.REDSTONE, GarnishedEffects.LONG_AVERSION_POTION.get());
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.ENDER_JELLY_BLOB.get(), GarnishedEffects.FLAGRANT_POTION.get());
@@ -90,6 +99,9 @@ public class CreateGarnished {
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.VOLATILE_DUST.get(), GarnishedEffects.SANCTITY_POTION.get());
 
         PotionBrewing.addMix(Potions.MUNDANE, GarnishedItems.SOLEMN_DUST.get(), GarnishedEffects.MUMMIFICATION_POTION.get());
+
+        PotionBrewing.addMix(Potions.THICK, GarnishedItems.FROST.get(), GarnishedEffects.FREEZING_POTION.get());
+        PotionBrewing.addMix(GarnishedEffects.FREEZING_POTION.get(), Items.REDSTONE, GarnishedEffects.LONG_FREEZING_POTION.get());
 
         event.enqueueWork(GarnishedFluids::registerFluidInteractions);
 
@@ -118,7 +130,9 @@ public class CreateGarnished {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             // GarnishedPonderIndex.index();
+            NewIndex.index();
             // GarnishedPonderIndex.Tags.fillPonderTags();
+            NewIndex.PonderIndexTags.tags();
 
             EntityRenderers.register(GarnishedEntities.NUT_BOAT.get(), pContext -> new NutBoatRenderer(pContext, false));
             EntityRenderers.register(GarnishedEntities.NUT_CHEST_BOAT.get(), pContext -> new NutBoatRenderer(pContext, true));
