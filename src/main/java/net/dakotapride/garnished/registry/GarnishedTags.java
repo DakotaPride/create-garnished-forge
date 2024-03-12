@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.registry;
 
+import com.simibubi.create.Create;
 import net.dakotapride.garnished.CreateGarnished;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -9,6 +10,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 
 public class GarnishedTags {
 
@@ -19,6 +21,8 @@ public class GarnishedTags {
 	public static final TagKey<EntityType<?>> IS_AFFECTED_BY_RAVAGING = forgeTag("affected_by/ravaging", Registries.ENTITY_TYPE);
 	public static final TagKey<Block> CARNOTITE_BLOCKS = garnishedTag("carnotite", Registries.BLOCK);
 	public static final TagKey<Item> ENDER_DUSTS_TAG = forgeTag("ender_dusts", Registries.ITEM);
+	public static final TagKey<Block> FAN_FREEZING_PROCESSING_TAG = garnishedTag("fan_processing_catalysts/freezing", Registries.BLOCK);
+	public static final TagKey<Fluid> FAN_FREEZING_PROCESSING_FLUID_TAG = garnishedTag("fan_processing_catalysts/freezing", Registries.FLUID);
 
 	// Integrated Tags
 	public static TagKey<Item> ZINC_INGOTS = forgeTag("ingots/zinc", Registries.ITEM);
@@ -42,6 +46,10 @@ public class GarnishedTags {
 
 	private static <F> TagKey<F> forgeTag(String name, ResourceKey<Registry<F>> key) {
 		return TagKey.create(key, new ResourceLocation("forge", name));
+	}
+
+	private static <F> TagKey<F> createTag(String name, ResourceKey<Registry<F>> key) {
+		return TagKey.create(key, new ResourceLocation(Create.ID, name));
 	}
 
 	public static void setRegister() {}

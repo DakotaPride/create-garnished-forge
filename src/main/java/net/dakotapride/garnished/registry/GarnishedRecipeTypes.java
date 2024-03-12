@@ -6,8 +6,7 @@ import com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import com.simibubi.create.foundation.utility.Lang;
 import net.dakotapride.garnished.CreateGarnished;
-import net.dakotapride.garnished.recipe.FreezingFanRecipe;
-import net.dakotapride.garnished.recipe.RedDyeBlowingFanRecipe;
+import net.dakotapride.garnished.recipe.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
@@ -27,7 +26,12 @@ import java.util.function.Supplier;
 
 public enum GarnishedRecipeTypes implements IRecipeTypeInfo {
     FREEZING(FreezingFanRecipe::new),
-    RED_DYE_BLOWING(RedDyeBlowingFanRecipe::new);
+    RED_DYE_BLOWING(RedDyeBlowingFanRecipe::new),
+    ORANGE_DYE_BLOWING(OrangeDyeBlowingFanRecipe::new),
+    YELLOW_DYE_BLOWING(YellowDyeBlowingFanRecipe::new),
+    GREEN_DYE_BLOWING(GreenDyeBlowingFanRecipe::new),
+    BLUE_DYE_BLOWING(BlueDyeBlowingFanRecipe::new),
+    PURPLE_DYE_BLOWING(PurpleDyeBlowingFanRecipe::new);
 
     private final ResourceLocation id;
     private final RegistryObject<RecipeSerializer<?>> serializerObject;

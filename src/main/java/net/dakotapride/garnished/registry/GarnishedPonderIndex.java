@@ -19,6 +19,7 @@ import com.simibubi.create.foundation.ponder.instruction.EmitParticlesInstructio
 import com.simibubi.create.foundation.utility.IntAttached;
 import com.simibubi.create.foundation.utility.NBTHelper;
 import com.simibubi.create.foundation.utility.Pointing;
+import com.tterrag.registrate.util.entry.ItemProviderEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -34,14 +35,24 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler;
+import org.jetbrains.annotations.NotNull;
 
 public class GarnishedPonderIndex {
 
     static final PonderRegistrationHelper HELPER = new PonderRegistrationHelper(CreateGarnished.ID);
 
+    private static PonderRegistrationHelper.MultiSceneBuilder registerToComponents(ItemProviderEntry<?> itemEntry, String schemPath,
+                                                                                   PonderStoryBoardEntry.PonderStoryBoard storyBoard) {
+
+        return HELPER.forComponents(itemEntry).addStoryBoard(schemPath, storyBoard);
+    }
+
     public static void index() {
         // HELPER.forComponents(GarnishedBlocks.DRIED_DULSE_KELP_BLOCK, GarnishedBlocks.DRIED_VERMILION_KELP_BLOCK)
         //         .addStoryBoard("boundless_sea/dried_kelp_blocks", ScenesAndInteractions::driedKelpBlocks);
+
+        registerToComponents(GarnishedItems.DRIED_DULSE_KELP, "boundless/dulse_kelp", ScenesAndInteractions::dulseKelp);
+
         HELPER.forComponents(GarnishedBlocks.DULSE_KELP, GarnishedBlocks.VERMILION_KELP,
                         GarnishedItems.DRIED_DULSE_KELP, GarnishedItems.DRIED_VERMILION_KELP,
                         GarnishedBlocks.DRIED_DULSE_KELP_BLOCK, GarnishedBlocks.DRIED_VERMILION_KELP_BLOCK)

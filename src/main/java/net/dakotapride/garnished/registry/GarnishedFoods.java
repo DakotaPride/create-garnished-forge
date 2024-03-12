@@ -41,7 +41,8 @@ public class GarnishedFoods implements IGarnishedItem {
 	public static final FoodProperties SALAD = new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build();
 	public static final FoodProperties PHANTOM_STEAK = new FoodProperties.Builder().nutrition(10).saturationMod(0.9F).meat().build();
 	public static final FoodProperties PEANUT_OIL = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build();
-	public static final FoodProperties CASHEW_FRUIT = new FoodProperties.Builder().nutrition(4).saturationMod(0.2F).fast().build();
+	public static final FoodProperties CASHEW_FRUIT = new FoodProperties.Builder().nutrition(4).saturationMod(0.2F)
+			.effect(() -> new MobEffectInstance(MobEffects.POISON, getCashewFruitEffectDuration), 0.25F).fast().build();
 	public static final FoodProperties BITTER_ALMOND = new FoodProperties.Builder().nutrition(4).saturationMod(0.1F)
 			.effect(() -> new MobEffectInstance(MobEffects.POISON, getBitterAlmondEffectDuration), 1.0F).build();
 	public static final FoodProperties WALNUT_BROWNIE = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F).build();
@@ -82,8 +83,10 @@ public class GarnishedFoods implements IGarnishedItem {
 	public static final FoodProperties BOTTLED_ENDER_JELLY = new FoodProperties.Builder().nutrition(5).saturationMod(0.2F).build();
 	public static final FoodProperties CHORUS_COCKTAIL = new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).build();
 	public static final FoodProperties COSMIC_BREW = new FoodProperties.Builder().nutrition(10).saturationMod(0.4F).build();
-	public static final FoodProperties DESOLATE_STEW = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).build();
-	public static final FoodProperties ETHEREAL_CONCOCTION = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F).build();
+	public static final FoodProperties DESOLATE_STEW = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F)
+			.effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE.get(), getCognateEffectBaseTick, 1), 0.20F).build();
+	public static final FoodProperties ETHEREAL_CONCOCTION = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F)
+			.effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE.get(), getCognateEffectBaseTick, 1), 0.20F).build();
 	public static final FoodProperties VOID_MIXTURE = new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).build();
 	public static final FoodProperties CHORUS_BOWL = new FoodProperties.Builder().nutrition(12).saturationMod(0.8F).build();
 	public static final FoodProperties CHORUS_COOKIE = new FoodProperties.Builder().nutrition(4).saturationMod(0.1F).build();
@@ -103,7 +106,9 @@ public class GarnishedFoods implements IGarnishedItem {
 	public static final FoodProperties VENERABLE_DELICACY = new FoodProperties.Builder().nutrition(8).saturationMod(0.4F).build();
 	public static final FoodProperties GALACTIC_CANE = new FoodProperties.Builder().nutrition(7).saturationMod(0.3F).build();
 	public static final FoodProperties MERRY_TREAT = new FoodProperties.Builder().nutrition(8).saturationMod(0.4F).build();
-	public static final FoodProperties ICY_MASTIC_CHUNK = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F).fast().build();
+	public static final FoodProperties ICY_MASTIC_CHUNK = new FoodProperties.Builder().nutrition(3).saturationMod(0.1F)
+			.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0F)
+			.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 160, 1), 1.0F).fast().build();
 	public static final FoodProperties COAL_TRUFFLE = new FoodProperties.Builder().nutrition(5).saturationMod(0.2F).fast().build();
 	public static final FoodProperties STURDY_WAFFLE = new FoodProperties.Builder().nutrition(6).saturationMod(0.4F)
 			.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400), 1.0F).build();
@@ -158,6 +163,14 @@ public class GarnishedFoods implements IGarnishedItem {
 	public static final FoodProperties OVERGROWN_BREW = new FoodProperties.Builder().nutrition(8).saturationMod(0.6F).build();
 	public static final FoodProperties ROSY_COCKTAIL = new FoodProperties.Builder().nutrition(8).saturationMod(0.4F)
 			.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 4), 1.0F).build();
+
+	// Glacial Edge
+	public static final FoodProperties RAW_POLAR_BEAR_MEAT = new FoodProperties.Builder().nutrition(5).saturationMod(0.3F).meat().build();
+	public static final FoodProperties COOKED_POLAR_BEAR_MEAT = new FoodProperties.Builder().nutrition(10).saturationMod(0.8F).meat().build();
+	public static final FoodProperties FROSTED_DESSERT = new FoodProperties.Builder().nutrition(6).saturationMod(0.2F).build();
+	public static final FoodProperties VOID_STROGANOFF = new FoodProperties.Builder().nutrition(14).saturationMod(0.8F).build();
+	public static final FoodProperties EXPLORERS_CONCOCTION = new FoodProperties.Builder().nutrition(10).saturationMod(0.6F).build();
+	public static final FoodProperties CHILLED_APPLE = new FoodProperties.Builder().nutrition(4).saturationMod(0.2F).build();
 
 	// Farmer's Delight Foods
 	public static final FoodProperties PECAN_PIE_SLICE = new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).build();

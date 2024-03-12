@@ -166,6 +166,7 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.NUT_NACHO.asStack());
 			output.accept(GarnishedItems.BRITTLE_DUST.asStack());
 			output.accept(GarnishedItems.SENILE_DUST.asStack());
+			output.accept(GarnishedItems.SENILE_SPREAD.asStack());
 			output.accept(GarnishedItems.CRIMSON_TUSK.asStack());
 			output.accept(GarnishedItems.SILICA_HARDENED_WRAP.asStack());
 			output.accept(GarnishedItems.ENFLAMED_MANDIBLE.asStack());
@@ -190,6 +191,8 @@ public class GarnishedTabs {
 
 			output.accept(GarnishedItems.MUD_PIE.asStack());
 			output.accept(GarnishedItems.MULCH.asStack());
+
+			output.accept(GarnishedItems.MOLTEN_STEW);
 
 			output.accept(GarnishedItems.VENERABLE_DOUGH);
 			output.accept(GarnishedItems.VENERABLE_DELICACY_RED);
@@ -265,9 +268,20 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.PRICKLY_PEAR_STEW);
 			output.accept(GarnishedItems.STEW_OF_THE_DAMNED);
 
+			output.accept(GarnishedItems.RAW_POLAR_BEAR_MEAT);
+			output.accept(GarnishedItems.COOKED_POLAR_BEAR_MEAT);
+			output.accept(GarnishedItems.VOID_STROGANOFF);
+			output.accept(GarnishedItems.EXPLORERS_CONCOCTION);
+			output.accept(GarnishedItems.FROSTED_DESSERT);
+			output.accept(GarnishedItems.CHILLED_APPLE);
+
+			output.accept(GarnishedItems.MOLTEN_REMNANT);
+
 			output.accept(GarnishedItems.GHAST_TENDRIL);
 
 			output.accept(GarnishedItems.VOLATILE_DUST);
+
+			output.accept(GarnishedItems.SOLEMN_DUST);
 
 			output.accept(GarnishedBlocks.VERMILION_KELP);
 			output.accept(GarnishedBlocks.DULSE_KELP);
@@ -279,6 +293,11 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.BRISTLED_TORTILLA);
 			output.accept(GarnishedItems.AMBER_REMNANT);
 			output.accept(GarnishedItems.SHATTERED_AMBER_REMNANT);
+
+			output.accept(GarnishedItems.FROST);
+			output.accept(GarnishedItems.NUMBING_PARCHMENT);
+			output.accept(GarnishedItems.POLAR_BEAR_HIDE);
+			output.accept(GarnishedItems.POLAR_HIDE_SCRATCH_PAPER);
 
 			output.accept(GarnishedBlocks.SEPIA_FUNGUS.asStack());
 			output.accept(GarnishedBlocks.SOUL_ROOTS.asStack());

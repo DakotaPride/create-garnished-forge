@@ -2,18 +2,12 @@ package net.dakotapride.garnished.registry;
 
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.effect.*;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionBrewing;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -48,6 +42,8 @@ public class GarnishedEffects {
 			.addAttributeModifier(Attributes.MOVEMENT_SPEED, "9bfdc80b-2f5a-4e9f-9ffd-a5880ccf2a09",
 					-0.015, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
+	public static RegistryObject<MobEffect> FREEZING = EFFECTS.register("freezing", FreezingMobEffect::new);
+
 	public static final RegistryObject<Potion> AVERSION_POTION = POTIONS.register("aversion",
 			() -> new Potion(new MobEffectInstance(AVERSION.get(), 2400)));
 	public static RegistryObject<Potion> LONG_AVERSION_POTION = POTIONS.register("long_aversion",
@@ -64,6 +60,11 @@ public class GarnishedEffects {
 
 	public static final RegistryObject<Potion> MUMMIFICATION_POTION = POTIONS.register("mummification",
 			() -> new Potion(new MobEffectInstance(MUMMIFICATION.get(), 1200)));
+
+	public static final RegistryObject<Potion> FREEZING_POTION = POTIONS.register("freezing",
+			() -> new Potion(new MobEffectInstance(FREEZING.get(), 400)));
+	public static final RegistryObject<Potion> LONG_FREEZING_POTION = POTIONS.register("long_freezing",
+			() -> new Potion(new MobEffectInstance(FREEZING.get(), 800, 1)));
 
 	public static void setRegister(IEventBus bus) {
 		EFFECTS.register(bus);
