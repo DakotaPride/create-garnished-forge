@@ -39,15 +39,9 @@ public class CashewFruitItem extends Item implements IGarnishedItem {
 
 	@Override
 	public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity livingEntity) {
-		int random = new Random().nextInt(4);
-
 		if (livingEntity instanceof ServerPlayer serverPlayer) {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
-
-			if (random == 1) {
-				livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, getCashewFruitEffectDuration));
-			}
 		}
 
 		return super.finishUsingItem(stack, level, livingEntity);

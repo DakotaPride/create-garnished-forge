@@ -494,6 +494,40 @@
   "item.minecraft.lingering_potion.effect.mummification": "Lingering Potion of Mummification", //
   "item.minecraft.tipped_arrow.effect.mummification": "Tipped Arrow of Mummification", //
 
+  "item.garnished.frost": "Frost", //
+  "item.garnished.numbing_parchment": "Numbing Parchment", //
+  "item.garnished.polar_bear_hide": "Polar Bear Hide", //
+  "item.garnished.chilled_apple": "Chilled Apple", //
+  "item.garnished.raw_polar_bear_meat": "Raw Polar Bear Meat", //
+  "item.garnished.cooked_polar_bear_meat": "Cooked Polar Bear Meat", //
+  "item.garnished.frosted_dessert": "Frosted Dessert", //
+  "item.garnished.void_stroganoff": "Void Stroganoff", //
+  "item.garnished.explorers_concoction": "Explorer's Concoction", //
+  "item.garnished.polar_hide_scratch_paper": "Polar Hide Scratch Paper", //
+  "effect.garnished.freezing": "Freezing", //
+  "item.minecraft.potion.effect.freezing": "Potion of Freezing", //
+  "item.minecraft.splash_potion.effect.freezing": "Splash Potion of Freezing", //
+  "item.minecraft.lingering_potion.effect.freezing": "Lingering Potion of Freezing", //
+  "item.minecraft.tipped_arrow.effect.freezing": "Tipped Arrow of Freezing", //
+  "item.minecraft.potion.effect.long_freezing": "Potion of Freezing", //
+  "item.minecraft.splash_potion.effect.long_freezing": "Splash Potion of Freezing", //
+  "item.minecraft.lingering_potion.effect.long_freezing": "Lingering Potion of Freezing", //
+  "item.minecraft.tipped_arrow.effect.long_freezing": "Tipped Arrow of Freezing", //
+  "create.recipe.garnished.fan_freezing.fan": "Fan behind Powder Snow", //
+  "create.recipe.garnished.fan_freezing": "Bulk Freezing", //
+  "create.recipe.garnished.red_dye_blowing.fan": "Fan behind Red Liquefied Mastic Resin", //
+  "create.recipe.garnished.red_dye_blowing": "Bulk Dyeing", //
+  "create.recipe.garnished.orange_dye_blowing.fan": "Fan behind Orange Liquefied Mastic Resin", //
+  "create.recipe.garnished.orange_dye_blowing": "Bulk Dyeing", //
+  "create.recipe.garnished.yellow_dye_blowing.fan": "Fan behind Yellow Liquefied Mastic Resin", //
+  "create.recipe.garnished.yellow_dye_blowing": "Bulk Dyeing", //
+  "create.recipe.garnished.green_dye_blowing.fan": "Fan behind Green Liquefied Mastic Resin", //
+  "create.recipe.garnished.green_dye_blowing": "Bulk Dyeing", //
+  "create.recipe.garnished.blue_dye_blowing.fan": "Fan behind Blue Liquefied Mastic Resin", //
+  "create.recipe.garnished.blue_dye_blowing": "Bulk Dyeing", //
+  "create.recipe.garnished.purple_dye_blowing.fan": "Fan behind Purple Liquefied Mastic Resin", //
+  "create.recipe.garnished.purple_dye_blowing": "Bulk Dyeing", //
+
   "block.garnished.peanut_sack": "压实坚果袋",
   "block.garnished.cashew_sack": "压实坚果袋",
   "block.garnished.almond_sack": "压实坚果袋",

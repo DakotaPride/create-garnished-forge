@@ -4,6 +4,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.entity.NutBoatRenderer;
 import net.dakotapride.garnished.forge.LootModifiers;
+import net.dakotapride.garnished.recipe.GarnishedFanProcessing;
 import net.dakotapride.garnished.registry.*;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -61,6 +62,8 @@ public class CreateGarnished
         GarnishedFeatures.setRegister(bus);
         GarnishedTags.setRegister();
         LootModifiers.register(bus);
+        GarnishedRecipeTypes.register(bus);
+        GarnishedFanProcessing.register();
 
         REGISTRATE.get().registerEventListeners(bus);
         // Register the setup method for modloading
@@ -87,6 +90,9 @@ public class CreateGarnished
         PotionBrewing.addMix(Potions.AWKWARD, GarnishedItems.VOLATILE_DUST.get(), GarnishedEffects.SANCTITY_POTION.get());
 
         PotionBrewing.addMix(Potions.MUNDANE, GarnishedItems.SOLEMN_DUST.get(), GarnishedEffects.MUMMIFICATION_POTION.get());
+
+        PotionBrewing.addMix(Potions.THICK, GarnishedItems.FROST.get(), GarnishedEffects.FREEZING_POTION.get());
+        PotionBrewing.addMix(GarnishedEffects.FREEZING_POTION.get(), Items.REDSTONE, GarnishedEffects.LONG_FREEZING_POTION.get());
 
         event.enqueueWork(GarnishedFluids::registerFluidInteractions);
 

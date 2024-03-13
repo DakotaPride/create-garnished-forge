@@ -30,11 +30,9 @@ public class EtherealConcoctionFoodItem extends Item implements IGarnishedItem {
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
 		}
 
-		if (livingEntity instanceof ServerPlayer serverPlayer && getWrappedTangleEffectChance()) {
+		if (livingEntity instanceof ServerPlayer serverPlayer) {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
-
-			livingEntity.addEffect(new MobEffectInstance(GarnishedEffects.COGNATE.get(), getWrappedTangleEffectDuration, 1));
 		}
 
 		if (stack.isEmpty()) {

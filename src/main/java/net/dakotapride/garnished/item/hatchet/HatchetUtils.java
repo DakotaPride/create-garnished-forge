@@ -41,7 +41,7 @@ public class HatchetUtils {
         String mob = "Unavailable";
         String enchant = "Unavailable";
 
-        // Salvaging Loot Drops
+        // Salvaging Loot Drops - Passive/Neutral mobs
         if (hasSalvaging(attacker)) {
             enchant = "Salvaging";
 
@@ -142,9 +142,26 @@ public class HatchetUtils {
                     entity.spawnAtLocation(new ItemStack(GarnishedBlocks.VOLTAIC_SEA_GRASS.get(), volaticSeaGrassDropCount));
                 }
             }
+
+            if (MobHelper.isPolarBear(entity) && !entity.isBaby()) {
+                mob = "PolarBear";
+
+                int polarBearHideDropChance = random.nextInt(4);
+                int polarBearHideDropCount = singleCount + random.nextInt(3);
+                int rawPolarBearMeatDropChance = random.nextInt(2);
+                int rawPolarBearMeatDropCount = singleCount + random.nextInt(2);
+
+                if (polarBearHideDropChance == 1) {
+                    entity.spawnAtLocation(new ItemStack(GarnishedItems.POLAR_BEAR_HIDE.get(), polarBearHideDropCount));
+                }
+
+                if (rawPolarBearMeatDropChance == 1) {
+                    entity.spawnAtLocation(new ItemStack(GarnishedItems.RAW_POLAR_BEAR_MEAT.get(), rawPolarBearMeatDropCount));
+                }
+            }
         }
 
-        // Ravaging Loot Drops
+        // Ravaging Loot Drops - Hostile mobs
         if (hasRavaging(attacker)) {
             enchant = "Ravaging";
 
@@ -223,6 +240,17 @@ public class HatchetUtils {
 
                 entity.spawnAtLocation(new ItemStack(GarnishedItems.RAW_TENEBROUS_MEAT.get(), rawTenebrousMeatDropCount));
             }
+
+            if (MobHelper.isStray(entity)) {
+                mob = "Stray";
+
+                int numbingParchmentDropChance = random.nextInt(6);
+                int numbingParchmentDropCount = singleCount + random.nextInt(3);
+
+                if (numbingParchmentDropChance == 1) {
+                    entity.spawnAtLocation(new ItemStack(GarnishedItems.NUMBING_PARCHMENT.get(), numbingParchmentDropCount));
+                }
+            }
         }
 
         DevAssistance.printLootTableToConsole(enchant, mob);
@@ -269,6 +297,14 @@ public class HatchetUtils {
     public static class MobHelper {
         public MobHelper() {}
 
+        public static boolean isStray(Entity entity) {
+            return entity.getType() == EntityType.STRAY;
+        }
+
+        public static boolean isPolarBear(Entity entity) {
+            return entity.getType() == EntityType.POLAR_BEAR;
+        }
+
         public static boolean isWarden(Entity entity) {
             return entity.getType() == EntityType.WARDEN;
         }
@@ -294,7 +330,7 @@ public class HatchetUtils {
         }
 
         public static boolean isSkeletonOrSimilar(Entity entity) {
-            return isWitherBoss(entity) || isWitherSkeleton(entity) || isSkeleton(entity) || isSkeletonHorse(entity) || isPhantom(entity);
+            return isWitherBoss(entity) || isWitherSkeleton(entity) || isSkeleton(entity) || isSkeletonHorse(entity) || isPhantom(entity) || isStray(entity);
         }
 
         public static boolean isHusk(Entity entity) {

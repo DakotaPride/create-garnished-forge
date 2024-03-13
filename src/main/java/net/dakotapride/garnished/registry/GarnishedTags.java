@@ -20,6 +20,8 @@ public class GarnishedTags {
 	public static final TagKey<EntityType<?>> IS_AFFECTED_BY_RAVAGING = forgeTag("affected_by/ravaging", ForgeRegistries.ENTITY_TYPES.getRegistryKey());
 	public static final TagKey<Block> CARNOTITE_BLOCKS = garnishedTag("carnotite", ForgeRegistries.BLOCKS.getRegistryKey());
 	public static final TagKey<Item> ENDER_DUSTS_TAG = forgeTag("ender_dusts", ForgeRegistries.ITEMS.getRegistryKey());
+	public static final TagKey<Block> FAN_FREEZING_PROCESSING_TAG = garnishedTag("fan_processing_catalysts/freezing", ForgeRegistries.BLOCKS.getRegistryKey());
+	public static final TagKey<Fluid> FAN_FREEZING_PROCESSING_FLUID_TAG = garnishedTag("fan_processing_catalysts/freezing", ForgeRegistries.FLUIDS.getRegistryKey());
 
 	// Integrated Tags
 	public static TagKey<Item> ZINC_INGOTS = forgeTag("ingots/zinc", ForgeRegistries.ITEMS.getRegistryKey());
