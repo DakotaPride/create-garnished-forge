@@ -8,7 +8,8 @@
     "EnderManMixin",
     "FluidReactionsMixin",
     "ItemStackMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "PlayerMixin"
   ],
   "client": [],
   "injectors": {
