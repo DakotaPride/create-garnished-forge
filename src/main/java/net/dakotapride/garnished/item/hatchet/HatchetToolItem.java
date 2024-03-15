@@ -228,7 +228,7 @@ public class HatchetToolItem extends DiggerItem implements Vanishable {
 					Objects.requireNonNull(victim);
 					list.forEach(victim::spawnAtLocation);
 
-					System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/ravaging/" + type.toShortString()));
+					// System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/ravaging/" + type.toShortString()));
 				} else if (HatchetUtils.hasSalvaging(user) && HatchetUtils.isAffectedBySalvaging(victim)) {
 					lootTable = victim.getServer().getLootData().getLootTable(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/salvaging/" + type.toShortString()));
 
@@ -246,7 +246,7 @@ public class HatchetToolItem extends DiggerItem implements Vanishable {
 					Objects.requireNonNull(victim);
 					list.forEach(victim::spawnAtLocation);
 
-					System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/salvaging/" + type.toShortString()));
+					// System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/salvaging/" + type.toShortString()));
 				}
 
 				// System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/" + modifier + type.toShortString()));
