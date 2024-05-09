@@ -1,6 +1,9 @@
 package net.dakotapride.garnished.registry;
 
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import net.dakotapride.garnished.CreateGarnished;
+import net.dakotapride.garnished.block.cake.AnniversaryCakeBlockEntity;
 import net.dakotapride.garnished.block.entity.SignEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.fml.common.Mod;
@@ -18,5 +21,21 @@ public class GarnishedBlockEntities {
             BLOCK_ENTITIES.register("sign", () -> BlockEntityType.Builder.of(SignEntity::new,
                     GarnishedBlocks.SEPIA_SIGN.get(), GarnishedBlocks.SEPIA_WALL_SIGN.get(),
                     GarnishedBlocks.NUT_SIGN.get(), GarnishedBlocks.NUT_WALL_SIGN.get()).build(null));
+
+
+    public class CakeModule {
+        // Provide Registration method
+        private static final CreateRegistrate REGISTRATE = CreateGarnished.registrate();
+
+        public static final BlockEntityEntry<AnniversaryCakeBlockEntity> CAKE = REGISTRATE
+                .blockEntity("anniversary_cake", AnniversaryCakeBlockEntity::new)
+                .validBlocks(GarnishedBlocks.ANNIVERSARY_CAKE)
+                .register();
+
+        public static void setRegister() {
+            // Load CreateGarnished.registrate();
+        }
+    }
+
 
 }

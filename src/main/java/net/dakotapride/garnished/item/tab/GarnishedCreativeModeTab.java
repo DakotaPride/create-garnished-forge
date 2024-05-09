@@ -107,7 +107,7 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
 
         items.add(GarnishedItems.NUT_MIX.asStack());
         items.add(GarnishedItems.SWEETENED_NUT_MIX.asStack());
-        items.add(GarnishedItems.CHOCHOLATE_GLAZED_NUT_MIX.asStack());
+        items.add(GarnishedItems.CHOCOLATE_GLAZED_NUT_MIX.asStack());
         items.add(GarnishedItems.HONEYED_NUT_MIX.asStack());
 
         items.add(GarnishedItems.GARNISHED_MEAL.asStack());
@@ -128,10 +128,14 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedItems.TOPHET_BREW.asStack());
         items.add(GarnishedItems.GRIM_STEW.asStack());
         items.add(GarnishedItems.SOUL_KHANA.asStack());
+        items.add(GarnishedItems.OMNISCIENT_STEW.asStack());
+        items.add(GarnishedItems.WARPED_BREW.asStack());
+        items.add(GarnishedItems.INIQUITOUS_BREW.asStack());
         items.add(GarnishedItems.SPIRITED_CONCOCTION.asStack());
         items.add(GarnishedItems.PUTRID_STEW.asStack());
         items.add(GarnishedItems.NUT_NACHO_BOWL.asStack());
         items.add(GarnishedItems.CINDER_ROLL.asStack());
+        items.add(GarnishedItems.PIQUANT_PRETZEL.asStack());
         items.add(GarnishedItems.WRAPPED_CRIMSON_TANGLE.asStack());
         items.add(GarnishedItems.WRAPPED_WARPED_TANGLE.asStack());
         items.add(GarnishedItems.WRAPPED_SEPIA_TANGLE.asStack());
@@ -144,9 +148,15 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedItems.CRUSHED_ENDER_PEARL.asStack());
         items.add(GarnishedItems.NUT_FLOUR.asStack());
         items.add(GarnishedItems.NUT_NACHO.asStack());
+        items.add(GarnishedItems.FIENDISH_SPORE.asStack());
         items.add(GarnishedItems.BRITTLE_DUST.asStack());
         items.add(GarnishedItems.SENILE_DUST.asStack());
+        items.add(GarnishedItems.TORRID_BLEND.asStack());
+        items.add(GarnishedItems.MALODOROUS_MIXTURE.asStack());
+        items.add(GarnishedItems.SENILE_BONE.asStack());
         items.add(GarnishedItems.SENILE_SPREAD.asStack());
+        items.add(GarnishedItems.TUSK.asStack());
+        items.add(GarnishedItems.IRATE_TUSK.asStack());
         items.add(GarnishedItems.CRIMSON_TUSK.asStack());
         items.add(GarnishedItems.SILICA_HARDENED_WRAP.asStack());
         items.add(GarnishedItems.ENFLAMED_MANDIBLE.asStack());
@@ -154,11 +164,20 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedItems.SENILE_SWEET_BASALT.asStack());
         items.add(GarnishedItems.SENILE_SWEET_SCORIA.asStack());
         items.add(GarnishedItems.SENILE_SWEET_SCORCHIA.asStack());
+        items.add(GarnishedItems.OMNISCIENT_STEW.asStack());
+        items.add(GarnishedItems.WARPED_BREW.asStack());
+        items.add(GarnishedItems.INIQUITOUS_BREW.asStack());
+        items.add(GarnishedItems.PIQUANT_PRETZEL.asStack());
+        items.add(GarnishedItems.INCANDESCENT_PETAL.asStack());
+        items.add(GarnishedItems.PANSOPHICAL_PETAL.asStack());
 
         items.add(GarnishedItems.VOID_MIXTURE.asStack());
         items.add(GarnishedItems.ETHEREAL_CONCOCTION.asStack());
         items.add(GarnishedItems.DESOLATE_STEW.asStack());
         items.add(GarnishedItems.COSMIC_BREW.asStack());
+        items.add(GarnishedItems.FARSEER_BREW.asStack());
+        items.add(GarnishedItems.SHELLED_DUMPLING.asStack());
+        items.add(GarnishedItems.CHAMPIONS_OMELETTE.asStack());
         items.add(GarnishedItems.CHORUS_BOWL.asStack());
         items.add(GarnishedItems.CHORUS_COOKIE.asStack());
         items.add(GarnishedItems.ENDER_JELLY_BLOB.asStack());
@@ -166,8 +185,12 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedItems.CHORUS_TUFT.asStack());
         items.add(GarnishedItems.HOLLOWED_CHORUS_FRUIT.asStack());
         items.add(GarnishedItems.ETHEREAL_COMPOUND.asStack());
+        items.add(GarnishedItems.PRELIMINARY_NUCLEUS.asStack());
+        items.add(GarnishedItems.DIMMED_SCALE.asStack());
         items.add(GarnishedItems.COSMIC_POWDER.asStack());
         items.add(GarnishedItems.DESOLATE_SPREAD.asStack());
+        items.add(GarnishedItems.ENDER_DRAGON_EGG_SHELL.asStack());
+        items.add(GarnishedItems.FRAIL_ENDER_DRAGON_EGG_SHELL.asStack());
 
         items.add(GarnishedItems.MUD_PIE.asStack());
         items.add(GarnishedItems.MULCH.asStack());
@@ -203,6 +226,10 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedItems.MASTIC_PASTE_BLUE.asStack());
         items.add(GarnishedItems.MASTIC_PASTE_PURPLE.asStack());
 
+        items.add(GarnishedItems.SUGAR_CUBE.asStack());
+        items.add(GarnishedItems.BOK_CHOY.asStack());
+        items.add(GarnishedItems.BOK_CHOY_SEEDS.asStack());
+
         items.add(GarnishedItems.BAKLAVA.asStack());
         items.add(GarnishedItems.MERRY_TREAT.asStack());
         items.add(GarnishedItems.COAL_TRUFFLE.asStack());
@@ -212,6 +239,8 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
 
         items.add(GarnishedItems.RAW_TENEBROUS_MEAT.asStack());
         items.add(GarnishedItems.COOKED_TENEBROUS_MEAT.asStack());
+        items.add(GarnishedItems.VEX_WING.asStack());
+        items.add(GarnishedItems.MEAT_SCRAPS.asStack());
         items.add(GarnishedItems.CASHEW_SORBET_SCOOP.asStack());
         items.add(GarnishedItems.CASHEW_SORBET_DELIGHT.asStack());
         items.add(GarnishedItems.ACHING_TENEBROUS_CLUMP.asStack());
@@ -281,9 +310,12 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
 
         items.add(GarnishedBlocks.SEPIA_FUNGUS.asStack());
         items.add(GarnishedBlocks.SOUL_ROOTS.asStack());
+        items.add(GarnishedBlocks.INCANDESCENT_LILY.asStack());
+        items.add(GarnishedBlocks.PANSOPHICAL_DAISY.asStack());
 
         items.add(GarnishedBlocks.BARREN_ROOTS.asStack());
         items.add(GarnishedBlocks.SMALL_CHORUS_PLANT.asStack());
+        items.add(GarnishedBlocks.AUREATE_SHRUB.asStack());
 
         items.add(GarnishedItems.CRUSHED_SALT_COMPOUND.asStack());
         items.add(GarnishedItems.SALT_COMPOUND.asStack());
@@ -297,6 +329,9 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedItems.CHORUS_COCKTAIL.asStack());
         items.add(GarnishedItems.ILLUMINATING_COCKTAIL.asStack());
         items.add(GarnishedItems.ROSY_COCKTAIL.asStack());
+        items.add(GarnishedItems.SWEET_TEA.asStack());
+        items.add(GarnishedItems.BOTTLE_OF_CRESTFALLEN_FLORA.asStack());
+        items.add(GarnishedItems.BOTTLED_MALODOROUS_MIXTURE.asStack());
 
         items.add(GarnishedItems.GARNISH_COMPOUND.asStack());
         items.add(GarnishedItems.GARNISH_POWDER.asStack());
@@ -312,6 +347,8 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         items.add(GarnishedFluids.GREEN_MASTIC_RESIN.getBucket().get().getDefaultInstance());
         items.add(GarnishedFluids.BLUE_MASTIC_RESIN.getBucket().get().getDefaultInstance());
         items.add(GarnishedFluids.PURPLE_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        items.add(GarnishedFluids.DRAGON_BREATH.getBucket().get().getDefaultInstance());
+        items.add(GarnishedFluids.SWEET_TEA.getBucket().get().getDefaultInstance());
 
         items.add(GarnishedItems.WOODEN_HATCHET.asStack());
         items.add(GarnishedItems.STONE_HATCHET.asStack());
@@ -343,6 +380,8 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
             items.add(GarnishedBlocks.ETHEREAL_COMPOUND_BLOCK.asStack());
             items.add(GarnishedBlocks.MULCH_BLOCK.asStack());
 
+            items.add(GarnishedBlocks.SENILE_BONE_BLOCK.asStack());
+
             items.add(GarnishedBlocks.SEPIA_WART_BLOCK.asStack());
             items.add(GarnishedBlocks.SEPIA_STEM.asStack());
             items.add(GarnishedBlocks.STRIPPED_SEPIA_STEM.asStack());
@@ -354,6 +393,7 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
             items.add(GarnishedBlocks.SEPIA_TRAPDOOR.asStack());
             items.add(GarnishedBlocks.SEPIA_DOOR.asStack());
             items.add(GarnishedItems.SEPIA_SIGN.asStack());
+            // items.add(GarnishedItems.SEPIA_HANGING_SIGN.asStack());
 
             items.add(GarnishedBlocks.NUT_LOG.asStack());
             items.add(GarnishedBlocks.STRIPPED_NUT_LOG.asStack());
@@ -365,6 +405,7 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
             items.add(GarnishedBlocks.NUT_TRAPDOOR.asStack());
             items.add(GarnishedBlocks.NUT_DOOR.asStack());
             items.add(GarnishedItems.NUT_SIGN.asStack());
+            // items.add(GarnishedItems.NUT_HANGING_SIGN.asStack());
             items.add(GarnishedItems.NUT_BOAT.asStack());
             items.add(GarnishedItems.NUT_CHEST_BOAT.asStack());
 
@@ -448,9 +489,29 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
             items.add(GarnishedBlocks.SMOOTH_RITUALISTIC_STONE_WALL.asStack());
             items.add(GarnishedBlocks.CHISELED_RITUALISTIC_STONE_BRICKS.asStack());
 
+            items.add(GarnishedBlocks.DRAGON_STONE.asStack());
+            items.add(GarnishedBlocks.DRAGON_STONE_SLAB.asStack());
+            items.add(GarnishedBlocks.DRAGON_STONE_STAIRS.asStack());
+            items.add(GarnishedBlocks.DRAGON_STONE_WALL.asStack());
+            items.add(GarnishedBlocks.DRAGON_STONE_BRICKS.asStack());
+            items.add(GarnishedBlocks.DRAGON_STONE_BRICKS_SLAB.asStack());
+            items.add(GarnishedBlocks.DRAGON_STONE_BRICKS_STAIRS.asStack());
+            items.add(GarnishedBlocks.DRAGON_STONE_BRICKS_WALL.asStack());
+            items.add(GarnishedBlocks.POLISHED_DRAGON_STONE.asStack());
+            items.add(GarnishedBlocks.POLISHED_DRAGON_STONE_SLAB.asStack());
+            items.add(GarnishedBlocks.POLISHED_DRAGON_STONE_STAIRS.asStack());
+            items.add(GarnishedBlocks.POLISHED_DRAGON_STONE_WALL.asStack());
+            items.add(GarnishedBlocks.SMOOTH_DRAGON_STONE.asStack());
+            items.add(GarnishedBlocks.SMOOTH_DRAGON_STONE_SLAB.asStack());
+            items.add(GarnishedBlocks.SMOOTH_DRAGON_STONE_STAIRS.asStack());
+            items.add(GarnishedBlocks.SMOOTH_DRAGON_STONE_WALL.asStack());
+            items.add(GarnishedBlocks.CHISELED_DRAGON_STONE_BRICKS.asStack());
+
             items.add(GarnishedBlocks.DRIED_VERMILION_KELP_BLOCK.asStack());
             items.add(GarnishedBlocks.DRIED_DULSE_KELP_BLOCK.asStack());
             items.add(GarnishedBlocks.VOLTAIC_SEA_GRASS.asStack());
+
+            items.add(GarnishedBlocks.ANNIVERSARY_CAKE.asStack());
         }
 
         @Override

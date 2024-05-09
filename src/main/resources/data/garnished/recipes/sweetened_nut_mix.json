@@ -7,17 +7,9 @@
     {
       "tag": "garnished:sweetened_nuts"
     },
-    [
-      {
-        "item": "garnished:garnished_sweet_berries"
-      },
-      {
-        "item": "minecraft:sweet_berries"
-      },
-      {
-        "item": "create:chocolate_glazed_berries"
-      }
-    ]
+    {
+      "tag": "garnished:berries"
+    }
   ],
   "result": {
     "item": "garnished:sweetened_nut_mix"

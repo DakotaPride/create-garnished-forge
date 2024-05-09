@@ -44,6 +44,14 @@ public class GarnishedEffects {
 
 	public static RegistryObject<MobEffect> FREEZING = EFFECTS.register("freezing", FreezingMobEffect::new);
 
+	public static RegistryObject<MobEffect> TRUTH_SEEKER = EFFECTS.register("truth_seeker", TruthSeekerMobEffect::new);
+
+	public static RegistryObject<MobEffect> AUSTRAL = EFFECTS.register("austral", () -> new AustralMobEffect()
+			.addAttributeModifier(Attributes.MOVEMENT_SPEED, "8e5b13bb-d71e-4e28-a4e2-b0e98eb4b9d3",
+					0.045, AttributeModifier.Operation.MULTIPLY_TOTAL)
+			.addAttributeModifier(Attributes.ATTACK_DAMAGE, "b9d7efff-0199-457d-bcfb-190ef862d2b0",
+					-0.20, AttributeModifier.Operation.MULTIPLY_TOTAL));
+
 	public static final RegistryObject<Potion> AVERSION_POTION = POTIONS.register("aversion",
 			() -> new Potion(new MobEffectInstance(AVERSION.get(), 2400)));
 	public static RegistryObject<Potion> LONG_AVERSION_POTION = POTIONS.register("long_aversion",

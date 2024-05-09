@@ -3,10 +3,13 @@
   "acceptMirrored": false,
   "key": {
     "A": {
-      "tag": "forge:ender_dusts"
+      "tag": "c:ender_dusts"
     },
     "B": {
       "item": "garnished:ghast_tendril"
+    },
+    "C": {
+      "item": "garnished:torrid_blend"
     },
     "X": {
       "item": "minecraft:cooked_chicken"
@@ -17,7 +20,7 @@
   },
   "pattern": [
     "AXA",
-    "B# "
+    "B#C"
   ],
   "result": {
     "count": 1,

@@ -2,6 +2,10 @@
   "replace": false,
   "entries": [
     "garnished:raw_tenebrous_meat_from_chests",
-    "garnished:lustrous_pearl_from_chests"
+    "garnished:lustrous_pearl_from_chests",
+    "garnished:amber_remnant_from_chests",
+    "garnished:antique_swathe_from_chests",
+    "garnished:bok_choy_from_chests",
+    "garnished:bok_choy_leaf_from_chests"
   ]
 }

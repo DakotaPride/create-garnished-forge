@@ -19,7 +19,7 @@ public class FrostScratchPaperItemRenderer extends CustomRenderedItemModelRender
 
     @Override
     protected void render(ItemStack stack, CustomRenderedItemModel model, PartialItemModelRenderer renderer,
-						  ItemTransforms.TransformType transformType, PoseStack ms, MultiBufferSource buffer, int light, int overlay) {
+                          ItemTransforms.TransformType transformType, PoseStack ms, MultiBufferSource buffer, int light, int overlay) {
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         LocalPlayer player = Minecraft.getInstance().player;
         float partialTicks = AnimationTickHolder.getPartialTicks();
@@ -32,7 +32,7 @@ public class FrostScratchPaperItemRenderer extends CustomRenderedItemModelRender
 
         ms.pushPose();
 
-        if (tag.contains("ClearsFreezing")) {
+        if (tag.contains("ClearsEffect")) {
             ms.pushPose();
 
             if (transformType == ItemTransforms.TransformType.GUI) {
@@ -55,8 +55,8 @@ public class FrostScratchPaperItemRenderer extends CustomRenderedItemModelRender
                     ms.translate(0.0f, bobbing, 0.0F);
             }
 
-            ItemStack toPolish = ItemStack.of(tag.getCompound("ClearsFreezing"));
-			itemRenderer.renderStatic(toPolish, ItemTransforms.TransformType.NONE, light, overlay, ms, buffer, 0);
+            ItemStack toPolish = ItemStack.of(tag.getCompound("ClearsEffect"));
+            itemRenderer.renderStatic(toPolish, ItemTransforms.TransformType.NONE, light, overlay, ms, buffer, 0);
 
             ms.popPose();
         }

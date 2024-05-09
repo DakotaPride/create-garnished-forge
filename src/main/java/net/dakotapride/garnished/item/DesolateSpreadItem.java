@@ -82,7 +82,7 @@ public class DesolateSpreadItem extends Item {
     }
 
     private void place(Registry<ConfiguredFeature<?, ?>> registry, ServerLevel level, ChunkGenerator generator, RandomSource random, BlockPos pos) {
-        registry.getHolder(GarnishedFeatures.END_STONE_VEGETATION_BONEMEAL_CONFIGURED).ifPresent((p_255920_) -> {
+        registry.getHolder(GarnishedFeatures.END_STONE_VEGETATION_SPREAD_CONFIGURED).ifPresent((p_255920_) -> {
             p_255920_.value().place(level, generator, random, pos);
         });
     }
