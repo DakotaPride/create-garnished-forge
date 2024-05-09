@@ -32,14 +32,6 @@ public interface IGarnishedItem {
 		return "text.garnished.nut.ungarnished";
 	}
 
-	default String crypticAppleCiderText() {
-		return "text.garnished.cider.cryptic";
-	}
-
-	default String bitterAppleCiderText() {
-		return "text.garnished.cider.bitter";
-	}
-
 	default ChatFormatting getStandardColouring() {
 		return ChatFormatting.GRAY;
 	}
@@ -80,31 +72,6 @@ public interface IGarnishedItem {
 		return Style.EMPTY.withColor(0xB1543E);
 	}
 
-	default MobEffect getCinderEffect(ItemStack stack) {
-		MobEffect effect = null;
-		Item item = stack.getItem();
-
-		if (item == GarnishedItems.SPEED_CINDER_CASHEW.get()) {
-			effect = MobEffects.MOVEMENT_SPEED;
-		} else if (item == GarnishedItems.STRENGTH_CINDER_WALNUT.get()) {
-			effect = MobEffects.DAMAGE_BOOST;
-		} else if (item == GarnishedItems.HASTE_CINDER_ALMOND.get()) {
-			effect = MobEffects.DIG_SPEED;
-		} else if (item == GarnishedItems.RESISTANCE_CINDER_PECAN.get()) {
-			effect = MobEffects.DAMAGE_RESISTANCE;
-		} else if (item == GarnishedItems.NIGHT_VISION_CINDER_PISTACHIO.get()) {
-			effect = MobEffects.NIGHT_VISION;
-		} else if (item == GarnishedItems.FIRE_RESISTANCE_CINDER_MACADAMIA.get()) {
-			effect = MobEffects.FIRE_RESISTANCE;
-		} else if (item == GarnishedItems.SLOW_FALLING_CINDER_CHESTNUT.get()) {
-			effect = MobEffects.SLOW_FALLING;
-		} else if (item != GarnishedItems.EFFECT_CINDER_BUHG.get() && item != GarnishedItems.POTENT_SPEED_CINDER_HAZELNUT.get()) {
-			return MobEffects.BLINDNESS;
-		}
-
-		return effect;
-	}
-
 	default MobEffect getCrypticAppleCiderEffect() {
 		int random = new Random().nextInt(2);
 
@@ -115,14 +82,5 @@ public interface IGarnishedItem {
 		}
 	}
 
-	default boolean getWrappedTangleEffectChance() {
-		int random = new Random().nextInt(10);
-
-		if (random == 1 || random == 2) {
-			return false;
-		} else {
-			return true;
-		}
-	}
 
 }

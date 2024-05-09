@@ -15,7 +15,7 @@ public class RedDyeBlowingFanCategory extends ProcessingViaFanCategory.MultiOutp
 
     @Override
     protected void renderAttachedBlock(@NotNull GuiGraphics graphics) {
-        GuiGameElement.of(GarnishedFluids.RED_MASTIC_RESIN.get())
+        GuiGameElement.of(GarnishedFluids.RED_MASTIC_RESIN.getSource().getFlowing())
                 .scale(SCALE)
                 .atLocal(0, 0, 2)
                 .lighting(AnimatedKinetics.DEFAULT_LIGHTING)

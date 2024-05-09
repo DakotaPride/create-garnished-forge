@@ -16,7 +16,7 @@ public class GreenDyeBlowingFanCategory extends ProcessingViaFanCategory.MultiOu
 
     @Override
     protected void renderAttachedBlock(@NotNull GuiGraphics graphics) {
-        GuiGameElement.of(GarnishedFluids.GREEN_MASTIC_RESIN.get())
+        GuiGameElement.of(GarnishedFluids.GREEN_MASTIC_RESIN.getSource().getFlowing())
                 .scale(SCALE)
                 .atLocal(0, 0, 2)
                 .lighting(AnimatedKinetics.DEFAULT_LIGHTING)

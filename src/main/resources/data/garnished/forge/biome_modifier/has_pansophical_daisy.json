@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:warped_forest",
+  "features": "garnished:pansophical_daisy_placed",
+  "step": "vegetal_decoration"
+}

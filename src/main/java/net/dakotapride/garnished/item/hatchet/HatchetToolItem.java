@@ -74,15 +74,7 @@ public class HatchetToolItem extends DiggerItem implements Vanishable {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        if (enchantment == Enchantments.SHARPNESS)
-            return true;
-        if (enchantment == Enchantments.SMITE)
-            return true;
         if (enchantment == Enchantments.UNBREAKING)
-            return true;
-        if (enchantment == Enchantments.MOB_LOOTING)
-            return true;
-        if (enchantment == Enchantments.BANE_OF_ARTHROPODS)
             return true;
         if (enchantment == Enchantments.VANISHING_CURSE)
             return true;
@@ -102,6 +94,23 @@ public class HatchetToolItem extends DiggerItem implements Vanishable {
             return true;
         if (enchantment == GarnishedEnchantments.RAVAGING.get())
             return true;
+        if (enchantment == GarnishedEnchantments.STRIKING.get())
+            return true;
+        if (enchantment == GarnishedEnchantments.QUICK_STEP.get())
+            return true;
+        if (enchantment == GarnishedEnchantments.REJUVENATE.get())
+            return true;
+        if (enchantment == GarnishedEnchantments.LEECHING_CURSE.get())
+            return true;
+
+        if (enchantment == Enchantments.MOB_LOOTING)
+            return false;
+        if (enchantment == Enchantments.SHARPNESS)
+            return false;
+        if (enchantment == Enchantments.SMITE)
+            return false;
+        if (enchantment == Enchantments.BANE_OF_ARTHROPODS)
+            return false;
 
         return super.canApplyAtEnchantingTable(stack, enchantment);
     }
@@ -195,63 +204,63 @@ public class HatchetToolItem extends DiggerItem implements Vanishable {
 
 
 
-	public void dropsUponDeath(LivingEntity user, LivingEntity victim) {
-		if (!victim.level().isClientSide() && victim.getServer().getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT)) {
-			// ResourceLocation id = null;
-			// ResourceLocation resourceLocation = BuiltInRegistries.ENTITY_TYPE.getKey(victim.getType());
-			//			id = resourceLocation.withPrefix("ravaging/");
-			EntityType<?> type = victim.getType();
+    public void dropsUponDeath(LivingEntity user, LivingEntity victim) {
+        if (!victim.level().isClientSide() && victim.getServer().getGameRules().getBoolean(GameRules.RULE_DOMOBLOOT)) {
+            // ResourceLocation id = null;
+            // ResourceLocation resourceLocation = BuiltInRegistries.ENTITY_TYPE.getKey(victim.getType());
+            //			id = resourceLocation.withPrefix("ravaging/");
+            EntityType<?> type = victim.getType();
 
-			LootTable lootTable;
-			LootParams lootContextParameterSet;
-			Player player;
-			ObjectArrayList<ItemStack> list;
-			LootParams.Builder builder;
-			LootContextParam<DamageSource> ctxParameters;
-			DamageSource source;
-			if (victim.getServer() != null) {
+            LootTable lootTable;
+            LootParams lootContextParameterSet;
+            Player player;
+            ObjectArrayList<ItemStack> list;
+            LootParams.Builder builder;
+            LootContextParam<DamageSource> ctxParameters;
+            DamageSource source;
+            if (victim.getServer() != null) {
 
-				if (HatchetUtils.hasRavaging(user) && HatchetUtils.isAffectedByRavaging(victim)) {
-					lootTable = victim.getServer().getLootData().getLootTable(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/ravaging/" + type.toShortString()));
+                if (HatchetUtils.hasRavaging(user) && HatchetUtils.isAffectedByRavaging(victim)) {
+                    lootTable = victim.getServer().getLootData().getLootTable(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/ravaging/" + type.toShortString()));
 
-					builder = (new LootParams.Builder((ServerLevel) user.level())).withParameter(LootContextParams.ORIGIN, user.position()).withParameter(LootContextParams.THIS_ENTITY, user);
-					ctxParameters = LootContextParams.DAMAGE_SOURCE;
-					if (user instanceof Player) {
-						player = (Player) user;
-						source = user.damageSources().playerAttack(player);
-					} else {
-						source = user.damageSources().mobAttack(user);
-					}
+                    builder = (new LootParams.Builder((ServerLevel) user.level())).withParameter(LootContextParams.ORIGIN, user.position()).withParameter(LootContextParams.THIS_ENTITY, user);
+                    ctxParameters = LootContextParams.DAMAGE_SOURCE;
+                    if (user instanceof Player) {
+                        player = (Player) user;
+                        source = user.damageSources().playerAttack(player);
+                    } else {
+                        source = user.damageSources().mobAttack(user);
+                    }
 
-					lootContextParameterSet = builder.withParameter(ctxParameters, source).create(LootContextParamSets.ENTITY);
-					list = lootTable.getRandomItems(lootContextParameterSet);
-					Objects.requireNonNull(victim);
-					list.forEach(victim::spawnAtLocation);
+                    lootContextParameterSet = builder.withParameter(ctxParameters, source).create(LootContextParamSets.ENTITY);
+                    list = lootTable.getRandomItems(lootContextParameterSet);
+                    Objects.requireNonNull(victim);
+                    list.forEach(victim::spawnAtLocation);
 
-					// System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/ravaging/" + type.toShortString()));
-				} else if (HatchetUtils.hasSalvaging(user) && HatchetUtils.isAffectedBySalvaging(victim)) {
-					lootTable = victim.getServer().getLootData().getLootTable(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/salvaging/" + type.toShortString()));
+                    // System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/ravaging/" + type.toShortString()));
+                } else if (HatchetUtils.hasSalvaging(user) && HatchetUtils.isAffectedBySalvaging(victim)) {
+                    lootTable = victim.getServer().getLootData().getLootTable(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/salvaging/" + type.toShortString()));
 
-					builder = (new LootParams.Builder((ServerLevel) user.level())).withParameter(LootContextParams.ORIGIN, user.position()).withParameter(LootContextParams.THIS_ENTITY, user);
-					ctxParameters = LootContextParams.DAMAGE_SOURCE;
-					if (user instanceof Player) {
-						player = (Player) user;
-						source = user.damageSources().playerAttack(player);
-					} else {
-						source = user.damageSources().mobAttack(user);
-					}
+                    builder = (new LootParams.Builder((ServerLevel) user.level())).withParameter(LootContextParams.ORIGIN, user.position()).withParameter(LootContextParams.THIS_ENTITY, user);
+                    ctxParameters = LootContextParams.DAMAGE_SOURCE;
+                    if (user instanceof Player) {
+                        player = (Player) user;
+                        source = user.damageSources().playerAttack(player);
+                    } else {
+                        source = user.damageSources().mobAttack(user);
+                    }
 
-					lootContextParameterSet = builder.withParameter(ctxParameters, source).create(LootContextParamSets.ENTITY);
-					list = lootTable.getRandomItems(lootContextParameterSet);
-					Objects.requireNonNull(victim);
-					list.forEach(victim::spawnAtLocation);
+                    lootContextParameterSet = builder.withParameter(ctxParameters, source).create(LootContextParamSets.ENTITY);
+                    list = lootTable.getRandomItems(lootContextParameterSet);
+                    Objects.requireNonNull(victim);
+                    list.forEach(victim::spawnAtLocation);
 
-					// System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/salvaging/" + type.toShortString()));
-				}
+                    // System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/salvaging/" + type.toShortString()));
+                }
 
-				// System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/" + modifier + type.toShortString()));
-			}
-		}
+                // System.out.println(new ResourceLocation(BuiltInRegistries.ENTITY_TYPE.getKey(type).getNamespace(), "entities/" + modifier + type.toShortString()));
+            }
+        }
 
-	}
+    }
 }

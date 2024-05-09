@@ -4,6 +4,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.TooltipHelper;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import net.dakotapride.garnished.block.cake.AnniversaryCakeBlockRenderer;
 import net.dakotapride.garnished.entity.render.NutBoatRenderer;
 import net.dakotapride.garnished.forge.LootModifiers;
 import net.dakotapride.garnished.recipe.GarnishedFanProcessing;
@@ -20,11 +21,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -74,6 +76,8 @@ public class CreateGarnished {
         GarnishedFanProcessing.register();
         LootModifiers.register(eventBus);
 
+        GarnishedAdvancementUtils.register();
+
         REGISTRATE.get().registerEventListeners(eventBus);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -105,6 +109,14 @@ public class CreateGarnished {
 
         event.enqueueWork(GarnishedFluids::registerFluidInteractions);
 
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.SEPIA_FUNGUS.getId(), GarnishedBlocks.POTTED_SEPIA_FUNGUS);
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.SOUL_ROOTS.getId(), GarnishedBlocks.POTTED_SOUL_ROOTS);
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.BARREN_ROOTS.getId(), GarnishedBlocks.POTTED_BARREN_ROOTS);
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.SMALL_CHORUS_PLANT.getId(), GarnishedBlocks.POTTED_SMALL_CHORUS_PLANT);
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.PANSOPHICAL_DAISY.getId(), GarnishedBlocks.POTTED_PANSOPHICAL_DAISY);
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.INCANDESCENT_LILY.getId(), GarnishedBlocks.POTTED_INCANDESCENT_LILY);
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.AUREATE_SHRUB.getId(), GarnishedBlocks.POTTED_AUREATE_SHRUB);
+
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -130,9 +142,9 @@ public class CreateGarnished {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             // GarnishedPonderIndex.index();
-            NewIndex.index();
+            // NewIndex.index();
             // GarnishedPonderIndex.Tags.fillPonderTags();
-            NewIndex.PonderIndexTags.tags();
+            // NewIndex.PonderIndexTags.tags();
 
             EntityRenderers.register(GarnishedEntities.NUT_BOAT.get(), pContext -> new NutBoatRenderer(pContext, false));
             EntityRenderers.register(GarnishedEntities.NUT_CHEST_BOAT.get(), pContext -> new NutBoatRenderer(pContext, true));
@@ -184,6 +196,21 @@ public class CreateGarnished {
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.DULSE_KELP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.DULSE_KELP_PLANT.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VOLTAIC_SEA_GRASS.get(), RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PANSOPHICAL_DAISY.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.POTTED_PANSOPHICAL_DAISY.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.INCANDESCENT_LILY.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.POTTED_INCANDESCENT_LILY.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SORROWFUL_LICHEN.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.AUREATE_SHRUB.get(), RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.POTTED_SEPIA_FUNGUS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.POTTED_SOUL_ROOTS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.POTTED_BARREN_ROOTS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.POTTED_SMALL_CHORUS_PLANT.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.POTTED_AUREATE_SHRUB.get(), RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BOK_CHOY_PLANT.get(), RenderType.cutout());
         }
 
         @SubscribeEvent
@@ -192,6 +219,7 @@ public class CreateGarnished {
             // event.registerEntityRenderer(HibernalEntityTypes.MYQUESTE_CHEST_BOAT.get(), context -> new MyquesteBoatRenderer(context, true));
             event.registerBlockEntityRenderer(GarnishedBlockEntities.SIGN.get(), SignRenderer::new);
             event.registerBlockEntityRenderer(GarnishedBlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
+            event.registerBlockEntityRenderer(GarnishedBlockEntities.CAKE.get(), AnniversaryCakeBlockRenderer::new);
         }
 
         public static final ModelLayerLocation NUT_BOAT_LAYER = new ModelLayerLocation(

@@ -16,7 +16,7 @@ public class PurpleDyeBlowingFanCategory extends ProcessingViaFanCategory.MultiO
 
     @Override
     protected void renderAttachedBlock(@NotNull GuiGraphics graphics) {
-        GuiGameElement.of(GarnishedFluids.PURPLE_MASTIC_RESIN.get())
+        GuiGameElement.of(GarnishedFluids.PURPLE_MASTIC_RESIN.getSource().getFlowing())
                 .scale(SCALE)
                 .atLocal(0, 0, 2)
                 .lighting(AnimatedKinetics.DEFAULT_LIGHTING)

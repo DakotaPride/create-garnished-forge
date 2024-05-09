@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:basalt_deltas",
+  "features": "garnished:sorrowful_lichen_basalt_deltas_placed",
+  "step": "vegetal_decoration"
+}

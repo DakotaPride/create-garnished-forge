@@ -1,6 +1,7 @@
 package net.dakotapride.garnished.registry;
 
 import net.dakotapride.garnished.CreateGarnished;
+import net.dakotapride.garnished.block.cake.AnniversaryCakeBlockEntity;
 import net.dakotapride.garnished.block.entity.HangingSignEntity;
 import net.dakotapride.garnished.block.entity.SignEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -24,5 +25,10 @@ public class GarnishedBlockEntities {
             BLOCK_ENTITIES.register("hanging_sign", () -> BlockEntityType.Builder.of(HangingSignEntity::new,
                     GarnishedBlocks.SEPIA_HANGING_SIGN.get(), GarnishedBlocks.SEPIA_WALL_HANGING_SIGN.get(),
                     GarnishedBlocks.NUT_HANGING_SIGN.get(), GarnishedBlocks.NUT_WALL_HANGING_SIGN.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<AnniversaryCakeBlockEntity>> CAKE =
+            BLOCK_ENTITIES.register("anniversary_cake", () ->
+                    BlockEntityType.Builder.of(AnniversaryCakeBlockEntity::new,
+                            GarnishedBlocks.ANNIVERSARY_CAKE.get()).build(null));
 
 }

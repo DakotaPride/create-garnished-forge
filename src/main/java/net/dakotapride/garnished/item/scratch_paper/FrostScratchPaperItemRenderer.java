@@ -32,7 +32,7 @@ public class FrostScratchPaperItemRenderer extends CustomRenderedItemModelRender
 
         ms.pushPose();
 
-        if (tag.contains("ClearsFreezing")) {
+        if (tag.contains("ClearsEffect")) {
             ms.pushPose();
 
             if (transformType == ItemDisplayContext.GUI) {
@@ -55,7 +55,7 @@ public class FrostScratchPaperItemRenderer extends CustomRenderedItemModelRender
                     ms.translate(0.0f, bobbing, 0.0F);
             }
 
-            ItemStack toPolish = ItemStack.of(tag.getCompound("ClearsFreezing"));
+            ItemStack toPolish = ItemStack.of(tag.getCompound("ClearsEffect"));
             itemRenderer.renderStatic(toPolish, ItemDisplayContext.NONE, light, overlay, ms, buffer, player.level(), 0);
 
             ms.popPose();

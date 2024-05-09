@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["minecraft:warped_forest", "minecraft:crimson_forest"],
+  "features": "garnished:sorrowful_lichen_placed",
+  "step": "vegetal_decoration"
+}

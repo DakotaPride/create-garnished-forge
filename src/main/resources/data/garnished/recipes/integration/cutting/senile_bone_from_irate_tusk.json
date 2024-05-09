@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:irate_tusk"
+    }
+  ],
+  "result": [
+    {
+      "count": 12,
+      "item": "garnished:senile_bone"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/hatchets"
+  }
+}

@@ -127,7 +127,7 @@ public class GarnishedTabs {
 
 			output.accept(GarnishedItems.NUT_MIX.asStack());
 			output.accept(GarnishedItems.SWEETENED_NUT_MIX.asStack());
-			output.accept(GarnishedItems.CHOCHOLATE_GLAZED_NUT_MIX.asStack());
+			output.accept(GarnishedItems.CHOCOLATE_GLAZED_NUT_MIX.asStack());
 			output.accept(GarnishedItems.HONEYED_NUT_MIX.asStack());
 
 			output.accept(GarnishedItems.GARNISHED_MEAL.asStack());
@@ -148,10 +148,14 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.TOPHET_BREW.asStack());
 			output.accept(GarnishedItems.GRIM_STEW.asStack());
 			output.accept(GarnishedItems.SOUL_KHANA.asStack());
+			output.accept(GarnishedItems.OMNISCIENT_STEW.asStack());
+			output.accept(GarnishedItems.WARPED_BREW.asStack());
+			output.accept(GarnishedItems.INIQUITOUS_BREW.asStack());
 			output.accept(GarnishedItems.SPIRITED_CONCOCTION.asStack());
 			output.accept(GarnishedItems.PUTRID_STEW.asStack());
 			output.accept(GarnishedItems.NUT_NACHO_BOWL.asStack());
 			output.accept(GarnishedItems.CINDER_ROLL.asStack());
+			output.accept(GarnishedItems.PIQUANT_PRETZEL.asStack());
 			output.accept(GarnishedItems.WRAPPED_CRIMSON_TANGLE.asStack());
 			output.accept(GarnishedItems.WRAPPED_WARPED_TANGLE.asStack());
 			output.accept(GarnishedItems.WRAPPED_SEPIA_TANGLE.asStack());
@@ -164,9 +168,15 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.CRUSHED_ENDER_PEARL.asStack());
 			output.accept(GarnishedItems.NUT_FLOUR.asStack());
 			output.accept(GarnishedItems.NUT_NACHO.asStack());
+			output.accept(GarnishedItems.FIENDISH_SPORE.asStack());
 			output.accept(GarnishedItems.BRITTLE_DUST.asStack());
 			output.accept(GarnishedItems.SENILE_DUST.asStack());
+			output.accept(GarnishedItems.TORRID_BLEND.asStack());
+			output.accept(GarnishedItems.MALODOROUS_MIXTURE.asStack());
+			output.accept(GarnishedItems.SENILE_BONE.asStack());
 			output.accept(GarnishedItems.SENILE_SPREAD.asStack());
+			output.accept(GarnishedItems.TUSK.asStack());
+			output.accept(GarnishedItems.IRATE_TUSK.asStack());
 			output.accept(GarnishedItems.CRIMSON_TUSK.asStack());
 			output.accept(GarnishedItems.SILICA_HARDENED_WRAP.asStack());
 			output.accept(GarnishedItems.ENFLAMED_MANDIBLE.asStack());
@@ -174,11 +184,20 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.SENILE_SWEET_BASALT.asStack());
 			output.accept(GarnishedItems.SENILE_SWEET_SCORIA.asStack());
 			output.accept(GarnishedItems.SENILE_SWEET_SCORCHIA.asStack());
+			output.accept(GarnishedItems.OMNISCIENT_STEW.asStack());
+			output.accept(GarnishedItems.WARPED_BREW.asStack());
+			output.accept(GarnishedItems.INIQUITOUS_BREW.asStack());
+			output.accept(GarnishedItems.PIQUANT_PRETZEL.asStack());
+			output.accept(GarnishedItems.INCANDESCENT_PETAL.asStack());
+			output.accept(GarnishedItems.PANSOPHICAL_PETAL.asStack());
 
 			output.accept(GarnishedItems.VOID_MIXTURE.asStack());
 			output.accept(GarnishedItems.ETHEREAL_CONCOCTION.asStack());
 			output.accept(GarnishedItems.DESOLATE_STEW.asStack());
 			output.accept(GarnishedItems.COSMIC_BREW.asStack());
+			output.accept(GarnishedItems.FARSEER_BREW.asStack());
+			output.accept(GarnishedItems.SHELLED_DUMPLING.asStack());
+			output.accept(GarnishedItems.CHAMPIONS_OMELETTE.asStack());
 			output.accept(GarnishedItems.CHORUS_BOWL.asStack());
 			output.accept(GarnishedItems.CHORUS_COOKIE.asStack());
 			output.accept(GarnishedItems.ENDER_JELLY_BLOB.asStack());
@@ -186,8 +205,12 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.CHORUS_TUFT.asStack());
 			output.accept(GarnishedItems.HOLLOWED_CHORUS_FRUIT.asStack());
 			output.accept(GarnishedItems.ETHEREAL_COMPOUND.asStack());
+			output.accept(GarnishedItems.PRELIMINARY_NUCLEUS.asStack());
+			output.accept(GarnishedItems.DIMMED_SCALE.asStack());
 			output.accept(GarnishedItems.COSMIC_POWDER.asStack());
 			output.accept(GarnishedItems.DESOLATE_SPREAD.asStack());
+			output.accept(GarnishedItems.ENDER_DRAGON_EGG_SHELL.asStack());
+			output.accept(GarnishedItems.FRAIL_ENDER_DRAGON_EGG_SHELL.asStack());
 
 			output.accept(GarnishedItems.MUD_PIE.asStack());
 			output.accept(GarnishedItems.MULCH.asStack());
@@ -223,6 +246,10 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.MASTIC_PASTE_BLUE);
 			output.accept(GarnishedItems.MASTIC_PASTE_PURPLE);
 
+			output.accept(GarnishedItems.SUGAR_CUBE.asStack());
+			output.accept(GarnishedItems.BOK_CHOY.asStack());
+			output.accept(GarnishedItems.BOK_CHOY_SEEDS.asStack());
+
 			output.accept(GarnishedItems.BAKLAVA);
 			output.accept(GarnishedItems.MERRY_TREAT);
 			output.accept(GarnishedItems.COAL_TRUFFLE);
@@ -232,6 +259,8 @@ public class GarnishedTabs {
 
 			output.accept(GarnishedItems.RAW_TENEBROUS_MEAT);
 			output.accept(GarnishedItems.COOKED_TENEBROUS_MEAT);
+			output.accept(GarnishedItems.VEX_WING.asStack());
+			output.accept(GarnishedItems.MEAT_SCRAPS.asStack());
 			output.accept(GarnishedItems.CASHEW_SORBET_SCOOP);
 			output.accept(GarnishedItems.CASHEW_SORBET_DELIGHT);
 			output.accept(GarnishedItems.ACHING_TENEBROUS_CLUMP);
@@ -301,9 +330,12 @@ public class GarnishedTabs {
 
 			output.accept(GarnishedBlocks.SEPIA_FUNGUS.asStack());
 			output.accept(GarnishedBlocks.SOUL_ROOTS.asStack());
+			output.accept(GarnishedBlocks.INCANDESCENT_LILY.asStack());
+			output.accept(GarnishedBlocks.PANSOPHICAL_DAISY.asStack());
 
 			output.accept(GarnishedBlocks.BARREN_ROOTS.asStack());
 			output.accept(GarnishedBlocks.SMALL_CHORUS_PLANT.asStack());
+			output.accept(GarnishedBlocks.AUREATE_SHRUB.asStack());
 
 			output.accept(GarnishedItems.CRUSHED_SALT_COMPOUND.asStack());
 			output.accept(GarnishedItems.SALT_COMPOUND.asStack());
@@ -317,6 +349,9 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.CHORUS_COCKTAIL.asStack());
 			output.accept(GarnishedItems.ILLUMINATING_COCKTAIL.asStack());
 			output.accept(GarnishedItems.ROSY_COCKTAIL);
+			output.accept(GarnishedItems.SWEET_TEA);
+			output.accept(GarnishedItems.BOTTLE_OF_CRESTFALLEN_FLORA);
+			output.accept(GarnishedItems.BOTTLED_MALODOROUS_MIXTURE);
 
 			output.accept(GarnishedItems.GARNISH_COMPOUND.asStack());
 			output.accept(GarnishedItems.GARNISH_POWDER.asStack());
@@ -355,6 +390,8 @@ public class GarnishedTabs {
 			output.accept(GarnishedBlocks.SALT_COMPOUND_BLOCK.asStack());
 			output.accept(GarnishedBlocks.ETHEREAL_COMPOUND_BLOCK.asStack());
 			output.accept(GarnishedBlocks.MULCH_BLOCK.asStack());
+
+			output.accept(GarnishedBlocks.SENILE_BONE_BLOCK.asStack());
 
 			output.accept(GarnishedBlocks.SEPIA_WART_BLOCK.asStack());
 			output.accept(GarnishedBlocks.SEPIA_STEM.asStack());
@@ -463,9 +500,29 @@ public class GarnishedTabs {
 			output.accept(GarnishedBlocks.SMOOTH_RITUALISTIC_STONE_WALL.asStack());
 			output.accept(GarnishedBlocks.CHISELED_RITUALISTIC_STONE_BRICKS.asStack());
 
+			output.accept(GarnishedBlocks.DRAGON_STONE.asStack());
+			output.accept(GarnishedBlocks.DRAGON_STONE_SLAB.asStack());
+			output.accept(GarnishedBlocks.DRAGON_STONE_STAIRS.asStack());
+			output.accept(GarnishedBlocks.DRAGON_STONE_WALL.asStack());
+			output.accept(GarnishedBlocks.DRAGON_STONE_BRICKS.asStack());
+			output.accept(GarnishedBlocks.DRAGON_STONE_BRICKS_SLAB.asStack());
+			output.accept(GarnishedBlocks.DRAGON_STONE_BRICKS_STAIRS.asStack());
+			output.accept(GarnishedBlocks.DRAGON_STONE_BRICKS_WALL.asStack());
+			output.accept(GarnishedBlocks.POLISHED_DRAGON_STONE.asStack());
+			output.accept(GarnishedBlocks.POLISHED_DRAGON_STONE_SLAB.asStack());
+			output.accept(GarnishedBlocks.POLISHED_DRAGON_STONE_STAIRS.asStack());
+			output.accept(GarnishedBlocks.POLISHED_DRAGON_STONE_WALL.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_DRAGON_STONE.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_DRAGON_STONE_SLAB.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_DRAGON_STONE_STAIRS.asStack());
+			output.accept(GarnishedBlocks.SMOOTH_DRAGON_STONE_WALL.asStack());
+			output.accept(GarnishedBlocks.CHISELED_DRAGON_STONE_BRICKS.asStack());
+
 			output.accept(GarnishedBlocks.DRIED_VERMILION_KELP_BLOCK.asStack());
 			output.accept(GarnishedBlocks.DRIED_DULSE_KELP_BLOCK.asStack());
 			output.accept(GarnishedBlocks.VOLTAIC_SEA_GRASS.asStack());
+
+			output.accept(GarnishedBlocks.ANNIVERSARY_CAKE.asStack());
 		}
 
 	}

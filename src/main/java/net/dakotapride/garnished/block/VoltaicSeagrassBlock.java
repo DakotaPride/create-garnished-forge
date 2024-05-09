@@ -7,6 +7,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.AbstractFish;
+import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -42,7 +44,8 @@ public class VoltaicSeagrassBlock extends SeagrassBlock {
 
     @Override
     public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
-        if (entity instanceof LivingEntity) {
+        // Avoid death by pathfinding
+        if (entity instanceof LivingEntity && !(entity instanceof WaterAnimal)) {
             entity.makeStuckInBlock(state, new Vec3(0.800000011920929, 0.75, 0.800000011920929));
             if (!level.isClientSide && (entity.xOld != entity.getX() || entity.zOld != entity.getZ())) {
                 double d = Math.abs(entity.getX() - entity.xOld);
