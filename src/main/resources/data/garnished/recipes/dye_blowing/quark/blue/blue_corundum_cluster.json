@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "type": "garnished:blue_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "quark:corundum_clusters"
+    }
+  ],
+  "results": [
+    {
+      "item": "quark:blue_corundum_cluster",
+      "count": 1
+    }
+  ]
+}
