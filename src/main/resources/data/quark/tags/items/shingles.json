@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "quark:red_shingles",
+    "quark:orange_shingles",
+    "quark:yellow_shingles",
+    "quark:green_shingles",
+    "quark:lime_shingles",
+    "quark:blue_shingles",
+    "quark:light_blue_shingles",
+    "quark:cyan_shingles",
+    "quark:purple_shingles",
+    "quark:magenta_shingles",
+    "quark:pink_shingles",
+    "quark:black_shingles",
+    "quark:gray_shingles",
+    "quark:light_gray_shingles",
+    "quark:white_shingles",
+    "quark:brown_shingles"
+  ]
+}
