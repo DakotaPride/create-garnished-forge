@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "type": "garnished:purple_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "quark:framed_glasses"
+    }
+  ],
+  "results": [
+    {
+      "item": "quark:purple_framed_glass",
+      "count": 1
+    }
+  ]
+}
