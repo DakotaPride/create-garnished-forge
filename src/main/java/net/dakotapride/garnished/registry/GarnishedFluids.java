@@ -8,14 +8,18 @@ import com.simibubi.create.foundation.utility.Color;
 import com.simibubi.create.infrastructure.config.AllConfigs;
 import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
+import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.CreateGarnished;
+import net.dakotapride.garnished.block.DragonBreathFluidBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -207,11 +211,18 @@ public class GarnishedFluids implements Fluids {
 							() -> 1f / 8f * AllConfigs.client().honeyTransparencyMultiplier.getF()))
 					.properties(b -> b.viscosity(1500)
 							.density(1400)
-							.lightLevel(15))
+							.lightLevel(15)
+							.canSwim(false)
+							.canDrown(false)
+							.pathType(BlockPathTypes.LAVA)
+							.adjacentPathType(null)
+							.temperature(10000))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
-							.explosionResistance(100f))
+							.explosionResistance(100f)
+							.block(GarnishedBlocks.DRAGON_BREATH_FLUID))
+					.block((NonNullSupplier<? extends ForgeFlowingFluid.Flowing> pProperties, BlockBehaviour.Properties pProperties2) -> new DragonBreathFluidBlock(pProperties2)).build()
 					.source(ForgeFlowingFluid.Source::new)
 					.bucket()
 					.tag(AllTags.forgeItemTag("buckets/dragon_breath"))
