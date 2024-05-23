@@ -9,11 +9,14 @@ import com.simibubi.create.foundation.utility.Color;
 import com.simibubi.create.infrastructure.config.AllConfigs;
 import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
+import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.dakotapride.garnished.CreateGarnished;
+import net.dakotapride.garnished.block.DragonBreathFluidBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -212,7 +215,9 @@ public class GarnishedFluids {
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
 							.slopeFindDistance(3)
-							.explosionResistance(100f))
+							.explosionResistance(100f)
+							.block(GarnishedBlocks.DRAGON_BREATH_FLUID))
+					.block((NonNullSupplier<? extends ForgeFlowingFluid.Flowing> pProperties, BlockBehaviour.Properties pProperties2) -> GarnishedBlocks.DRAGON_BREATH_FLUID.get()).build()
 					.source(ForgeFlowingFluid.Source::new)
 					.bucket()
 					.tag(AllTags.forgeItemTag("buckets/dragon_breath"))
