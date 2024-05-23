@@ -217,7 +217,7 @@ public class GarnishedFluids implements Fluids {
 							.slopeFindDistance(3)
 							.explosionResistance(100f)
 							.block(GarnishedBlocks.DRAGON_BREATH_FLUID))
-					.block((NonNullSupplier<? extends ForgeFlowingFluid.Flowing> pProperties, BlockBehaviour.Properties pProperties2) -> new DragonBreathFluidBlock(pProperties2)).build()
+					.block((NonNullSupplier<? extends ForgeFlowingFluid.Flowing> pProperties, BlockBehaviour.Properties pProperties2) -> GarnishedBlocks.DRAGON_BREATH_FLUID.get()).build()
 					.source(ForgeFlowingFluid.Source::new)
 					.bucket()
 					.tag(AllTags.forgeItemTag("buckets/dragon_breath"))
