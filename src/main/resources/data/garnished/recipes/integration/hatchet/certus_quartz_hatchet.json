@@ -1,0 +1,30 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "tag": "c:gems/certus_quartz"
+    },
+    "A": {
+      "item": "minecraft:string"
+    },
+    "#": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "AX ",
+    "X# ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "item": "garnished:certus_quartz_hatchet"
+  }
+}

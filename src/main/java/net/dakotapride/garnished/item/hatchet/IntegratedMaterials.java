@@ -4,6 +4,7 @@ import net.dakotapride.garnished.registry.GarnishedTags;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,6 +40,15 @@ public enum IntegratedMaterials implements Tier {
     }),
     GILDED_NETHERITE(4, 2031, 10.0F, 2.0F, 20, () -> {
         return Ingredient.of(Items.NETHERITE_INGOT);
+    }),
+    NETHER_QUARTZ(Tiers.IRON.getLevel(), Tiers.IRON.getUses(), Tiers.IRON.getSpeed(), Tiers.IRON.getAttackDamageBonus(), Tiers.IRON.getEnchantmentValue(), () -> {
+        return Ingredient.of(Items.QUARTZ);
+    }),
+    CERTUS_QUARTZ(Tiers.IRON.getLevel(), Tiers.IRON.getUses(), Tiers.IRON.getSpeed(), Tiers.IRON.getAttackDamageBonus(), Tiers.IRON.getEnchantmentValue(), () -> {
+        return Ingredient.of(GarnishedTags.CERTUS_QUARTZ);
+    }),
+    FLUIX(4, Tiers.IRON.getUses() * 3, Tiers.IRON.getUses() * 1.2F, Tiers.IRON.getAttackDamageBonus() * 1.2F, Tiers.IRON.getEnchantmentValue(), () -> {
+        return Ingredient.of(GarnishedTags.FLUIX_CRYSTALS);
     })
 
     // SAPPHIRE(Tiers.NETHERITE.getLevel(), 2106, 9.0f, 4.0f, 18, () -> {

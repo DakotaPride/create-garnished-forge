@@ -376,6 +376,19 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.GOLDEN_HATCHET.asStack());
 			output.accept(GarnishedItems.DIAMOND_HATCHET.asStack());
 			output.accept(GarnishedItems.NETHERITE_HATCHET.asStack());
+
+			output.accept(GarnishedItems.ZINC_HATCHET.asStack());
+			output.accept(GarnishedItems.ROSE_QUARTZ_HATCHET.asStack());
+			output.accept(GarnishedItems.EXPERIENCE_HATCHET.asStack());
+			output.accept(GarnishedItems.COPPER_HATCHET.asStack());
+			output.accept(GarnishedItems.BRASS_HATCHET.asStack());
+			output.accept(GarnishedItems.BLAZING_HATCHET.asStack());
+			output.accept(GarnishedItems.WARDEN_HATCHET.asStack());
+			output.accept(GarnishedItems.ROSE_GOLD_HATCHET.asStack());
+			output.accept(GarnishedItems.GILDED_NETHERITE_HATCHET.asStack());
+			output.accept(GarnishedItems.NETHER_QUARTZ_HATCHET.asStack());
+			output.accept(GarnishedItems.CERTUS_QUARTZ_HATCHET.asStack());
+			output.accept(GarnishedItems.FLUIX_HATCHET.asStack());
 		}
 	}
 

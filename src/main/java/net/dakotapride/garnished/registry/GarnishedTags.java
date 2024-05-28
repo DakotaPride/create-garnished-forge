@@ -33,6 +33,16 @@ public class GarnishedTags {
 
 	public static TagKey<Item> WARDEN_REPAIRABLE_ITEMS = forgeTag("shards/warden", Registries.ITEM);
 
+	public static TagKey<Item> NETHER_RUBIES = forgeTag("rubies/nether", Registries.ITEM);
+	public static TagKey<Item> CINCINNASITE = forgeTag("cincinnasite", Registries.ITEM);
+
+	public static TagKey<Item> CERTUS_QUARTZ = forgeTag("gems/certus_quartz", Registries.ITEM);
+	public static TagKey<Item> FLUIX_CRYSTALS = forgeTag("gems/fluix", Registries.ITEM);
+
+	public static TagKey<Item> THALLASIUM_INGOTS = forgeTag("ingots/thallasium", Registries.ITEM);
+	public static TagKey<Item> TERMINITE_INGOTS = forgeTag("ingots/terminite", Registries.ITEM);
+	public static TagKey<Item> AETERNIUM_INGOTS = forgeTag("ingots/aeternium", Registries.ITEM);
+
 	// public static TagKey<Item> JADE_GEMS = forgeTag("gems/jade");
 	//	public static TagKey<Item> TOPAZ_GEMS = forgeTag("gems/topaz");
 	//	public static TagKey<Item> AQUAMARINE_GEMS = forgeTag("gems/aquamarine");

@@ -764,6 +764,13 @@ public class GarnishedItems {
 	public static final ItemEntry<GildedNetheriteHatchetToolItem> GILDED_NETHERITE_HATCHET =
 			REGISTRATE.item("gilded_netherite_hatchet", GildedNetheriteHatchetToolItem::new).register();
 
+	public static final ItemEntry<QuartzHatchetToolItem> NETHER_QUARTZ_HATCHET =
+			REGISTRATE.item("nether_quartz_hatchet", QuartzHatchetToolItem::new).register();
+	public static final ItemEntry<QuartzHatchetToolItem.CertusQuartzHatchetToolItem> CERTUS_QUARTZ_HATCHET =
+			REGISTRATE.item("certus_quartz_hatchet", QuartzHatchetToolItem.CertusQuartzHatchetToolItem::new).register();
+	public static final ItemEntry<FluixHatchetToolItem> FLUIX_HATCHET =
+			REGISTRATE.item("fluix_hatchet", FluixHatchetToolItem::new).register();
+
 	public static void setRegister() {}
 
 }

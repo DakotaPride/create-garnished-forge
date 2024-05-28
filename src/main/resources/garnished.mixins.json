@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "garnished.refmap.json",
   "mixins": [
+    "EnchantmentHelperMixin",
     "EnderManMixin",
     "FluidReactionsMixin",
     "ItemStackMixin",
