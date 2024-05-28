@@ -1,14 +1,41 @@
 {
   "replace": false,
   "values": [
-    "quark:red_corundum_pane",
-    "quark:orange_corundum_pane",
-    "quark:yellow_corundum_pane",
-    "quark:green_corundum_pane",
-    "quark:blue_corundum_pane",
-    "quark:indigo_corundum_pane",
-    "quark:violet_corundum_pane",
-    "quark:white_corundum_pane",
-    "quark:black_corundum_pane"
+    {
+      "id": "quark:red_corundum_pane",
+      "required": false
+    },
+    {
+      "id": "quark:orange_corundum_pane",
+      "required": false
+    },
+    {
+      "id": "quark:yellow_corundum_pane",
+      "required": false
+    },
+    {
+      "id": "quark:green_corundum_pane",
+      "required": false
+    },
+    {
+      "id": "quark:blue_corundum_pane",
+      "required": false
+    },
+    {
+      "id": "quark:indigo_corundum_pane",
+      "required": false
+    },
+    {
+      "id": "quark:violet_corundum_pane",
+      "required": false
+    },
+    {
+      "id": "quark:white_corundum_pane",
+      "required": false
+    },
+    {
+      "id": "quark:black_corundum_pane",
+      "required": false
+    }
   ]
 }
