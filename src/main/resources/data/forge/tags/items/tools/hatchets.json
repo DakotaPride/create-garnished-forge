@@ -43,6 +43,18 @@
     {
       "id": "garnished:warden_hatchet",
       "required": false
+    },
+    {
+      "id": "garnished:nether_quartz_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:certus_quartz_hatchet",
+      "required": false
+    },
+    {
+      "id": "garnished:fluix_hatchet",
+      "required": false
     }
   ]
 }
