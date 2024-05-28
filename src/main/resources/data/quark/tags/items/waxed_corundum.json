@@ -1,14 +1,41 @@
 {
   "replace": false,
   "values": [
-    "quark:waxed_red_corundum",
-    "quark:waxed_orange_corundum",
-    "quark:waxed_yellow_corundum",
-    "quark:waxed_green_corundum",
-    "quark:waxed_blue_corundum",
-    "quark:waxed_indigo_corundum",
-    "quark:waxed_violet_corundum",
-    "quark:waxed_white_corundum",
-    "quark:waxed_black_corundum"
+    {
+      "id": "quark:waxed_red_corundum",
+      "required": false
+    },
+    {
+      "id": "quark:waxed_orange_corundum",
+      "required": false
+    },
+    {
+      "id": "quark:waxed_yellow_corundum",
+      "required": false
+    },
+    {
+      "id": "quark:waxed_green_corundum",
+      "required": false
+    },
+    {
+      "id": "quark:waxed_blue_corundum",
+      "required": false
+    },
+    {
+      "id": "quark:waxed_indigo_corundum",
+      "required": false
+    },
+    {
+      "id": "quark:waxed_violet_corundum",
+      "required": false
+    },
+    {
+      "id": "quark:waxed_white_corundum",
+      "required": false
+    },
+    {
+      "id": "quark:waxed_black_corundum",
+      "required": false
+    }
   ]
 }

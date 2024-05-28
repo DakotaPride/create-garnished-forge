@@ -1,21 +1,69 @@
 {
   "replace": false,
   "values": [
-    "quark:red_shingles",
-    "quark:orange_shingles",
-    "quark:yellow_shingles",
-    "quark:green_shingles",
-    "quark:lime_shingles",
-    "quark:blue_shingles",
-    "quark:light_blue_shingles",
-    "quark:cyan_shingles",
-    "quark:purple_shingles",
-    "quark:magenta_shingles",
-    "quark:pink_shingles",
-    "quark:black_shingles",
-    "quark:gray_shingles",
-    "quark:light_gray_shingles",
-    "quark:white_shingles",
-    "quark:brown_shingles"
+    {
+      "id": "quark:red_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:orange_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:yellow_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:green_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:lime_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:blue_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:light_blue_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:cyan_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:purple_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:magenta_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:pink_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:black_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:gray_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:light_gray_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:white_shingles",
+      "required": false
+    },
+    {
+      "id": "quark:brown_shingles",
+      "required": false
+    }
   ]
 }
