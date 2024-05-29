@@ -15,12 +15,12 @@ import java.util.List;
 
 public class QuartzHatchetToolItem extends IntegratedHatchetToolItem {
     public QuartzHatchetToolItem(Properties properties) {
-        super(GarnishedUtils.ae2(), IntegratedMaterials.NETHER_QUARTZ, 6.0F, -3.1F, properties);
+        super(GarnishedUtils.ae2(), IntegratedMaterials.NETHER_QUARTZ, 4.5F, -2.6F, properties);
     }
 
     public static class CertusQuartzHatchetToolItem extends IntegratedHatchetToolItem {
         public CertusQuartzHatchetToolItem(Properties properties) {
-            super(GarnishedUtils.ae2(), IntegratedMaterials.CERTUS_QUARTZ, 6.0F, -3.1F, properties);
+            super(GarnishedUtils.ae2(), IntegratedMaterials.CERTUS_QUARTZ, 4.5F, -2.6F, properties);
         }
     }
 
