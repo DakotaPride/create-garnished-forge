@@ -65,7 +65,7 @@ public class GarnishedFanProcessing {
 
         @Override
         public int getPriority() {
-            return 500;
+            return 2000;
         }
 
         @Override
@@ -130,7 +130,7 @@ public class GarnishedFanProcessing {
 
         @Override
         public int getPriority() {
-            return 600;
+            return 2100;
         }
 
         @Override
@@ -186,7 +186,7 @@ public class GarnishedFanProcessing {
 
         @Override
         public int getPriority() {
-            return 700;
+            return 2200;
         }
 
         @Override
@@ -242,7 +242,7 @@ public class GarnishedFanProcessing {
 
         @Override
         public int getPriority() {
-            return 800;
+            return 2300;
         }
 
         @Override
@@ -298,7 +298,7 @@ public class GarnishedFanProcessing {
 
         @Override
         public int getPriority() {
-            return 900;
+            return 2400;
         }
 
         @Override
@@ -354,7 +354,7 @@ public class GarnishedFanProcessing {
 
         @Override
         public int getPriority() {
-            return 1000;
+            return 2500;
         }
 
         @Override
@@ -410,7 +410,7 @@ public class GarnishedFanProcessing {
 
         @Override
         public int getPriority() {
-            return 1100;
+            return 2600;
         }
 
         @Override
