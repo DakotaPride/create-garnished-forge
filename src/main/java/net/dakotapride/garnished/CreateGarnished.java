@@ -22,6 +22,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -109,6 +110,141 @@ public class CreateGarnished {
 
         event.enqueueWork(GarnishedFluids::registerFluidInteractions);
 
+        event.enqueueWork(() -> {
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRACKED_BUHG.get(), 0.10f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRACKED_CASHEW.get(), 0.10f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRACKED_WALNUT.get(), 0.10f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRACKED_ALMOND.get(), 0.10f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRACKED_PISTACHIO.get(), 0.10f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRACKED_PECAN.get(), 0.10f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRACKED_MACADAMIA.get(), 0.10f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRACKED_HAZELNUT.get(), 0.10f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRACKED_CHESTNUT.get(), 0.10f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.UNGARNISHED_BUHG.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.UNGARNISHED_CASHEW.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.UNGARNISHED_WALNUT.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.UNGARNISHED_ALMOND.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.UNGARNISHED_PISTACHIO.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.UNGARNISHED_PECAN.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.UNGARNISHED_MACADAMIA.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.UNGARNISHED_HAZELNUT.get(), 0.15f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.UNGARNISHED_CHESTNUT.get(), 0.15f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.BUHG.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CASHEW.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.WALNUT.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.ALMOND.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.PISTACHIO.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.PECAN.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MACADAMIA.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HAZELNUT.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHESTNUT.get(), 0.20f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHOCOLATE_GLAZED_BUHG.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHOCOLATE_GLAZED_CASHEW.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHOCOLATE_GLAZED_WALNUT.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHOCOLATE_GLAZED_ALMOND.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHOCOLATE_GLAZED_PISTACHIO.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHOCOLATE_GLAZED_PECAN.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHOCOLATE_GLAZED_MACADAMIA.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHOCOLATE_GLAZED_HAZELNUT.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHOCOLATE_GLAZED_CHESTNUT.get(), 0.25f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SWEETENED_BUHG.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SWEETENED_CASHEW.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SWEETENED_WALNUT.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SWEETENED_ALMOND.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SWEETENED_PISTACHIO.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SWEETENED_PECAN.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SWEETENED_MACADAMIA.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SWEETENED_HAZELNUT.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SWEETENED_CHESTNUT.get(), 0.25f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HONEYED_BUHG.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HONEYED_CASHEW.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HONEYED_WALNUT.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HONEYED_ALMOND.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HONEYED_PISTACHIO.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HONEYED_PECAN.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HONEYED_MACADAMIA.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HONEYED_HAZELNUT.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HONEYED_CHESTNUT.get(), 0.25f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CINDER_FLOUR_BUHG.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CINDER_FLOUR_CASHEW.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CINDER_FLOUR_WALNUT.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CINDER_FLOUR_ALMOND.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CINDER_FLOUR_PISTACHIO.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CINDER_FLOUR_PECAN.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CINDER_FLOUR_MACADAMIA.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CINDER_FLOUR_HAZELNUT.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CINDER_FLOUR_CHESTNUT.get(), 0.30f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_BUHG.get(), 0.40f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_CASHEW.get(), 0.40f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_WALNUT.get(), 0.40f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_ALMOND.get(), 0.40f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_PISTACHIO.get(), 0.40f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_PECAN.get(), 0.40f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_MACADAMIA.get(), 0.40f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_HAZELNUT.get(), 0.40f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_CHESTNUT.get(), 0.40f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.NUT_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.BUHG_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.CASHEW_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.WALNUT_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.ALMOND_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.PISTACHIO_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.PECAN_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.MACADAMIA_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.HAZELNUT_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.CHESTNUT_LEAVES.asItem(), 0.35f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.PECAN_PIE_SLICE.get(), 0.25f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.PECAN_PIE.get(), 1.0f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.ALMOND_CHEESE.get(), 0.20f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.SALAD.get(), 0.75f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRUSHED_CRIMSON_FUNGUS.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRUSHED_WARPED_FUNGUS.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CRUSHED_SEPIA_FUNGUS.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.SEPIA_FUNGUS.asItem(), 0.65f);
+
+            ComposterBlock.COMPOSTABLES.put(Items.CHORUS_FRUIT, 0.45f);
+            ComposterBlock.COMPOSTABLES.put(Items.CHORUS_FLOWER, 0.65f);
+            ComposterBlock.COMPOSTABLES.put(Items.CHORUS_PLANT, 0.65f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.HOLLOWED_CHORUS_FRUIT.get(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.CHORUS_TUFT.get(), 0.10f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.MULCH.get(), 0.25f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.WHEAT_GRAZE.get(), 0.65f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.DRIED_DULSE_KELP.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.DRIED_VERMILION_KELP.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.DULSE_KELP.asItem(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.VERMILION_KELP.asItem(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.DRIED_DULSE_KELP_BLOCK.asItem(), 0.50f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.DRIED_VERMILION_KELP_BLOCK.asItem(), 0.50f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.PRICKLY_PEAR.get(), 0.45f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.BAMBOO_CLOD.get(), 0.45f);
+
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.BOK_CHOY.get(), 0.65f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.BOK_CHOY_SEEDS.get(), 0.30f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.PANSOPHICAL_PETAL.get(), 0.45f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedItems.INCANDESCENT_PETAL.get(), 0.45f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.PANSOPHICAL_DAISY.asItem(), 0.65f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.INCANDESCENT_LILY.asItem(), 0.65f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.SORROWFUL_LICHEN.asItem(), 0.65f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.SOUL_ROOTS.asItem(), 0.65f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.AUREATE_SHRUB.asItem(), 0.65f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.SMALL_CHORUS_PLANT.asItem(), 0.65f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.BARREN_ROOTS.asItem(), 0.65f);
+        });
+
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.SEPIA_FUNGUS.getId(), GarnishedBlocks.POTTED_SEPIA_FUNGUS);
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.SOUL_ROOTS.getId(), GarnishedBlocks.POTTED_SOUL_ROOTS);
         ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(GarnishedBlocks.BARREN_ROOTS.getId(), GarnishedBlocks.POTTED_BARREN_ROOTS);
@@ -188,8 +324,18 @@ public class CreateGarnished {
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.ORANGE_MASTIC_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.YELLOW_MASTIC_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.GREEN_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.LIME_MASTIC_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BLUE_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.LIGHT_BLUE_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.CYAN_MASTIC_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PURPLE_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MAGENTA_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PINK_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BLACK_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.GRAY_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.LIGHT_GRAY_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.WHITE_MASTIC_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BROWN_MASTIC_BLOCK.get(), RenderType.translucent());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VERMILION_KELP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VERMILION_KELP_PLANT.get(), RenderType.cutout());

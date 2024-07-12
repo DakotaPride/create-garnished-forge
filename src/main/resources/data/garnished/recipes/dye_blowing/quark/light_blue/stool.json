@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "type": "garnished:light_blue_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "quark:stools"
+    }
+  ],
+  "results": [
+    {
+      "item": "quark:blue_stool",
+      "count": 1
+    }
+  ]
+}

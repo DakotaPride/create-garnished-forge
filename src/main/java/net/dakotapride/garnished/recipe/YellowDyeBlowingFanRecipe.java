@@ -10,34 +10,10 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public class YellowDyeBlowingFanRecipe extends ProcessingRecipe<YellowDyeBlowingFanRecipe.YellowDyeBlowingWrapper> {
+public class YellowDyeBlowingFanRecipe extends DyeBlowingFanRecipe {
 
     public YellowDyeBlowingFanRecipe(ProcessingRecipeBuilder.ProcessingRecipeParams params) {
         super(GarnishedRecipeTypes.YELLOW_DYE_BLOWING, params);
-    }
-
-    @Override
-    public boolean matches(YellowDyeBlowingWrapper inv, Level worldIn) {
-        if (inv.isEmpty())
-            return false;
-        return ingredients.get(0)
-                .test(inv.getItem(0));
-    }
-
-    @Override
-    protected int getMaxInputCount() {
-        return 1;
-    }
-
-    @Override
-    protected int getMaxOutputCount() {
-        return 12;
-    }
-
-    public static class YellowDyeBlowingWrapper extends RecipeWrapper {
-        public YellowDyeBlowingWrapper() {
-            super(new ItemStackHandler(1));
-        }
     }
 
 }

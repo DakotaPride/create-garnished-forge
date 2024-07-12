@@ -30,8 +30,18 @@ public enum GarnishedRecipeTypes implements IRecipeTypeInfo {
     ORANGE_DYE_BLOWING(OrangeDyeBlowingFanRecipe::new),
     YELLOW_DYE_BLOWING(YellowDyeBlowingFanRecipe::new),
     GREEN_DYE_BLOWING(GreenDyeBlowingFanRecipe::new),
+    LIME_DYE_BLOWING(LimeDyeBlowingFanRecipe::new),
     BLUE_DYE_BLOWING(BlueDyeBlowingFanRecipe::new),
-    PURPLE_DYE_BLOWING(PurpleDyeBlowingFanRecipe::new);
+    LIGHT_BLUE_DYE_BLOWING(LightBlueDyeBlowingFanRecipe::new),
+    CYAN_DYE_BLOWING(CyanDyeBlowingFanRecipe::new),
+    PURPLE_DYE_BLOWING(PurpleDyeBlowingFanRecipe::new),
+    MAGENTA_DYE_BLOWING(MagentaDyeBlowingFanRecipe::new),
+    PINK_DYE_BLOWING(PinkDyeBlowingFanRecipe::new),
+    BLACK_DYE_BLOWING(BlackDyeBlowingFanRecipe::new),
+    GRAY_DYE_BLOWING(GrayDyeBlowingFanRecipe::new),
+    LIGHT_GRAY_DYE_BLOWING(LightGrayDyeBlowingFanRecipe::new),
+    WHITE_DYE_BLOWING(WhiteDyeBlowingFanRecipe::new),
+    BROWN_DYE_BLOWING(BrownDyeBlowingFanRecipe::new);
 
     private final ResourceLocation id;
     private final RegistryObject<RecipeSerializer<?>> serializerObject;

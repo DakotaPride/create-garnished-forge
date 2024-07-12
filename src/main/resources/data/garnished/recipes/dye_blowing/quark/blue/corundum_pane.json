@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "type": "garnished:blue_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "quark:corundum_panes"
+    }
+  ],
+  "results": [
+    {
+      "item": "quark:indigo_corundum_pane",
+      "count": 1
+    }
+  ]
+}

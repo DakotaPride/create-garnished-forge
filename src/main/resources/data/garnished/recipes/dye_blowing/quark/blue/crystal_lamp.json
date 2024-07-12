@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ],
+  "type": "garnished:blue_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "quark:crystal_lamp"
+    }
+  ],
+  "results": [
+    {
+      "item": "quark:indigo_crystal_lamp",
+      "count": 1
+    }
+  ]
+}

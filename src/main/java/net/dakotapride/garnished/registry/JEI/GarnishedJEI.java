@@ -8,6 +8,7 @@ import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import com.simibubi.create.foundation.utility.Lang;
 import com.simibubi.create.infrastructure.config.AllConfigs;
 import com.simibubi.create.infrastructure.config.CRecipes;
+import com.tterrag.registrate.util.entry.FluidEntry;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.RecipeTypes;
@@ -33,6 +34,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -69,44 +72,63 @@ public class GarnishedJEI implements IModPlugin {
                 .doubleItemIcon(AllItems.PROPELLER.get(), Items.POWDER_SNOW_BUCKET)
                 .emptyBackground(178, 72)
                 .build("garnished.fan_freezing", FreezingFanCategory::new);
-        CreateRecipeCategory<?> redDyeBlowing = builder(RedDyeBlowingFanRecipe.class)
-                .addTypedRecipes(GarnishedRecipeTypes.RED_DYE_BLOWING::getType)
-                .catalystStack(ProcessingViaFanCategory.getFan("garnished.red_dye_blowing"))
-                .doubleItemIcon(AllItems.PROPELLER.get(), GarnishedFluids.RED_MASTIC_RESIN.getBucket().get())
-                .emptyBackground(178, 72)
+        CreateRecipeCategory<?> redDyeBlowing = dyeBlowingCategory(RedDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.RED_DYE_BLOWING, "garnished.red_dye_blowing", GarnishedFluids.RED_MASTIC_RESIN)
                 .build("garnished.red_dye_blowing", RedDyeBlowingFanCategory::new);
-        CreateRecipeCategory<?> orangeDyeBlowing = builder(OrangeDyeBlowingFanRecipe.class)
-                .addTypedRecipes(GarnishedRecipeTypes.ORANGE_DYE_BLOWING::getType)
-                .catalystStack(ProcessingViaFanCategory.getFan("garnished.orange_dye_blowing"))
-                .doubleItemIcon(AllItems.PROPELLER.get(), GarnishedFluids.ORANGE_MASTIC_RESIN.getBucket().get())
-                .emptyBackground(178, 72)
+        CreateRecipeCategory<?> orangeDyeBlowing = dyeBlowingCategory(OrangeDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.ORANGE_DYE_BLOWING, "garnished.orange_dye_blowing", GarnishedFluids.ORANGE_MASTIC_RESIN)
                 .build("garnished.orange_dye_blowing", OrangeDyeBlowingFanCategory::new);
-        CreateRecipeCategory<?> yellowDyeBlowing = builder(YellowDyeBlowingFanRecipe.class)
-                .addTypedRecipes(GarnishedRecipeTypes.YELLOW_DYE_BLOWING::getType)
-                .catalystStack(ProcessingViaFanCategory.getFan("garnished.yellow_dye_blowing"))
-                .doubleItemIcon(AllItems.PROPELLER.get(), GarnishedFluids.YELLOW_MASTIC_RESIN.getBucket().get())
-                .emptyBackground(178, 72)
+        CreateRecipeCategory<?> yellowDyeBlowing = dyeBlowingCategory(YellowDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.YELLOW_DYE_BLOWING, "garnished.yellow_dye_blowing", GarnishedFluids.YELLOW_MASTIC_RESIN)
                 .build("garnished.yellow_dye_blowing", YellowDyeBlowingFanCategory::new);
-        CreateRecipeCategory<?> greenDyeBlowing = builder(GreenDyeBlowingFanRecipe.class)
-                .addTypedRecipes(GarnishedRecipeTypes.GREEN_DYE_BLOWING::getType)
-                .catalystStack(ProcessingViaFanCategory.getFan("garnished.green_dye_blowing"))
-                .doubleItemIcon(AllItems.PROPELLER.get(), GarnishedFluids.GREEN_MASTIC_RESIN.getBucket().get())
-                .emptyBackground(178, 72)
+        CreateRecipeCategory<?> greenDyeBlowing = dyeBlowingCategory(GreenDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.GREEN_DYE_BLOWING, "garnished.green_dye_blowing", GarnishedFluids.GREEN_MASTIC_RESIN)
                 .build("garnished.green_dye_blowing", GreenDyeBlowingFanCategory::new);
-        CreateRecipeCategory<?> blueDyeBlowing = builder(BlueDyeBlowingFanRecipe.class)
-                .addTypedRecipes(GarnishedRecipeTypes.BLUE_DYE_BLOWING::getType)
-                .catalystStack(ProcessingViaFanCategory.getFan("garnished.blue_dye_blowing"))
-                .doubleItemIcon(AllItems.PROPELLER.get(), GarnishedFluids.BLUE_MASTIC_RESIN.getBucket().get())
-                .emptyBackground(178, 72)
+        CreateRecipeCategory<?> limeDyeBlowing = dyeBlowingCategory(LimeDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.LIME_DYE_BLOWING, "garnished.lime_dye_blowing", GarnishedFluids.LIME_MASTIC_RESIN)
+                .build("garnished.lime_dye_blowing", LimeDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> blueDyeBlowing = dyeBlowingCategory(BlueDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.BLUE_DYE_BLOWING, "garnished.blue_dye_blowing", GarnishedFluids.BLUE_MASTIC_RESIN)
                 .build("garnished.blue_dye_blowing", BlueDyeBlowingFanCategory::new);
-        CreateRecipeCategory<?> purpleDyeBlowing = builder(PurpleDyeBlowingFanRecipe.class)
-                .addTypedRecipes(GarnishedRecipeTypes.PURPLE_DYE_BLOWING::getType)
-                .catalystStack(ProcessingViaFanCategory.getFan("garnished.purple_dye_blowing"))
-                .doubleItemIcon(AllItems.PROPELLER.get(), GarnishedFluids.PURPLE_MASTIC_RESIN.getBucket().get())
-                .emptyBackground(178, 72)
+        CreateRecipeCategory<?> lightBlueDyeBlowing = dyeBlowingCategory(LightBlueDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING, "garnished.light_blue_dye_blowing", GarnishedFluids.LIGHT_BLUE_MASTIC_RESIN)
+                .build("garnished.light_blue_dye_blowing", LightBlueDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> cyanDyeBlowing = dyeBlowingCategory(CyanDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.CYAN_DYE_BLOWING, "garnished.cyan_dye_blowing", GarnishedFluids.CYAN_MASTIC_RESIN)
+                .build("garnished.cyan_dye_blowing", CyanDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> purpleDyeBlowing = dyeBlowingCategory(PurpleDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.PURPLE_DYE_BLOWING, "garnished.purple_dye_blowing", GarnishedFluids.PURPLE_MASTIC_RESIN)
                 .build("garnished.purple_dye_blowing", PurpleDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> magentaDyeBlowing = dyeBlowingCategory(MagentaDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.MAGENTA_DYE_BLOWING, "garnished.magenta_dye_blowing", GarnishedFluids.MAGENTA_MASTIC_RESIN)
+                .build("garnished.magenta_dye_blowing", MagentaDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> pinkDyeBlowing = dyeBlowingCategory(PinkDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.PINK_DYE_BLOWING, "garnished.pink_dye_blowing", GarnishedFluids.PINK_MASTIC_RESIN)
+                .build("garnished.pink_dye_blowing", PinkDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> blackDyeBlowing = dyeBlowingCategory(BlackDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.BLACK_DYE_BLOWING, "garnished.black_dye_blowing", GarnishedFluids.BLACK_MASTIC_RESIN)
+                .build("garnished.black_dye_blowing", BlackDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> grayDyeBlowing = dyeBlowingCategory(GrayDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.GRAY_DYE_BLOWING, "garnished.gray_dye_blowing", GarnishedFluids.GRAY_MASTIC_RESIN)
+                .build("garnished.gray_dye_blowing", GrayDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> lightGrayDyeBlowing = dyeBlowingCategory(LightGrayDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING, "garnished.light_gray_dye_blowing", GarnishedFluids.LIGHT_GRAY_MASTIC_RESIN)
+                .build("garnished.light_gray_dye_blowing", LightGrayDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> whiteDyeBlowing = dyeBlowingCategory(WhiteDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.WHITE_DYE_BLOWING, "garnished.white_dye_blowing", GarnishedFluids.WHITE_MASTIC_RESIN)
+                .build("garnished.white_dye_blowing", WhiteDyeBlowingFanCategory::new);
+        CreateRecipeCategory<?> brownDyeBlowing = dyeBlowingCategory(BrownDyeBlowingFanRecipe.class,
+                GarnishedRecipeTypes.BROWN_DYE_BLOWING, "garnished.brown_dye_blowing", GarnishedFluids.BROWN_MASTIC_RESIN)
+                .build("garnished.brown_dye_blowing", BrownDyeBlowingFanCategory::new);
 
+    }
 
+    public <T extends Recipe<?>> CategoryBuilder<T> dyeBlowingCategory(Class<T> recipe, GarnishedRecipeTypes types, String name, FluidEntry<ForgeFlowingFluid.Flowing> fluidEntry) {
+        return builder(recipe)
+                .addTypedRecipes(types::getType)
+                .catalystStack(ProcessingViaFanCategory.getFan(name))
+                .doubleItemIcon(AllItems.PROPELLER.get(), fluidEntry.getBucket().get())
+                .emptyBackground(178, 72);
     }
 
     @Override

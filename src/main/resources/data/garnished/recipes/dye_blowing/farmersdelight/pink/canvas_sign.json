@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "garnished:pink_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "farmersdelight:canvas_signs"
+    }
+  ],
+  "results": [
+    {
+      "item": "farmersdelight:pink_canvas_sign",
+      "count": 1
+    }
+  ]
+}

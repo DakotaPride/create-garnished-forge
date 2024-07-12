@@ -9,18 +9,9 @@ import net.dakotapride.garnished.registry.GarnishedFluids;
 import net.minecraft.client.gui.GuiGraphics;
 import org.jetbrains.annotations.NotNull;
 
-public class YellowDyeBlowingFanCategory extends ProcessingViaFanCategory.MultiOutput<YellowDyeBlowingFanRecipe> {
+public class YellowDyeBlowingFanCategory extends DyeBlowingFanCategory<YellowDyeBlowingFanRecipe> {
     public YellowDyeBlowingFanCategory(Info<YellowDyeBlowingFanRecipe> info) {
-        super(info);
-    }
-
-    @Override
-    protected void renderAttachedBlock(@NotNull GuiGraphics graphics) {
-        GuiGameElement.of(GarnishedFluids.YELLOW_MASTIC_RESIN.getSource().getFlowing())
-                .scale(SCALE)
-                .atLocal(0, 0, 2)
-                .lighting(AnimatedKinetics.DEFAULT_LIGHTING)
-                .render(graphics);
+        super(GarnishedFluids.YELLOW_MASTIC_RESIN.getSource(), info);
     }
 
 }
