@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:orange_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "createframed:vertical_stained_framed_glass_panes"
+    }
+  ],
+  "results": [
+    {
+      "item": "createframed:vertical_orange_stained_framed_glass_pane",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "type": "garnished:gray_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "ae2:paint_balls"
+    }
+  ],
+  "results": [
+    {
+      "item": "ae2:gray_paint_ball",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:red_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "createframed:stained_framed_glass_panes"
+    }
+  ],
+  "results": [
+    {
+      "item": "createframed:red_stained_framed_glass_pane",
+      "count": 1
+    }
+  ]
+}
