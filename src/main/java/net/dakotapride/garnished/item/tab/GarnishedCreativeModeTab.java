@@ -356,8 +356,18 @@ public class GarnishedCreativeModeTab extends CreativeModeTab {
         output.add(GarnishedFluids.ORANGE_MASTIC_RESIN.getBucket().get().getDefaultInstance());
         output.add(GarnishedFluids.YELLOW_MASTIC_RESIN.getBucket().get().getDefaultInstance());
         output.add(GarnishedFluids.GREEN_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.LIME_MASTIC_RESIN.getBucket().get().getDefaultInstance());
         output.add(GarnishedFluids.BLUE_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.LIGHT_BLUE_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.CYAN_MASTIC_RESIN.getBucket().get().getDefaultInstance());
         output.add(GarnishedFluids.PURPLE_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.MAGENTA_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.PINK_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.BLACK_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.GRAY_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.LIGHT_GRAY_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.WHITE_MASTIC_RESIN.getBucket().get().getDefaultInstance());
+        output.add(GarnishedFluids.BROWN_MASTIC_RESIN.getBucket().get().getDefaultInstance());
         output.add(GarnishedFluids.DRAGON_BREATH.getBucket().get().getDefaultInstance());
         output.add(GarnishedFluids.SWEET_TEA.getBucket().get().getDefaultInstance());
 
