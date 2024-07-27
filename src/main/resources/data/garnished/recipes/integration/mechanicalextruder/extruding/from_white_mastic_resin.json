@@ -9,7 +9,7 @@
   "ingredients": [
 
     {
-      "fluid": "garnished:mastic_resin",
+      "fluid": "garnished:white_mastic_resin",
       "amount": 1000
     },
     {
@@ -18,6 +18,6 @@
     }
   ],
   "result": {
-    "item": "garnished:zultanite"
+    "item": "garnished:white_zultanite"
   }
 }
