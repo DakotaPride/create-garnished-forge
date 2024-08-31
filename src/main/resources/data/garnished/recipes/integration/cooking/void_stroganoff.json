@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "garnished:garnish_powder"
+    },
+    {
+      "item": "garnished:void_dust"
+    },
+    {
+      "item": "garnished:cooked_polar_bear_meat"
+    },
+    {
+      "item": "garnished:numbing_parchment"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "garnished:void_stroganoff"
+  }
+}

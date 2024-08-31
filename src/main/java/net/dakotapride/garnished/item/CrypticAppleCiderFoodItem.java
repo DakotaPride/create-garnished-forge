@@ -1,6 +1,6 @@
 package net.dakotapride.garnished.item;
 
-import net.dakotapride.garnished.registry.GarnishedFoods;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.screens.Screen;
@@ -12,7 +12,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -23,10 +22,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CrypticAppleCiderFoodItem extends Item implements IGarnishedItem {
+public class CrypticAppleCiderFoodItem extends Item implements IGarnishedUtilities {
 	private static final int DRINK_DURATION = 40;
 	public CrypticAppleCiderFoodItem(Properties properties) {
-		super(properties.stacksTo(8).food(GarnishedFoods.CRYPTIC_APPLE_CIDER));
+		super(properties.stacksTo(8).food(GarnishedFoodValues.CRYPTIC_APPLE_CIDER));
 	}
 
 	@Override
@@ -55,8 +54,6 @@ public class CrypticAppleCiderFoodItem extends Item implements IGarnishedItem {
 		if (livingEntity instanceof ServerPlayer serverPlayer) {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
-
-			livingEntity.addEffect(new MobEffectInstance(getCrypticAppleCiderEffect(), getCrypticAppleCiderEffectDuration, 2));
 		}
 
 		if (!level.isClientSide) {

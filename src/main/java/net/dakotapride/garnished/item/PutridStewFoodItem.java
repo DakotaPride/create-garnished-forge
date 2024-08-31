@@ -1,7 +1,7 @@
 package net.dakotapride.garnished.item;
 
 import net.dakotapride.garnished.registry.GarnishedEffects;
-import net.dakotapride.garnished.registry.GarnishedFoods;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
@@ -16,9 +16,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class PutridStewFoodItem extends Item implements IGarnishedItem {
+public class PutridStewFoodItem extends Item implements IGarnishedUtilities {
 	public PutridStewFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.PUTRID_STEW).stacksTo(1));
+		super(properties.food(GarnishedFoodValues.PUTRID_STEW).stacksTo(1));
 	}
 
 	@Override

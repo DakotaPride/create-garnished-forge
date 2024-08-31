@@ -1,6 +1,6 @@
 package net.dakotapride.garnished.item;
 
-import net.dakotapride.garnished.registry.GarnishedFoods;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
@@ -15,9 +15,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class MuesliFoodItem extends Item implements IGarnishedItem {
+public class MuesliFoodItem extends Item implements IGarnishedUtilities {
 	public MuesliFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.MUESLI).stacksTo(1));
+		super(properties.food(GarnishedFoodValues.MUESLI).stacksTo(1));
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package net.dakotapride.garnished.item;
 
-import net.dakotapride.garnished.registry.GarnishedFoods;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -11,13 +11,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class GarnishedSweetBerriesFoodItem extends Item implements IGarnishedItem {
+public class GarnishedSweetBerriesFoodItem extends Item implements IGarnishedUtilities {
 	public GarnishedSweetBerriesFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.GARNISHED_BERRIES));
+		super(properties.food(GarnishedFoodValues.GARNISHED_BERRIES));
 	}
 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
-		tooltip.add(Component.translatable(garnishedText()).withStyle(getStandardColouring()));
+		tooltip.add(Component.translatable(garnishedText()).withStyle(standard()));
 	}
 }

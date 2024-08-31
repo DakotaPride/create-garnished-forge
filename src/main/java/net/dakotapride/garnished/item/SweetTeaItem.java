@@ -16,7 +16,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class SweetTeaItem extends Item implements IGarnishedItem {
+public class SweetTeaItem extends Item implements IGarnishedUtilities {
 	public SweetTeaItem(Properties properties) {
 		super(properties);
 	}
@@ -27,8 +27,9 @@ public class SweetTeaItem extends Item implements IGarnishedItem {
 		if (playerentity instanceof ServerPlayer)
 			CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) playerentity, stack);
 
+		// From the base BuildersTeaItem class from the Create mod
 		if (!world.isClientSide)
-			entity.addEffect(new MobEffectInstance(GarnishedEffects.AUSTRAL.get(), 3 * 60 * 20, 0, false, false, false));
+			entity.addEffect(new MobEffectInstance(GarnishedEffects.AUGMENTED.get(), 3 * 60 * 20, 0, false, false, false));
 
 		if (playerentity != null) {
 			playerentity.awardStat(Stats.ITEM_USED.get(this));

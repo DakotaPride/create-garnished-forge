@@ -1,6 +1,6 @@
 package net.dakotapride.garnished.item;
 
-import net.dakotapride.garnished.registry.GarnishedFoods;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.screens.Screen;
@@ -26,7 +26,7 @@ public class BottledPeanutOilItem extends Item {
 	private static final int DRINK_DURATION = 40;
 
 	public BottledPeanutOilItem(Properties properties) {
-		super(properties.stacksTo(8).food(GarnishedFoods.PEANUT_OIL));
+		super(properties.stacksTo(8).food(GarnishedFoodValues.GENERIC_BOTTLED_FOOD_OR_DRINK_build));
 	}
 
 	@Override

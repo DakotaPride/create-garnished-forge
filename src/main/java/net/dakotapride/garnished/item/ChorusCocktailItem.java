@@ -1,7 +1,6 @@
 package net.dakotapride.garnished.item;
 
-import net.dakotapride.garnished.registry.GarnishedFoods;
-import net.dakotapride.garnished.registry.GarnishedItems;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -15,10 +14,10 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class ChorusCocktailItem extends Item implements IGarnishedItem {
+public class ChorusCocktailItem extends Item implements IGarnishedUtilities {
 	private static final int DRINK_DURATION = 40;
 	public ChorusCocktailItem(Properties properties) {
-		super(properties.food(GarnishedFoods.CHORUS_COCKTAIL).stacksTo(16));
+		super(properties.food(GarnishedFoodValues.CHORUS_COCKTAIL).stacksTo(16));
 	}
 
 	@Override
