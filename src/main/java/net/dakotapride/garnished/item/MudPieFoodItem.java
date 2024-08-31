@@ -1,6 +1,6 @@
 package net.dakotapride.garnished.item;
 
-import net.dakotapride.garnished.registry.GarnishedFoods;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
@@ -15,9 +15,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class MudPieFoodItem extends Item implements IGarnishedItem {
+public class MudPieFoodItem extends Item implements IGarnishedUtilities {
 	public MudPieFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.MUD_PIE).stacksTo(1));
+		super(properties.food(GarnishedFoodValues.MUD_PIE).stacksTo(1));
 	}
 
 	@Override

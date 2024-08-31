@@ -25,7 +25,7 @@
       "item": "garnished:nut_nacho"
     },
     {
-      "c": "forge:cheese"
+      "tag": "forge:cheese"
     }
   ],
   "recipe_book_tab": "meals",

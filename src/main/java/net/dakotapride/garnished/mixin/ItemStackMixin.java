@@ -1,9 +1,6 @@
 package net.dakotapride.garnished.mixin;
 
-import net.dakotapride.garnished.registry.GarnishedDamageSource;
-import net.dakotapride.garnished.registry.GarnishedEffects;
-import net.dakotapride.garnished.registry.GarnishedItems;
-import net.dakotapride.garnished.registry.GarnishedTags;
+import net.dakotapride.garnished.registry.*;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -32,6 +29,19 @@ public class ItemStackMixin {
 		if (activeItem.is(GarnishedItems.MUD_PIE.get())) {
 			entity.hurt(level.damageSources().source(GarnishedDamageSource.MULCH_MUNCHING), 1.0F);
 		}
+
+		// Sugar High functionality
+		GarnishedFoodValues.hasSugarHigh = entity.hasEffect(GarnishedEffects.SUGAR_HIGH.get());
+		// Freezing functionality
+		GarnishedFoodValues.hasFreezing = entity.hasEffect(GarnishedEffects.FREEZING.get());
+		// Hunger functionality
+		GarnishedFoodValues.hasHunger = entity.hasEffect(MobEffects.HUNGER);
+		// Levitation functionality
+		GarnishedFoodValues.hasLevitation = entity.hasEffect(MobEffects.LEVITATION);
+		// Bad Omen functionality
+		GarnishedFoodValues.hasBadOmen = entity.hasEffect(MobEffects.BAD_OMEN);
+		// Fire functionality
+		GarnishedFoodValues.isOnFire = entity.isOnFire() || !entity.fireImmune();
 
 	}
 

@@ -1,0 +1,6 @@
+{
+    "type": "emi:world_interaction",
+    "left": "fluid:minecraft:lava",
+    "right": "fluid:garnished:apple_cider",
+    "output": "item:garnished:carnotite"
+}

@@ -1,0 +1,35 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "garnished:void_dust"
+    },
+    {
+      "item": "garnished:void_dust"
+    },
+    {
+      "item": "garnished:nut_flour"
+    },
+    {
+      "item": "garnished:chorus_tuft"
+    },
+    {
+      "item": "garnished:chorus_tuft"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "garnished:void_mixture"
+  }
+}

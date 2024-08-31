@@ -6,6 +6,9 @@
     "garnished:amber_remnant_from_loot_tables",
     "garnished:antique_swathe_from_loot_tables",
     "garnished:bok_choy_from_loot_tables",
-    "garnished:bok_choy_leaf_from_loot_tables"
+    "garnished:bok_choy_leaf_from_loot_tables",
+    "garnished:pansophical_daisy_from_loot_tables",
+    "garnished:incandescent_lily_from_loot_tables",
+    "garnished:sorrowful_lichen_from_loot_tables"
   ]
 }

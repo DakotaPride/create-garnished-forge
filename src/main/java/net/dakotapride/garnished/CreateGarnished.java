@@ -68,9 +68,10 @@ public class CreateGarnished {
         GarnishedSetTypes.setRegister();
         GarnishedItems.setRegister();
         GarnishedBlocks.setRegister();
+        GarnishedCT.setRegister();
         GarnishedTabs.setRegister(eventBus);
         GarnishedFluids.setRegister();
-        GarnishedFoods.setRegister();
+        GarnishedFoodValues.setRegister();
         GarnishedFeatures.setRegister(eventBus);
         GarnishedTags.setRegister();
         GarnishedRecipeTypes.register(eventBus);
@@ -192,6 +193,7 @@ public class CreateGarnished {
             ComposterBlock.COMPOSTABLES.put(GarnishedItems.MELTED_CINDER_FLOUR_CHESTNUT.get(), 0.40f);
 
             ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.NUT_LEAVES.asItem(), 0.35f);
+            ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.UNASSIGNED_NUT_LEAVES.asItem(), 0.35f);
             ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.BUHG_LEAVES.asItem(), 0.35f);
             ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.CASHEW_LEAVES.asItem(), 0.35f);
             ComposterBlock.COMPOSTABLES.put(GarnishedBlocks.WALNUT_LEAVES.asItem(), 0.35f);
@@ -287,6 +289,7 @@ public class CreateGarnished {
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_PLANT.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.UNASSIGNED_NUT_LEAVES.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.ALMOND_LEAVES.get(), RenderType.cutoutMipped());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.CASHEW_LEAVES.get(), RenderType.cutoutMipped());
@@ -309,7 +312,10 @@ public class CreateGarnished {
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.CHESTNUT_SAPLING.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SEPIA_FUNGUS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SEPIA_DOOR.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SEPIA_TRAPDOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SEPIA_WINDOW.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SEPIA_WINDOW_PANE.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.SOUL_ROOTS.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BLOCK_OF_ENDER_JELLY.get(), RenderType.translucent());
@@ -318,6 +324,8 @@ public class CreateGarnished {
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_DOOR.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_TRAPDOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_WINDOW.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_WINDOW_PANE.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MASTIC_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.RED_MASTIC_BLOCK.get(), RenderType.translucent());

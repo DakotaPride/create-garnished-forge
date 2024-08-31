@@ -3,15 +3,6 @@ package net.dakotapride.garnished.item.hatchet.tier.integrated;
 import net.dakotapride.garnished.GarnishedUtils;
 import net.dakotapride.garnished.item.hatchet.IntegratedHatchetToolItem;
 import net.dakotapride.garnished.item.hatchet.IntegratedMaterials;
-import net.dakotapride.garnished.registry.GarnishedEnchantments;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class QuartzHatchetToolItem extends IntegratedHatchetToolItem {
     public QuartzHatchetToolItem(Properties properties) {

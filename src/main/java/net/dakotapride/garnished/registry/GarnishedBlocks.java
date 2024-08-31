@@ -1,13 +1,22 @@
 package net.dakotapride.garnished.registry;
 
+import com.simibubi.create.AllSpriteShifts;
+import com.simibubi.create.content.decoration.palettes.ConnectedGlassPaneBlock;
+import com.simibubi.create.content.decoration.palettes.WindowBlock;
+import com.simibubi.create.foundation.block.connected.HorizontalCTBehaviour;
+import com.simibubi.create.foundation.block.connected.SimpleCTBehaviour;
 import com.simibubi.create.foundation.data.AssetLookup;
+import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.block.*;
 import net.dakotapride.garnished.block.cake.AnniversaryCakeBlock;
-import net.dakotapride.garnished.block.kelp.*;
+import net.dakotapride.garnished.block.kelp.DulseKelpBlock;
+import net.dakotapride.garnished.block.kelp.DulseKelpPlantBlock;
+import net.dakotapride.garnished.block.kelp.VermilionKelpBlock;
+import net.dakotapride.garnished.block.kelp.VermilionKelpPlantBlock;
 import net.dakotapride.garnished.block.nut.*;
 import net.dakotapride.garnished.block.potted_blocks.*;
 import net.dakotapride.garnished.block.sapling.*;
@@ -16,6 +25,10 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
+
+import static com.simibubi.create.foundation.data.CreateRegistrate.connectedTextures;
+import static net.dakotapride.garnished.registry.GarnishedCT.woodenWindowBlock;
+import static net.dakotapride.garnished.registry.GarnishedCT.woodenWindowPaneBlock;
 
 @SuppressWarnings({"unused"})
 public class GarnishedBlocks {
@@ -144,6 +157,14 @@ public class GarnishedBlocks {
 					.initialProperties(() -> Blocks.OAK_SAPLING)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.properties(p -> p.mapColor(MapColor.GRASS).noCollission().instabreak().sound(SoundType.GRASS))
+					.register();
+
+	public static final BlockEntry<NutLeavesBlock> UNASSIGNED_NUT_LEAVES =
+			REGISTRATE.block("unassigned_nut_leaves", NutLeavesBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.initialProperties(() -> Blocks.OAK_LEAVES)
+					.simpleItem()
+					.properties(p -> p.mapColor(MapColor.GRASS).noOcclusion().strength(0.2F).randomTicks())
 					.register();
 
 	public static final BlockEntry<NutLeavesBlock> NUT_LEAVES =
@@ -465,6 +486,27 @@ public class GarnishedBlocks {
 					.simpleItem()
 					.initialProperties(() -> Blocks.OAK_PRESSURE_PLATE)
 					.properties(p -> p.mapColor(MapColor.COLOR_LIGHT_GREEN)).register();
+
+	// 2.0 - It took how many months for these windows to FINALLY be added? Damn.
+	public static final BlockEntry<WindowBlock> NUT_WINDOW = woodenWindowBlock("nut", () -> GarnishedCT.NUT_WINDOW, GarnishedBlocks.NUT_PLANKS);
+	public static final BlockEntry<WindowBlock> SEPIA_WINDOW = woodenWindowBlock("sepia", () -> GarnishedCT.SEPIA_WINDOW, GarnishedBlocks.SEPIA_PLANKS);
+
+	public static final BlockEntry<ConnectedGlassPaneBlock> NUT_WINDOW_PANE =
+			woodenWindowPaneBlock("nut", () -> GarnishedCT.NUT_WINDOW_PANE, GarnishedBlocks.NUT_WINDOW);
+	public static final BlockEntry<ConnectedGlassPaneBlock> SEPIA_WINDOW_PANE =
+			woodenWindowPaneBlock("sepia", () -> GarnishedCT.SEPIA_WINDOW_PANE, GarnishedBlocks.SEPIA_WINDOW);
+
+	// Other
+	public static final BlockEntry<NumbingParchmentBlock> NUMBING_PARCHMENT_BLOCK =
+			REGISTRATE.block("numbing_parchment_block", NumbingParchmentBlock::new)
+					//.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.NUMBING_PARCHMENT)))
+					.initialProperties(() -> Blocks.WHITE_WOOL)
+					.simpleItem().register();
+	public static final BlockEntry<NumbingParchmentBlock.Carpet> NUMBING_PARCHMENT_CARPET =
+			REGISTRATE.block("numbing_parchment_carpet", NumbingParchmentBlock.Carpet::new)
+					//.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.NUMBING_PARCHMENT)))
+					.initialProperties(() -> Blocks.WHITE_CARPET)
+					.simpleItem().register();
 
 	public static <T extends Block> BlockEntry<T> masticResinRegistration(String colour0, String block0, NonNullFunction<BlockBehaviour.Properties, T> factory, Block block1) {
 		return REGISTRATE.block((colour0 == "" ? colour0 : colour0 + "_") + block0, factory)
@@ -1438,14 +1480,14 @@ public class GarnishedBlocks {
 					.initialProperties(() -> Blocks.POTTED_CRIMSON_FUNGUS).register();
 
 
-	public static final BlockEntry<Block> DRAGON_STONE =
-			REGISTRATE.block("dragon_stone", Block::new)
+	public static final BlockEntry<DragonStoneBlock> DRAGON_STONE =
+			REGISTRATE.block("dragon_stone", DragonStoneBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<SlabBlock> DRAGON_STONE_SLAB =
-			REGISTRATE.block("dragon_stone_slab", SlabBlock::new)
+	public static final BlockEntry<DragonStoneSlabBlock> DRAGON_STONE_SLAB =
+			REGISTRATE.block("dragon_stone_slab", DragonStoneSlabBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
@@ -1456,20 +1498,20 @@ public class GarnishedBlocks {
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<WallBlock> DRAGON_STONE_WALL =
-			REGISTRATE.block("dragon_stone_wall", WallBlock::new)
+	public static final BlockEntry<DragonStoneWallBlock> DRAGON_STONE_WALL =
+			REGISTRATE.block("dragon_stone_wall", DragonStoneWallBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<Block> POLISHED_DRAGON_STONE =
-			REGISTRATE.block("polished_dragon_stone", Block::new)
+	public static final BlockEntry<DragonStoneBlock> POLISHED_DRAGON_STONE =
+			REGISTRATE.block("polished_dragon_stone", DragonStoneBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<SlabBlock> POLISHED_DRAGON_STONE_SLAB =
-			REGISTRATE.block("polished_dragon_stone_slab", SlabBlock::new)
+	public static final BlockEntry<DragonStoneSlabBlock> POLISHED_DRAGON_STONE_SLAB =
+			REGISTRATE.block("polished_dragon_stone_slab", DragonStoneSlabBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
@@ -1480,20 +1522,20 @@ public class GarnishedBlocks {
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<WallBlock> POLISHED_DRAGON_STONE_WALL =
-			REGISTRATE.block("polished_dragon_stone_wall", WallBlock::new)
+	public static final BlockEntry<DragonStoneWallBlock> POLISHED_DRAGON_STONE_WALL =
+			REGISTRATE.block("polished_dragon_stone_wall", DragonStoneWallBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<Block> DRAGON_STONE_BRICKS =
-			REGISTRATE.block("dragon_stone_bricks", Block::new)
+	public static final BlockEntry<DragonStoneBlock> DRAGON_STONE_BRICKS =
+			REGISTRATE.block("dragon_stone_bricks", DragonStoneBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<SlabBlock> DRAGON_STONE_BRICK_SLAB =
-			REGISTRATE.block("dragon_stone_brick_slab", SlabBlock::new)
+	public static final BlockEntry<DragonStoneSlabBlock> DRAGON_STONE_BRICK_SLAB =
+			REGISTRATE.block("dragon_stone_brick_slab", DragonStoneSlabBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
@@ -1504,26 +1546,26 @@ public class GarnishedBlocks {
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<WallBlock> DRAGON_STONE_BRICK_WALL =
-			REGISTRATE.block("dragon_stone_brick_wall", WallBlock::new)
+	public static final BlockEntry<DragonStoneWallBlock> DRAGON_STONE_BRICK_WALL =
+			REGISTRATE.block("dragon_stone_brick_wall", DragonStoneWallBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<Block> CHISELED_DRAGON_STONE_BRICKS =
-			REGISTRATE.block("chiseled_dragon_stone_bricks", Block::new)
+	public static final BlockEntry<DragonStoneBlock> CHISELED_DRAGON_STONE_BRICKS =
+			REGISTRATE.block("chiseled_dragon_stone_bricks", DragonStoneBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<Block> SMOOTH_DRAGON_STONE =
-			REGISTRATE.block("smooth_dragon_stone", Block::new)
+	public static final BlockEntry<DragonStoneBlock> SMOOTH_DRAGON_STONE =
+			REGISTRATE.block("smooth_dragon_stone", DragonStoneBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<SlabBlock> SMOOTH_DRAGON_STONE_SLAB =
-			REGISTRATE.block("smooth_dragon_stone_slab", SlabBlock::new)
+	public static final BlockEntry<DragonStoneSlabBlock> SMOOTH_DRAGON_STONE_SLAB =
+			REGISTRATE.block("smooth_dragon_stone_slab", DragonStoneSlabBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
@@ -1534,8 +1576,8 @@ public class GarnishedBlocks {
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
-	public static final BlockEntry<WallBlock> SMOOTH_DRAGON_STONE_WALL =
-			REGISTRATE.block("smooth_dragon_stone_wall", WallBlock::new)
+	public static final BlockEntry<DragonStoneWallBlock> SMOOTH_DRAGON_STONE_WALL =
+			REGISTRATE.block("smooth_dragon_stone_wall", DragonStoneWallBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)

@@ -1,11 +1,13 @@
 package net.dakotapride.garnished.registry;
 
+import com.simibubi.create.AllItems;
+import com.simibubi.create.content.equipment.sandPaper.SandPaperItem;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.item.ItemDescription;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.item.*;
-import net.dakotapride.garnished.item.scratch_paper.PolarHideScratchPaperItem;
 import net.dakotapride.garnished.item.cracked.*;
 import net.dakotapride.garnished.item.hatchet.tier.*;
 import net.dakotapride.garnished.item.hatchet.tier.integrated.*;
@@ -691,8 +693,10 @@ public class GarnishedItems {
 	public static final ItemEntry<ChilledAppleFoodItem> CHILLED_APPLE =
 			REGISTRATE.item("chilled_apple", ChilledAppleFoodItem::new).register();
 
-	public static final ItemEntry<PolarHideScratchPaperItem> POLAR_HIDE_SCRATCH_PAPER =
-			REGISTRATE.item("polar_hide_scratch_paper", PolarHideScratchPaperItem::new).register();
+	public static final ItemEntry<SandPaperItem> POLAR_HIDE_SCRATCH_PAPER =
+			REGISTRATE.item("polar_hide_scratch_paper", SandPaperItem::new)
+					.onRegister(s -> ItemDescription.referKey(s, AllItems.SAND_PAPER))
+					.properties(p -> p.defaultDurability(32)).register();
 
 	public static final ItemEntry<Item> FROST =
 			REGISTRATE.item("frost", Item::new).register();
@@ -708,8 +712,8 @@ public class GarnishedItems {
 			REGISTRATE.item("warped_brew", WarpedBrewFoodItem::new).register();
 	public static final ItemEntry<IniquitousBrewFoodItem> INIQUITOUS_BREW =
 			REGISTRATE.item("iniquitous_brew", IniquitousBrewFoodItem::new).register();
-	public static final ItemEntry<BottleOfCrestfallenFloraFoodItem> BOTTLE_OF_CRESTFALLEN_FLORA =
-			REGISTRATE.item("crestfallen_flora", BottleOfCrestfallenFloraFoodItem::new).register();
+	public static final ItemEntry<Item> BOTTLE_OF_CRESTFALLEN_FLORA =
+			REGISTRATE.item("crestfallen_flora", Item::new).register();
 	public static final ItemEntry<BottledMalodorousMixtureFoodItem> BOTTLED_MALODOROUS_MIXTURE =
 			REGISTRATE.item("bottled_malodorous_mixture", BottledMalodorousMixtureFoodItem::new).register();
 	public static final ItemEntry<PiquantPretzelFoodItem> PIQUANT_PRETZEL =
@@ -784,6 +788,9 @@ public class GarnishedItems {
 
 	public static final ItemEntry<AnniversaryCakeSliceFoodItem> ANNIVERSARY_CAKE_SLICE =
 			REGISTRATE.item("anniversary_cake_slice", AnniversaryCakeSliceFoodItem::new).register();
+
+	public static final ItemEntry<BrowniePieceFoodItem> BROWNIE_PIECE =
+			REGISTRATE.item("brownie_walnuts_piece", BrowniePieceFoodItem::new).register();
 
 	// Integrated Hatchets
 	public static final ItemEntry<ZincHatchetToolItem> ZINC_HATCHET =

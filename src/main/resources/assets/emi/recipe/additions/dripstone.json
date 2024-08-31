@@ -1,0 +1,6 @@
+{
+    "type": "emi:world_interaction",
+    "left": "fluid:minecraft:lava",
+    "right": "fluid:garnished:peanut_oil",
+    "output": "item:minecraft:dripstone_block"
+}

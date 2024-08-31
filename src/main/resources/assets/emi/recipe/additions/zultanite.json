@@ -1,0 +1,6 @@
+{
+    "type": "emi:world_interaction",
+    "left": "fluid:minecraft:lava",
+    "right": "fluid:garnished:mastic_resin",
+    "output": "item:garnished:zultanite"
+}

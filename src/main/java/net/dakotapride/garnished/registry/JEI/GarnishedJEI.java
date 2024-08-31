@@ -1,6 +1,7 @@
 package net.dakotapride.garnished.registry.JEI;
 
 import com.simibubi.create.AllItems;
+import com.simibubi.create.AllRecipeTypes;
 import com.simibubi.create.compat.jei.*;
 import com.simibubi.create.compat.jei.category.CreateRecipeCategory;
 import com.simibubi.create.compat.jei.category.ProcessingViaFanCategory;
@@ -172,6 +173,11 @@ public class GarnishedJEI implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+
+        registration.getJeiHelpers().getRecipeType(new ResourceLocation("create", "sandpaper_polishing")).ifPresent(type -> {
+            registration.addRecipeCatalyst(new ItemStack(GarnishedItems.POLAR_HIDE_SCRATCH_PAPER.get()), type);
+        });
+
         Categories.forEach(c -> c.registerCatalysts(registration));
     }
 

@@ -1,40 +1,32 @@
 package net.dakotapride.garnished.item;
 
-import java.util.List;
-
-import javax.annotation.Nullable;
-
-import net.minecraft.network.chat.Style;
-import org.jetbrains.annotations.NotNull;
-
-import net.dakotapride.garnished.registry.GarnishedFoods;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
-public class BitterAppleCiderFoodItem extends Item implements IGarnishedItem {
+import javax.annotation.Nullable;
+import java.util.List;
+
+public class BitterAppleCiderFoodItem extends Item implements IGarnishedUtilities {
 	private static final int DRINK_DURATION = 40;
 
 	public BitterAppleCiderFoodItem(Properties properties) {
-		super(properties.stacksTo(8).food(GarnishedFoods.APPLE_CIDER));
+		super(properties.stacksTo(8).food(GarnishedFoodValues.BITTER_APPLE_CIDER));
 	}
 
 	@Override
@@ -64,9 +56,6 @@ public class BitterAppleCiderFoodItem extends Item implements IGarnishedItem {
 
 		if (!level.isClientSide) {
 			livingEntity.removeEffect(MobEffects.WITHER);
-
-			livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, getBitterAppleCiderEffectDuration, 1));
-			livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, getBitterAppleCiderEffectDuration, 2));
 		}
 
 		if (stack.isEmpty()) {

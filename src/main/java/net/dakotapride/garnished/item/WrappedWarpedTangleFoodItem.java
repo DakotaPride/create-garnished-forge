@@ -1,6 +1,6 @@
 package net.dakotapride.garnished.item;
 
-import net.dakotapride.garnished.registry.GarnishedFoods;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.dakotapride.garnished.registry.GarnishedItems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
@@ -15,9 +15,9 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class WrappedWarpedTangleFoodItem extends Item implements IGarnishedItem {
+public class WrappedWarpedTangleFoodItem extends Item implements IGarnishedUtilities {
 	public WrappedWarpedTangleFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.WRAPPED_WARPED_TANGLE).stacksTo(16));
+		super(properties.food(GarnishedFoodValues.WARPED_TANGLE).stacksTo(16));
 	}
 
 	@Override

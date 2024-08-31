@@ -3,7 +3,6 @@ package net.dakotapride.garnished.item.wood;
 import net.dakotapride.garnished.registry.GarnishedBlocks;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.SignItem;
-import net.minecraft.world.level.block.Block;
 
 public class SepiaSignItem extends SignItem {
     public SepiaSignItem(Properties pProperties) {

@@ -1,13 +1,11 @@
 package net.dakotapride.garnished.item;
 
-import net.dakotapride.garnished.registry.GarnishedEffects;
-import net.dakotapride.garnished.registry.GarnishedFoods;
+import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -17,9 +15,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class DesolateStewFoodItem extends Item implements IGarnishedItem {
+public class DesolateStewFoodItem extends Item implements IGarnishedUtilities {
 	public DesolateStewFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoods.DESOLATE_STEW).stacksTo(1));
+		super(properties.food(GarnishedFoodValues.DESOLATE_STEW).stacksTo(1));
 	}
 
 	@Override
