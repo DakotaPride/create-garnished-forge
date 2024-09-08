@@ -3,13 +3,13 @@
   "heatRequirement": "heated",
   "ingredients": [
     {
-      "item": "garnished:red_mastic_block"
+      "item": "garnished:pink_mastic_block"
     }
   ],
   "results": [
     {
       "amount": 20250,
-      "fluid": "garnished:red_mastic_resin"
+      "fluid": "garnished:pink_mastic_resin"
     }
   ]
 }
