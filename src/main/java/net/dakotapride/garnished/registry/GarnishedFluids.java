@@ -219,6 +219,29 @@ public class GarnishedFluids implements Fluids {
 		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), LIGHT_GRAY_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.LIGHT_GRAY_ZULTANITE.get());
 		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), WHITE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.WHITE_ZULTANITE.get());
 		Fluids.basicFluidInteraction(ForgeMod.LAVA_TYPE.get(), BROWN_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.BROWN_ZULTANITE.get());
+
+
+		// Colour Combinations
+		// Red + Blue = Purple
+		Fluids.basicFluidInteraction(RED_MASTIC_RESIN.getType(), BLUE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.PURPLE_ZULTANITE.get());
+		// Blue + Yellow = Green
+		Fluids.basicFluidInteraction(BLUE_MASTIC_RESIN.getType(), YELLOW_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.GREEN_ZULTANITE.get());
+		// Red + Yellow = Orange
+		Fluids.basicFluidInteraction(RED_MASTIC_RESIN.getType(), YELLOW_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.ORANGE_ZULTANITE.get());
+		// Purple + White = Magenta
+		Fluids.basicFluidInteraction(PURPLE_MASTIC_RESIN.getType(), WHITE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.MAGENTA_ZULTANITE.get());
+		// Purple + Pink = Magenta (alternative)
+		Fluids.basicFluidInteraction(PURPLE_MASTIC_RESIN.getType(), PINK_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.MAGENTA_ZULTANITE.get());
+		// Magenta + White = Pink
+		Fluids.basicFluidInteraction(MAGENTA_MASTIC_RESIN.getType(), WHITE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.PINK_ZULTANITE.get());
+		// Blue + White = Light Blue
+		Fluids.basicFluidInteraction(BLUE_MASTIC_RESIN.getType(), WHITE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.LIGHT_BLUE_ZULTANITE.get());
+		// Blue + Green = Cyan
+		Fluids.basicFluidInteraction(BLUE_MASTIC_RESIN.getType(), GREEN_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.CYAN_ZULTANITE.get());
+		// Green + White = Lime
+		Fluids.basicFluidInteraction(GREEN_MASTIC_RESIN.getType(), WHITE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.LIME_ZULTANITE.get());
+		// Orange + Black = Brown
+		Fluids.basicFluidInteraction(ORANGE_MASTIC_RESIN.getType(), BLACK_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.BROWN_ZULTANITE.get());
 	}
 
 	@Nullable

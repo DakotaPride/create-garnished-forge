@@ -29,6 +29,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.Objects;
 import java.util.Random;
 
 @Mixin(LivingEntity.class)
@@ -78,8 +79,8 @@ public abstract class LivingEntityMixin extends Entity {
 	private void applyThornsDamage$getDamageAfterMagicAbsorb(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
 
 		if (source.getDirectEntity() instanceof LivingEntity attacker) {
-			if (entity.hasEffect(GarnishedEffects.THORNS.get())) {
-				attacker.hurt(entity.damageSources().thorns(entity), 3.0F * entity.getEffect(GarnishedEffects.THORNS.get()).getAmplifier());
+			if (entity.hasEffect(GarnishedEffects.THORNS.get()) && entity.getEffect(GarnishedEffects.THORNS.get()) != null) {
+				attacker.hurt(entity.damageSources().thorns(entity), 3.0F * Objects.requireNonNull(entity.getEffect(GarnishedEffects.THORNS.get())).getAmplifier());
 			}
 		}
 
@@ -87,9 +88,10 @@ public abstract class LivingEntityMixin extends Entity {
 
 	@Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
 	private void negateArrowDamage$hurt(DamageSource pSource, float pAmount, CallbackInfoReturnable<Boolean> cir) {
-		if (entity.hasEffect(GarnishedEffects.TRUTH_SEEKER.get()) && pSource.getDirectEntity() instanceof AbstractArrow) {
-			MobEffectInstance truthSeekerMobEffect = entity.getEffect(GarnishedEffects.TRUTH_SEEKER.get());
-			int effectAmplifier = truthSeekerMobEffect.getAmplifier();
+		if (entity.hasEffect(GarnishedEffects.TRUTH_SEEKER.get()) && pSource.getDirectEntity() instanceof AbstractArrow && entity.getEffect(GarnishedEffects.TRUTH_SEEKER.get()) != null) {
+			MobEffect truthSeekerMobEffect = GarnishedEffects.TRUTH_SEEKER.get();
+            //assert truthSeekerMobEffect != null;
+            int effectAmplifier = Objects.requireNonNull(entity.getEffect(truthSeekerMobEffect)).getAmplifier();
 			int boundInt = 20 - effectAmplifier;
 			int j = entity.getRandom().nextInt(10);
 			int k = j + 10;
