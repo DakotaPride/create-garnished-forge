@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.mixin;
 
+import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.item.hatchet.HatchetUtils;
 import net.dakotapride.garnished.registry.GarnishedAdvancementUtils;
 import net.dakotapride.garnished.registry.GarnishedEffects;
@@ -77,11 +78,29 @@ public abstract class LivingEntityMixin extends Entity {
 
 	@Inject(method = "getDamageAfterMagicAbsorb", at = @At("HEAD"))
 	private void applyThornsDamage$getDamageAfterMagicAbsorb(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
+		if (source.getEntity() instanceof LivingEntity attacker) {
+			float j = amount / 2;
+			boolean f = j <= 3;
+			//boolean k = j < (attacker.getMaxHealth() / 2.25F);
+			MobEffect e = GarnishedEffects.THORNS.get();
 
-		if (source.getDirectEntity() instanceof LivingEntity attacker) {
-			if (entity.hasEffect(GarnishedEffects.THORNS.get()) && entity.getEffect(GarnishedEffects.THORNS.get()) != null) {
-				attacker.hurt(entity.damageSources().thorns(entity), 3.0F * Objects.requireNonNull(entity.getEffect(GarnishedEffects.THORNS.get())).getAmplifier());
+			if (f) {
+				j = 4;
 			}
+
+			if (entity.hasEffect(e) && !attacker.hasEffect(e)) {
+				attacker.hurt(source, j);
+
+				//CreateGarnished.LOGGER.info("Applied standard {} to {} from {}", j, attacker, entity);
+			} else if (j > (attacker.getMaxHealth() * 0.80F) && entity.hasEffect(e) && !attacker.hasEffect(e)) {
+				attacker.hurt(source, (attacker.getMaxHealth() * 0.80F));
+
+				//CreateGarnished.LOGGER.info("Applied maximum {} to {} from {}", (attacker.getMaxHealth() / 1.25F), attacker, entity);
+			}
+
+//			if (entity.hasEffect(GarnishedEffects.THORNS.get())) {
+//				attacker.hurt(entity.damageSources().thorns(entity), (amount / 3));
+//			}
 		}
 
 	}
