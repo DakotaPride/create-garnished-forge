@@ -6,6 +6,7 @@ import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.dakotapride.garnished.registry.GarnishedTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -79,32 +80,31 @@ public abstract class LivingEntityMixin extends Entity {
 
 	}
 
-	@Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
-	private void negateArrowDamage$hurt(DamageSource pSource, float pAmount, CallbackInfoReturnable<Boolean> cir) {
-		if (entity.hasEffect(GarnishedEffects.TRUTH_SEEKER.get()) && pSource.getDirectEntity() instanceof AbstractArrow) {
-			MobEffectInstance truthSeekerMobEffect = entity.getEffect(GarnishedEffects.TRUTH_SEEKER.get());
-			int effectAmplifier = truthSeekerMobEffect.getAmplifier();
-			int boundInt = 20 - effectAmplifier;
-			int j = entity.getRandom().nextInt(10);
-			int k = j + 10;
+	@Inject(method = "hurt", at = @At("HEAD"))
+	private void negateArrowDamage$hurt(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+		if (source.getEntity() instanceof LivingEntity attacker) {
+			float j = amount / 2;
+			boolean f = j <= 3;
+			//boolean k = j < (attacker.getMaxHealth() / 2.25F);
+			MobEffect e = GarnishedEffects.THORNS.get();
 
-			int negateChance;
-
-			if (boundInt <= 0) {
-				negateChance = entity.getRandom().nextInt(1);
-			} else {
-				negateChance = entity.getRandom().nextInt(boundInt + 1);
+			if (f) {
+				j = 4;
 			}
 
+			if (entity.hasEffect(e) && !attacker.hasEffect(e)) {
+				attacker.hurt(source, j);
 
-			if (negateChance <= k) {
-				cir.setReturnValue(false);
+				//CreateGarnished.LOGGER.info("Applied standard {} to {} from {}", j, attacker, entity);
+			} else if (j > (attacker.getMaxHealth() * 0.80F) && entity.hasEffect(e) && !attacker.hasEffect(e)) {
+				attacker.hurt(source, (attacker.getMaxHealth() * 0.80F));
 
-				//System.out.println("[Create: Garnished] Negate Integer Value: successful");
-			} //else System.out.println("[Create: Garnished] Negate Integer Value: failed");
+				//CreateGarnished.LOGGER.info("Applied maximum {} to {} from {}", (attacker.getMaxHealth() / 1.25F), attacker, entity);
+			}
 
-
-			//System.out.println("[Create: Garnished] Rolled Negate Integer Value: " + k + "/" + negateChance);
+//			if (entity.hasEffect(GarnishedEffects.THORNS.get())) {
+//				attacker.hurt(entity.damageSources().thorns(entity), (amount / 3));
+//			}
 		}
 	}
 
