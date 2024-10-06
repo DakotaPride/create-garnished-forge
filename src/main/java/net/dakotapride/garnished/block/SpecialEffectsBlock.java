@@ -129,8 +129,8 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
                 }
 
                 if (living.getBlockStateOn().is(GarnishedBlocks.DRAGON_STONE.get())) {
-                    System.out.println("Value provided from the mathematical equation, random.nextInt(10): " + effect_list);
-                    System.out.println("Value provided from the mathematical equation, random.nextInt(6): " + effect_trigger);
+                    //System.out.println("Value provided from the mathematical equation, random.nextInt(10): " + effect_list);
+                    //System.out.println("Value provided from the mathematical equation, random.nextInt(6): " + effect_trigger);
                 }
             }
 
