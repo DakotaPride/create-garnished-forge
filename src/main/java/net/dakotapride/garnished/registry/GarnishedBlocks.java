@@ -1536,6 +1536,31 @@ public class GarnishedBlocks {
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
 
+	public static final BlockEntry<Block> AMBER_REMNANT_BLOCK =
+			REGISTRATE.block("amber_remnant_block", Block::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<SlabBlock> AMBER_REMNANT_SLAB =
+			REGISTRATE.block("amber_remnant_slab", SlabBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<AmberRemnantStairsBlock> AMBER_REMNANT_STAIRS =
+			REGISTRATE.block("amber_remnant_stairs", AmberRemnantStairsBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<WallBlock> AMBER_REMNANT_WALL =
+			REGISTRATE.block("amber_remnant_wall", WallBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+
 	public static final BlockEntry<AnniversaryCakeBlock> ANNIVERSARY_CAKE =
 			REGISTRATE.block("anniversary_cake", AnniversaryCakeBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
