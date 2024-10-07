@@ -59,11 +59,11 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
 
 
     public static final FoodProperties.Builder GENERIC_BOTTLED_FOOD_OR_DRINK = generic(3, 0.20f);
-    public static final FoodProperties GENERIC_BOTTLED_FOOD_OR_DRINK_build = generic(3, 0.20f).build();
+    public static final FoodProperties GENERIC_BOTTLED_FOOD_OR_DRINK_build = GENERIC_BOTTLED_FOOD_OR_DRINK.build();
     public static final FoodProperties.Builder GENERIC_STEW_OR_BREW = generic(8, 0.60f);
-    public static final FoodProperties GENERIC_STEW_OR_BREW_build = generic(8, 0.60f).build();
+    public static final FoodProperties GENERIC_STEW_OR_BREW_build = GENERIC_STEW_OR_BREW.build();
     public static final FoodProperties.Builder GENERIC_COOKIE = generic(4, 0.20f);
-    public static final FoodProperties GENERIC_COOKIE_build = generic(4, 0.20f).build();
+    public static final FoodProperties GENERIC_COOKIE_build = GENERIC_COOKIE.build();
 
     // Overworld
     public static final FoodProperties UNGARNISHED_NUT = ow_min().effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 240), 1.0f).build();
@@ -171,8 +171,8 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties VENERABLE_DELICACY = ow_max()
             .effect(GarnishedFoodValues::triggerRegenerationFromSugarHigh, 1.0f).build(); // 100% chance of occurring
     public static final FoodProperties ICY_MASTIC_CHUNK = ow_min()
-            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0f)
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 160, 1), 1.0f).fast().build();
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0f) // 100% chance of occurring
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 160, 1), 1.0f).fast().build(); // 100% chance of occurring
     public static final FoodProperties CASHEW_SORBET_SCOOP = generic(2, 0.10f)
             .effect(GarnishedFoodValues::triggerRegenerationFromSugarHigh, 0.65f).fast().build(); // 65% chance of occurring
     public static final FoodProperties CASHEW_SORBET_DELIGHT = generic(8, 0.40f)
@@ -270,7 +270,7 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
             .effect(GarnishedFoodValues::triggerSlowFallingFromLevitation, 0.80f).build(); // 80% chance of occurring
     public static final FoodProperties SHELLED_DUMPLING = end_min()
             .effect(GarnishedFoodValues::triggerSlowFallingFromLevitation, 0.50f).build(); // 50% chance of occurring
-    // Exempt  due to already providing an effect - negative or positive
+    // Exempt due to already providing an effect - negative or positive
     public static final FoodProperties BOTTLED_ENDER_JELLY = GENERIC_BOTTLED_FOOD_OR_DRINK
             .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE.get(), cognate_dur / 2, 1), 0.50f).build(); // 50% chance of occurring
     public static final FoodProperties COSMIC_BREW = end_min()
