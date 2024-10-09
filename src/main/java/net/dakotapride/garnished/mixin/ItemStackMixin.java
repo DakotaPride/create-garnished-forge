@@ -33,7 +33,7 @@ public class ItemStackMixin {
 		// Sugar High functionality
 		GarnishedFoodValues.hasSugarHigh = entity.hasEffect(GarnishedEffects.SUGAR_HIGH.get());
 		// Freezing functionality
-		GarnishedFoodValues.hasFreezing = entity.hasEffect(GarnishedEffects.FREEZING.get());
+		GarnishedFoodValues.hasFreezing = entity.hasEffect(GarnishedEffects.FREEZING.get()) || entity.isFreezing();
 		// Hunger functionality
 		GarnishedFoodValues.hasHunger = entity.hasEffect(MobEffects.HUNGER);
 		// Levitation functionality

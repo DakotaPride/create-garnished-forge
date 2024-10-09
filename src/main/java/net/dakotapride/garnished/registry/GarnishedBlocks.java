@@ -1585,28 +1585,77 @@ public class GarnishedBlocks {
 
 	public static final BlockEntry<Block> AMBER_REMNANT_BLOCK =
 			REGISTRATE.block("amber_remnant_block", Block::new)
+					.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
 	public static final BlockEntry<SlabBlock> AMBER_REMNANT_SLAB =
 			REGISTRATE.block("amber_remnant_slab", SlabBlock::new)
+					.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
 	public static final BlockEntry<AmberRemnantStairsBlock> AMBER_REMNANT_STAIRS =
 			REGISTRATE.block("amber_remnant_stairs", AmberRemnantStairsBlock::new)
+					.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
 	public static final BlockEntry<WallBlock> AMBER_REMNANT_WALL =
 			REGISTRATE.block("amber_remnant_wall", WallBlock::new)
+					.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.STONE)
 					.properties(p -> p.explosionResistance(12.0F)).register();
+
+	public static final BlockEntry<Block> AMBER_REMNANT_BRICKS =
+			REGISTRATE.block("amber_remnant_bricks", Block::new)
+					//.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<SlabBlock> AMBER_REMNANT_BRICK_SLAB =
+			REGISTRATE.block("amber_remnant_brick_slab", SlabBlock::new)
+					//.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<AmberRemnantStairsBlock> AMBER_REMNANT_BRICK_STAIRS =
+			REGISTRATE.block("amber_remnant_brick_stairs", AmberRemnantStairsBlock::new)
+					//.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+	public static final BlockEntry<WallBlock> AMBER_REMNANT_BRICK_WALL =
+			REGISTRATE.block("amber_remnant_brick_wall", WallBlock::new)
+					//.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.STONE)
+					.properties(p -> p.explosionResistance(12.0F)).register();
+
+	public static final BlockEntry<Block> POLAR_BEAR_HIDE_BLOCK =
+			REGISTRATE.block("polar_bear_hide_block", Block::new)
+					//.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.WHITE_WOOL)
+					.properties(p -> p.explosionResistance(1200.0F)).register();
+
+	public static final BlockEntry<Block> PACKED_POLAR_BEAR_HIDE_BLOCK =
+			REGISTRATE.block("packed_polar_bear_hide_block", Block::new)
+					//.onRegister(connectedTextures(() -> new SimpleCTBehaviour(GarnishedCT.AMBER_REMNANT_BLOCK)))
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem()
+					.initialProperties(() -> Blocks.WHITE_WOOL)
+					.properties(p -> p.explosionResistance(1200.0F)).register();
 
 	public static final BlockEntry<AnniversaryCakeBlock> ANNIVERSARY_CAKE =
 			REGISTRATE.block("anniversary_cake", AnniversaryCakeBlock::new)

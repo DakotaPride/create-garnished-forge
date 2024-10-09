@@ -24,15 +24,15 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     // Nether
     // Most nether foods cannot be under 6 nutrition value
     // Most nether foods cannot be under 0.40 saturation value (40% of the nutrition value)
-    // A hard limit on most overworld foods for nutrition is set at 12
-    // A hard limit on most overworld foods for saturation is set at 0.85 (85% of the nutrition value)
+    // A hard limit on most nether foods for nutrition is set at 12
+    // A hard limit on most nether foods for saturation is set at 0.85 (85% of the nutrition value)
     NETHER_MIN(6, 0.40f),
     NETHER_MAX(12, 0.80f),
     // End
     // Most end foods cannot be under 10 nutrition value
     // Most end foods cannot be under 0.55 saturation value (55% of the nutrition value)
-    // A hard limit on most overworld foods for nutrition is set at 16
-    // A hard limit on most overworld foods for saturation is set at 1.00 (100% of the nutrition value)
+    // A hard limit on most end foods for nutrition is set at 16
+    // A hard limit on most end foods for saturation is set at 1.00 (100% of the nutrition value)
     END_MIN(10, 0.55f),
     END_MAX(16, 1.00f);
 
@@ -148,9 +148,12 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties MUESLI = generic(OVERWORLD_MAX.nutrition, 0.60f).build();
     public static final FoodProperties GENERIC_DRIED_KELP = generic(2, 0.30f).fast().build();
     public static final FoodProperties DRIED_DULSE_KELP = generic(4, GENERIC_DRIED_KELP.getSaturationModifier()).fast().build();
-    public static final FoodProperties VAST_BREW = generic(4, 0.30f).fast().build();
-    public static final FoodProperties VERMILION_STEW = generic(6, 0.40f).build();
-    public static final FoodProperties GALVANIC_HAUNTING = ow_max().build();
+    public static final FoodProperties VAST_BREW = generic(6, 0.30f)
+            .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, tick * 20, 0), 0.50f).build();
+    public static final FoodProperties VERMILION_STEW = generic(7, 0.40f)
+            .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, tick * 20, 0), 0.75f).build();
+    public static final FoodProperties GALVANIC_HAUNTING = ow_max()
+            .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, tick * 20, 0), 1.0f).build();
     public static final FoodProperties BEWILDERED_PASTRY = generic(6, 0.40f)
             .effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, tick * 20, 0), 0.65f).build(); // 65% chance of occurring
     public static final FoodProperties INCENDIARY_STEW = ow_max().build(); // Explodes on consumption - 100% chance of occurring
@@ -383,9 +386,9 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
 
     public static MobEffectInstance triggerResistanceOrWeaknessFromRaids() {
         if (hasBadOmen) {
+            // Do collect 200 dollars, and do pass GO :)
             return new MobEffectInstance(MobEffects.WEAKNESS, tick * 36, 1);
         } else {
-            // Do collect 200 dollars, and do pass GO :)
             return new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, tick * 36, 1);
         }
     }
