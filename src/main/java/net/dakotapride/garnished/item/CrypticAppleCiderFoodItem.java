@@ -22,10 +22,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CrypticAppleCiderFoodItem extends Item implements IGarnishedUtilities {
+public class CrypticAppleCiderFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	private static final int DRINK_DURATION = 40;
 	public CrypticAppleCiderFoodItem(Properties properties) {
-		super(properties.stacksTo(8).food(GarnishedFoodValues.CRYPTIC_APPLE_CIDER));
+		super(6, 1.0F, properties.stacksTo(8).food(GarnishedFoodValues.CRYPTIC_APPLE_CIDER));
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class CrypticAppleCiderFoodItem extends Item implements IGarnishedUtiliti
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 	}
 

@@ -15,9 +15,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class CashewSorbetDelightFoodItem extends Item implements IGarnishedUtilities {
+public class CashewSorbetDelightFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public CashewSorbetDelightFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoodValues.CASHEW_SORBET_DELIGHT).stacksTo(1));
+		super(0, 0.80F, properties.food(GarnishedFoodValues.CASHEW_SORBET_DELIGHT).stacksTo(1));
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class CashewSorbetDelightFoodItem extends Item implements IGarnishedUtili
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

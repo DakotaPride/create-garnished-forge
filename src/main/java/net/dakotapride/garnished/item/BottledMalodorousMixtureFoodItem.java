@@ -12,9 +12,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class BottledMalodorousMixtureFoodItem extends Item implements IGarnishedUtilities {
+public class BottledMalodorousMixtureFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public BottledMalodorousMixtureFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoodValues.BOTTLED_MALODOROUS_MIXTURE).stacksTo(16));
+		super(5, 0.15F, properties.food(GarnishedFoodValues.BOTTLED_MALODOROUS_MIXTURE).stacksTo(16));
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class BottledMalodorousMixtureFoodItem extends Item implements IGarnished
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

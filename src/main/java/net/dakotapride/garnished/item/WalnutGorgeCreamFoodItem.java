@@ -15,9 +15,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class WalnutGorgeCreamFoodItem extends Item implements IGarnishedUtilities {
+public class WalnutGorgeCreamFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public WalnutGorgeCreamFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoodValues.WALNUT_GORGE_CREAM).stacksTo(1));
+		super(0, 0.75F, properties.food(GarnishedFoodValues.WALNUT_GORGE_CREAM).stacksTo(1));
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class WalnutGorgeCreamFoodItem extends Item implements IGarnishedUtilitie
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

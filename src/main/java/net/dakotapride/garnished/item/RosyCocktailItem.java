@@ -14,10 +14,10 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class RosyCocktailItem extends Item implements IGarnishedUtilities {
+public class RosyCocktailItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	private static final int DRINK_DURATION = 40;
 	public RosyCocktailItem(Properties properties) {
-		super(properties.food(GarnishedFoodValues.ROSY_COCKTAIL).stacksTo(8));
+		super(2, 0.50F, properties.food(GarnishedFoodValues.ROSY_COCKTAIL).stacksTo(8));
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class RosyCocktailItem extends Item implements IGarnishedUtilities {
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

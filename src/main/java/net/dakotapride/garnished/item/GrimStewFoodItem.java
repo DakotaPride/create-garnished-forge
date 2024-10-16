@@ -15,9 +15,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class GrimStewFoodItem extends Item implements IGarnishedUtilities {
+public class GrimStewFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public GrimStewFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoodValues.GRIM_STEW).stacksTo(1));
+		super(5, 0.75F, properties.food(GarnishedFoodValues.GRIM_STEW).stacksTo(1));
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class GrimStewFoodItem extends Item implements IGarnishedUtilities {
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

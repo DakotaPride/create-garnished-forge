@@ -15,9 +15,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class FrostedDessertFoodItem extends Item implements IGarnishedUtilities {
+public class FrostedDessertFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public FrostedDessertFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoodValues.FROSTED_DESSERT).stacksTo(1));
+		super(1, 0.85F, properties.food(GarnishedFoodValues.FROSTED_DESSERT).stacksTo(1));
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class FrostedDessertFoodItem extends Item implements IGarnishedUtilities 
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}
