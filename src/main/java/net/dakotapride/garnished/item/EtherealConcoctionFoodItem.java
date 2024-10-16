@@ -44,7 +44,7 @@ public class EtherealConcoctionFoodItem extends Item implements IGarnishedUtilit
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

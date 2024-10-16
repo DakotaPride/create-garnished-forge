@@ -39,7 +39,7 @@ public class BottledEnderJellyFoodItem extends Item implements IGarnishedUtiliti
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

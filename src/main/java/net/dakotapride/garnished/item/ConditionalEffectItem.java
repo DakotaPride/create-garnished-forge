@@ -1,17 +1,22 @@
 package net.dakotapride.garnished.item;
 
-import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class BrowniePieceFoodItem extends FarmersDelightItem implements IGarnishedUtilities{
-    public BrowniePieceFoodItem(Properties properties) {
-        super(properties.food(GarnishedFoodValues.BROWNIE_PIECE));
+public class ConditionalEffectItem extends Item implements IGarnishedUtilities {
+    int value;
+    float chance;
+
+    public ConditionalEffectItem(int value, float chance, Properties pProperties) {
+        super(pProperties);
+        this.value = value;
+        this.chance = chance;
     }
 
     @Override
@@ -21,8 +26,9 @@ public class BrowniePieceFoodItem extends FarmersDelightItem implements IGarnish
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) playerentity, stack);
 
         if (!world.isClientSide)
-            entity.addEffect(triggerConditionalEffect(0, 0.25F));
+            entity.addEffect(triggerConditionalEffect(value, chance));
 
         return super.finishUsingItem(stack, world, entity);
     }
+
 }

@@ -66,7 +66,7 @@ public class BottledPeanutOilItem extends Item {
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

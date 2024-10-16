@@ -39,7 +39,7 @@ public class OvergrownBrewFoodItem extends Item implements IGarnishedUtilities {
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

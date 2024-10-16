@@ -8,16 +8,15 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class PricklyPearStewFoodItem extends Item implements IGarnishedUtilities {
+public class PricklyPearStewFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public PricklyPearStewFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoodValues.PRICKLY_PEAR_STEW).stacksTo(1));
+		super(2, 0.45F, properties.food(GarnishedFoodValues.PRICKLY_PEAR_STEW).stacksTo(1));
 	}
 
 	@Override
@@ -39,7 +38,7 @@ public class PricklyPearStewFoodItem extends Item implements IGarnishedUtilities
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

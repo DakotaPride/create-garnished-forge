@@ -8,16 +8,15 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class FarseerBrewFoodItem extends Item implements IGarnishedUtilities {
+public class FarseerBrewFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public FarseerBrewFoodItem(Properties properties) {
-		super(properties.food(GarnishedFoodValues.FARSEER_BREW).stacksTo(1));
+		super(3, 0.80F, properties.food(GarnishedFoodValues.FARSEER_BREW).stacksTo(1));
 	}
 
 	@Override
@@ -42,7 +41,7 @@ public class FarseerBrewFoodItem extends Item implements IGarnishedUtilities {
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}

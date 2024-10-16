@@ -39,7 +39,7 @@ public class GalvanicHauntingFoodItem extends Item implements IGarnishedUtilitie
 				}
 			}
 
-			return stack;
+			return super.finishUsingItem(stack, level, livingEntity);
 		}
 
 	}
