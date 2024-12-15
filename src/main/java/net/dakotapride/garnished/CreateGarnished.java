@@ -14,6 +14,7 @@ import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -279,6 +280,9 @@ public class CreateGarnished {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
+            Sheets.addWoodType(GarnishedWoodType.NUT);
+            Sheets.addWoodType(GarnishedWoodType.SEPIA);
             // GarnishedPonderIndex.index();
             // NewIndex.index();
             // GarnishedPonderIndex.Tags.fillPonderTags();
