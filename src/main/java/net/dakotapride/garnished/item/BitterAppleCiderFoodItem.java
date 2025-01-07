@@ -3,9 +3,7 @@ package net.dakotapride.garnished.item;
 import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -31,19 +29,23 @@ public class BitterAppleCiderFoodItem extends Item implements IGarnishedUtilitie
 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level pLevel, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
-		if (!Screen.hasShiftDown()) {
-			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.DARK_GRAY));
-		} else {
-			tooltip.add(Component.translatable("text.garnished.holding_shift").withStyle(ChatFormatting.DARK_GRAY));
-		}
-
-		if (Screen.hasShiftDown()) {
-			tooltip.add(Component.literal(""));
-			tooltip.add(Component.translatable("text.garnished.effect.clears_wither").withStyle(Style.EMPTY.withColor(0xc7954b)));
-			tooltip.add(Component.literal(""));
-			tooltip.add(Component.translatable("text.garnished.apple_cider.bitter.desc.1").withStyle(Style.EMPTY.withColor(0xc7954b)));
-			tooltip.add(Component.translatable("text.garnished.apple_cider.bitter.desc.2").withStyle(Style.EMPTY.withColor(0xc7954b)));
-		}
+//		if (!Screen.hasShiftDown()) {
+//			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.DARK_GRAY));
+//		} else {
+//			tooltip.add(Component.translatable("text.garnished.holding_shift").withStyle(ChatFormatting.DARK_GRAY));
+//		}
+//
+//		if (Screen.hasShiftDown()) {
+//			tooltip.add(Component.literal(""));
+//			tooltip.add(Component.translatable("text.garnished.effect.clears_wither").withStyle(Style.EMPTY.withColor(0xc7954b)));
+//			tooltip.add(Component.literal(""));
+//			tooltip.add(Component.translatable("text.garnished.apple_cider.bitter.desc.1").withStyle(Style.EMPTY.withColor(0xc7954b)));
+//			tooltip.add(Component.translatable("text.garnished.apple_cider.bitter.desc.2").withStyle(Style.EMPTY.withColor(0xc7954b)));
+//		}
+		tooltip.add(Component.translatable("text.garnished.effect.clears_wither", "Wither").withStyle(ChatFormatting.GOLD));
+		tooltip.add(Component.literal(""));
+		addEffectTooltip(tooltip, MobEffects.MOVEMENT_SLOWDOWN, bit_cider_dur);
+		addEffectTooltip(tooltip, MobEffects.DAMAGE_RESISTANCE, bit_cider_dur);
 	}
 
 	@Override

@@ -18,7 +18,13 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
@@ -28,15 +34,19 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forgespi.locating.IModFile;
+import net.minecraftforge.resource.PathPackResources;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -389,6 +399,35 @@ public class CreateGarnished {
         public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(NUT_BOAT_LAYER, BoatModel::createBodyModel);
             event.registerLayerDefinition(NUT_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+        }
+
+        @SubscribeEvent
+        public static void onAddPackFinders(AddPackFindersEvent event) {
+
+            if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+                registerBuiltinResourcePack(event, Component.literal(ID + "/legacy_amber"), "legacy_amber");
+            }
+        }
+
+        private static void registerBuiltinResourcePack(AddPackFindersEvent event, MutableComponent name, String folder) {
+            event.addRepositorySource((consumer) -> {
+                String path = new ResourceLocation(ID, folder).toString();
+                IModFile file = ModList.get().getModFileById(ID).getFile();
+                try (PathPackResources pack = new PathPackResources(
+                        path, true, file.findResource("resourcepacks/" + folder))) {
+                    consumer.accept(Pack.create(
+                            new ResourceLocation(ID, folder).toString(),
+                            name,
+                            false,
+                            (pack1) -> pack,
+                            new Pack.Info(Component.literal(ID + "/" + folder), 15, FeatureFlagSet.of()),
+                            PackType.CLIENT_RESOURCES,
+                            Pack.Position.TOP,
+                            false,
+                            PackSource.BUILT_IN));
+
+                }
+            });
         }
     }
 

@@ -1,20 +1,33 @@
 package net.dakotapride.garnished.item;
 
 import net.dakotapride.garnished.registry.GarnishedFoodValues;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class FermentedCashewMixtureItem extends Item implements IGarnishedUtilities {
 	private static final int DRINK_DURATION = 10;
 	public FermentedCashewMixtureItem(Properties properties) {
 		super(properties.food(GarnishedFoodValues.FERMENTED_CASHEW_MIXTURE).stacksTo(16));
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+		addEffectTooltip(tooltip, MobEffects.CONFUSION, 3, cashew_mix_dur);
+		addChanceForEffect(tooltip, 0.05F);
+		addEffectTooltip(tooltip, MobEffects.DAMAGE_BOOST, 3, cashew_mix_dur);
+		addChanceForEffect(tooltip, 0.05F);
 	}
 
 	@Override

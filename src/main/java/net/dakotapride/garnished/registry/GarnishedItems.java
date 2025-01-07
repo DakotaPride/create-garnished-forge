@@ -731,7 +731,8 @@ public class GarnishedItems {
 	public static final ItemEntry<BokChoyFoodItem> BOK_CHOY =
 			REGISTRATE.item("bok_choy", BokChoyFoodItem::new).register();
 	public static final ItemEntry<SweetTeaItem> SWEET_TEA =
-			REGISTRATE.item("sweet_tea", SweetTeaItem::new).register();
+			REGISTRATE.item("sweet_tea", SweetTeaItem::new)
+					.onRegister(s -> ItemDescription.referKey(s, AllItems.BUILDERS_TEA)).register();
 
 	public static final ItemEntry<BokChoyLeafItem> BOK_CHOY_SEEDS =
 			REGISTRATE.item("bok_choy_seeds", BokChoyLeafItem::new).register();

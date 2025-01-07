@@ -5,6 +5,7 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -32,6 +33,9 @@ public class CashewFruitItem extends Item implements IGarnishedUtilities {
 		//			tooltip.add(Component.literal(""));
 		//			tooltip.add(Component.translatable("text.garnished.cashew_fruit.poisoning.chance").withStyle(ChatFormatting.DARK_PURPLE));
 		//		}
+
+		addEffectTooltip(tooltip, MobEffects.POISON, cashew_dur);
+		addChanceForEffect(tooltip, 0.25F);
 	}
 
 	@Override
