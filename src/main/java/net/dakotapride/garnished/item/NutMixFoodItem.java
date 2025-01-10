@@ -18,6 +18,6 @@ public class NutMixFoodItem extends Item implements IGarnishedUtilities {
 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
-		tooltip.add(Component.translatable(garnishedText()).withStyle(standard()));
+		//tooltip.add(Component.translatable(garnishedText()).withStyle(standard()));
 	}
 }

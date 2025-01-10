@@ -49,7 +49,7 @@ public class GarnishedFluids implements Fluids {
 	}
 
 	public static final FluidEntry<ForgeFlowingFluid.Flowing> GARNISH =
-			GarnishedFluids.standardFluid("liquid_garnish", SolidRenderedPlaceableFluidType.create(0xEFE9E3,
+			GarnishedFluids.standardFluid("garnish", SolidRenderedPlaceableFluidType.create(0xEFE9E3,
 							() -> 1f / 8f * AllConfigs.client().honeyTransparencyMultiplier.getF()))
 					.fluidProperties(p -> p.levelDecreasePerBlock(2)
 							.tickRate(25)
