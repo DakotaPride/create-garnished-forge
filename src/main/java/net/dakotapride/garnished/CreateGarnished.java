@@ -91,6 +91,7 @@ public class CreateGarnished {
         LootModifiers.register(eventBus);
 
         GarnishedAdvancementUtils.register();
+        eventBus.addListener(CreateGarnished::onRegister);
 
         REGISTRATE.get().registerEventListeners(eventBus);
         // Register the setup method for modloading
