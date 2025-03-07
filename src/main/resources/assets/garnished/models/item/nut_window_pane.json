@@ -1,7 +1,6 @@
 {
-  "parent": "create:item/pane",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "edge": "garnished:block/nut_planks",
-    "pane": "garnished:block/nut_window"
+    "layer0": "garnished:block/nut_window"
   }
 }

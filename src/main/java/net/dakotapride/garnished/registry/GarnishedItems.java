@@ -774,6 +774,10 @@ public class GarnishedItems {
 			REGISTRATE.item("incomplete_champion_omelette", SequencedAssemblyItem::new)
 					.properties(p -> p.rarity(Rarity.UNCOMMON)).register();
 
+	// Create Update 6
+	public static final ItemEntry<BoardedPulpFoodItem> BOARDED_PULP =
+			REGISTRATE.item("boarded_pulp", BoardedPulpFoodItem::new).register();
+
 	// Farmer's Delight Items
 	public static final ItemEntry<PecanPieSliceFoodItem> PECAN_PIE_SLICE =
 			REGISTRATE.item("pecan_pie_slice", PecanPieSliceFoodItem::new).register();

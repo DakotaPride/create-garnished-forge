@@ -160,6 +160,7 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties OVERGROWN_BREW = ow_max().build();
     public static final FoodProperties MEAT_SCRAPS = ow_max().build(); // 100% chance of occurring
     public static final FoodProperties BOK_CHOY = ow_min().build();
+    public static final FoodProperties BOARDED_PULP = generic(6, 0.20f).build();
     // Generic Sweets (other than honeyed foods)
     public static final FoodProperties COAL_TRUFFLE = generic(2, 0.40f).build(); // 80% chance of occurring
     public static final FoodProperties MASTIC_PASTE = ow_min().fast().build(); // 15% chance of occurring

@@ -1,10 +1,9 @@
 package net.dakotapride.garnished.registry;
 
-import com.simibubi.create.AllTags;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
-import com.simibubi.create.foundation.utility.Lang;
+import net.createmod.catnip.lang.Lang;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.recipe.*;
 import net.minecraft.core.registries.Registries;

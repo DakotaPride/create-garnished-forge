@@ -1,14 +1,19 @@
 package net.dakotapride.garnished.recipe;
 
+import com.simibubi.create.Create;
+import com.simibubi.create.api.registry.CreateBuiltInRegistries;
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingTypeRegistry;
 import com.simibubi.create.foundation.recipe.RecipeApplier;
-import com.simibubi.create.foundation.utility.Color;
 import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
+import net.createmod.catnip.theme.Color;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.registry.*;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.*;
+import net.minecraft.core.Registry;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
@@ -16,6 +21,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.registries.DeferredRegister;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
@@ -64,8 +70,9 @@ public class GarnishedFanProcessing {
     }
 
     private static <T extends FanProcessingType> T register(String id, T type) {
-        FanProcessingTypeRegistry.register(CreateGarnished.asResource(id), type);
-        return type;
+        return Registry.register(CreateBuiltInRegistries.FAN_PROCESSING_TYPE, CreateGarnished.asResource(id), type);
+        //FanProcessingTypeRegistry.register(CreateGarnished.asResource(id), type);
+        // return type;
     }
 
     public static class FreezingType implements FanProcessingType {

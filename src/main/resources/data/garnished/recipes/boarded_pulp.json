@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "create:pulp"
+    },
+    {
+      "item": "create:pulp"
+    },
+    {
+      "item": "create:pulp"
+    },
+    {
+      "item": "create:pulp"
+    },
+    {
+      "item": "create:cardboard"
+    },
+    {
+      "item": "create:cardboard"
+    },
+    {
+      "item": "create:cardboard"
+    },
+    {
+      "item": "create:cardboard"
+    }
+  ],
+  "result": {
+    "item": "garnished:boarded_pulp",
+    "count": 4
+  }
+}

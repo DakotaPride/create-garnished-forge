@@ -324,6 +324,8 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.FROSTED_DESSERT.asStack());
 			output.accept(GarnishedItems.CHILLED_APPLE.asStack());
 
+			output.accept(GarnishedItems.BOARDED_PULP.asStack());
+
 			output.accept(GarnishedItems.MOLTEN_REMNANT.asStack());
 
 			output.accept(GarnishedItems.GHAST_TENDRIL.asStack());

@@ -2,8 +2,8 @@ package net.dakotapride.garnished;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
-import com.simibubi.create.foundation.item.TooltipHelper;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.garnished.block.cake.AnniversaryCakeBlockRenderer;
 import net.dakotapride.garnished.entity.render.NutBoatRenderer;
 import net.dakotapride.garnished.forge.LootModifiers;
@@ -46,6 +46,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forgespi.locating.IModFile;
+import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.resource.PathPackResources;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,7 +63,7 @@ public class CreateGarnished {
             NonNullSupplier.lazy(() -> CreateRegistrate.create(ID));
 
     static {
-        REGISTRATE.get().setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, TooltipHelper.Palette.STANDARD_CREATE));
+        REGISTRATE.get().setTooltipModifierFactory(item -> new ItemDescription.Modifier(item, FontHelper.Palette.STANDARD_CREATE));
     }
 
     public static ResourceLocation asResource(String path) {
@@ -86,7 +87,7 @@ public class CreateGarnished {
         GarnishedFeatures.setRegister(eventBus);
         GarnishedTags.setRegister();
         GarnishedRecipeTypes.register(eventBus);
-        GarnishedFanProcessing.register();
+        //GarnishedFanProcessing.register();
         LootModifiers.register(eventBus);
 
         GarnishedAdvancementUtils.register();
@@ -101,6 +102,10 @@ public class CreateGarnished {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    public static void onRegister(final RegisterEvent event) {
+        GarnishedFanProcessing.register();
     }
 
     private void setup(FMLCommonSetupEvent event) {
