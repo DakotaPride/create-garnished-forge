@@ -1,0 +1,14 @@
+{
+  "type": "garnished:blue_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:blue_concrete_powder",
+      "count": 1
+    }
+  ]
+}

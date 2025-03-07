@@ -1,0 +1,14 @@
+{
+  "type": "garnished:white_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:white_concrete_powder",
+      "count": 1
+    }
+  ]
+}

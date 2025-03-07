@@ -1,0 +1,14 @@
+{
+  "type": "garnished:yellow_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:concrete"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:yellow_concrete",
+      "count": 1
+    }
+  ]
+}

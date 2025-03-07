@@ -1,0 +1,14 @@
+{
+  "type": "garnished:red_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:red_concrete_powder",
+      "count": 1
+    }
+  ]
+}
