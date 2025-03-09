@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:peanut_butter_bottle"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.obtain_peanut_butter.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.obtain_peanut_butter.description",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "creategarnished:jungle/obtain_peanuts",
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "creategarnished:peanut_butter_bottle"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

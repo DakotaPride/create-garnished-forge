@@ -1,0 +1,28 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "creategarnished:ginger_root"
+    },
+    {
+      "item": "creategarnished:ginger_root"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 150,
+      "fluid": "minecraft:water"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 100,
+      "fluid": "create:honey"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "creategarnished:sprinters_tea"
+    }
+  ]
+}

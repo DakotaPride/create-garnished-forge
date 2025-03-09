@@ -1,0 +1,23 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "c:almonds"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "item": {
+        "id": "creategarnished:almond_paste"
+      }
+    },
+    {
+      "count": 1,
+      "chance": 0.15,
+      "item": {
+        "id": "creategarnished:almond_paste"
+      }
+    }
+  ]
+}

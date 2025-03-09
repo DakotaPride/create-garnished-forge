@@ -1,6 +1,0 @@
-{
-    "type": "emi:world_interaction",
-    "left": "fluid:minecraft:lava",
-    "right": "fluid:garnished:green_mastic_resin",
-    "output": "item:garnished:green_zultanite"
-}

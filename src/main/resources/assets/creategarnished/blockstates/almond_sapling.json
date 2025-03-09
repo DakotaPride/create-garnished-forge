@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "stage=0": {
+      "model": "creategarnished:block/almond_sapling"
+    },
+    "stage=1": {
+      "model": "creategarnished:block/almond_sapling"
+    }
+  }
+}

@@ -1,9 +1,60 @@
 {
   "sources": [
     {
-      "type": "directory",
-      "source": "fluid",
-      "prefix": "fluid/"
+      "type": "single",
+      "resource": "creategarnished:fluid/peanut_butter_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/peanut_butter_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/sprinters_tea_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/sprinters_tea_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/sweet_tea_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/sweet_tea_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/elven_tea_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/elven_tea_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/birch_sap_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/birch_sap_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/birch_syrup_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/birch_syrup_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/beetroot_juice_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/beetroot_juice_still"
     }
   ]
 }

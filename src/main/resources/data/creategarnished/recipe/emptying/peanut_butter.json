@@ -1,0 +1,19 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "creategarnished:peanut_butter_bottle"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:glass_bottle"
+      }
+    },
+    {
+      "amount": 250,
+      "id": "creategarnished:peanut_butter"
+    }
+  ]
+}

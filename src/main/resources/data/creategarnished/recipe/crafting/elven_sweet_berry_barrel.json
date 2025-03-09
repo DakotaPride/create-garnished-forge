@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "creategarnished:elven_sweet_berries"
+    }
+  },
+  "result": {
+    "id": "creategarnished:elven_sweet_berry_barrel"
+  }
+}

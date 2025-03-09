@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "garnished:block/blue_smooth_zultanite",
-    "side": "garnished:block/blue_smooth_zultanite",
-    "top": "garnished:block/blue_smooth_zultanite"
-  }
-}

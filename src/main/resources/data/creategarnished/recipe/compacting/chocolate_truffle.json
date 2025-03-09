@@ -1,0 +1,35 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "create:chocolate"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "item": {
+        "id": "creategarnished:chocolate_truffle"
+      }
+    }
+  ]
+}

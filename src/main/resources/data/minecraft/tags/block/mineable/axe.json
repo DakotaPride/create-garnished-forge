@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "creategarnished:peanut_barrel",
+    "creategarnished:pine_nut_barrel",
+    "creategarnished:hazelnut_barrel",
+    "creategarnished:almond_barrel",
+    "creategarnished:sweet_berry_barrel",
+    "creategarnished:elven_sweet_berry_barrel",
+    "creategarnished:birch_sap_log"
+  ]
+}

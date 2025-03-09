@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "creategarnished:block/birch_sap_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "creategarnished:block/birch_sap_log"
+    },
+    "axis=z": {
+      "model": "creategarnished:block/birch_sap_log_horizontal",
+      "x": 90
+    }
+  }
+}

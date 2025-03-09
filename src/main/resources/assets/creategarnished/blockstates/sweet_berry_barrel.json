@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "creategarnished:block/sweet_berry_barrel",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "creategarnished:block/sweet_berry_barrel",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "creategarnished:block/sweet_berry_barrel",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "creategarnished:block/sweet_berry_barrel",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "creategarnished:block/sweet_berry_barrel"
+    },
+    "facing=west": {
+      "model": "creategarnished:block/sweet_berry_barrel",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "creategarnished:peanut",
+    "creategarnished:pine_nut",
+    "creategarnished:hazelnut",
+    "creategarnished:almond"
+  ]
+}

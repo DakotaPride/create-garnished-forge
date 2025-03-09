@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:churchkhela"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.obtain_churchkhela.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.obtain_churchkhela.description",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "creategarnished:flower_forest/obtain_beetroot_juice_bottle",
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "creategarnished:churchkhela"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

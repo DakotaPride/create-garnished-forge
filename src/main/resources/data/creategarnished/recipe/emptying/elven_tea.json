@@ -1,0 +1,19 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "creategarnished:elven_tea"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:glass_bottle"
+      }
+    },
+    {
+      "amount": 250,
+      "id": "creategarnished:elven_tea"
+    }
+  ]
+}

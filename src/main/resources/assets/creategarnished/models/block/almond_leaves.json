@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "creategarnished:block/almond_leaves"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "create:flowing_tea",
+    "create:tea",
+    "creategarnished:flowing_sprinters_tea",
+    "creategarnished:sprinters_tea",
+    "creategarnished:flowing_sweet_tea",
+    "creategarnished:sweet_tea",
+    "creategarnished:flowing_elven_tea",
+    "creategarnished:elven_tea"
+  ]
+}

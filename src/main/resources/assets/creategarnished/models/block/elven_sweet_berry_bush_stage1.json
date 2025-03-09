@@ -1,0 +1,7 @@
+{
+  "parent": "creategarnished:block/crop_cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "creategarnished:block/elven_sweet_berry_bush_stage1"
+  }
+}

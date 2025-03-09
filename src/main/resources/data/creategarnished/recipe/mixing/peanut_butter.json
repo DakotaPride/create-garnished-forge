@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "creategarnished:peanut"
+    },
+    {
+      "item": "creategarnished:peanut"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 100,
+      "fluid_tag": "c:milk"
+    }
+  ],
+  "results": [
+    {
+      "amount": 100,
+      "id": "creategarnished:peanut_butter"
+    }
+  ]
+}

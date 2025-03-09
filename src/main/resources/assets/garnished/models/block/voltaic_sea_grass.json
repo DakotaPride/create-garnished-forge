@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_seagrass",
-  "textures": {
-    "texture": "garnished:block/voltaic_seagrass"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "garnished:item/dried_dulse_kelp"
-  }
-}

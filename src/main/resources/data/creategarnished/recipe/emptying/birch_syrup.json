@@ -1,0 +1,19 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "creategarnished:birch_syrup_bottle"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:glass_bottle"
+      }
+    },
+    {
+      "amount": 250,
+      "id": "creategarnished:birch_syrup"
+    }
+  ]
+}

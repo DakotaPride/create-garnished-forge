@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:beetroot_juice_bottle"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.obtain_beetroot_juice_bottle.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.obtain_beetroot_juice_bottle.description",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "creategarnished:flower_forest/obtain_almonds",
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "creategarnished:beetroot_juice_bottle"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

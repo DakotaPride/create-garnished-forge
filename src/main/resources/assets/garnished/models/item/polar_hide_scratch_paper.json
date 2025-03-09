@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "garnished:item/polar_hide_scratch_paper"
-  }
-}

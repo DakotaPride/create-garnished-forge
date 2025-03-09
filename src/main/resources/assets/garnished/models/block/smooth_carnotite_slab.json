@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "garnished:block/smooth_carnotite",
-    "side": "garnished:block/smooth_carnotite",
-    "top": "garnished:block/smooth_carnotite"
-  }
-}
