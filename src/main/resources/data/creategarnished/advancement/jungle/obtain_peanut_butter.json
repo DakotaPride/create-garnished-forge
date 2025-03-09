@@ -11,8 +11,8 @@
       "color": "#DBA213"
     },
     "frame": "task",
-    "show_toast": false,
-    "announce_to_chat": false,
+    "show_toast": true,
+    "announce_to_chat": true,
     "hidden": false
   },
   "parent": "creategarnished:jungle/obtain_peanuts",
