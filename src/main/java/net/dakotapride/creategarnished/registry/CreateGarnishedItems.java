@@ -16,6 +16,8 @@ public class CreateGarnishedItems {
         CreateGarnished.REGISTRATE.setCreativeTab(GarnishedCreativeModeTabs.GARNISHED);
     }
 
+    //public static final ItemEntry<GarnishmentBookItem> GARNISHMENT_BOOK = CreateGarnished.REGISTRATE.item("garnishment_book", GarnishmentBookItem::new).register();
+
     public static final ItemEntry<GingerRootItem> GINGER_ROOT = CreateGarnished.REGISTRATE.item("ginger_root", GingerRootItem::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6F).build()))
             .register();

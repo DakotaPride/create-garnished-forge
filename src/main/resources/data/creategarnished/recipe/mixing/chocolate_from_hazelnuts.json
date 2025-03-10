@@ -1,6 +1,6 @@
 {
   "type": "create:mixing",
-  "heatRequirement": "heated",
+  "heat_requirement": "heated",
   "ingredients": [
     {
       "item": "minecraft:sugar"
@@ -17,7 +17,7 @@
   "results": [
     {
       "amount": 100,
-      "id": "creategarnished:peanut_butter"
+      "id": "create:chocolate"
     }
   ]
 }
