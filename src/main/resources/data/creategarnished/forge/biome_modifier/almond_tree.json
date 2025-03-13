@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["minecraft:flower_forest", "minecraft:sunflower_plains"],
+  "features": "creategarnished:almond_tree",
+  "step": "vegetal_decoration"
+}

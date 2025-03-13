@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "amount": 100,
+      "fluid": "creategarnished:beetroot_juice"
+    }
+  ],
+  "results": [
+    {
+      "item": "creategarnished:beetroot_juice_bottle"
+    }
+  ]
+}

@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.SaplingBlock;
 
 public class PineNutSaplingBlock extends SaplingBlock {
     public PineNutSaplingBlock(Properties pProperties) {
-        super(CreateGarnishedTreeGrower.PINE_NUT, pProperties);
+        super(new CreateGarnishedTreeGrower.PineNut(), pProperties);
     }
 }

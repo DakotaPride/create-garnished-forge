@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "creategarnished:pine_nut_flour"
+    },
+    {
+      "item": "creategarnished:pine_nut_flour"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    [
+      {
+        "item": "minecraft:pumpkin"
+      },
+      {
+        "tag": "forge:pumpkin_slices"
+      }
+    ]
+  ],
+  "result": {
+    "item": "creategarnished:vegetable_stew"
+  }
+}

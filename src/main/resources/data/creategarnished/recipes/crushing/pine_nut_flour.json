@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "forge:pine_nuts"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "item": "creategarnished:pine_nut_flour"
+    },
+    {
+      "count": 1,
+      "chance": 0.15,
+      "item": "creategarnished:pine_nut_flour"
+    }
+  ]
+}

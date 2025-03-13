@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.SaplingBlock;
 
 public class AlmondSaplingBlock extends SaplingBlock {
     public AlmondSaplingBlock(Properties pProperties) {
-        super(CreateGarnishedTreeGrower.ALMOND, pProperties);
+        super(new CreateGarnishedTreeGrower.Almond(), pProperties);
     }
 }

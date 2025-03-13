@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "creategarnished:pine_nut"
+    }
+  },
+  "result": {
+    "item": "creategarnished:pine_nut_barrel"
+  }
+}

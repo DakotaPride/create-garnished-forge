@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "creategarnished:bear_claw"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.obtain_bear_claw.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.obtain_bear_claw.description",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "creategarnished:flower_forest/obtain_almond_paste",
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "creategarnished:bear_claw"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

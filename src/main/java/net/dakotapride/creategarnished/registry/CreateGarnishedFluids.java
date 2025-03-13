@@ -13,8 +13,8 @@ import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
-import net.neoforged.neoforge.fluids.BaseFlowingFluid;
-import net.neoforged.neoforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.joml.Vector3f;
 
 import javax.annotation.Nullable;
@@ -35,21 +35,21 @@ public class CreateGarnishedFluids {
     public static final FluidEntry<VirtualFluid> BIRCH_SYRUP = REGISTRATE.virtualFluid("birch_syrup").register();
     public static final FluidEntry<VirtualFluid> BEETROOT_JUICE = REGISTRATE.virtualFluid("beetroot_juice").register();
 
-    public static final FluidEntry<BaseFlowingFluid.Flowing> PEANUT_BUTTER =
+    public static final FluidEntry<ForgeFlowingFluid.Flowing> PEANUT_BUTTER =
             REGISTRATE.standardFluid("peanut_butter",
                             SolidRenderedPlaceableFluidType.create(0xA2774B,
                                     () -> 1f / 32f * AllConfigs.client().chocolateTransparencyMultiplier.getF()))
                     .lang("Peanut Butter")
-                    .tag(AllTags.commonFluidTag("peanut_butter"))
+                    .tag(AllTags.forgeFluidTag("peanut_butter"))
                     .properties(b -> b.viscosity(1500)
                             .density(1400))
                     .fluidProperties(p -> p.levelDecreasePerBlock(2)
                             .tickRate(25)
                             .slopeFindDistance(3)
                             .explosionResistance(100f))
-                    .source(BaseFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
+                    .source(ForgeFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
                     .bucket()
-                    .tag(AllTags.commonItemTag("buckets/peanut_butter"))
+                    .tag(AllTags.forgeItemTag("buckets/peanut_butter"))
                     .build()
                     .register();
 

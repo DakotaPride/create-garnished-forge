@@ -1,6 +1,5 @@
 package net.dakotapride.creategarnished.block;
 
-import com.mojang.serialization.MapCodec;
 import net.dakotapride.creategarnished.registry.CreateGarnishedDamageSources;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.minecraft.core.BlockPos;
@@ -10,7 +9,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -33,11 +31,9 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.neoforge.common.CommonHooks;
-import org.jetbrains.annotations.NotNull;
 
 public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableBlock {
-    public static final MapCodec<ElvenSweetBerryBushBlock> CODEC = simpleCodec(ElvenSweetBerryBushBlock::new);
+    //public static final MapCodec<ElvenSweetBerryBushBlock> CODEC = simpleCodec(ElvenSweetBerryBushBlock::new);
     private static final float HURT_SPEED_THRESHOLD = 0.003F;
     public static final int MAX_AGE = 3;
     public static final IntegerProperty AGE;
@@ -49,13 +45,13 @@ public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableB
         this.registerDefaultState((this.stateDefinition.any()).setValue(AGE, 0));
     }
 
-    @Override
-    protected @NotNull MapCodec<? extends BushBlock> codec() {
-        return CODEC;
-    }
+//    @Override
+//    protected @NotNull MapCodec<? extends BushBlock> codec() {
+//        return CODEC;
+//    }
 
     @Override
-    public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader level, BlockPos pos, Player player) {
+    public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
         return new ItemStack(CreateGarnishedItems.ELVEN_SWEET_BERRIES.get());
     }
 
@@ -73,11 +69,11 @@ public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableB
 
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         int i = pState.getValue(AGE);
-        if (i < 3 && pLevel.getRawBrightness(pPos.above(), 0) >= 9 && CommonHooks.canCropGrow(pLevel, pPos, pState, pRandom.nextInt(5) == 0)) {
-            BlockState blockstate = pState.setValue(AGE, i + 1);
+        if (i < 3 && pLevel.getRawBrightness(pPos.above(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt(5) == 0)) {
+            BlockState blockstate = pState.setValue(AGE, Integer.valueOf(i + 1));
             pLevel.setBlock(pPos, blockstate, 2);
             pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(blockstate));
-            CommonHooks.fireCropGrowPost(pLevel, pPos, pState);
+            net.minecraftforge.common.ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
         }
 
     }
@@ -96,25 +92,22 @@ public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableB
 
     }
 
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        int i = state.getValue(AGE);
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        int i = pState.getValue(AGE);
         boolean flag = i == 3;
-        return !flag && stack.is(Items.BONE_MEAL) ? ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION : super.useItemOn(stack, state, level, pos, player, hand, hitResult);
-    }
-
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        int i = state.getValue(AGE);
-        boolean flag = i == 3;
-        if (i > 1) {
-            int j = 1 + level.random.nextInt(2);
-            popResource(level, pos, new ItemStack(CreateGarnishedItems.ELVEN_SWEET_BERRIES.get(), j + (flag ? 1 : 0)));
-            level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
-            BlockState blockstate = state.setValue(AGE, 1);
-            level.setBlock(pos, blockstate, 2);
-            level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockstate));
-            return InteractionResult.sidedSuccess(level.isClientSide);
+        if (!flag && pPlayer.getItemInHand(pHand).is(Items.BONE_MEAL)) {
+            return InteractionResult.PASS;
+        } else if (i > 1) {
+            int j = 1 + pLevel.random.nextInt(2);
+            popResource(pLevel, pPos, new ItemStack(CreateGarnishedItems.ELVEN_SWEET_BERRIES, j + (flag ? 1 : 0)));
+            pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
+            BlockState blockstate = pState.setValue(AGE, Integer.valueOf(1));
+            pLevel.setBlock(pPos, blockstate, 2);
+            pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
+            return InteractionResult.sidedSuccess(pLevel.isClientSide);
         } else {
-            return super.useWithoutItem(state, level, pos, player, hitResult);
+            return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
         }
     }
 
@@ -123,7 +116,7 @@ public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableB
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean isClient) {
         return blockState.getValue(AGE) < 3;
     }
 

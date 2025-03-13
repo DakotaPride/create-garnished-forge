@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "creategarnished:peanut"
+    }
+  },
+  "result": {
+    "item": "creategarnished:peanut_barrel"
+  }
+}

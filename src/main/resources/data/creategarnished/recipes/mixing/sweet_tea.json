@@ -1,0 +1,28 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "amount": 100,
+      "fluid": "create:honey"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "fluid": "creategarnished:sweet_tea"
+    }
+  ]
+}

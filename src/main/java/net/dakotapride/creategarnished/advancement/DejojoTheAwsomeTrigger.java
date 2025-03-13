@@ -1,33 +1,39 @@
 package net.dakotapride.creategarnished.advancement;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.google.gson.JsonObject;
+import net.dakotapride.creategarnished.CreateGarnished;
+import net.minecraft.advancements.critereon.AbstractCriterionTriggerInstance;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
-import net.minecraft.advancements.critereon.EntityPredicate;
+import net.minecraft.advancements.critereon.DeserializationContext;
 import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-
-import java.util.Optional;
+import org.jetbrains.annotations.NotNull;
 
 public class DejojoTheAwsomeTrigger extends SimpleCriterionTrigger<DejojoTheAwsomeTrigger.TriggerInstance> {
-    //private static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(CreateGarnished.ID, "the_one_who_started_it_all");
+    private static final ResourceLocation ID = new ResourceLocation(CreateGarnished.ID, "the_one_who_started_it_all");
 
     @Override
-    public Codec<DejojoTheAwsomeTrigger.TriggerInstance> codec() {
-        return DejojoTheAwsomeTrigger.TriggerInstance.CODEC;
+    public @NotNull ResourceLocation getId() {
+        return ID;
     }
 
-    public void trigger(ServerPlayer player) {
+    public void trigger(@NotNull ServerPlayer player) {
         this.trigger(player, TriggerInstance::test);
     }
 
-    public static record TriggerInstance(Optional<ContextAwarePredicate> player) implements SimpleCriterionTrigger.SimpleInstance {
-        public static final Codec<TriggerInstance> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
-                EntityPredicate.ADVANCEMENT_CODEC.optionalFieldOf("player").forGetter(TriggerInstance::player))
-                .apply(instance, TriggerInstance::new));
+    @Override
+    protected @NotNull TriggerInstance createInstance(@NotNull JsonObject json, @NotNull ContextAwarePredicate player, @NotNull DeserializationContext conditionsParser) {
+        return new TriggerInstance(player);
+    }
 
-        public TriggerInstance(Optional<ContextAwarePredicate> player) {
-            this.player = player;
+    public static class TriggerInstance extends AbstractCriterionTriggerInstance {
+        public TriggerInstance(ContextAwarePredicate player) {
+            super(DejojoTheAwsomeTrigger.ID, player);
+        }
+
+        public static TriggerInstance simple() {
+            return new TriggerInstance(ContextAwarePredicate.ANY);
         }
 
         public boolean test() {

@@ -1,0 +1,19 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:almonds"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "item": "creategarnished:almond_paste"
+    },
+    {
+      "count": 1,
+      "chance": 0.15,
+      "item": "creategarnished:almond_paste"
+    }
+  ]
+}

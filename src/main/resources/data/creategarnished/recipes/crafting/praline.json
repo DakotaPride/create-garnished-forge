@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "create:bar_of_chocolate"
+    },
+    {
+      "item": "creategarnished:hazelnut"
+    },
+    {
+      "item": "creategarnished:hazelnut"
+    },
+    {
+      "item": "creategarnished:hazelnut"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:bottles/birch_syrup"
+    }
+  ],
+  "result": {
+    "item": "creategarnished:praline"
+  }
+}

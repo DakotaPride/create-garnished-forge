@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "creategarnished:peanut_butter_cookie"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.obtain_peanut_butter_cookie.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.obtain_peanut_butter_cookie.description",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "creategarnished:jungle/obtain_peanut_butter",
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "creategarnished:peanut_butter_cookie"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

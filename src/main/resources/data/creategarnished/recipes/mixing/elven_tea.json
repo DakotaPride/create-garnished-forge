@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "creategarnished:elven_sweet_berries"
+    },
+    {
+      "item": "creategarnished:elven_sweet_berries"
+    },
+    {
+      "amount": 250,
+      "fluid": "creategarnished:sweet_tea"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "fluid": "creategarnished:elven_tea"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "create:dough"
+    },
+    {
+      "item": "creategarnished:peanut_butter_bottle"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:eggs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "creategarnished:peanut_butter_cookie"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "creategarnished:wild_ginger_root"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "creategarnished:ginger_root"
+    },
+    {
+      "chance": 0.65,
+      "count": 2,
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "chance": 0.15,
+      "item": "minecraft:green_dye"
+    }
+  ]
+}

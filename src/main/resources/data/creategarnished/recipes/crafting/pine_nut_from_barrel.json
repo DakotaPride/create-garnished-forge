@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "creategarnished:pine_nut_barrel"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "creategarnished:pine_nut"
+  }
+}

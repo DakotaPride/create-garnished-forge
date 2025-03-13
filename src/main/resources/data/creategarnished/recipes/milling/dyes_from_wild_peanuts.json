@@ -1,0 +1,23 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "creategarnished:wild_peanuts"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "creategarnished:peanut"
+    },
+    {
+      "chance": 0.45,
+      "count": 2,
+      "item": "minecraft:white_dye"
+    },
+    {
+      "chance": 0.15,
+      "item": "minecraft:green_dye"
+    }
+  ]
+}

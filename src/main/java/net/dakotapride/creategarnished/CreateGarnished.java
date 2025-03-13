@@ -4,20 +4,21 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
+import net.dakotapride.creategarnished.event.GarnishedColourManager;
 import net.dakotapride.creategarnished.registry.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModContainer;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -34,11 +35,12 @@ public class CreateGarnished {
     }
 
     public static ResourceLocation asResource(String path) {
-        return ResourceLocation.fromNamespaceAndPath(ID, path);
+        return new ResourceLocation(ID, path);
     }
 
-    public CreateGarnished(IEventBus modEventBus, ModContainer modContainer) {
-        modEventBus.addListener(this::commonSetup);
+    public CreateGarnished() {
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        //modEventBus.addListener(this::commonSetup);
 
         //BLOCKS.register(modEventBus);
         //ITEMS.register(modEventBus);
@@ -46,13 +48,13 @@ public class CreateGarnished {
 
         CreateGarnishedBlocks.register();
         CreateGarnishedItems.register();
-        GarnishedCreativeModeTabs.register(modEventBus);
+        GarnishedCreativeModeTabs.register(eventBus);
         CreateGarnishedFluids.register();
 
-        CreateGarnishedAdvancements.register(modEventBus);
+        CreateGarnishedAdvancements.register(eventBus);
 
-        REGISTRATE.registerEventListeners(modEventBus);
-        NeoForge.EVENT_BUS.register(this);
+        REGISTRATE.registerEventListeners(eventBus);
+        MinecraftForge.EVENT_BUS.register(this);
 
         //modEventBus.addListener(this::addCreative);
     }
@@ -71,7 +73,7 @@ public class CreateGarnished {
         //LOGGER.info("HELLO from server starting");
     }
 
-    @EventBusSubscriber(modid = ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {

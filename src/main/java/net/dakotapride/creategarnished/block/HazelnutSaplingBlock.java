@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.SaplingBlock;
 
 public class HazelnutSaplingBlock extends SaplingBlock {
     public HazelnutSaplingBlock(Properties pProperties) {
-        super(CreateGarnishedTreeGrower.HAZELNUT, pProperties);
+        super(new CreateGarnishedTreeGrower.Hazelnut(), pProperties);
     }
 }
