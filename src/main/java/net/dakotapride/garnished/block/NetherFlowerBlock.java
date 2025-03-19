@@ -1,5 +1,7 @@
 package net.dakotapride.garnished.block;
 
+import com.mojang.serialization.MapCodec;
+import net.dakotapride.garnished.block.cake.AnniversaryCakeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
@@ -13,10 +15,16 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class NetherFlowerBlock extends BushBlock {
+    public static final MapCodec<NetherFlowerBlock> CODEC = simpleCodec(NetherFlowerBlock::new);
     protected static final VoxelShape SHAPE = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 10.0D, 11.0D);
 
     public NetherFlowerBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
+    }
+
+    @Override
+    protected MapCodec<? extends BushBlock> codec() {
+        return CODEC;
     }
 
     @Override

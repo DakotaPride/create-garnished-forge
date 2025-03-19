@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class NutHangingSignBlock extends CeilingHangingSignBlock {
 
     public NutHangingSignBlock(Properties properties) {
-        super(properties, GarnishedWoodType.NUT);
+        super(GarnishedWoodType.NUT, properties);
     }
 
     @Override

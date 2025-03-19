@@ -10,7 +10,6 @@ import java.util.function.Supplier;
 
 public class PottedSepiaFungusBlock extends FlowerPotBlock {
     public PottedSepiaFungusBlock(Properties properties) {
-        super(() -> (FlowerPotBlock) net.minecraftforge.registries.ForgeRegistries.BLOCKS.getDelegateOrThrow(Blocks.FLOWER_POT).get(),
-                GarnishedBlocks.SEPIA_FUNGUS, properties);
+        super(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GarnishedBlocks.SEPIA_FUNGUS, properties);
     }
 }

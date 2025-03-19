@@ -50,7 +50,7 @@ public class BlazingDelightFoodItem extends Item implements IGarnishedUtilities 
 	}
 
 	@Override
-	public int getUseDuration(@NotNull ItemStack stack) {
+	public int getUseDuration(@NotNull ItemStack stack, LivingEntity entity) {
 		return DRINK_DURATION;
 	}
 

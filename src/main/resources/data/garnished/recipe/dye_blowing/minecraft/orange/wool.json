@@ -1,0 +1,16 @@
+{
+  "type": "garnished:orange_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:wool"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:orange_wool"
+      },
+      "count": 1
+    }
+  ]
+}

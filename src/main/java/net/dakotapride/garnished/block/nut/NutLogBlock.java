@@ -8,7 +8,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.ToolAction;
+import net.neoforged.neoforge.common.ItemAbility;
 import org.jetbrains.annotations.Nullable;
 
 public class NutLogBlock extends RotatedPillarBlock {
@@ -32,7 +32,7 @@ public class NutLogBlock extends RotatedPillarBlock {
 	}
 
 	@Override
-	public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
+	public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility toolAction, boolean simulate) {
 		if(HatchetUtils.canBeUsedToStripLogs(context.getItemInHand().getItem().getDefaultInstance())) {
 			if(state.is(GarnishedBlocks.NUT_LOG.get())) {
 				return GarnishedBlocks.STRIPPED_NUT_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));

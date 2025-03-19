@@ -1,0 +1,14 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "minecraft:oxeye_daisy"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "garnished:pansophical_daisy"
+    }
+  ]
+}

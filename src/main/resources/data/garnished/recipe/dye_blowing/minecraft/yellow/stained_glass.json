@@ -1,0 +1,21 @@
+{
+  "type": "garnished:yellow_dye_blowing",
+  "ingredients": [
+    [
+      {
+        "tag": "c:stained_glass"
+      },
+      {
+        "item": "minecraft:glass"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:yellow_stained_glass"
+      },
+      "count": 1
+    }
+  ]
+}

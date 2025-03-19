@@ -16,7 +16,7 @@ public class GalacticCaneFoodItem extends ConditionalEffectItem implements IGarn
     }
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-		addEffectTooltip(tooltip, GarnishedEffects.COGNATE.get(), 2, cane_effect_dur);
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+		addEffectTooltip(tooltip, GarnishedEffects.COGNATE, 2, cane_effect_dur);
 	}
 }

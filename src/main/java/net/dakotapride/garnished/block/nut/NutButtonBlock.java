@@ -6,6 +6,6 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class NutButtonBlock extends ButtonBlock {
     public NutButtonBlock(Properties pProperties) {
-        super(pProperties, GarnishedSetTypes.NUT, 30, true);
+        super(GarnishedSetTypes.NUT, 30, pProperties);
     }
 }

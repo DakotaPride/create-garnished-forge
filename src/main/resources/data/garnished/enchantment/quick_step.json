@@ -1,0 +1,45 @@
+{
+  "description": {
+    "translate": "enchantment.garnished.quick_step"
+  },
+  "exclusive_set": [
+    "garnished:ravaging",
+    "garnished:quick_step",
+    "garnished:rejuvenate"
+  ],
+  "supported_items": "#c:tools/hatchets",
+  "weight": 20,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 10,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 0,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "effect": {
+          "type": "minecraft:apply_mob_effect",
+          "to_apply": "minecraft:speed",
+          "min_duration": 10,
+          "max_duration": 10,
+          "min_amplifier": {
+            "type": "minecraft:linear",
+            "base": 0,
+            "per_level_above_first": 1
+          },
+          "max_amplifier": 3
+        },
+        "enchanted": "attacker",
+        "affected": "attacker"
+      }
+    ]
+  }
+}

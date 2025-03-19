@@ -29,7 +29,7 @@ import java.util.List;
 
 public class BlazingHatchetToolItem extends IntegratedHatchetToolItem {
     public BlazingHatchetToolItem(Properties properties) {
-        super(GarnishedUtils.stuffAndAdditions(), IntegratedMaterials.BLAZING, 0.5F, -2.5F, properties);
+        super(GarnishedUtils.stuffAndAdditions(), IntegratedMaterials.BLAZING, properties);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class BlazingHatchetToolItem extends IntegratedHatchetToolItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack stack, @Nullable TooltipContext ctx, List<Component> components, TooltipFlag tooltipFlag) {
         if (Screen.hasShiftDown()) {
             components.add(Component.literal("§8Hold [§fShift§8] for Summary"));
             components.add(Component.literal(" "));
@@ -57,64 +57,65 @@ public class BlazingHatchetToolItem extends IntegratedHatchetToolItem {
             components.add(Component.literal("§8Hold [§7Shift§8] for Summary"));
         }
 
-        super.appendHoverText(stack, level, components, tooltipFlag);
+        super.appendHoverText(stack, ctx, components, tooltipFlag);
     }
 
+    // 1.21.x breaks this method - don't touch it with an eleven-foot pool... that is until stuff and additions updates to 1.21.x
     public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
-        if (entity != null) {
-            boolean removeBlock = false;
-            if (world.getBlockState(BlockPos.containing(x, y, z)).is(BlockTags.create(new ResourceLocation("minecraft:mineable/axe")))) {
-                ItemStack stack;
-                if (world instanceof Level) {
-                    Level smeltResult = (Level)world;
-                    stack = smeltResult.getRecipeManager().getRecipeFor(RecipeType.SMELTING,
-                            new SimpleContainer(new ItemStack(world.getBlockState(BlockPos.containing(x, y, z)).getBlock())),
-                            smeltResult).map((recipe) -> recipe.getResultItem(smeltResult.registryAccess()).copy()).orElse(ItemStack.EMPTY);
-                } else {
-                    stack = ItemStack.EMPTY;
-                }
-
-                if (stack.getItem() != Blocks.AIR.asItem()) {
-                    ServerLevel level = null;
-                    if (world instanceof ServerLevel) {
-                        level = (ServerLevel)world;
-                        ItemStack stack1;
-                        Level smeltResult = (Level) world;
-                        stack1 = smeltResult.getRecipeManager().getRecipeFor(RecipeType.SMELTING,
-                                new SimpleContainer(new ItemStack(world.getBlockState(BlockPos.containing(x, y, z)).getBlock())),
-                                smeltResult).map((recipe) -> recipe.getResultItem(smeltResult.registryAccess()).copy()).orElse(ItemStack.EMPTY);
-
-                        ItemEntity entityToSpawn = new ItemEntity(level, x, y, z, stack1);
-                        entityToSpawn.setPickUpDelay(10);
-                        level.addFreshEntity(entityToSpawn);
-                    }
-
-                    if (world instanceof ServerLevel) {
-                        level.sendParticles(ParticleTypes.FLAME, x + 0.5, y + 0.5, z + 0.5, 10, 0.25, 0.25, 0.25, 0.0);
-                    }
-
-                    removeBlock = true;
-                }
-
-                if (removeBlock) {
-                    world.destroyBlock(BlockPos.containing(x, y, z), false);
-                } else {
-                    BlockPos _pos = BlockPos.containing(x, y, z);
-                    Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x, y, z), null);
-                    world.destroyBlock(_pos, false);
-                }
-            }
-
-            if (entity.level().dimension() == Level.NETHER) {
-                itemstack.setDamageValue(itemstack.getDamageValue() - 1);
-            }
-
-        }
+//        if (entity != null) {
+//            boolean removeBlock = false;
+//            if (world.getBlockState(BlockPos.containing(x, y, z)).is(BlockTags.create(ResourceLocation.withDefaultNamespace("mineable/axe")))) {
+//                ItemStack stack;
+//                if (world instanceof Level) {
+//                    Level smeltResult = (Level)world;
+//                    stack = smeltResult.getRecipeManager().getRecipeFor(RecipeType.SMELTING,
+//                            new SimpleContainer(new ItemStack(world.getBlockState(BlockPos.containing(x, y, z)).getBlock())),
+//                            smeltResult).map((recipe) -> recipe.value().getResultItem(smeltResult.registryAccess()).copy()).orElse(ItemStack.EMPTY);
+//                } else {
+//                    stack = ItemStack.EMPTY;
+//                }
+//
+//                if (stack.getItem() != Blocks.AIR.asItem()) {
+//                    ServerLevel level = null;
+//                    if (world instanceof ServerLevel) {
+//                        level = (ServerLevel)world;
+//                        ItemStack stack1;
+//                        Level smeltResult = (Level) world;
+//                        stack1 = smeltResult.getRecipeManager().getRecipeFor(RecipeType.SMELTING,
+//                                new SimpleContainer(new ItemStack(world.getBlockState(BlockPos.containing(x, y, z)).getBlock())),
+//                                smeltResult).map((recipe) -> recipe.value().getResultItem(smeltResult.registryAccess()).copy()).orElse(ItemStack.EMPTY);
+//
+//                        ItemEntity entityToSpawn = new ItemEntity(level, x, y, z, stack1);
+//                        entityToSpawn.setPickUpDelay(10);
+//                        level.addFreshEntity(entityToSpawn);
+//                    }
+//
+//                    if (world instanceof ServerLevel) {
+//                        level.sendParticles(ParticleTypes.FLAME, x + 0.5, y + 0.5, z + 0.5, 10, 0.25, 0.25, 0.25, 0.0);
+//                    }
+//
+//                    removeBlock = true;
+//                }
+//
+//                if (removeBlock) {
+//                    world.destroyBlock(BlockPos.containing(x, y, z), false);
+//                } else {
+//                    BlockPos _pos = BlockPos.containing(x, y, z);
+//                    Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x, y, z), null);
+//                    world.destroyBlock(_pos, false);
+//                }
+//            }
+//
+//            if (entity.level().dimension() == Level.NETHER) {
+//                itemstack.setDamageValue(itemstack.getDamageValue() - 1);
+//            }
+//
+//        }
     }
 
     public static void execute(Entity entity, ItemStack itemstack) {
         if (entity != null) {
-            entity.setSecondsOnFire(15);
+            entity.setRemainingFireTicks(15);
             if (entity.level().dimension() == Level.NETHER) {
                 itemstack.setDamageValue(itemstack.getDamageValue() - 1);
             }

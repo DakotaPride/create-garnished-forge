@@ -1,0 +1,19 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "garnished:ender_jelly"
+    },
+    {
+      "item": "garnished:void_dust"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  {
+        "id": "garnished:ethereal_compound"
+      }
+    }
+  ]
+}

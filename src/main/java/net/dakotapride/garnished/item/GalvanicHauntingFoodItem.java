@@ -23,7 +23,7 @@ public class GalvanicHauntingFoodItem extends Item implements IGarnishedUtilitie
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.WATER_BREATHING, 400F);
 	}
 

@@ -1,0 +1,31 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": false,
+  "key": {
+    "A": {
+      "item": "garnished:enflamed_mandible"
+    },
+    "B": {
+      "tag": "c:ender_dusts"
+    },
+    "C": {
+      "item": "garnished:crushed_shroomlight"
+    },
+    "D": {
+      "item": "garnished:malodorous_mixture"
+    },
+    "E": {
+      "item": "garnished:torrid_blend"
+    },
+    "#": {
+      "tag": "garnished:crimson_tusks"
+    }
+  },
+  "pattern": [
+    "BAC",
+    "D#E"
+  ],
+  "result": {
+    "item": "garnished:blazing_delight"
+  }
+}

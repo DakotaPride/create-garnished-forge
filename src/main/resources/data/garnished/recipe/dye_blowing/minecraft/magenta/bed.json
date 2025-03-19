@@ -1,0 +1,16 @@
+{
+  "type": "garnished:magenta_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:beds"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:magenta_bed"
+      },
+      "count": 1
+    }
+  ]
+}

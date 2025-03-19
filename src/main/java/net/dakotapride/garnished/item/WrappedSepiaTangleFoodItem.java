@@ -27,8 +27,8 @@ public class WrappedSepiaTangleFoodItem extends Item implements IGarnishedUtilit
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-		addEffectTooltip(tooltip, GarnishedEffects.SPIRITED_RESISTANCE.get(), 2, tangle_dur);
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+		addEffectTooltip(tooltip, GarnishedEffects.SPIRITED_RESISTANCE, 2, tangle_dur);
 		addChanceForEffect(tooltip, 0.80F);
 	}
 
@@ -41,10 +41,10 @@ public class WrappedSepiaTangleFoodItem extends Item implements IGarnishedUtilit
 		}
 
 		if (stack.isEmpty()) {
-			return new ItemStack(GarnishedItems.SILICA_HARDENED_WRAP);
+			return new ItemStack(GarnishedItems.SILICA_HARDENED_WRAP.get());
 		} else {
 			if (livingEntity instanceof Player && !((Player)livingEntity).getAbilities().instabuild) {
-				ItemStack itemStack = new ItemStack(GarnishedItems.SILICA_HARDENED_WRAP);
+				ItemStack itemStack = new ItemStack(GarnishedItems.SILICA_HARDENED_WRAP.get());
 				Player player = (Player)livingEntity;
 				if (!player.getInventory().add(itemStack)) {
 					player.drop(itemStack, false);

@@ -1,0 +1,24 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "garnished:amber_remnant"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 3,
+      "item": {
+        "id": "garnished:shattered_amber_remnant"
+      }
+    },
+    {
+      "chance": 0.25,
+      "count": 3,
+      "item": {
+        "id": "garnished:shattered_amber_remnant"
+      }
+    }
+  ]
+}

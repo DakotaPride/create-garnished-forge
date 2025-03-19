@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DragonStoneStairsBlock extends StairBlock {
     public DragonStoneStairsBlock(Properties properties) {
-        super(() -> GarnishedBlocks.DRAGON_STONE.get().defaultBlockState(), properties);
+        super(GarnishedBlocks.DRAGON_STONE.get().defaultBlockState(), properties);
     }
 
     @Override

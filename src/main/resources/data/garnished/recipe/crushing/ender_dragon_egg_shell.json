@@ -1,0 +1,30 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:dragon_egg"
+    }
+  ],
+  "processing_time": 250,
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "garnished:ender_egg_shell"
+      }
+    },
+    {
+      "count": 1,
+      "item": {
+        "id": "garnished:frail_ender_egg_shell"
+      }
+    },
+    {
+      "count": 3,
+      "chance": 0.20,
+      "item": {
+        "id": "garnished:dimmed_scale"
+      }
+    }
+  ]
+}

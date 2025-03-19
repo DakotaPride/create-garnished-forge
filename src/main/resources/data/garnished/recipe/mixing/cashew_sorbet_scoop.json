@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "tag": "garnished:nuts"
+    },
+    {
+      "tag": "garnished:nuts"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "garnished:cashew_mixture"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "garnished:cashew_sorbet_scoop"
+      },
+      "count": 2
+    }
+  ]
+}

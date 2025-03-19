@@ -24,7 +24,7 @@ public class MeltedCinderFlourNutWithEffectFoodItem extends Item implements IGar
 		}
 
 		@Override
-		public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+		public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 			addEffectTooltip(tooltip, MobEffects.MOVEMENT_SLOWDOWN, cinder_dur);
 			addEffectTooltip(tooltip, MobEffects.INVISIBILITY, cinder_dur);
 		}
@@ -35,7 +35,7 @@ public class MeltedCinderFlourNutWithEffectFoodItem extends Item implements IGar
 		}
 
 		@Override
-		public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+		public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 			addEffectTooltip(tooltip, MobEffects.DAMAGE_BOOST, cinder_dur);
 		}
 	}
@@ -45,7 +45,7 @@ public class MeltedCinderFlourNutWithEffectFoodItem extends Item implements IGar
 		}
 
 		@Override
-		public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+		public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 			addEffectTooltip(tooltip, MobEffects.SLOW_FALLING, cinder_dur);
 		}
 	}
@@ -55,7 +55,7 @@ public class MeltedCinderFlourNutWithEffectFoodItem extends Item implements IGar
 		}
 
 		@Override
-		public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+		public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 			addEffectTooltip(tooltip, MobEffects.MOVEMENT_SPEED, 2, cinder_dur);
 		}
 	}
@@ -65,7 +65,7 @@ public class MeltedCinderFlourNutWithEffectFoodItem extends Item implements IGar
 		}
 
 		@Override
-		public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+		public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 			addEffectTooltip(tooltip, MobEffects.FIRE_RESISTANCE, cinder_dur);
 		}
 	}
@@ -75,7 +75,7 @@ public class MeltedCinderFlourNutWithEffectFoodItem extends Item implements IGar
 		}
 
 		@Override
-		public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+		public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 			addEffectTooltip(tooltip, MobEffects.MOVEMENT_SPEED, cinder_dur);
 		}
 	}
@@ -85,7 +85,7 @@ public class MeltedCinderFlourNutWithEffectFoodItem extends Item implements IGar
 		}
 
 		@Override
-		public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+		public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 			addEffectTooltip(tooltip, MobEffects.NIGHT_VISION, cinder_dur);
 		}
 	}
@@ -95,7 +95,7 @@ public class MeltedCinderFlourNutWithEffectFoodItem extends Item implements IGar
 		}
 
 		@Override
-		public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+		public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 			addEffectTooltip(tooltip, MobEffects.DIG_SPEED, cinder_dur);
 		}
 	}
@@ -105,13 +105,13 @@ public class MeltedCinderFlourNutWithEffectFoodItem extends Item implements IGar
 		}
 
 		@Override
-		public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+		public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 			addEffectTooltip(tooltip, MobEffects.DAMAGE_RESISTANCE, cinder_dur);
 		}
 	}
 
 	@Override
-	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+	public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 //		tooltip.add(Component.translatable(meltedCinderFlourText()).withStyle(cinderFlour()));
 //
 //		if (!Screen.hasShiftDown()) {

@@ -1,0 +1,14 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "minecraft:glow_lichen"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "garnished:sorrowful_lichen"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "garnished:bok_choy"
+    },
+    {
+      "item": "garnished:sugar_cube"
+    },
+    {
+      "item": "garnished:sugar_cube"
+    },
+    {
+      "amount": 250,
+      "fluid": "create:tea"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "fluid": "garnished:sweet_tea"
+    }
+  ]
+}

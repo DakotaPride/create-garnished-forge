@@ -6,6 +6,6 @@ import net.dakotapride.garnished.item.hatchet.IntegratedMaterials;
 
 public class BrassHatchetToolItem extends IntegratedHatchetToolItem {
     public BrassHatchetToolItem(Properties properties) {
-        super(GarnishedUtils.stuffAndAdditions(), IntegratedMaterials.BRASS, 1.0F, -2.5F, properties);
+        super(GarnishedUtils.stuffAndAdditions(), IntegratedMaterials.BRASS, properties);
     }
 }

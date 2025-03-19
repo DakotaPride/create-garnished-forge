@@ -8,6 +8,6 @@ import java.util.function.Supplier;
 
 public class CarnotiteStairsBlock extends StairBlock {
     public CarnotiteStairsBlock(Properties properties) {
-        super(() -> GarnishedBlocks.CARNOTITE.get().defaultBlockState(), properties);
+        super(GarnishedBlocks.CARNOTITE.get().defaultBlockState(), properties);
     }
 }

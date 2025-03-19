@@ -22,7 +22,7 @@ public class IcyMasticChunkFoodItem extends Item implements IGarnishedUtilities 
     }
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.MOVEMENT_SLOWDOWN, 3, 100F);
 		addEffectTooltip(tooltip, MobEffects.REGENERATION, 2, 160F);
 	}

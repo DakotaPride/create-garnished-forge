@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "garnished:pecan_pie"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "garnished:pecan_pie_slice"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:red_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "createframed:stained_framed_glass_doors"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createframed:red_stained_framed_glass_door"
+      },
+      "count": 1
+    }
+  ]
+}

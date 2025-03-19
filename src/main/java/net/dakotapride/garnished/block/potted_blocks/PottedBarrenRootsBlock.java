@@ -6,7 +6,6 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 
 public class PottedBarrenRootsBlock extends FlowerPotBlock {
     public PottedBarrenRootsBlock(Properties properties) {
-        super(() -> (FlowerPotBlock) net.minecraftforge.registries.ForgeRegistries.BLOCKS.getDelegateOrThrow(Blocks.FLOWER_POT).get(),
-                GarnishedBlocks.BARREN_ROOTS, properties);
+        super(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GarnishedBlocks.BARREN_ROOTS, properties);
     }
 }

@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "garnished:cinder_hazelnut"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "garnished:melted_cinder_hazelnut"
+    }
+  ]
+}

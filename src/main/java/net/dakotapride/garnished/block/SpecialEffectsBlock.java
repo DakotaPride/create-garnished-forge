@@ -3,6 +3,7 @@ package net.dakotapride.garnished.block;
 import net.dakotapride.garnished.item.IGarnishedUtilities;
 import net.dakotapride.garnished.registry.GarnishedBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
@@ -136,7 +137,7 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
 
         }
 
-        private static void applyEffectIfNotPresent(LivingEntity living, MobEffect effect) {
+        private static void applyEffectIfNotPresent(LivingEntity living, Holder<MobEffect> effect) {
             if (living.hasEffect(effect)) {
             } else {
                 living.addEffect(new MobEffectInstance(effect, tick * 15, 0));

@@ -25,7 +25,7 @@ public class PutridStewFoodItem extends Item implements IGarnishedUtilities {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		tooltip.add(Component.translatable("text.garnished.putrid_stew.cures_nut_allergy").withStyle(ChatFormatting.GOLD));
 		tooltip.add(Component.literal(""));
 
@@ -40,8 +40,8 @@ public class PutridStewFoodItem extends Item implements IGarnishedUtilities {
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
 		}
 
-		if (livingEntity.hasEffect(GarnishedEffects.AVERSION.get())) {
-			livingEntity.removeEffect(GarnishedEffects.AVERSION.get());
+		if (livingEntity.hasEffect(GarnishedEffects.AVERSION)) {
+			livingEntity.removeEffect(GarnishedEffects.AVERSION);
 		}
 
 		if (stack.isEmpty()) {

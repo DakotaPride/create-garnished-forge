@@ -1,0 +1,18 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "garnished:ungarnished_almond"
+    },
+    {
+      "item": "garnished:garnish_compound"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:almond"
+      }
+    }
+  ]
+}

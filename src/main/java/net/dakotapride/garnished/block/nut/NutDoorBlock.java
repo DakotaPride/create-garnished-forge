@@ -6,6 +6,6 @@ import net.minecraft.world.level.block.DoorBlock;
 
 public class NutDoorBlock extends DoorBlock {
 	public NutDoorBlock(Properties properties) {
-		super(properties, GarnishedSetTypes.NUT);
+		super(GarnishedSetTypes.NUT, properties);
 	}
 }

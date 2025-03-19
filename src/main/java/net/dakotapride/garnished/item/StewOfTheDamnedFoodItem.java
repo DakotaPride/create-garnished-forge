@@ -23,7 +23,7 @@ public class StewOfTheDamnedFoodItem extends Item implements IGarnishedUtilities
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.REGENERATION, 5, 700F);
 	}
 

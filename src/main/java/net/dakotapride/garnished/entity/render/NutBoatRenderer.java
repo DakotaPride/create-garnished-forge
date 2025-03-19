@@ -25,7 +25,7 @@ public class NutBoatRenderer extends BoatRenderer {
     public NutBoatRenderer(EntityRendererProvider.Context pContext, boolean pChestBoat) {
         super(pContext, pChestBoat);
         this.boatResources = Stream.of(NutBoatEntity.Type.values()).collect(ImmutableMap.toImmutableMap(type -> type,
-                type -> Pair.of(new ResourceLocation(CreateGarnished.ID, getTextureLocation(type, pChestBoat)),
+                type -> Pair.of(CreateGarnished.asResource(getTextureLocation(type, pChestBoat)),
                         this.createBoatModel(pContext, type, pChestBoat))));
     }
 
@@ -48,7 +48,7 @@ public class NutBoatRenderer extends BoatRenderer {
     }
 
     private static ModelLayerLocation createLocation(String pPath, String pModel) {
-        return new ModelLayerLocation(new ResourceLocation(CreateGarnished.ID, pPath), pModel);
+        return new ModelLayerLocation(CreateGarnished.asResource(pPath), pModel);
     }
 
     public Pair<ResourceLocation, ListModel<Boat>> getModelWithLocation(Boat boat) {

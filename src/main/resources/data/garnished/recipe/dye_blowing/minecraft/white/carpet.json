@@ -1,0 +1,16 @@
+{
+  "type": "garnished:white_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:wool_carpets"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:white_carpet"
+      },
+      "count": 1
+    }
+  ]
+}

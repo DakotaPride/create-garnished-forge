@@ -6,6 +6,6 @@ import net.dakotapride.garnished.item.hatchet.IntegratedMaterials;
 
 public class ZincHatchetToolItem extends IntegratedHatchetToolItem {
     public ZincHatchetToolItem(Properties properties) {
-        super(GarnishedUtils.stuffAndAdditions(), IntegratedMaterials.ZINC, 0.5F, -2.8F, properties);
+        super(GarnishedUtils.stuffAndAdditions(), IntegratedMaterials.ZINC, properties);
     }
 }

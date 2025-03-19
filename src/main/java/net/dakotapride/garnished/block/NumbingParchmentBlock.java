@@ -1,12 +1,13 @@
 package net.dakotapride.garnished.block;
 
-import net.dakotapride.garnished.effect.FreezingMobEffect;
 import net.dakotapride.garnished.item.IGarnishedUtilities;
 import net.dakotapride.garnished.registry.GarnishedEffects;
+import net.dakotapride.garnished.registry.GarnishedTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.PolarBear;
 import net.minecraft.world.entity.monster.Stray;
@@ -25,8 +26,8 @@ public class NumbingParchmentBlock extends Block implements IGarnishedUtilities 
     @Override
     public void stepOn(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Entity entity) {
         if (entity instanceof LivingEntity living && !(living instanceof Stray || living instanceof PolarBear) && !living.isSteppingCarefully()) {
-            if (EnchantmentHelper.hasFrostWalker(living)) {
-                living.addEffect(new MobEffectInstance(GarnishedEffects.FREEZING.get(), tick * 12, 0));
+            if (EnchantmentHelper.hasTag(living.getItemBySlot(EquipmentSlot.FEET), GarnishedTags.FROST_WALKER)) {
+                living.addEffect(new MobEffectInstance(GarnishedEffects.FREEZING, tick * 12, 0));
                 living.setTicksFrozen(tick * 15);
             } else {
                 living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, tick * 6, 1));
@@ -42,8 +43,8 @@ public class NumbingParchmentBlock extends Block implements IGarnishedUtilities 
         @Override
         public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
             if (entity instanceof LivingEntity living && !(living instanceof Stray || living instanceof PolarBear) && !living.isSteppingCarefully()) {
-                if (EnchantmentHelper.hasFrostWalker(living)) {
-                    living.addEffect(new MobEffectInstance(GarnishedEffects.FREEZING.get(), tick * 12, 0));
+                if (EnchantmentHelper.hasTag(living.getItemBySlot(EquipmentSlot.FEET), GarnishedTags.FROST_WALKER)) {
+                    living.addEffect(new MobEffectInstance(GarnishedEffects.FREEZING, tick * 12, 0));
                     living.setTicksFrozen(tick * 15);
                 } else {
                     living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, tick * 6, 1));

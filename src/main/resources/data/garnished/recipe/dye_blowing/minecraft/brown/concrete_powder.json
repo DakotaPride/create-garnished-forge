@@ -1,0 +1,16 @@
+{
+  "type": "garnished:brown_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:concrete_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:brown_concrete_powder"
+      },
+      "count": 1
+    }
+  ]
+}

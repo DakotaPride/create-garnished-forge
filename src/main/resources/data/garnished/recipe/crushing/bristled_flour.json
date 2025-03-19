@@ -1,0 +1,38 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "garnished:prickly_pear"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "minecraft:magenta_dye"
+      }
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "item": {
+        "id": "minecraft:magenta_dye"
+      }
+    },
+    {
+      "chance": 0.1,
+      "count": 1,
+      "item": {
+        "id": "minecraft:pink_dye"
+      }
+    },
+    {
+      "chance": 0.15,
+      "count": 1,
+      "item": {
+        "id": "garnished:bristled_flour"
+      }
+    }
+  ]
+}

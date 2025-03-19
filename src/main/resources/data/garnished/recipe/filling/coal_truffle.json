@@ -1,0 +1,23 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:coal"
+      },
+      {
+        "item": "minecraft:charcoal"
+      }
+    ],
+    {
+      "amount": 250,
+      "fluid": "create:chocolate"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "garnished:coal_truffle"
+    }
+  ]
+}

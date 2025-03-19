@@ -1,0 +1,16 @@
+{
+  "type": "garnished:red_dye_blowing",
+  "ingredients": [
+    {
+      "item": "garnished:torrid_blend"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "create:cinder_flour"
+      },
+      "count": 1
+    }
+  ]
+}

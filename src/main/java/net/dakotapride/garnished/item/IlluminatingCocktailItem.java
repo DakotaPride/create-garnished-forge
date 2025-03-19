@@ -26,7 +26,7 @@ public class IlluminatingCocktailItem extends Item implements IGarnishedUtilitie
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.GLOWING, 600);
 	}
 
@@ -55,7 +55,7 @@ public class IlluminatingCocktailItem extends Item implements IGarnishedUtilitie
 	}
 
 	@Override
-	public int getUseDuration(@NotNull ItemStack stack) {
+	public int getUseDuration(@NotNull ItemStack stack, LivingEntity entity) {
 		return DRINK_DURATION;
 	}
 

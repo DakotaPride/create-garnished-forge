@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class SepiaHangingSignBlock extends CeilingHangingSignBlock {
 
     public SepiaHangingSignBlock(Properties properties) {
-        super(properties, GarnishedWoodType.SEPIA);
+        super(GarnishedWoodType.SEPIA, properties);
     }
 
     @Override

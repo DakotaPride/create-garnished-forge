@@ -6,8 +6,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraftforge.fluids.FluidInteractionRegistry;
-import net.minecraftforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
+import net.neoforged.neoforge.fluids.FluidType;
 
 public interface Fluids {
     RandomSource random = RandomSource.create();

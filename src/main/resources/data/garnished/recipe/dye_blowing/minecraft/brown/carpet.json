@@ -1,0 +1,16 @@
+{
+  "type": "garnished:brown_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:wool_carpets"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:brown_carpet"
+      },
+      "count": 1
+    }
+  ]
+}

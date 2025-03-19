@@ -1,0 +1,19 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "garnished:chestnut"
+    },
+    {
+      "item": "create:cinder_flour"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  {
+        "id": "garnished:cinder_chestnut"
+      }
+    }
+  ]
+}

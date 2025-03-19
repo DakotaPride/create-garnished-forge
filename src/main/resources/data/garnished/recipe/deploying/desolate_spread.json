@@ -1,0 +1,19 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "item": "garnished:cosmic_powder"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  {
+        "id": "garnished:desolate_spread"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "garnished:red_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "create:seats"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "create:red_seat"
+      },
+      "count": 1
+    }
+  ]
+}

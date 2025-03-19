@@ -1,53 +1,56 @@
 package net.dakotapride.garnished.item.hatchet;
 
 import net.dakotapride.garnished.registry.GarnishedTags;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
 @SuppressWarnings({"deprecation","unused"})
 public enum IntegratedMaterials implements Tier {
-    ZINC(2, 250, 7.0F, 7.0F, 11, () -> {
+    ZINC(BlockTags.INCORRECT_FOR_IRON_TOOL, 250, 7.0F, 7.0F, 11, () -> {
         return Ingredient.of(GarnishedTags.ZINC_INGOTS);
     }),
-    COPPER(2, 131, 5.0F, 5.0F, 11, () -> {
+    COPPER(BlockTags.INCORRECT_FOR_IRON_TOOL, 131, 5.0F, 5.0F, 11, () -> {
         return Ingredient.of(GarnishedTags.COPPER_INGOTS);
     }),
-    BRASS(3, 450, 8.0F, 7.0F, 14, () -> {
+    BRASS(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 450, 8.0F, 7.0F, 14, () -> {
         return Ingredient.of(GarnishedTags.BRASS_INGOTS);
     }),
-    ROSE_QUARTZ(3, 1644, 9.0F, 7.0F, 14, () -> {
+    ROSE_QUARTZ(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1644, 9.0F, 7.0F, 14, () -> {
         return Ingredient.of(Items.GOLD_INGOT);
     }),
-    EXPERIENCE(2, 270, 7.0F, 5.0F, 800, () -> {
+    EXPERIENCE(BlockTags.INCORRECT_FOR_IRON_TOOL, 270, 7.0F, 5.0F, 800, () -> {
         return Ingredient.of(GarnishedTags.EXPERIENCE_REPAIRABLE_ITEMS);
     }),
-    BLAZING(3, 450, 12.0F, 6.5F, 2, () -> {
+    BLAZING(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 450, 12.0F, 6.5F, 2, () -> {
         return Ingredient.of(GarnishedTags.BLAZING_REPAIRABLE_ITEMS);
     }),
 
-    WARDEN(5, 2519, 10, 5, 18, () -> {
+    WARDEN(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2519, 10, 5, 18, () -> {
         return Ingredient.of(GarnishedTags.WARDEN_REPAIRABLE_ITEMS);
     }),
 
-    ROSE_GOLD(2, 900, 9.0F, 2.0F, 17, () -> {
+    ROSE_GOLD(BlockTags.INCORRECT_FOR_IRON_TOOL, 900, 9.0F, 2.0F, 17, () -> {
         return Ingredient.of(GarnishedTags.COPPER_INGOTS);
     }),
-    GILDED_NETHERITE(4, 2031, 10.0F, 2.0F, 20, () -> {
+    GILDED_NETHERITE(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 2031, 10.0F, 2.0F, 20, () -> {
         return Ingredient.of(Items.NETHERITE_INGOT);
     }),
-    NETHER_QUARTZ(Tiers.IRON.getLevel(), Tiers.IRON.getUses(), Tiers.IRON.getSpeed(), Tiers.IRON.getAttackDamageBonus(), Tiers.IRON.getEnchantmentValue(), () -> {
+    NETHER_QUARTZ(Tiers.IRON.getIncorrectBlocksForDrops(), Tiers.IRON.getUses(), Tiers.IRON.getSpeed(), Tiers.IRON.getAttackDamageBonus(), Tiers.IRON.getEnchantmentValue(), () -> {
         return Ingredient.of(Items.QUARTZ);
     }),
-    CERTUS_QUARTZ(Tiers.IRON.getLevel(), Tiers.IRON.getUses(), Tiers.IRON.getSpeed(), Tiers.IRON.getAttackDamageBonus(), Tiers.IRON.getEnchantmentValue(), () -> {
+    CERTUS_QUARTZ(Tiers.IRON.getIncorrectBlocksForDrops(), Tiers.IRON.getUses(), Tiers.IRON.getSpeed(), Tiers.IRON.getAttackDamageBonus(), Tiers.IRON.getEnchantmentValue(), () -> {
         return Ingredient.of(GarnishedTags.CERTUS_QUARTZ);
     }),
-    FLUIX(4, Tiers.IRON.getUses() * 3, Tiers.IRON.getSpeed() * 1.2F, Tiers.IRON.getAttackDamageBonus() * 1.2F, Tiers.IRON.getEnchantmentValue(), () -> {
+    FLUIX(BlockTags.INCORRECT_FOR_IRON_TOOL, Tiers.IRON.getUses() * 3, Tiers.IRON.getSpeed() * 1.2F, Tiers.IRON.getAttackDamageBonus() * 1.2F, Tiers.IRON.getEnchantmentValue(), () -> {
         return Ingredient.of(GarnishedTags.FLUIX_CRYSTALS);
     })
 
@@ -71,15 +74,17 @@ public enum IntegratedMaterials implements Tier {
     //    });
     ;
 
-    private final int level;
+    //private final int level;
+    private final TagKey<Block> incorrectBlocksForDrops;
     private final int uses;
     private final float speed;
     private final float damage;
     private final int enchantmentValue;
     private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    IntegratedMaterials(int pLevel, int pUses, float pSpeed, float pDamage, int pEnchantmentValue, Supplier<Ingredient> pRepairIngredient) {
-        this.level = pLevel;
+    IntegratedMaterials(TagKey<Block> incorrectBlocksForDrops, int pUses, float pSpeed, float pDamage, int pEnchantmentValue, Supplier<Ingredient> pRepairIngredient) {
+        //this.level = pLevel;
+        this.incorrectBlocksForDrops = incorrectBlocksForDrops;
         this.uses = pUses;
         this.speed = pSpeed;
         this.damage = pDamage;
@@ -99,9 +104,14 @@ public enum IntegratedMaterials implements Tier {
         return this.damage;
     }
 
-    public int getLevel() {
-        return this.level;
+    @Override
+    public TagKey<Block> getIncorrectBlocksForDrops() {
+        return incorrectBlocksForDrops;
     }
+
+//    public int getLevel() {
+//        return this.level;
+//    }
 
     public int getEnchantmentValue() {
         return this.enchantmentValue;

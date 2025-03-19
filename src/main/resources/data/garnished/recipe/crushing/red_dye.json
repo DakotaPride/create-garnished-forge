@@ -1,0 +1,24 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "garnished:incandescent_lily"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "garnished:incandescent_petal"
+      }
+    },
+    {
+      "chance": 0.45,
+      "count": 1,
+      "item": {
+        "id": "minecraft:red_dye"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "garnished:red_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "c:buckets/mastic_resin"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:red_mastic_resin_bucket"
+      },
+      "count": 1
+    }
+  ]
+}

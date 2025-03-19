@@ -1,0 +1,31 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "garnished:chestnut"
+    },
+    {
+      "item": "garnished:chestnut"
+    },
+    {
+      "item": "garnished:chestnut"
+    },
+    {
+      "item": "garnished:chestnut"
+    },
+    {
+      "item": "garnished:raw_tenebrous_meat"
+    },
+    {
+      "amount": 1000,
+      "fluid": "create:chocolate"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "garnished:aching_tenebrous_clump"
+    }
+  ]
+}

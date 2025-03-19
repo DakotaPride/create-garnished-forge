@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "garnished:irate_tusk"
+    }
+  ],
+  "result": [
+    {
+      "count": 12,
+      "item": "garnished:senile_bone"
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/hatchets"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 1000,
+      "fluid": "garnished:garnish"
+    },
+    {
+      "item": "garnished:salt_compound"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:solidified_garnish"
+      }
+    }
+  ]
+}

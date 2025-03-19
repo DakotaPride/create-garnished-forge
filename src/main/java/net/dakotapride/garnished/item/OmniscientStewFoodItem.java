@@ -24,10 +24,10 @@ public class OmniscientStewFoodItem extends Item implements IGarnishedUtilities 
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.NIGHT_VISION, 2, 400F);
 		addChanceForEffect(tooltip, 0.50F);
-		addEffectTooltip(tooltip, GarnishedEffects.COGNATE.get(), cognate_dur);
+		addEffectTooltip(tooltip, GarnishedEffects.COGNATE, cognate_dur);
 		addChanceForEffect(tooltip, 0.75F);
 	}
 

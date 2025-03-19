@@ -40,7 +40,7 @@ public class ConditionalEffectItem extends Item implements IGarnishedUtilities {
     }
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 
 		if (value == 0) {
 			tooltip.add(Component.literal(""));
@@ -55,7 +55,7 @@ public class ConditionalEffectItem extends Item implements IGarnishedUtilities {
 		if (value == 2) {
 			tooltip.add(Component.literal(""));
 			tooltip.add(Component.translatable("text.garnished.conditional_effect.from_hunger").withStyle(ChatFormatting.GRAY));
-			addEffectTooltipConditionalPositive(tooltip, GarnishedEffects.THORNS.get(), tick * 24);
+			addEffectTooltipConditionalPositive(tooltip, GarnishedEffects.THORNS, tick * 24);
 		}
 		if (value == 3) {
 			tooltip.add(Component.literal(""));

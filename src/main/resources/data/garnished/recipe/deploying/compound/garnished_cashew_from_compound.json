@@ -1,0 +1,18 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "garnished:ungarnished_cashew"
+    },
+    {
+      "item": "garnished:garnish_compound"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:cashew"
+      }
+    }
+  ]
+}

@@ -11,14 +11,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ItemStack.class)
+@Mixin(value = ItemStack.class, remap = false)
 public class ItemStackMixin {
 
 	@Inject(method = "finishUsingItem", at = @At("HEAD"))
 	private void finishUsingItem(Level level, LivingEntity entity, CallbackInfoReturnable<ItemStack> cir) {
 		ItemStack activeItem = entity.getUseItem();
 
-		if (entity.hasEffect(GarnishedEffects.AVERSION.get()) && activeItem.is(GarnishedTags.AVERSION_FOODS_TAG)) {
+		if (entity.hasEffect(GarnishedEffects.AVERSION) && activeItem.is(GarnishedTags.AVERSION_FOODS_TAG)) {
 			entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 400, 2));
 		}
 
@@ -31,9 +31,9 @@ public class ItemStackMixin {
 		}
 
 		// Sugar High functionality
-		GarnishedFoodValues.hasSugarHigh = entity.hasEffect(GarnishedEffects.SUGAR_HIGH.get());
+		GarnishedFoodValues.hasSugarHigh = entity.hasEffect(GarnishedEffects.SUGAR_HIGH);
 		// Freezing functionality
-		GarnishedFoodValues.hasFreezing = entity.hasEffect(GarnishedEffects.FREEZING.get()) || entity.isFreezing();
+		GarnishedFoodValues.hasFreezing = entity.hasEffect(GarnishedEffects.FREEZING) || entity.isFreezing();
 		// Hunger functionality
 		GarnishedFoodValues.hasHunger = entity.hasEffect(MobEffects.HUNGER);
 		// Levitation functionality

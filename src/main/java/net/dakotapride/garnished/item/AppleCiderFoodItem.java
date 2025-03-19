@@ -28,7 +28,7 @@ public class AppleCiderFoodItem extends Item {
 	}
 
 	@Override
-	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level pLevel, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+	public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 		tooltip.add(Component.translatable("text.garnished.effect.clears_wither", "Wither").withStyle(ChatFormatting.GOLD));
 	}
 
@@ -61,7 +61,7 @@ public class AppleCiderFoodItem extends Item {
 	}
 
 	@Override
-	public int getUseDuration(@NotNull ItemStack stack) {
+	public int getUseDuration(@NotNull ItemStack stack, LivingEntity entity) {
 		return DRINK_DURATION;
 	}
 

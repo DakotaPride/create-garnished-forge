@@ -1,0 +1,16 @@
+{
+  "type": "garnished:gray_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:beds"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:gray_bed"
+      },
+      "count": 1
+    }
+  ]
+}

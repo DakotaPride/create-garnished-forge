@@ -1,0 +1,16 @@
+{
+  "type": "garnished:orange_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:wool_carpets"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:orange_carpet"
+      },
+      "count": 1
+    }
+  ]
+}

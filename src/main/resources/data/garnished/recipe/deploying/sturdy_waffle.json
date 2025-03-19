@@ -1,0 +1,19 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "tag": "c:dough"
+    },
+    {
+      "item": "create:sturdy_sheet"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  {
+        "id": "garnished:sturdy_waffle"
+      }
+    }
+  ]
+}

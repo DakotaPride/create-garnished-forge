@@ -23,7 +23,7 @@ public class FishySurpriseFoodItem extends Item implements IGarnishedUtilities {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.CONFUSION, 300F);
 		addEffectTooltip(tooltip, MobEffects.POISON, 40F);
 		addChanceForEffect(tooltip, 0.15F);

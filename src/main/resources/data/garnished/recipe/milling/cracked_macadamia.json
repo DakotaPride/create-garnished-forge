@@ -1,0 +1,21 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "tag": "garnished:crushable/macadamia"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 1,
+      "item": "garnished:cracked_macadamia"
+    },
+    {
+      "chance": 0.15,
+      "item": "garnished:cracked_macadamia"
+      },
+      "count": 2
+    }
+  ]
+}

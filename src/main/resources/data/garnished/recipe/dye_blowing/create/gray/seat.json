@@ -1,0 +1,16 @@
+{
+  "type": "garnished:gray_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "create:seats"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "create:gray_seat"
+      },
+      "count": 1
+    }
+  ]
+}

@@ -10,7 +10,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 
 public class DragonBreathFluidBlock extends LiquidBlock {
     public DragonBreathFluidBlock(Properties pProperties) {
-        super(() -> (FlowingFluid) GarnishedFluids.DRAGON_BREATH.get().getFlowing(), pProperties);
+        super((FlowingFluid) GarnishedFluids.DRAGON_BREATH.get().getFlowing(), pProperties);
     }
 
     @Override

@@ -1,0 +1,39 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "garnished:mastic_paste_yellow"
+    },
+    {
+      "item": "garnished:mastic_paste_yellow"
+    },
+    {
+      "item": "garnished:mastic_paste_yellow"
+    },
+    {
+      "item": "garnished:mastic_paste_yellow"
+    },
+    {
+      "item": "garnished:mastic_paste_yellow"
+    },
+    {
+      "item": "garnished:mastic_paste_yellow"
+    },
+    {
+      "item": "garnished:mastic_paste_yellow"
+    },
+    {
+      "item": "garnished:mastic_paste_yellow"
+    },
+    {
+      "item": "garnished:mastic_paste_yellow"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:yellow_mastic_block"
+      }
+    }
+  ]
+}

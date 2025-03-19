@@ -9,6 +9,8 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.item.*;
 import net.dakotapride.garnished.item.cracked.*;
+import net.dakotapride.garnished.item.hatchet.HatchetToolItem;
+import net.dakotapride.garnished.item.hatchet.IntegratedMaterials;
 import net.dakotapride.garnished.item.hatchet.tier.*;
 import net.dakotapride.garnished.item.hatchet.tier.integrated.*;
 import net.dakotapride.garnished.item.wood.NutBoatItem;
@@ -17,6 +19,7 @@ import net.dakotapride.garnished.item.wood.NutSignItem;
 import net.dakotapride.garnished.item.wood.SepiaSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.Tiers;
 
 @SuppressWarnings({"unused"})
 public class GarnishedItems {
@@ -427,17 +430,23 @@ public class GarnishedItems {
 
 	// Hatchets
 	public static final ItemEntry<WoodenHatchetToolItem> WOODEN_HATCHET =
-			REGISTRATE.item("wooden_hatchet", WoodenHatchetToolItem::new).register();
+			REGISTRATE.item("wooden_hatchet", WoodenHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(Tiers.WOOD, 5.0F, -2.8F))).register();
 	public static final ItemEntry<StoneHatchetToolItem> STONE_HATCHET =
-			REGISTRATE.item("stone_hatchet", StoneHatchetToolItem::new).register();
+			REGISTRATE.item("stone_hatchet", StoneHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(Tiers.STONE, 6.0F, -2.8F))).register();
 	public static final ItemEntry<IronHatchetToolItem> IRON_HATCHET =
-			REGISTRATE.item("iron_hatchet", IronHatchetToolItem::new).register();
+			REGISTRATE.item("iron_hatchet", IronHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(Tiers.IRON, 5.0F, -2.7F))).register();
 	public static final ItemEntry<GoldHatchetToolItem> GOLDEN_HATCHET =
-			REGISTRATE.item("golden_hatchet", GoldHatchetToolItem::new).register();
+			REGISTRATE.item("golden_hatchet", GoldHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(Tiers.GOLD, 5.0F, -2.6F))).register();
 	public static final ItemEntry<DiamondHatchetToolItem> DIAMOND_HATCHET =
-			REGISTRATE.item("diamond_hatchet", DiamondHatchetToolItem::new).register();
+			REGISTRATE.item("diamond_hatchet", DiamondHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(Tiers.DIAMOND, 4.0F, -2.6F))).register();
 	public static final ItemEntry<NetheriteHatchetToolItem> NETHERITE_HATCHET =
-			REGISTRATE.item("netherite_hatchet", NetheriteHatchetToolItem::new).register();
+			REGISTRATE.item("netherite_hatchet", NetheriteHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(Tiers.NETHERITE, 4.0F, -2.6F))).register();
 
 	// Garnished v1.3: Sugarcoated
 	public static final ItemEntry<Item> VENERABLE_DOUGH =
@@ -696,7 +705,7 @@ public class GarnishedItems {
 	public static final ItemEntry<SandPaperItem> POLAR_HIDE_SCRATCH_PAPER =
 			REGISTRATE.item("polar_hide_scratch_paper", SandPaperItem::new)
 					.onRegister(s -> ItemDescription.referKey(s, AllItems.SAND_PAPER))
-					.properties(p -> p.defaultDurability(32)).register();
+					.properties(p -> p.durability(32)).register();
 
 	public static final ItemEntry<Item> FROST =
 			REGISTRATE.item("frost", Item::new).register();
@@ -799,32 +808,44 @@ public class GarnishedItems {
 
 	// Integrated Hatchets
 	public static final ItemEntry<ZincHatchetToolItem> ZINC_HATCHET =
-			REGISTRATE.item("zinc_hatchet", ZincHatchetToolItem::new).register();
+			REGISTRATE.item("zinc_hatchet", ZincHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.ZINC, 0.5F, -2.8F))).register();
 	public static final ItemEntry<RoseQuartzHatchetToolItem> ROSE_QUARTZ_HATCHET =
-			REGISTRATE.item("rose_quartz_hatchet", RoseQuartzHatchetToolItem::new).register();
+			REGISTRATE.item("rose_quartz_hatchet", RoseQuartzHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.ROSE_QUARTZ, 1.0F, -2.7F))).register();
 	public static final ItemEntry<ExperienceHatchetToolItem> EXPERIENCE_HATCHET =
-			REGISTRATE.item("experience_hatchet", ExperienceHatchetToolItem::new).register();
+			REGISTRATE.item("experience_hatchet", ExperienceHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.EXPERIENCE, 1.0F, -2.5F))).register();
 	public static final ItemEntry<CopperHatchetToolItem> COPPER_HATCHET =
-			REGISTRATE.item("copper_hatchet", CopperHatchetToolItem::new).register();
+			REGISTRATE.item("copper_hatchet", CopperHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.COPPER, 1.0F, -2.5F))).register();
 	public static final ItemEntry<BrassHatchetToolItem> BRASS_HATCHET =
-			REGISTRATE.item("brass_hatchet", BrassHatchetToolItem::new).register();
+			REGISTRATE.item("brass_hatchet", BrassHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.BRASS, 1.0F, -2.5F))).register();
 	public static final ItemEntry<BlazingHatchetToolItem> BLAZING_HATCHET =
-			REGISTRATE.item("blazing_hatchet", BlazingHatchetToolItem::new).register();
+			REGISTRATE.item("blazing_hatchet", BlazingHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.BLAZING, 0.5F, -2.5F))).register();
 
 	public static final ItemEntry<WardenHatchetToolItem> WARDEN_HATCHET =
-			REGISTRATE.item("warden_hatchet", WardenHatchetToolItem::new).properties((p) -> p.rarity(Rarity.RARE).fireResistant()).register();
+			REGISTRATE.item("warden_hatchet", WardenHatchetToolItem::new).properties((p) -> p.rarity(Rarity.RARE).fireResistant())
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.WARDEN, 4, -2.7F))).register();
 
 	public static final ItemEntry<RoseGoldHatchetToolItem> ROSE_GOLD_HATCHET =
-			REGISTRATE.item("rose_gold_hatchet", RoseGoldHatchetToolItem::new).register();
+			REGISTRATE.item("rose_gold_hatchet", RoseGoldHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.ROSE_GOLD, 5, -2.7F))).register();
 	public static final ItemEntry<GildedNetheriteHatchetToolItem> GILDED_NETHERITE_HATCHET =
-			REGISTRATE.item("gilded_netherite_hatchet", GildedNetheriteHatchetToolItem::new).register();
+			REGISTRATE.item("gilded_netherite_hatchet", GildedNetheriteHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.GILDED_NETHERITE, 7, -2.6F))).register();
 
 	public static final ItemEntry<QuartzHatchetToolItem> NETHER_QUARTZ_HATCHET =
-			REGISTRATE.item("nether_quartz_hatchet", QuartzHatchetToolItem::new).register();
+			REGISTRATE.item("nether_quartz_hatchet", QuartzHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.NETHER_QUARTZ, 4.5F, -2.6F))).register();
 	public static final ItemEntry<QuartzHatchetToolItem.CertusQuartzHatchetToolItem> CERTUS_QUARTZ_HATCHET =
-			REGISTRATE.item("certus_quartz_hatchet", QuartzHatchetToolItem.CertusQuartzHatchetToolItem::new).register();
+			REGISTRATE.item("certus_quartz_hatchet", QuartzHatchetToolItem.CertusQuartzHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.CERTUS_QUARTZ, 4.5F, -2.6F))).register();
 	public static final ItemEntry<FluixHatchetToolItem> FLUIX_HATCHET =
-			REGISTRATE.item("fluix_hatchet", FluixHatchetToolItem::new).register();
+			REGISTRATE.item("fluix_hatchet", FluixHatchetToolItem::new)
+					.properties((p) -> p.attributes(HatchetToolItem.createAttributes(IntegratedMaterials.FLUIX, 4.5F, -2.6F))).register();
 
 	public static void setRegister() {}
 

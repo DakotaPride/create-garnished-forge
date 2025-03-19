@@ -1,0 +1,16 @@
+{
+  "type": "garnished:gray_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:concrete"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:gray_concrete"
+      },
+      "count": 1
+    }
+  ]
+}

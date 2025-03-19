@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.block;
 
+import com.mojang.serialization.MapCodec;
 import net.dakotapride.garnished.registry.GarnishedBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -20,10 +21,16 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import java.util.function.ToIntFunction;
 
 public class NetherLichenBlock extends MultifaceBlock implements ISenileSpread {
+    public static final MapCodec<NetherLichenBlock> CODEC = simpleCodec(NetherLichenBlock::new);
     private final MultifaceSpreader spreader = new MultifaceSpreader(this);
 
     public NetherLichenBlock(Properties pProperties) {
         super(pProperties);
+    }
+
+    @Override
+    protected MapCodec<? extends MultifaceBlock> codec() {
+        return CODEC;
     }
 
     public static ToIntFunction<BlockState> emission(int pLight) {

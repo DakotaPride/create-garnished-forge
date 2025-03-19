@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.block.cake;
 
+import com.mojang.serialization.MapCodec;
 import net.dakotapride.garnished.registry.GarnishedAdvancementUtils;
 import net.dakotapride.garnished.registry.GarnishedBlockEntities;
 import net.dakotapride.garnished.registry.GarnishedItems;
@@ -17,10 +18,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -40,6 +38,8 @@ import java.util.stream.Stream;
 
 // 1-Year Anniversary of Create: Garnished - nuts!
 public class AnniversaryCakeBlock extends BaseEntityBlock {
+    public static final MapCodec<AnniversaryCakeBlock> CODEC = simpleCodec(AnniversaryCakeBlock::new);
+
     public static final IntegerProperty BITES_PROPERTY = IntegerProperty.create("anniversary_bites", 0, 5);
 
     public static final int MAX_BITES = 5;
@@ -80,6 +80,11 @@ public class AnniversaryCakeBlock extends BaseEntityBlock {
         this.registerDefaultState(this.stateDefinition.any().setValue(BITES, Integer.valueOf(0)));
     }
 
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
+    }
+
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE_BY_BITE[pState.getValue(BITES)];
     }
@@ -111,7 +116,7 @@ public class AnniversaryCakeBlock extends BaseEntityBlock {
             pLevel.playSound(pPlayer, pPos, SoundEvents.GENERIC_EAT, SoundSource.BLOCKS, 1.0F, 1.0F);
             // GarnishedAdvancements.ANNIVERSARY_CAKE.awardTo(pPlayer);
             if (pPlayer instanceof ServerPlayer) {
-                GarnishedAdvancementUtils.CONSUME_ANNIVERSARY_CAKE_SLICE.trigger((ServerPlayer) pPlayer);
+                GarnishedAdvancementUtils.CONSUME_ANNIVERSARY_CAKE_SLICE.get().trigger((ServerPlayer) pPlayer);
             }
             if (i < 5) {
                 pLevel.setBlock(pPos, pState.setValue(BITES, Integer.valueOf(i + 1)), 3);

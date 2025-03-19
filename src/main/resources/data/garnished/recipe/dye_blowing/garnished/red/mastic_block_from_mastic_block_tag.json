@@ -1,0 +1,16 @@
+{
+  "type": "garnished:red_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "garnished:mastic_blocks"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:red_mastic_block"
+      },
+      "count": 1
+    }
+  ]
+}

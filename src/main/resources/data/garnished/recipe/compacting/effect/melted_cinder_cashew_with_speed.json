@@ -1,0 +1,45 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "garnished:cinder_cashew"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 100,
+      "fluid": "minecraft:lava"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    [
+      {
+        "item": "garnished:garnish_powder"
+      },
+      {
+        "item": "garnished:salt_compound"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:iron_nugget"
+      },
+      {
+        "item": "minecraft:gold_nugget"
+      },
+      {
+        "item": "create:zinc_nugget"
+      },
+      {
+        "item": "create:brass_nugget"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:cinder_cashew_speed"
+      }
+    }
+  ]
+}

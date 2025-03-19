@@ -1,0 +1,31 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:basalt"
+      },
+      {
+        "item": "minecraft:smooth_basalt"
+      },
+      {
+        "item": "minecraft:polished_basalt"
+      }
+    ]
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "chance": 0.85,
+      "item": "garnished:brittle_dust"
+      },
+      "count": 1
+    },
+    {
+      "chance": 0.45,
+      "item": "garnished:brittle_dust"
+      },
+      "count": 1
+    }
+  ]
+}

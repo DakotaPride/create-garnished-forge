@@ -1,0 +1,18 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "garnished:sweet_tea"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "minecraft:glass_bottle"
+    },
+    {
+      "amount": 250,
+      "fluid": "garnished:sweet_tea"
+    }
+  ]
+}

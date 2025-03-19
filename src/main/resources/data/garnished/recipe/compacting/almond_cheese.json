@@ -1,0 +1,28 @@
+{
+  "type": "create:compacting",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "garnished:bitter_almond"
+    },
+    {
+      "item": "garnished:salt_compound"
+    },
+    {
+      "item": "garnished:salt_compound"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 500,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  {
+        "id": "garnished:almond_cheese"
+      }
+    }
+  ]
+}

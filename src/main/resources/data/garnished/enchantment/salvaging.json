@@ -1,0 +1,20 @@
+{
+  "description": {
+    "translate": "enchantment.garnished.salvaging"
+  },
+  "supported_items": "#c:tools/hatchets",
+  "weight": 20,
+  "max_level": 2,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 10,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 0,
+  "slots": [
+    "mainhand"
+  ]
+}

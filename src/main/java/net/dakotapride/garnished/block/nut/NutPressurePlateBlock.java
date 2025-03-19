@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.PressurePlateBlock;
 
 public class NutPressurePlateBlock extends PressurePlateBlock {
     public NutPressurePlateBlock(Properties pProperties) {
-        super(PressurePlateBlock.Sensitivity.EVERYTHING, pProperties, GarnishedSetTypes.NUT);
+        super(GarnishedSetTypes.NUT, pProperties);
     }
 }

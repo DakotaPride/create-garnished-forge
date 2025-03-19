@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class AbyssalStoneStairsBlock extends StairBlock {
     public AbyssalStoneStairsBlock(Properties properties) {
-        super(() -> GarnishedBlocks.ABYSSAL_STONE.get().defaultBlockState(), properties);
+        super(GarnishedBlocks.ABYSSAL_STONE.get().defaultBlockState(), properties);
     }
 
     @Override

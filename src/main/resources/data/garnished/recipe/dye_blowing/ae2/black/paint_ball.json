@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ae2"
+    }
+  ],
+  "type": "garnished:black_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "ae2:paint_balls"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "ae2:black_paint_ball"
+      },
+      "count": 1
+    }
+  ]
+}

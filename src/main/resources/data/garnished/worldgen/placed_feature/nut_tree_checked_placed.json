@@ -6,7 +6,7 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "garnished:cracked_cashew",
+          "Name": "garnished:cashew_sapling",
           "Properties": {
             "stage": "0"
           }

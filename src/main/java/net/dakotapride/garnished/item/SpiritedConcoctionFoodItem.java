@@ -23,8 +23,8 @@ public class SpiritedConcoctionFoodItem extends Item implements IGarnishedUtilit
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-		addEffectTooltip(tooltip, GarnishedEffects.SPIRITED_RESISTANCE.get(), 900F);
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+		addEffectTooltip(tooltip, GarnishedEffects.SPIRITED_RESISTANCE, 900F);
 	}
 
 	@Override

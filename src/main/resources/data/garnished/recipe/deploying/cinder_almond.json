@@ -1,0 +1,19 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "garnished:almond"
+    },
+    {
+      "item": "create:cinder_flour"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  {
+        "id": "garnished:cinder_almond"
+      }
+    }
+  ]
+}

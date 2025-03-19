@@ -1,0 +1,27 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "c:ender_dusts"
+    },
+    {
+      "tag": "c:ender_dusts"
+    },
+    {
+      "item": "garnished:salt_compound"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 500,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "garnished:ender_jelly"
+      }
+    }
+  ]
+}

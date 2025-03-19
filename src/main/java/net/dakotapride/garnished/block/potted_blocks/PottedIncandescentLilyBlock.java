@@ -6,7 +6,6 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 
 public class PottedIncandescentLilyBlock extends FlowerPotBlock {
     public PottedIncandescentLilyBlock(Properties properties) {
-        super(() -> (FlowerPotBlock) net.minecraftforge.registries.ForgeRegistries.BLOCKS.getDelegateOrThrow(Blocks.FLOWER_POT).get(),
-                GarnishedBlocks.INCANDESCENT_LILY, properties);
+        super(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GarnishedBlocks.INCANDESCENT_LILY, properties);
     }
 }

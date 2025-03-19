@@ -3,6 +3,7 @@ package net.dakotapride.garnished.item;
 import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.dakotapride.garnished.registry.GarnishedItems;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
@@ -19,8 +20,8 @@ public class SenileSweetFoodItem extends ConditionalEffectItem implements IGarni
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-		MobEffect effect = MobEffects.BLINDNESS;
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+		Holder<MobEffect> effect = MobEffects.BLINDNESS;
 
 		//addEffectTooltip(tooltip, MobEffects.REGENERATION, 5, 700F);
 		if (stack.is(GarnishedItems.SENILE_SWEET_BLACKSTONE.get())) {
@@ -36,7 +37,7 @@ public class SenileSweetFoodItem extends ConditionalEffectItem implements IGarni
 			effect = MobEffects.MOVEMENT_SLOWDOWN;
 		}
 
-		tooltip.add(Component.translatable("text.garnished.senile_sweet.brew_potion", Component.translatable(effect.getDescriptionId())).withStyle(ChatFormatting.GOLD));
+		tooltip.add(Component.translatable("text.garnished.senile_sweet.brew_potion", Component.translatable(effect.value().getDescriptionId())).withStyle(ChatFormatting.GOLD));
 	}
 
 }

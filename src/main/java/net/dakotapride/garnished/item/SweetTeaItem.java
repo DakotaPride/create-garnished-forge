@@ -29,7 +29,7 @@ public class SweetTeaItem extends Item implements IGarnishedUtilities {
 
 		// From the base BuildersTeaItem class from the Create mod
 		if (!world.isClientSide)
-			entity.addEffect(new MobEffectInstance(GarnishedEffects.AUGMENTED.get(), 3 * 60 * 20, 0, false, false, false));
+			entity.addEffect(new MobEffectInstance(GarnishedEffects.AUGMENTED, 3 * 60 * 20, 0, false, false, false));
 
 		if (playerentity != null) {
 			playerentity.awardStat(Stats.ITEM_USED.get(this));
@@ -49,7 +49,7 @@ public class SweetTeaItem extends Item implements IGarnishedUtilities {
 	}
 
 	@Override
-	public int getUseDuration(@NotNull ItemStack stack) {
+	public int getUseDuration(@NotNull ItemStack stack, LivingEntity entity) {
 		return 42;
 	}
 

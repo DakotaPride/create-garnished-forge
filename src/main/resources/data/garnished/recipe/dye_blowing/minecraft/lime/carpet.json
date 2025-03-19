@@ -1,0 +1,16 @@
+{
+  "type": "garnished:lime_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:wool_carpets"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:lime_carpet"
+      },
+      "count": 1
+    }
+  ]
+}

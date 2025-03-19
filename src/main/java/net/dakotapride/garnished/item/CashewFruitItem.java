@@ -22,7 +22,7 @@ public class CashewFruitItem extends Item implements IGarnishedUtilities {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		// if (!Screen.hasShiftDown()) {
 		//			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.GRAY));
 		//		}

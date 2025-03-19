@@ -6,7 +6,6 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 
 public class PottedSoulRootsBlock extends FlowerPotBlock {
     public PottedSoulRootsBlock(Properties properties) {
-        super(() -> (FlowerPotBlock) net.minecraftforge.registries.ForgeRegistries.BLOCKS.getDelegateOrThrow(Blocks.FLOWER_POT).get(),
-                GarnishedBlocks.SOUL_ROOTS, properties);
+        super(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GarnishedBlocks.SOUL_ROOTS, properties);
     }
 }

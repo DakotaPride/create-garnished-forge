@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "garnished:nut_wood"
+    }
+  ],
+  "processing_time": 50,
+  "results": [
+    {
+      "item": {
+        "id":  {
+        "id": "garnished:stripped_nut_wood"
+      }
+    }
+  ]
+}

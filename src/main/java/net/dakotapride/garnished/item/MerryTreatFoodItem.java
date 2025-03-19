@@ -22,8 +22,8 @@ public class MerryTreatFoodItem extends Item implements IGarnishedUtilities {
     }
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-		addEffectTooltip(tooltip, GarnishedEffects.SUGAR_HIGH.get(), 2, 480F);
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+		addEffectTooltip(tooltip, GarnishedEffects.SUGAR_HIGH, 2, 480F);
 	}
 
     @Override

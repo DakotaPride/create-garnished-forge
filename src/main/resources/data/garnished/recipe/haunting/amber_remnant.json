@@ -1,0 +1,14 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "minecraft:amethyst_shard"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "garnished:amber_remnant"
+    }
+  ]
+}

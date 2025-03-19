@@ -41,9 +41,10 @@ public class NutChestBoatEntity extends ChestBoat {
         this.entityData.set(DATA_ID_TYPE, pVariant.ordinal());
     }
 
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(DATA_ID_TYPE, NutBoatEntity.Type.NUT.ordinal());
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(DATA_ID_TYPE, NutBoatEntity.Type.NUT.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {

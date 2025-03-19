@@ -1,0 +1,16 @@
+{
+  "type": "garnished:white_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:candles"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:white_candle"
+      },
+      "count": 1
+    }
+  ]
+}

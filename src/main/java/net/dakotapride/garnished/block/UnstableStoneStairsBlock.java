@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class UnstableStoneStairsBlock extends StairBlock {
     public UnstableStoneStairsBlock(Properties pProperties) {
-        super(() -> GarnishedBlocks.UNSTABLE_STONE.get().defaultBlockState(), pProperties);
+        super(GarnishedBlocks.UNSTABLE_STONE.get().defaultBlockState(), pProperties);
     }
 
     @Override

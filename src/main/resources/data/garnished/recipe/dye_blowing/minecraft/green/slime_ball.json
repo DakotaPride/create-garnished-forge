@@ -1,0 +1,16 @@
+{
+  "type": "garnished:green_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "c:dough"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "minecraft:slime_ball"
+      }
+    }
+  ]
+}

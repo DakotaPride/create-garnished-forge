@@ -1,0 +1,16 @@
+{
+  "type": "garnished:lime_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "c:buckets/mastic_resin"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:lime_mastic_resin_bucket"
+      },
+      "count": 1
+    }
+  ]
+}

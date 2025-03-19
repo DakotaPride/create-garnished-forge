@@ -1,0 +1,16 @@
+{
+  "type": "garnished:light_blue_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:banners"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:light_blue_banner"
+      },
+      "count": 1
+    }
+  ]
+}

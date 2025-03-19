@@ -1,0 +1,31 @@
+{
+  "type": "create:compacting",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "garnished:macadamia"
+    },
+    {
+      "item": "garnished:macadamia"
+    },
+    {
+      "item": "garnished:mastic_block"
+    },
+    {
+      "item": "garnished:garnish_compound"
+    },
+    {
+      "item": "garnished:garnish_compound"
+    },
+    {
+      "item": "garnished:soul_roots"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:murky_jelly"
+      }
+    }
+  ]
+}

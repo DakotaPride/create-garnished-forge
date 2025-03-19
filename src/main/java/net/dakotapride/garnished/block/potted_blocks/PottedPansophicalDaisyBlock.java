@@ -6,7 +6,6 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 
 public class PottedPansophicalDaisyBlock extends FlowerPotBlock {
     public PottedPansophicalDaisyBlock(Properties properties) {
-        super(() -> (FlowerPotBlock) net.minecraftforge.registries.ForgeRegistries.BLOCKS.getDelegateOrThrow(Blocks.FLOWER_POT).get(),
-                GarnishedBlocks.PANSOPHICAL_DAISY, properties);
+        super(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GarnishedBlocks.PANSOPHICAL_DAISY, properties);
     }
 }

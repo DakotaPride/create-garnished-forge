@@ -23,7 +23,7 @@ public class FermentedCashewMixtureItem extends Item implements IGarnishedUtilit
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.CONFUSION, 3, cashew_mix_dur);
 		addChanceForEffect(tooltip, 0.05F);
 		addEffectTooltip(tooltip, MobEffects.DAMAGE_BOOST, 3, cashew_mix_dur);
@@ -50,7 +50,7 @@ public class FermentedCashewMixtureItem extends Item implements IGarnishedUtilit
 	}
 
 	@Override
-	public int getUseDuration(@NotNull ItemStack stack) {
+	public int getUseDuration(@NotNull ItemStack stack, LivingEntity entity) {
 		return DRINK_DURATION;
 	}
 

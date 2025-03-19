@@ -1,0 +1,16 @@
+{
+  "type": "garnished:cyan_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:banners"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:cyan_banner"
+      },
+      "count": 1
+    }
+  ]
+}

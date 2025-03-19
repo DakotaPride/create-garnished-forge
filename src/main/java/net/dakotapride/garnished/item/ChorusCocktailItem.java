@@ -45,7 +45,7 @@ public class ChorusCocktailItem extends ConditionalEffectItem implements IGarnis
 	}
 
 	@Override
-	public int getUseDuration(@NotNull ItemStack stack) {
+	public int getUseDuration(@NotNull ItemStack stack, LivingEntity entity) {
 		return DRINK_DURATION;
 	}
 

@@ -1,0 +1,33 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:basalt"
+      },
+      {
+        "item": "minecraft:smooth_basalt"
+      },
+      {
+        "item": "minecraft:polished_basalt"
+      }
+    ]
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "chance": 0.85,
+      "count": 1,
+      "item": {
+        "id": "garnished:brittle_dust"
+      }
+    },
+    {
+      "chance": 0.45,
+      "count": 1,
+      "item": {
+        "id": "garnished:brittle_dust"
+      }
+    }
+  ]
+}

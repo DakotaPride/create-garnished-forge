@@ -1,0 +1,14 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "minecraft:lily_of_the_valley"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "garnished:incandescent_lily"
+    }
+  ]
+}

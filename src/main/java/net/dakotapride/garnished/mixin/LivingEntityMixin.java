@@ -1,15 +1,11 @@
 package net.dakotapride.garnished.mixin;
 
-import net.dakotapride.garnished.CreateGarnished;
-import net.dakotapride.garnished.item.hatchet.HatchetUtils;
 import net.dakotapride.garnished.registry.GarnishedAdvancementUtils;
 import net.dakotapride.garnished.registry.GarnishedEffects;
-import net.dakotapride.garnished.registry.GarnishedEnchantments;
-import net.dakotapride.garnished.registry.GarnishedTags;
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -18,10 +14,7 @@ import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.WitherSkeleton;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -31,9 +24,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Objects;
-import java.util.Random;
 
-@Mixin(LivingEntity.class)
+@Mixin(value = LivingEntity.class, remap = false)
 public abstract class LivingEntityMixin extends Entity {
 	@Unique
 	LivingEntity entity = (LivingEntity) (Object) this;
@@ -44,17 +36,13 @@ public abstract class LivingEntityMixin extends Entity {
 
 	@Inject(method = "tickEffects", at = @At("HEAD"))
 	private void spiritedResistanceImmunity$tickEffects(CallbackInfo ci) {
-		if (entity.hasEffect(GarnishedEffects.SPIRITED_RESISTANCE.get())) {
+		if (entity.hasEffect(GarnishedEffects.SPIRITED_RESISTANCE)) {
 			if (entity.hasEffect(MobEffects.WITHER))
 				entity.removeEffect(MobEffects.WITHER);
 			if (entity.hasEffect(MobEffects.CONFUSION))
 				entity.removeEffect(MobEffects.CONFUSION);
 			if (entity.hasEffect(MobEffects.BLINDNESS))
 				entity.removeEffect(MobEffects.BLINDNESS);
-		}
-
-		if (HatchetUtils.canApplyRavagingEffects(entity)) {
-			entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1));
 		}
 	}
 
@@ -68,7 +56,7 @@ public abstract class LivingEntityMixin extends Entity {
 			boolean isWither = attacker instanceof WitherBoss;
 			boolean isGhast = attacker instanceof Ghast;
 
-			if (entity.hasEffect(GarnishedEffects.SPIRITED_RESISTANCE.get())) {
+			if (entity.hasEffect(GarnishedEffects.SPIRITED_RESISTANCE)) {
 				if (isSkeleton || isWitherSkeleton || isWither || isGhast) {
 					attacker.hurt(source, amount * 1.336745F);
 				}
@@ -82,7 +70,7 @@ public abstract class LivingEntityMixin extends Entity {
 			float j = amount / 2;
 			boolean f = j <= 3;
 			//boolean k = j < (attacker.getMaxHealth() / 2.25F);
-			MobEffect e = GarnishedEffects.THORNS.get();
+			Holder<MobEffect> e = GarnishedEffects.THORNS;
 
 			if (f) {
 				j = 4;
@@ -107,8 +95,8 @@ public abstract class LivingEntityMixin extends Entity {
 
 	@Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
 	private void negateArrowDamage$hurt(DamageSource pSource, float pAmount, CallbackInfoReturnable<Boolean> cir) {
-		if (entity.hasEffect(GarnishedEffects.TRUTH_SEEKER.get()) && pSource.getDirectEntity() instanceof AbstractArrow && entity.getEffect(GarnishedEffects.TRUTH_SEEKER.get()) != null) {
-			MobEffect truthSeekerMobEffect = GarnishedEffects.TRUTH_SEEKER.get();
+		if (entity.hasEffect(GarnishedEffects.TRUTH_SEEKER) && pSource.getDirectEntity() instanceof AbstractArrow && entity.getEffect(GarnishedEffects.TRUTH_SEEKER) != null) {
+			Holder<MobEffect> truthSeekerMobEffect = GarnishedEffects.TRUTH_SEEKER;
             //assert truthSeekerMobEffect != null;
             int effectAmplifier = Objects.requireNonNull(entity.getEffect(truthSeekerMobEffect)).getAmplifier();
 			int boundInt = 20 - effectAmplifier;
@@ -138,7 +126,7 @@ public abstract class LivingEntityMixin extends Entity {
 	@Inject(method = "baseTick", at = @At("HEAD"))
 	private void dejojoAdvancement(CallbackInfo ci) {
 		if (entity instanceof ServerPlayer player && getStringUUID().equals("7282ae0d-c2f5-4610-8be9-70af5a1322a4")) {
-			GarnishedAdvancementUtils.DEJOJO.trigger(player);
+			GarnishedAdvancementUtils.DEJOJO.get().trigger(player);
 		}
 	}
 

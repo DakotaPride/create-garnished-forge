@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin({Player.class})
+@Mixin(value = Player.class, remap = false)
 public abstract class PlayerMixin extends LivingEntity {
 
 	protected PlayerMixin(EntityType<? extends LivingEntity> entityType, Level world) {
@@ -27,11 +27,11 @@ public abstract class PlayerMixin extends LivingEntity {
 
 	@Inject(method = "killedEntity", at = {@At("TAIL")})
 	private void killedEntity(ServerLevel level, LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
-		ItemStack main = this.getMainHandItem();
-		Item var6 = main.getItem();
-		if (var6 instanceof HatchetToolItem item) {
-			item.dropsUponDeath(this, entity);
-		}
+//		ItemStack main = this.getMainHandItem();
+//		Item var6 = main.getItem();
+//		if (var6 instanceof HatchetToolItem item) {
+//			item.dropsUponDeath(this, entity);
+//		}
 
 	}
 }

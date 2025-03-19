@@ -1,0 +1,38 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "garnished:stone_types/abyssal_stone"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "garnished:volatile_dust"
+      }
+    },
+    {
+      "chance": 0.15,
+      "count": 1,
+      "item": {
+        "id": "garnished:volatile_dust"
+      }
+    },
+    {
+      "chance": 0.10,
+      "count": 1,
+      "item": {
+        "id": "garnished:void_dust"
+      }
+    },
+    {
+      "chance": 0.10,
+      "count": 1,
+      "item": {
+        "id": "garnished:void_dust"
+      }
+    }
+  ]
+}

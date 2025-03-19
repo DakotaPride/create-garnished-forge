@@ -21,7 +21,7 @@ public class IncendiaryStewFoodItem extends Item implements IGarnishedUtilities 
 	}
 
 	@Override
-	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> tooltip, @NotNull TooltipFlag adv) {
+	public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag adv) {
 		tooltip.add(Component.translatable("text.garnished.incendiary_stew.desc").withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
 	}
 

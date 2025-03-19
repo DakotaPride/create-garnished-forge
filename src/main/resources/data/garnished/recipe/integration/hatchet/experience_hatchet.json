@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_sa"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "hatchet",
+  "pattern": [
+    "AX ",
+    "X# ",
+    " # "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:string"
+    },
+    "X": {
+      "item": "create_sa:heap_of_experience"
+    },
+    "#": {
+      "item": "create_sa:zinc_handle"
+    }
+  },
+  "result": {
+    "item": "garnished:experience_hatchet",
+    "count": 1
+  }
+}

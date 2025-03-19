@@ -1,0 +1,21 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "tag": "garnished:crushable/chestnut"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 1,
+      "item": "garnished:cracked_chestnut"
+    },
+    {
+      "chance": 0.15,
+      "item": "garnished:cracked_chestnut"
+      },
+      "count": 2
+    }
+  ]
+}

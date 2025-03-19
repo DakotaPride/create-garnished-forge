@@ -1,0 +1,16 @@
+{
+  "type": "garnished:light_blue_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "garnished:mastic_resin"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:mastic_resin_light_blue"
+      },
+      "count": 1
+    }
+  ]
+}

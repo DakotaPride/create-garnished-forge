@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(EnderMan.class)
+@Mixin(value = EnderMan.class, remap = false)
 public abstract class EnderManMixin extends Monster implements NeutralMob {
     public EnderManMixin(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -24,14 +24,14 @@ public abstract class EnderManMixin extends Monster implements NeutralMob {
 
     @Inject(method = "isLookingAtMe", at = @At("HEAD"), cancellable = true)
     private void hasCognateEffect$isLookingAtMe(Player player, CallbackInfoReturnable<Boolean> cir) {
-        if (player.hasEffect(GarnishedEffects.COGNATE.get())) {
+        if (player.hasEffect(GarnishedEffects.COGNATE)) {
             cir.setReturnValue(false);
         }
     }
 
     @Override
     public boolean isAngryAt(@NotNull LivingEntity target) {
-        return target.hasEffect(GarnishedEffects.FLAGRANT.get());
+        return target.hasEffect(GarnishedEffects.FLAGRANT);
     }
 
 

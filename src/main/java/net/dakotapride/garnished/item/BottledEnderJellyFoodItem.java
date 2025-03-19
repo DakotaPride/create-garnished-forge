@@ -23,8 +23,8 @@ public class BottledEnderJellyFoodItem extends Item implements IGarnishedUtiliti
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-		addEffectTooltip(tooltip, GarnishedEffects.COGNATE.get(), 2, (float) cognate_dur / 2);
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+		addEffectTooltip(tooltip, GarnishedEffects.COGNATE, 2, (float) cognate_dur / 2);
 		addChanceForEffect(tooltip, 0.50F);
 	}
 

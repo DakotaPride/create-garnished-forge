@@ -1,0 +1,24 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "garnished:garnish_compound"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "garnished:garnish_powder"
+      }
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "item":{
+        "id": "garnished:garnish_powder"
+      }
+    }
+  ]
+}

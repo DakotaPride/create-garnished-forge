@@ -6,7 +6,6 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 
 public class PottedSmallChorusPlantBlock extends FlowerPotBlock {
     public PottedSmallChorusPlantBlock(Properties properties) {
-        super(() -> (FlowerPotBlock) net.minecraftforge.registries.ForgeRegistries.BLOCKS.getDelegateOrThrow(Blocks.FLOWER_POT).get(),
-                GarnishedBlocks.SMALL_CHORUS_PLANT, properties);
+        super(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GarnishedBlocks.SMALL_CHORUS_PLANT, properties);
     }
 }

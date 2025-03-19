@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "garnished:unstable_stone_slab"
+    },
+    {
+      "amount": 250,
+      "fluid": "garnished:dragon_breath"
+    }
+  ],
+  "results": [
+    {
+      "item": "garnished:dragon_stone_slab"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "garnished:pink_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:beds"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:pink_bed"
+      },
+      "count": 1
+    }
+  ]
+}

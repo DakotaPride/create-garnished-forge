@@ -1,0 +1,19 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "garnished:apple_cider"
+    },
+    {
+      "item": "garnished:cashew_fruit"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  {
+        "id": "garnished:bitter_apple_cider"
+      }
+    }
+  ]
+}

@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.FenceGateBlock;
 
 public class NutFenceGateBlock extends FenceGateBlock {
     public NutFenceGateBlock(Properties pProperties) {
-        super(pProperties, GarnishedWoodType.NUT);
+        super(GarnishedWoodType.NUT, pProperties);
     }
 }

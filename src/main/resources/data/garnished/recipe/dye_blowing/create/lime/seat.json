@@ -1,0 +1,16 @@
+{
+  "type": "garnished:lime_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "create:seats"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "create:lime_seat"
+      },
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "description": {
+    "translate": "enchantment.garnished.ravaging"
+  },
+  "exclusive_set": [
+    "garnished:ravaging",
+    "garnished:quick_step"
+  ],
+  "supported_items": "#c:tools/hatchets",
+  "weight": 20,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 10,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 0,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "requirements": {
+          "condition": "minecraft:random_chance",
+          "chance": 0.15
+        },
+        "effect": {
+          "type": "minecraft:apply_mob_effect",
+          "to_apply": "minecraft:strength",
+          "min_duration": 10,
+          "max_duration": 10,
+          "min_amplifier": 1,
+          "max_amplifier": 3
+        },
+        "enchanted": "attacker",
+        "affected": "attacker"
+      }
+    ]
+  }
+}

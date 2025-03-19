@@ -1,0 +1,16 @@
+{
+  "type": "garnished:orange_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "create:seats"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "create:orange_seat"
+      },
+      "count": 1
+    }
+  ]
+}

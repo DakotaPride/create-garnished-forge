@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:magenta_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "createframed:stained_framed_glass"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createframed:magenta_stained_framed_glass"
+      },
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "garnished:mastic_paste_lime"
+    },
+    {
+      "item": "garnished:mastic_paste_lime"
+    },
+    {
+      "item": "garnished:mastic_paste_lime"
+    },
+    {
+      "item": "garnished:mastic_paste_lime"
+    },
+    {
+      "item": "garnished:mastic_paste_lime"
+    },
+    {
+      "item": "garnished:mastic_paste_lime"
+    },
+    {
+      "item": "garnished:mastic_paste_lime"
+    },
+    {
+      "item": "garnished:mastic_paste_lime"
+    },
+    {
+      "item": "garnished:mastic_paste_lime"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:lime_mastic_block"
+      }
+    }
+  ]
+}

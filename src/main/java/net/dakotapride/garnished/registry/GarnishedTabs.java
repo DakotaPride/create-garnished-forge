@@ -5,33 +5,46 @@ import net.dakotapride.garnished.CreateGarnished;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+//@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class GarnishedTabs {
-	private static final DeferredRegister<CreativeModeTab> TAB_REGISTER =
+	private static final DeferredRegister<CreativeModeTab> REGISTER =
 			DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CreateGarnished.ID);
 
-	public static final RegistryObject<CreativeModeTab> GARNISHED = TAB_REGISTER.register("create.garnished",
-			() -> CreativeModeTab.builder().title(Component.translatable("itemGroup.create.garnished"))
-					.icon(() -> GarnishedItems.NUT_MIX.get().getDefaultInstance())
-					.withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
-					.displayItems(new GarnishedDisplayItemsGenerator()).build());
-	public static final RegistryObject<CreativeModeTab> GARNISHED_BLOCKS = TAB_REGISTER.register("create.garnished.blocks",
-			() -> CreativeModeTab.builder().title(Component.translatable("itemGroup.create.garnished.blocks"))
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GARNISHED = REGISTER.register("create.garnished.tab",
+			() -> CreativeModeTab.builder()
+					.title(Component.translatable("itemGroup.create.garnished"))
+					.icon(GarnishedItems.NUT_MIX::asStack)
+					.displayItems(new GarnishedDisplayItemsGenerator(true, GarnishedTabs.GARNISHED))
+					.build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GARNISHED_BLOCKS = REGISTER.register("create.garnished.blocks",
+			() -> CreativeModeTab.builder()
+					.title(Component.translatable("itemGroup.create.garnished.blocks"))
 					.icon(() -> GarnishedBlocks.GARNISHED_NUT_BLOCK.get().asItem().getDefaultInstance())
-					.withTabsBefore(GARNISHED.getKey())
-					.displayItems(new BlocksDisplayItemsGenerator()).build());
+					//.withTabsBefore(GARNISHED.getKey())
+					.displayItems(new BlocksDisplayItemsGenerator(true, GarnishedTabs.GARNISHED_BLOCKS))
+					.build());
 
+	@ApiStatus.Internal
 	public static void setRegister(IEventBus modEventBus) {
-		TAB_REGISTER.register(modEventBus);
+		REGISTER.register(modEventBus);
 	}
 
 	public static class GarnishedDisplayItemsGenerator implements CreativeModeTab.DisplayItemsGenerator {
+
+		private final boolean addItems;
+		private final DeferredHolder<CreativeModeTab, CreativeModeTab> tabFilter;
+
+		public GarnishedDisplayItemsGenerator(boolean addItems, DeferredHolder<CreativeModeTab, CreativeModeTab> tabFilter) {
+			this.addItems = addItems;
+			this.tabFilter = tabFilter;
+		}
 
 		@Override
 		public void accept(CreativeModeTab.@NotNull ItemDisplayParameters parameters, CreativeModeTab.@NotNull Output output) {
@@ -416,6 +429,14 @@ public class GarnishedTabs {
 	}
 
 	public static class BlocksDisplayItemsGenerator implements CreativeModeTab.DisplayItemsGenerator {
+
+		private final boolean addItems;
+		private final DeferredHolder<CreativeModeTab, CreativeModeTab> tabFilter;
+
+		public BlocksDisplayItemsGenerator(boolean addItems, DeferredHolder<CreativeModeTab, CreativeModeTab> tabFilter) {
+			this.addItems = addItems;
+			this.tabFilter = tabFilter;
+		}
 
 		@Override
 		public void accept(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {

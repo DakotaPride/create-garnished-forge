@@ -30,7 +30,7 @@ public class BottledPeanutOilItem extends Item {
 	}
 
 	@Override
-	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level pLevel, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+	public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 		if (!Screen.hasShiftDown()) {
 			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.DARK_GRAY));
 		} else {
@@ -72,7 +72,7 @@ public class BottledPeanutOilItem extends Item {
 	}
 
 	@Override
-	public int getUseDuration(@NotNull ItemStack stack) {
+	public int getUseDuration(@NotNull ItemStack stack, LivingEntity entity) {
 		return DRINK_DURATION;
 	}
 

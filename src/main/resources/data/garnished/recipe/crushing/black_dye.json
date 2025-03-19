@@ -1,0 +1,24 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "garnished:sorrowful_lichen"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "minecraft:white_dye"
+      }
+    },
+    {
+      "chance": 0.45,
+      "count": 1,
+      "item": {
+        "id": "minecraft:black_dye"
+      }
+    }
+  ]
+}

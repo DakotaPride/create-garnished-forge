@@ -1,6 +1,6 @@
 package net.dakotapride.garnished.block.sapling;
 
-import net.dakotapride.garnished.gen.SepiaFungusGrower;
+import net.dakotapride.garnished.gen.GarnishedTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 public class SepiaFungusBlock extends SaplingBlock {
 	protected static final VoxelShape SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 9.0, 12.0);
 	public SepiaFungusBlock(Properties properties) {
-		super(new SepiaFungusGrower(), properties);
+		super(GarnishedTreeGrower.SEPIA_FUNGUS, properties);
 	}
 
 	@Override

@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "garnished:voltaic_sea_grass"
+    },
+    {
+      "item": "garnished:voltaic_sea_grass"
+    },
+    {
+      "item": "garnished:voltaic_sea_grass"
+    },
+    {
+      "item": "minecraft:tube_coral_fan"
+    },
+    {
+      "item": "minecraft:tube_coral_fan"
+    },
+    {
+      "item": "garnished:lustrous_pearl"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "garnished:galvanic_haunting"
+  }
+}

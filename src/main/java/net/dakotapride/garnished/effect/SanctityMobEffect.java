@@ -15,15 +15,17 @@ public class SanctityMobEffect extends MobEffect {
 		super(MobEffectCategory.BENEFICIAL, 0x857599);
 	}
 
-	@Override
-	public void removeAttributeModifiers(LivingEntity pLivingEntity, AttributeMap pAttributeMap, int pAmplifier) {
-		pLivingEntity.setAbsorptionAmount(pLivingEntity.getAbsorptionAmount() - (float)(4 * (pAmplifier + 1)));
-		super.removeAttributeModifiers(pLivingEntity, pAttributeMap, pAmplifier);
-	}
+	// 1.21 broke this method, for some reason
+//	@Override
+//	public void removeAttributeModifiers(LivingEntity pLivingEntity, AttributeMap pAttributeMap, int pAmplifier) {
+//		pLivingEntity.setAbsorptionAmount(pLivingEntity.getAbsorptionAmount() - (float)(4 * (pAmplifier + 1)));
+//		super.removeAttributeModifiers(pLivingEntity, pAttributeMap, pAmplifier);
+//	}
 
-	@Override
-	public void addAttributeModifiers(LivingEntity pLivingEntity, AttributeMap pAttributeMap, int pAmplifier) {
-		pLivingEntity.setAbsorptionAmount(pLivingEntity.getAbsorptionAmount() + (float)(4 * (pAmplifier + 1)));
-		super.addAttributeModifiers(pLivingEntity, pAttributeMap, pAmplifier);
-	}
+	// 1.21 broke this method, for some reason
+//	@Override
+//	public void addAttributeModifiers(LivingEntity pLivingEntity, AttributeMap pAttributeMap, int pAmplifier) {
+//		pLivingEntity.setAbsorptionAmount(pLivingEntity.getAbsorptionAmount() + (float)(4 * (pAmplifier + 1)));
+//		super.addAttributeModifiers(pLivingEntity, pAttributeMap, pAmplifier);
+//	}
 }

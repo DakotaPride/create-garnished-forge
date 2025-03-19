@@ -1,0 +1,31 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "garnished:irate_tusk"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 6,
+      "item": {
+        "id": "garnished:senile_bone"
+      }
+    },
+    {
+      "chance": 0.45,
+      "count": 4,
+      "item": {
+        "id": "garnished:senile_bone"
+      }
+    },
+    {
+      "chance": 0.15,
+      "count": 3,
+      "item": {
+        "id": "garnished:senile_dust"
+      }
+    }
+  ]
+}

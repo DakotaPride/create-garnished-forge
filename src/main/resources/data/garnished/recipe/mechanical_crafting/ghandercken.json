@@ -1,0 +1,29 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": false,
+  "key": {
+    "A": {
+      "tag": "c:ender_dusts"
+    },
+    "B": {
+      "item": "garnished:ghast_tendril"
+    },
+    "C": {
+      "item": "garnished:torrid_blend"
+    },
+    "X": {
+      "item": "minecraft:cooked_chicken"
+    },
+    "#": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    "AXA",
+    "B#C"
+  ],
+  "result": {
+    "count": 1,
+    "item": "garnished:ghandercken"
+  }
+}

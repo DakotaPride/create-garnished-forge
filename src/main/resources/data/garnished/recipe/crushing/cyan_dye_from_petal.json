@@ -1,0 +1,17 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "garnished:pansophical_petal"
+    }
+  ],
+  "processing_time": 150,
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "minecraft:cyan_dye"
+      }
+    }
+  ]
+}

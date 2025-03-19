@@ -15,8 +15,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,7 +24,7 @@ import java.util.List;
 
 public class ExperienceHatchetToolItem extends IntegratedHatchetToolItem {
     public ExperienceHatchetToolItem(Properties properties) {
-        super(GarnishedUtils.stuffAndAdditions(), IntegratedMaterials.EXPERIENCE, 1.0F, -2.5F, properties);
+        super(GarnishedUtils.stuffAndAdditions(), IntegratedMaterials.EXPERIENCE, properties);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class ExperienceHatchetToolItem extends IntegratedHatchetToolItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack stack, @Nullable TooltipContext ctx, List<Component> components, TooltipFlag tooltipFlag) {
         if (Screen.hasShiftDown()) {
             components.add(Component.literal("§8Hold [§fShift§8] for Summary"));
             components.add(Component.literal(" "));
@@ -51,7 +51,7 @@ public class ExperienceHatchetToolItem extends IntegratedHatchetToolItem {
             components.add(Component.literal("§8Hold [§7Shift§8] for Summary"));
         }
 
-        super.appendHoverText(stack, level, components, tooltipFlag);
+        super.appendHoverText(stack, ctx, components, tooltipFlag);
     }
 
     @Override

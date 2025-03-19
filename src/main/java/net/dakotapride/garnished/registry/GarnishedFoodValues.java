@@ -1,6 +1,7 @@
 package net.dakotapride.garnished.registry;
 
 import net.dakotapride.garnished.item.IGarnishedUtilities;
+import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -124,19 +125,19 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties MUD_PIE = generic(8, 0.15f).build();
     public static final FoodProperties BAKLAVA = ow_max().build();
     public static final FoodProperties RAW_TENEBROUS_MEAT = generic(4, OVERWORLD_MAX.saturation)
-            .effect(() -> new MobEffectInstance(MobEffects.DARKNESS, 200), 1.0f).meat().build(); // 100% chance of occurring
+            .effect(() -> new MobEffectInstance(MobEffects.DARKNESS, 200), 1.0f).build(); // 100% chance of occurring
     public static final FoodProperties COOKED_TENEBROUS_MEAT = generic(6, OVERWORLD_MAX.saturation)
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200), 0.85f).meat().build(); // 85% chance of occurring
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200), 0.85f).build(); // 85% chance of occurring
     public static final FoodProperties GLOOMY_GATHERING = ow_max()
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600), 1.0f) // 100% chance of occurring
-            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300), 1.0f).meat().build(); // 100% chance of occurring
-    public static final FoodProperties ACHING_TENEBROUS_CLUMP = generic(7, OVERWORLD_MAX.saturation).meat().build();
+            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300), 1.0f).build(); // 100% chance of occurring
+    public static final FoodProperties ACHING_TENEBROUS_CLUMP = generic(7, OVERWORLD_MAX.saturation).build();
     public static final FoodProperties GHANDERCKEN = ow_max().build(); // Not marked as meat due to bowl being lost upon feeding to wolves or other pets that rely on meat
-    public static final FoodProperties FISHY_SURPRISE = new FoodProperties.Builder().nutrition(8).saturationMod(0.40f)
+    public static final FoodProperties FISHY_SURPRISE = new FoodProperties.Builder().nutrition(8).saturationModifier(0.40f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300), 1.0f) // 100% chance of occurring
             .effect(() -> new MobEffectInstance(MobEffects.POISON, 40), 0.15f).build(); // 15% chance of occurring // Not marked as meat due to bowl being lost upon feeding to wolves or other pets that rely on meat
     public static final FoodProperties WHEAT_GRAZE = generic(3, 0.10f).build();
-    public static final FoodProperties PORKCHOP_AND_GRAZE = ow_max().meat().build();
+    public static final FoodProperties PORKCHOP_AND_GRAZE = ow_max().build();
     public static final FoodProperties MURKY_JELLY = generic(4, 0.30f).build();
     public static final FoodProperties MURKY_MACADAMIA_MALICE = generic(6, 0.40f).build();
     public static final FoodProperties NUTTY_MELODY = end_min().build(); // Exception for being the most melodic of nutty meals
@@ -146,7 +147,7 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
             .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 300), 0.45f).build(); // 45% chance of occurring
     public static final FoodProperties MUESLI = generic(OVERWORLD_MAX.nutrition, 0.60f).build();
     public static final FoodProperties GENERIC_DRIED_KELP = generic(2, 0.30f).fast().build();
-    public static final FoodProperties DRIED_DULSE_KELP = generic(4, GENERIC_DRIED_KELP.getSaturationModifier()).fast().build();
+    public static final FoodProperties DRIED_DULSE_KELP = generic(4, GENERIC_DRIED_KELP.saturation()).fast().build();
     public static final FoodProperties VAST_BREW = generic(6, 0.30f)
             .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, tick * 20, 0), 0.50f).build();
     public static final FoodProperties VERMILION_STEW = generic(7, 0.40f)
@@ -175,13 +176,13 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties WALNUT_GORGE_CREAM = GENERIC_STEW_OR_BREW.build(); // 75% chance of occurring
     // Exempt from regenerative effects from sugar high - provides the sugar high status effect
     public static final FoodProperties MERRY_TREAT = generic(6, 0.40f)
-            .effect(() -> new MobEffectInstance(GarnishedEffects.SUGAR_HIGH.get(), sugar_high_dur, 1), 1.0f).build(); // 100% chance of occurring
+            .effect(() -> new MobEffectInstance(GarnishedEffects.SUGAR_HIGH, sugar_high_dur, 1), 1.0f).build(); // 100% chance of occurring
     // Generic "cold" Foods
     public static final FoodProperties FROSTED_DESSERT = generic(6, 0.30f).build(); // 85% chance of occurring
     public static final FoodProperties VOID_STROGANOFF = ow_max().build(); // 100% chance of occurring
     public static final FoodProperties CHILLED_APPLE = generic(5, 0.40f).build(); // 50% chance of occurring
-    public static final FoodProperties RAW_POLAR_BEAR_MEAT = generic(5, 0.20f).meat().build(); // 5% chance of occurring
-    public static final FoodProperties COOKED_POLAR_BEAR_MEAT = ow_max().meat().build(); // 35% chance of occurring
+    public static final FoodProperties RAW_POLAR_BEAR_MEAT = generic(5, 0.20f).build(); // 5% chance of occurring
+    public static final FoodProperties COOKED_POLAR_BEAR_MEAT = ow_max().build(); // 35% chance of occurring
     // TECHNICALLY, does not qualify as they don't actually contain any ingredients from snowy biomes
     public static final FoodProperties EXPLORERS_CONCOCTION = ow_max().build();
     // Generic "desert" foods - no not dessert you fuck
@@ -196,7 +197,7 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties DUSTY_REGALE = generic(6, 0.20f).build(); // 35% chance of occurring
     // Is exempt or already provides Thorns upon consumption
     public static final FoodProperties STEW_OF_THE_DAMNED = generic(OVERWORLD_MAX.nutrition, 0.40f)
-            .effect(() -> new MobEffectInstance(GarnishedEffects.THORNS.get(), 700, 4), 1.0F).build(); // 100% chance of occurring
+            .effect(() -> new MobEffectInstance(GarnishedEffects.THORNS, 700, 4), 1.0F).build(); // 100% chance of occurring
 
     // Nether
     public static final FoodProperties PEANUT_OIL_AND_CINDER_SANDWICH = generic(7, 0.70f).build(); // 15% chance of occurring
@@ -213,10 +214,10 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
             .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, tick * 60, 1), 0.80f).build(); // 80% chance of occurring
     public static final FoodProperties OMNISCIENT_STEW = nether_max()
             .effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, tick * 20, 0), 0.50f) // 50% chance of occurring
-            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE.get(), cognate_dur, 0), 0.75f).build(); // 75% chance of occurring
-    public static final FoodProperties WARPED_TANGLE = wrappedTangle(() -> MobEffects.DAMAGE_RESISTANCE).build();
-    public static final FoodProperties CRIMSON_TANGLE = wrappedTangle(() -> MobEffects.FIRE_RESISTANCE).build();
-    public static final FoodProperties SEPIA_TANGLE = wrappedTangle(() -> GarnishedEffects.SPIRITED_RESISTANCE.get()).build();
+            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE, cognate_dur, 0), 0.75f).build(); // 75% chance of occurring
+    public static final FoodProperties WARPED_TANGLE = wrappedTangle(MobEffects.DAMAGE_RESISTANCE).build();
+    public static final FoodProperties CRIMSON_TANGLE = wrappedTangle(MobEffects.FIRE_RESISTANCE).build();
+    public static final FoodProperties SEPIA_TANGLE = wrappedTangle(GarnishedEffects.SPIRITED_RESISTANCE).build();
     public static final FoodProperties FERMENTED_CASHEW_MIXTURE = GENERIC_BOTTLED_FOOD_OR_DRINK
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, cashew_mix_dur,2 ), 0.05f) // 5% chance of occurring
             .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, cashew_mix_dur, 2), 0.05f).build(); // 5% chance of occurring
@@ -224,12 +225,12 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
             .effect(() -> new MobEffectInstance(MobEffects.INVISIBILITY, 2400), 1.0f) // 100% chance of occurring
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3000), 1.0f).build(); // 100% chance of occurring
     public static final FoodProperties SPIRITED_CONCOCTION = GENERIC_STEW_OR_BREW
-            .effect(() -> new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE.get(), 900), 1.0f).build(); // 100% chance of occurring
+            .effect(() -> new MobEffectInstance(GarnishedEffects.SPIRITED_RESISTANCE, 900), 1.0f).build(); // 100% chance of occurring
     public static final FoodProperties MOLTEN_STEW = nether_min()
             .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, tick * 20), 1.0f).build(); // 100% chance of occurring
     public static final FoodProperties STURDY_WAFFLE = nether_min()
             .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, tick * 20), 0.75f).build(); // 75% chance of occurring
-    public static final FoodProperties PHANTOM_STEAK = nether_max().meat().build();
+    public static final FoodProperties PHANTOM_STEAK = nether_max().build();
     public static final FoodProperties BLAZING_DELIGHT = nether_max().build();
     // Generic Sweets (other than honeyed foods)
     public static final FoodProperties SENILE_SWEET = senileSweet().fast().build();
@@ -241,26 +242,26 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties SHELLED_DUMPLING = end_min().build(); // 50% chance of occurring
     // Exempt due to already providing an effect - negative or positive
     public static final FoodProperties BOTTLED_ENDER_JELLY = GENERIC_BOTTLED_FOOD_OR_DRINK
-            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE.get(), cognate_dur / 2, 1), 0.50f).build(); // 50% chance of occurring
+            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE, cognate_dur / 2, 1), 0.50f).build(); // 50% chance of occurring
     public static final FoodProperties COSMIC_BREW = end_min()
             .effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, tick * 30, 0), 1.0f).build(); // 100% chance of occurring
     public static final FoodProperties DESOLATE_STEW = end_min()
-            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE.get(), cognate_dur, 1), 0.20f).build(); // 20% chance of occurring
+            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE, cognate_dur, 1), 0.20f).build(); // 20% chance of occurring
     public static final FoodProperties ETHEREAL_CONCOCTION = generic(12, 0.60f)
-            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE.get(), cognate_dur, 1), 0.20f).build(); // 20% chance of occurring
+            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE, cognate_dur, 1), 0.20f).build(); // 20% chance of occurring
     public static final FoodProperties VOID_MIXTURE = end_min().build();
     public static final FoodProperties CHORUS_BOWL = end_max().build();
-    public static final FoodProperties CHORUS_COOKIE = generic(GENERIC_COOKIE_build.getNutrition(), GENERIC_COOKIE_build.getSaturationModifier())
+    public static final FoodProperties CHORUS_COOKIE = generic(GENERIC_COOKIE_build.nutrition(), GENERIC_COOKIE_build.saturation())
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, tick * 10, 1), 0.50f).build(); // 50% chance of occurring
     // Generic Sweets (other than honeyed foods)
     public static final FoodProperties GALACTIC_CANE = end_min()
-            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE.get(), cane_effect_dur, 1), 1.0f).build(); // 35% chance of occurring
+            .effect(() -> new MobEffectInstance(GarnishedEffects.COGNATE, cane_effect_dur, 1), 1.0f).build(); // 35% chance of occurring
     public static final FoodProperties ENDER_JELLY = generic(4, 0.30f).build(); // 100% chance of occurring
 
     // Farmer's Delight
     public static final FoodProperties PECAN_PIE_SLICE = generic(3, 0.20f).build();
-    public static final FoodProperties PHANTOM_BURGER = nether_max().meat().build();
-    public static final FoodProperties PHANTOM_BEEF_PATTY = nether_min().meat().build();
+    public static final FoodProperties PHANTOM_BURGER = nether_max().build();
+    public static final FoodProperties PHANTOM_BEEF_PATTY = nether_min().build();
     public static final FoodProperties GLOW_INK_ROLL = generic(10, 0.40f).fast().build();
     public static final FoodProperties GLOW_INK_ROLL_SLICE = generic(4, 0.30f).fast().build();
     // Generic Sweets (other than honeyed foods)
@@ -268,43 +269,43 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties BROWNIE_PIECE = generic(3, 0.20f).fast().build(); // 25% chance of occurring
 
     public static FoodProperties.Builder ow_min() {
-        return new FoodProperties.Builder().nutrition(OVERWORLD_MIN.nutrition).saturationMod(OVERWORLD_MIN.saturation);
+        return new FoodProperties.Builder().nutrition(OVERWORLD_MIN.nutrition).saturationModifier(OVERWORLD_MIN.saturation);
     }
 
     public static FoodProperties.Builder ow_max() {
-        return new FoodProperties.Builder().nutrition(OVERWORLD_MAX.nutrition).saturationMod(OVERWORLD_MAX.saturation);
+        return new FoodProperties.Builder().nutrition(OVERWORLD_MAX.nutrition).saturationModifier(OVERWORLD_MAX.saturation);
     }
 
     public static FoodProperties.Builder nether_min() {
-        return new FoodProperties.Builder().nutrition(NETHER_MIN.nutrition).saturationMod(NETHER_MIN.saturation);
+        return new FoodProperties.Builder().nutrition(NETHER_MIN.nutrition).saturationModifier(NETHER_MIN.saturation);
     }
 
     public static FoodProperties.Builder nether_max() {
-        return new FoodProperties.Builder().nutrition(NETHER_MAX.nutrition).saturationMod(NETHER_MAX.saturation);
+        return new FoodProperties.Builder().nutrition(NETHER_MAX.nutrition).saturationModifier(NETHER_MAX.saturation);
     }
 
     public static FoodProperties.Builder end_min() {
-        return new FoodProperties.Builder().nutrition(END_MIN.nutrition).saturationMod(END_MIN.saturation);
+        return new FoodProperties.Builder().nutrition(END_MIN.nutrition).saturationModifier(END_MIN.saturation);
     }
 
     public static FoodProperties.Builder end_max() {
-        return new FoodProperties.Builder().nutrition(END_MAX.nutrition).saturationMod(END_MAX.saturation);
+        return new FoodProperties.Builder().nutrition(END_MAX.nutrition).saturationModifier(END_MAX.saturation);
     }
 
     public static FoodProperties.Builder generic(int nutrition, float saturation) {
-        return new FoodProperties.Builder().nutrition(nutrition).saturationMod(saturation);
+        return new FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturation);
     }
 
     public static FoodProperties.Builder meltedCinderFlourNut() {
         return generic(7, 0.40f);
     }
 
-    public static FoodProperties.Builder wrappedTangle(Supplier<MobEffect> effect) {
-        return nether_min().effect(() -> new MobEffectInstance(effect.get(), tangle_dur, 1), 0.80f); // 80% chance of occurring
+    public static FoodProperties.Builder wrappedTangle(Holder<MobEffect> effect) {
+        return nether_min().effect(() -> new MobEffectInstance(effect, tangle_dur, 1), 0.80f); // 80% chance of occurring
     }
 
     public static FoodProperties.Builder senileSweet() {
-        return new FoodProperties.Builder().nutrition(NETHER_MIN.nutrition - 2).saturationMod(NETHER_MIN.saturation - 0.20f); // 100% chance of occurring
+        return new FoodProperties.Builder().nutrition(NETHER_MIN.nutrition - 2).saturationModifier(NETHER_MIN.saturation - 0.20f); // 100% chance of occurring
     }
 
 

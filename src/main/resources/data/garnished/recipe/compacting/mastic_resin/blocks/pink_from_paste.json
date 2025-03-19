@@ -1,0 +1,39 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "garnished:mastic_paste_pink"
+    },
+    {
+      "item": "garnished:mastic_paste_pink"
+    },
+    {
+      "item": "garnished:mastic_paste_pink"
+    },
+    {
+      "item": "garnished:mastic_paste_pink"
+    },
+    {
+      "item": "garnished:mastic_paste_pink"
+    },
+    {
+      "item": "garnished:mastic_paste_pink"
+    },
+    {
+      "item": "garnished:mastic_paste_pink"
+    },
+    {
+      "item": "garnished:mastic_paste_pink"
+    },
+    {
+      "item": "garnished:mastic_paste_pink"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:pink_mastic_block"
+      }
+    }
+  ]
+}

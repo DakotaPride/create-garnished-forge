@@ -1,14 +1,13 @@
 package net.dakotapride.garnished.recipe;
 
-import com.simibubi.create.Create;
 import com.simibubi.create.api.registry.CreateBuiltInRegistries;
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
-import com.simibubi.create.content.kinetics.fan.processing.FanProcessingTypeRegistry;
 import com.simibubi.create.foundation.recipe.RecipeApplier;
 import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
 import net.createmod.catnip.theme.Color;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.registry.*;
+import net.dakotapride.garnished.registry.recipe.GarnishedRecipeTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -17,11 +16,13 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.registries.DeferredRegister;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
@@ -76,8 +77,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class FreezingType implements FanProcessingType {
-        private static final FreezingFanRecipe.FreezingWrapper FREEZING_WRAPPER = new FreezingFanRecipe.FreezingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -95,17 +94,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            FREEZING_WRAPPER.setItem(0, stack);
-            Optional<FreezingFanRecipe> recipe = GarnishedRecipeTypes.FREEZING.find(FREEZING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.FREEZING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            FREEZING_WRAPPER.setItem(0, stack);
-            Optional<FreezingFanRecipe> recipe = GarnishedRecipeTypes.FREEZING.find(FREEZING_WRAPPER, level);
-            return recipe.map(freezingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, freezingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.FREEZING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -145,8 +142,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class RedDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -160,17 +155,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.RED_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.RED_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.RED_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.RED_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -201,8 +194,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class OrangeDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -216,17 +207,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.ORANGE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.ORANGE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.ORANGE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.ORANGE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -257,8 +246,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class YellowDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -270,19 +257,18 @@ public class GarnishedFanProcessing {
             return 2300;
         }
 
+
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.YELLOW_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.YELLOW_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.YELLOW_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.YELLOW_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -313,8 +299,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class GreenDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -328,17 +312,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.GREEN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.GREEN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.GREEN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.GREEN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -369,8 +351,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class LimeDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -384,17 +364,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIME_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIME_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIME_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIME_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -425,8 +403,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class BlueDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -438,19 +414,18 @@ public class GarnishedFanProcessing {
             return 2600;
         }
 
+
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BLUE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BLUE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BLUE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BLUE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -481,8 +456,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class LightBlueDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -496,17 +469,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -537,8 +508,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class CyanDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -552,17 +521,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.CYAN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.CYAN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.CYAN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.CYAN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -593,8 +560,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class PurpleDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -608,17 +573,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.PURPLE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.PURPLE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.PURPLE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.PURPLE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -649,8 +612,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class MagentaDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -664,17 +625,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -705,8 +664,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class PinkDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -720,17 +677,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.PINK_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.PINK_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.PINK_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.PINK_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -761,8 +716,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class BlackDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -776,17 +729,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BLACK_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BLACK_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BLACK_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BLACK_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -817,8 +768,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class GrayDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -832,17 +781,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.GRAY_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.GRAY_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.GRAY_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.GRAY_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -873,8 +820,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class LightGrayDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -888,17 +833,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -929,8 +872,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class WhiteDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -944,17 +885,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.WHITE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.WHITE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.WHITE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.WHITE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override
@@ -985,8 +924,6 @@ public class GarnishedFanProcessing {
     }
 
     public static class BrownDyeBlowingFanProcessingType implements FanProcessingType {
-        private static final DyeBlowingFanRecipe.DyeBlowingWrapper BLOWING_WRAPPER = new DyeBlowingFanRecipe.DyeBlowingWrapper();
-
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
@@ -1000,17 +937,15 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BROWN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BROWN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
             return recipe.isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            BLOWING_WRAPPER.setItem(0, stack);
-            Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BROWN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BROWN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
+            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
         }
 
         @Override

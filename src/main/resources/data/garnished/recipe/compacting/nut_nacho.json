@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "garnished:nut_flour"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "garnished:nut_nacho"
+      }
+    }
+  ]
+}

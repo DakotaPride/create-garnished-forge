@@ -1,0 +1,32 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "garnished:stone_types/zultanite/blue"
+    }
+  ],
+  "processing_time": 250,
+  "results": [
+    {
+      "count": 2,
+      "chance": 0.10,
+      "item": {
+        "id": "create:zinc_nugget"
+      }
+    },
+    {
+      "count": 1,
+      "chance": 0.05,
+      "item": {
+        "id": "create:zinc_nugget"
+      }
+    },
+    {
+      "count": 1,
+      "chance": 0.05,
+      "item": {
+        "id": "minecraft:gunpowder"
+      }
+    }
+  ]
+}

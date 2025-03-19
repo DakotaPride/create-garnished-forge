@@ -1,0 +1,16 @@
+{
+  "type": "garnished:red_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "minecraft:wool"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:red_wool"
+      },
+      "count": 1
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.block;
 
+import com.mojang.serialization.MapCodec;
 import net.dakotapride.garnished.registry.GarnishedBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
@@ -13,9 +14,15 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 public class SoulPlantBlock extends BushBlock {
+	public static final MapCodec<SoulPlantBlock> CODEC = simpleCodec(SoulPlantBlock::new);
 	protected static final VoxelShape SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 9.0, 12.0);
 	public SoulPlantBlock(Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	protected MapCodec<? extends BushBlock> codec() {
+		return CODEC;
 	}
 
 	@Override

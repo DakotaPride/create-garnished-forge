@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "garnished:lime_dye_blowing",
+  "ingredients": [
+    {
+      "tag": "farmersdelight:canvas_signs"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "farmersdelight:lime_canvas_sign"
+      },
+      "count": 1
+    }
+  ]
+}

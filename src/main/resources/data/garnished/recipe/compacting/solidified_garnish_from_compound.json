@@ -1,0 +1,30 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "minecraft:water"
+    },
+    {
+      "item": "garnished:garnish_compound"
+    },
+    {
+      "item": "garnished:salt_compound"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  {
+        "id": "garnished:solidified_garnish"
+      }
+    }
+  ]
+}

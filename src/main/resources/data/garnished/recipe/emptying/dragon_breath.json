@@ -1,0 +1,18 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "minecraft:dragon_breath"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id":  "minecraft:glass_bottle"
+    },
+    {
+      "amount": 250,
+      "fluid": "garnished:dragon_breath"
+    }
+  ]
+}
