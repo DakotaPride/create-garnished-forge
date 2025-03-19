@@ -22,7 +22,7 @@ public class GarnishedAdvancementUtils {
 
 
 
-    private static DeferredRegister<CriterionTrigger<?>> CRITERION_TRIGGERS = DeferredRegister.create(BuiltInRegistries.TRIGGER_TYPES, CreateGarnished.ID);
+    private static final DeferredRegister<CriterionTrigger<?>> CRITERION_TRIGGERS = DeferredRegister.create(BuiltInRegistries.TRIGGER_TYPES, CreateGarnished.ID);
 
     //public static DejojoTheAwsomeTrigger DEJOJO = new DejojoTheAwsomeTrigger();
 

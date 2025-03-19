@@ -3,18 +3,19 @@ package net.dakotapride.garnished.datagen;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.simibubi.create.foundation.utility.FilesHelper;
-//import com.simibubi.create.infrastructure.data.*;
-import com.simibubi.create.infrastructure.data.GeneratedEntriesProvider;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.providers.RegistrateDataProvider;
 import net.dakotapride.garnished.CreateGarnished;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
@@ -33,7 +34,7 @@ public class CreateGarnishedDatagen {
         lookupProvider = generatedEntriesProvider.getRegistryProvider();
         generator.addProvider(event.includeServer(), generatedEntriesProvider);
 
-        generator.addProvider(event.includeServer(), new CreateGarnishedAdvancements(output, lookupProvider));
+        //generator.addProvider(event.includeServer(), new CreateGarnishedAdvancements(output, lookupProvider));
 
 //        generator.addProvider(event.includeServer(), new CreateRecipeSerializerTagsProvider(output, lookupProvider, existingFileHelper));
 //        generator.addProvider(event.includeServer(), new CreateContraptionTypeTagsProvider(output, lookupProvider, existingFileHelper));
@@ -80,6 +81,19 @@ public class CreateGarnishedDatagen {
             String key = entry.getKey();
             String value = entry.getValue().getAsString();
             consumer.accept(key, value);
+        }
+    }
+
+    public static class GeneratedEntriesProvider extends DatapackBuiltinEntriesProvider {
+        private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder();
+
+        public GeneratedEntriesProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+            super(output, registries, BUILDER, Set.of(CreateGarnished.ID));
+        }
+
+        @Override
+        public String getName() {
+            return "Create: Garnished's Generated Registry Entries";
         }
     }
 }

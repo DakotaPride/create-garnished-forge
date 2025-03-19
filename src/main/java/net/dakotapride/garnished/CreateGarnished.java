@@ -110,7 +110,7 @@ public class CreateGarnished {
 
         GarnishedAdvancementUtils.register(eventBus);
         eventBus.addListener(CreateGarnished::onRegister);
-        eventBus.addListener(EventPriority.LOWEST, CreateGarnishedDatagen::gatherData);
+        //eventBus.addListener(EventPriority.LOWEST, CreateGarnishedDatagen::gatherData);
 
         REGISTRATE.registerEventListeners(eventBus);
         // Register the setup method for modloading

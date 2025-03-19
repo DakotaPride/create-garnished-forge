@@ -111,7 +111,7 @@ public class CreateGarnishedAdvancement {
         consumer.accept(descriptionKey(), description);
     }
 
-    static enum TaskType {
+    enum TaskType {
 
         SILENT(AdvancementType.TASK, false, false, false),
         NORMAL(AdvancementType.TASK, true, false, false),
