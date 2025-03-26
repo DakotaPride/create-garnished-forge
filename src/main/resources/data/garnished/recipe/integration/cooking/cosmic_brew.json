@@ -27,6 +27,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:cosmic_brew"
+    "id": "garnished:cosmic_brew"
   }
 }

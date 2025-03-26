@@ -15,7 +15,9 @@
     }
   },
   "result": {
-    "item": "garnished:mastic_resin_magenta",
+    "item": {
+      "id": "garnished:mastic_resin_magenta"
+    },
     "count": 8
   }
 }

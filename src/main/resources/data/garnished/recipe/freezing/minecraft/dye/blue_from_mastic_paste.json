@@ -7,13 +7,15 @@
   ],
   "results": [
     {
-      "item": "minecraft:blue_dye"
+      "item": {
+        "id": "minecraft:blue_dye"
       },
       "count": 2
     },
     {
       "chance": 0.25,
-      "item": "minecraft:blue_dye"
+      "item": {
+        "id": "minecraft:blue_dye"
       },
       "count": 1
     }

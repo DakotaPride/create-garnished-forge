@@ -7,7 +7,8 @@
   ],
   "results": [
     {
-      "item": "minecraft:chorus_flower"
+      "item": {
+        "id": "minecraft:chorus_flower"
       },
       "count": 1
     }

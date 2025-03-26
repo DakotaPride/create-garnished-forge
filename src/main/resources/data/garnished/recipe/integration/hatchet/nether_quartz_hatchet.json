@@ -25,6 +25,8 @@
   ],
   "result": {
     "count": 1,
-    "item": "garnished:nether_quartz_hatchet"
+    "item": {
+      "id": "garnished:nether_quartz_hatchet"
+    }
   }
 }

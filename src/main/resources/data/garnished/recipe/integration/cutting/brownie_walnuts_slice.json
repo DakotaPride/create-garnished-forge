@@ -14,7 +14,7 @@
   "result": [
     {
       "count": 4,
-      "item": "garnished:brownie_walnuts_piece"
+      "id": "garnished:brownie_walnuts_piece"
     }
   ],
   "tool": {

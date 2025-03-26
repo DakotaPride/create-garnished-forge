@@ -30,6 +30,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:overgrown_brew"
+    "id": "garnished:overgrown_brew"
   }
 }

@@ -7,13 +7,15 @@
   ],
   "results": [
     {
-      "item": "minecraft:sugar"
+      "item": {
+        "id": "minecraft:sugar"
       },
       "count": 1
     },
     {
       "chance": 0.25,
-      "item": "minecraft:sugar"
+      "item": {
+        "id": "minecraft:sugar"
       },
       "count": 1
     }

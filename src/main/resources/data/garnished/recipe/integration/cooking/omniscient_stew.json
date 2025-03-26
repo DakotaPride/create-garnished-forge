@@ -27,6 +27,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:omniscient_stew"
+    "id": "garnished:omniscient_stew"
   }
 }

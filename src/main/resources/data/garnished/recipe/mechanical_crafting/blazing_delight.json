@@ -26,6 +26,8 @@
     "D#E"
   ],
   "result": {
-    "item": "garnished:blazing_delight"
+    "item": {
+      "id": "garnished:blazing_delight"
+    }
   }
 }

@@ -23,6 +23,8 @@
     "C#C"
   ],
   "result": {
-    "item": "garnished:grim_stew"
+    "item": {
+      "id": "garnished:grim_stew"
+    }
   }
 }

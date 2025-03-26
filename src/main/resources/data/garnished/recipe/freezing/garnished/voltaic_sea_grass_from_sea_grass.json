@@ -7,7 +7,8 @@
   ],
   "results": [
     {
-      "item": "garnished:voltaic_sea_grass"
+      "item": {
+        "id": "garnished:voltaic_sea_grass"
       },
       "count": 1
     }

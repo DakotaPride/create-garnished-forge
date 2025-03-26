@@ -24,7 +24,9 @@
     }
   },
   "result": {
-    "item": "garnished:copper_hatchet",
+    "item": {
+      "id": "garnished:copper_hatchet"
+    },
     "count": 1
   }
 }

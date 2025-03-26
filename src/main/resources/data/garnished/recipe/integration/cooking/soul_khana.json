@@ -27,6 +27,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:soul_khana"
+    "id": "garnished:soul_khana"
   }
 }

@@ -26,6 +26,8 @@
     "  B  "
   ],
   "result": {
-    "item": "garnished:dusty_regale"
+    "item": {
+      "id": "garnished:dusty_regale"
+    }
   }
 }

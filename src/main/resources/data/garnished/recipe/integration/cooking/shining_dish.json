@@ -33,6 +33,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:shining_dish"
+    "id": "garnished:shining_dish"
   }
 }

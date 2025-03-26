@@ -15,7 +15,9 @@
     }
   },
   "result": {
-    "item": "garnished:mastic_resin_green",
+    "item": {
+      "id": "garnished:mastic_resin_green"
+    },
     "count": 8
   }
 }

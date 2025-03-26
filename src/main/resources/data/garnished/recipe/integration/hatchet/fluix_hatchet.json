@@ -14,7 +14,7 @@
   },
   "result": {
     "count": 1,
-    "item": "garnished:fluix_hatchet"
+    "id": "garnished:fluix_hatchet"
   },
   "template": {
     "item": "ae2:fluix_upgrade_smithing_template"

@@ -24,6 +24,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:wrapped_crimson_tangle"
+    "id": "garnished:wrapped_crimson_tangle"
   }
 }

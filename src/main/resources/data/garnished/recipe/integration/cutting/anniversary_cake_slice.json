@@ -14,7 +14,7 @@
   "result": [
     {
       "count": 8,
-      "item": "garnished:anniversary_cake_slice"
+      "id": "garnished:anniversary_cake_slice"
     }
   ],
   "tool": {

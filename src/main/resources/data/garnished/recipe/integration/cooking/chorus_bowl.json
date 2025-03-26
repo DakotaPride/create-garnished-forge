@@ -33,6 +33,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:chorus_bowl"
+    "id": "garnished:chorus_bowl"
   }
 }

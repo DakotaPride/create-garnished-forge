@@ -30,6 +30,8 @@
     "ACECA"
   ],
   "result": {
-    "item": "garnished:anniversary_cake"
+    "item": {
+      "id": "garnished:anniversary_cake"
+    }
   }
 }

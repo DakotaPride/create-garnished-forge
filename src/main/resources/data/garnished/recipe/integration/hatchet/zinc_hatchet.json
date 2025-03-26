@@ -24,7 +24,9 @@
     }
   },
   "result": {
-    "item": "garnished:zinc_hatchet",
+    "item": {
+      "id": "garnished:zinc_hatchet"
+    },
     "count": 1
   }
 }

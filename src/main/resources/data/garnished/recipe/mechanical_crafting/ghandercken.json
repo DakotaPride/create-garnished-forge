@@ -24,6 +24,8 @@
   ],
   "result": {
     "count": 1,
-    "item": "garnished:ghandercken"
+    "item": {
+      "id": "garnished:ghandercken"
+    }
   }
 }

@@ -13,7 +13,9 @@
     "#A#"
   ],
   "result": {
-    "item": "garnished:galactic_cane",
+    "item": {
+      "id": "garnished:galactic_cane"
+    },
     "count": 3
   }
 }

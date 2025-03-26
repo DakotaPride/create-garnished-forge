@@ -33,6 +33,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:vermilion_stew"
+    "id": "garnished:vermilion_stew"
   }
 }

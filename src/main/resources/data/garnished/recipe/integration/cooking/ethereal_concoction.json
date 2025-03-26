@@ -24,6 +24,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:ethereal_concoction"
+    "id": "garnished:ethereal_concoction"
   }
 }

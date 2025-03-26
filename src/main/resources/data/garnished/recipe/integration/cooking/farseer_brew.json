@@ -27,6 +27,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:farseer_brew"
+    "id": "garnished:farseer_brew"
   }
 }

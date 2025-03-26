@@ -30,7 +30,9 @@
     }
   },
   "result": {
-    "item": "garnished:rose_quartz_hatchet",
+    "item": {
+      "id": "garnished:rose_quartz_hatchet"
+    },
     "count": 1
   }
 }

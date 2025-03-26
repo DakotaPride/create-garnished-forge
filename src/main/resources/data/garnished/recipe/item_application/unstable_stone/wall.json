@@ -10,7 +10,9 @@
   ],
   "results": [
     {
-      "item": "garnished:unstable_stone_wall"
+      "item": {
+        "id": "garnished:unstable_stone_wall"
+      }
     }
   ]
 }

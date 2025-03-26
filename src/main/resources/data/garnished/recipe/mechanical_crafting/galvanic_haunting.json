@@ -21,6 +21,8 @@
     " B "
   ],
   "result": {
-    "item": "garnished:galvanic_haunting"
+    "item": {
+      "id": "garnished:galvanic_haunting"
+    }
   }
 }

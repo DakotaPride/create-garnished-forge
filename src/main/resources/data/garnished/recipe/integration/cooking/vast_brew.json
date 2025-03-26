@@ -33,6 +33,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:vast_brew"
+    "id": "garnished:vast_brew"
   }
 }

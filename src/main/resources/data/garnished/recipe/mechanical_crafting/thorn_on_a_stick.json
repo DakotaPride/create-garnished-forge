@@ -21,6 +21,8 @@
     "#P "
   ],
   "result": {
-    "item": "garnished:thorn_on_a_stick"
+    "item": {
+      "id": "garnished:thorn_on_a_stick"
+    }
   }
 }

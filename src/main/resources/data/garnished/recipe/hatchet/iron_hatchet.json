@@ -18,7 +18,9 @@
     }
   },
   "result": {
-    "item": "garnished:iron_hatchet",
+    "item": {
+      "id": "garnished:iron_hatchet"
+    },
     "count": 1
   }
 }

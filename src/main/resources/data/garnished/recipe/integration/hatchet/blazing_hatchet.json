@@ -16,7 +16,8 @@
   ],
   "results": [
     {
-      "item": "garnished:blazing_hatchet"
+      "item": {
+        "id": "garnished:blazing_hatchet"
       },
       "count": 1
     }

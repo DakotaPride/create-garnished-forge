@@ -30,6 +30,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:iniquitous_brew"
+    "id": "garnished:iniquitous_brew"
   }
 }

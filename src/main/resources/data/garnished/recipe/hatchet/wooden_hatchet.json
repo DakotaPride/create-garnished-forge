@@ -18,7 +18,9 @@
     }
   },
   "result": {
-    "item": "garnished:wooden_hatchet",
+    "item": {
+      "id": "garnished:wooden_hatchet"
+    },
     "count": 1
   }
 }

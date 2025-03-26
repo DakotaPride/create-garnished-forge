@@ -10,6 +10,6 @@
     "item": "minecraft:netherite_ingot"
   },
   "result": {
-    "item": "garnished:netherite_hatchet"
+    "id": "garnished:netherite_hatchet"
   }
 }

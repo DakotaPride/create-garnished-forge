@@ -27,6 +27,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:frosted_dessert"
+    "id": "garnished:frosted_dessert"
   }
 }

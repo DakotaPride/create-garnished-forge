@@ -7,7 +7,8 @@
   ],
   "results": [
     {
-      "item": "minecraft:slime_ball"
+      "item": {
+        "id": "minecraft:slime_ball"
       },
       "count": 1
     }

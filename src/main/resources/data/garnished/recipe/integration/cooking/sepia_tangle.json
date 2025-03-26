@@ -24,6 +24,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:wrapped_sepia_tangle"
+    "id": "garnished:wrapped_sepia_tangle"
   }
 }

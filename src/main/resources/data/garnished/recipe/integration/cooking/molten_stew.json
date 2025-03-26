@@ -30,6 +30,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:molten_stew"
+    "id": "garnished:molten_stew"
   }
 }

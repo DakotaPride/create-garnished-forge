@@ -14,7 +14,7 @@
   "result": [
     {
       "count": 3,
-      "item": "garnished:glow_ink_roll_slice"
+      "id": "garnished:glow_ink_roll_slice"
     }
   ],
   "tool": {

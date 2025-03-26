@@ -25,6 +25,8 @@
   ],
   "result": {
     "count": 1,
-    "item": "garnished:certus_quartz_hatchet"
+    "item": {
+      "id": "garnished:certus_quartz_hatchet"
+    }
   }
 }

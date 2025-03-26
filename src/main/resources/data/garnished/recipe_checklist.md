@@ -1,18 +1,18 @@
 - Compacting [ <u>✓</u> | ✗ ]
 - Crushing [ <u>✓</u> | ✗ ]
 - Cutting [ <u>✓</u> | ✗ ]
-- Deploying [ ✓ | ✗ ] (slime_drops/blue.json)
-- Dye Blowing [ ✓ | ✗ ]
-- Emptying [ ✓ | ✗ ]
-- Filling [ ✓ | ✗ ]
-- Freezing [ ✓ | ✗ ]
-- Hatchet [ ✓ | ✗ ]
-- Integration [ ✓ | ✗ ]
-- Item Application [ ✓ | ✗ ]
-- Mastic Paste [ ✓ | ✗ ]
-- Mastic Resin [ ✓ | ✗ ]
-- Mechanical Crafting [ ✓ | ✗ ]
-- Milling [ ✓ | ✗ ]
+- Deploying [ <u>✓</u> | ✗ ]
+- Dye Blowing [ ✓ | ✗ ] (Have to fix dye blowing recipes at a base level)
+- Emptying [ <u>✓</u> | ✗ ]
+- Filling [ <u>✓</u> | ✗ ]
+- Freezing [ ✓ | ✗ ] (Have to fix freezing recipes at a base level)
+- Hatchet [ <u>✓</u> | ✗ ]
+- Integration [ <u>✓</u> | ✗ ] (Create Crafts & Additions + Create Mechanical Extruder have not been updated to 1.21 yet)
+- Item Application [ <u>✓</u> | ✗ ]
+- Mastic Paste [ <u>✓</u> | ✗ ]
+- Mastic Resin [ <u>✓</u> | ✗ ]
+- Mechanical Crafting [ <u>✓</u> | ✗ ]
+- Milling [ ✓ | ✗ ] (in-progress)
 - Mixing [ ✓ | ✗ ]
 - Pressing [ ✓ | ✗ ]
 - Sack [ ✓ | ✗ ]

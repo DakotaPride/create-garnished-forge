@@ -13,7 +13,7 @@
     "item": "additionaladditions:gold_ring"
   },
   "result": {
-    "item": "garnished:gilded_netherite_hatchet"
+    "id": "garnished:gilded_netherite_hatchet"
   },
   "template": {
     "item": "additionaladditions:gilded_netherite_upgrade"

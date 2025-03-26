@@ -10,7 +10,9 @@
   ],
   "results": [
     {
-      "item": "garnished:unstable_stone_stairs"
+      "item": {
+        "id": "garnished:unstable_stone_stairs"
+      }
     }
   ]
 }

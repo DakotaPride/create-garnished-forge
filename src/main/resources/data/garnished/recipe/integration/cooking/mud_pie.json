@@ -24,6 +24,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:mud_pie"
+    "id": "garnished:mud_pie"
   }
 }

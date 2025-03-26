@@ -30,6 +30,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:garnished_meal"
+    "id": "garnished:garnished_meal"
   }
 }

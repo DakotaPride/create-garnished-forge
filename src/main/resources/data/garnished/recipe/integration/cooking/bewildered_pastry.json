@@ -24,6 +24,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:bewildered_pastry"
+    "id": "garnished:bewildered_pastry"
   }
 }

@@ -13,7 +13,7 @@
     "item": "additionaladditions:rose_gold_alloy"
   },
   "result": {
-    "item": "garnished:rose_gold_hatchet"
+    "id": "garnished:rose_gold_hatchet"
   },
   "template": {
     "item": "additionaladditions:rose_gold_upgrade"

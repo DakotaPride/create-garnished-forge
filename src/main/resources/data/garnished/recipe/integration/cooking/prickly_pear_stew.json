@@ -30,6 +30,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:prickly_pear_stew"
+    "id": "garnished:prickly_pear_stew"
   }
 }

@@ -10,7 +10,9 @@
   ],
   "results": [
     {
-      "item": "garnished:unstable_stone"
+      "item": {
+        "id": "garnished:unstable_stone"
+      }
     }
   ]
 }

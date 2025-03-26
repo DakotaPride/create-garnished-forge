@@ -27,6 +27,6 @@
   ],
   "recipe_book_tab": "drinks",
   "result": {
-    "item": "garnished:grim_stew"
+    "id": "garnished:grim_stew"
   }
 }

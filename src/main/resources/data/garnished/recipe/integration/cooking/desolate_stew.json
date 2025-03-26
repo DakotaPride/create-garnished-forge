@@ -27,6 +27,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:desolate_stew"
+    "id": "garnished:desolate_stew"
   }
 }

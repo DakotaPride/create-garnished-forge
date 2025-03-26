@@ -7,13 +7,15 @@
   ],
   "results": [
     {
-      "item": "minecraft:orange_dye"
+      "item": {
+        "id": "minecraft:orange_dye"
       },
       "count": 2
     },
     {
       "chance": 0.25,
-      "item": "minecraft:orange_dye"
+      "item": {
+        "id": "minecraft:orange_dye"
       },
       "count": 1
     }

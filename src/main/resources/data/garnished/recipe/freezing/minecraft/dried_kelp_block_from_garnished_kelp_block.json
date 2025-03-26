@@ -7,7 +7,8 @@
   ],
   "results": [
     {
-      "item": "minecraft:dried_kelp_block"
+      "item": {
+        "id": "minecraft:dried_kelp_block"
       },
       "count": 1
     }

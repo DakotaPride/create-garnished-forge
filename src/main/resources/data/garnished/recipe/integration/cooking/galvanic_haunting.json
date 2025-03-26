@@ -33,6 +33,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:galvanic_haunting"
+    "id": "garnished:galvanic_haunting"
   }
 }

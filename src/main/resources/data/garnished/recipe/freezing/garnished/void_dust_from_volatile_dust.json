@@ -7,7 +7,8 @@
   ],
   "results": [
     {
-      "item": "garnished:void_dust"
+      "item": {
+        "id": "garnished:void_dust"
       },
       "count": 1
     }

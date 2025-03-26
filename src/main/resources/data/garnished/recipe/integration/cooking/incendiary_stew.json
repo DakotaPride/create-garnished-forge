@@ -30,6 +30,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:incendiary_stew"
+    "id": "garnished:incendiary_stew"
   }
 }

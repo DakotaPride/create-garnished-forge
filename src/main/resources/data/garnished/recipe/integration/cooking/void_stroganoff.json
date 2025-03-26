@@ -27,6 +27,6 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "garnished:void_stroganoff"
+    "id": "garnished:void_stroganoff"
   }
 }
