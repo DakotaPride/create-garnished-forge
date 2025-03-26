@@ -148,7 +148,7 @@ public class AnniversaryCakeBlock extends BaseEntityBlock {
      * net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#getAnalogOutputSignal} whenever possible.
      * Implementing/overriding is fine.
      */
-    public int getAnalogOutputSignal(BlockState pBlockState, Level pLevel, BlockPos pPos) {
+    public int getAnalogOutputSignal(BlockState pBlockState, @NotNull Level pLevel, @NotNull BlockPos pPos) {
         return getOutputSignal(pBlockState.getValue(BITES));
     }
 
@@ -161,7 +161,7 @@ public class AnniversaryCakeBlock extends BaseEntityBlock {
      * net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#hasAnalogOutputSignal} whenever possible.
      * Implementing/overriding is fine.
      */
-    public boolean hasAnalogOutputSignal(BlockState pState) {
+    public boolean hasAnalogOutputSignal(@NotNull BlockState pState) {
         return true;
     }
 
