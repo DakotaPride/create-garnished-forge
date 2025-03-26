@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:almond_sack"
-    },
+    "id": "garnished:almond_sack",
     "count": 1
   }
 }

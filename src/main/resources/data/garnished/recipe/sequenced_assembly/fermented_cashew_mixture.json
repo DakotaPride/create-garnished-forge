@@ -17,14 +17,14 @@
           "item": "garnished:incomplete_cashew_mixture"
         },
         {
+          "type": "fluid_stack",
           "amount": 100,
-          "fluid": "garnished:cashew_mixture",
-          "nbt": {}
+          "fluid": "garnished:cashew_mixture"
         }
       ],
       "results": [
         {
-          "item": "garnished:incomplete_cashew_mixture"
+          "id": "garnished:incomplete_cashew_mixture"
         }
       ]
     },
@@ -40,12 +40,12 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_cashew_mixture"
+          "id": "garnished:incomplete_cashew_mixture"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_cashew_mixture"
   }
 }

@@ -5,6 +5,7 @@
       "item": "garnished:almond"
     },
     {
+      "type": "fluid_tag",
       "amount": 250,
       "fluid_tag": "c:honey"
     }
@@ -13,6 +14,8 @@
     {
       "item": {
         "id":  "garnished:honeyed_almond"
+      }
     }
   ]
 }
+

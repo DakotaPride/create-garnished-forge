@@ -7,10 +7,7 @@
     }
   ],
   "result": {
-    "item": {
-      "id": {
-      "id": "garnished:pistachio"
-    },
+    "id": "garnished:pistachio",
     "count": 4
   }
 }

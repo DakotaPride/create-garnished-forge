@@ -12,9 +12,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:unstable_stone_stairs"
-    },
+      "id": "garnished:unstable_stone_stairs",
     "count": 4
   }
 }

@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:polished_unstable_stone"
-    },
+      "id": "garnished:polished_unstable_stone",
     "count": 4
   }
 }

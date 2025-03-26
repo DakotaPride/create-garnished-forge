@@ -22,7 +22,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_ender_dragon_egg"
+          "id": "garnished:incomplete_ender_dragon_egg"
         }
       ]
     },
@@ -33,19 +33,19 @@
           "item": "garnished:incomplete_ender_dragon_egg"
         },
         {
+          "type": "fluid_stack",
           "amount": 250,
-          "fluid": "garnished:dragon_breath",
-          "nbt": {}
+          "fluid": "garnished:dragon_breath"
         }
       ],
       "results": [
         {
-          "item": "garnished:incomplete_ender_dragon_egg"
+          "id": "garnished:incomplete_ender_dragon_egg"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_ender_dragon_egg"
   }
 }

@@ -15,9 +15,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:mastic_resin_black"
-    },
+    "id": "garnished:mastic_resin_black",
     "count": 8
   }
 }

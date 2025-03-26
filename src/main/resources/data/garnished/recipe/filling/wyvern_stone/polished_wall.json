@@ -5,13 +5,14 @@
       "item": "garnished:polished_unstable_stone_wall"
     },
     {
+      "type": "fluid_stack",
       "amount": 250,
       "fluid": "garnished:dragon_breath"
     }
   ],
   "results": [
     {
-      "item": "garnished:polished_dragon_stone_wall"
+      "id": "garnished:polished_dragon_stone_wall"
     }
   ]
 }

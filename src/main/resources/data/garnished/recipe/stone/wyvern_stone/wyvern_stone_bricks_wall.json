@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:dragon_stone_brick_wall"
-    },
+      "id": "garnished:dragon_stone_brick_wall",
     "count": 6
   }
 }

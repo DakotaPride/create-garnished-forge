@@ -1,6 +1,6 @@
 {
   "type": "create:mechanical_crafting",
-  "acceptMirrored": false,
+  "accept_mirrored": false,
   "key": {
     "A": {
       "item": "garnished:enflamed_mandible"
@@ -26,8 +26,6 @@
     "D#E"
   ],
   "result": {
-    "item": {
-      "id": "garnished:blazing_delight"
-    }
+    "id": "garnished:blazing_delight"
   }
 }

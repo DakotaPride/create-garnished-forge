@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:polished_dragon_stone"
-    },
+      "id": "garnished:polished_dragon_stone",
     "count": 4
   }
 }

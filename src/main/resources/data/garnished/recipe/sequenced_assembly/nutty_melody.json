@@ -19,7 +19,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_nutty_melody"
+          "id": "garnished:incomplete_nutty_melody"
         }
       ]
     },
@@ -35,7 +35,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_nutty_melody"
+          "id": "garnished:incomplete_nutty_melody"
         }
       ]
     },
@@ -51,7 +51,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_nutty_melody"
+          "id": "garnished:incomplete_nutty_melody"
         }
       ]
     },
@@ -67,7 +67,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_nutty_melody"
+          "id": "garnished:incomplete_nutty_melody"
         }
       ]
     },
@@ -83,7 +83,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_nutty_melody"
+          "id": "garnished:incomplete_nutty_melody"
         }
       ]
     },
@@ -94,19 +94,19 @@
           "item": "garnished:incomplete_nutty_melody"
         },
         {
+          "type": "fluid_stack",
           "amount": 500,
-          "fluid": "garnished:purple_mastic_resin",
-          "nbt": {}
+          "fluid": "garnished:purple_mastic_resin"
         }
       ],
       "results": [
         {
-          "item": "garnished:incomplete_nutty_melody"
+          "id": "garnished:incomplete_nutty_melody"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_nutty_melody"
   }
 }

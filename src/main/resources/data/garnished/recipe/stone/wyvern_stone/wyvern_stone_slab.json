@@ -10,9 +10,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:dragon_stone_slab"
-    },
+      "id": "garnished:dragon_stone_slab",
     "count": 6
   }
 }

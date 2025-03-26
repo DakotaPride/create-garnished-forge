@@ -17,14 +17,14 @@
           "item": "garnished:incomplete_tophet_brew"
         },
         {
+          "type": "fluid_stack",
           "amount": 100,
-          "fluid": "minecraft:lava",
-          "nbt": {}
+          "fluid": "minecraft:lava"
         }
       ],
       "results": [
         {
-          "item": "garnished:incomplete_tophet_brew"
+          "id": "garnished:incomplete_tophet_brew"
         }
       ]
     },
@@ -40,7 +40,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_tophet_brew"
+          "id": "garnished:incomplete_tophet_brew"
         }
       ]
     },
@@ -56,12 +56,12 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_tophet_brew"
+          "id": "garnished:incomplete_tophet_brew"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_tophet_brew"
   }
 }

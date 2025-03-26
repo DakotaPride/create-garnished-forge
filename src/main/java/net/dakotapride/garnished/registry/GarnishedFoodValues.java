@@ -45,10 +45,10 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
         this.saturation = saturation;
     }
 
-    private static int mod(float value, boolean isSaturation) {
+    private static float mod(float value, boolean isSaturation) {
         if (isSaturation)
-            return (int) (value + 0.20f);
-        else return (int) (value + 2.0f);
+            return (value + 0.20f);
+        else return (value + 2.0f);
     }
 
     public static boolean hasSugarHigh;
@@ -70,17 +70,17 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties UNGARNISHED_NUT = ow_min().effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 240), 1.0f).build();
     public static final FoodProperties
             GARNISHED_NUT = generic(4, 0.20f).build(),
-            SWEETENED_NUT = generic(mod(4, false), 0.20f).build(),
+            SWEETENED_NUT = generic((int) mod(4, false), 0.20f).build(),
             CHOCOLATE_GLAZED_NUT = generic(4, mod(0.20f, true)).build(),
-            HONEYED_NUT = generic(mod(4, false), mod(0.20f, true)).build();
+            HONEYED_NUT = generic((int)mod(4, false), mod(0.20f, true)).build();
     public static final FoodProperties
             GARNISHED_NUT_MIX = generic(7, 0.40f).build(),
-            SWEETENED_NUT_MIX = generic(mod(7, false), 0.40f).build(),
+            SWEETENED_NUT_MIX = generic((int)mod(7, false), 0.40f).build(),
             CHOCOLATE_GLAZED_NUT_MIX = generic(7, mod(0.40f, true)).build(),
-            HONEYED_NUT_MIX = generic(mod(7, false), mod(0.40f, true)).build();
+            HONEYED_NUT_MIX = generic((int)mod(7, false), mod(0.40f, true)).build();
     public static final FoodProperties
             GARNISHED_BERRIES = generic(5, 0.30f).build(),
-            HONEYED_BERRIES = generic(mod(5, false), mod(0.30f, true)).build();
+            HONEYED_BERRIES = generic((int)mod(5, false), mod(0.30f, true)).build();
     public static final FoodProperties MELTED_CINDER_FLOUR_NUT = meltedCinderFlourNut().build();
     public static final FoodProperties MELTED_CINDER_FLOUR_PEANUT = meltedCinderFlourNut()
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, cinder_dur), 1.0f) // 100% chance of occurring

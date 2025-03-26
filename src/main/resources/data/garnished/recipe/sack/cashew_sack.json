@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:cashew_sack"
-    },
+    "id": "garnished:cashew_sack",
     "count": 1
   }
 }

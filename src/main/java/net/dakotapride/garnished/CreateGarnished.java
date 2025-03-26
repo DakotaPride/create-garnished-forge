@@ -61,12 +61,13 @@ public class CreateGarnished {
 
     // T.ODO: FIX THE RAVAGING LOOT TABLES
     // T.ODO: FIX THE SALVAGING LOOT TABLES
-    // TODO: FIX FAN PROCESSING TYPES
-    // TODO: FIX FAN PROCESSING RECIPE TYPES
+    // T.ODO: FIX FAN PROCESSING TYPES
+    // T.ODO: FIX FAN PROCESSING RECIPE TYPES
     // T.ODO: FIX STRIKING DAMAGE MULTIPLIER NOT BEING APPLIED NO MATTER THE ENCHANTMENT LEVEL - WAS APPARENTLY NEVER AN ISSUE, MINECRAFT JUST CHANGED HOW DAMAGE IS SHOWN IN THE TOOLTIP FOR SOME REASON
     // T.ODO: PORT ALL RECIPES TO HAVE "item": { "id": "<ITEM>" } because of 1.21 changes
     // T.ODO: MAKE SURE THAT ALL RECIPES USING A HEAT REQUIREMENT ARE FORMATTED CORRECTLY
     // T.ODO: MAKE SURE THAT ALL RECIPES USING PROCESSING SPEED ARE FORMATTED CORRECTLY
+    // TODO: MAKE WANDERING TRADER PROVIDE INGREDIENTS AND CERTAIN OTHER ITEMS FROM GARNISHED
 
 
 
@@ -109,7 +110,8 @@ public class CreateGarnished {
         LootModifiers.register(eventBus);
 
         GarnishedAdvancementUtils.register(eventBus);
-        eventBus.addListener(CreateGarnished::onRegister);
+        GarnishedFanProcessing.register(eventBus);
+        //eventBus.addListener(CreateGarnished::onRegister);
         //eventBus.addListener(EventPriority.LOWEST, CreateGarnishedDatagen::gatherData);
 
         REGISTRATE.registerEventListeners(eventBus);
@@ -124,9 +126,7 @@ public class CreateGarnished {
         NeoForge.EVENT_BUS.register(this);
     }
 
-    public static void onRegister(final RegisterEvent event) {
-        GarnishedFanProcessing.register();
-    }
+    // public static void onRegister(final RegisterEvent event) {}
 
     @SubscribeEvent
     public void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {

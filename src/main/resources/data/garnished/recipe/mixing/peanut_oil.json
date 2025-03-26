@@ -15,6 +15,7 @@
       "item": "garnished:peanut"
     },
     {
+      "type": "fluid_stack",
       "amount": 250,
       "fluid": "minecraft:water"
     }
@@ -22,7 +23,7 @@
   "results": [
     {
       "amount": 250,
-      "fluid": "garnished:peanut_oil"
+      "id": "garnished:peanut_oil"
     }
   ]
 }

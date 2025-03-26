@@ -1,6 +1,6 @@
 {
   "type": "create:mechanical_crafting",
-  "acceptMirrored": false,
+  "accept_mirrored": false,
   "key": {
     "V": {
       "item": "garnished:voltaic_sea_grass"
@@ -21,8 +21,6 @@
     " B "
   ],
   "result": {
-    "item": {
-      "id": "garnished:galvanic_haunting"
-    }
+    "id": "garnished:galvanic_haunting"
   }
 }

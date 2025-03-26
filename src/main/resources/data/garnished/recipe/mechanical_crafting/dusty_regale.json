@@ -1,6 +1,6 @@
 {
   "type": "create:mechanical_crafting",
-  "acceptMirrored": false,
+  "accept_mirrored": false,
   "key": {
     "T": {
       "item": "minecraft:terracotta"
@@ -26,8 +26,6 @@
     "  B  "
   ],
   "result": {
-    "item": {
-      "id": "garnished:dusty_regale"
-    }
+    "id": "garnished:dusty_regale"
   }
 }

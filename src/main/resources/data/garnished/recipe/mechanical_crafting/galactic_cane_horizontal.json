@@ -1,6 +1,6 @@
 {
   "type": "create:mechanical_crafting",
-  "acceptMirrored": true,
+  "accept_mirrored": true,
   "key": {
     "A": {
       "item": "garnished:garnish_powder"
@@ -13,9 +13,7 @@
     "#A#"
   ],
   "result": {
-    "item": {
-      "id": "garnished:galactic_cane"
-    },
+    "id": "garnished:galactic_cane",
     "count": 3
   }
 }

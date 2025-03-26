@@ -19,7 +19,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_hardened_wrap"
+          "id": "garnished:incomplete_hardened_wrap"
         }
       ]
     },
@@ -35,7 +35,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_crimson_tusk"
+          "id": "garnished:incomplete_crimson_tusk"
         }
       ]
     },
@@ -51,12 +51,12 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_hardened_wrap"
+          "id": "garnished:incomplete_hardened_wrap"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_hardened_wrap"
   }
 }

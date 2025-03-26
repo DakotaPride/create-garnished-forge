@@ -23,7 +23,7 @@
   "results": [
     {
       "amount": 250,
-      "fluid": "garnished:apple_cider"
+      "id": "garnished:apple_cider"
     }
   ]
 }

@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:pecan_sack"
-    },
+    "id": "garnished:pecan_sack",
     "count": 1
   }
 }

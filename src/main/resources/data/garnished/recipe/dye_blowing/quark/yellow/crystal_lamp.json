@@ -13,7 +13,8 @@
   ],
   "results": [
     {
-      "item": "quark:yellow_crystal_lamp"
+      "item": {
+        "id": "quark:yellow_crystal_lamp"
       },
       "count": 1
     }

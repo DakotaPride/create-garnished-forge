@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:abyssal_stone_bricks"
-    },
+    "id": "garnished:abyssal_stone_bricks",
     "count": 4
   }
 }

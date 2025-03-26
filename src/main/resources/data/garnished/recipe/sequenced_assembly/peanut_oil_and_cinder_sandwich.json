@@ -19,7 +19,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_peanut_cinder_sandwich"
+          "id": "garnished:incomplete_peanut_cinder_sandwich"
         }
       ]
     },
@@ -30,14 +30,14 @@
           "item": "garnished:incomplete_peanut_cinder_sandwich"
         },
         {
+          "type": "fluid_stack",
           "amount": 250,
-          "fluid": "garnished:peanut_oil",
-          "nbt": {}
+          "fluid": "garnished:peanut_oil"
         }
       ],
       "results": [
         {
-          "item": "garnished:incomplete_peanut_cinder_sandwich"
+          "id": "garnished:incomplete_peanut_cinder_sandwich"
         }
       ]
     },
@@ -53,12 +53,12 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_peanut_cinder_sandwich"
+          "id": "garnished:incomplete_peanut_cinder_sandwich"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_peanut_cinder_sandwich"
   }
 }

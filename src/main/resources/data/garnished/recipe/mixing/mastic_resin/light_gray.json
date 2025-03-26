@@ -9,7 +9,7 @@
   "results": [
     {
       "amount": 250,
-      "fluid": "garnished:light_gray_mastic_resin"
+      "id": "garnished:light_gray_mastic_resin"
     }
   ]
 }

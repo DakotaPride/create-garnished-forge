@@ -12,6 +12,7 @@
       "item": "garnished:sugar_cube"
     },
     {
+      "type": "fluid_stack",
       "amount": 250,
       "fluid": "create:tea"
     }
@@ -19,7 +20,7 @@
   "results": [
     {
       "amount": 250,
-      "fluid": "garnished:sweet_tea"
+      "id": "garnished:sweet_tea"
     }
   ]
 }

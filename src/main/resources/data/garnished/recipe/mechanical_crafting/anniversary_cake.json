@@ -1,6 +1,6 @@
 {
   "type": "create:mechanical_crafting",
-  "acceptMirrored": true,
+  "accept_mirrored": true,
   "key": {
     "X": {
       "item": "minecraft:sugar"
@@ -30,8 +30,6 @@
     "ACECA"
   ],
   "result": {
-    "item": {
-      "id": "garnished:anniversary_cake"
-    }
+    "id": "garnished:anniversary_cake"
   }
 }

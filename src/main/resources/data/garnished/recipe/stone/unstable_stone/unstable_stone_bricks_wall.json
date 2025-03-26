@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:unstable_stone_brick_wall"
-    },
+      "id": "garnished:unstable_stone_brick_wall",
     "count": 6
   }
 }

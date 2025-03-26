@@ -705,7 +705,8 @@ public class GarnishedItems {
 	public static final ItemEntry<SandPaperItem> POLAR_HIDE_SCRATCH_PAPER =
 			REGISTRATE.item("polar_hide_scratch_paper", SandPaperItem::new)
 					.onRegister(s -> ItemDescription.referKey(s, AllItems.SAND_PAPER))
-					.properties(p -> p.durability(32)).register();
+					//.properties(p -> p.durability(32))
+					.register();
 
 	public static final ItemEntry<Item> FROST =
 			REGISTRATE.item("frost", Item::new).register();

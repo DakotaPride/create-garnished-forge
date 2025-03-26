@@ -9,7 +9,7 @@
   "results": [
     {
       "amount": 250,
-      "fluid": "garnished:cyan_mastic_resin"
+      "id": "garnished:cyan_mastic_resin"
     }
   ]
 }

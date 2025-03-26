@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:peanut_sack"
-    },
+    "id": "garnished:peanut_sack",
     "count": 1
   }
 }

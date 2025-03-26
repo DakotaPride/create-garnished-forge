@@ -7,13 +7,11 @@
   ],
   "results": [
     {
-      "item": {
-        "id": "minecraft:glass_bottle"
-      }
+      "id": "minecraft:glass_bottle"
     },
     {
       "amount": 250,
-      "fluid": "garnished:dragon_breath"
+      "id": "garnished:dragon_breath"
     }
   ]
 }

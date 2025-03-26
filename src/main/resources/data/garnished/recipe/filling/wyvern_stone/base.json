@@ -5,13 +5,15 @@
       "item": "garnished:unstable_stone"
     },
     {
+      "type": "fluid_stack",
       "amount": 250,
       "fluid": "garnished:dragon_breath"
     }
   ],
   "results": [
     {
-      "item": "garnished:dragon_stone"
+      "id": "garnished:dragon_stone"
     }
   ]
 }
+

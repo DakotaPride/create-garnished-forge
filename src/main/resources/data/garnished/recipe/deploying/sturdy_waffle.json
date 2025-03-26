@@ -2,7 +2,7 @@
   "type": "create:deploying",
   "ingredients": [
     {
-      "tag": "c:dough"
+      "tag": "c:doughs"
     },
     {
       "item": "create:sturdy_sheet"

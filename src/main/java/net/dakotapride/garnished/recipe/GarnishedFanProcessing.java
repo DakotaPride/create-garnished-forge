@@ -3,13 +3,11 @@ package net.dakotapride.garnished.recipe;
 import com.simibubi.create.api.registry.CreateBuiltInRegistries;
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
 import com.simibubi.create.foundation.recipe.RecipeApplier;
-import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
 import net.createmod.catnip.theme.Color;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.registry.*;
 import net.dakotapride.garnished.registry.recipe.GarnishedRecipeTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -23,6 +21,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
@@ -30,50 +31,31 @@ import java.util.List;
 import java.util.Optional;
 
 public class GarnishedFanProcessing {
-    public static final FreezingType FREEZING = register("freezing", new FreezingType());
-    public static final RedDyeBlowingFanProcessingType RED_DYE_BLOWING = register("red_dye_blowing", new RedDyeBlowingFanProcessingType());
-    public static final OrangeDyeBlowingFanProcessingType ORANGE_DYE_BLOWING = register("orange_dye_blowing", new OrangeDyeBlowingFanProcessingType());
-    public static final YellowDyeBlowingFanProcessingType YELLOW_DYE_BLOWING = register("yellow_dye_blowing", new YellowDyeBlowingFanProcessingType());
-    public static final GreenDyeBlowingFanProcessingType GREEN_DYE_BLOWING = register("green_dye_blowing", new GreenDyeBlowingFanProcessingType());
-    public static final LimeDyeBlowingFanProcessingType LIME_DYE_BLOWING = register("lime_dye_blowing", new LimeDyeBlowingFanProcessingType());
-    public static final BlueDyeBlowingFanProcessingType BLUE_DYE_BLOWING = register("blue_dye_blowing", new BlueDyeBlowingFanProcessingType());
-    public static final LightBlueDyeBlowingFanProcessingType LIGHT_BLUE_DYE_BLOWING = register("light_blue_dye_blowing", new LightBlueDyeBlowingFanProcessingType());
-    public static final CyanDyeBlowingFanProcessingType CYAN_DYE_BLOWING = register("cyan_dye_blowing", new CyanDyeBlowingFanProcessingType());
-    public static final PurpleDyeBlowingFanProcessingType PURPLE_DYE_BLOWING = register("purple_dye_blowing", new PurpleDyeBlowingFanProcessingType());
-    public static final MagentaDyeBlowingFanProcessingType MAGENTA_DYE_BLOWING = register("magenta_dye_blowing", new MagentaDyeBlowingFanProcessingType());
-    public static final PinkDyeBlowingFanProcessingType PINK_DYE_BLOWING = register("pink_dye_blowing", new PinkDyeBlowingFanProcessingType());
-    public static final BlackDyeBlowingFanProcessingType BLACK_DYE_BLOWING = register("black_dye_blowing", new BlackDyeBlowingFanProcessingType());
-    public static final GrayDyeBlowingFanProcessingType GRAY_DYE_BLOWING = register("gray_dye_blowing", new GrayDyeBlowingFanProcessingType());
-    public static final LightGrayDyeBlowingFanProcessingType LIGHT_GRAY_DYE_BLOWING = register("light_gray_dye_blowing", new LightGrayDyeBlowingFanProcessingType());
-    public static final WhiteDyeBlowingFanProcessingType WHITE_DYE_BLOWING = register("white_dye_blowing", new WhiteDyeBlowingFanProcessingType());
-    public static final BrownDyeBlowingFanProcessingType BROWN_DYE_BLOWING = register("brown_dye_blowing", new BrownDyeBlowingFanProcessingType());
+    public static final DeferredRegister<FanProcessingType> FAN_PROCESSING_TYPES = DeferredRegister.create(CreateBuiltInRegistries.FAN_PROCESSING_TYPE, CreateGarnished.ID);
 
-    static {
-        Object2ReferenceOpenHashMap<String, FanProcessingType> map = new Object2ReferenceOpenHashMap<>();
-        map.put("FREEZING", FREEZING);
-        map.put("RED_DYE_BLOWING", RED_DYE_BLOWING);
-        map.put("ORANGE_DYE_BLOWING", ORANGE_DYE_BLOWING);
-        map.put("YELLOW_DYE_BLOWING", YELLOW_DYE_BLOWING);
-        map.put("GREEN_DYE_BLOWING", GREEN_DYE_BLOWING);
-        map.put("LIME_DYE_BLOWING", LIME_DYE_BLOWING);
-        map.put("BLUE_DYE_BLOWING", BLUE_DYE_BLOWING);
-        map.put("LIGHT_BLUE_DYE_BLOWING", LIGHT_BLUE_DYE_BLOWING);
-        map.put("CYAN_DYE_BLOWING", CYAN_DYE_BLOWING);
-        map.put("PURPLE_DYE_BLOWING", PURPLE_DYE_BLOWING);
-        map.put("MAGENTA_DYE_BLOWING", MAGENTA_DYE_BLOWING);
-        map.put("PINK_DYE_BLOWING", PINK_DYE_BLOWING);
-        map.put("BLACK_DYE_BLOWING", BLACK_DYE_BLOWING);
-        map.put("GRAY_DYE_BLOWING", GRAY_DYE_BLOWING);
-        map.put("LIGHT_GRAY_DYE_BLOWING", LIGHT_GRAY_DYE_BLOWING);
-        map.put("WHITE_DYE_BLOWING", WHITE_DYE_BLOWING);
-        map.put("BROWN_DYE_BLOWING", BROWN_DYE_BLOWING);
-        map.trim();
-    }
+    public static final DeferredHolder<FanProcessingType, FreezingType> FREEZING = register("freezing", new FreezingType());
+    public static final DeferredHolder<FanProcessingType, RedDyeBlowingFanProcessingType> RED_DYE_BLOWING = register("red_dye_blowing", new RedDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, OrangeDyeBlowingFanProcessingType> ORANGE_DYE_BLOWING = register("orange_dye_blowing", new OrangeDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, YellowDyeBlowingFanProcessingType> YELLOW_DYE_BLOWING = register("yellow_dye_blowing", new YellowDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, GreenDyeBlowingFanProcessingType> GREEN_DYE_BLOWING = register("green_dye_blowing", new GreenDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, LimeDyeBlowingFanProcessingType> LIME_DYE_BLOWING = register("lime_dye_blowing", new LimeDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, BlueDyeBlowingFanProcessingType> BLUE_DYE_BLOWING = register("blue_dye_blowing", new BlueDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, LightBlueDyeBlowingFanProcessingType> LIGHT_BLUE_DYE_BLOWING = register("light_blue_dye_blowing", new LightBlueDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, CyanDyeBlowingFanProcessingType> CYAN_DYE_BLOWING = register("cyan_dye_blowing", new CyanDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, PurpleDyeBlowingFanProcessingType> PURPLE_DYE_BLOWING = register("purple_dye_blowing", new PurpleDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, MagentaDyeBlowingFanProcessingType> MAGENTA_DYE_BLOWING = register("magenta_dye_blowing", new MagentaDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, PinkDyeBlowingFanProcessingType> PINK_DYE_BLOWING = register("pink_dye_blowing", new PinkDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, BlackDyeBlowingFanProcessingType> BLACK_DYE_BLOWING = register("black_dye_blowing", new BlackDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, GrayDyeBlowingFanProcessingType> GRAY_DYE_BLOWING = register("gray_dye_blowing", new GrayDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, LightGrayDyeBlowingFanProcessingType> LIGHT_GRAY_DYE_BLOWING = register("light_gray_dye_blowing", new LightGrayDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, WhiteDyeBlowingFanProcessingType> WHITE_DYE_BLOWING = register("white_dye_blowing", new WhiteDyeBlowingFanProcessingType());
+    public static final DeferredHolder<FanProcessingType, BrownDyeBlowingFanProcessingType> BROWN_DYE_BLOWING = register("brown_dye_blowing", new BrownDyeBlowingFanProcessingType());
 
-    private static <T extends FanProcessingType> T register(String id, T type) {
-        return Registry.register(CreateBuiltInRegistries.FAN_PROCESSING_TYPE, CreateGarnished.asResource(id), type);
+    private static <T extends FanProcessingType> DeferredHolder<FanProcessingType, T> register(String id, T type) {
+        //return Registry.register(CreateBuiltInRegistries.FAN_PROCESSING_TYPE, CreateGarnished.asResource(id), type);
         //FanProcessingTypeRegistry.register(CreateGarnished.asResource(id), type);
         // return type;
+        return FAN_PROCESSING_TYPES.register(id, () -> type);
     }
 
     public static class FreezingType implements FanProcessingType {
@@ -975,5 +957,7 @@ public class GarnishedFanProcessing {
         }
     }
 
-    public static void register() {}
+    public static void register(IEventBus bus) {
+        FAN_PROCESSING_TYPES.register(bus);
+    }
 }

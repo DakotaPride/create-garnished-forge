@@ -31,16 +31,17 @@ public class BottledPeanutOilItem extends Item {
 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
-		if (!Screen.hasShiftDown()) {
-			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.DARK_GRAY));
-		} else {
-			tooltip.add(Component.translatable("text.garnished.holding_shift").withStyle(ChatFormatting.DARK_GRAY));
-		}
-
-		if (Screen.hasShiftDown()) {
-			tooltip.add(Component.literal(""));
-			tooltip.add(Component.translatable("text.garnished.effect.clears_poison").withStyle(Style.EMPTY.withColor(0xc7954b)));
-		}
+//		if (!Screen.hasShiftDown()) {
+//			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.DARK_GRAY));
+//		} else {
+//			tooltip.add(Component.translatable("text.garnished.holding_shift").withStyle(ChatFormatting.DARK_GRAY));
+//		}
+//
+//		if (Screen.hasShiftDown()) {
+//			tooltip.add(Component.literal(""));
+//			tooltip.add(Component.translatable("text.garnished.effect.clears_poison").withStyle(Style.EMPTY.withColor(0xc7954b)));
+//		}
+		tooltip.add(Component.translatable("text.garnished.effect.clears_poison", "Poison").withStyle(ChatFormatting.GOLD));
 	}
 
 	@Override

@@ -7,8 +7,9 @@
   ],
   "results": [
     {
-      "id": {
-        "id":  "garnished:amber_remnant"
+      "item": {
+        "id": "garnished:amber_remnant"
+      }
     }
   ]
 }

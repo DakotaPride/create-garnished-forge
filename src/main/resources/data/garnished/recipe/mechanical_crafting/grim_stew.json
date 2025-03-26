@@ -1,6 +1,6 @@
 {
   "type": "create:mechanical_crafting",
-  "acceptMirrored": false,
+  "accept_mirrored": false,
   "key": {
     "A": {
       "item": "garnished:crushed_warped_fungus"
@@ -23,8 +23,6 @@
     "C#C"
   ],
   "result": {
-    "item": {
-      "id": "garnished:grim_stew"
-    }
+    "id": "garnished:grim_stew"
   }
 }

@@ -5,13 +5,14 @@
       "item": "garnished:unstable_stone_bricks"
     },
     {
+      "type": "fluid_stack",
       "amount": 250,
       "fluid": "garnished:dragon_breath"
     }
   ],
   "results": [
     {
-      "item": "garnished:dragon_stone_bricks"
+      "id": "garnished:dragon_stone_bricks"
     }
   ]
 }

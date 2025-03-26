@@ -18,6 +18,7 @@
       "item": "garnished:raw_tenebrous_meat"
     },
     {
+      "type": "fluid_stack",
       "amount": 1000,
       "fluid": "create:chocolate"
     }

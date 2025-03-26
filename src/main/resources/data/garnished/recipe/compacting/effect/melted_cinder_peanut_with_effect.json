@@ -37,7 +37,9 @@
   ],
   "results": [
     {
-      "item": "garnished:cinder_peanut_effect"
+      "item": {
+        "id": "garnished:cinder_peanut_effect"
+      }
     }
   ]
 }

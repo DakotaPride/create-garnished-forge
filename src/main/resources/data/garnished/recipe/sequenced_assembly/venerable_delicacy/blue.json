@@ -22,7 +22,7 @@
       ],
       "results": [
         {
-          "item": "garnished:unfinished_venerable_delicacy"
+          "id": "garnished:unfinished_venerable_delicacy"
         }
       ]
     },
@@ -38,7 +38,7 @@
       ],
       "results": [
         {
-          "item": "garnished:unfinished_venerable_delicacy"
+          "id": "garnished:unfinished_venerable_delicacy"
         }
       ]
     },
@@ -54,12 +54,12 @@
       ],
       "results": [
         {
-          "item": "garnished:unfinished_venerable_delicacy"
+          "id": "garnished:unfinished_venerable_delicacy"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:unfinished_venerable_delicacy"
   }
 }

@@ -11,9 +11,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:hazelnut_sack"
-    },
+    "id": "garnished:hazelnut_sack",
     "count": 1
   }
 }

@@ -19,7 +19,7 @@
       ],
       "results": [
         {
-          "item": "garnished:unprocessed_salt_compound"
+          "id": "garnished:unprocessed_salt_compound"
         }
       ]
     },
@@ -32,7 +32,7 @@
       ],
       "results": [
         {
-          "item": "garnished:unprocessed_salt_compound"
+          "id": "garnished:unprocessed_salt_compound"
         }
       ]
     },
@@ -48,12 +48,12 @@
       ],
       "results": [
         {
-          "item": "garnished:unprocessed_salt_compound"
+          "id": "garnished:unprocessed_salt_compound"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:unprocessed_salt_compound"
   }
 }

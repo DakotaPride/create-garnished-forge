@@ -15,9 +15,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:mastic_paste_lime"
-    },
+    "id": "garnished:mastic_paste_lime",
     "count": 8
   }
 }

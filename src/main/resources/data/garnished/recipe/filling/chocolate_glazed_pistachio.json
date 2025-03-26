@@ -5,6 +5,7 @@
       "item": "garnished:pistachio"
     },
     {
+      "type": "fluid_stack",
       "amount": 250,
       "fluid": "create:chocolate"
     }
@@ -13,6 +14,8 @@
     {
       "item": {
         "id":  "garnished:chocolate_glazed_pistachio"
+      }
     }
   ]
 }
+

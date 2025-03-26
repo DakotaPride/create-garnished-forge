@@ -1,6 +1,6 @@
 {
   "type": "create:mechanical_crafting",
-  "acceptMirrored": false,
+  "accept_mirrored": false,
   "key": {
     "A": {
       "tag": "c:ender_dusts"
@@ -24,8 +24,6 @@
   ],
   "result": {
     "count": 1,
-    "item": {
-      "id": "garnished:ghandercken"
-    }
+    "id": "garnished:ghandercken"
   }
 }

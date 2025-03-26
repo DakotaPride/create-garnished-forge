@@ -22,7 +22,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_muesli"
+          "id": "garnished:incomplete_muesli"
         }
       ]
     },
@@ -38,7 +38,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_muesli"
+          "id": "garnished:incomplete_muesli"
         }
       ]
     },
@@ -54,7 +54,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_muesli"
+          "id": "garnished:incomplete_muesli"
         }
       ]
     },
@@ -65,19 +65,19 @@
           "item": "garnished:incomplete_muesli"
         },
         {
+          "type": "fluid_stack",
           "amount": 250,
-          "fluid": "garnished:cashew_mixture",
-          "nbt": {}
+          "fluid": "garnished:cashew_mixture"
         }
       ],
       "results": [
         {
-          "item": "garnished:incomplete_muesli"
+          "id": "garnished:incomplete_muesli"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_muesli"
   }
 }

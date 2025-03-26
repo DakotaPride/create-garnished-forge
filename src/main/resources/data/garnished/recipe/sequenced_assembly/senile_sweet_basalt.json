@@ -19,7 +19,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_senile_sweet_basalt"
+          "id": "garnished:incomplete_senile_sweet_basalt"
         }
       ]
     },
@@ -35,7 +35,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_senile_sweet_basalt"
+          "id": "garnished:incomplete_senile_sweet_basalt"
         }
       ]
     },
@@ -51,7 +51,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_senile_sweet_basalt"
+          "id": "garnished:incomplete_senile_sweet_basalt"
         }
       ]
     },
@@ -67,12 +67,12 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_senile_sweet_basalt"
+          "id": "garnished:incomplete_senile_sweet_basalt"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_senile_sweet_basalt"
   }
 }

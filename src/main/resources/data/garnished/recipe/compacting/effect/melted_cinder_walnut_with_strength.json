@@ -37,7 +37,9 @@
   ],
   "results": [
     {
-      "item": "garnished:cinder_walnut_strength"
+      "item": {
+        "id": "garnished:cinder_walnut_strength"
+      }
     }
   ]
 }

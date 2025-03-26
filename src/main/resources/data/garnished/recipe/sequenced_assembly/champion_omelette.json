@@ -19,7 +19,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_champion_omelette"
+          "id": "garnished:incomplete_champion_omelette"
         }
       ]
     },
@@ -35,7 +35,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_champion_omelette"
+          "id": "garnished:incomplete_champion_omelette"
         }
       ]
     },
@@ -51,7 +51,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_champion_omelette"
+          "id": "garnished:incomplete_champion_omelette"
         }
       ]
     },
@@ -67,7 +67,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_champion_omelette"
+          "id": "garnished:incomplete_champion_omelette"
         }
       ]
     },
@@ -78,19 +78,19 @@
           "item": "garnished:incomplete_champion_omelette"
         },
         {
+          "type": "fluid_stack",
           "amount": 250,
-          "fluid": "garnished:dragon_breath",
-          "nbt": {}
+          "fluid": "garnished:dragon_breath"
         }
       ],
       "results": [
         {
-          "item": "garnished:incomplete_champion_omelette"
+          "id": "garnished:incomplete_champion_omelette"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_champion_omelette"
   }
 }

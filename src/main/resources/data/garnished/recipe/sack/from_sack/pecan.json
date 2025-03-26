@@ -7,10 +7,7 @@
     }
   ],
   "result": {
-    "item": {
-      "id": {
-      "id": "garnished:pecan"
-    },
+    "id": "garnished:pecan",
     "count": 4
   }
 }

@@ -17,14 +17,14 @@
           "item": "garnished:incomplete_cookie"
         },
         {
+          "type": "fluid_stack",
           "amount": 333,
-          "fluid": "create:chocolate",
-          "nbt": {}
+          "fluid": "create:chocolate"
         }
       ],
       "results": [
         {
-          "item": "garnished:incomplete_cookie"
+          "id": "garnished:incomplete_cookie"
         }
       ]
     },
@@ -40,7 +40,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_cookie"
+          "id": "garnished:incomplete_cookie"
         }
       ]
     },
@@ -56,12 +56,12 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_cookie"
+          "id": "garnished:incomplete_cookie"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_cookie"
   }
 }

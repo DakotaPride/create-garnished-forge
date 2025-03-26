@@ -7,10 +7,7 @@
     }
   ],
   "result": {
-    "item": {
-      "id": {
-      "id": "garnished:almond"
-    },
+    "id": "garnished:almond",
     "count": 4
   }
 }

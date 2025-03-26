@@ -1,6 +1,6 @@
 {
   "type": "create:mechanical_crafting",
-  "acceptMirrored": true,
+  "accept_mirrored": true,
   "key": {
     "#": {
       "item": "minecraft:stick"
@@ -21,8 +21,6 @@
     "#P "
   ],
   "result": {
-    "item": {
-      "id": "garnished:thorn_on_a_stick"
-    }
+    "id": "garnished:thorn_on_a_stick"
   }
 }

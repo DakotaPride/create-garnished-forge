@@ -19,7 +19,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_senile_sweet_scoria"
+          "id": "garnished:incomplete_senile_sweet_scoria"
         }
       ]
     },
@@ -35,7 +35,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_senile_sweet_scoria"
+          "id": "garnished:incomplete_senile_sweet_scoria"
         }
       ]
     },
@@ -51,7 +51,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_senile_sweet_scoria"
+          "id": "garnished:incomplete_senile_sweet_scoria"
         }
       ]
     },
@@ -67,12 +67,12 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_senile_sweet_scoria"
+          "id": "garnished:incomplete_senile_sweet_scoria"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_senile_sweet_scoria"
   }
 }

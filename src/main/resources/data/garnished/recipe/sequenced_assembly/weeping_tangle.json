@@ -22,7 +22,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_tangle"
+          "id": "garnished:incomplete_tangle"
         }
       ]
     },
@@ -35,7 +35,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_tangle"
+          "id": "garnished:incomplete_tangle"
         }
       ]
     },
@@ -51,7 +51,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_tangle"
+          "id": "garnished:incomplete_tangle"
         }
       ]
     },
@@ -67,7 +67,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_tangle"
+          "id": "garnished:incomplete_tangle"
         }
       ]
     },
@@ -83,12 +83,12 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_tangle"
+          "id": "garnished:incomplete_tangle"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_weeping_tangle"
   }
 }

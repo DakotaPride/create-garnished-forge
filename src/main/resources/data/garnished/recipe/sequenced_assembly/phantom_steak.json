@@ -19,7 +19,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_phantom_steak"
+          "id": "garnished:incomplete_phantom_steak"
         }
       ]
     },
@@ -40,7 +40,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_phantom_steak"
+          "id": "garnished:incomplete_phantom_steak"
         }
       ]
     },
@@ -56,7 +56,7 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_phantom_steak"
+          "id": "garnished:incomplete_phantom_steak"
         }
       ]
     },
@@ -72,12 +72,12 @@
       ],
       "results": [
         {
-          "item": "garnished:incomplete_phantom_steak"
+          "id": "garnished:incomplete_phantom_steak"
         }
       ]
     }
   ],
-  "transitionalItem": {
+  "transitional_item": {
     "id": "garnished:incomplete_phantom_steak"
   }
 }
