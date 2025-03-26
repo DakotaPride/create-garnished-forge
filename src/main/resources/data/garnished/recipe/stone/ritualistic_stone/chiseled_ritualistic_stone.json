@@ -11,6 +11,8 @@
     }
   },
   "result": {
-    "item": "garnished:chiseled_ritualistic_stone_bricks"
+    "item": {
+      "id": "garnished:chiseled_ritualistic_stone_bricks"
+    }
   }
 }

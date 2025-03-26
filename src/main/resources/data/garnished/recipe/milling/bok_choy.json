@@ -9,7 +9,9 @@
   "results": [
     {
       "count": 1,
-      "item": "garnished:bok_choy_seeds"
+      "item": {
+        "id": "garnished:bok_choy_seeds"
+      }
     }
   ]
 }

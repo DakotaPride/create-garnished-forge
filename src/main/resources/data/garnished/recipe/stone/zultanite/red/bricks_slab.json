@@ -10,7 +10,9 @@
     }
   },
   "result": {
-    "item": "garnished:red_zultanite_brick_slab",
+    "item": {
+      "id": "garnished:red_zultanite_brick_slab"
+    },
     "count": 6
   }
 }

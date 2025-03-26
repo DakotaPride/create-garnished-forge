@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:blue_zultanite_bricks",
+    "item": {
+      "id": "garnished:blue_zultanite_bricks"
+    },
     "count": 4
   }
 }

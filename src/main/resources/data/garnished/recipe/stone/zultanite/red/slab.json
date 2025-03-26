@@ -10,7 +10,9 @@
     }
   },
   "result": {
-    "item": "garnished:red_zultanite_slab",
+    "item": {
+      "id": "garnished:red_zultanite_slab"
+    },
     "count": 6
   }
 }

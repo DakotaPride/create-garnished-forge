@@ -4,5 +4,7 @@
   "ingredient": {
     "tag": "garnished:stone_types/zultanite/brown"
   },
-  "result": "garnished:polished_brown_zultanite_wall"
+  "result": {
+    "id": "garnished:polished_brown_zultanite_wall"
+  }
 }

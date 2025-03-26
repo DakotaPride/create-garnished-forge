@@ -10,7 +10,9 @@
     }
   },
   "result": {
-    "item": "garnished:pink_zultanite_slab",
+    "item": {
+      "id": "garnished:pink_zultanite_slab"
+    },
     "count": 6
   }
 }

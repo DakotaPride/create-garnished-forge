@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:ritualistic_stone_stairs",
+    "item": {
+      "id": "garnished:ritualistic_stone_stairs"
+    },
     "count": 4
   }
 }

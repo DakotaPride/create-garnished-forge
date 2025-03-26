@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_carnotite",
+    "item": {
+      "id": "garnished:polished_carnotite"
+    },
     "count": 4
   }
 }

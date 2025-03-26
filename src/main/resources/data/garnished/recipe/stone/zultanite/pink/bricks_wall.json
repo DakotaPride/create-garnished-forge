@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:pink_zultanite_brick_wall",
+    "item": {
+      "id": "garnished:pink_zultanite_brick_wall"
+    },
     "count": 6
   }
 }

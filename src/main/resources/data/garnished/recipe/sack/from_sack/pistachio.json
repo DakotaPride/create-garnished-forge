@@ -7,7 +7,10 @@
     }
   ],
   "result": {
-    "item": "garnished:pistachio",
+    "item": {
+      "id": {
+      "id": "garnished:pistachio"
+    },
     "count": 4
   }
 }

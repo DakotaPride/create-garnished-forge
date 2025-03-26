@@ -7,7 +7,10 @@
     }
   ],
   "result": {
-    "item": "garnished:cashew",
+    "item": {
+      "id": {
+      "id": "garnished:cashew"
+    },
     "count": 4
   }
 }

@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:magenta_zultanite_wall",
+    "item": {
+      "id": "garnished:magenta_zultanite_wall"
+    },
     "count": 6
   }
 }

@@ -9,11 +9,14 @@
   "results": [
     {
       "count": 1,
-      "item": "garnished:crushed_ender_pearl"
+      "item": {
+        "id": "garnished:crushed_ender_pearl"
+      }
     },
     {
       "chance": 0.25,
-      "item": "garnished:crushed_ender_pearl"
+      "item": {
+        "id": "garnished:crushed_ender_pearl"
       },
       "count": 1
     }

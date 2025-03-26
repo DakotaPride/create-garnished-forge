@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:nutty_melody"
+      "id": "garnished:nutty_melody"
     }
   ],
   "sequence": [
@@ -107,6 +107,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_nutty_melody"
+    "id": "garnished:incomplete_nutty_melody"
   }
 }

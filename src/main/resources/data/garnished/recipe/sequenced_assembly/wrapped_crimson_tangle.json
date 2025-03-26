@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:wrapped_crimson_tangle"
+      "id": "garnished:wrapped_crimson_tangle"
     }
   ],
   "sequence": [
@@ -60,6 +60,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_tangle"
+    "id": "garnished:incomplete_tangle"
   }
 }

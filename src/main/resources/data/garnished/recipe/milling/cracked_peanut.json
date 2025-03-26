@@ -9,11 +9,14 @@
   "results": [
     {
       "count": 1,
-      "item": "garnished:cracked_peanut"
+      "item": {
+        "id": "garnished:cracked_peanut"
+      }
     },
     {
       "chance": 0.15,
-      "item": "garnished:cracked_peanut"
+      "item": {
+        "id": "garnished:cracked_peanut"
       },
       "count": 2
     }

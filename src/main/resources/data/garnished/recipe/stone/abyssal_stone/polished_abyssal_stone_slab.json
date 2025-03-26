@@ -10,7 +10,8 @@
     }
   },
   "result": {
-    "item": "garnished:polished_abyssal_stone_slab",
+    "item": {
+      "id": "garnished:polished_abyssal_stone_slab",
     "count": 6
   }
 }

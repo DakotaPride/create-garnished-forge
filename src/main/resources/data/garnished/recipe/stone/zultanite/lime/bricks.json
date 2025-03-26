@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:lime_zultanite_bricks",
+    "item": {
+      "id": "garnished:lime_zultanite_bricks"
+    },
     "count": 4
   }
 }

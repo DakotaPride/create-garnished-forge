@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:gray_zultanite_wall",
+    "item": {
+      "id": "garnished:gray_zultanite_wall"
+    },
     "count": 6
   }
 }

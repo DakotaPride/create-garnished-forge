@@ -6,7 +6,7 @@
   "loops": 2,
   "results": [
     {
-      "item": "garnished:champion_omelette"
+      "id": "garnished:champion_omelette"
     }
   ],
   "sequence": [
@@ -91,6 +91,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_champion_omelette"
+    "id": "garnished:incomplete_champion_omelette"
   }
 }

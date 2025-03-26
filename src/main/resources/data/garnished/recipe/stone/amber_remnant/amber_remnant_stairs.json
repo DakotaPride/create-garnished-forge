@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:amber_remnant_stairs",
+    "item": {
+      "id": "garnished:amber_remnant_stairs"
+    },
     "count": 4
   }
 }

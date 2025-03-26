@@ -12,7 +12,8 @@
     }
   },
   "result": {
-    "item": "garnished:polished_abyssal_stone_stairs",
+    "item": {
+      "id": "garnished:polished_abyssal_stone_stairs",
     "count": 4
   }
 }

@@ -10,7 +10,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_unstable_stone_slab",
+    "item": {
+      "id": "garnished:polished_unstable_stone_slab"
+    },
     "count": 6
   }
 }

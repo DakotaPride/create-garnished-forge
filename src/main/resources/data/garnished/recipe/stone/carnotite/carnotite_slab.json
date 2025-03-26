@@ -10,7 +10,9 @@
     }
   },
   "result": {
-    "item": "garnished:carnotite_slab",
+    "item": {
+      "id": "garnished:carnotite_slab"
+    },
     "count": 6
   }
 }

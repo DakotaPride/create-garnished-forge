@@ -10,7 +10,9 @@
     }
   },
   "result": {
-    "item": "garnished:abyssal_stone_brick_slab",
+    "item": {
+      "id": "garnished:abyssal_stone_brick_slab"
+    },
     "count": 6
   }
 }

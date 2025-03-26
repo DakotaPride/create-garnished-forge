@@ -7,7 +7,10 @@
     }
   ],
   "result": {
-    "item": "garnished:walnut",
+    "item": {
+      "id": {
+      "id": "garnished:walnut"
+    },
     "count": 4
   }
 }

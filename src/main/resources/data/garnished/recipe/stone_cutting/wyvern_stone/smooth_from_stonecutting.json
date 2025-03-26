@@ -4,5 +4,7 @@
   "ingredient": {
     "tag": "garnished:stone_types/dragon_stone"
   },
-  "result": "garnished:smooth_dragon_stone"
+  "result": {
+    "id": "garnished:smooth_dragon_stone"
+  }
 }

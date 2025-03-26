@@ -9,11 +9,14 @@
   "results": [
     {
       "count": 1,
-      "item": "garnished:hollowed_chorus_fruit"
+      "item": {
+        "id": "garnished:hollowed_chorus_fruit"
+      }
     },
     {
       "chance": 0.35,
-      "item": "garnished:chorus_tuft"
+      "item": {
+        "id": "garnished:chorus_tuft"
       },
       "count": 1
     }

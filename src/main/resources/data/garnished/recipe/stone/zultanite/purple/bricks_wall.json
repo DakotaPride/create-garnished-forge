@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:purple_zultanite_brick_wall",
+    "item": {
+      "id": "garnished:purple_zultanite_brick_wall"
+    },
     "count": 6
   }
 }

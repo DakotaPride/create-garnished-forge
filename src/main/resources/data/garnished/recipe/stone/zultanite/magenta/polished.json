@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_magenta_zultanite",
+    "item": {
+      "id": "garnished:polished_magenta_zultanite"
+    },
     "count": 4
   }
 }

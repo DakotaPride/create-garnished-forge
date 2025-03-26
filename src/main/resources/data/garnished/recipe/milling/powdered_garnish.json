@@ -9,11 +9,14 @@
   "results": [
     {
       "count": 1,
-      "item": "garnished:garnish_powder"
+      "item": {
+        "id": "garnished:garnish_powder"
+      }
     },
     {
       "chance": 0.25,
-      "item": "garnished:garnish_powder"
+      "item": {
+        "id": "garnished:garnish_powder"
       },
       "count": 1
     }

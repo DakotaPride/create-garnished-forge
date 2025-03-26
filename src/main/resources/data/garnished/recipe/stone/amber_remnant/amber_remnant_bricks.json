@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:amber_remnant_bricks",
+    "item": {
+      "id": "garnished:amber_remnant_bricks"
+    },
     "count": 4
   }
 }

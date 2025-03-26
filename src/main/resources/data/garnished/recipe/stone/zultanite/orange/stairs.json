@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:orange_zultanite_stairs",
+    "item": {
+      "id": "garnished:orange_zultanite_stairs"
+    },
     "count": 4
   }
 }

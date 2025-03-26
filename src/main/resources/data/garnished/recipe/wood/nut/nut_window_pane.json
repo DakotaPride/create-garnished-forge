@@ -12,7 +12,7 @@
   ],
   "result": {
     "count": 16,
-    "item": "garnished:nut_window_pane"
+    "id": "garnished:nut_window_pane"
   },
   "show_notification": true
 }

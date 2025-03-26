@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:light_blue_zultanite_brick_stairs",
+    "item": {
+      "id": "garnished:light_blue_zultanite_brick_stairs"
+    },
     "count": 4
   }
 }

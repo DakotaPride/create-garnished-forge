@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "minecraft:cookie"
+      "id": "minecraft:cookie"
     }
   ],
   "sequence": [
@@ -62,6 +62,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_cookie"
+    "id": "garnished:incomplete_cookie"
   }
 }

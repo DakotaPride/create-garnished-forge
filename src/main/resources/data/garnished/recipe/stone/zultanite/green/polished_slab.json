@@ -10,7 +10,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_green_zultanite_slab",
+    "item": {
+      "id": "garnished:polished_green_zultanite_slab"
+    },
     "count": 6
   }
 }

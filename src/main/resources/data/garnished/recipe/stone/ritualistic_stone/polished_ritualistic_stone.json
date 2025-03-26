@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_ritualistic_stone",
+    "item": {
+      "id": "garnished:polished_ritualistic_stone"
+    },
     "count": 4
   }
 }

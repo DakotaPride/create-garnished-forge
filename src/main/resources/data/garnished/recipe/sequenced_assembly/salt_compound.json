@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:salt_compound"
+      "id": "garnished:salt_compound"
     }
   ],
   "sequence": [
@@ -54,6 +54,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:unprocessed_salt_compound"
+    "id": "garnished:unprocessed_salt_compound"
   }
 }

@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_lime_zultanite",
+    "item": {
+      "id": "garnished:polished_lime_zultanite"
+    },
     "count": 4
   }
 }

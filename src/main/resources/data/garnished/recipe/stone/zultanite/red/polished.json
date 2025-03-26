@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_red_zultanite",
+    "item": {
+      "id": "garnished:polished_red_zultanite"
+    },
     "count": 4
   }
 }

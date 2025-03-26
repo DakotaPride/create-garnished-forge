@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:magenta_zultanite_bricks",
+    "item": {
+      "id": "garnished:magenta_zultanite_bricks"
+    },
     "count": 4
   }
 }

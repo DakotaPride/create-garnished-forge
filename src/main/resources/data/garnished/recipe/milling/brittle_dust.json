@@ -9,11 +9,14 @@
   "results": [
     {
       "count": 1,
-      "item": "garnished:brittle_dust"
+      "item": {
+        "id": "garnished:brittle_dust",
+        }
     },
     {
       "chance": 0.25,
-      "item": "garnished:brittle_dust"
+      "item": {
+        "id": "garnished:brittle_dust"
       },
       "count": 1
     }

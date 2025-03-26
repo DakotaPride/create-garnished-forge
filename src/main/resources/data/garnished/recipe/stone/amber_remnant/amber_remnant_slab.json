@@ -10,7 +10,9 @@
     }
   },
   "result": {
-    "item": "garnished:amber_remnant_slab",
+    "item": {
+      "id": "garnished:amber_remnant_slab"
+    },
     "count": 6
   }
 }

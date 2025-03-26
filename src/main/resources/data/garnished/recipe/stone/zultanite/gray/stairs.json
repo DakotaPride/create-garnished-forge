@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:gray_zultanite_stairs",
+    "item": {
+      "id": "garnished:gray_zultanite_stairs"
+    },
     "count": 4
   }
 }

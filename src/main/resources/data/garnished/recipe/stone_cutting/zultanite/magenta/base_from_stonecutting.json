@@ -4,5 +4,7 @@
   "ingredient": {
     "tag": "garnished:stone_types/zultanite/magenta"
   },
-  "result": "garnished:magenta_zultanite"
+  "result": {
+    "id": "garnished:magenta_zultanite"
+  }
 }

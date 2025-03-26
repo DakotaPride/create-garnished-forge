@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:muesli"
+      "id": "garnished:muesli"
     }
   ],
   "sequence": [
@@ -78,6 +78,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_muesli"
+    "id": "garnished:incomplete_muesli"
   }
 }

@@ -4,5 +4,7 @@
   "ingredient": {
     "tag": "garnished:stone_types/zultanite/red"
   },
-  "result": "garnished:red_zultanite_brick_stairs"
+  "result": {
+    "id": "garnished:red_zultanite_brick_stairs"
+  }
 }

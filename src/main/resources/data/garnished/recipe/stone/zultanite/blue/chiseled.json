@@ -11,6 +11,7 @@
     }
   },
   "result": {
-    "item": "garnished:chiseled_blue_zultanite_bricks"
+    "item": {
+      "id": "garnished:chiseled_blue_zultanite_bricks"
   }
 }

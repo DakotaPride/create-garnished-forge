@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:tophet_brew"
+      "id": "garnished:tophet_brew"
     }
   ],
   "sequence": [
@@ -62,6 +62,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_tophet_brew"
+    "id": "garnished:incomplete_tophet_brew"
   }
 }

@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_carnotite_stairs",
+    "item": {
+      "id": "garnished:polished_carnotite_stairs"
+    },
     "count": 4
   }
 }

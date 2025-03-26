@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_pink_zultanite",
+    "item": {
+      "id": "garnished:polished_pink_zultanite"
+    },
     "count": 4
   }
 }

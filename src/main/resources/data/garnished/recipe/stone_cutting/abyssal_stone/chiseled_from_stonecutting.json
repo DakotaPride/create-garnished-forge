@@ -4,5 +4,7 @@
   "ingredient": {
     "tag": "garnished:stone_types/abyssal_stone"
   },
-  "result": "garnished:chiseled_abyssal_stone_bricks"
+  "result": {
+    "id": "garnished:chiseled_abyssal_stone_bricks"
+  }
 }

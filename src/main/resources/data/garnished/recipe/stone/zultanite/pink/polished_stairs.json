@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_pink_zultanite_stairs",
+    "item": {
+      "id": "garnished:polished_pink_zultanite_stairs"
+    },
     "count": 4
   }
 }

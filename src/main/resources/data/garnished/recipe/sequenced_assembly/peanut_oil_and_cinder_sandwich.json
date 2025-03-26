@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:peanut_cinder_sandwich"
+      "id": "garnished:peanut_cinder_sandwich"
     }
   ],
   "sequence": [
@@ -59,6 +59,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_peanut_cinder_sandwich"
+    "id": "garnished:incomplete_peanut_cinder_sandwich"
   }
 }

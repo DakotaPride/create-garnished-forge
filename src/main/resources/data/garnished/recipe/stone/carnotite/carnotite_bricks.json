@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:carnotite_bricks",
+    "item": {
+      "id": "garnished:carnotite_bricks"
+    },
     "count": 4
   }
 }

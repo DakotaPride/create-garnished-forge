@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:cashew_mixture"
+      "id": "garnished:cashew_mixture"
     }
   ],
   "sequence": [
@@ -46,6 +46,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_cashew_mixture"
+    "id": "garnished:incomplete_cashew_mixture"
   }
 }

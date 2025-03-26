@@ -7,7 +7,9 @@
   ],
   "results": [
     {
-      "item": "garnished:mastic_paste_cyan"
+      "item": {
+        "id": "garnished:mastic_paste_cyan"
+      }
     }
   ]
 }

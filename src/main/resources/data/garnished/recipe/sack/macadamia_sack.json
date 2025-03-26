@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:macadamia_sack",
+    "item": {
+      "id": "garnished:macadamia_sack"
+    },
     "count": 1
   }
 }

@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:crimson_tusk"
+      "id": "garnished:crimson_tusk"
     }
   ],
   "sequence": [
@@ -60,6 +60,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_crimson_tusk"
+    "id": "garnished:incomplete_crimson_tusk"
   }
 }

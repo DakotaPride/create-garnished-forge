@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:hardened_wrap"
+      "id": "garnished:hardened_wrap"
     }
   ],
   "sequence": [
@@ -57,6 +57,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_hardened_wrap"
+    "id": "garnished:incomplete_hardened_wrap"
   }
 }

@@ -6,7 +6,7 @@
   "loops": 1,
   "results": [
     {
-      "item": "garnished:cinder_roll"
+      "id": "garnished:cinder_roll"
     }
   ],
   "sequence": [
@@ -73,6 +73,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_cinder_roll"
+    "id": "garnished:incomplete_cinder_roll"
   }
 }

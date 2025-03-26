@@ -4,5 +4,7 @@
   "ingredient": {
     "tag": "garnished:stone_types/zultanite/basic"
   },
-  "result": "garnished:zultanite_brick_slab"
+  "result": {
+    "id": "garnished:zultanite_brick_slab"
+  }
 }

@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:polished_dragon_stone_stairs",
+    "item": {
+      "id": "garnished:polished_dragon_stone_stairs"
+    },
     "count": 4
   }
 }

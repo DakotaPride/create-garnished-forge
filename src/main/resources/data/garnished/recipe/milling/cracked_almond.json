@@ -9,11 +9,14 @@
   "results": [
     {
       "count": 1,
-      "item": "garnished:cracked_almond"
+      "item": {
+        "id": "garnished:cracked_almond"
+      }
     },
     {
       "chance": 0.15,
-      "item": "garnished:cracked_almond"
+      "item": {
+        "id": "garnished:cracked_almond"
       },
       "count": 2
     }

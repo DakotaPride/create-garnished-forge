@@ -6,7 +6,7 @@
   "loops": 10,
   "results": [
     {
-      "item": "minecraft:dragon_egg"
+      "id": "minecraft:dragon_egg"
     }
   ],
   "sequence": [
@@ -46,6 +46,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:incomplete_ender_dragon_egg"
+    "id": "garnished:incomplete_ender_dragon_egg"
   }
 }

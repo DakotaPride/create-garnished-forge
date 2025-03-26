@@ -11,6 +11,8 @@
     }
   },
   "result": {
-    "item": "garnished:chiseled_carnotite_bricks"
+    "item": {
+      "id": "garnished:chiseled_carnotite_bricks"
+    }
   }
 }

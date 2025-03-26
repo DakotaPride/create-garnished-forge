@@ -10,7 +10,9 @@
     }
   },
   "result": {
-    "item": "garnished:ritualistic_stone_slab",
+    "item": {
+      "id": "garnished:ritualistic_stone_slab"
+    },
     "count": 6
   }
 }

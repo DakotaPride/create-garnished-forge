@@ -6,7 +6,7 @@
   "loops": 2,
   "results": [
     {
-      "item": "garnished:venerable_delicacy_orange"
+      "id": "garnished:venerable_delicacy_orange"
     }
   ],
   "sequence": [
@@ -60,6 +60,6 @@
     }
   ],
   "transitionalItem": {
-    "item": "garnished:unfinished_venerable_delicacy"
+    "id": "garnished:unfinished_venerable_delicacy"
   }
 }

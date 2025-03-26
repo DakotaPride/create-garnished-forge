@@ -4,5 +4,7 @@
   "ingredient": {
     "tag": "garnished:stone_types/zultanite/green"
   },
-  "result": "garnished:polished_green_zultanite_stairs"
+  "result": {
+    "id": "garnished:polished_green_zultanite_stairs"
+  }
 }

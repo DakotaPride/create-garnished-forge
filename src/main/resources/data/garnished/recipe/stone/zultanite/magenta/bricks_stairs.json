@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:magenta_zultanite_brick_stairs",
+    "item": {
+      "id": "garnished:magenta_zultanite_brick_stairs"
+    },
     "count": 4
   }
 }

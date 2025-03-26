@@ -12,7 +12,9 @@
     }
   },
   "result": {
-    "item": "garnished:purple_zultanite_brick_stairs",
+    "item": {
+      "id": "garnished:purple_zultanite_brick_stairs"
+    },
     "count": 4
   }
 }

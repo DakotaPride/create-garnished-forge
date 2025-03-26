@@ -9,11 +9,14 @@
   "results": [
     {
       "count": 1,
-      "item": "garnished:mulch"
+      "item": {
+        "id": "garnished:mulch"
+      }
     },
     {
       "chance": 0.25,
-      "item": "garnished:mulch"
+      "item": {
+        "id": "garnished:mulch"
       },
       "count": 1
     }

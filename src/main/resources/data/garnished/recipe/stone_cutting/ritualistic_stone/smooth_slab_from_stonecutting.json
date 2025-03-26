@@ -4,5 +4,7 @@
   "ingredient": {
     "tag": "garnished:stone_types/ritualistic_stone"
   },
-  "result": "garnished:smooth_ritualistic_stone_slab"
+  "result": {
+    "id": "garnished:smooth_ritualistic_stone_slab"
+  }
 }

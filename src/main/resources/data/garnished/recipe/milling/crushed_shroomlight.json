@@ -9,11 +9,14 @@
   "results": [
     {
       "count": 2,
-      "item": "garnished:crushed_shroomlight"
+      "item": {
+        "id": "garnished:crushed_shroomlight"
+      }
     },
     {
       "chance": 0.75,
-      "item": "garnished:crushed_shroomlight"
+      "item": {
+        "id": "garnished:crushed_shroomlight"
       },
       "count": 1
     }

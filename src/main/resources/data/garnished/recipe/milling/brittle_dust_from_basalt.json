@@ -17,13 +17,15 @@
   "results": [
     {
       "chance": 0.85,
-      "item": "garnished:brittle_dust"
+      "item": {
+        "id": "garnished:brittle_dust"
       },
       "count": 1
     },
     {
       "chance": 0.45,
-      "item": "garnished:brittle_dust"
+      "item": {
+        "id": "garnished:brittle_dust"
       },
       "count": 1
     }

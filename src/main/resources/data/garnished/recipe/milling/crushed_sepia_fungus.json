@@ -9,11 +9,14 @@
   "results": [
     {
       "count": 1,
-      "item": "garnished:crushed_sepia_fungus"
+      "item": {
+        "id": "garnished:crushed_sepia_fungus"
+      }
     },
     {
       "chance": 0.75,
-      "item": "garnished:crushed_sepia_fungus"
+      "item": {
+        "id": "garnished:crushed_sepia_fungus"
       },
       "count": 1
     }

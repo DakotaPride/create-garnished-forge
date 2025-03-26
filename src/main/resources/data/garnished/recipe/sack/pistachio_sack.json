@@ -11,7 +11,9 @@
     }
   },
   "result": {
-    "item": "garnished:pistachio_sack",
+    "item": {
+      "id": "garnished:pistachio_sack"
+    },
     "count": 1
   }
 }
