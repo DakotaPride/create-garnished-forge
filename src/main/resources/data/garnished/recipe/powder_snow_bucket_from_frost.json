@@ -18,7 +18,7 @@
     }
   ],
   "result": {
-    "item": "minecraft:powder_snow_bucket",
+    "id": "minecraft:powder_snow_bucket",
     "count": 1
   }
 }

@@ -3,7 +3,9 @@
   "ingredient": {
     "item": "garnished:dulse_kelp"
   },
-  "result": "garnished:dried_dulse_kelp",
+  "result": {
+    "id": "garnished:dried_dulse_kelp"
+  },
   "experience": 0.35,
   "cookingtime": 600
 }

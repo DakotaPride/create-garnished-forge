@@ -11,7 +11,7 @@
     }
   },
   "result": {
-    "item": "garnished:slime_drop",
+    "id": "garnished:slime_drop",
     "count": 3
   }
 }

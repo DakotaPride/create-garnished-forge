@@ -10,7 +10,7 @@
     }
   },
   "result": {
-    "item": "garnished:garnish_compound_block",
+    "id": "garnished:garnish_compound_block",
     "count": 1
   }
 }

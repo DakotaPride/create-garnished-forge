@@ -21,4 +21,4 @@
 - Stone [ <u>✓</u> | ✗ ]
 - Stone Cutting [ <u>✓</u> | ✗ ]
 - Wood [ <u>✓</u> | ✗ ]
-- Everything else [ ✓ | ✗ ]
+- Everything else [ <u>✓</u> | ✗ ] (uncategorized recipes)

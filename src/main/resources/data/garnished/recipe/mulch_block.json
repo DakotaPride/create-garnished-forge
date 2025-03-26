@@ -10,7 +10,7 @@
     }
   },
   "result": {
-    "item": "garnished:mulch_block",
+    "id": "garnished:mulch_block",
     "count": 1
   }
 }
