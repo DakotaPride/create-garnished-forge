@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "garnished:melted_cinder_nuts_with_effects"
+            "items": "#garnished:melted_cinder_nuts_with_effects"
           }
         ]
       }

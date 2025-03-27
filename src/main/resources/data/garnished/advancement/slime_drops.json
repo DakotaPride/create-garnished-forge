@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "garnished:slime_drops"
+            "items": "#garnished:slime_drops"
           }
         ]
       }

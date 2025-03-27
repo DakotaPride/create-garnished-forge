@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "garnished:ungarnished_nuts"
+            "items": "#garnished:ungarnished_nuts"
           }
         ]
       }

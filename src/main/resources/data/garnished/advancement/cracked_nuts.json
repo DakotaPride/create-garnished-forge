@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "garnished:cracked_nuts"
+            "items": "#garnished:cracked_nuts"
           }
         ]
       }

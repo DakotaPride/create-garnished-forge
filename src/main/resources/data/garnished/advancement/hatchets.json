@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "c:tools/hatchets"
+            "items": "#c:tools/hatchets"
           }
         ]
       }

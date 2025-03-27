@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "garnished:venerable_delicacies"
+            "items": "#garnished:venerable_delicacies"
           }
         ]
       }

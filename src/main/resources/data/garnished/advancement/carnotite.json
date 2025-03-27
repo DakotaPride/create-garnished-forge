@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "garnished:stone_types/carnotite"
+            "items": "#garnished:stone_types/carnotite"
           }
         ]
       }

@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "garnished:buhg"
+            "items": "#garnished:buhg"
           }
         ]
       }

@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "garnished:stone_types/ritualistic_stone"
+            "items": "#garnished:stone_types/ritualistic_stone"
           }
         ]
       }

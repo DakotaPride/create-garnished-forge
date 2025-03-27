@@ -22,7 +22,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "garnished:chocolate_glazed_nuts"
+            "items": "#garnished:chocolate_glazed_nuts"
           }
         ]
       }
