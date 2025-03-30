@@ -1,0 +1,12 @@
+{
+  "name": "Jungles",
+  "icon": "creategarnished:wild_ginger_root",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_ginger_root",
+      "text": "Occasionally in Birch Forests, birch trees will have a log leaking some Birch Sap. Right-click with an Empty Glass Bottle to harvest it for further processing."
+    }
+  ]
+}

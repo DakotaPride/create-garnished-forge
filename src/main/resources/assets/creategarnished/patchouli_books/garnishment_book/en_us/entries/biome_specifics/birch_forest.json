@@ -1,0 +1,18 @@
+{
+  "name": "Birch Forests",
+  "icon": "creategarnished:birch_sap_bottle",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:birch_sap_bottle",
+      "text": "Occasionally in Birch Forests, birch trees will have a log leaking some Birch Sap. Right-click with an Empty Glass Bottle to harvest it for further processing."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/patchouli/sap_filled_birch_log"
+      ]
+    }
+  ]
+}
