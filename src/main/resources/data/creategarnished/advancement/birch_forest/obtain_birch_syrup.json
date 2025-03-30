@@ -15,7 +15,7 @@
     "announce_to_chat": false,
     "hidden": false
   },
-  "parent": "creategarnished:birch_forest/obtain_birch_sap",
+  "parent": "creategarnished:birch_forest/obtain_hazelnuts",
   "criteria": {
     "0": {
       "trigger": "minecraft:inventory_changed",

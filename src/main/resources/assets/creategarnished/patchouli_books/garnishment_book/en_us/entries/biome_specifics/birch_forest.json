@@ -5,13 +5,24 @@
   "pages": [
     {
       "type": "patchouli:spotlight",
+      "item": "creategarnished:hazelnut",
+      "text": "You can find Hazelnuts growing on birch trees throughout Birch Forests which can be used as a more efficient method of creating Chocolate. You can replant these nuts to grow back into trees for a renewable source of both wood and Hazelnuts."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/hazelnut_tree.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
       "item": "creategarnished:birch_sap_bottle",
       "text": "Occasionally in Birch Forests, birch trees will have a log leaking some Birch Sap. Right-click with an Empty Glass Bottle to harvest it for further processing."
     },
     {
       "type": "patchouli:image",
       "images": [
-        "creategarnished:textures/patchouli/sap_filled_birch_log"
+        "creategarnished:textures/gui/patchouli/sap_filled_birch_log.png"
       ]
     }
   ]

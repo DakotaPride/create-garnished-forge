@@ -2,6 +2,7 @@ package net.dakotapride.creategarnished.registry;
 
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.advancement.DejojoTheAwsomeTrigger;
+import net.dakotapride.creategarnished.advancement.FeedFlapjackToFlapjackTrigger;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.Registry;
@@ -19,6 +20,8 @@ public class CreateGarnishedAdvancements {
 
     public static final Supplier<DejojoTheAwsomeTrigger> DEJOJO =
             CRITERION_TRIGGERS.register("the_one_who_started_it_all", DejojoTheAwsomeTrigger::new);
+    public static final Supplier<FeedFlapjackToFlapjackTrigger> FLAPJACK =
+            CRITERION_TRIGGERS.register("flapjack", FeedFlapjackToFlapjackTrigger::new);
 
     public static void register(IEventBus bus) {
         CRITERION_TRIGGERS.register(bus);

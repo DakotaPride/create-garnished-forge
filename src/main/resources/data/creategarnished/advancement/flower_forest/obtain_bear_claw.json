@@ -15,7 +15,7 @@
     "announce_to_chat": false,
     "hidden": false
   },
-  "parent": "creategarnished:flower_forest/obtain_almond_paste",
+  "parent": "creategarnished:flower_forest/obtain_almonds",
   "criteria": {
     "0": {
       "trigger": "minecraft:inventory_changed",

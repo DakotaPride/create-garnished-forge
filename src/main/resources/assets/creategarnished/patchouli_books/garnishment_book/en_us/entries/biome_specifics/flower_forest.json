@@ -1,0 +1,19 @@
+{
+  "name": "Flower Forests",
+  "icon": "creategarnished:almond_leaves",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:almond",
+      "text": "Occasionally around Flower Forests, you can find a blossoming almond tree with bright pink leaves. Breaking the specific leaves that have Almonds growing off of them will, as you guessed, drop Almonds. You can replant these nuts to grow back into trees for a renewable source of both wood and Almonds."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/blossoming_almond_tree.png"
+      ],
+      "text": "You can also find these trees generating in the Sunflower Plains."
+    }
+  ]
+}

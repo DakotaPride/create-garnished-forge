@@ -1,0 +1,29 @@
+{
+  "name": "Taigas",
+  "icon": "creategarnished:elven_sweet_berries",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:pine_nut",
+      "text": "Growing on some spruce trees, you can find Pine Nuts growing from the leaves. You can replant these nuts to grow back into trees for a renewable source of both wood and Pine Nuts."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/pine_nut_tree.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:elven_sweet_berries",
+      "text": "Found in patches throughout the Taiga, you can find Elven Sweet Berry Bushes. Once fully grown, you can pick the berries off them by right-clicking on the bush."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/elven_sweet_berries.png"
+      ]
+    }
+  ]
+}

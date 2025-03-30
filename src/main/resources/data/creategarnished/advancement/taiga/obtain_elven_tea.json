@@ -15,7 +15,7 @@
     "announce_to_chat": false,
     "hidden": false
   },
-  "parent": "creategarnished:taiga/obtain_elven_berries",
+  "parent": "creategarnished:taiga/obtain_pine_nuts",
   "criteria": {
     "0": {
       "trigger": "minecraft:inventory_changed",

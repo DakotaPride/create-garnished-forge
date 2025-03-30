@@ -85,6 +85,17 @@ public class CreateGarnishedItems {
             .properties(p -> p.stacksTo(16).food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6F).build()))
             .register();
 
+
+    public static final ItemEntry<PancakesItem> PANCAKES = CreateGarnished.REGISTRATE.item("pancakes", PancakesItem::new)
+            .properties(p -> p.stacksTo(16).food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.8F).build()))
+            .register();
+    public static final ItemEntry<PancakesItem> SYRUP_COVERED_PANCAKES = CreateGarnished.REGISTRATE.item("syrup_covered_pancakes", PancakesItem::new)
+            .properties(p -> p.stacksTo(16).food(new FoodProperties.Builder()
+                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 1200, 1), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 400, 1), 0.5F)
+                    .nutrition(8).saturationModifier(0.8F).build()))
+            .register();
+
     public static void register() {}
 
 }

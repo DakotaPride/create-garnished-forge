@@ -5,8 +5,25 @@
   "pages": [
     {
       "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_peanuts",
+      "text": "Throughout Jungles, you can find Wild Peanuts sprouting out of the ground which can be broken to drop some Peanuts. You can replant this nut on farmland to replenish your supply of Peanuts."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_peanuts.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
       "item": "creategarnished:wild_ginger_root",
-      "text": "Occasionally in Birch Forests, birch trees will have a log leaking some Birch Sap. Right-click with an Empty Glass Bottle to harvest it for further processing."
+      "text": "Throughout Jungles, you can find Wild Ginger Roots sprouting out of the ground which can be broken to drop some Ginger Root. You can also find Marigold flowers in the same patch as these Wild Ginger Roots. You can replant these roots on farmlands to replenish your supply of Ginger Roots."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_ginger_root.png"
+      ]
     }
   ]
 }
