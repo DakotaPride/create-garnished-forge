@@ -2,6 +2,7 @@ package net.dakotapride.creategarnished.registry;
 
 import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllTags;
+import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
 import com.simibubi.create.content.fluids.VirtualFluid;
 import com.simibubi.create.infrastructure.config.AllConfigs;
 import com.tterrag.registrate.builders.FluidBuilder;
@@ -13,6 +14,8 @@ import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import org.joml.Vector3f;
@@ -56,23 +59,19 @@ public class CreateGarnishedFluids {
     public static void register() {}
 
     public static void registerFluidInteractions() {
-//        FluidInteractionRegistry.addInteraction(ForgeMod.WATER_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
-//                MELTED_BLUE_ICE.get().getFluidType(),
-//                fluidState -> {
-//                    if (fluidState.isSource()) {
-//                        return Blocks.BLUE_ICE.defaultBlockState();
-//                    } else {
-//                        return HerbologyBlocks.CRYOSINE.getDefaultState();
-//                    }
-//                }
-//        ));
+        FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
+                PEANUT_BUTTER.get().getFluidType(),
+                fluidState -> {
+                    return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get().defaultBlockState();
+                }
+        ));
     }
 
     @Nullable
     public static BlockState getFluidInteraction(FluidState fluidState) {
         Fluid fluid = fluidState.getType();
-//        if (fluid.isSame(MELTED_BLUE_ICE.get()))
-//            return HerbologyBlocks.CRYOSINE.getDefaultState();
+        if (fluid.isSame(PEANUT_BUTTER.get()))
+            return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get().defaultBlockState();
         return null;
     }
 

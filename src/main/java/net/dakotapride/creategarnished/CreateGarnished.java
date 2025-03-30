@@ -56,7 +56,7 @@ public class CreateGarnished {
         REGISTRATE.registerEventListeners(eventBus);
         MinecraftForge.EVENT_BUS.register(this);
 
-        //modEventBus.addListener(this::addCreative);
+        eventBus.addListener(this::commonSetup);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
