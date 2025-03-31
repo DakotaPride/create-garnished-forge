@@ -693,8 +693,8 @@ public class GarnishedItems {
 	public static final ItemEntry<ChilledAppleFoodItem> CHILLED_APPLE =
 			REGISTRATE.item("chilled_apple", ChilledAppleFoodItem::new).register();
 
-	public static final ItemEntry<SandPaperItem> POLAR_HIDE_SCRATCH_PAPER =
-			REGISTRATE.item("polar_hide_scratch_paper", SandPaperItem::new)
+	public static final ItemEntry<PolarHideScratchPaperItem> POLAR_HIDE_SCRATCH_PAPER =
+			REGISTRATE.item("polar_hide_scratch_paper", PolarHideScratchPaperItem::new)
 					.onRegister(s -> ItemDescription.referKey(s, AllItems.SAND_PAPER))
 					.properties(p -> p.defaultDurability(32)).register();
 

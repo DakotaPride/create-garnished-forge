@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DustyRegaleFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public DustyRegaleFoodItem(Properties properties) {
-		super(2, 0.35F, properties.food(GarnishedFoodValues.DUSTY_REGALE));
+		super(2, 0.35F, properties.food(GarnishedFoodValues.DUSTY_REGALE).stacksTo(1));
 	}
 
 	@Override
