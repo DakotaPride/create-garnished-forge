@@ -2,6 +2,7 @@ package net.dakotapride.creategarnished.registry;
 
 import com.simibubi.create.AllFluids;
 import com.simibubi.create.AllTags;
+import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
 import com.simibubi.create.content.fluids.VirtualFluid;
 import com.simibubi.create.infrastructure.config.AllConfigs;
 import com.tterrag.registrate.builders.FluidBuilder;
@@ -10,10 +11,13 @@ import net.createmod.catnip.theme.Color;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
+import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.fluids.FluidStack;
 import org.joml.Vector3f;
 
@@ -32,15 +36,13 @@ public class CreateGarnishedFluids {
     public static final FluidEntry<VirtualFluid> SWEET_TEA = REGISTRATE.virtualFluid("sweet_tea").register();
     public static final FluidEntry<VirtualFluid> ELVEN_TEA = REGISTRATE.virtualFluid("elven_tea").register();
     public static final FluidEntry<VirtualFluid> BIRCH_SAP = REGISTRATE.virtualFluid("birch_sap").register();
-    public static final FluidEntry<VirtualFluid> BIRCH_SYRUP = REGISTRATE.virtualFluid("birch_syrup").register();
+    //public static final FluidEntry<VirtualFluid> BIRCH_SYRUP = REGISTRATE.virtualFluid("birch_syrup").register();
     public static final FluidEntry<VirtualFluid> BEETROOT_JUICE = REGISTRATE.virtualFluid("beetroot_juice").register();
 
     public static final FluidEntry<BaseFlowingFluid.Flowing> PEANUT_BUTTER =
             REGISTRATE.standardFluid("peanut_butter",
                             SolidRenderedPlaceableFluidType.create(0xA2774B,
                                     () -> 1f / 32f * AllConfigs.client().chocolateTransparencyMultiplier.getF()))
-                    .lang("Peanut Butter")
-                    .tag(AllTags.commonFluidTag("peanut_butter"))
                     .properties(b -> b.viscosity(1500)
                             .density(1400))
                     .fluidProperties(p -> p.levelDecreasePerBlock(2)
@@ -49,30 +51,43 @@ public class CreateGarnishedFluids {
                             .explosionResistance(100f))
                     .source(BaseFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
                     .bucket()
-                    .tag(AllTags.commonItemTag("buckets/peanut_butter"))
                     .build()
+                    .register();
+
+    public static final FluidEntry<BaseFlowingFluid.Flowing> BIRCH_SYRUP =
+            REGISTRATE.standardFluid("birch_syrup",
+                            SolidRenderedPlaceableFluidType.create(0x9E4B1F,
+                                    () -> 1f / 32f * AllConfigs.client().chocolateTransparencyMultiplier.getF()))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(2)
+                            .tickRate(25)
+                            .slopeFindDistance(3)
+                            .explosionResistance(100f))
+                    .source(BaseFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
+                    .bucket().build()
                     .register();
 
     public static void register() {}
 
     public static void registerFluidInteractions() {
-//        FluidInteractionRegistry.addInteraction(ForgeMod.WATER_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
-//                MELTED_BLUE_ICE.get().getFluidType(),
-//                fluidState -> {
-//                    if (fluidState.isSource()) {
-//                        return Blocks.BLUE_ICE.defaultBlockState();
-//                    } else {
-//                        return HerbologyBlocks.CRYOSINE.getDefaultState();
-//                    }
-//                }
-//        ));
+        FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
+                BIRCH_SYRUP.get().getFluidType(),
+                fluidState -> {
+                    if (fluidState.isSource()) {
+                        return AllPaletteStoneTypes.CRIMSITE.getBaseBlock().get().defaultBlockState();
+                    } else {
+                        return CreateGarnishedStoneTypes.PORPHYRY.getBaseBlock().getDefaultState();
+                    }
+                }
+        ));
     }
 
     @Nullable
     public static BlockState getFluidInteraction(FluidState fluidState) {
         Fluid fluid = fluidState.getType();
-//        if (fluid.isSame(MELTED_BLUE_ICE.get()))
-//            return HerbologyBlocks.CRYOSINE.getDefaultState();
+        if (fluid.isSame(BIRCH_SYRUP.get()))
+            return CreateGarnishedStoneTypes.PORPHYRY.getBaseBlock().getDefaultState();
         return null;
     }
 

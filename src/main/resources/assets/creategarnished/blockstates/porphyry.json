@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "creategarnished:block/porphyry0"
+      },
+      {
+        "model": "creategarnished:block/porphyry1"
+      },
+      {
+        "model": "creategarnished:block/porphyry2"
+      },
+      {
+        "model": "creategarnished:block/porphyry3"
+      }
+    ]
+  }
+}

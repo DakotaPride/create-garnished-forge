@@ -1,0 +1,16 @@
+{
+  "name": "Peanut Butter",
+  "icon": "creategarnished:peanut_butter",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:peanut_butter_bottle",
+      "text": "Peanut Butter can currently be consumed on its own, but can also be used to make Peanut Butter Cookies!"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "creategarnished:crafting/peanut_butter_cookie"
+    }
+  ]
+}

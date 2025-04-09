@@ -9,9 +9,12 @@ import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
 
+import static com.simibubi.create.Create.REGISTRATE;
+
 public class CreateGarnishedBlocks {
 
     static {
+        CreateGarnishedStoneTypes.register();
         CreateGarnished.REGISTRATE.setCreativeTab(GarnishedCreativeModeTabs.GARNISHED);
     }
 

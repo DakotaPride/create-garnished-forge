@@ -2,5 +2,5 @@
   "name": "Biome Specific Content",
   "description": "Content that is specific to certain biomes or sets of biomes.",
   "icon": "creategarnished:birch_sap_bottle",
-  "sortnum": 0
+  "sortnum": 1
 }
