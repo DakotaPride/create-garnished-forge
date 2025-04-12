@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.IntFunction;
 
 public class NutBoatEntity extends Boat {
-    private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(NutBoatEntity.class, EntityDataSerializers.INT);
 
     public NutBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);

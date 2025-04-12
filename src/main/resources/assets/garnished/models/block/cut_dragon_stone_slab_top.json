@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "garnished:block/cut_dragon_stone",
+    "side": "garnished:block/cut_dragon_stone",
+    "top": "garnished:block/cut_dragon_stone"
+  }
+}

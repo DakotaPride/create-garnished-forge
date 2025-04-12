@@ -194,7 +194,7 @@ public class GarnishedFluids implements Fluids {
 
 	public static void registerFluidInteractions() {
 		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), PEANUT_OIL.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), APPLE_CIDER.getType(), Blocks.OBSIDIAN, GarnishedBlocks.CARNOTITE.get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), APPLE_CIDER.getType(), Blocks.OBSIDIAN, GarnishedPaletteStoneTypes.CARNOTITE.getBlock().get());
 		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), GARNISH.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.CALCITE.getBaseBlock().get());
 		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), CASHEW_MIXTURE.getType(), Blocks.OBSIDIAN, Blocks.END_STONE);
 
@@ -244,7 +244,7 @@ public class GarnishedFluids implements Fluids {
 	public static BlockState getLavaInteraction(FluidState fluidState) {
 		Fluids.lavaInteraction(fluidState, GARNISH.get(), AllPaletteStoneTypes.CALCITE.getBaseBlock().get());
 		Fluids.lavaInteraction(fluidState, PEANUT_OIL.get(), AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get());
-		Fluids.lavaInteraction(fluidState, APPLE_CIDER.get(), GarnishedBlocks.CARNOTITE.get());
+		Fluids.lavaInteraction(fluidState, APPLE_CIDER.get(), GarnishedPaletteStoneTypes.CARNOTITE.getBlock().get());
 		Fluids.lavaInteraction(fluidState, CASHEW_MIXTURE.get(), Blocks.END_STONE);
 
 		Fluids.lavaInteraction(fluidState, MASTIC_RESIN.get(), GarnishedBlocks.ZULTANITE.get());

@@ -24,9 +24,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:brass_hatchet"
-    },
+    "id": "garnished:brass_hatchet",
     "count": 1
   }
 }

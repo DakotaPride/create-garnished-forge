@@ -24,9 +24,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:experience_hatchet"
-    },
+    "id": "garnished:experience_hatchet",
     "count": 1
   }
 }

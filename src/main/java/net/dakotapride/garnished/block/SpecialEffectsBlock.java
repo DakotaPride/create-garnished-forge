@@ -2,6 +2,7 @@ package net.dakotapride.garnished.block;
 
 import net.dakotapride.garnished.item.IGarnishedUtilities;
 import net.dakotapride.garnished.registry.GarnishedBlocks;
+import net.dakotapride.garnished.registry.GarnishedPaletteStoneTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
@@ -129,7 +130,7 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
                     }
                 }
 
-                if (living.getBlockStateOn().is(GarnishedBlocks.DRAGON_STONE.get())) {
+                if (living.getBlockStateOn().is(GarnishedPaletteStoneTypes.DRAGON_STONE.getBlock().get())) {
                     //System.out.println("Value provided from the mathematical equation, random.nextInt(10): " + effect_list);
                     //System.out.println("Value provided from the mathematical equation, random.nextInt(6): " + effect_trigger);
                 }

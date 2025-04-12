@@ -6,7 +6,7 @@
     }
   ],
   "type": "create:mechanical_crafting",
-  "acceptMirrored": true,
+  "accept_mirrored": true,
   "pattern": [
     "AXI",
     "XZ ",
@@ -30,9 +30,7 @@
     }
   },
   "result": {
-    "item": {
-      "id": "garnished:rose_quartz_hatchet"
-    },
+    "id": "garnished:rose_quartz_hatchet",
     "count": 1
   }
 }
