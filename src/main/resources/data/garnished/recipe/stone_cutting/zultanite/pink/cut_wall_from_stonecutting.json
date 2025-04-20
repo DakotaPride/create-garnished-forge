@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "tag": "garnished:stone_types/zultanite/pink"
+  },
+  "result": {
+    "id": "garnished:cut_pink_zultanite_wall"
+  }
+}

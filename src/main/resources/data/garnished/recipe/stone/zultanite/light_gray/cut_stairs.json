@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "light_gray_zultanite_variants",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "garnished:cut_light_gray_zultanite"
+    }
+  },
+  "result": {
+     "id": "garnished:cut_light_gray_zultanite_stairs",
+    "count": 4
+  }
+}

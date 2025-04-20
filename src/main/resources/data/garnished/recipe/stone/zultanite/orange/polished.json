@@ -2,16 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "group": "orange_zultanite_variants",
   "pattern": [
-    "##",
     "##"
   ],
   "key": {
     "#": {
-      "item": "garnished:orange_zultanite"
+      "item": "garnished:polished_orange_zultanite_slab"
     }
   },
   "result": {
-      "id": "garnished:polished_orange_zultanite",
-    "count": 4
+     "id": "garnished:polished_orange_zultanite"
   }
 }

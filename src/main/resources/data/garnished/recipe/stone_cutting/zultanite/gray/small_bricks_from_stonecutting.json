@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "tag": "garnished:stone_types/zultanite/gray"
+  },
+  "result": {
+    "id": "garnished:small_gray_zultanite_bricks"
+  }
+}

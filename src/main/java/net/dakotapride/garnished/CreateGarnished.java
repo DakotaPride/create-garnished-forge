@@ -236,23 +236,9 @@ public class CreateGarnished {
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_WINDOW.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.NUT_WINDOW_PANE.get(), RenderType.cutout());
 
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.RED_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.ORANGE_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.YELLOW_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.GREEN_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.LIME_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BLUE_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.LIGHT_BLUE_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.CYAN_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PURPLE_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.MAGENTA_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.PINK_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BLACK_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.GRAY_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.LIGHT_GRAY_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.WHITE_MASTIC_BLOCK.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.BROWN_MASTIC_BLOCK.get(), RenderType.translucent());
+            for (ZultaniteStoneTypes types : ZultaniteStoneTypes.values()) {
+                ItemBlockRenderTypes.setRenderLayer(types.getSlimeLikeBlock().get(), RenderType.translucent());
+            }
 
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VERMILION_KELP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GarnishedBlocks.VERMILION_KELP_PLANT.get(), RenderType.cutout());

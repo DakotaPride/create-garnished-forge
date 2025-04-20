@@ -9,14 +9,22 @@
     "garnished:polished_orange_zultanite",
     "garnished:chiseled_orange_zultanite_bricks",
     "garnished:smooth_orange_zultanite",
+    "garnished:cut_orange_zultanite",
+    "garnished:small_orange_zultanite_bricks",
     "garnished:polished_orange_zultanite_stairs",
     "garnished:orange_zultanite_brick_stairs",
     "garnished:smooth_orange_zultanite_stairs",
+    "garnished:cut_orange_zultanite_stairs",
+    "garnished:small_orange_zultanite_brick_stairs",
     "garnished:polished_orange_zultanite_slab",
     "garnished:orange_zultanite_brick_slab",
     "garnished:smooth_orange_zultanite_slab",
+    "garnished:cut_orange_zultanite_slab",
+    "garnished:small_orange_zultanite_brick_slab",
     "garnished:polished_orange_zultanite_wall",
     "garnished:orange_zultanite_brick_wall",
-    "garnished:smooth_orange_zultanite_wall"
+    "garnished:smooth_orange_zultanite_wall",
+    "garnished:cut_orange_zultanite_wall",
+    "garnished:small_orange_zultanite_brick_wall"
   ]
 }

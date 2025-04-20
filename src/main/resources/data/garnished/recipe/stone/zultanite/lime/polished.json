@@ -2,16 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "group": "lime_zultanite_variants",
   "pattern": [
-    "##",
     "##"
   ],
   "key": {
     "#": {
-      "item": "garnished:lime_zultanite"
+      "item": "garnished:polished_lime_zultanite_slab"
     }
   },
   "result": {
-      "id": "garnished:polished_lime_zultanite",
-    "count": 4
+     "id": "garnished:polished_lime_zultanite"
   }
 }

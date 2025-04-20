@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "carnotite_variants",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "garnished:cut_carnotite"
+    }
+  },
+  "result": {
+     "id": "garnished:cut_carnotite_slab",
+    "count": 6
+  }
+}

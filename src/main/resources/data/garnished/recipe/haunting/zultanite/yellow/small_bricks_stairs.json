@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "garnished:small_yellow_zultanite_brick_stairs"
+    }
+  ],
+  "results": [
+    {
+      "id": "garnished:small_carnotite_brick_stairs"
+    }
+  ]
+}

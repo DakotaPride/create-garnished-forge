@@ -8,6 +8,7 @@ import com.tterrag.registrate.util.nullness.NonNullFunction;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.block.*;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -58,7 +59,7 @@ public enum GarnishedPaletteStoneTypes {
     private final BlockEntry<SlabBlock> cutSlabBlock;
     private final BlockEntry<StairBlock> cutStairsBlock;
     private final BlockEntry<WallBlock> cutWallBlock;
-    private final BlockEntry<Block> layeredBlock;
+    //private final BlockEntry<Block> layeredBlock;
 
     GarnishedPaletteStoneTypes(Block copyFrom, NonNullFunction<BlockBehaviour.Properties, Block> blockInstance,
                                NonNullFunction<BlockBehaviour.Properties, SlabBlock> slabInstance,
@@ -201,12 +202,13 @@ public enum GarnishedPaletteStoneTypes {
                 .initialProperties(() -> copyFrom)
                 .properties(properties).register();
 
-        layeredBlock = REGISTRATE.block("layered_" + id, blockInstance)
-                //.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
-                .simpleItem()
-                .initialProperties(() -> copyFrom)
-                .onRegister(connectedTextures(() -> new HorizontalCTBehaviour(ct0, ct1)))
-                .properties(properties).register();
+//        layeredBlock = REGISTRATE.block("layered_" + id, blockInstance)
+//                //.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+//                .simpleItem()
+//                .initialProperties(() -> copyFrom)
+//                .onRegister(connectedTextures(() -> new HorizontalCTBehaviour(ct0, ct1)))
+//                .properties(properties).register();
+        //layeredBlock = layered(id, properties, new HorizontalCTBehaviour(ct0, ct1), copyFrom);
     }
 
     GarnishedPaletteStoneTypes(NonNullFunction<BlockBehaviour.Properties, Block> blockInstance,
@@ -351,12 +353,33 @@ public enum GarnishedPaletteStoneTypes {
                 .initialProperties(() -> Blocks.STONE_BRICK_WALL)
                 .properties(properties).register();
 
-        layeredBlock = REGISTRATE.block("layered_" + id, blockInstance)
-                //.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
-                .simpleItem()
+//        layeredBlock = REGISTRATE.block("layered_" + id, blockInstance)
+//                //.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+//                .simpleItem()
+//                .initialProperties(() -> Blocks.STONE)
+//                .onRegister(connectedTextures(() -> new HorizontalCTBehaviour(ct0, ct1)))
+//                .properties(properties).register();
+        //layeredBlock = layered(id, properties, new HorizontalCTBehaviour(ct0, ct1));
+    }
+
+    public static BlockEntry<Block> layered(String name, NonNullUnaryOperator<BlockBehaviour.Properties> properties,
+                                                      ConnectedTextureBehaviour.Base behaviour) {
+        return CreateGarnished.registrate().block("layered_" + name, Block::new)
+                .onRegister(connectedTextures(() -> behaviour))
                 .initialProperties(() -> Blocks.STONE)
-                .onRegister(connectedTextures(() -> new HorizontalCTBehaviour(ct0, ct1)))
-                .properties(properties).register();
+                .properties(properties)
+                .simpleItem()
+                .register();
+    }
+
+    public static BlockEntry<Block> layered(String name, NonNullUnaryOperator<BlockBehaviour.Properties> properties,
+                                                      ConnectedTextureBehaviour.Base behaviour, Block copy) {
+        return CreateGarnished.registrate().block("layered_" + name, Block::new)
+                .onRegister(connectedTextures(() -> behaviour))
+                .initialProperties(() -> copy)
+                .properties(properties)
+                .simpleItem()
+                .register();
     }
 
     public BlockEntry<Block> getBlock() {
@@ -459,9 +482,9 @@ public enum GarnishedPaletteStoneTypes {
         return smallBrickWallBlock;
     }
 
-    public BlockEntry<Block> getLayeredBlock() {
-        return layeredBlock;
-    }
+//    public BlockEntry<Block> getLayeredBlock() {
+//        return layeredBlock;
+//    }
 
     public static void register() {}
 }

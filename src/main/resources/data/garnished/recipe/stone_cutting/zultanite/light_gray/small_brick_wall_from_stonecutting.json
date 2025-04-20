@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "tag": "garnished:stone_types/zultanite/light_gray"
+  },
+  "result": {
+    "id": "garnished:small_light_gray_zultanite_brick_wall"
+  }
+}

@@ -9,14 +9,22 @@
     "garnished:polished_light_blue_zultanite",
     "garnished:chiseled_light_blue_zultanite_bricks",
     "garnished:smooth_light_blue_zultanite",
+    "garnished:cut_light_blue_zultanite",
+    "garnished:small_light_blue_zultanite_bricks",
     "garnished:polished_light_blue_zultanite_stairs",
     "garnished:light_blue_zultanite_brick_stairs",
     "garnished:smooth_light_blue_zultanite_stairs",
+    "garnished:cut_light_blue_zultanite_stairs",
+    "garnished:small_light_blue_zultanite_brick_stairs",
     "garnished:polished_light_blue_zultanite_slab",
     "garnished:light_blue_zultanite_brick_slab",
     "garnished:smooth_light_blue_zultanite_slab",
+    "garnished:cut_light_blue_zultanite_slab",
+    "garnished:small_light_blue_zultanite_brick_slab",
     "garnished:polished_light_blue_zultanite_wall",
     "garnished:light_blue_zultanite_brick_wall",
-    "garnished:smooth_light_blue_zultanite_wall"
+    "garnished:smooth_light_blue_zultanite_wall",
+    "garnished:cut_light_blue_zultanite_wall",
+    "garnished:small_light_blue_zultanite_brick_wall"
   ]
 }

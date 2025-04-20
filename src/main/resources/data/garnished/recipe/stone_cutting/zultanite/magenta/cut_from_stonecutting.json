@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "tag": "garnished:stone_types/zultanite/magenta"
+  },
+  "result": {
+    "id": "garnished:cut_magenta_zultanite"
+  }
+}

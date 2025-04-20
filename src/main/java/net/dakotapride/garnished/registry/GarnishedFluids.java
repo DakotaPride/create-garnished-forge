@@ -198,23 +198,23 @@ public class GarnishedFluids implements Fluids {
 		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), GARNISH.getType(), Blocks.OBSIDIAN, AllPaletteStoneTypes.CALCITE.getBaseBlock().get());
 		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), CASHEW_MIXTURE.getType(), Blocks.OBSIDIAN, Blocks.END_STONE);
 
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), RED_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.RED_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), ORANGE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.ORANGE_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), YELLOW_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.YELLOW_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), GREEN_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.GREEN_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), LIME_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.LIME_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), BLUE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.BLUE_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), LIGHT_BLUE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.LIGHT_BLUE_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), CYAN_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.CYAN_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), PURPLE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.PURPLE_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), MAGENTA_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.MAGENTA_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), PINK_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.PINK_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), BLACK_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.BLACK_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), GRAY_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.GRAY_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), LIGHT_GRAY_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.LIGHT_GRAY_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), WHITE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.WHITE_ZULTANITE.get());
-		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), BROWN_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, GarnishedBlocks.BROWN_ZULTANITE.get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.DEFAULT.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), RED_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.RED.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), ORANGE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.ORANGE.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), YELLOW_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.YELLOW.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), GREEN_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.GREEN.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), LIME_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.LIME.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), BLUE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.BLUE.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), LIGHT_BLUE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.LIGHT_BLUE.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), CYAN_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.CYAN.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), PURPLE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.PURPLE.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), MAGENTA_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.MAGENTA.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), PINK_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.PINK.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), BLACK_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.BLACK.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), GRAY_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.GRAY.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), LIGHT_GRAY_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.LIGHT_GRAY.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), WHITE_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.WHITE.getBlock().get());
+		Fluids.basicFluidInteraction(NeoForgeMod.LAVA_TYPE.value(), BROWN_MASTIC_RESIN.getType(), Blocks.OBSIDIAN, ZultaniteStoneTypes.BROWN.getBlock().get());
 
 
 //		// Colour Combinations
@@ -247,23 +247,23 @@ public class GarnishedFluids implements Fluids {
 		Fluids.lavaInteraction(fluidState, APPLE_CIDER.get(), GarnishedPaletteStoneTypes.CARNOTITE.getBlock().get());
 		Fluids.lavaInteraction(fluidState, CASHEW_MIXTURE.get(), Blocks.END_STONE);
 
-		Fluids.lavaInteraction(fluidState, MASTIC_RESIN.get(), GarnishedBlocks.ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, RED_MASTIC_RESIN.get(), GarnishedBlocks.RED_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, ORANGE_MASTIC_RESIN.get(), GarnishedBlocks.ORANGE_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, YELLOW_MASTIC_RESIN.get(), GarnishedBlocks.YELLOW_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, GREEN_MASTIC_RESIN.get(), GarnishedBlocks.GREEN_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, LIME_MASTIC_RESIN.get(), GarnishedBlocks.LIME_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, BLUE_MASTIC_RESIN.get(), GarnishedBlocks.BLUE_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, LIGHT_BLUE_MASTIC_RESIN.get(), GarnishedBlocks.LIGHT_BLUE_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, CYAN_MASTIC_RESIN.get(), GarnishedBlocks.CYAN_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, PURPLE_MASTIC_RESIN.get(), GarnishedBlocks.PURPLE_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, MAGENTA_MASTIC_RESIN.get(), GarnishedBlocks.MAGENTA_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, PINK_MASTIC_RESIN.get(), GarnishedBlocks.PINK_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, BLACK_MASTIC_RESIN.get(), GarnishedBlocks.BLACK_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, GRAY_MASTIC_RESIN.get(), GarnishedBlocks.GRAY_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, LIGHT_GRAY_MASTIC_RESIN.get(), GarnishedBlocks.LIGHT_GRAY_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, WHITE_MASTIC_RESIN.get(), GarnishedBlocks.WHITE_ZULTANITE.get());
-		Fluids.lavaInteraction(fluidState, BROWN_MASTIC_RESIN.get(), GarnishedBlocks.BROWN_ZULTANITE.get());
+		Fluids.lavaInteraction(fluidState, MASTIC_RESIN.get(), ZultaniteStoneTypes.DEFAULT.getBlock().get());
+		Fluids.lavaInteraction(fluidState, RED_MASTIC_RESIN.get(), ZultaniteStoneTypes.RED.getBlock().get());
+		Fluids.lavaInteraction(fluidState, ORANGE_MASTIC_RESIN.get(), ZultaniteStoneTypes.ORANGE.getBlock().get());
+		Fluids.lavaInteraction(fluidState, YELLOW_MASTIC_RESIN.get(), ZultaniteStoneTypes.YELLOW.getBlock().get());
+		Fluids.lavaInteraction(fluidState, GREEN_MASTIC_RESIN.get(), ZultaniteStoneTypes.GREEN.getBlock().get());
+		Fluids.lavaInteraction(fluidState, LIME_MASTIC_RESIN.get(), ZultaniteStoneTypes.LIME.getBlock().get());
+		Fluids.lavaInteraction(fluidState, BLUE_MASTIC_RESIN.get(), ZultaniteStoneTypes.BLUE.getBlock().get());
+		Fluids.lavaInteraction(fluidState, LIGHT_BLUE_MASTIC_RESIN.get(), ZultaniteStoneTypes.LIGHT_BLUE.getBlock().get());
+		Fluids.lavaInteraction(fluidState, CYAN_MASTIC_RESIN.get(), ZultaniteStoneTypes.CYAN.getBlock().get());
+		Fluids.lavaInteraction(fluidState, PURPLE_MASTIC_RESIN.get(), ZultaniteStoneTypes.PURPLE.getBlock().get());
+		Fluids.lavaInteraction(fluidState, MAGENTA_MASTIC_RESIN.get(), ZultaniteStoneTypes.MAGENTA.getBlock().get());
+		Fluids.lavaInteraction(fluidState, PINK_MASTIC_RESIN.get(), ZultaniteStoneTypes.PINK.getBlock().get());
+		Fluids.lavaInteraction(fluidState, BLACK_MASTIC_RESIN.get(), ZultaniteStoneTypes.BLACK.getBlock().get());
+		Fluids.lavaInteraction(fluidState, GRAY_MASTIC_RESIN.get(), ZultaniteStoneTypes.GRAY.getBlock().get());
+		Fluids.lavaInteraction(fluidState, LIGHT_GRAY_MASTIC_RESIN.get(), ZultaniteStoneTypes.LIGHT_GRAY.getBlock().get());
+		Fluids.lavaInteraction(fluidState, WHITE_MASTIC_RESIN.get(), ZultaniteStoneTypes.WHITE.getBlock().get());
+		Fluids.lavaInteraction(fluidState, BROWN_MASTIC_RESIN.get(), ZultaniteStoneTypes.BROWN.getBlock().get());
 
 		return null;
 	}

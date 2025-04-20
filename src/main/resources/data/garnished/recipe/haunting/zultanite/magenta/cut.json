@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "garnished:cut_magenta_zultanite"
+    }
+  ],
+  "results": [
+    {
+      "id": "garnished:cut_abyssal_stone"
+    }
+  ]
+}

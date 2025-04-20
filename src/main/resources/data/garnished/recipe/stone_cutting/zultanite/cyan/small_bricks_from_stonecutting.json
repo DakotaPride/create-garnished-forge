@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "tag": "garnished:stone_types/zultanite/cyan"
+  },
+  "result": {
+    "id": "garnished:small_cyan_zultanite_bricks"
+  }
+}

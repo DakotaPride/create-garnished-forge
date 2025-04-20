@@ -2,16 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "group": "white_zultanite_variants",
   "pattern": [
-    "##",
     "##"
   ],
   "key": {
     "#": {
-      "item": "garnished:white_zultanite"
+      "item": "garnished:polished_white_zultanite_slab"
     }
   },
   "result": {
-      "id": "garnished:polished_white_zultanite",
-    "count": 4
+     "id": "garnished:polished_white_zultanite"
   }
 }
