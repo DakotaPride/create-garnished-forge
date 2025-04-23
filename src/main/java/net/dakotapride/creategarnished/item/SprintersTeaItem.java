@@ -9,19 +9,22 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class SprintersTeaItem extends Item {
 
     public SprintersTeaItem(Properties properties) {
-        super(properties);
+        super(properties.food(new FoodProperties.Builder().nutrition(1).saturationModifier(0.6F).usingConvertsTo(Items.GLASS_BOTTLE).build()));
     }
 
-    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity entity) {
+    @Override
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level world, @NotNull LivingEntity entity) {
         Player playerentity = entity instanceof Player ? (Player) entity : null;
         if (playerentity instanceof ServerPlayer)
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) playerentity, stack);
@@ -31,31 +34,23 @@ public class SprintersTeaItem extends Item {
 
         if (playerentity != null) {
             playerentity.awardStat(Stats.ITEM_USED.get(this));
-            playerentity.getFoodData().eat(1, .6F);
-            if (!playerentity.getAbilities().instabuild)
-                stack.shrink(1);
-        }
-
-        if (playerentity == null || !playerentity.getAbilities().instabuild) {
-            if (stack.isEmpty())
-                return new ItemStack(Items.GLASS_BOTTLE);
-            if (playerentity != null)
-                playerentity.getInventory().add(new ItemStack(Items.GLASS_BOTTLE));
         }
 
         return stack;
     }
 
     @Override
-    public int getUseDuration(ItemStack stack, LivingEntity entity) {
+    public int getUseDuration(@NotNull ItemStack stack, @NotNull LivingEntity entity) {
         return 42;
     }
 
-    public UseAnim getUseAnimation(ItemStack stack) {
+    @Override
+    public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
         return UseAnim.DRINK;
     }
 
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
         player.startUsingItem(hand);
         return InteractionResultHolder.success(player.getItemInHand(hand));
     }

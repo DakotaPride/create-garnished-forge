@@ -25,7 +25,7 @@ public class CreateGarnishedItems {
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6F).build()))
             .register();
     public static final ItemEntry<Item> PEANUT_BUTTER_BOTTLE = CreateGarnished.REGISTRATE.item("peanut_butter_bottle", Item::new)
-            .properties(p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.6F).build()))
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.6F).usingConvertsTo(Items.GLASS_BOTTLE).build()))
             .register();
     public static final ItemEntry<Item> PEANUT_BUTTER_COOKIE = CreateGarnished.REGISTRATE.item("peanut_butter_cookie", Item::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F).build()))

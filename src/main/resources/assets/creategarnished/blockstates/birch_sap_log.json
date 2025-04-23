@@ -1,15 +1,29 @@
 {
   "variants": {
-    "axis=x": {
+    "axis=x,has_sap=true": {
       "model": "creategarnished:block/birch_sap_log_horizontal",
       "x": 90,
       "y": 90
     },
-    "axis=y": {
+    "axis=y,has_sap=true": {
       "model": "creategarnished:block/birch_sap_log"
     },
-    "axis=z": {
+    "axis=z,has_sap=true": {
       "model": "creategarnished:block/birch_sap_log_horizontal",
+      "x": 90
+    },
+
+
+    "axis=x,has_sap=false": {
+      "model": "creategarnished:block/birch_empty_sap_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,has_sap=false": {
+      "model": "creategarnished:block/birch_empty_sap_log"
+    },
+    "axis=z,has_sap=false": {
+      "model": "creategarnished:block/birch_empty_sap_log_horizontal",
       "x": 90
     }
   }

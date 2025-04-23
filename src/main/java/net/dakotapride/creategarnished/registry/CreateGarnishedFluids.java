@@ -10,7 +10,9 @@ import com.tterrag.registrate.util.entry.FluidEntry;
 import net.createmod.catnip.theme.Color;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
@@ -19,6 +21,7 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.FluidType;
 import org.joml.Vector3f;
 
 import javax.annotation.Nullable;
@@ -70,24 +73,41 @@ public class CreateGarnishedFluids {
 
     public static void register() {}
 
-    public static void registerFluidInteractions() {
-        FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
-                BIRCH_SYRUP.get().getFluidType(),
+    private static void provideFluidInteraction(FluidType colliding_fluid, FluidType met_fluid, Block from_source, Block from_flowing) {
+        FluidInteractionRegistry.addInteraction(colliding_fluid, new FluidInteractionRegistry.InteractionInformation(
+                met_fluid,
                 fluidState -> {
                     if (fluidState.isSource()) {
-                        return AllPaletteStoneTypes.CRIMSITE.getBaseBlock().get().defaultBlockState();
+                        return from_source.defaultBlockState();
                     } else {
-                        return CreateGarnishedStoneTypes.PORPHYRY.getBaseBlock().getDefaultState();
+                        return from_flowing.defaultBlockState();
                     }
                 }
         ));
+    }
+
+    public static void registerFluidInteractions() {
+        provideFluidInteraction(
+                NeoForgeMod.LAVA_TYPE.value(),
+                BIRCH_SYRUP.get().getFluidType(),
+                AllPaletteStoneTypes.CRIMSITE.getBaseBlock().get(),
+                CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().get()
+        );
+        provideFluidInteraction(
+                NeoForgeMod.LAVA_TYPE.value(),
+                PEANUT_BUTTER.get().getFluidType(),
+                AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get(),
+                AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get()
+        );
     }
 
     @Nullable
     public static BlockState getFluidInteraction(FluidState fluidState) {
         Fluid fluid = fluidState.getType();
         if (fluid.isSame(BIRCH_SYRUP.get()))
-            return CreateGarnishedStoneTypes.PORPHYRY.getBaseBlock().getDefaultState();
+            return CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState();
+        if (fluid.isSame(PEANUT_BUTTER.get()))
+            return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get().defaultBlockState();
         return null;
     }
 

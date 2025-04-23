@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "creategarnished:block/cut_porphyry_herring",
+    "side": "creategarnished:block/cut_porphyry_herring",
+    "top": "creategarnished:block/cut_porphyry_herring"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "creategarnished:item/peanut_butter_bottle"
+    "layer0": "creategarnished:item/peanut_butter_bottle",
+    "particle": "creategarnished:item/particle/peanut_butter"
   }
 }

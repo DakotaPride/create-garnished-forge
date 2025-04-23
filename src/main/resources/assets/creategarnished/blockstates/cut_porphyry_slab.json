@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "creategarnished:block/cut_porphyry_slab"
+    },
+    "type=double": {
+      "model": "creategarnished:block/cut_porphyry"
+    },
+    "type=top": {
+      "model": "creategarnished:block/cut_porphyry_slab_top"
+    }
+  }
+}

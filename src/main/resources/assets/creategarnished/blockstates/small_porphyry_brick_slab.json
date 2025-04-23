@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "creategarnished:block/small_porphyry_brick_slab"
+    },
+    "type=double": {
+      "model": "creategarnished:block/small_porphyry_bricks"
+    },
+    "type=top": {
+      "model": "creategarnished:block/small_porphyry_brick_slab_top"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "creategarnished:nuts"
+    },
+    {
+      "item": "minecraft:book"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "creategarnished:garnishment_book"
+      }
+    }
+  ]
+}

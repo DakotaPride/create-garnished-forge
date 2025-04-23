@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "create:dough"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "creategarnished:peanut_butter"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "creategarnished:peanut_butter_cookie"
+      }
+    }
+  ]
+}

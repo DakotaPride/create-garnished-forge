@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:flours"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "item": "creategarnished:almond_paste"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "item": {
+        "id": "creategarnished:bear_claw"
+      }
+    }
+  ]
+}

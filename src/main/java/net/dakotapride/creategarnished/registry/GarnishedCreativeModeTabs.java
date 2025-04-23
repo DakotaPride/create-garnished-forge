@@ -1,36 +1,14 @@
 package net.dakotapride.creategarnished.registry;
 
-import com.simibubi.create.content.logistics.box.PackageStyles;
-import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.simibubi.create.foundation.item.TagDependentIngredientItem;
-import com.tterrag.registrate.util.entry.ItemEntry;
-import com.tterrag.registrate.util.entry.ItemProviderEntry;
-import com.tterrag.registrate.util.entry.RegistryEntry;
-import it.unimi.dsi.fastutil.objects.*;
-import net.createmod.catnip.platform.CatnipServices;
 import net.dakotapride.creategarnished.CreateGarnished;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.apache.commons.lang3.mutable.MutableObject;
 import org.jetbrains.annotations.ApiStatus;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import org.jetbrains.annotations.NotNull;
 
 //@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class GarnishedCreativeModeTabs {
@@ -41,7 +19,13 @@ public class GarnishedCreativeModeTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.creategarnished.tab"))
                     .icon(CreateGarnishedBlocks.GINGER_ROOT_BARREL::asStack)
-                    .displayItems(new RegistrateDisplayItemsGenerator(true, GarnishedCreativeModeTabs.GARNISHED))
+                    .displayItems(new CreateGarnishedDisplayItemsGenerator())
+                    .build());
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GARNISHED_BLOCKS = REGISTER.register("tab_blocks",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("itemGroup.creategarnished.tab.blocks"))
+                    .icon(CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock()::asStack)
+                    .displayItems(new CreateGarnishedDisplayDecorativeBlocksGenerator())
                     .build());
 
     @ApiStatus.Internal
@@ -49,249 +33,93 @@ public class GarnishedCreativeModeTabs {
         REGISTER.register(modEventBus);
     }
 
-    private static class RegistrateDisplayItemsGenerator implements CreativeModeTab.DisplayItemsGenerator {
-        private static final Predicate<Item> IS_ITEM_3D_PREDICATE;
-
-        static {
-            MutableObject<Predicate<Item>> isItem3d = new MutableObject<>(item -> false);
-            if (CatnipServices.PLATFORM.getEnv().isClient())
-                isItem3d.setValue(makeClient3dItemPredicate());
-            IS_ITEM_3D_PREDICATE = isItem3d.getValue();
-        }
-
-        @OnlyIn(Dist.CLIENT)
-        private static Predicate<Item> makeClient3dItemPredicate() {
-            return item -> {
-                ItemRenderer itemRenderer = Minecraft.getInstance()
-                        .getItemRenderer();
-                BakedModel model = itemRenderer.getModel(new ItemStack(item), null, null, 0);
-                return model.isGui3d();
-            };
-        }
-
-        private final boolean addItems;
-        private final DeferredHolder<CreativeModeTab, CreativeModeTab> tabFilter;
-
-        public RegistrateDisplayItemsGenerator(boolean addItems, DeferredHolder<CreativeModeTab, CreativeModeTab> tabFilter) {
-            this.addItems = addItems;
-            this.tabFilter = tabFilter;
-        }
-
-        private static Predicate<Item> makeExclusionPredicate() {
-            Set<Item> exclusions = new ReferenceOpenHashSet<>();
-
-            List<ItemProviderEntry<?, ?>> simpleExclusions = List.of();
-
-            List<ItemEntry<TagDependentIngredientItem>> tagDependentExclusions = List.of();
-
-            exclusions.addAll(PackageStyles.RARE_BOXES);
-
-            for (ItemProviderEntry<?, ?> entry : simpleExclusions) {
-                exclusions.add(entry.asItem());
-            }
-
-            for (ItemEntry<TagDependentIngredientItem> entry : tagDependentExclusions) {
-                TagDependentIngredientItem item = entry.get();
-                if (item.shouldHide()) {
-                    exclusions.add(entry.asItem());
-                }
-            }
-
-            return exclusions::contains;
-        }
-
-        private static List<ItemOrdering> makeOrderings() {
-            List<ItemOrdering> orderings = new ReferenceArrayList<>();
-
-            Map<ItemProviderEntry<?, ?>, ItemProviderEntry<?, ?>> simpleBeforeOrderings = Map.of();
-
-            Map<ItemProviderEntry<?, ?>, ItemProviderEntry<?, ?>> simpleAfterOrderings = Map.of();
-
-            simpleBeforeOrderings.forEach((entry, otherEntry) -> {
-                orderings.add(ItemOrdering.before(entry.asItem(), otherEntry.asItem()));
-            });
-
-            simpleAfterOrderings.forEach((entry, otherEntry) -> {
-                orderings.add(ItemOrdering.after(entry.asItem(), otherEntry.asItem()));
-            });
-
-            PackageStyles.STANDARD_BOXES.forEach(item -> {
-                //orderings.add(RegistrateDisplayItemsGenerator.ItemOrdering.after(item, AllBlocks.PACKAGER.asItem()));
-            });
-
-            return orderings;
-        }
-
-        private static Function<Item, ItemStack> makeStackFunc() {
-            Map<Item, Function<Item, ItemStack>> factories = new Reference2ReferenceOpenHashMap<>();
-
-            Map<ItemProviderEntry<?, ?>, Function<Item, ItemStack>> simpleFactories = Map.of(
-//                    AllItems.COPPER_BACKTANK, item -> {
-//                        ItemStack stack = new ItemStack(item);
-//                        stack.set(AllDataComponents.BACKTANK_AIR, BacktankUtil.maxAirWithoutEnchants());
-//                        return stack;
-//                    },
-//                    AllItems.NETHERITE_BACKTANK, item -> {
-//                        ItemStack stack = new ItemStack(item);
-//                        stack.set(AllDataComponents.BACKTANK_AIR, BacktankUtil.maxAirWithoutEnchants());
-//                        return stack;
-//                    }
-            );
-
-            simpleFactories.forEach((entry, factory) -> {
-                factories.put(entry.asItem(), factory);
-            });
-
-            return item -> {
-                Function<Item, ItemStack> factory = factories.get(item);
-                if (factory != null) {
-                    return factory.apply(item);
-                }
-                return new ItemStack(item);
-            };
-        }
-
-        private static Function<Item, CreativeModeTab.TabVisibility> makeVisibilityFunc() {
-            Map<Item, CreativeModeTab.TabVisibility> visibilities = new Reference2ObjectOpenHashMap<>();
-
-            Map<ItemProviderEntry<?, ?>, CreativeModeTab.TabVisibility> simpleVisibilities = Map.of(
-//                    AllItems.BLAZE_CAKE_BASE, CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY
-            );
-
-            simpleVisibilities.forEach((entry, factory) -> {
-                visibilities.put(entry.asItem(), factory);
-            });
-
-//            for (BlockEntry<ValveHandleBlock> entry : AllBlocks.DYED_VALVE_HANDLES) {
-//                visibilities.put(entry.asItem(), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
-//            }
-//
-//            for (BlockEntry<SeatBlock> entry : AllBlocks.SEATS) {
-//                SeatBlock block = entry.get();
-//                if (block.getColor() != DyeColor.RED) {
-//                    visibilities.put(entry.asItem(), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
-//                }
-//            }
-//
-//            for (BlockEntry<TableClothBlock> entry : AllBlocks.TABLE_CLOTHS) {
-//                TableClothBlock block = entry.get();
-//                if (block.getColor() != DyeColor.RED) {
-//                    visibilities.put(entry.asItem(), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
-//                }
-//            }
-//
-//            for (BlockEntry<PostboxBlock> entry : AllBlocks.PACKAGE_POSTBOXES) {
-//                PostboxBlock block = entry.get();
-//                if (block.getColor() != DyeColor.WHITE) {
-//                    visibilities.put(entry.asItem(), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
-//                }
-//            }
-//
-//            for (BlockEntry<ToolboxBlock> entry : AllBlocks.TOOLBOXES) {
-//                ToolboxBlock block = entry.get();
-//                if (block.getColor() != DyeColor.BROWN) {
-//                    visibilities.put(entry.asItem(), CreativeModeTab.TabVisibility.SEARCH_TAB_ONLY);
-//                }
-//            }
-
-            return item -> {
-                CreativeModeTab.TabVisibility visibility = visibilities.get(item);
-                if (visibility != null) {
-                    return visibility;
-                }
-                return CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS;
-            };
-        }
+    public static class CreateGarnishedDisplayItemsGenerator implements CreativeModeTab.DisplayItemsGenerator {
+        public CreateGarnishedDisplayItemsGenerator() {}
 
         @Override
-        public void accept(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {
-            Predicate<Item> exclusionPredicate = makeExclusionPredicate();
-            List<ItemOrdering> orderings = makeOrderings();
-            Function<Item, ItemStack> stackFunc = makeStackFunc();
-            Function<Item, CreativeModeTab.TabVisibility> visibilityFunc = makeVisibilityFunc();
+        public void accept(CreativeModeTab.@NotNull ItemDisplayParameters parameters, CreativeModeTab.@NotNull Output output) {
+            //output.accept(GarnishedItems.CRACKED_CASHEW.asStack());
+            output.accept(CreateGarnishedItems.GARNISHMENT_BOOK);
 
-            List<Item> items = new LinkedList<>();
-            if (addItems) {
-                items.addAll(collectItems(exclusionPredicate.or(IS_ITEM_3D_PREDICATE.negate())));
-            }
-            items.addAll(collectBlocks(exclusionPredicate));
-            if (addItems) {
-                items.addAll(collectItems(exclusionPredicate.or(IS_ITEM_3D_PREDICATE)));
-            }
+            output.accept(CreateGarnishedItems.PEANUT);
+            output.accept(CreateGarnishedItems.GINGER_ROOT);
+            output.accept(CreateGarnishedItems.PEANUT_BUTTER_COOKIE);
 
-            applyOrderings(items, orderings);
-            outputAll(output, items, stackFunc, visibilityFunc);
+            output.accept(CreateGarnishedItems.PINE_NUT);
+            output.accept(CreateGarnishedItems.ELVEN_SWEET_BERRIES);
+            output.accept(CreateGarnishedItems.VEGETABLE_STEW);
+            output.accept(CreateGarnishedItems.PINE_NUT_FLOUR);
+
+            output.accept(CreateGarnishedItems.HAZELNUT);
+            output.accept(CreateGarnishedItems.CHOCOLATE_TRUFFLE);
+            output.accept(CreateGarnishedItems.PRALINE);
+            output.accept(CreateGarnishedItems.PANCAKES);
+            output.accept(CreateGarnishedItems.SYRUP_COVERED_PANCAKES);
+
+            output.accept(CreateGarnishedItems.ALMOND);
+            output.accept(CreateGarnishedItems.BEAR_CLAW);
+            output.accept(CreateGarnishedItems.CHURCHKHELA);
+            output.accept(CreateGarnishedItems.ALMOND_PASTE);
+
+            output.accept(CreateGarnishedItems.PEANUT_BUTTER_BOTTLE);
+            output.accept(CreateGarnishedItems.BIRCH_SAP_BOTTLE);
+            output.accept(CreateGarnishedItems.BIRCH_SYRUP_BOTTLE);
+            output.accept(CreateGarnishedItems.BEETROOT_JUICE_BOTTLE);
+
+            output.accept(CreateGarnishedItems.SPRINTERS_TEA);
+            output.accept(CreateGarnishedItems.SWEET_TEA);
+            output.accept(CreateGarnishedItems.ELVEN_TEA);
+
+            output.accept(CreateGarnishedFluids.PEANUT_BUTTER.get().getBucket());
+            output.accept(CreateGarnishedFluids.BIRCH_SYRUP.get().getBucket());
         }
+    }
 
-        private List<Item> collectBlocks(Predicate<Item> exclusionPredicate) {
-            List<Item> items = new ReferenceArrayList<>();
-            for (RegistryEntry<Block, Block> entry : CreateGarnished.REGISTRATE.getAll(Registries.BLOCK)) {
-                if (!CreateRegistrate.isInCreativeTab(entry, tabFilter))
-                    continue;
-                Item item = entry.get()
-                        .asItem();
-                if (item == Items.AIR)
-                    continue;
-                if (!exclusionPredicate.test(item))
-                    items.add(item);
-            }
-            items = new ReferenceArrayList<>(new ReferenceLinkedOpenHashSet<>(items));
-            return items;
-        }
+    public static class CreateGarnishedDisplayDecorativeBlocksGenerator implements CreativeModeTab.DisplayItemsGenerator {
+        public CreateGarnishedDisplayDecorativeBlocksGenerator() {}
 
-        private List<Item> collectItems(Predicate<Item> exclusionPredicate) {
-            List<Item> items = new ReferenceArrayList<>();
-            for (RegistryEntry<Item, Item> entry : CreateGarnished.REGISTRATE.getAll(Registries.ITEM)) {
-                if (!CreateRegistrate.isInCreativeTab(entry, tabFilter))
-                    continue;
-                Item item = entry.get();
-                if (item instanceof BlockItem)
-                    continue;
-                if (!exclusionPredicate.test(item))
-                    items.add(item);
-            }
-            return items;
-        }
+        @Override
+        public void accept(CreativeModeTab.@NotNull ItemDisplayParameters parameters, CreativeModeTab.@NotNull Output output) {
+            //output.accept(GarnishedItems.CRACKED_CASHEW.asStack());
+            output.accept(CreateGarnishedBlocks.MARIGOLD);
+            output.accept(CreateGarnishedBlocks.WILD_PEANUT);
+            output.accept(CreateGarnishedBlocks.WILD_GINGER_ROOT);
 
-        private static void applyOrderings(List<Item> items, List<ItemOrdering> orderings) {
-            for (ItemOrdering ordering : orderings) {
-                int anchorIndex = items.indexOf(ordering.anchor());
-                if (anchorIndex != -1) {
-                    Item item = ordering.item();
-                    int itemIndex = items.indexOf(item);
-                    if (itemIndex != -1) {
-                        items.remove(itemIndex);
-                        if (itemIndex < anchorIndex) {
-                            anchorIndex--;
-                        }
-                    }
-                    if (ordering.type() == ItemOrdering.Type.AFTER) {
-                        items.add(anchorIndex + 1, item);
-                    } else {
-                        items.add(anchorIndex, item);
-                    }
-                }
-            }
-        }
+            output.accept(CreateGarnishedBlocks.PEANUT_BARREL);
+            output.accept(CreateGarnishedBlocks.PINE_NUT_BARREL);
+            output.accept(CreateGarnishedBlocks.HAZELNUT_BARREL);
+            output.accept(CreateGarnishedBlocks.ALMOND_BARREL);
+            output.accept(CreateGarnishedBlocks.SWEET_BERRY_BARREL);
+            output.accept(CreateGarnishedBlocks.ELVEN_SWEET_BERRY_BARREL);
 
-        private static void outputAll(CreativeModeTab.Output output, List<Item> items, Function<Item, ItemStack> stackFunc, Function<Item, CreativeModeTab.TabVisibility> visibilityFunc) {
-            for (Item item : items) {
-                output.accept(stackFunc.apply(item), visibilityFunc.apply(item));
-            }
-        }
+            output.accept(CreateGarnishedBlocks.PINE_NUT_LEAVES);
+            output.accept(CreateGarnishedBlocks.HAZELNUT_LEAVES);
+            output.accept(CreateGarnishedBlocks.ALMOND_LEAVES);
+            output.accept(CreateGarnishedBlocks.BLOSSOMING_ALMOND_LEAVES);
+            output.accept(CreateGarnishedBlocks.BIRCH_SAP_LOG);
 
-        private record ItemOrdering(Item item, Item anchor, Type type) {
-            public static ItemOrdering before(Item item, Item anchor) {
-                return new ItemOrdering(item, anchor, Type.BEFORE);
-            }
+//            output.accept(CreateGarnishedBlocks.PINE_NUT_SAPLING);
+//            output.accept(CreateGarnishedBlocks.HAZELNUT_SAPLING);
+//            output.accept(CreateGarnishedBlocks.ALMOND_SAPLING);
 
-            public static ItemOrdering after(Item item, Item anchor) {
-                return new ItemOrdering(item, anchor, Type.AFTER);
-            }
-
-            public enum Type {
-                BEFORE,
-                AFTER;
+            for (CreateGarnishedStoneTypes stoneTypes : CreateGarnishedStoneTypes.values()) {
+                output.accept(stoneTypes.getStoneType().getBaseStoneBlock());
+                output.accept(stoneTypes.getStoneType().getCutBlock());
+                output.accept(stoneTypes.getStoneType().getSlabBlock());
+                output.accept(stoneTypes.getStoneType().getStairsBlock());
+                output.accept(stoneTypes.getStoneType().getWallBlock());
+                output.accept(stoneTypes.getStoneType().getBricksBlock());
+                output.accept(stoneTypes.getStoneType().getBrickSlabBlock());
+                output.accept(stoneTypes.getStoneType().getBrickStairsBlock());
+                output.accept(stoneTypes.getStoneType().getBrickWallBlock());
+                output.accept(stoneTypes.getStoneType().getSmallBricksBlock());
+                output.accept(stoneTypes.getStoneType().getSmallBrickSlabBlock());
+                output.accept(stoneTypes.getStoneType().getSmallBrickStairsBlock());
+                output.accept(stoneTypes.getStoneType().getSmallBrickWallBlock());
+                output.accept(stoneTypes.getStoneType().getPolishedBlock());
+                output.accept(stoneTypes.getStoneType().getPolishedSlabBlock());
+                output.accept(stoneTypes.getStoneType().getPolishedStairsBlock());
+                output.accept(stoneTypes.getStoneType().getPolishedWallBlock());
             }
         }
     }

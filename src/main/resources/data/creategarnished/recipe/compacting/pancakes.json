@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:milk"
+    },
+    {
+      "tag": "c:flours"
+    },
+    {
+      "tag": "c:flours"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "item": {
+        "id": "creategarnished:pancakes"
+      }
+    }
+  ]
+}

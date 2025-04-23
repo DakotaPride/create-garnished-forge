@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "creategarnished:cut_porphyry_stairs",
+    "creategarnished:polished_cut_porphyry_stairs",
+    "creategarnished:cut_porphyry_brick_stairs",
+    "creategarnished:small_porphyry_brick_stairs"
+  ]
+}

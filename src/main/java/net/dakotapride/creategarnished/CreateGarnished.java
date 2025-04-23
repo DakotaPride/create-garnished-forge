@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
+import net.dakotapride.creategarnished.block.BirchLogExtractingSapBlock;
 import net.dakotapride.creategarnished.registry.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -24,7 +25,7 @@ import org.slf4j.Logger;
 @Mod(CreateGarnished.ID)
 public class CreateGarnished {
     public static final String ID = "creategarnished";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ID)
             .defaultCreativeTab((ResourceKey<CreativeModeTab>) null);
