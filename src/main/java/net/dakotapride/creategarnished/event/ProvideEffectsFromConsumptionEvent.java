@@ -15,6 +15,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 
 @EventBusSubscriber(modid = CreateGarnished.ID, bus = EventBusSubscriber.Bus.GAME)
@@ -43,7 +44,7 @@ public class ProvideEffectsFromConsumptionEvent {
     enum YoinkFromHereList {
         JUNGLE(CreateGarnishedTags.JUNGLE_SPECIAL_FOODS, BiomeTags.IS_JUNGLE, MobEffects.DIG_SPEED),
         FLOWER_FOREST(CreateGarnishedTags.FLOWER_FOREST_SPECIAL_FOODS, CreateGarnishedTags.IS_ACCEPTED_FLOWER_BIOME, MobEffects.REGENERATION),
-        BIRCH_FOREST(CreateGarnishedTags.BIRCH_FOREST_SPECIAL_FOODS, CreateGarnishedTags.IS_BIRCH_FOREST, MobEffects.MOVEMENT_SPEED),
+        BIRCH_FOREST(CreateGarnishedTags.BIRCH_FOREST_SPECIAL_FOODS, Tags.Biomes.IS_BIRCH_FOREST, MobEffects.MOVEMENT_SPEED),
         TAIGA(CreateGarnishedTags.TAIGA_SPECIAL_FOODS, BiomeTags.IS_TAIGA, MobEffects.INVISIBILITY),
 
 

@@ -20,5 +20,4 @@ public class CreateGarnishedTags {
     public static TagKey<Item> BIRCH_FOREST_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/birch"));
 
     public static TagKey<Biome> IS_ACCEPTED_FLOWER_BIOME = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", "is_flower_biome"));
-    public static TagKey<Biome> IS_BIRCH_FOREST = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", "is_birch_forest"));
 }
