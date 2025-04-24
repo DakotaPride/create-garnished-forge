@@ -3,6 +3,9 @@
   "heat_requirement": "heated",
   "ingredients": [
     {
+      "item": "minecraft:sugar"
+    },
+    {
       "type": "fluid_stack",
       "amount": 50,
       "fluid": "creategarnished:birch_sap"

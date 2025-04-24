@@ -6,12 +6,12 @@
     {
       "type": "spotlight",
       "item": "creategarnished:peanut_butter_bottle",
-      "text": "Peanut Butter can currently be consumed on its own, but can also be used to make Peanut Butter Cookies!"
+      "text": "Peanut Butter can be consumed on its own, but can also be used to make Peanut Butter Cookies!"
     },
     {
       "type": "spotlight",
-      "item": "creategarnished:peanut_butter_bottle",
-      "text": "Peanut Butter can currently be consumed on its own, but can also be used to make Peanut Butter Cookies!"
+      "item": "creategarnished:peanut_butter_cookie",
+      "text": "Peanut Butter Cookies are made by compacting Dough, Sugar, an Egg, and some Peanut Butter inside of a Basin, which provides 2 as a result.$(br)"
     }
   ]
 }
