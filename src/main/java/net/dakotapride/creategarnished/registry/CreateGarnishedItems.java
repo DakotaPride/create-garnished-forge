@@ -95,6 +95,9 @@ public class CreateGarnishedItems {
                     .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 400, 1), 0.5F)
                     .nutrition(8).saturationModifier(0.8F).build()))
             .register();
+    public static final ItemEntry<Item> CREAM = CreateGarnished.REGISTRATE.item("cream", Item::new)
+            //.properties(p -> )
+            .register();
 
     public static void register() {}
 

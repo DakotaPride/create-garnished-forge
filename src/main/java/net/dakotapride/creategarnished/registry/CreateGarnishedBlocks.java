@@ -5,8 +5,10 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.*;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
 import static com.simibubi.create.Create.REGISTRATE;
@@ -105,6 +107,12 @@ public class CreateGarnishedBlocks {
     public static final BlockEntry<CropBarrelBlock> ALMOND_BARREL = CreateGarnished.REGISTRATE.block("almond_barrel", CropBarrelBlock::new)
             .simpleItem()
             .initialProperties(() -> Blocks.BARREL).register();
+
+
+    public static final BlockEntry<PoundCakeBlock> POUND_CAKE = CreateGarnished.REGISTRATE.block("pound_cake", PoundCakeBlock::new)
+            .simpleItem()
+            .properties(BlockBehaviour.Properties::noOcclusion)
+            .initialProperties(() -> Blocks.CAKE).register();
 
     public static void register() {}
 

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "porphyry_variants",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "creategarnished:small_porphyry_brick_slab"
+    }
+  },
+  "result": {
+    "id": "creategarnished:small_porphyry_bricks"
+  }
+}

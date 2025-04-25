@@ -59,7 +59,9 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.ALMOND);
             output.accept(CreateGarnishedItems.BEAR_CLAW);
             output.accept(CreateGarnishedItems.CHURCHKHELA);
+            output.accept(CreateGarnishedBlocks.POUND_CAKE);
             output.accept(CreateGarnishedItems.ALMOND_PASTE);
+            output.accept(CreateGarnishedItems.CREAM);
 
             output.accept(CreateGarnishedItems.PEANUT_BUTTER_BOTTLE);
             output.accept(CreateGarnishedItems.BIRCH_SAP_BOTTLE);
@@ -72,6 +74,7 @@ public class GarnishedCreativeModeTabs {
 
             output.accept(CreateGarnishedFluids.PEANUT_BUTTER.get().getBucket());
             output.accept(CreateGarnishedFluids.BIRCH_SYRUP.get().getBucket());
+            output.accept(CreateGarnishedFluids.ALMOND_EXTRACT.get().getBucket());
         }
     }
 

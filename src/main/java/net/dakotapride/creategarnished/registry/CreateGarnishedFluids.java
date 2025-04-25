@@ -71,6 +71,20 @@ public class CreateGarnishedFluids {
                     .bucket().build()
                     .register();
 
+    public static final FluidEntry<BaseFlowingFluid.Flowing> ALMOND_EXTRACT =
+            REGISTRATE.standardFluid("almond_extract",
+                            SolidRenderedPlaceableFluidType.create(0x9E4B1F,
+                                    () -> 1f / 32f * AllConfigs.client().chocolateTransparencyMultiplier.getF()))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(2)
+                            .tickRate(25)
+                            .slopeFindDistance(3)
+                            .explosionResistance(100f))
+                    .source(BaseFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
+                    .bucket().build()
+                    .register();
+
     public static void register() {}
 
     private static void provideFluidInteraction(FluidType colliding_fluid, FluidType met_fluid, Block from_source, Block from_flowing) {

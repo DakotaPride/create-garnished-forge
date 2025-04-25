@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 75,
+      "fluid_tag": "c:milk"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "item": {
+        "id": "creategarnished:cream"
+      }
+    }
+  ]
+}

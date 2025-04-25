@@ -17,14 +17,9 @@
     {
       "item": "minecraft:carrot"
     },
-    [
-      {
-        "item": "minecraft:pumpkin"
-      },
-      {
-        "tag": "c:pumpkin_slices"
-      }
-    ]
+    {
+      "tag": "creategarnished:acceptable_pumpkin_for_stew"
+    }
   ],
   "result": {
     "id": "creategarnished:vegetable_stew"

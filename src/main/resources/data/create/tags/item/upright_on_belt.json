@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "#c:buckets/peanut_butter",
+    "#c:buckets/almond_extract",
+    "#c:buckets/syrup",
+    "creategarnished:sprinters_tea",
+    "creategarnished:sweet_tea",
+    "creategarnished:elven_tea",
+    "creategarnished:peanut_butter_bottle",
+    "creategarnished:birch_sap_bottle",
+    "creategarnished:birch_syrup_bottle",
+    "creategarnished:beetroot_juice_bottle",
+    "creategarnished:vegetable_stew"
+  ]
+}

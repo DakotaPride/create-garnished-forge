@@ -11,8 +11,12 @@
             "weight": 9
           },
           {
+            "data": 5,
+            "weight": 3
+          },
+          {
             "data": 0,
-            "weight": 7
+            "weight": 5
           }
         ]
       }

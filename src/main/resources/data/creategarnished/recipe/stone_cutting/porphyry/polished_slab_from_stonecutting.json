@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "tag": "creategarnished:stone_types/porphyry"
+  },
+  "result": {
+    "id": "creategarnished:polished_cut_porphyry_slab"
+  }
+}

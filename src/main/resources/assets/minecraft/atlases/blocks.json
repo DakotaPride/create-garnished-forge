@@ -55,6 +55,14 @@
     {
       "type": "single",
       "resource": "creategarnished:fluid/beetroot_juice_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/almond_extract_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/almond_extract_still"
     }
   ]
 }

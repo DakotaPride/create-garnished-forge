@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "porphyry_variants",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "creategarnished:cut_porphyry"
+    }
+  },
+  "result": {
+     "id": "creategarnished:cut_porphyry_wall",
+    "count": 6
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:pumpkin",
+    "minecraft:carved_pumpkin",
+
+    {
+      "required": false,
+      "id": "#c:pumpkin_slices"
+    }
+  ]
+}
