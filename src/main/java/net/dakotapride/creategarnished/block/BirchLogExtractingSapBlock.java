@@ -50,7 +50,7 @@ public class BirchLogExtractingSapBlock extends RotatedPillarBlock {
             super.randomTick(state, level, pos, random);
         }
 
-        CreateGarnished.LOGGER.info("The random integer is {}", r);
+        //CreateGarnished.LOGGER.info("The random integer is {}", r);
 
         //super.randomTick(state, level, pos, random);
     }
