@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "creategarnished:almond",
+    "creategarnished:bear_claw",
     "creategarnished:churchkhela"
   ]
 }

@@ -1,7 +1,15 @@
 {
   "variants": {
-    "": {
-      "model": "creategarnished:block/marigold"
-    }
+    "": [
+      {
+        "model": "creategarnished:block/marigold0"
+      },
+      {
+        "model": "creategarnished:block/marigold1"
+      },
+      {
+        "model": "creategarnished:block/marigold2"
+      }
+    ]
   }
 }

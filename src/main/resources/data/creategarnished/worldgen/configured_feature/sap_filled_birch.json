@@ -47,7 +47,8 @@
           "data": {
             "Name": "creategarnished:birch_sap_log",
             "Properties": {
-              "axis": "y"
+              "axis": "y",
+              "has_sap": "true"
             }
           }
         },

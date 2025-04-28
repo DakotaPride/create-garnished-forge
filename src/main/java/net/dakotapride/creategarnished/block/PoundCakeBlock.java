@@ -1,18 +1,25 @@
 package net.dakotapride.creategarnished.block;
 
 import com.mojang.serialization.MapCodec;
+import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.event.ProvideEffectsFromConsumptionEvent;
+import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -87,6 +94,11 @@ public class PoundCakeBlock extends Block {
         } else {
             player.awardStat(Stats.EAT_CAKE_SLICE);
             player.getFoodData().eat(8, 0.8F);
+            Holder<Biome> biome = player.level().getBiome(player.blockPosition());
+            boolean isInBiome = biome.is(CreateGarnishedTags.IS_ACCEPTED_FLOWER_BIOME);
+            if (isInBiome) {
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 120 * 20, 1, false, false, false));
+            }
             int i = state.getValue(BITES);
             level.gameEvent(player, GameEvent.EAT, pos);
             if (i < 6) {

@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
+    "creategarnished:pine_nut",
+    "minecraft:sweet_berries",
+    "creategarnished:elven_sweet_berries",
+    "creategarnished:sweet_tea",
+    "creategarnished:elven_tea",
     "creategarnished:vegetable_stew"
   ]
 }

@@ -7,9 +7,14 @@
       "amount": 100,
       "fluid": "minecraft:water"
     },
-    {
-      "tag": "c:foods/fruit"
-    },
+    [
+      {
+        "tag": "c:foods/fruit"
+      },
+      {
+        "tag": "c:foods/berry"
+      }
+    ],
     {
       "item": "creategarnished:almond"
     },

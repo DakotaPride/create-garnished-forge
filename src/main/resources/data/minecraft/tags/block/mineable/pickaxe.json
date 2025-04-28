@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "creategarnished:porphyry",
+    "creategarnished:cut_porphyry",
+    "creategarnished:cut_porphyry_slab",
+    "creategarnished:cut_porphyry_stairs",
+    "creategarnished:cut_porphyry_wall",
+    "creategarnished:polished_cut_porphyry",
+    "creategarnished:polished_cut_porphyry_slab",
+    "creategarnished:polished_cut_porphyry_stairs",
+    "creategarnished:polished_cut_porphyry_wall",
+    "creategarnished:cut_porphyry_bricks",
+    "creategarnished:cut_porphyry_brick_slab",
+    "creategarnished:cut_porphyry_brick_stairs",
+    "creategarnished:cut_porphyry_brick_wall",
+    "creategarnished:small_porphyry_bricks",
+    "creategarnished:small_porphyry_brick_slab",
+    "creategarnished:small_porphyry_brick_stairs",
+    "creategarnished:small_porphyry_brick_wall"
+  ]
+}

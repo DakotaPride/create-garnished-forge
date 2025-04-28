@@ -1,7 +1,15 @@
 {
   "variants": {
-    "": {
-      "model": "creategarnished:block/wild_ginger_root"
-    }
+    "": [
+      {
+        "model": "creategarnished:block/wild_ginger_root0"
+      },
+      {
+        "model": "creategarnished:block/wild_ginger_root1"
+      },
+      {
+        "model": "creategarnished:block/wild_ginger_root2"
+      }
+    ]
   }
 }

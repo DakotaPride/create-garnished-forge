@@ -2,26 +2,30 @@
   "type": "create:compacting",
   "heat_requirement": "heated",
   "ingredients": [
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "item": "minecraft:cocoa_beans"
-    },
+    [
+      {
+        "item": "minecraft:cocea_beans"
+      },
+      {
+        "item": "creategarnished:hazelnut"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:cocea_beans"
+      },
+      {
+        "item": "creategarnished:hazelnut"
+      }
+    ],
     {
       "type": "fluid_stack",
-      "amount": 250,
+      "amount": 100,
       "fluid": "create:chocolate"
     },
     {
       "type": "fluid_tag",
-      "amount": 250,
+      "amount": 50,
       "fluid_tag": "c:milk"
     }
   ],

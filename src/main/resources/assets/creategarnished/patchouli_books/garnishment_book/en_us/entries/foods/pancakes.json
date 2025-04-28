@@ -1,0 +1,17 @@
+{
+  "name": "Pancakes",
+  "icon": "creategarnished:pancakes",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:pancakes",
+      "text": "Pancakes are created by compacting Milk and certain flours."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:syrup_covered_pancakes",
+      "text": "Syrup Covered Pancakes are created by spouting Birch Syrup onto regular Pancakes."
+    }
+  ]
+}

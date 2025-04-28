@@ -1,0 +1,27 @@
+{
+  "name": "Nuts",
+  "icon": "creategarnished:peanut",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:peanut",
+      "text": "Peanuts can be found in Jungle biomes as Wild Peanuts."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:pine_nut",
+      "text": "Pine Nuts can be found in Taiga biomes in the leaves of certain Spruce trees."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:hazelnut",
+      "text": "Hazelnuts can be found in Birch Forest biomes in the leaves of certain Birch trees."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:almond",
+      "text": "Almonds can be found in either Flower Forests or Sunflower Plains growing on a Blossoming Almond Tree with decorative pink leaves."
+    }
+  ]
+}

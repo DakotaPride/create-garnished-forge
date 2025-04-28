@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
+    "creategarnished:peanut",
+    "creategarnished:peanut_butter_bottle",
+    "creategarnished:ginger_root",
+    "creategarnished:peanut_butter_cookie",
     "creategarnished:sprinters_tea"
   ]
 }

@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "creategarnished:praline"
+    "creategarnished:hazelnut",
+    "creategarnished:chocolate_truffle",
+    "creategarnished:praline",
+    "creategarnished:pancakes",
+    "creategarnished:syrup_covered_pancakes"
   ]
 }

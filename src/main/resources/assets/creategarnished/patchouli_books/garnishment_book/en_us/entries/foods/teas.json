@@ -1,0 +1,22 @@
+{
+  "name": "Teas",
+  "icon": "creategarnished:sweet_tea",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:sprinters_tea",
+      "text": "Sprinter's Tea will provide you with Speed for 3 minutes after mixing some Ginger Root, Water, and Honey inside of a heated Basin."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:sweet_tea",
+      "text": "Sweet Tea will provide you with Regeneration for 3 minutes after mixing some Sweet Berries and Honey inside of a heated Basin."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:elven_tea",
+      "text": "Elven Tea will provide you with Speed III and Invisibility for 3 minutes after mixing some Elven Sweet Berries and Sweet Tea inside of a heated Basin."
+    }
+  ]
+}
