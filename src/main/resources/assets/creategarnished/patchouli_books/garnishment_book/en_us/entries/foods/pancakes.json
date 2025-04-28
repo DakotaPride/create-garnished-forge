@@ -11,7 +11,8 @@
     {
       "type": "spotlight",
       "item": "creategarnished:syrup_covered_pancakes",
-      "text": "Syrup Covered Pancakes are created by spouting Birch Syrup onto regular Pancakes."
+      "text": "Syrup Covered Pancakes are created by spouting Birch Syrup onto regular Pancakes.",
+      "title": "Syrup Covered Pancakes"
     }
   ]
 }
