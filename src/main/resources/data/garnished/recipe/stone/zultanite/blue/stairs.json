@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "blue_blue_zultanite_variants",
+  "group": "blue_zultanite_variants",
   "pattern": [
     "#  ",
     "## ",
@@ -8,11 +8,11 @@
   ],
   "key": {
     "#": {
-      "item": "garnished:blue_blue_zultanite"
+      "item": "garnished:blue_zultanite"
     }
   },
   "result": {
-     "id": "garnished:blue_blue_zultanite_stairs",
+     "id": "garnished:blue_zultanite_stairs",
     "count": 4
   }
 }
