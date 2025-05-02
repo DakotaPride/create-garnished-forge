@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "garnished:leech_curse",
+    "garnished:quick_step",
+    "garnished:ravaging",
+    "garnished:rejuvenate",
+    "garnished:salvaging",
+    "garnished:striking"
+  ]
+}
