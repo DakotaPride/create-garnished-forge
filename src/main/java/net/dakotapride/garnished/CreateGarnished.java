@@ -2,10 +2,8 @@ package net.dakotapride.garnished;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
-import com.simibubi.create.infrastructure.data.CreateDatagen;
 import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.garnished.block.cake.AnniversaryCakeBlockRenderer;
-import net.dakotapride.garnished.datagen.CreateGarnishedDatagen;
 import net.dakotapride.garnished.entity.render.NutBoatRenderer;
 import net.dakotapride.garnished.neoforge.LootModifiers;
 import net.dakotapride.garnished.recipe.GarnishedFanProcessing;
@@ -33,7 +31,6 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -48,7 +45,6 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.RegisterEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -93,7 +89,7 @@ public class CreateGarnished {
         GarnishedEntities.register(eventBus);
         //GarnishedBlockEntities.BLOCK_ENTITIES.register(eventBus);
         GarnishedEffects.setRegister(eventBus);
-        //Removed in 1.21.x (rework parity feature)
+        //No need to register, handled through data files/resource keys
         //GarnishedEnchantments.setRegister();
         GarnishedSetTypes.setRegister();
         GarnishedItems.setRegister();
@@ -111,6 +107,7 @@ public class CreateGarnished {
 
         GarnishedAdvancementUtils.register(eventBus);
         GarnishedFanProcessing.register(eventBus);
+        GarnishedItemAttributeTypes.register(eventBus);
         //eventBus.addListener(CreateGarnished::onRegister);
         //eventBus.addListener(EventPriority.LOWEST, CreateGarnishedDatagen::gatherData);
 
