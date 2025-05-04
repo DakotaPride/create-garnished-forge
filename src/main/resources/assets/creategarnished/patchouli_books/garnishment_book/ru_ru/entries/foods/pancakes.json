@@ -1,0 +1,18 @@
+{
+  "name": "Блинчики",
+  "icon": "creategarnished:pancakes",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:pancakes",
+      "text": "Блинчики готовятся путем помещения под пресс определенных видов муки с молоком."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:syrup_covered_pancakes",
+      "text": "Если под дозатор, наполненный берёзовым сиропом, поместить блинчики, то получатся блинчики, политые берёзовым сиропом.",
+      "title": "С сиропом вкуснее!"
+    }
+  ]
+}

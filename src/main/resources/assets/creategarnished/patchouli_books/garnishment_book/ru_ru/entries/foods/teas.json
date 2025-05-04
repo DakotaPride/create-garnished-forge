@@ -1,0 +1,22 @@
+{
+  "name": "Чаи",
+  "icon": "creategarnished:sweet_tea",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:sprinters_tea",
+      "text": "Чай бегуна обеспечит вам скорость на 3 минуты после употребления, для его получения смешайте корень имбиря и мед в нагретой воде чаши."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:sweet_tea",
+      "text": "Сладкий чай даст регенерацию на 3 минуты, для этого смешайте сладкие ягоды и мед в подогретой чаше."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:elven_tea",
+      "text": "Эльфийский чай наделит выпившего Скоростью III и Невидимостью на 3 минуты. Для его получения нужно к сладкому чаю добавить сладкие эльфийские ягоды и снова нагреть чашу."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Березовые леса",
+  "icon": "creategarnished:birch_sap_bottle",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:hazelnut",
+      "text": "Вы можете найти фундук, растущий на деревьях по всему березовому лесу, которые можно использовать как более эффективный метод создания шоколада. Вы можете пересаживать эти орехи, чтобы они снова выросли в деревья для возобновляемого источника как древесины, так и фундука."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/hazelnut_tree.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:birch_sap_bottle",
+      "text": "Иногда в березовых лесах можно найти ствол, из которого вытекает березовый сок. Щелкните правой кнопкой мыши с пустой стеклянной бутылкой, чтобы собрать его для дальнейшей переработки.",
+      "title": "Берёзовый сок"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/sap_filled_birch_log.png"
+      ]
+    }
+  ]
+}

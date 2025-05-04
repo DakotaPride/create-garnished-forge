@@ -1,0 +1,19 @@
+{
+  "name": "Цветочные леса",
+  "icon": "creategarnished:almond_leaves",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:almond",
+      "text": "Иногда в цветочных лесах можно найти цветущее миндальное дерево с ярко-розовыми листьями. С листьев с орехами этого дерева можно получить миндаль. Миндель можно посадить, чтобы он снова вырос в деревья - возобновляемый источник как древесины, так и миндаля."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/blossoming_almond_tree.png"
+      ],
+      "text": "Эти деревья также можно найти на подсолнуховых равнинах."
+    }
+  ]
+}

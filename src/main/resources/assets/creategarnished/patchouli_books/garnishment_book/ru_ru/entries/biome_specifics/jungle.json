@@ -1,0 +1,29 @@
+{
+  "name": "Джунгли",
+  "icon": "creategarnished:wild_ginger_root",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_peanuts",
+      "text": "В джунглях можно найти кусты дикого арахиса. Можно посадить этот орех на сельскохозяйственные угодья, для пополнения запаса арахиса."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_peanuts.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_ginger_root",
+      "text": "В джунглях можно найти кусты дикого имбиря. На том же участке, что и корни дикого имбиря, также часто растут бархатцы. Вы можете посадить имбирь на свои сельскохозяйственные угодья."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_ginger_root.png"
+      ]
+    }
+  ]
+}
