@@ -1,0 +1,6 @@
+{
+  "name": "Контент биомов",
+  "description": "Контент, специфичный для определенных биомов или наборов биомов.",
+  "icon": "creategarnished:birch_sap_bottle",
+  "sortnum": 1
+}

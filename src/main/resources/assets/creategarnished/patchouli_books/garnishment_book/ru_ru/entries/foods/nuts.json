@@ -1,0 +1,27 @@
+{
+  "name": "Орехи",
+  "icon": "creategarnished:peanut",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:peanut",
+      "text": "Арахис можно найти в биомах джунглей на диких кустах."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:pine_nut",
+      "text": "Кедровые орехи можно найти в биомах тайги среди хвои некоторых елей."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:hazelnut",
+      "text": "Фундук можно найти в биомах березового леса в листьях некоторых берез."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:almond",
+      "text": "Миндаль можно найти либо в цветочных лесах, либо на подсолнечных равнинах, он растет на цветущем миндальном дереве с декоративными розовыми листьями."
+    }
+  ]
+}

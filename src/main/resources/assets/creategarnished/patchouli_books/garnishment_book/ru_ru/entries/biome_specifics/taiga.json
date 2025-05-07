@@ -1,0 +1,30 @@
+{
+  "name": "Тайга",
+  "icon": "creategarnished:elven_sweet_berries",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:pine_nut",
+      "text": "На некоторых елях можно найти кедровые орехи, растущие среди хвои. Вы можете посадить эти орехи, чтобы они снова выросли в ореховые деревья"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/pine_nut_tree.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:elven_sweet_berries",
+      "text": "На участках по всей тайге вы можете найти кусты сладких эльфийских ягод. Когда они полностью вырастут, вы сможете собирать с них ягоды, щелкнув правой кнопкой мыши по кусту.",
+      "title": "Эльфиские ягоды"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/elven_sweet_berries.png"
+      ]
+    }
+  ]
+}
