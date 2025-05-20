@@ -23,7 +23,7 @@ import java.util.List;
 public class CrypticAppleCiderFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	private static final int DRINK_DURATION = 40;
 	public CrypticAppleCiderFoodItem(Properties properties) {
-		super(6, 1.0F, properties.stacksTo(8).food(GarnishedFoodValues.CRYPTIC_APPLE_CIDER));
+		super(6, 100, properties.stacksTo(8).food(GarnishedFoodValues.CRYPTIC_APPLE_CIDER));
 	}
 
 	@Override

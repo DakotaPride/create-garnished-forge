@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.item;
 
+import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.ChatFormatting;
@@ -12,6 +13,8 @@ import net.minecraft.util.StringUtil;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
 
 import java.util.List;
 import java.util.Random;
@@ -60,97 +63,74 @@ public interface IGarnishedUtilities {
 		}
 	}
 
+	default void triggerConditionalEffect(int value, float chance, LivingEntity entity) {
+		float floatChance = new Random().nextInt(0, 100);
+		Level level = entity.level();
 
-	default String garnishedText() {
-		return "text.garnished.nut.garnished";
-	}
+		// Sugar High functionality
+		boolean hasSugarHigh = entity.hasEffect(GarnishedEffects.SUGAR_HIGH);
+		// Freezing functionality
+		boolean hasFreezing = entity.hasEffect(GarnishedEffects.FREEZING) || entity.isFreezing();
+		// Hunger functionality
+		boolean hasHunger = entity.hasEffect(MobEffects.HUNGER);
+		// Levitation functionality
+		boolean hasLevitation = entity.hasEffect(MobEffects.LEVITATION);
+		// Bad Omen functionality
+		boolean hasOmen = entity.hasEffect(MobEffects.BAD_OMEN) || entity.hasEffect(MobEffects.RAID_OMEN) || entity.hasEffect(MobEffects.TRIAL_OMEN);
+		// Fire functionality
+		boolean isOnFire = entity.isOnFire() || !entity.fireImmune();
 
-	default String ungarnishedText() {
-		return "text.garnished.nut.ungarnished";
-	}
+		boolean has = floatChance > 0;
 
-	default ChatFormatting standard() {
-		return ChatFormatting.GRAY;
-	}
+		if (!level.isClientSide) {
+			if (value == 0) {
+				has = hasSugarHigh;
+				if (has && floatChance <= chance)
+					entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, tick * 12, 1));
+			}
 
-	default String sweetenedText() {
-		return "text.garnished.nut.sweetened";
-	}
+			if (value == 1) {
+				has = hasFreezing;
+				if (has && floatChance <= chance)
+					entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, tick * 12, 1));
+			}
+			if (value == 2) {
+				has = hasHunger;
+				if (has && floatChance <= chance)
+					entity.addEffect(new MobEffectInstance(GarnishedEffects.THORNS, tick * 24, 1));
+			}
+			if (value == 3) {
+				has = hasLevitation;
+				if (has && floatChance <= chance)
+					entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, tick * 24, 1));
+			}
+			if (value == 4) {
+				has = hasOmen;
+				if (has && floatChance <= chance)
+					entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, tick * 36, 1));
+				else entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, tick * 36, 1));
+			}
+			if (value == 5) {
+				has = isOnFire;
+				if (has && floatChance <= chance)
+					entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, tick * 24, 1));
+			}
+			if (value == 6) {
+				int random = new Random().nextInt(2);
 
-	default ChatFormatting sweetened() {
-		return ChatFormatting.AQUA;
-	}
+				has = random == 1;
 
-	default String honeyedText() {
-		return "text.garnished.nut.honeyed";
-	}
-
-	default Style honeyed() {
-		return Style.EMPTY.withColor(0xEE890F);
-	}
-
-	default String cinderFlourText() {
-		return "text.garnished.nut.cinder_flour";
-	}
-
-	default String meltedCinderFlourText() {
-		return "text.garnished.nut.cinder_flour.melted";
-	}
-
-	default ChatFormatting cinderFlour() {
-		return ChatFormatting.RED;
-	}
-
-	default String chocolateGlazedText() {
-		return "text.garnished.nut.chocolate_glazed";
-	}
-
-	default Style chocolateGlazed() {
-		return Style.EMPTY.withColor(0xB1543E);
-	}
-
-	default MobEffectInstance triggerConditionalEffect(int value, float chance) {
-		float floatChance = new Random().nextFloat(0.0F, 1.0F);
-
-		if (value == 0) {
-			if (GarnishedFoodValues.hasSugarHigh && floatChance < chance)
-				return new MobEffectInstance(MobEffects.REGENERATION, tick * 12, 1);
-		}
-
-		if (value == 1) {
-			if (GarnishedFoodValues.hasFreezing && floatChance < chance)
-				return new MobEffectInstance(MobEffects.REGENERATION, tick * 12, 1);
-		}
-		if (value == 2) {
-			if (GarnishedFoodValues.hasHunger && floatChance < chance)
-				return new MobEffectInstance(GarnishedEffects.THORNS, tick * 24, 1);
-		}
-		if (value == 3) {
-			if (GarnishedFoodValues.hasLevitation && floatChance < chance)
-				return new MobEffectInstance(MobEffects.SLOW_FALLING, tick * 24, 1);
-		}
-		if (value == 4) {
-			if (GarnishedFoodValues.hasBadOmen && floatChance < chance)
-				return new MobEffectInstance(MobEffects.WEAKNESS, tick * 36, 1);
-			else return new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, tick * 36, 1);
-		}
-		if (value == 5) {
-			if (GarnishedFoodValues.isOnFire && floatChance < chance)
-				return new MobEffectInstance(MobEffects.FIRE_RESISTANCE, tick * 24, 1);
-		}
-		if (value == 6) {
-			int random = new Random().nextInt(2);
-
-			if (random == 1) {
-				return new MobEffectInstance(MobEffects.DAMAGE_BOOST, cr_cider_dur, 2);
-			} else {
-				return new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, cr_cider_dur, 2);
+				if (random == 1) {
+					entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, cr_cider_dur, 2));
+				} else {
+					entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, cr_cider_dur, 2));
+				}
 			}
 		}
 
-        //CreateGarnished.LOGGER.info("achieved float value: {}, requested value: {}", floatChance, chance);
+        CreateGarnished.LOGGER.info("achieved float value: {}, requested value: {}, requested value : {}, shouldApply: {}", floatChance, chance, value, has);
 
-		return new MobEffectInstance(MobEffects.REGENERATION, tick * 20, 1, false, false, false);
+		//entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, tick * 20, 1, false, false, false));
 	}
 
 

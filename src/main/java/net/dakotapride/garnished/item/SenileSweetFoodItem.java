@@ -16,7 +16,7 @@ import java.util.List;
 
 public class SenileSweetFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public SenileSweetFoodItem(Properties properties) {
-		super(0, 1.0F, properties.food(GarnishedFoodValues.SENILE_SWEET));
+		super(0, 100, properties.food(GarnishedFoodValues.SENILE_SWEET));
 	}
 
 	@Override

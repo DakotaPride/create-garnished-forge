@@ -11,7 +11,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -23,14 +22,13 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 
-import java.util.Collection;
 import java.util.Objects;
 
 @EventBusSubscriber
 public class KilledEntityEvent {
 
     @SubscribeEvent
-    private static void getRavagingDropsFromHatchetLootTable(LivingDropsEvent event) {
+    private static void getHatchetLootEnchantmentDropsFromHatchetLootTable(LivingDropsEvent event) {
         LivingEntity entity = event.getEntity();
         DamageSource source = event.getSource();
         Entity attacker = source.getEntity();

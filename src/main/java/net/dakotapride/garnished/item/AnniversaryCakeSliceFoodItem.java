@@ -21,7 +21,7 @@ public class AnniversaryCakeSliceFoodItem extends FarmersDelightItem implements 
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) playerentity, stack);
 
         if (!world.isClientSide)
-            entity.addEffect(triggerConditionalEffect(0, 1.0F));
+            triggerConditionalEffect(0, 100, entity);
 
         return super.finishUsingItem(stack, world, entity);
     }

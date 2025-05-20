@@ -34,7 +34,8 @@ public class ConditionalEffectItem extends Item implements IGarnishedUtilities {
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) playerentity, stack);
 
         if (!world.isClientSide)
-            entity.addEffect(triggerConditionalEffect(value, chance));
+			triggerConditionalEffect(value, chance, entity);
+            //entity.addEffect(triggerConditionalEffect(value, chance));
 
         return super.finishUsingItem(stack, world, entity);
     }

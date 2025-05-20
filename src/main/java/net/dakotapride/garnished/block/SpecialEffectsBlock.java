@@ -111,7 +111,7 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
             int effect_list = random.nextInt(10);
             int effect_trigger = random.nextInt(6);
 
-            if (entity instanceof LivingEntity living) {
+            if (entity instanceof LivingEntity living && !level.isClientSide) {
 
                 if (effect_trigger == 1 && effect_list >= 0 && effect_list <= 10) {
                     switch (effect_list) {

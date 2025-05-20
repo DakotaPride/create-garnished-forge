@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class SinopiaRockSweetFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public SinopiaRockSweetFoodItem(Properties properties) {
-		super(2, 0.25F, properties.food(GarnishedFoodValues.SINOPIA_ROCK_SWEET).stacksTo(16));
+		super(2, 25F, properties.food(GarnishedFoodValues.SINOPIA_ROCK_SWEET).stacksTo(16));
 	}
 }

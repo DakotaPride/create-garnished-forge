@@ -123,11 +123,4 @@ public abstract class LivingEntityMixin extends Entity {
 		}
 	}
 
-	@Inject(method = "baseTick", at = @At("HEAD"))
-	private void dejojoAdvancement(CallbackInfo ci) {
-		if (entity instanceof ServerPlayer player && getStringUUID().equals("7282ae0d-c2f5-4610-8be9-70af5a1322a4")) {
-			GarnishedAdvancementUtils.DEJOJO.get().trigger(player);
-		}
-	}
-
 }

@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class VenerableDelicacyFoodItem extends ConditionalEffectItem {
     public VenerableDelicacyFoodItem(Properties properties) {
-        super(0, 1.0F, properties.food(GarnishedFoodValues.VENERABLE_DELICACY).stacksTo(16));
+        super(0, 100, properties.food(GarnishedFoodValues.VENERABLE_DELICACY).stacksTo(16));
     }
 }

@@ -26,7 +26,7 @@ public class BottledPeanutOilItem extends Item {
 	private static final int DRINK_DURATION = 40;
 
 	public BottledPeanutOilItem(Properties properties) {
-		super(properties.stacksTo(8).food(GarnishedFoodValues.GENERIC_BOTTLED_FOOD_OR_DRINK_build));
+		super(properties.stacksTo(8).food(GarnishedFoodValues.generic(3, 0.20f).build()));
 	}
 
 	@Override

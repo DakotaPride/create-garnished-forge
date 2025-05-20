@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class GrimStewFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public GrimStewFoodItem(Properties properties) {
-		super(5, 0.75F, properties.food(GarnishedFoodValues.GRIM_STEW).stacksTo(1));
+		super(5, 75F, properties.food(GarnishedFoodValues.GRIM_STEW).stacksTo(1));
 	}
 
 	@Override

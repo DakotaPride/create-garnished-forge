@@ -8,9 +8,7 @@
     "EnchantmentHelperMixin",
     "EnderManMixin",
     "FluidReactionsMixin",
-    "ItemStackMixin",
-    "LivingEntityMixin",
-    "PlayerMixin"
+    "LivingEntityMixin"
   ],
   "client": [],
   "injectors": {
