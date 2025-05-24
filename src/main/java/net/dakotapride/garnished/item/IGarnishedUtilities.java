@@ -50,7 +50,7 @@ public interface IGarnishedUtilities {
 
 	default void addChanceForEffect(List<Component> tooltip, float chance) {
 		if (Screen.hasShiftDown()) {
-			tooltip.add(Component.translatable("text.garnished.applies_effect.chance", (chance * 100) + "%").withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.translatable("text.garnished.applies_effect.chance", chance + "%").withStyle(ChatFormatting.GRAY));
 		}
 	}
 

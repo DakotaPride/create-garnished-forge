@@ -25,7 +25,7 @@ public class VermilionStewFoodItem extends Item implements IGarnishedUtilities {
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.WATER_BREATHING, 400F);
-		addChanceForEffect(tooltip, 0.75F);
+		addChanceForEffect(tooltip, 75F);
 	}
 
 	@Override

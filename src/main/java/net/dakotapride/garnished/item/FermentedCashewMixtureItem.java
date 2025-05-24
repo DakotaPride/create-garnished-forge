@@ -25,9 +25,9 @@ public class FermentedCashewMixtureItem extends Item implements IGarnishedUtilit
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.CONFUSION, 3, cashew_mix_dur);
-		addChanceForEffect(tooltip, 0.05F);
+		addChanceForEffect(tooltip, 05F);
 		addEffectTooltip(tooltip, MobEffects.DAMAGE_BOOST, 3, cashew_mix_dur);
-		addChanceForEffect(tooltip, 0.05F);
+		addChanceForEffect(tooltip, 05F);
 	}
 
 	@Override

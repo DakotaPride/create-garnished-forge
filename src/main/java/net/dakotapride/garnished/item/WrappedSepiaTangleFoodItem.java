@@ -29,7 +29,7 @@ public class WrappedSepiaTangleFoodItem extends Item implements IGarnishedUtilit
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, GarnishedEffects.SPIRITED_RESISTANCE, 2, tangle_dur);
-		addChanceForEffect(tooltip, 0.80F);
+		addChanceForEffect(tooltip, 80F);
 	}
 
 	@Override

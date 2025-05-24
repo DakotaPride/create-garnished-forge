@@ -46,9 +46,9 @@ public class CrypticAppleCiderFoodItem extends ConditionalEffectItem implements 
 		tooltip.add(Component.translatable("text.garnished.effect.clears_wither", "Wither").withStyle(ChatFormatting.GOLD));
 		tooltip.add(Component.literal(""));
 		addEffectTooltip(tooltip, MobEffects.DAMAGE_BOOST, cr_cider_dur);
-		addChanceForEffect(tooltip, 0.50F);
+		addChanceForEffect(tooltip, 50F);
 		addEffectTooltip(tooltip, MobEffects.MOVEMENT_SLOWDOWN, cr_cider_dur);
-		addChanceForEffect(tooltip, 0.50F);
+		addChanceForEffect(tooltip, 50F);
 	}
 
 	@Override
