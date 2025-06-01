@@ -6,18 +6,15 @@
     }
   ],
   "type": "create_mechanical_extruder:extruding",
-  "ingredients": [
-
-    {
-      "fluid": "garnished:mastic_resin",
-      "amount": 1000
+  "blockIngredients": {
+    "first": {
+      "blocks": "garnished:mastic_resin"
     },
-    {
-      "fluid": "minecraft:lava",
-      "amount": 1000
+    "second": {
+      "blocks": "minecraft:lava"
     }
-  ],
+  },
   "result": {
-    "item": "garnished:zultanite"
+    "id": "garnished:zultanite"
   }
 }

@@ -105,6 +105,8 @@ public class CreateGarnished {
         //GarnishedFanProcessing.register();
         LootModifiers.register(eventBus);
 
+        CreateGarnishedPackageStyles.register();
+
         GarnishedAdvancementUtils.register(eventBus);
         GarnishedFanProcessing.register(eventBus);
         GarnishedItemAttributeTypes.register(eventBus);

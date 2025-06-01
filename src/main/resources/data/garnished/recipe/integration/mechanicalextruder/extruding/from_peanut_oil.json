@@ -6,18 +6,15 @@
     }
   ],
   "type": "create_mechanical_extruder:extruding",
-  "ingredients": [
-
-    {
-      "fluid": "garnished:peanut_oil",
-      "amount": 1000
+  "blockIngredients": {
+    "first": {
+      "blocks": "garnished:peanut_oil"
     },
-    {
-      "fluid": "minecraft:lava",
-      "amount": 1000
+    "second": {
+      "blocks": "minecraft:lava"
     }
-  ],
+  },
   "result": {
-    "item": "minecraft:dripstone_block"
+    "id": "minecraft:dripstone_block"
   }
 }

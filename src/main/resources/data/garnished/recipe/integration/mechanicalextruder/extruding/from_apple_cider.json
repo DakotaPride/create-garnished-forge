@@ -6,18 +6,15 @@
     }
   ],
   "type": "create_mechanical_extruder:extruding",
-  "ingredients": [
-
-    {
-      "fluid": "garnished:apple_cider",
-      "amount": 1000
+  "blockIngredients": {
+    "first": {
+      "blocks": "garnished:apple_cider"
     },
-    {
-      "fluid": "minecraft:lava",
-      "amount": 1000
+    "second": {
+      "blocks": "minecraft:lava"
     }
-  ],
+  },
   "result": {
-    "item": "garnished:carnotite"
+    "id": "garnished:carnotite"
   }
 }
