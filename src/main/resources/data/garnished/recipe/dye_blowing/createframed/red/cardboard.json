@@ -1,0 +1,27 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:red_dye_blowing",
+  "ingredients": [
+    [
+      {
+        "item": "create:cardboard_block"
+      },
+      {
+        "tag": "createframed:dyed_cardboard_blocks"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createframed:red_cardboard_block"
+      },
+      "count": 1
+    }
+  ]
+}

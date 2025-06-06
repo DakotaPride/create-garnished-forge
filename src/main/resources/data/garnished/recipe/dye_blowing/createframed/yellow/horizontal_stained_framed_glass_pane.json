@@ -7,9 +7,14 @@
   ],
   "type": "garnished:yellow_dye_blowing",
   "ingredients": [
-    {
-      "tag": "createframed:horizontal_stained_framed_glass_panes"
-    }
+    [
+      {
+        "item": "create:horizontal_framed_glass_pane"
+      },
+      {
+        "tag": "createframed:horizontal_stained_framed_glass_panes"
+      }
+    ]
   ],
   "results": [
     {

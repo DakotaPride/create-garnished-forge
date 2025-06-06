@@ -7,9 +7,14 @@
   ],
   "type": "garnished:pink_dye_blowing",
   "ingredients": [
-    {
-      "tag": "createframed:vertical_stained_framed_glass"
-    }
+    [
+      {
+        "item": "create:vertical_framed_glass_pane"
+      },
+      {
+        "tag": "createframed:vertical_stained_framed_glass"
+      }
+    ]
   ],
   "results": [
     {

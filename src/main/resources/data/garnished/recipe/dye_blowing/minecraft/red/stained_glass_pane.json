@@ -1,14 +1,9 @@
 {
   "type": "garnished:red_dye_blowing",
   "ingredients": [
-    [
-      {
-        "tag": "c:glass_panes"
-      },
-      {
+    {
         "item": "minecraft:glass_pane"
       }
-    ]
   ],
   "results": [
     {

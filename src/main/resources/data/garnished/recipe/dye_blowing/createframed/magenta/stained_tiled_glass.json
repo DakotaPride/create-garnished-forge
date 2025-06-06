@@ -7,9 +7,14 @@
   ],
   "type": "garnished:magenta_dye_blowing",
   "ingredients": [
-    {
-      "tag": "createframed:stained_tiled_glass"
-    }
+    [
+      {
+        "item": "create:tiled_glass"
+      },
+      {
+        "tag": "createframed:stained_tiled_glass"
+      }
+    ]
   ],
   "results": [
     {

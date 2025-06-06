@@ -1,0 +1,27 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:light_blue_dye_blowing",
+  "ingredients": [
+    [
+      {
+        "item": "create:bound_cardboard_block"
+      },
+      {
+        "tag": "createframed:dyed_bound_cardboard_blocks"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "createframed:bound_light_blue_cardboard_block"
+      },
+      "count": 1
+    }
+  ]
+}

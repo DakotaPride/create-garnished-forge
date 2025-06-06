@@ -7,9 +7,14 @@
   ],
   "type": "garnished:orange_dye_blowing",
   "ingredients": [
-    {
-      "tag": "createframed:vertical_stained_framed_glass_panes"
-    }
+    [
+      {
+        "item": "create:vertical_framed_glass_pane"
+      },
+      {
+        "tag": "createframed:vertical_stained_framed_glass_panes"
+      }
+    ]
   ],
   "results": [
     {
