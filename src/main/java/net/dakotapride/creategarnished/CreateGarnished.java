@@ -5,6 +5,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.creategarnished.block.BirchLogExtractingSapBlock;
+import net.dakotapride.creategarnished.particle.ElvenMysticalParticleType;
 import net.dakotapride.creategarnished.registry.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -17,6 +18,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
@@ -49,6 +51,7 @@ public class CreateGarnished {
         CreateGarnishedItems.register();
         GarnishedCreativeModeTabs.register(modEventBus);
         CreateGarnishedFluids.register();
+        CreateGarnishedParticles.register(modEventBus);
 
         CreateGarnishedAdvancements.register(modEventBus);
 
@@ -76,8 +79,12 @@ public class CreateGarnished {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            //LOGGER.info("HELLO FROM CLIENT SETUP");
-            //LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+        }
+
+        @SubscribeEvent
+        public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(CreateGarnishedParticles.ELVEN_MYSTICAL_PARTICLE.get(), ElvenMysticalParticleType.Provider::new);
         }
     }
 }

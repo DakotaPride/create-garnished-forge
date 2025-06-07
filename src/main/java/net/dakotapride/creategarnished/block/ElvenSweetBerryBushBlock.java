@@ -3,7 +3,10 @@ package net.dakotapride.creategarnished.block;
 import com.mojang.serialization.MapCodec;
 import net.dakotapride.creategarnished.registry.CreateGarnishedDamageSources;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
+import net.dakotapride.creategarnished.registry.CreateGarnishedParticles;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -35,6 +38,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
 import org.jetbrains.annotations.NotNull;
+import org.joml.Vector3f;
 
 public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableBlock {
     public static final MapCodec<ElvenSweetBerryBushBlock> CODEC = simpleCodec(ElvenSweetBerryBushBlock::new);
@@ -80,6 +84,20 @@ public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableB
             CommonHooks.fireCropGrowPost(pLevel, pPos, pState);
         }
 
+    }
+
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        VoxelShape voxelshape = this.getShape(state, level, pos, CollisionContext.empty());
+        Vec3 vec3 = voxelshape.bounds().getCenter();
+        int age = state.getValue(AGE);
+        double d0 = (double)pos.getX() + vec3.x;
+        double d1 = (double)pos.getZ() + vec3.z;
+
+        for(int i = 0; i < age; ++i) {
+            if (random.nextBoolean()) {
+                level.addParticle(CreateGarnishedParticles.ELVEN_MYSTICAL_PARTICLE.get(), d0 + random.nextDouble() / (double)5.0F, (double)pos.getY() + (((double)0.5F) - random.nextDouble()), d1 + random.nextDouble() / (double)5.0F, 0.0F, 0.0F, 0.0F);
+            }
+        }
     }
 
     public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {

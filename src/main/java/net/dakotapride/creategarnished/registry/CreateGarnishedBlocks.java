@@ -52,7 +52,7 @@ public class CreateGarnishedBlocks {
             .register();
 
     public static final BlockEntry<ElvenSweetBerryBushBlock> ELVEN_SWEET_BERRY_BUSH = CreateGarnished.REGISTRATE.block("elven_sweet_berry_bush", ElvenSweetBerryBushBlock::new)
-            .properties(p -> p.noCollission().noOcclusion().sound(SoundType.GRASS))
+            .properties(p -> p.noCollission().noOcclusion().sound(SoundType.GRASS).lightLevel(t -> t.getValue(ElvenSweetBerryBushBlock.AGE) * 3))
             .register();
 
     public static final BlockEntry<HazelnutSaplingBlock> HAZELNUT_SAPLING = CreateGarnished.REGISTRATE.block("hazelnut_sapling", HazelnutSaplingBlock::new)
