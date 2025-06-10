@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "creategarnished:block/cut_porphyry_cap",
+    "side": "creategarnished:block/cut_porphyry_pillar"
+  }
+}

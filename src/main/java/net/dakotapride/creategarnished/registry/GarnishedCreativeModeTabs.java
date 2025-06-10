@@ -47,8 +47,11 @@ public class GarnishedCreativeModeTabs {
 
             output.accept(CreateGarnishedItems.PINE_NUT);
             output.accept(CreateGarnishedItems.ELVEN_SWEET_BERRIES);
+            output.accept(CreateGarnishedItems.GARLIC_BULB);
             output.accept(CreateGarnishedItems.VEGETABLE_STEW);
+            output.accept(CreateGarnishedItems.GARLIC_BREAD);
             output.accept(CreateGarnishedItems.PINE_NUT_FLOUR);
+            output.accept(CreateGarnishedItems.MINCED_GARLIC);
 
             output.accept(CreateGarnishedItems.HAZELNUT);
             output.accept(CreateGarnishedItems.CHOCOLATE_TRUFFLE);
@@ -123,6 +126,8 @@ public class GarnishedCreativeModeTabs {
                 output.accept(stoneTypes.getStoneType().getPolishedSlabBlock());
                 output.accept(stoneTypes.getStoneType().getPolishedStairsBlock());
                 output.accept(stoneTypes.getStoneType().getPolishedWallBlock());
+                output.accept(stoneTypes.getStoneType().getLayeredBlock());
+                output.accept(stoneTypes.getStoneType().getPillarBlock());
             }
         }
     }

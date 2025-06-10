@@ -1,11 +1,13 @@
 package net.dakotapride.creategarnished.block;
 
 import com.simibubi.create.Create;
+import com.simibubi.create.content.decoration.palettes.ConnectedPillarBlock;
 import com.simibubi.create.content.decoration.palettes.PaletteBlockPattern;
 import com.simibubi.create.foundation.block.connected.*;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.registry.CreateGarnishedSpriteShifts;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -35,8 +37,10 @@ public class CreateGarnishedStoneType {
     private final BlockEntry<SlabBlock> polishedSlab;
     private final BlockEntry<StairBlock> polishedStairs;
     private final BlockEntry<WallBlock> polishedWall;
+    private final BlockEntry<Block> layeredBlock;
+    private final BlockEntry<ConnectedPillarBlock> pillarBlock;
 
-    public CreateGarnishedStoneType(String id) {
+    public CreateGarnishedStoneType(String id, CreateGarnishedSpriteShifts.CTModelProvider layered, CreateGarnishedSpriteShifts.CTModelProvider pillar) {
         this.id = id;
 
         base = REGISTRATE.block(id, Block::new)
@@ -105,6 +109,16 @@ public class CreateGarnishedStoneType {
                 .register();
         polishedWall = REGISTRATE.block("polished_cut_" + id + "_wall", WallBlock::new)
                 .properties(properties1 -> defaultBehaviour)
+                .simpleItem()
+                .register();
+        layeredBlock = REGISTRATE.block("layered_" + id, Block::new)
+                .properties(properties1 -> defaultBehaviour)
+                .onRegister(CreateRegistrate.blockModel(() -> layered))
+                .simpleItem()
+                .register();
+        pillarBlock = REGISTRATE.block(id + "_pillar", ConnectedPillarBlock::new)
+                .properties(properties1 -> defaultBehaviour)
+                .onRegister(CreateRegistrate.blockModel(() -> pillar))
                 .simpleItem()
                 .register();
     }
@@ -181,4 +195,11 @@ public class CreateGarnishedStoneType {
         return polishedWall;
     }
 
+    public BlockEntry<Block> getLayeredBlock() {
+        return layeredBlock;
+    }
+
+    public BlockEntry<ConnectedPillarBlock> getPillarBlock() {
+        return pillarBlock;
+    }
 }

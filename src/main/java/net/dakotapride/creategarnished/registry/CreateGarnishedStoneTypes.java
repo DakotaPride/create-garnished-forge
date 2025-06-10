@@ -9,23 +9,24 @@ import net.minecraft.world.level.material.MapColor;
 import java.util.Locale;
 
 public enum CreateGarnishedStoneTypes {
-    PORPHYRY(CreateGarnishedStoneType.getDefaultBehaviour().instrument(NoteBlockInstrument.DIDGERIDOO).mapColor(MapColor.TERRACOTTA_RED)),
+    PORPHYRY(CreateGarnishedStoneType.getDefaultBehaviour().instrument(NoteBlockInstrument.DIDGERIDOO).mapColor(MapColor.TERRACOTTA_RED),
+            CreateGarnishedSpriteShifts.LAYERED_PORPHYRY_PROVIDER, CreateGarnishedSpriteShifts.PORPHYRY_PILLAR_PROVIDER),
 
 
     ;
 
     public final CreateGarnishedStoneType stoneType;
 
-    CreateGarnishedStoneTypes() {
+    CreateGarnishedStoneTypes(CreateGarnishedSpriteShifts.CTModelProvider layered, CreateGarnishedSpriteShifts.CTModelProvider pillar) {
         String id = name().toLowerCase(Locale.ROOT);
 
-        stoneType = new CreateGarnishedStoneType(id);
+        stoneType = new CreateGarnishedStoneType(id, layered, pillar);
     }
 
-    CreateGarnishedStoneTypes(BlockBehaviour.Properties properties) {
+    CreateGarnishedStoneTypes(BlockBehaviour.Properties properties, CreateGarnishedSpriteShifts.CTModelProvider layered, CreateGarnishedSpriteShifts.CTModelProvider pillar) {
         String id = name().toLowerCase(Locale.ROOT);
 
-        stoneType = new CreateGarnishedStoneType(id);
+        stoneType = new CreateGarnishedStoneType(id, layered, pillar);
         CreateGarnishedStoneType.defaultBehaviour = properties;
     }
 

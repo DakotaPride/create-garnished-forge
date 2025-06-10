@@ -99,6 +99,15 @@ public class CreateGarnishedItems {
             //.properties(p -> )
             .register();
 
+
+    public static final ItemEntry<Item> GARLIC_BULB = CreateGarnished.REGISTRATE.item("garlic_bulb", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.4F)
+                    .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 200, 1), 1.0F).build())).register();
+    public static final ItemEntry<Item> MINCED_GARLIC = CreateGarnished.REGISTRATE.item("minced_garlic", Item::new).register();
+    public static final ItemEntry<GarlicBreadItem> GARLIC_BREAD = CreateGarnished.REGISTRATE.item("garlic_bread", GarlicBreadItem::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.6F)
+                    .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 800, 0), 1.0F).build())).register();
+
     public static void register() {}
 
 }
