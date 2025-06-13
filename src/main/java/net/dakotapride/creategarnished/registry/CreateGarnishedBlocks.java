@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 
 public class CreateGarnishedBlocks {
 
@@ -45,7 +46,7 @@ public class CreateGarnishedBlocks {
             .simpleItem()
             .register();
     public static final BlockEntry<PineNutSaplingBlock> PINE_NUT_SAPLING = CreateGarnished.REGISTRATE.block("pine_nut_sapling", PineNutSaplingBlock::new)
-            .properties(p -> p.noCollission().noOcclusion().sound(SoundType.GRASS))
+            .properties(p -> p.noCollission().noOcclusion().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY))
             .register();
 
     public static final BlockEntry<ElvenSweetBerryBushBlock> ELVEN_SWEET_BERRY_BUSH = CreateGarnished.REGISTRATE.block("elven_sweet_berry_bush", ElvenSweetBerryBushBlock::new)
@@ -53,7 +54,7 @@ public class CreateGarnishedBlocks {
             .register();
 
     public static final BlockEntry<HazelnutSaplingBlock> HAZELNUT_SAPLING = CreateGarnished.REGISTRATE.block("hazelnut_sapling", HazelnutSaplingBlock::new)
-            .properties(p -> p.noCollission().noOcclusion().sound(SoundType.GRASS))
+            .properties(p -> p.noCollission().noOcclusion().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY))
             .register();
     public static final BlockEntry<LeavesBlock> HAZELNUT_LEAVES = CreateGarnished.REGISTRATE.block("hazelnut_leaves", LeavesBlock::new)
             .initialProperties(() -> Blocks.OAK_LEAVES)
@@ -66,7 +67,7 @@ public class CreateGarnishedBlocks {
             .register();
 
     public static final BlockEntry<AlmondSaplingBlock> ALMOND_SAPLING = CreateGarnished.REGISTRATE.block("almond_sapling", AlmondSaplingBlock::new)
-            .properties(p -> p.noCollission().noOcclusion().sound(SoundType.GRASS))
+            .properties(p -> p.noCollission().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY))
             .register();
     public static final BlockEntry<LeavesBlock> ALMOND_LEAVES = CreateGarnished.REGISTRATE.block("almond_leaves", LeavesBlock::new)
             .initialProperties(() -> Blocks.OAK_LEAVES)
