@@ -5,13 +5,10 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.*;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
-
-import static com.simibubi.create.Create.REGISTRATE;
 
 public class CreateGarnishedBlocks {
 
