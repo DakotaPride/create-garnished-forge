@@ -6,7 +6,7 @@
     }
   ],
   "type": "createaddition:liquid_burning",
-  "burnTime": 4800,
+  "burnTime": 24000,
   "input": {
     "type": "fluid_tag",
     "amount": 1000,

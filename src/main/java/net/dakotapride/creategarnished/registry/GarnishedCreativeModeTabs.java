@@ -52,6 +52,8 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.GARLIC_BREAD);
             output.accept(CreateGarnishedItems.PINE_NUT_FLOUR);
             output.accept(CreateGarnishedItems.MINCED_GARLIC);
+            output.accept(CreateGarnishedItems.CRYSTALLINE_GARLIC_BULB);
+            output.accept(CreateGarnishedItems.MINCED_CRYSTALLINE_GARLIC);
 
             output.accept(CreateGarnishedItems.HAZELNUT);
             output.accept(CreateGarnishedItems.CHOCOLATE_TRUFFLE);
@@ -70,6 +72,7 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.BIRCH_SAP_BOTTLE);
             output.accept(CreateGarnishedItems.BIRCH_SYRUP_BOTTLE);
             output.accept(CreateGarnishedItems.BEETROOT_JUICE_BOTTLE);
+            output.accept(CreateGarnishedItems.ROYAL_CIDER);
 
             output.accept(CreateGarnishedItems.SPRINTERS_TEA);
             output.accept(CreateGarnishedItems.SWEET_TEA);
@@ -78,6 +81,7 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedFluids.PEANUT_BUTTER.get().getBucket());
             output.accept(CreateGarnishedFluids.BIRCH_SYRUP.get().getBucket());
             output.accept(CreateGarnishedFluids.ALMOND_EXTRACT.get().getBucket());
+            output.accept(CreateGarnishedFluids.ROYAL_CIDER.get().getBucket());
         }
     }
 
@@ -90,6 +94,7 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedBlocks.MARIGOLD);
             output.accept(CreateGarnishedBlocks.WILD_PEANUT);
             output.accept(CreateGarnishedBlocks.WILD_GINGER_ROOT);
+            output.accept(CreateGarnishedBlocks.WILD_GARLIC);
 
             output.accept(CreateGarnishedBlocks.PEANUT_BARREL);
             output.accept(CreateGarnishedBlocks.PINE_NUT_BARREL);

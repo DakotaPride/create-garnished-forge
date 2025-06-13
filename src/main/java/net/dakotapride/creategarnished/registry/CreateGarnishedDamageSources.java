@@ -12,6 +12,9 @@ public class CreateGarnishedDamageSources {
     public static DamageSource elvenSweetBerryBush(Level level) {
         return source(CreateGarnishedDamageTypes.ELVEN_SWEET_BERRY_BUSH, level);
     }
+    public static DamageSource nutAllergy(Level level) {
+        return source(CreateGarnishedDamageTypes.NUT_ALLERGY, level);
+    }
 
     private static DamageSource source(ResourceKey<DamageType> key, LevelReader level) {
         Registry<DamageType> registry = level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE);

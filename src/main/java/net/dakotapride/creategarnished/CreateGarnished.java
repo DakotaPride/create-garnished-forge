@@ -4,7 +4,6 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
-import net.dakotapride.creategarnished.block.BirchLogExtractingSapBlock;
 import net.dakotapride.creategarnished.particle.ElvenMysticalParticleType;
 import net.dakotapride.creategarnished.registry.*;
 import net.minecraft.resources.ResourceKey;
@@ -52,6 +51,8 @@ public class CreateGarnished {
         GarnishedCreativeModeTabs.register(modEventBus);
         CreateGarnishedFluids.register();
         CreateGarnishedParticles.register(modEventBus);
+        CreateGarnishedStatusEffects.register(modEventBus);
+        CreateGarnishedPotions.register(modEventBus);
 
         CreateGarnishedAdvancements.register(modEventBus);
 

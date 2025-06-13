@@ -1,0 +1,12 @@
+{
+  "name": "Glass of Royal Cider",
+  "icon": "creategarnished:royal_cider",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:royal_cider",
+      "text": "Royal Cider can be made through mixing together Minced Crystalline Garlic, Elven Tea, and Almond Extract. Once put through a sequenced assembly in combination with Cream, you eventually get a Glass of Royal Cider!"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Superheating With Royal Cider",
+  "icon": "creategarnished:royal_cider_bucket",
+  "category": "creategarnished:utilities",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Royal Cider",
+      "item": "creategarnished:royal_cider_bucket",
+      "text": "Royal Cider can be fed to a Blaze Burner in order to superheat it, acting as an alternative to Blaze Cakes!$(br)With the correct mods installed, you can also connect fluid pipes to a Blaze Burner and fuel it that way using Royal Cider."
+    }
+  ]
+}

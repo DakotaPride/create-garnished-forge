@@ -1,0 +1,77 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "item": {
+        "id": "creategarnished:royal_cider"
+      }
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_royal_cider"
+        },
+        {
+          "type": "fluid_stack",
+          "amount": 250,
+          "fluid": "creategarnished:royal_cider"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_royal_cider"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_royal_cider"
+        },
+        {
+          "item": "creategarnished:cream"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_royal_cider"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_royal_cider"
+        },
+        {
+          "item": "creategarnished:cream"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_royal_cider"
+          }
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "item": {
+      "id": "creategarnished:incomplete_royal_cider"
+    }
+  }
+}

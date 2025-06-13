@@ -1,0 +1,6 @@
+{
+  "fluid": "creategarnished:almond_extract",
+  "burnTime": 10,
+  "superHeat": false,
+  "amountConsumedPerTick" : 1
+}

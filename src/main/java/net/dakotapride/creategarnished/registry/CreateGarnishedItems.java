@@ -1,5 +1,6 @@
 package net.dakotapride.creategarnished.registry;
 
+import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
@@ -100,13 +101,25 @@ public class CreateGarnishedItems {
             .register();
 
 
-    public static final ItemEntry<Item> GARLIC_BULB = CreateGarnished.REGISTRATE.item("garlic_bulb", Item::new)
+    public static final ItemEntry<GarlicBulbItem> GARLIC_BULB = CreateGarnished.REGISTRATE.item("garlic_bulb", GarlicBulbItem::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.4F)
                     .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 200, 1), 1.0F).build())).register();
     public static final ItemEntry<Item> MINCED_GARLIC = CreateGarnished.REGISTRATE.item("minced_garlic", Item::new).register();
     public static final ItemEntry<GarlicBreadItem> GARLIC_BREAD = CreateGarnished.REGISTRATE.item("garlic_bread", GarlicBreadItem::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.6F)
-                    .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 800, 0), 1.0F).build())).register();
+                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 400, 0), 1.0F).build())).register();
+
+    public static final ItemEntry<Item> CRYSTALLINE_GARLIC_BULB = CreateGarnished.REGISTRATE.item("crystalline_garlic_bulb", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1), 1.0F).build())).register();
+    public static final ItemEntry<Item> MINCED_CRYSTALLINE_GARLIC = CreateGarnished.REGISTRATE.item("minced_crystalline_garlic", Item::new).register();
+
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_ROYAL_CIDER = CreateGarnished.REGISTRATE.item("incomplete_royal_cider", SequencedAssemblyItem::new)
+            .properties(p -> p.stacksTo(1)).register();
+    public static final ItemEntry<RoyalCiderItem> ROYAL_CIDER = CreateGarnished.REGISTRATE.item("royal_cider", RoyalCiderItem::new)
+            .properties(p -> p.stacksTo(4))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.royal_cider"))
+            .register();
 
     public static void register() {}
 

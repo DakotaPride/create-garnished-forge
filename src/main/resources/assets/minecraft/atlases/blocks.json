@@ -63,6 +63,14 @@
     {
       "type": "single",
       "resource": "creategarnished:fluid/almond_extract_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/royal_cider_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/royal_cider_still"
     }
   ]
 }

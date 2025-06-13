@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "#c:foods/nuts",
+    "#c:foods/pancakes",
+    "creategarnished:peanut_butter_cookie",
+    "creategarnished:peanut_butter_bottle",
+    "creategarnished:churchkhela",
+    "creategarnished:vegetable_stew",
+    "creategarnished:bear_claw",
+    "creategarnished:praline",
+    "creategarnished:royal_cider"
+  ]
+}

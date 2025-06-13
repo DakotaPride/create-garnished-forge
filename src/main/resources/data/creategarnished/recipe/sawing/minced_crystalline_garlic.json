@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:crystalline_garlic_bulb"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "creategarnished:minced_crystalline_garlic"
+      }
+    }
+  ]
+}

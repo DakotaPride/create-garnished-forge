@@ -1,0 +1,39 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "minecraft:leaves"
+    },
+    {
+      "tag": "minecraft:leaves"
+    },
+    {
+      "item": "creategarnished:minced_garlic"
+    },
+    {
+      "item": "creategarnished:minced_garlic"
+    },
+    {
+      "item": "creategarnished:minced_garlic"
+    },
+    {
+      "item": "creategarnished:minced_garlic"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 100,
+      "fluid_tag": "c:milk"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "creategarnished:garlic_bread"
+      }
+    }
+  ]
+}

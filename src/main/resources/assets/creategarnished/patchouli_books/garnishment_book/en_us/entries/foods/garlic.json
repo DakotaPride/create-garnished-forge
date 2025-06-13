@@ -1,0 +1,22 @@
+{
+  "name": "Garlic",
+  "icon": "creategarnished:garlic_bulb",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:garlic_bulb",
+      "text": "Garlic can be found in Taiga biomes as Wild Garlic.$(br)When provided to a Mechanical Saw, Garlic Bulbs can be turned into Minced Garlic."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:garlic_bread",
+      "text": "Garlic Bread can be made by mixing together Bread, Milk, Leaves, and Minced Garlic inside of a heated basin."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:crystalline_garlic_bulb",
+      "text": "Crystalline Garlic can be made by surrounding a piece of Garlic with Nether Quartz in a diamond formation.$(br)This can also be turned into Minced Crystalline Garlic to be used later."
+    }
+  ]
+}

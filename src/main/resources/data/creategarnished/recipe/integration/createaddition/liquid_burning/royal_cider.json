@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createaddition"
+    }
+  ],
+  "type": "createaddition:liquid_burning",
+  "burnTime": 24000,
+  "input": {
+    "type": "fluid_tag",
+    "amount": 1000,
+    "fluid_tag": "c:royal_cider"
+  },
+  "superheated": true
+}

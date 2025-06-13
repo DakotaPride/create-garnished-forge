@@ -1,7 +1,6 @@
 package net.dakotapride.creategarnished.registry;
 
 import com.simibubi.create.AllFluids;
-import com.simibubi.create.AllTags;
 import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
 import com.simibubi.create.content.fluids.VirtualFluid;
 import com.simibubi.create.infrastructure.config.AllConfigs;
@@ -10,10 +9,8 @@ import com.tterrag.registrate.util.entry.FluidEntry;
 import net.createmod.catnip.theme.Color;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -85,6 +82,20 @@ public class CreateGarnishedFluids {
                     .bucket().build()
                     .register();
 
+    public static final FluidEntry<BaseFlowingFluid.Flowing> ROYAL_CIDER =
+            REGISTRATE.standardFluid("royal_cider",
+                            SolidRenderedPlaceableFluidType.create(0x9E4B1F,
+                                    () -> 1f / 32f * AllConfigs.client().chocolateTransparencyMultiplier.getF()))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(2)
+                            .tickRate(25)
+                            .slopeFindDistance(3)
+                            .explosionResistance(100f))
+                    .source(BaseFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
+                    .bucket().build()
+                    .register();
+
     public static void register() {}
 
     private static void provideFluidInteraction(FluidType colliding_fluid, FluidType met_fluid, Block from_source, Block from_flowing) {
@@ -113,6 +124,12 @@ public class CreateGarnishedFluids {
                 AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get(),
                 AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get()
         );
+        provideFluidInteraction(
+                NeoForgeMod.LAVA_TYPE.value(),
+                ALMOND_EXTRACT.get().getFluidType(),
+                AllPaletteStoneTypes.GRANITE.getBaseBlock().get(),
+                AllPaletteStoneTypes.GRANITE.getBaseBlock().get()
+        );
     }
 
     @Nullable
@@ -122,6 +139,8 @@ public class CreateGarnishedFluids {
             return CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState();
         if (fluid.isSame(PEANUT_BUTTER.get()))
             return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get().defaultBlockState();
+        if (fluid.isSame(ALMOND_EXTRACT.get()))
+            return AllPaletteStoneTypes.GRANITE.getBaseBlock().get().defaultBlockState();
         return null;
     }
 

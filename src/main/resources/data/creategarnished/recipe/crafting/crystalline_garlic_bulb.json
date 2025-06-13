@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "XAX",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:quartz"
+    },
+    "A": {
+      "item": "creategarnished:garlic_bulb"
+    }
+  },
+  "result": {
+    "id": "creategarnished:crystalline_garlic_bulb"
+  }
+}

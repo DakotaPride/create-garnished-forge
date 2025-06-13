@@ -1,0 +1,13 @@
+{
+  "name": "Nut Allergy",
+  "icon": "minecraft:tipped_arrow[potion_contents={potion:'creategarnished:nut_allergy'}]",
+  "category": "creategarnished:utilities",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Nut Allergy",
+      "item": "minecraft:tipped_arrow[potion_contents={potion:'creategarnished:nut_allergy'}]",
+      "text": "If you've accidentally (or intentionally) submerged yourself within certain fluids that are created with nuts, you will have attained an allergy to nuts and will be damaged upon consuming nut products.$(br)You can also spout 250mb of Peanut Butter onto an arrow to get a Contaminated Arrow of Nut Allergen."
+    }
+  ]
+}

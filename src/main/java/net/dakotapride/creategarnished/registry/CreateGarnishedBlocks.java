@@ -114,6 +114,15 @@ public class CreateGarnishedBlocks {
             .properties(BlockBehaviour.Properties::noOcclusion)
             .initialProperties(() -> Blocks.CAKE).register();
 
+
+    public static final BlockEntry<WildCropBlock> WILD_GARLIC = CreateGarnished.REGISTRATE.block("wild_garlic", WildCropBlock::new)
+            .properties(p -> p.noOcclusion().noCollission().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.GRASS))
+            .simpleItem()
+            .register();
+    public static final BlockEntry<GarlicCropBlock> GARLIC_CROP = CreateGarnished.REGISTRATE.block("garlic", GarlicCropBlock::new)
+            .properties(p -> p.noCollission().noOcclusion().sound(SoundType.GRASS))
+            .register();
+
     public static void register() {}
 
 }

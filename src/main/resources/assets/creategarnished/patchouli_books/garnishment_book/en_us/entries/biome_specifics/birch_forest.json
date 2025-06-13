@@ -17,7 +17,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "creategarnished:birch_sap_bottle",
-      "text": "Occasionally in Birch Forests, birch trees will have a log leaking some Birch Sap. Right-click with an Empty Glass Bottle to harvest it for further processing."
+      "text": "Occasionally in Birch Forests, birch trees will have a log leaking some Birch Sap. Right-click with an Empty Glass Bottle to harvest it for further processing.$(br)Breaking these Sappy Birch Logs with a tool enchanted with Silk Touch will allow you to transport the log. Without a silk touch tool, it will just drop a regular Birch Log."
     },
     {
       "type": "patchouli:image",

@@ -1,0 +1,28 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "creategarnished:minced_crystalline_garlic"
+    },
+    {
+      "item": "creategarnished:minced_crystalline_garlic"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 50,
+      "fluid": "creategarnished:elven_tea"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 50,
+      "fluid": "creategarnished:almond_extract"
+    }
+  ],
+  "results": [
+    {
+      "amount": 100,
+      "id": "creategarnished:royal_cider"
+    }
+  ]
+}

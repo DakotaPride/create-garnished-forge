@@ -4,6 +4,7 @@
     "#c:buckets/peanut_butter",
     "#c:buckets/almond_extract",
     "#c:buckets/syrup",
+    "#c:buckets/royal_cider",
     "creategarnished:sprinters_tea",
     "creategarnished:sweet_tea",
     "creategarnished:elven_tea",
@@ -12,6 +13,8 @@
     "creategarnished:birch_syrup_bottle",
     "creategarnished:beetroot_juice_bottle",
     "creategarnished:vegetable_stew",
-    "creategarnished:pound_cake"
+    "creategarnished:pound_cake",
+    "creategarnished:incomplete_royal_cider",
+    "creategarnished:royal_cider"
   ]
 }
