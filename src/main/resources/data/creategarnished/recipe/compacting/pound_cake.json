@@ -2,16 +2,16 @@
   "type": "create:compacting",
   "ingredients": [
     {
-      "item": "create:dough"
+      "tag": "c:dough"
     },
     {
-      "item": "create:dough"
+      "tag": "c:dough"
     },
     {
-      "item": "create:dough"
+      "tag": "c:dough"
     },
     {
-      "item": "create:dough"
+      "tag": "c:dough"
     },
     {
       "item": "minecraft:sugar"
