@@ -1,7 +1,7 @@
 package net.dakotapride.garnished.recipe;
 
-import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
-import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeParams;
+import com.simibubi.create.content.processing.recipe.StandardProcessingRecipe;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
@@ -9,10 +9,9 @@ import net.minecraft.world.level.Level;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public class DyeBlowingFanRecipe extends ProcessingRecipe<SingleRecipeInput> {
-
-    public DyeBlowingFanRecipe(IRecipeTypeInfo info, ProcessingRecipeBuilder.ProcessingRecipeParams params) {
-        super(info, params);
+public class DyeBlowingFanRecipe extends StandardProcessingRecipe<SingleRecipeInput> {
+    public DyeBlowingFanRecipe(IRecipeTypeInfo typeInfo, ProcessingRecipeParams params) {
+        super(typeInfo, params);
     }
 
     @Override
@@ -33,4 +32,9 @@ public class DyeBlowingFanRecipe extends ProcessingRecipe<SingleRecipeInput> {
         return 12;
     }
 
+    public static class Serializer<T extends DyeBlowingFanRecipe> extends StandardProcessingRecipe.Serializer<T> {
+        public Serializer(Factory<T> factory) {
+            super(factory);
+        }
+    }
 }

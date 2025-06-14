@@ -5,7 +5,10 @@ import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
 import com.simibubi.create.foundation.recipe.RecipeApplier;
 import net.createmod.catnip.theme.Color;
 import net.dakotapride.garnished.CreateGarnished;
-import net.dakotapride.garnished.registry.*;
+import net.dakotapride.garnished.registry.GarnishedDamageSource;
+import net.dakotapride.garnished.registry.GarnishedFluids;
+import net.dakotapride.garnished.registry.GarnishedTags;
+import net.dakotapride.garnished.registry.ZultaniteStoneTypes;
 import net.dakotapride.garnished.registry.recipe.GarnishedRecipeTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -76,15 +79,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.FREEZING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.FREEZING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.FREEZING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.FREEZING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -137,15 +151,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.RED_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.RED_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.RED_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.RED_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -189,15 +214,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.ORANGE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.ORANGE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.ORANGE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.ORANGE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -239,18 +275,28 @@ public class GarnishedFanProcessing {
             return 2300;
         }
 
-
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.YELLOW_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.YELLOW_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.YELLOW_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.YELLOW_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -294,15 +340,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.GREEN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.GREEN_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.GREEN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.GREEN_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -346,15 +403,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIME_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.LIME_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIME_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.LIME_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -396,18 +464,28 @@ public class GarnishedFanProcessing {
             return 2600;
         }
 
-
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BLUE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.BLUE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BLUE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.BLUE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -451,15 +529,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -503,15 +592,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.CYAN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.CYAN_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.CYAN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.CYAN_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -555,15 +655,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.PURPLE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.PURPLE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.PURPLE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.PURPLE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -607,15 +718,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -659,15 +781,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.PINK_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.PINK_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.PINK_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.PINK_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -711,15 +844,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BLACK_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.BLACK_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BLACK_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.BLACK_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -763,15 +907,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.GRAY_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.GRAY_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.GRAY_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.GRAY_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -815,15 +970,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -867,15 +1033,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.WHITE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.WHITE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.WHITE_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.WHITE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
@@ -919,15 +1096,26 @@ public class GarnishedFanProcessing {
 
         @Override
         public boolean canProcess(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BROWN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.isPresent();
+            if (stack.isEmpty()) {
+                return false;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.BROWN_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .isPresent();
         }
 
         @Override
         @Nullable
         public List<ItemStack> process(ItemStack stack, Level level) {
-            Optional<RecipeHolder<Recipe<SingleRecipeInput>>> recipe = GarnishedRecipeTypes.BROWN_DYE_BLOWING.find(new SingleRecipeInput(stack), level);
-            return recipe.map(recipeRecipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeRecipeHolder)).orElse(null);
+            if (stack.isEmpty()) {
+                return null;
+            }
+
+            return level.getRecipeManager()
+                    .getRecipeFor(GarnishedRecipeTypes.BROWN_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .orElse(null);
         }
 
         @Override
