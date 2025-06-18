@@ -40,7 +40,7 @@ public class CreateGarnishedStoneType {
     private final BlockEntry<Block> layeredBlock;
     private final BlockEntry<ConnectedPillarBlock> pillarBlock;
 
-    public CreateGarnishedStoneType(String id, CreateGarnishedSpriteShifts.CTModelProvider layered, CreateGarnishedSpriteShifts.CTModelProvider pillar) {
+    public CreateGarnishedStoneType(String id, BlockEntry<Block> layered, BlockEntry<ConnectedPillarBlock> pillar) {
         this.id = id;
 
         base = REGISTRATE.block(id, Block::new)
@@ -111,16 +111,8 @@ public class CreateGarnishedStoneType {
                 .properties(properties1 -> defaultBehaviour)
                 .simpleItem()
                 .register();
-        layeredBlock = REGISTRATE.block("layered_" + id, Block::new)
-                .properties(properties1 -> defaultBehaviour)
-                .onRegister(CreateRegistrate.blockModel(() -> layered))
-                .simpleItem()
-                .register();
-        pillarBlock = REGISTRATE.block(id + "_pillar", ConnectedPillarBlock::new)
-                .properties(properties1 -> defaultBehaviour)
-                .onRegister(CreateRegistrate.blockModel(() -> pillar))
-                .simpleItem()
-                .register();
+        layeredBlock = layered;
+        pillarBlock = pillar;
     }
 
     public static BlockBehaviour.Properties getDefaultBehaviour() {

@@ -1,13 +1,17 @@
 package net.dakotapride.creategarnished.registry;
 
 
+import com.simibubi.create.content.decoration.palettes.ConnectedPillarBlock;
+import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
@@ -17,6 +21,19 @@ public class CreateGarnishedBlocks {
         CreateGarnishedStoneTypes.register();
         CreateGarnished.REGISTRATE.setCreativeTab(GarnishedCreativeModeTabs.GARNISHED);
     }
+
+    public static final BlockEntry<Block> LAYERED_PORPHYRY = CreateGarnished.REGISTRATE.block("layered_porphyry", Block::new)
+            .properties(properties1 -> BlockBehaviour.Properties.of().sound(SoundType.DEEPSLATE).destroyTime(0.75f).instrument(NoteBlockInstrument.DIDGERIDOO).mapColor(MapColor.TERRACOTTA_RED))
+            .onRegister(CreateRegistrate.blockModel(() -> CreateGarnishedSpriteShifts.LAYERED_PORPHYRY_PROVIDER))
+            .simpleItem()
+            .register();
+    public static final BlockEntry<ConnectedPillarBlock> PORPHYRY_PILLAR = CreateGarnished.REGISTRATE.block("porphyry_pillar", ConnectedPillarBlock::new)
+            .properties(properties1 -> BlockBehaviour.Properties.of().sound(SoundType.DEEPSLATE).destroyTime(0.75f).instrument(NoteBlockInstrument.DIDGERIDOO).mapColor(MapColor.TERRACOTTA_RED))
+            .onRegister(CreateRegistrate.blockModel(() -> CreateGarnishedSpriteShifts.PORPHYRY_PILLAR_PROVIDER))
+            .simpleItem()
+            .register();
+
+
 
     public static final BlockEntry<MarigoldFlowerBlock> MARIGOLD = CreateGarnished.REGISTRATE.block("marigold", MarigoldFlowerBlock::new)
             .properties(p -> p.noOcclusion().noCollission().mapColor(MapColor.COLOR_ORANGE).sound(SoundType.GRASS))
