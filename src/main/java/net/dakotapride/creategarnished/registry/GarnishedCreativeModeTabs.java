@@ -131,9 +131,11 @@ public class GarnishedCreativeModeTabs {
                 output.accept(stoneTypes.getStoneType().getPolishedSlabBlock());
                 output.accept(stoneTypes.getStoneType().getPolishedStairsBlock());
                 output.accept(stoneTypes.getStoneType().getPolishedWallBlock());
-                output.accept(stoneTypes.getStoneType().getLayeredBlock());
-                output.accept(stoneTypes.getStoneType().getPillarBlock());
+//                output.accept(stoneTypes.getStoneType().getLayeredBlock());
+//                output.accept(stoneTypes.getStoneType().getPillarBlock());
             }
+            output.accept(CreateGarnishedBlocks.LAYERED_PORPHYRY);
+            output.accept(CreateGarnishedBlocks.PORPHYRY_PILLAR);
         }
     }
 }

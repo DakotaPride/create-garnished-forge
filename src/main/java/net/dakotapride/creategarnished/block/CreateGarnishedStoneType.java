@@ -37,10 +37,8 @@ public class CreateGarnishedStoneType {
     private final BlockEntry<SlabBlock> polishedSlab;
     private final BlockEntry<StairBlock> polishedStairs;
     private final BlockEntry<WallBlock> polishedWall;
-    private final BlockEntry<Block> layeredBlock;
-    private final BlockEntry<ConnectedPillarBlock> pillarBlock;
 
-    public CreateGarnishedStoneType(String id, BlockEntry<Block> layered, BlockEntry<ConnectedPillarBlock> pillar) {
+    public CreateGarnishedStoneType(String id) {
         this.id = id;
 
         base = REGISTRATE.block(id, Block::new)
@@ -111,8 +109,6 @@ public class CreateGarnishedStoneType {
                 .properties(properties1 -> defaultBehaviour)
                 .simpleItem()
                 .register();
-        layeredBlock = layered;
-        pillarBlock = pillar;
     }
 
     public static BlockBehaviour.Properties getDefaultBehaviour() {
@@ -185,13 +181,5 @@ public class CreateGarnishedStoneType {
 
     public BlockEntry<WallBlock> getPolishedWallBlock() {
         return polishedWall;
-    }
-
-    public BlockEntry<Block> getLayeredBlock() {
-        return layeredBlock;
-    }
-
-    public BlockEntry<ConnectedPillarBlock> getPillarBlock() {
-        return pillarBlock;
     }
 }
