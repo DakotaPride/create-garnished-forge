@@ -7,7 +7,7 @@
   ],
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "minecraft:blackstone"
+    "id": "minecraft:blackstone"
   },
   "cookingtime": 200,
   "experience": 1.0,

@@ -7,7 +7,7 @@
   ],
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "create:scoria"
+    "id": "create:scoria"
   },
   "cookingtime": 200,
   "experience": 1.0,

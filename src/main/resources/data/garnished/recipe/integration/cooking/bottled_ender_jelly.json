@@ -7,7 +7,7 @@
   ],
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "minecraft:glass_bottle"
+    "id": "minecraft:glass_bottle"
   },
   "cookingtime": 200,
   "experience": 1.0,

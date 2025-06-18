@@ -7,7 +7,7 @@
   ],
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "create:scorchia"
+    "id": "create:scorchia"
   },
   "cookingtime": 200,
   "experience": 1.0,

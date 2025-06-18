@@ -7,7 +7,7 @@
   ],
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "garnished:coral_wrapping"
+    "id": "garnished:coral_wrapping"
   },
   "cookingtime": 200,
   "experience": 1.0,

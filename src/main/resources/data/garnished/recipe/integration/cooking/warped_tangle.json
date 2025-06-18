@@ -7,7 +7,7 @@
   ],
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "garnished:hardened_wrap"
+    "id": "garnished:hardened_wrap"
   },
   "cookingtime": 200,
   "experience": 1.0,

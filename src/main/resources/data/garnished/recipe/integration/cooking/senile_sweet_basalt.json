@@ -7,7 +7,7 @@
   ],
   "type": "farmersdelight:cooking",
   "container": {
-    "item": "minecraft:basalt"
+    "id": "minecraft:basalt"
   },
   "cookingtime": 200,
   "experience": 1.0,
