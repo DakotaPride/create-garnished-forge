@@ -30,12 +30,13 @@ public class NutAllergyEvents {
                 CreateGarnishedFluids.PEANUT_BUTTER.getType()
         );
 
-        if (entity instanceof LivingEntity living && !living.hasEffect(CreateGarnishedStatusEffects.NUT_ALLERGY)) {
-            list.forEach(p -> {
-                if (living.isInFluidType(p))
-                    living.addEffect(new MobEffectInstance(CreateGarnishedStatusEffects.NUT_ALLERGY, 2400, 0, false, true, false));
-            });
-        }
+        if (CreateGarnishedConfigs.server().entity.enableNutAllergy.get())
+            if (entity instanceof LivingEntity living && !living.hasEffect(CreateGarnishedStatusEffects.NUT_ALLERGY)) {
+                list.forEach(p -> {
+                    if (living.isInFluidType(p))
+                        living.addEffect(new MobEffectInstance(CreateGarnishedStatusEffects.NUT_ALLERGY, 2400, 0, false, true, false));
+                });
+            }
 
     }
 

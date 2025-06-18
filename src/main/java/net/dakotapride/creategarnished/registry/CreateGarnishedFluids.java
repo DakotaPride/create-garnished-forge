@@ -112,12 +112,21 @@ public class CreateGarnishedFluids {
     }
 
     public static void registerFluidInteractions() {
-        provideFluidInteraction(
-                NeoForgeMod.LAVA_TYPE.value(),
+        FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 BIRCH_SYRUP.get().getFluidType(),
-                AllPaletteStoneTypes.CRIMSITE.getBaseBlock().get(),
-                CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().get()
-        );
+                fluidState -> {
+                    if (CreateGarnishedConfigs.server().stoneGeneration.allowCrimsiteFluidInteraction.get()) {
+                        if (fluidState.isSource()) {
+                            return AllPaletteStoneTypes.CRIMSITE.getBaseBlock().get().defaultBlockState();
+                        } else {
+                            return CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().get().defaultBlockState();
+                        }
+                    } else {
+                        return CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().get().defaultBlockState();
+                    }
+                }
+        ));
+
         provideFluidInteraction(
                 NeoForgeMod.LAVA_TYPE.value(),
                 PEANUT_BUTTER.get().getFluidType(),

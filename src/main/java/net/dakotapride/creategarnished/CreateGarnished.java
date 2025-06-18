@@ -3,6 +3,7 @@ package net.dakotapride.creategarnished;
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
+import com.simibubi.create.infrastructure.config.AllConfigs;
 import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.creategarnished.particle.ElvenMysticalParticleType;
 import net.dakotapride.creategarnished.registry.*;
@@ -13,6 +14,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -40,6 +42,10 @@ public class CreateGarnished {
     }
 
     public CreateGarnished(IEventBus modEventBus, ModContainer modContainer) {
+        ModLoadingContext modLoadingContext = ModLoadingContext.get();
+
+        REGISTRATE.registerEventListeners(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         //BLOCKS.register(modEventBus);
@@ -56,8 +62,9 @@ public class CreateGarnished {
 
         CreateGarnishedAdvancements.register(modEventBus);
 
-        REGISTRATE.registerEventListeners(modEventBus);
-        NeoForge.EVENT_BUS.register(this);
+        CreateGarnishedConfigs.register(modLoadingContext, modContainer);
+
+        //NeoForge.EVENT_BUS.register(this);
 
         //modEventBus.addListener(this::addCreative);
     }

@@ -1,6 +1,7 @@
 package net.dakotapride.creategarnished.event;
 
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
 import net.minecraft.core.Holder;
 import net.minecraft.tags.BiomeTags;
@@ -27,14 +28,15 @@ public class ProvideEffectsFromConsumptionEvent {
         LivingEntity entity = event.getEntity();
         Holder<Biome> biome = entity.level().getBiome(entity.blockPosition());
 
-        for (YoinkFromHereList list : YoinkFromHereList.values()) {
-            boolean isInBiome = biome.is(list.getBiomeTagKey());
+        if (CreateGarnishedConfigs.server().entity.provideSpecialEffectsFromBiome.get())
+            for (YoinkFromHereList list : YoinkFromHereList.values()) {
+                boolean isInBiome = biome.is(list.getBiomeTagKey());
 
-            if (itemStack.is(list.getItemTagKey()) && isInBiome) {
-                pullEffect(entity, list.getEffectHolder());
+                if (itemStack.is(list.getItemTagKey()) && isInBiome) {
+                    pullEffect(entity, list.getEffectHolder());
+                }
+
             }
-
-        }
     }
 
     private static void pullEffect(LivingEntity entity, Holder<MobEffect> effectHolder) {

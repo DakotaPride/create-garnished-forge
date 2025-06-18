@@ -1,0 +1,37 @@
+{
+  "name": "Special Effects Within Biomes",
+  "icon": "creategarnished:elven_sweet_berries",
+  "category": "creategarnished:utilities",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "The Basics",
+      "item": "creategarnished:elven_sweet_berries",
+      "text": "Foods that originate from a given biome will provide you with a status effect. This does not change when the food already provides a status effect."
+    },
+    {
+      "type": "spotlight",
+      "title": "Taigas",
+      "item": "creategarnished:garlic_bulb",
+      "text": "Foods originating from the Taiga biome will provide you with Invisibility for 2 minutes."
+    },
+    {
+      "type": "spotlight",
+      "title": "Jungles",
+      "item": "creategarnished:peanut",
+      "text": "Foods originating from Jungle biomes (Sparse Jungle, Bamboo Jungle, etc.) biome will provide you with Haste II for 2 minutes."
+    },
+    {
+      "type": "spotlight",
+      "title": "Flower Biomes",
+      "item": "creategarnished:churchkhela",
+      "text": "Foods originating from the Flower Forest or Sunflower Plains biome will provide you with Regeneration II for 2 minutes."
+    },
+    {
+      "type": "spotlight",
+      "title": "Birch Forests",
+      "item": "creategarnished:syrup_covered_pancakes",
+      "text": "Foods originating from the Birch Forest or Old Growth Birch Forest biome will provide you with Speed II for 2 minutes."
+    }
+  ]
+}
