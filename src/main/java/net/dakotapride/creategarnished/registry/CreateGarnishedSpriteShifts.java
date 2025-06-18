@@ -4,6 +4,7 @@ import com.simibubi.create.foundation.block.connected.*;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.minecraft.client.resources.model.BakedModel;
+import org.jetbrains.annotations.NotNull;
 
 public class CreateGarnishedSpriteShifts {
     public static final CTSpriteShiftEntry PORPHYRY_CUT_CAP = omni("cut_porphyry_cap");
@@ -30,7 +31,7 @@ public class CreateGarnishedSpriteShifts {
 
     public record CTModelProvider(ConnectedTextureBehaviour behavior) implements NonNullFunction<BakedModel, BakedModel> {
         @Override
-        public BakedModel apply(BakedModel bakedModel) {
+        public @NotNull BakedModel apply(BakedModel bakedModel) {
             return new CTModel(bakedModel, behavior);
         }
     }
