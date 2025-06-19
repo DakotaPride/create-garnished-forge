@@ -2,6 +2,9 @@
   "item.creategarnished.garnishment_book": "Garnishment Guide",
 
   "effect.creategarnished.nut_allergy": "Nut Allergy",
+  "item.minecraft.potion.effect.nut_allergy": "Potion of nut allergy",
+  "item.minecraft.splash_potion.effect.nut_allergy": "Splash potion of nut allergy",
+  "item.minecraft.lingering_potion.effect.nut_allergy": "Lingering potion of nut allergy",
   "block.creategarnished.almond_barrel": "Barrel of Almonds",
   "block.creategarnished.almond_extract_bucket": "Almond Extract Bucket",
   "block.creategarnished.almond_leaves": "Almond Leaves",

@@ -1,0 +1,37 @@
+{
+  "name": "Особые эффекты в биомах",
+  "icon": "creategarnished:elven_sweet_berries",
+  "category": "creategarnished:utilities",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Основы",
+      "item": "creategarnished:elven_sweet_berries",
+      "text": "Еда, которая происходит из определённого биома, даст вам эффект статуса. Это не изменится, если еда уже дает эффект статуса."
+    },
+    {
+      "type": "spotlight",
+      "title": "Тайга",
+      "item": "creategarnished:garlic_bulb",
+      "text": "Еда из биома тайги даст вам невидимость на 2 минуты."
+    },
+    {
+      "type": "spotlight",
+      "title": "Джунгли",
+      "item": "creategarnished:peanut",
+      "text": "Еда, произрастающая в биомах джунглей (редкие джунгли, бамбуковые джунгли и т. д.), даст вам Ускорение II на 2 минуты."
+    },
+    {
+      "type": "spotlight",
+      "title": "Цветочные биомы",
+      "item": "creategarnished:churchkhela",
+      "text": "Пища из биома цветочного леса или подсолнуховых равнин обеспечит вам Регенерацию II на 2 минуты."
+    },
+    {
+      "type": "spotlight",
+      "title": "Березовые леса",
+      "item": "creategarnished:syrup_covered_pancakes",
+      "text": "Еда из биома березняка его многолетнего аналога обеспечит вам Скорость II на 2 минуты."
+    }
+  ]
+}
