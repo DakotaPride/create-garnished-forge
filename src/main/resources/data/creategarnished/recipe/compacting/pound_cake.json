@@ -2,100 +2,20 @@
   "type": "create:compacting",
   "ingredients": [
     {
-      "tag": "c:dough"
+      "tag": "c:dough",
+      "count": 4
     },
     {
-      "tag": "c:dough"
+      "item": "minecraft:sugar",
+      "count": 16
     },
     {
-      "tag": "c:dough"
+      "item": "creategarnished:cream",
+      "count": 4
     },
     {
-      "tag": "c:dough"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "creategarnished:cream"
-    },
-    {
-      "item": "creategarnished:cream"
-    },
-    {
-      "item": "creategarnished:cream"
-    },
-    {
-      "item": "creategarnished:cream"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "tag": "c:eggs"
-    },
-    {
-      "tag": "c:eggs"
+      "tag": "c:eggs",
+      "count": 8
     },
     {
       "type": "fluid_stack",

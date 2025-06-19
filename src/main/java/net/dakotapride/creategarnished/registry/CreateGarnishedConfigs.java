@@ -1,6 +1,7 @@
 package net.dakotapride.creategarnished.registry;
 
 import net.createmod.catnip.config.ConfigBase;
+import net.dakotapride.creategarnished.config.ClientConfig;
 import net.dakotapride.creategarnished.config.ServerConfig;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -20,7 +21,7 @@ public class CreateGarnishedConfigs {
 
     private static final Map<ModConfig.Type, ConfigBase> CONFIGS = new EnumMap<>(ModConfig.Type.class);
 
-    //private static CClient client;
+    private static ClientConfig client;
     //private static CCommon common;
     private static ServerConfig server;
 
@@ -34,6 +35,10 @@ public class CreateGarnishedConfigs {
 
     public static ServerConfig server() {
         return server;
+    }
+
+    public static ClientConfig client() {
+        return client;
     }
 
     public static ConfigBase byType(ModConfig.Type type) {
@@ -54,7 +59,7 @@ public class CreateGarnishedConfigs {
     }
 
     public static void register(ModLoadingContext context, ModContainer container) {
-        //client = register(CClient::new, ModConfig.Type.CLIENT);
+        client = register(ClientConfig::new, ModConfig.Type.CLIENT);
         //common = register(CCommon::new, ModConfig.Type.COMMON);
         server = register(ServerConfig::new, ModConfig.Type.SERVER);
 

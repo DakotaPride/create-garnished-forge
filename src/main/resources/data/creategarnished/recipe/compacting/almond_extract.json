@@ -16,13 +16,8 @@
       }
     ],
     {
-      "item": "creategarnished:almond"
-    },
-    {
-      "item": "creategarnished:almond"
-    },
-    {
-      "item": "creategarnished:almond"
+      "item": "creategarnished:almond",
+      "count": 3
     }
   ],
   "results": [

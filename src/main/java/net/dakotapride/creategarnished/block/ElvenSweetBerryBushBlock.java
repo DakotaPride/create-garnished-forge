@@ -109,7 +109,7 @@ public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableB
                 double d0 = Math.abs(pEntity.getX() - pEntity.xOld);
                 double d1 = Math.abs(pEntity.getZ() - pEntity.zOld);
                 if (d0 >= 0.003000000026077032 || d1 >= 0.003000000026077032) {
-                    pEntity.hurt(CreateGarnishedDamageSources.elvenSweetBerryBush(pLevel), 0.5F);
+                    pEntity.hurt(CreateGarnishedDamageSources.elvenSweetBerryBush(pLevel), CreateGarnishedConfigs.server().entity.elvenSweetBerryBushPrickDamageAmount.get().floatValue());
                 }
             }
         }

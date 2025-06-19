@@ -3,7 +3,6 @@ package net.dakotapride.creategarnished.registry;
 import com.simibubi.create.AllFluids;
 import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
 import com.simibubi.create.content.fluids.VirtualFluid;
-import com.simibubi.create.infrastructure.config.AllConfigs;
 import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.createmod.catnip.theme.Color;
@@ -11,6 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
@@ -19,6 +19,7 @@ import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
+import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 
 import javax.annotation.Nullable;
@@ -42,7 +43,7 @@ public class CreateGarnishedFluids {
     public static final FluidEntry<BaseFlowingFluid.Flowing> PEANUT_BUTTER =
             REGISTRATE.standardFluid("peanut_butter",
                             SolidRenderedPlaceableFluidType.create(0xA2774B,
-                                    () -> 1f / 32f * AllConfigs.client().chocolateTransparencyMultiplier.getF()))
+                                    () -> 1f / 32f * CreateGarnishedConfigs.client().peanutButterTransparencyMultiplier.getF()))
                     .properties(b -> b.viscosity(1500)
                             .density(1400))
                     .fluidProperties(p -> p.levelDecreasePerBlock(2)
@@ -57,7 +58,7 @@ public class CreateGarnishedFluids {
     public static final FluidEntry<BaseFlowingFluid.Flowing> BIRCH_SYRUP =
             REGISTRATE.standardFluid("birch_syrup",
                             SolidRenderedPlaceableFluidType.create(0x9E4B1F,
-                                    () -> 1f / 32f * AllConfigs.client().chocolateTransparencyMultiplier.getF()))
+                                    () -> 1f / 32f * CreateGarnishedConfigs.client().birchSyrupTransparencyMultiplier.getF()))
                     .properties(b -> b.viscosity(1500)
                             .density(1400))
                     .fluidProperties(p -> p.levelDecreasePerBlock(2)
@@ -71,7 +72,7 @@ public class CreateGarnishedFluids {
     public static final FluidEntry<BaseFlowingFluid.Flowing> ALMOND_EXTRACT =
             REGISTRATE.standardFluid("almond_extract",
                             SolidRenderedPlaceableFluidType.create(0x9E4B1F,
-                                    () -> 1f / 32f * AllConfigs.client().chocolateTransparencyMultiplier.getF()))
+                                    () -> 1f / 32f * CreateGarnishedConfigs.client().almondExtractTransparencyMultiplier.getF()))
                     .properties(b -> b.viscosity(1500)
                             .density(1400))
                     .fluidProperties(p -> p.levelDecreasePerBlock(2)
@@ -85,7 +86,7 @@ public class CreateGarnishedFluids {
     public static final FluidEntry<BaseFlowingFluid.Flowing> ROYAL_CIDER =
             REGISTRATE.standardFluid("royal_cider",
                             SolidRenderedPlaceableFluidType.create(0x9E4B1F,
-                                    () -> 1f / 32f * AllConfigs.client().chocolateTransparencyMultiplier.getF()))
+                                    () -> 1f / 32f * CreateGarnishedConfigs.client().royalCiderTransparencyMultiplier.getF()))
                     .properties(b -> b.viscosity(1500)
                             .density(1400))
                     .fluidProperties(p -> p.levelDecreasePerBlock(2)
@@ -127,30 +128,46 @@ public class CreateGarnishedFluids {
                 }
         ));
 
-        provideFluidInteraction(
-                NeoForgeMod.LAVA_TYPE.value(),
+        FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 PEANUT_BUTTER.get().getFluidType(),
-                AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get(),
-                AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get()
-        );
-        provideFluidInteraction(
-                NeoForgeMod.LAVA_TYPE.value(),
+                fluidState -> {
+                    if (CreateGarnishedConfigs.server().stoneGeneration.allowDripstoneFluidInteraction.get()) {
+                        return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get().defaultBlockState();
+                    } else {
+                        if (fluidState.isSource()) {
+                            return Blocks.STONE.defaultBlockState();
+                        } else {
+                            return Blocks.COBBLESTONE.defaultBlockState();
+                        }
+                    }
+                }
+        ));
+
+        FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 ALMOND_EXTRACT.get().getFluidType(),
-                AllPaletteStoneTypes.GRANITE.getBaseBlock().get(),
-                AllPaletteStoneTypes.GRANITE.getBaseBlock().get()
-        );
+                fluidState -> {
+                    if (CreateGarnishedConfigs.server().stoneGeneration.allowGraniteFluidInteraction.get()) {
+                        return AllPaletteStoneTypes.GRANITE.getBaseBlock().get().defaultBlockState();
+                    } else {
+                        if (fluidState.isSource()) {
+                            return Blocks.STONE.defaultBlockState();
+                        } else {
+                            return Blocks.COBBLESTONE.defaultBlockState();
+                        }
+                    }
+                }
+        ));
     }
 
-    @Nullable
-    public static BlockState getFluidInteraction(FluidState fluidState) {
+    public static @NotNull BlockState getFluidInteraction(FluidState fluidState) {
         Fluid fluid = fluidState.getType();
         if (fluid.isSame(BIRCH_SYRUP.get()))
             return CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState();
-        if (fluid.isSame(PEANUT_BUTTER.get()))
+        if (fluid.isSame(PEANUT_BUTTER.get()) && CreateGarnishedConfigs.server().stoneGeneration.allowDripstoneFluidInteraction.get())
             return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get().defaultBlockState();
-        if (fluid.isSame(ALMOND_EXTRACT.get()))
+        if (fluid.isSame(ALMOND_EXTRACT.get()) && CreateGarnishedConfigs.server().stoneGeneration.allowGraniteFluidInteraction.get())
             return AllPaletteStoneTypes.GRANITE.getBaseBlock().get().defaultBlockState();
-        return null;
+        return Blocks.COBBLESTONE.defaultBlockState();
     }
 
     private static class SolidRenderedPlaceableFluidType extends AllFluids.TintedFluidType {

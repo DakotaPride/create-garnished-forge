@@ -46,7 +46,7 @@ public class NutAllergyEvents {
         ItemStack stack = event.getItem();
 
         if (stack.is(CreateGarnishedTags.CAUSES_NUT_ALLERGY_CONSEQUENCES) && entity.hasEffect(CreateGarnishedStatusEffects.NUT_ALLERGY)) {
-            entity.hurt(CreateGarnishedDamageSources.nutAllergy(entity.level()), 2.0F);
+            entity.hurt(CreateGarnishedDamageSources.nutAllergy(entity.level()), CreateGarnishedConfigs.server().entity.nutAllergyDamageAmount.get().floatValue());
         }
     }
 

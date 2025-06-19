@@ -3,6 +3,7 @@ package net.dakotapride.creategarnished.block;
 import com.mojang.serialization.MapCodec;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.event.ProvideEffectsFromConsumptionEvent;
+import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -96,7 +97,7 @@ public class PoundCakeBlock extends Block {
             player.getFoodData().eat(8, 0.8F);
             Holder<Biome> biome = player.level().getBiome(player.blockPosition());
             boolean isInBiome = biome.is(CreateGarnishedTags.IS_ACCEPTED_FLOWER_BIOME);
-            if (isInBiome) {
+            if (isInBiome && CreateGarnishedConfigs.server().entity.provideSpecialEffectsFromBiome.get()) {
                 player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 120 * 20, 1, false, false, false));
             }
             int i = state.getValue(BITES);

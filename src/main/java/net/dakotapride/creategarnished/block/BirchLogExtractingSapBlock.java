@@ -1,7 +1,6 @@
 package net.dakotapride.creategarnished.block;
 
-import net.dakotapride.creategarnished.CreateGarnished;
-import net.dakotapride.creategarnished.registry.CreateGarnishedBlocks;
+import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -13,14 +12,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.fluids.capability.wrappers.CauldronWrapper;
 import org.jetbrains.annotations.NotNull;
 
 public class BirchLogExtractingSapBlock extends RotatedPillarBlock {
@@ -70,7 +67,13 @@ public class BirchLogExtractingSapBlock extends RotatedPillarBlock {
             player.addItem(new ItemStack(CreateGarnishedItems.BIRCH_SAP_BOTTLE.get(), 1));
 
             //level.setBlock(pos, Blocks.STRIPPED_BIRCH_LOG.defaultBlockState(), 11);
-            level.setBlockAndUpdate(pos, state.setValue(HAS_SAP, false));
+            //level.setBlockAndUpdate(pos, state.setValue(HAS_SAP, false));
+
+            if (CreateGarnishedConfigs.server().block.allowForRenewableBirchSap.get()) {
+                level.setBlockAndUpdate(pos, state.setValue(HAS_SAP, false));
+            } else {
+                level.setBlock(pos, Blocks.BIRCH_LOG.defaultBlockState(), 11);
+            }
 
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
