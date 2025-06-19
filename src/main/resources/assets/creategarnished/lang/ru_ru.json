@@ -28,7 +28,6 @@
   "block.creategarnished.hazelnut_leaves": "Листья фундука",
   "block.creategarnished.marigold": "Бархатцы",
   "block.creategarnished.peanut_barrel": "Бочка арахиса",
-  "block.creategarnished.peanut_butter": "Арахисовое масло",
   "block.creategarnished.peanuts": "Арахис",
   "block.creategarnished.pine_nut_barrel": "Бочка кедровых орехов",
   "block.creategarnished.pine_nut_leaves": "Листья кедрового ореха",
@@ -47,6 +46,12 @@
   "block.creategarnished.wild_garlic": "Дикий чеснок",
   "block.creategarnished.wild_ginger_root": "Корни дикого имбиря",
   "block.creategarnished.wild_peanuts": "Дикий арахис",
+
+  "block.creategarnished.almond_extract": "Экстракт миндаля",
+  "block.creategarnished.birch_syrup": "Березовый сироп",
+  "block.creategarnished.peanut_butter": "Арахисовое масло",
+  "block.creategarnished.royal_cider": "Королевский сидр",
+
   "fluid.creategarnished.almond_extract": "Экстракт миндаля",
   "fluid.creategarnished.beetroot_juice": "Свекольный сок",
   "fluid.creategarnished.birch_sap": "Березовый сок",

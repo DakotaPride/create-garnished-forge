@@ -28,7 +28,6 @@
   "block.creategarnished.hazelnut_leaves": "Hazelnut Leaves",
   "block.creategarnished.marigold": "Marigold",
   "block.creategarnished.peanut_barrel": "Barrel of Peanuts",
-  "block.creategarnished.peanut_butter": "Peanut Butter",
   "block.creategarnished.peanuts": "Peanuts",
   "block.creategarnished.pine_nut_barrel": "Barrel of Pine Nuts",
   "block.creategarnished.pine_nut_leaves": "Pine Nut Leaves",
@@ -47,6 +46,12 @@
   "block.creategarnished.wild_garlic": "Wild Garlic",
   "block.creategarnished.wild_ginger_root": "Wild Ginger Roots",
   "block.creategarnished.wild_peanuts": "Wild Peanuts",
+
+  "block.creategarnished.almond_extract": "Almond Extract",
+  "block.creategarnished.birch_syrup": "Birch Syrup",
+  "block.creategarnished.peanut_butter": "Peanut Butter",
+  "block.creategarnished.royal_cider": "Royal Cider",
+
   "fluid.creategarnished.almond_extract": "Almond Extract",
   "fluid.creategarnished.beetroot_juice": "Beetroot Juice",
   "fluid.creategarnished.birch_sap": "Birch Sap",
