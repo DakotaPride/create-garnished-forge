@@ -1,0 +1,13 @@
+{
+  "name": "Аллергия на орехи",
+  "icon": "minecraft:tipped_arrow[potion_contents={potion:'creategarnished:nut_allergy'}]",
+  "category": "creategarnished:utilities",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Аллергия на орехи",
+      "item": "minecraft:tipped_arrow[potion_contents={potion:'creategarnished:nut_allergy'}]",
+      "text": "Если вы случайно (или намеренно) погрузились в определенные жидкости, которые производятся с помощью орехов, у вас может развиться аллергия на орехи, и вы будете получать урон при употреблении ореховых продуктов.$(br)Вы также можете вылить 250 мб арахисового масла на стрелу, чтобы получить зараженную стрелу с ореховым аллергеном."
+    }
+  ]
+}
