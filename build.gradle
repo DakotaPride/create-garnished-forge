@@ -45,6 +45,8 @@ repositories {
         url = "https://modmaven.dev"
     }
     maven { url "https://maven.shedaniel.me/" }
+
+    maven { url = "https://api.modrinth.com/maven" }
 }
 
 // Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
@@ -149,6 +151,9 @@ dependencies {
 
     compileOnly ("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}")
     runtimeOnly ("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}")
+
+    runtimeOnly ("maven.modrinth:jade:15.10.1+neoforge")
+    runtimeOnly ("maven.modrinth:jade-addons-forge:6.1.0+neoforge")
 
     implementation "vazkii.patchouli:Patchouli:${patchouli_minecraft_version}-${patchouli_version}-NEOFORGE"
 
