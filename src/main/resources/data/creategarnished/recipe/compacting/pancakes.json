@@ -7,8 +7,10 @@
       "fluid_tag": "c:milk"
     },
     {
-      "tag": "c:flours",
-      "count": 2
+      "tag": "c:flours"
+    },
+    {
+      "tag": "c:flours"
     }
   ],
   "results": [
