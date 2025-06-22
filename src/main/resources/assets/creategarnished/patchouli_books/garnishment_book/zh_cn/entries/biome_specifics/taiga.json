@@ -1,0 +1,29 @@
+{
+  "name": "针叶林",
+  "icon": "creategarnished:elven_sweet_berries",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:pine_nut",
+      "text": "某些云杉树叶上长着松子，你可以将松子种植于地面以种植松子树。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/pine_nut_tree.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:elven_sweet_berries",
+      "text": "你还可以在针叶林中找到精灵甜浆果丛。$(br)当精灵甜浆果成熟以后，可以通过右键来收获。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/elven_sweet_berries.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "茶饮",
+  "icon": "creategarnished:sweet_tea",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:sprinters_tea",
+      "text": "在加热的情况下混合搅拌生姜、水以及蜂蜜可以得到运动员茶饮，它能提供3分钟的迅捷效果。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:sweet_tea",
+      "text": "在加热的情况下混合搅拌甜浆果与蜂蜜可以得到蜜茶，它能提供3分钟的生命恢复效果。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:elven_tea",
+      "text": "在加热的情况下混合搅拌精灵甜浆果与蜜茶可以得到精灵茶，它能提供3分钟的速度III以及隐身效果。"
+    }
+  ]
+}

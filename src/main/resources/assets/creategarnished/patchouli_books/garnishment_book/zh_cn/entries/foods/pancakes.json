@@ -1,0 +1,18 @@
+{
+  "name": "煎饼",
+  "icon": "creategarnished:pancakes",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:pancakes",
+      "text": "煎饼可以通过对奶以及小麦粉（或者松子粉）进行压块塑形来制作。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:syrup_covered_pancakes",
+      "text": "白桦树糖浆煎饼可以通过向煎饼注入白桦树糖浆来制作。",
+      "title": "白桦树糖浆煎饼"
+    }
+  ]
+}

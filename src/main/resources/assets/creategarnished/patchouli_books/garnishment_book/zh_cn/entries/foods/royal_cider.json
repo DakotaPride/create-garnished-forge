@@ -1,0 +1,12 @@
+{
+  "name": "皇家西打",
+  "icon": "creategarnished:royal_cider",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:royal_cider",
+      "text": "皇家西打由水晶蒜泥、精灵茶以及杏仁提取物混合搅拌而成。与玻璃瓶以及奶油进行序列装配可以得到一杯皇家西打。"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "丛林",
+  "icon": "creategarnished:wild_ginger_root",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_peanuts",
+      "text": "在丛林中，你能够找到生长于地面的野生花生，破坏它们可以获得花生。$(br)你可以在耕地中种植花生。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_peanuts.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_ginger_root",
+      "text": "你还可以在丛林中发现野生生姜，破坏它们可以获得生姜，在野生生姜的周围，你还可以找到万寿菊。$(br)你可以在耕地中种植生姜。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_ginger_root.png"
+      ]
+    }
+  ]
+}
