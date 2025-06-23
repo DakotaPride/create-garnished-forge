@@ -162,13 +162,13 @@
     "advancement.creategarnished.obtain_almond_paste.description": "将杏仁制成杏仁酱",
     "advancement.creategarnished.obtain_bear_claw.title": "这是野味吗？",
     "advancement.creategarnished.obtain_bear_claw.description": "用小麦粉、鸡蛋、奶、杏仁酱和糖制作糖霜熊掌饼",
-    "advancement.creategarnished.obtain_beetroot_juice_bottle.title": "击打的甜菜",
+    "advancement.creategarnished.obtain_beetroot_juice_bottle.title": "一个击打的甜菜",
     "advancement.creategarnished.obtain_beetroot_juice_bottle.description": "获得甜菜汁",
     "advancement.creategarnished.obtain_churchkhela.title": "格鲁吉亚风味",
     "advancement.creategarnished.obtain_churchkhela.description": "使用杏仁、小麦粉与甜菜汁制作棍子糖",
   
     "death.attack.creategarnished.elvenSweetBerryBush": "%1$s被精灵浆果丛刺穿了",
-    "death.attack.creategarnished.elvenSweetBerryBush.player": "%1$s在试图逃离%2$s",
+    "death.attack.creategarnished.elvenSweetBerryBush.player": "%1$s在试图逃离%2$s时被精灵浆果丛刺穿了",
     "death.attack.creategarnished.nutAllergy": "%1$s死于坚果过敏",
     "death.attack.creategarnished.nutAllergy.player": "%1$s死于%2$s导致的坚果过敏"
   }
