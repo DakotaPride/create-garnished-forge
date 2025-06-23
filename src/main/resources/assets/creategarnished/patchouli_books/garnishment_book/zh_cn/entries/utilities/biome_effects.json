@@ -1,0 +1,37 @@
+{
+  "name": "生物群系特定效果",
+  "icon": "creategarnished:elven_sweet_berries",
+  "category": "creategarnished:utilities",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "概述",
+      "item": "creategarnished:elven_sweet_berries",
+      "text": "源自不同群系的食物能够提供不同的效果，如果一种食物有其他的效果，这种与生物群系有关的效果不会被改变。"
+    },
+    {
+      "type": "spotlight",
+      "title": "针叶林",
+      "item": "creategarnished:garlic_bulb",
+      "text": "来自针叶林的食物能够提供2分钟的隐身效果。"
+    },
+    {
+      "type": "spotlight",
+      "title": "丛林",
+      "item": "creategarnished:peanut",
+      "text": "来自丛林（包括稀疏丛林、竹林）的食物能够提供2分钟的急迫II效果。"
+    },
+    {
+      "type": "spotlight",
+      "title": "繁花群系",
+      "item": "creategarnished:churchkhela",
+      "text": "来自繁花森林、向日葵平原的食物能够提供2分钟的生命恢复II效果。"
+    },
+    {
+      "type": "spotlight",
+      "title": "桦木森林",
+      "item": "creategarnished:syrup_covered_pancakes",
+      "text": "来自桦木森林、原始桦木森林的食物能够提供2分钟的迅捷II效果。"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "使用皇家西打实现超级燃烧",
+  "icon": "creategarnished:royal_cider_bucket",
+  "category": "creategarnished:utilities",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "皇家西打",
+      "item": "creategarnished:royal_cider_bucket",
+      "text": "你可以把皇家西打喂给燃烧室中的烈焰人，使它进入超级燃烧状态，是烈焰蛋糕的平替。$(br)如果你安装了机械动力：液体燃料，你可以直接使用流体管道向烈焰人燃烧室泵入皇家西打流体。"
+    }
+  ]
+}

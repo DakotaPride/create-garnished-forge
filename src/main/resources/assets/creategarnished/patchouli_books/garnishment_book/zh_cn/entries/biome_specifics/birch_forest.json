@@ -1,0 +1,29 @@
+{
+  "name": "桦木森林",
+  "icon": "creategarnished:birch_sap_bottle",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:hazelnut",
+      "text": "你可以在桦木森林中的白桦树上找到榛子，它们能够用于制作巧克力。$(br)你可以将榛子种植于地上以种植榛子树。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/hazelnut_tree.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:birch_sap_bottle",
+      "text": "在桦木森林中，你有时可以看到树汁从树干上流出，手持空的玻璃瓶右键就能将其收集。$(br)汁水丰富的白桦原木可以通过精准采集附魔来采集，如果没有精准采集，你只能得到普通的白桦原木。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/sap_filled_birch_log.png"
+      ]
+    }
+  ]
+}

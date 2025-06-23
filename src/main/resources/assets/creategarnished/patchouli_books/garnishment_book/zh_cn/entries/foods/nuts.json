@@ -1,0 +1,27 @@
+{
+  "name": "坚果",
+  "icon": "creategarnished:peanut",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:peanut",
+      "text": "花生以野生花生的形式出现在丛林中。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:pine_nut",
+      "text": "松子生长于针叶林中某些特殊的云杉木上。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:hazelnut",
+      "text": "榛子生长于桦木森林中某些特殊的白桦木上。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:almond",
+      "text": "杏仁生长于繁花森林或向日葵平原的杏仁树上，杏仁树的特点是具有亮粉色的树叶。"
+    }
+  ]
+}

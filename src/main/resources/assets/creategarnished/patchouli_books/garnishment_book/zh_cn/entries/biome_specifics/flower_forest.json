@@ -1,0 +1,19 @@
+{
+  "name": "繁花森林",
+  "icon": "creategarnished:almond_leaves",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:almond",
+      "text": "在繁花森林中，你有时能见到亮粉色树叶的杏仁树，破坏长有杏仁的树叶能够获得杏仁。$(br)你可以将杏仁种植于地上来种植杏仁树。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/blossoming_almond_tree.png"
+      ],
+      "text": "你也可以在向日葵平原找到杏仁树。"
+    }
+  ]
+}

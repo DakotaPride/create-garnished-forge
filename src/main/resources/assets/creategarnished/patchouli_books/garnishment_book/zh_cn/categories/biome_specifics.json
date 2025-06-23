@@ -1,0 +1,6 @@
+{
+  "name": "生物群系特定内容",
+  "description": "这些内容与某一个或者某一些生物群系高度关联。",
+  "icon": "creategarnished:birch_sap_bottle",
+  "sortnum": 1
+}

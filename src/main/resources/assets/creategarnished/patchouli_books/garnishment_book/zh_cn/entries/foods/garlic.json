@@ -1,0 +1,22 @@
+{
+  "name": "大蒜",
+  "icon": "creategarnished:garlic_bulb",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:garlic_bulb",
+      "text": "大蒜以野生大蒜的形式出现在针叶林中。$(br)使用动力锯加工大蒜可以得到蒜泥。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:garlic_bread",
+      "text": "在加热的情况下，将面包、奶、树叶以及蒜泥混合搅拌可以制作蒜香面包。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:crystalline_garlic_bulb",
+      "text": "水晶蒜头的合成方法是在合成表中大蒜的上下左右四格放置下界石英。$(br)水晶蒜头可以被制作成为水晶蒜泥。"
+    }
+  ]
+}
