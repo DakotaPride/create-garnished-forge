@@ -4,6 +4,7 @@ import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
@@ -11,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -41,7 +43,7 @@ public class BirchLogExtractingSapBlock extends RotatedPillarBlock {
     @Override
     protected void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, RandomSource random) {
         int r = random.nextInt(2);
-        if (r != 0) {
+        if (r != 0 && hasRequiredLogs(state, level, pos)) {
             //state.setValue(HAS_SAP, true);
             level.setBlockAndUpdate(pos, state.setValue(HAS_SAP, true));
             super.randomTick(state, level, pos, random);
@@ -50,6 +52,13 @@ public class BirchLogExtractingSapBlock extends RotatedPillarBlock {
         //CreateGarnished.LOGGER.info("The random integer is {}", r);
 
         //super.randomTick(state, level, pos, random);
+    }
+
+    public static boolean hasRequiredLogs(BlockState state, LevelReader level, BlockPos pos) {
+        if (CreateGarnishedConfigs.server().block.requireLogsForSapGeneration.get())
+            return level.getBlockState(pos.above()).is(BlockTags.BIRCH_LOGS) && level.getBlockState(pos.below()).is(BlockTags.BIRCH_LOGS);
+
+        return !CreateGarnishedConfigs.server().block.requireLogsForSapGeneration.get();
     }
 
     @Override

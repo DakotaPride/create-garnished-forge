@@ -3,6 +3,7 @@ package net.dakotapride.creategarnished.registry;
 
 import com.simibubi.create.content.decoration.palettes.ConnectedPillarBlock;
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.item.ItemDescription;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.*;
@@ -78,7 +79,8 @@ public class CreateGarnishedBlocks {
             .properties(p -> p.noOcclusion().sound(SoundType.GRASS))
             .simpleItem()
             .register();
-    public static final BlockEntry<BirchLogExtractingSapBlock> BIRCH_SAP_LOG = CreateGarnished.REGISTRATE.block("birch_sap_log", BirchLogExtractingSapBlock::new)
+    public static final BlockEntry<BirchLogExtractingSapBlock> BIRCH_SAP_LOG =
+            CreateGarnished.REGISTRATE.block("birch_sap_log", BirchLogExtractingSapBlock::new)
             .initialProperties(() -> Blocks.BIRCH_LOG)
             .simpleItem()
             .register();
@@ -136,6 +138,24 @@ public class CreateGarnishedBlocks {
             .register();
     public static final BlockEntry<GarlicCropBlock> GARLIC_CROP = CreateGarnished.REGISTRATE.block("garlic", GarlicCropBlock::new)
             .properties(p -> p.noCollission().noOcclusion().sound(SoundType.GRASS))
+            .register();
+
+    public static final BlockEntry<CropBarrelBlock> GARLIC_BARREL = CreateGarnished.REGISTRATE.block("garlic_barrel", CropBarrelBlock::new)
+            .simpleItem()
+            .initialProperties(() -> Blocks.BARREL).register();
+
+    public static final BlockEntry<Block> CREAM_BLOCK = CreateGarnished.REGISTRATE.block("cream_block", Block::new)
+            .simpleItem()
+            .initialProperties(() -> Blocks.BONE_BLOCK)
+            .properties(p -> p.sound(SoundType.SLIME_BLOCK).instabreak().friction(0.2F))
+            .register();
+
+    // Creative Blocks
+
+    public static final BlockEntry<CreativeBirchLogExtractingSapBlock> CREATIVE_BIRCH_SAP_LOG =
+            CreateGarnished.REGISTRATE.block("creative_birch_sap_log", CreativeBirchLogExtractingSapBlock::new)
+            .initialProperties(() -> Blocks.BIRCH_LOG)
+            .simpleItem()
             .register();
 
     public static void register() {}

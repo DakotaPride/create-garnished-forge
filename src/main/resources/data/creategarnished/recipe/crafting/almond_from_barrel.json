@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "creategarnished:almond_barrel"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "creategarnished:almond"
+  }
+}

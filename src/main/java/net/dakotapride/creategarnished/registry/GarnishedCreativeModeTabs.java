@@ -102,6 +102,7 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedBlocks.ALMOND_BARREL);
             output.accept(CreateGarnishedBlocks.SWEET_BERRY_BARREL);
             output.accept(CreateGarnishedBlocks.ELVEN_SWEET_BERRY_BARREL);
+            output.accept(CreateGarnishedBlocks.GARLIC_BARREL);
 
             output.accept(CreateGarnishedBlocks.PINE_NUT_LEAVES);
             output.accept(CreateGarnishedBlocks.HAZELNUT_LEAVES);
@@ -136,6 +137,12 @@ public class GarnishedCreativeModeTabs {
             }
             output.accept(CreateGarnishedBlocks.LAYERED_PORPHYRY);
             output.accept(CreateGarnishedBlocks.PORPHYRY_PILLAR);
+
+            output.accept(CreateGarnishedBlocks.CREAM_BLOCK);
+
+            // Creative Blocks
+
+            output.accept(CreateGarnishedBlocks.CREATIVE_BIRCH_SAP_LOG);
         }
     }
 }

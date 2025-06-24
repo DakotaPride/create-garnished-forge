@@ -157,6 +157,21 @@ public class CreateGarnishedFluids {
                     }
                 }
         ));
+
+        FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
+                ROYAL_CIDER.get().getFluidType(),
+                fluidState -> {
+                    if (CreateGarnishedConfigs.server().stoneGeneration.allowAsurineFluidInteraction.get()) {
+                        if (fluidState.isSource()) {
+                            return AllPaletteStoneTypes.ASURINE.getBaseBlock().get().defaultBlockState();
+                        } else {
+                            return Blocks.CRYING_OBSIDIAN.defaultBlockState();
+                        }
+                    } else {
+                        return Blocks.CRYING_OBSIDIAN.defaultBlockState();
+                    }
+                }
+        ));
     }
 
     public static @NotNull BlockState getFluidInteraction(FluidState fluidState) {
@@ -167,6 +182,8 @@ public class CreateGarnishedFluids {
             return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get().defaultBlockState();
         if (fluid.isSame(ALMOND_EXTRACT.get()) && CreateGarnishedConfigs.server().stoneGeneration.allowGraniteFluidInteraction.get())
             return AllPaletteStoneTypes.GRANITE.getBaseBlock().get().defaultBlockState();
+        if (fluid.isSame(ROYAL_CIDER.get()))
+            return Blocks.CRYING_OBSIDIAN.defaultBlockState();
         return Blocks.COBBLESTONE.defaultBlockState();
     }
 
