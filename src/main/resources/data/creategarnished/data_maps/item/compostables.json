@@ -1,0 +1,24 @@
+{
+  "values": {
+    "creategarnished:marigold": { "chance": 0.65 },
+    "creategarnished:wild_peanuts": { "chance": 0.65 },
+    "creategarnished:wild_ginger_root": { "chance": 0.65 },
+    "creategarnished:wild_garlic": { "chance": 0.65 },
+    "creategarnished:hazelnut_leaves": { "chance": 0.3 },
+    "creategarnished:almond_leaves": { "chance": 0.3 },
+    "creategarnished:blossoming_almond_leaves": { "chance": 0.3 },
+    "creategarnished:pine_nut_leaves": { "chance": 0.3 },
+    "creategarnished:elven_sweet_berries": { "chance": 0.3 },
+    "creategarnished:garlic_bulb": { "chance": 0.3 },
+    "creategarnished:minced_garlic": { "chance": 0.3 },
+    "creategarnished:peanut": { "chance": 0.3 },
+    "creategarnished:almond": { "chance": 0.3 },
+    "creategarnished:hazelnut": { "chance": 0.3 },
+    "creategarnished:pine_nut": { "chance": 0.3 },
+    "creategarnished:ginger_root": { "chance": 0.3 },
+    "creategarnished:peanut_butter_cookie": { "chance": 0.85 },
+    "creategarnished:garlic_bread": { "chance": 0.85 },
+    "creategarnished:pancakes": { "chance": 0.85 },
+    "creategarnished:syrup_covered_pancakes": { "chance": 0.85 }
+  }
+}
