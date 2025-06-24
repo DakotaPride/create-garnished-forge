@@ -1,0 +1,6 @@
+{
+  "type": "emi:world_interaction",
+  "left": "fluid:minecraft:lava",
+  "right": "fluid:creategarnished:peanut_butter",
+  "output": "item:minecraft:dripstone"
+}

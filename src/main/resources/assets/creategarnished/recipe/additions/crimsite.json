@@ -1,0 +1,6 @@
+{
+  "type": "emi:world_interaction",
+  "left": "fluid:creategarnished:birch_syrup",
+  "right": "fluid:minecraft:lava",
+  "output": "item:create:crimsite"
+}

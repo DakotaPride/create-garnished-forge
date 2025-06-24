@@ -1,0 +1,6 @@
+{
+  "type": "emi:world_interaction",
+  "left": "fluid:creategarnished:royal_cider",
+  "right": "fluid:minecraft:lava",
+  "output": "item:create:asurine"
+}

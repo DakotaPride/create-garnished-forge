@@ -67,6 +67,8 @@ public class CreateGarnished {
         //NeoForge.EVENT_BUS.register(this);
 
         //modEventBus.addListener(this::addCreative);
+
+        LOGGER.info("[WARNING] Create: Garnished Reworked EMI Compatibility is limited and may be incorrect depending on the config settings presented by the mod.");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
