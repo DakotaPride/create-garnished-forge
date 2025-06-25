@@ -100,29 +100,29 @@ public class CreateGarnishedBlocks {
             .register();
 
     public static final BlockEntry<CropBarrelBlock> GINGER_ROOT_BARREL = CreateGarnished.REGISTRATE.block("ginger_root_barrel", CropBarrelBlock::new)
-            .simpleItem()
+            .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
             .initialProperties(() -> Blocks.BARREL).register();
     public static final BlockEntry<CropBarrelBlock> PEANUT_BARREL = CreateGarnished.REGISTRATE.block("peanut_barrel", CropBarrelBlock::new)
-            .simpleItem()
+            .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
             .initialProperties(() -> Blocks.BARREL).register();
 
     public static final BlockEntry<CropBarrelBlock> PINE_NUT_BARREL = CreateGarnished.REGISTRATE.block("pine_nut_barrel", CropBarrelBlock::new)
-            .simpleItem()
+            .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
             .initialProperties(() -> Blocks.BARREL).register();
     public static final BlockEntry<CropBarrelBlock> SWEET_BERRY_BARREL = CreateGarnished.REGISTRATE.block("sweet_berry_barrel", CropBarrelBlock::new)
-            .simpleItem()
+            .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
             .initialProperties(() -> Blocks.BARREL).register();
 
     public static final BlockEntry<CropBarrelBlock> ELVEN_SWEET_BERRY_BARREL = CreateGarnished.REGISTRATE.block("elven_sweet_berry_barrel", CropBarrelBlock::new)
-            .simpleItem()
+            .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
             .initialProperties(() -> Blocks.BARREL).register();
 
     public static final BlockEntry<CropBarrelBlock> HAZELNUT_BARREL = CreateGarnished.REGISTRATE.block("hazelnut_barrel", CropBarrelBlock::new)
-            .simpleItem()
+            .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
             .initialProperties(() -> Blocks.BARREL).register();
 
     public static final BlockEntry<CropBarrelBlock> ALMOND_BARREL = CreateGarnished.REGISTRATE.block("almond_barrel", CropBarrelBlock::new)
-            .simpleItem()
+            .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
             .initialProperties(() -> Blocks.BARREL).register();
 
 
@@ -141,7 +141,7 @@ public class CreateGarnishedBlocks {
             .register();
 
     public static final BlockEntry<CropBarrelBlock> GARLIC_BARREL = CreateGarnished.REGISTRATE.block("garlic_barrel", CropBarrelBlock::new)
-            .simpleItem()
+            .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
             .initialProperties(() -> Blocks.BARREL).register();
 
     public static final BlockEntry<Block> CREAM_BLOCK = CreateGarnished.REGISTRATE.block("cream_block", Block::new)
