@@ -1,6 +1,5 @@
 {
     "item.creategarnished.garnishment_book": "装食向导",
-  
     "effect.creategarnished.nut_allergy": "坚果过敏",
     "item.minecraft.potion.effect.nut_allergy": "坚果过敏药水",
     "item.minecraft.splash_potion.effect.nut_allergy": "喷溅型坚果过敏药水",
@@ -9,7 +8,15 @@
     "block.creategarnished.almond_leaves": "杏仁树叶",
     "block.creategarnished.almond_sapling": "杏仁树苗",
     "block.creategarnished.birch_sap_log": "汁水丰富的白桦原木",
+    "block.creategarnished.birch_sap_log.tooltip.summary": "_白桦树汁的生成规则、能否再生_可以在配置文件中调整",
+    "block.creategarnished.birch_sap_log.tooltip.condition1": "手持玻璃瓶右击时",
+    "block.creategarnished.birch_sap_log.tooltip.behaviour1": "提供_一瓶白桦树汁_，在下一次装取之前你需要等待_一段时间_以待其重新充满汁水",
     "block.creategarnished.blossoming_almond_leaves": "开花杏仁树叶",
+    "block.creategarnished.cream_block": "奶油块",
+    "block.creategarnished.creative_birch_sap_log": "创造汁水丰富的白桦原木",
+    "block.creategarnished.creative_birch_sap_log.tooltip.summary": "提供_无限量的_白桦树汁",
+    "block.creategarnished.creative_birch_sap_log.tooltip.condition1": "手持玻璃瓶右击时",
+    "block.creategarnished.creative_birch_sap_log.tooltip.behaviour1": "提供_一瓶白桦树汁_，没有_等待时间与装取量的限制_",
     "block.creategarnished.cut_porphyry": "切制斑岩",
     "block.creategarnished.cut_porphyry_brick_slab": "切制斑岩砖块台阶",
     "block.creategarnished.cut_porphyry_brick_stairs": "切制斑岩砖块楼梯",
@@ -18,6 +25,7 @@
     "block.creategarnished.cut_porphyry_slab": "切制斑岩台阶",
     "block.creategarnished.cut_porphyry_stairs": "切制斑岩楼梯",
     "block.creategarnished.cut_porphyry_wall": "切制斑岩墙",
+    "block.creategarnished.garlic_barrel": "桶装大蒜",
     "block.creategarnished.layered_porphyry": "层叠斑岩",
     "block.creategarnished.porphyry_pillar": "斑岩柱",
     "block.creategarnished.elven_sweet_berry_barrel": "桶装精灵甜浆果",
@@ -46,12 +54,10 @@
     "block.creategarnished.wild_garlic": "野生大蒜",
     "block.creategarnished.wild_ginger_root": "野生生姜",
     "block.creategarnished.wild_peanuts": "野生花生",
-  
     "block.creategarnished.almond_extract": "杏仁提取物",
     "block.creategarnished.birch_syrup": "白桦树糖浆",
     "block.creategarnished.peanut_butter": "花生酱",
     "block.creategarnished.royal_cider": "皇家西打",
-  
     "fluid.creategarnished.almond_extract": "杏仁提取物",
     "fluid.creategarnished.beetroot_juice": "甜菜汁",
     "fluid.creategarnished.birch_sap": "白桦树树汁",
@@ -97,24 +103,20 @@
     "item.creategarnished.royal_cider_bucket": "皇家西打桶",
     "item.creategarnished.sprinters_tea": "运动员茶饮",
     "item.creategarnished.sprinters_tea.tooltip.summary": "饮下这杯完美茶饮，开启活力满满的一天。可以恢复_饥饿值_并获得_迅捷_效果。",
+    "item.creategarnished.storage_barrel.tooltip.summary": "由_4个作物_合成而来的存储方块",
     "item.creategarnished.sweet_tea": "蜜茶",
     "item.creategarnished.sweet_tea.tooltip.summary": "饮下这杯完美茶饮，开启平静而舒缓的一天。可以恢复_饥饿值_并获得_生命恢复_效果。",
     "item.creategarnished.syrup_covered_pancakes": "白桦树糖浆煎饼",
     "item.creategarnished.vegetable_stew": "蔬菜炖",
-  
     "item.minecraft.tipped_arrow.effect.nut_allergy": "坚果过敏之箭",
-  
-  
     "itemGroup.creategarnished.tab": "机械动力：装食",
     "itemGroup.creategarnished.tab.blocks": "机械动力：装食丨建筑方块",
-  
     "advancement.creategarnished.root.title": "欢迎来到机械动力：装食",
     "advancement.creategarnished.root.description": "美味坚果在此",
     "advancement.creategarnished.dejojotheawsome.title": "Awsome",
     "advancement.creategarnished.dejojotheawsome.description": "在重制版里也能见到他的身影 ——谢谢你， Dejojo！\n§7（隐藏进度）",
     "advancement.creategarnished.responsible_for_nut_allergy.title": "在坚果中长眠",
     "advancement.creategarnished.responsible_for_nut_allergy.description": "使他人对坚果过敏\n§7（隐藏进度）",
-  
     "advancement.creategarnished.obtain_peanuts.title": "哇~哇，哇~哇",
     "advancement.creategarnished.obtain_peanuts.description": "在丛林找到野生花生",
     "advancement.creategarnished.obtain_peanut_butter.title": "是Jif牌花生酱吗？",
@@ -125,7 +127,6 @@
     "advancement.creategarnished.obtain_ginger_root.description": "在丛林找到野生生姜",
     "advancement.creategarnished.obtain_sprinters_tea.title": "跑！阿甘，快跑！",
     "advancement.creategarnished.obtain_sprinters_tea.description": "获得运动员茶饮",
-  
     "advancement.creategarnished.obtain_pine_nuts.title": "斯坦叔公",
     "advancement.creategarnished.obtain_pine_nuts.description": "在针叶林找到长在树上的松子",
     "advancement.creategarnished.obtain_sweet_tea.title": "浆果糊糊",
@@ -142,7 +143,6 @@
     "advancement.creategarnished.obtain_elven_sweet_berries.description": "在针叶林找到精灵甜浆果",
     "advancement.creategarnished.obtain_elven_tea.title": "精巧而混沌",
     "advancement.creategarnished.obtain_elven_tea.description": "获得精灵茶",
-  
     "advancement.creategarnished.obtain_hazelnuts.title": "天王老子来了它都是巧克力",
     "advancement.creategarnished.obtain_hazelnuts.description": "在桦木森林找到榛子",
     "advancement.creategarnished.obtain_chocolate_truffles.title": "松露舞步",
@@ -155,7 +155,6 @@
     "advancement.creategarnished.obtain_birch_syrup.description": "将白桦树汁制成白桦树糖浆",
     "advancement.creategarnished.flapjack.title": "安息吧鸟儿",
     "advancement.creategarnished.flapjack.description": "喂Flapjack吃点Flapjack\n§7（隐藏进度）",
-  
     "advancement.creategarnished.obtain_almonds.title": "不会有氰化物吧？",
     "advancement.creategarnished.obtain_almonds.description": "在繁花森林或者向日葵平原找到杏仁",
     "advancement.creategarnished.obtain_almond_paste.title": "复制……？",
@@ -166,9 +165,8 @@
     "advancement.creategarnished.obtain_beetroot_juice_bottle.description": "获得甜菜汁",
     "advancement.creategarnished.obtain_churchkhela.title": "格鲁吉亚风味",
     "advancement.creategarnished.obtain_churchkhela.description": "使用杏仁、小麦粉与甜菜汁制作棍子糖",
-  
     "death.attack.creategarnished.elvenSweetBerryBush": "%1$s被精灵浆果丛刺穿了",
     "death.attack.creategarnished.elvenSweetBerryBush.player": "%1$s在试图逃离%2$s时被精灵浆果丛刺穿了",
     "death.attack.creategarnished.nutAllergy": "%1$s死于坚果过敏",
     "death.attack.creategarnished.nutAllergy.player": "%1$s死于%2$s导致的坚果过敏"
-  }
+}
