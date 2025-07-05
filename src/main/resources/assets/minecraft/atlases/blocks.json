@@ -58,6 +58,14 @@
     },
     {
       "type": "single",
+      "resource": "creategarnished:fluid/mushroom_slop_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/mushroom_slop_still"
+    },
+    {
+      "type": "single",
       "resource": "creategarnished:fluid/almond_extract_flow"
     },
     {

@@ -3,7 +3,6 @@ package net.dakotapride.creategarnished;
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
-import com.simibubi.create.infrastructure.config.AllConfigs;
 import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.creategarnished.particle.ElvenMysticalParticleType;
 import net.dakotapride.creategarnished.registry.*;
@@ -20,7 +19,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
-import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 

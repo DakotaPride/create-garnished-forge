@@ -2,10 +2,18 @@ package net.dakotapride.creategarnished.event;
 
 import com.simibubi.create.AllItems;
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.registry.CreateGarnishedBlocks;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
+import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.neoforged.api.distmarker.Dist;
@@ -13,6 +21,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 @EventBusSubscriber(modid = CreateGarnished.ID, bus = EventBusSubscriber.Bus.GAME)
@@ -51,6 +60,44 @@ public class GarnishedWanderingTraderTrades {
                 new ItemCost(Items.EMERALD, 1),
                 new ItemStack(CreateGarnishedItems.ALMOND.get(), 4), 3, 10, 0.2f));
 
+        // Soups/Stews
+        rareTrades.add((entity, randomSource) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 6),
+                new ItemStack(CreateGarnishedItems.VEGETABLE_STEW.get(), 1), 3, 10, 0.2f));
+        rareTrades.add((entity, randomSource) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 6),
+                new ItemStack(Items.MUSHROOM_STEW, 1), 3, 10, 0.2f));
+        rareTrades.add((entity, randomSource) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 6),
+                new ItemStack(Items.RABBIT_STEW, 1), 3, 10, 0.2f));
+        genericTrades.add((entity, randomSource) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 3),
+                new ItemStack(Items.BEETROOT_SOUP, 1), 3, 10, 0.2f));
+
+        List<Holder<MobEffect>> effects = List.of(
+                MobEffects.NIGHT_VISION,
+                MobEffects.DIG_SPEED,
+                MobEffects.MOVEMENT_SPEED,
+                MobEffects.DAMAGE_RESISTANCE,
+                MobEffects.FIRE_RESISTANCE,
+                MobEffects.DAMAGE_BOOST,
+                MobEffects.HEALTH_BOOST,
+                MobEffects.INVISIBILITY,
+                MobEffects.JUMP,
+                MobEffects.LUCK,
+                MobEffects.SLOW_FALLING
+        );
+
+        effects.forEach(effect -> {
+            rareTrades.add(((entity, randomSource) ->
+                    new SuspiciousStewForEmerald(SuspiciousStewForEmerald.getSuspiciousStewFromWanderingTrade(), effect)));
+        });
+
+//        rareTrades.add((entity, randomSource) -> new MerchantOffer(
+//                new ItemCost(Items.EMERALD, 16),
+//                new ItemStack(Items.SUSPICIOUS_STEW, 1), 1, 10, 0.2f));
+
+
         // Misc
         rareTrades.add((entity, randomSource) -> new MerchantOffer(
                 new ItemCost(Items.EMERALD, 4),
@@ -64,6 +111,36 @@ public class GarnishedWanderingTraderTrades {
         genericTrades.add((entity, randomSource) -> new MerchantOffer(
                 new ItemCost(Items.EMERALD, 6),
                 new ItemStack(CreateGarnishedItems.ELVEN_SWEET_BERRIES.get(), 4), 2, 10, 0.2f));
+        rareTrades.add((entity, randomSource) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 12),
+                new ItemStack(CreateGarnishedBlocks.BIRCH_SAP_LOG.get(), 1), 4, 10, 0.6f));
+    }
+
+    static class SuspiciousStewForEmerald extends MerchantOffer {
+        private static SuspiciousStewEffects effects;
+        private final int xp;
+        private final float priceMultiplier;
+
+        public SuspiciousStewForEmerald(ItemStack result, Holder<MobEffect> effect) {
+            this(result, 1, 10, 0.2F, effect, 200);
+        }
+
+        public SuspiciousStewForEmerald(ItemStack result, int maxUses, int xp, float priceMultiplier, Holder<MobEffect> effect, int duration) {
+            this(new SuspiciousStewEffects(List.of(new SuspiciousStewEffects.Entry(effect, duration))), new ItemCost(Items.EMERALD, 16), result, maxUses, xp, priceMultiplier);
+        }
+
+        public SuspiciousStewForEmerald(SuspiciousStewEffects effects, ItemCost cost, ItemStack result, int maxUses, int xp, float priceMultiplier) {
+            super(cost, result, maxUses, xp, priceMultiplier);
+            this.effects = effects;
+            this.xp = xp;
+            this.priceMultiplier = priceMultiplier;
+        }
+
+        public static ItemStack getSuspiciousStewFromWanderingTrade() {
+            ItemStack itemstack = new ItemStack(Items.SUSPICIOUS_STEW, 1);
+            itemstack.set(DataComponents.SUSPICIOUS_STEW_EFFECTS, effects);
+            return itemstack;
+        }
     }
 
 }

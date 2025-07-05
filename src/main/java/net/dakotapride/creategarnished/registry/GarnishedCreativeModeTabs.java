@@ -82,6 +82,8 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedFluids.BIRCH_SYRUP.get().getBucket());
             output.accept(CreateGarnishedFluids.ALMOND_EXTRACT.get().getBucket());
             output.accept(CreateGarnishedFluids.ROYAL_CIDER.get().getBucket());
+            output.accept(CreateGarnishedFluids.BEETROOT_JUICE.get().getBucket());
+            output.accept(CreateGarnishedFluids.MUSHROOM_SLOP.get().getBucket());
         }
     }
 

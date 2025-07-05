@@ -1,0 +1,20 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "creategarnished:mushroom_slop"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:mushroom_stew"
+      }
+    }
+  ]
+}

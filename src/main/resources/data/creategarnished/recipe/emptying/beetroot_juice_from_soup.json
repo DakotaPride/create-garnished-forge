@@ -1,0 +1,19 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "minecraft:beetroot_soup"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:bowl"
+      }
+    },
+    {
+      "amount": 250,
+      "id": "creategarnished:beetroot_juice"
+    }
+  ]
+}

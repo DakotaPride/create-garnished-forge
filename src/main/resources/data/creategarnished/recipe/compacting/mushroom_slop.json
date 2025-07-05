@@ -1,0 +1,17 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_mushroom"
+    },
+    {
+      "item": "minecraft:red_mushroom"
+    }
+  ],
+  "results": [
+    {
+      "amount": 100,
+      "id": "creategarnished:mushroom_slop"
+    }
+  ]
+}

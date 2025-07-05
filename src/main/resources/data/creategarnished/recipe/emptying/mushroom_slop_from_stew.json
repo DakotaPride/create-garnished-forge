@@ -1,0 +1,19 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "minecraft:mushroom_stew"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:bowl"
+      }
+    },
+    {
+      "amount": 250,
+      "id": "creategarnished:mushroom_slop"
+    }
+  ]
+}

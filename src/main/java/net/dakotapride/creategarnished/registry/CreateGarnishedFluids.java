@@ -38,7 +38,7 @@ public class CreateGarnishedFluids {
     public static final FluidEntry<VirtualFluid> ELVEN_TEA = REGISTRATE.virtualFluid("elven_tea").register();
     public static final FluidEntry<VirtualFluid> BIRCH_SAP = REGISTRATE.virtualFluid("birch_sap").register();
     //public static final FluidEntry<VirtualFluid> BIRCH_SYRUP = REGISTRATE.virtualFluid("birch_syrup").register();
-    public static final FluidEntry<VirtualFluid> BEETROOT_JUICE = REGISTRATE.virtualFluid("beetroot_juice").register();
+    //public static final FluidEntry<VirtualFluid> BEETROOT_JUICE = REGISTRATE.virtualFluid("beetroot_juice").register();
 
     public static final FluidEntry<BaseFlowingFluid.Flowing> PEANUT_BUTTER =
             REGISTRATE.standardFluid("peanut_butter",
@@ -97,6 +97,36 @@ public class CreateGarnishedFluids {
                     .bucket().build()
                     .register();
 
+    public static final FluidEntry<BaseFlowingFluid.Flowing> BEETROOT_JUICE =
+            REGISTRATE.standardFluid("beetroot_juice",
+                            SolidRenderedPlaceableFluidType.create(0xA4272C,
+                                    () -> 1f / 32f * CreateGarnishedConfigs.client().beetrootJuiceTransparencyMultiplier.getF()))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(2)
+                            .tickRate(25)
+                            .slopeFindDistance(3)
+                            .explosionResistance(100f))
+                    .source(BaseFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
+                    .bucket()
+                    .build()
+                    .register();
+
+    public static final FluidEntry<BaseFlowingFluid.Flowing> MUSHROOM_SLOP =
+            REGISTRATE.standardFluid("mushroom_slop",
+                            SolidRenderedPlaceableFluidType.create(0xBE785E,
+                                    () -> 1f / 32f * CreateGarnishedConfigs.client().mushroomSlopTransparencyMultiplier.getF()))
+                    .properties(b -> b.viscosity(1500)
+                            .density(1400))
+                    .fluidProperties(p -> p.levelDecreasePerBlock(2)
+                            .tickRate(25)
+                            .slopeFindDistance(3)
+                            .explosionResistance(100f))
+                    .source(BaseFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
+                    .bucket()
+                    .build()
+                    .register();
+
     public static void register() {}
 
     private static void provideFluidInteraction(FluidType colliding_fluid, FluidType met_fluid, Block from_source, Block from_flowing) {
@@ -145,6 +175,36 @@ public class CreateGarnishedFluids {
 
         FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 ALMOND_EXTRACT.get().getFluidType(),
+                fluidState -> {
+                    if (CreateGarnishedConfigs.server().stoneGeneration.allowPackedMudFluidInteraction.get()) {
+                        return Blocks.PACKED_MUD.defaultBlockState();
+                    } else {
+                        if (fluidState.isSource()) {
+                            return Blocks.STONE.defaultBlockState();
+                        } else {
+                            return Blocks.COBBLESTONE.defaultBlockState();
+                        }
+                    }
+                }
+        ));
+
+        FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
+                MUSHROOM_SLOP.get().getFluidType(),
+                fluidState -> {
+                    if (CreateGarnishedConfigs.server().stoneGeneration.allowPackedMudFluidInteraction.get()) {
+                        return Blocks.PACKED_MUD.defaultBlockState();
+                    } else {
+                        if (fluidState.isSource()) {
+                            return Blocks.STONE.defaultBlockState();
+                        } else {
+                            return Blocks.COBBLESTONE.defaultBlockState();
+                        }
+                    }
+                }
+        ));
+
+        FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
+                BEETROOT_JUICE.get().getFluidType(),
                 fluidState -> {
                     if (CreateGarnishedConfigs.server().stoneGeneration.allowGraniteFluidInteraction.get()) {
                         return AllPaletteStoneTypes.GRANITE.getBaseBlock().get().defaultBlockState();
