@@ -144,10 +144,10 @@ public class CreateGarnishedBlocks {
             .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
             .initialProperties(() -> Blocks.BARREL).register();
 
-    public static final BlockEntry<Block> CREAM_BLOCK = CreateGarnished.REGISTRATE.block("cream_block", Block::new)
+    public static final BlockEntry<CreamBlock> CREAM_BLOCK = CreateGarnished.REGISTRATE.block("cream_block", CreamBlock::new)
             .simpleItem()
             .initialProperties(() -> Blocks.BONE_BLOCK)
-            .properties(p -> p.sound(SoundType.SLIME_BLOCK).instabreak().friction(0.2F))
+            .properties(p -> p.sound(SoundType.SLIME_BLOCK).instabreak())
             .register();
 
     // Creative Blocks
