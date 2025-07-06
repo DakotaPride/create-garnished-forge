@@ -61,6 +61,7 @@
   "block.creategarnished.peanut_butter": "Арахисовое масло",
   "block.creategarnished.royal_cider": "Королевский сидр",
   "block.creategarnished.beetroot_juice": "Свекольный сок",
+  "block.creategarnished.mushroom_slop": "Грибная смесь",
 
   "fluid.creategarnished.almond_extract": "Экстракт миндаля",
   "fluid.creategarnished.beetroot_juice": "Свекольный сок",
@@ -71,6 +72,7 @@
   "fluid.creategarnished.sprinters_tea": "Чай бегуна",
   "fluid.creategarnished.sweet_tea": "Сладкий чай",
   "fluid.creategarnished.royal_cider": "Королевский сидр",
+  "fluid.creategarnished.mushroom_slop": "Грибная смесь",
   "item.creategarnished.almond": "Миндаль",
   "item.creategarnished.almond_extract_bucket": "Ведро с экстрактом миндаля",
   "item.creategarnished.almond_paste": "Миндальная паста",
@@ -96,6 +98,7 @@
   "item.creategarnished.incomplete_royal_cider": "Бокал незавершённого королевского сидра",
   "item.creategarnished.minced_crystalline_garlic": "Измельченный кристаллический чеснок",
   "item.creategarnished.minced_garlic": "Рубленый чеснок",
+  "item.creategarnished.mushroom_slop_bucket": "Ведро грибной смеси",
   "item.creategarnished.peanut": "Арахис",
   "item.creategarnished.peanut_butter_bottle": "Пузырёк арахисового масла",
   "item.creategarnished.peanut_butter_bucket": "Ведро арахисового масла",
