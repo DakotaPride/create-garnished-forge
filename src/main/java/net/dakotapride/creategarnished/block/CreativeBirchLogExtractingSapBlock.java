@@ -1,5 +1,6 @@
 package net.dakotapride.creategarnished.block;
 
+import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -13,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
-public class CreativeBirchLogExtractingSapBlock extends RotatedPillarBlock {
+public class CreativeBirchLogExtractingSapBlock extends RotatedPillarBlock implements IWrenchable {
 
     public CreativeBirchLogExtractingSapBlock(Properties properties) {
         super(properties);
