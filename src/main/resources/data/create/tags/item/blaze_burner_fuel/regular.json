@@ -2,7 +2,10 @@
   "replace": false,
   "values": [
     "#c:foods/nuts",
+    "#c:flours/nut",
     "#c:foods/pancakes",
+    "creategarnished:almond_paste",
+    "creategarnished:crushed_hazelnut_powder",
     "creategarnished:almond_extract_bucket"
   ]
 }

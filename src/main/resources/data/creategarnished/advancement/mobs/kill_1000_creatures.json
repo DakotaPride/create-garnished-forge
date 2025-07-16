@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:rotten_flesh"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.kill_1000_creatures.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.kill_1000_creatures.description",
+      "color": "#DBA213"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "creategarnished:mobs/killed_using_hatchet",
+  "criteria": {
+    "kill_1000_creatures": {
+      "trigger": "creategarnished:1000_hatchet_kills"
+    }
+  },
+  "requirements": [
+    [
+      "kill_1000_creatures"
+    ]
+  ]
+}

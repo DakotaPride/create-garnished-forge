@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:elder_guardian_spike"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 8,
+      "item": {
+        "id": "minecraft:prismarine_crystals"
+      }
+    }
+  ]
+}

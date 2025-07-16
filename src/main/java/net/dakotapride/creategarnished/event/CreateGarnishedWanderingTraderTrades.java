@@ -6,26 +6,22 @@ import net.dakotapride.creategarnished.registry.CreateGarnishedBlocks;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 @EventBusSubscriber(modid = CreateGarnished.ID, bus = EventBusSubscriber.Bus.GAME)
-public class GarnishedWanderingTraderTrades {
+public class CreateGarnishedWanderingTraderTrades {
 
     @SubscribeEvent
     public static void addWanderingTrades(WandererTradesEvent event) {
@@ -118,8 +114,6 @@ public class GarnishedWanderingTraderTrades {
 
     static class SuspiciousStewForEmerald extends MerchantOffer {
         private static SuspiciousStewEffects effects;
-        private final int xp;
-        private final float priceMultiplier;
 
         public SuspiciousStewForEmerald(ItemStack result, Holder<MobEffect> effect) {
             this(result, 1, 10, 0.2F, effect, 200);
@@ -132,8 +126,6 @@ public class GarnishedWanderingTraderTrades {
         public SuspiciousStewForEmerald(SuspiciousStewEffects effects, ItemCost cost, ItemStack result, int maxUses, int xp, float priceMultiplier) {
             super(cost, result, maxUses, xp, priceMultiplier);
             this.effects = effects;
-            this.xp = xp;
-            this.priceMultiplier = priceMultiplier;
         }
 
         public static ItemStack getSuspiciousStewFromWanderingTrade() {

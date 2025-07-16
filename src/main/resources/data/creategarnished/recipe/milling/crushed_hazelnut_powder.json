@@ -1,0 +1,23 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "tag": "c:hazelnuts"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "item": {
+        "id": "creategarnished:crushed_hazelnut_powder"
+      }
+    },
+    {
+      "count": 1,
+      "chance": 0.15,
+      "item": {
+        "id": "creategarnished:crushed_hazelnut_powder"
+      }
+    }
+  ]
+}

@@ -11,7 +11,7 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 //@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
-public class GarnishedCreativeModeTabs {
+public class CreateGarnishedCreativeModeTabs {
     private static final DeferredRegister<CreativeModeTab> REGISTER =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CreateGarnished.ID);
 
@@ -41,6 +41,8 @@ public class GarnishedCreativeModeTabs {
             //output.accept(GarnishedItems.CRACKED_CASHEW.asStack());
             output.accept(CreateGarnishedItems.GARNISHMENT_BOOK);
 
+            output.accept(CreateGarnishedItems.PRESSURISED_HATCHET);
+
             output.accept(CreateGarnishedItems.PEANUT);
             output.accept(CreateGarnishedItems.GINGER_ROOT);
             output.accept(CreateGarnishedItems.PEANUT_BUTTER_COOKIE);
@@ -60,6 +62,7 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.PRALINE);
             output.accept(CreateGarnishedItems.PANCAKES);
             output.accept(CreateGarnishedItems.SYRUP_COVERED_PANCAKES);
+            output.accept(CreateGarnishedItems.CRUSHED_HAZELNUT_POWDER);
 
             output.accept(CreateGarnishedItems.ALMOND);
             output.accept(CreateGarnishedItems.BEAR_CLAW);
@@ -67,6 +70,16 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedBlocks.POUND_CAKE);
             output.accept(CreateGarnishedItems.ALMOND_PASTE);
             output.accept(CreateGarnishedItems.CREAM);
+
+            output.accept(CreateGarnishedItems.ELASTIC_STRAND);
+            output.accept(CreateGarnishedItems.FIERY_ELASTIC_STRAND);
+            output.accept(CreateGarnishedItems.GUARDIAN_SPIKE);
+            output.accept(CreateGarnishedItems.ELDER_GUARDIAN_SPIKE);
+            output.accept(CreateGarnishedItems.SNIFFER_FLUFF);
+
+            output.accept(CreateGarnishedItems.SLLIMY);
+            output.accept(CreateGarnishedItems.FIERY_SLLIMY);
+            output.accept(CreateGarnishedItems.GLAZED_MONUMENT_MEDLEY);
 
             output.accept(CreateGarnishedItems.PEANUT_BUTTER_BOTTLE);
             output.accept(CreateGarnishedItems.BIRCH_SAP_BOTTLE);
@@ -141,6 +154,9 @@ public class GarnishedCreativeModeTabs {
             output.accept(CreateGarnishedBlocks.PORPHYRY_PILLAR);
 
             output.accept(CreateGarnishedBlocks.CREAM_BLOCK);
+
+            output.accept(CreateGarnishedBlocks.SNIFFER_FLUFF_BLOCK);
+            output.accept(CreateGarnishedBlocks.SNIFFER_FLUFF_CARPET);
 
             // Creative Blocks
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "creategarnished:block/sniffer_fluff_block"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bowl"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "item": {
+        "id": "creategarnished:glazed_monument_medley"
+      }
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_glazed_monument_medley"
+        },
+        {
+          "item": "creategarnished:guardian_spike"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_glazed_monument_medley"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_glazed_monument_medley"
+        },
+        {
+          "item": "creategarnished:guardian_spike"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_glazed_monument_medley"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_glazed_monument_medley"
+        },
+        {
+          "item": "creategarnished:elder_guardian_spike"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_glazed_monument_medley"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_glazed_monument_medley"
+        },
+        {
+          "item": "creategarnished:guardian_spike"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_glazed_monument_medley"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_glazed_monument_medley"
+        },
+        {
+          "item": "creategarnished:guardian_spike"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_glazed_monument_medley"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_glazed_monument_medley"
+        },
+        {
+          "type": "fluid_tag",
+          "amount": 250,
+          "fluid_tag": "c:honey"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_glazed_monument_medley"
+          }
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "item": {
+      "id": "creategarnished:incomplete_glazed_monument_medley"
+    }
+  }
+}

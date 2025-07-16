@@ -9,6 +9,9 @@ public class EntityConfig extends ConfigBase {
     public ConfigFloat nutAllergyDamageAmount = f(2.0F, 1.0F, 64.0F, "nutAllergyDamageAmount", Comments.nutAllergyDamageAmount);
     public ConfigFloat elvenSweetBerryBushPrickDamageAmount = f(0.5F, 0.0F, 64.0F, "elvenSweetBerryBushPrickDamageAmount", Comments.elvenSweetBerryBushPrickDamageAmount);
 
+    public ConfigBool enableElderGuardianConversion = b(false, "enableElderGuardianConversion", Comments.enableElderGuardianConversion);
+    public ConfigBool enableMooshroomConversion = b(true, "enableMooshroomConversion", Comments.enableMooshroomConversion);
+
     @Override
     public String getName() {
         return "entity";
@@ -20,5 +23,8 @@ public class EntityConfig extends ConfigBase {
 
         static String nutAllergyDamageAmount = "Controls the amount of damage taken from eating a nut-based food whilst under the effects of a Nut Allergy.";
         static String elvenSweetBerryBushPrickDamageAmount = "Controls the amount of damage taken from walking within an Elven Sweet Berry Bush.";
+
+        static String enableElderGuardianConversion = "Allows for Guardians to be haunted into Elder Guardians.";
+        static String enableMooshroomConversion = "Allows for Cows to be haunted into Mooshrooms.";
     }
 }

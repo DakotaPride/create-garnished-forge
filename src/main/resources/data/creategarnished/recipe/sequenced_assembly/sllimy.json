@@ -1,0 +1,98 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": {
+        "id": "creategarnished:sllimy"
+      }
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_sllimy"
+        },
+        {
+          "item": "minecraft:red_carpet"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_sllimy"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_sllimy"
+        },
+        {
+          "item": "creategarnished:elastic_strand"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_sllimy"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_sllimy"
+        },
+        [
+          {
+            "tag": "c:foods/fruit"
+          },
+          {
+            "tag": "c:foods/berry"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_sllimy"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_sllimy"
+        },
+        {
+          "item": "minecraft:sugar"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_sllimy"
+          }
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "item": {
+      "id": "creategarnished:incomplete_sllimy"
+    }
+  }
+}

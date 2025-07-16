@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:elder_guardian_spike"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.elder_guardian_spike.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.elder_guardian_spike.description",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "creategarnished:mobs/killed_using_hatchet",
+  "criteria": {
+    "elder_guardian_spike": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "creategarnished:elder_guardian_spike"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "elder_guardian_spike"
+    ]
+  ]
+}

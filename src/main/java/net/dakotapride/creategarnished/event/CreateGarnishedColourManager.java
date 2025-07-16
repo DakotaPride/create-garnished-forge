@@ -5,10 +5,8 @@ import net.dakotapride.creategarnished.registry.CreateGarnishedBlocks;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.color.item.ItemColors;
-import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -16,7 +14,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
 @EventBusSubscriber(modid = CreateGarnished.ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
-public class GarnishedColourManager {
+public class CreateGarnishedColourManager {
     @SubscribeEvent
     public static void onColourHandlers$blockRegister(RegisterColorHandlersEvent.Block event) {
         blockColourProvider(event.getBlockColors());

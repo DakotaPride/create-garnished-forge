@@ -1,0 +1,77 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:foods/nuts"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "item": {
+        "id": "creategarnished:chocolate_truffle"
+      }
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_chocolate_truffle"
+        },
+        {
+          "type": "fluid_stack",
+          "amount": 250,
+          "fluid": "create:chocolate"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_chocolate_truffle"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_chocolate_truffle"
+        },
+        {
+          "item": "creategarnished:cream"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_chocolate_truffle"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_chocolate_truffle"
+        },
+        {
+          "item": "creategarnished:crushed_hazelnut_powder"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_chocolate_truffle"
+          }
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "item": {
+      "id": "creategarnished:incomplete_chocolate_truffle"
+    }
+  }
+}

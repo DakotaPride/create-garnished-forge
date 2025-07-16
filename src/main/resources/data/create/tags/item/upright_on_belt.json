@@ -4,7 +4,7 @@
     "#c:buckets/peanut_butter",
     "#c:buckets/almond_extract",
     "#c:buckets/syrup",
-    "#c:buckets/royal_cider",
+    "creategarnished:royal_cider_bucket",
     "creategarnished:sprinters_tea",
     "creategarnished:sweet_tea",
     "creategarnished:elven_tea",
@@ -15,6 +15,11 @@
     "creategarnished:vegetable_stew",
     "creategarnished:pound_cake",
     "creategarnished:incomplete_royal_cider",
-    "creategarnished:royal_cider"
+    "creategarnished:royal_cider",
+    "creategarnished:sllimy",
+    "creategarnished:fiery_sllimy",
+    "creategarnished:glazed_monument_medley",
+    "creategarnished:guardian_spike",
+    "creategarnished:elder_guardian_spike"
   ]
 }

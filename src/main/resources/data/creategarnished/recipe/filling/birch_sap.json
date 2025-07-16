@@ -6,7 +6,7 @@
     },
     {
       "type": "fluid_stack",
-      "amount": 50,
+      "amount": 250,
       "fluid": "creategarnished:birch_sap"
     }
   ],

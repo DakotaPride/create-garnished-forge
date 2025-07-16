@@ -22,7 +22,6 @@ import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 import static net.dakotapride.creategarnished.CreateGarnished.REGISTRATE;
@@ -30,7 +29,7 @@ import static net.dakotapride.creategarnished.CreateGarnished.REGISTRATE;
 public class CreateGarnishedFluids {
 
     static {
-        REGISTRATE.setCreativeTab(GarnishedCreativeModeTabs.GARNISHED);
+        REGISTRATE.setCreativeTab(CreateGarnishedCreativeModeTabs.GARNISHED);
     }
 
     public static final FluidEntry<VirtualFluid> SPRINTERS_TEA = REGISTRATE.virtualFluid("sprinters_tea").register();

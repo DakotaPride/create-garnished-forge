@@ -7,10 +7,9 @@ import com.simibubi.create.foundation.item.ItemDescription;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.*;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -20,7 +19,7 @@ public class CreateGarnishedBlocks {
 
     static {
         CreateGarnishedStoneTypes.register();
-        CreateGarnished.REGISTRATE.setCreativeTab(GarnishedCreativeModeTabs.GARNISHED);
+        CreateGarnished.REGISTRATE.setCreativeTab(CreateGarnishedCreativeModeTabs.GARNISHED);
     }
 
     public static final BlockEntry<Block> LAYERED_PORPHYRY = CreateGarnished.REGISTRATE.block("layered_porphyry", Block::new)
@@ -149,6 +148,22 @@ public class CreateGarnishedBlocks {
             .initialProperties(() -> Blocks.BONE_BLOCK)
             .properties(p -> p.sound(SoundType.SLIME_BLOCK).instabreak())
             .register();
+
+    public static final BlockEntry<Block> SNIFFER_FLUFF_BLOCK = CreateGarnished.REGISTRATE.block("sniffer_fluff_block", Block::new)
+            .simpleItem()
+            .initialProperties(() -> Blocks.GREEN_WOOL)
+            .properties(p -> p.sound(SoundType.SNOW))
+            .register();
+    public static final BlockEntry<CarpetBlock> SNIFFER_FLUFF_CARPET = CreateGarnished.REGISTRATE.block("sniffer_fluff_carpet", CarpetBlock::new)
+            .simpleItem()
+            .initialProperties(() -> Blocks.GREEN_CARPET)
+            .properties(p -> p.sound(SoundType.SNOW))
+            .register();
+
+    public static final BlockEntry<RoyalCiderGlassBlock> ROYAL_CIDER_GLASS = CreateGarnished.REGISTRATE.block("royal_cider_block", RoyalCiderGlassBlock::new)
+            .properties(p -> p.noOcclusion().sound(SoundType.GLASS).mapColor(MapColor.COLOR_PURPLE).instabreak())
+            // Deprecated
+            .addLayer(() -> RenderType::cutout).register();
 
     // Creative Blocks
 

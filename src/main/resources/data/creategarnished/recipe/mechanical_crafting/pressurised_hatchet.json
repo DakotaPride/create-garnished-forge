@@ -1,0 +1,28 @@
+{
+  "type": "create:mechanical_crafting",
+  "accept_mirrored": true,
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:plates/iron"
+    },
+    "A": {
+      "tag": "c:rods/wooden"
+    },
+    "B": {
+      "item": "create:andesite_alloy"
+    },
+    "C": {
+      "item": "create:precision_mechanism"
+    }
+  },
+  "pattern": [
+    "## ",
+    "#CB",
+    " A "
+  ],
+  "result": {
+    "count": 1,
+    "id": "creategarnished:pressurised_hatchet"
+  }
+}

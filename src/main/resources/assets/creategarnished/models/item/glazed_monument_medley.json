@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "creategarnished:item/glazed_monument_medley",
+    "particle": "creategarnished:item/particle/monument_medley"
+  }
+}

@@ -2,7 +2,11 @@
   "required": true,
   "package": "net.dakotapride.creategarnished.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "BlockHelperMixin",
+    "HauntingTypeMixin",
+    "VanillaFluidTargetsMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

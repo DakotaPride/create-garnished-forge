@@ -1,6 +1,6 @@
 package net.dakotapride.creategarnished.item;
 
-import net.dakotapride.creategarnished.registry.CreateGarnishedAdvancements;
+import net.dakotapride.creategarnished.registry.CreateGarnishedTriggers;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
 import net.minecraft.server.level.ServerPlayer;
@@ -9,8 +9,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Parrot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -26,7 +24,7 @@ public class PancakesItem extends Item {
     public @NotNull InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity interactionTarget, InteractionHand usedHand) {
         if (interactionTarget.getType().is(CreateGarnishedTags.FLAPJACK_ADJACENT_ENTITY) && isFlapjack(interactionTarget)
                 && player instanceof ServerPlayer server) {
-            CreateGarnishedAdvancements.FLAPJACK.get().trigger(server);
+            CreateGarnishedTriggers.FLAPJACK.get().trigger(server);
             stack.consume(1, player);
             if (interactionTarget instanceof TamableAnimal animal) {
                 if (!animal.isSilent()) {

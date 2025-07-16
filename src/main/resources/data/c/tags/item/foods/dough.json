@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "create:dough",
+    {
+      "required": false,
+      "id": "mynethersdelight:ghast_dough"
+    },
+    {
+      "required": false,
+      "id": "farmersdelight:wheat_dough"
+    }
+  ]
+}

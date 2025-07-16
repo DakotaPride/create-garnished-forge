@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "creategarnished:elastic_strand"
+    }
+  ],
+  "results": [
+    {
+      "id": "creategarnished:fiery_elastic_strand"
+    }
+  ]
+}

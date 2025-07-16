@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:fiery_elastic_strand"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "minecraft:magma_cream"
+      }
+    }
+  ]
+}

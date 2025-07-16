@@ -1,0 +1,28 @@
+{
+  "name": "Foods from Hatchet",
+  "icon": "creategarnished:sllimy",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:sllimy",
+      "text": "Sllimy can be made through a sequenced assembly by deploying a Red Carpet, Elastic Strand, any fruit or berry, and sugar onto a Glass Bottle. Upon consumption, it will have a chance to inflict the Oozing status effect for 1 minute."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:fiery_sllimy",
+      "text": "Sllimy can be made through a sequenced assembly by deploying a Purple Carpet, Fiery Elastic Strand, certain nether vegetation or other items, and sugar onto a Glass Bottle. Upon consumption, it will have a chance to inflict the Oozing status effect for 1 minute and also inflict Fire Resistance status effect for 30 seconds."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:glazed_monument_medley",
+      "text": "Glazed Monument Medley can be made through a sequenced assembly by deploying a combination of several Guardian Spikes and Elder Guardian Spikes and then spouting Honey onto a Bowl. Upon consumption, it will have a chance to inflict the Conduit Power status effect for 1 minute and also inflict the Water Breathing status effect for 3 minutes."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "creategarnished:utilities/hatchet"
+      ]
+    }
+  ]
+}

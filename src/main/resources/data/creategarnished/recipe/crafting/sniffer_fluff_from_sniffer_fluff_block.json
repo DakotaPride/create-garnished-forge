@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "creategarnished:sniffer_fluff_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "creategarnished:sniffer_fluff"
+  }
+}

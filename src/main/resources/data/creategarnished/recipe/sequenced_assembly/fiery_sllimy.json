@@ -1,0 +1,104 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": {
+        "id": "creategarnished:fiery_sllimy"
+      }
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_fiery_sllimy"
+        },
+        {
+          "item": "minecraft:purple_carpet"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_fiery_sllimy"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_fiery_sllimy"
+        },
+        {
+          "item": "creategarnished:fiery_elastic_strand"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_fiery_sllimy"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_fiery_sllimy"
+        },
+        [
+          {
+            "item": "minecraft:weeping_vines"
+          },
+          {
+            "item": "minecraft:twisting_vines"
+          },
+          {
+            "item": "minecraft:nether_wart"
+          },
+          {
+            "item": "minecraft:magma_cream"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_fiery_sllimy"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_fiery_sllimy"
+        },
+        {
+          "item": "minecraft:sugar"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_fiery_sllimy"
+          }
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "item": {
+      "id": "creategarnished:incomplete_fiery_sllimy"
+    }
+  }
+}

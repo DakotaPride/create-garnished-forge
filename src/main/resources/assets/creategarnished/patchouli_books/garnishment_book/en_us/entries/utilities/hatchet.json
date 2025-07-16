@@ -1,0 +1,48 @@
+{
+  "name": "Hatchet Uses",
+  "icon": "creategarnished:pressurised_hatchet",
+  "category": "creategarnished:utilities",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "Hatchet",
+      "item": "creategarnished:pressurised_hatchet",
+      "text": "A Pressurised Hatchet is required for certain items to drop from certain mobs, or it will allow extra items to drop from certain mobs.$(br)Similar to a Potato Cannon or Extendo Grip, durability will be consumed when being used but can also utilise back tank pressure."
+    },
+    {
+      "type": "spotlight",
+      "title": "Elastic Strands",
+      "item": "creategarnished:elastic_strand",
+      "text": "Regular Elastic Strands come from regular Slimes upon death.$(br)Elastic Strands can either be cut into Slime Balls or be used in a sequenced assembly to make Sllimy."
+    },
+    {
+      "type": "spotlight",
+      "title": "Fiery Elastic Strands",
+      "item": "creategarnished:fiery_elastic_strand",
+      "text": "Fiery Elastic Strands come from Magma Cubes upon death.$(br)Fiery Elastic Strands can either be cut into Magma Cream or be used in a sequenced assembly to make Fiery Sllimy."
+    },
+    {
+      "type": "spotlight",
+      "title": "Guardian Spikes",
+      "item": "creategarnished:guardian_spike",
+      "text": "Guardian Spikes come from Guardians (shocker) upon death.$(br)They can be cut into Prismarine Shards or Crystals, but can also be used in a sequenced assembly to make Glazed Monument Medley."
+    },
+    {
+      "type": "spotlight",
+      "title": "Elder Guardian Spikes",
+      "item": "creategarnished:elder_guardian_spike",
+      "text": "Elder Guardian Spikes come from Elder Guardians upon death.$(br)They can be cut into Prismarine Shards or Crystals, but can also be used in a sequenced assembly to make Glazed Monument Medley."
+    },
+    {
+      "type": "text",
+      "title": "Guardian Spike Weapons",
+      "text": "Both variants of guardian spikes will act like a sword, but cannot be enchanted."
+    },
+    {
+      "type": "spotlight",
+      "title": "Sniffer Fluff",
+      "item": "creategarnished:sniffer_fluff",
+      "text": "Sniffer Fluff, while cannot be made into food, can be used to make decorative building blocks that are akin to a Sniffer's green, moss-like coat."
+    }
+  ]
+}

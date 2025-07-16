@@ -11,6 +11,8 @@ public class ServerConfig extends ConfigBase {
             "Control certain properties of items within Create: Garnished Reworked");
     public final EntityConfig entity = nested(0, EntityConfig::new,
             "Control how entities interact with content from Create: Garnished Reworked");
+    public final HatchetConfig hatchet = nested(0, HatchetConfig::new,
+            "Sumthin'");
 
     @Override
     public String getName() {

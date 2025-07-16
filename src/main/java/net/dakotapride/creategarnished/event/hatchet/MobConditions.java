@@ -1,0 +1,84 @@
+package net.dakotapride.creategarnished.event.hatchet;
+
+import net.dakotapride.creategarnished.config.HatchetConfig;
+import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
+import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
+import net.dakotapride.creategarnished.registry.CreateGarnishedStatisics;
+import net.dakotapride.creategarnished.registry.CreateGarnishedTriggers;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+
+import java.util.Random;
+
+public class MobConditions {
+    public static HatchetConfig config = CreateGarnishedConfigs.server().hatchet;
+
+    public static boolean accept(LivingEntity attacker) {
+        return attacker.getMainHandItem().is(CreateGarnishedItems.PRESSURISED_HATCHET);
+    }
+
+    public static void createSoundEvents(LivingEntity attacker) {
+        Level level = attacker.level();
+        if (level instanceof ServerLevel server && attacker instanceof ServerPlayer player) {
+            server.playSound(null, player.getX(), player.getY(), player.getZ(),
+                    SoundEvents.SOUL_ESCAPE, player.getSoundSource(), 2.0F, 1.0F);
+            if (player.hasEffect(MobEffects.LUCK) && CreateGarnishedConfigs.client().allowLuckyPlingSoundEvent.get()) {
+                server.playSound(null, player.getX(), player.getY(), player.getZ(),
+                        SoundEvents.NOTE_BLOCK_PLING, player.getSoundSource(), 0.5F, 1.0F);
+            }
+
+        }
+    }
+
+    public static void createDropConditions(LivingEntity entity,
+                                            EntityType<?> matchType,
+                                            LivingEntity attacker,
+                                            Item itemToDrop,
+                                            int count,
+                                            int chance,
+                                            DamageSource source,
+                                            boolean disabled) {
+
+        EntityType<?> type = entity.getType();
+
+        boolean attackerHasLuck = attacker.hasEffect(MobEffects.LUCK);
+        boolean attackerHasUnluck = attacker.hasEffect(MobEffects.UNLUCK);
+
+        int r = new Random().nextInt(1, 101);
+        if (attackerHasLuck) {
+            r = new Random().nextInt(1, 51);
+        }
+        if (attackerHasUnluck) {
+            r = new Random().nextInt(1, 201);
+        }
+        int r0 = new Random().nextInt(1, count + 1);
+        if (type == matchType && !disabled && !(config.disableHatchetDrops.get())) {
+            if (r <= chance) {
+                entity.spawnAtLocation(new ItemStack(itemToDrop, r0));
+                if (attacker instanceof ServerPlayer player) {
+                    CreateGarnishedTriggers.KILLED_USING_HATCHET.get().trigger(player, entity, source);
+
+                    player.awardStat(CreateGarnishedStatisics.HATCHET_KILLS.get());
+                    if (entity.isBaby())
+                        player.awardStat(CreateGarnishedStatisics.MONSTER_HATCHET_KILLS.get());
+
+                    if (player.getStats().getValue(Stats.CUSTOM.get(CreateGarnishedStatisics.HATCHET_KILLS.get())) >= 1000)
+                        CreateGarnishedTriggers.BLOODLUST.get().trigger(player, entity, source);
+                    if (player.getStats().getValue(Stats.CUSTOM.get(CreateGarnishedStatisics.MONSTER_HATCHET_KILLS.get())) >= 1000)
+                        CreateGarnishedTriggers.MONSTER.get().trigger(player, entity, source);
+                }
+
+                createSoundEvents(attacker);
+            }
+        }
+    }
+}

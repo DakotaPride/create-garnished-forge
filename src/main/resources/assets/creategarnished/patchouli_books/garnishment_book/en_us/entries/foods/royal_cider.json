@@ -7,6 +7,10 @@
       "type": "spotlight",
       "item": "creategarnished:royal_cider",
       "text": "Royal Cider can be made through mixing together Minced Crystalline Garlic, Elven Tea, and Almond Extract. Once put through a sequenced assembly in combination with Cream, you eventually get a Glass of Royal Cider!"
+    },
+    {
+      "type": "text",
+      "text": "The Glass of Royal Cider item can also be placed down as a decorative item while sneaking. While it just be instantly broken, you can also shift+right-click to pick it back up."
     }
   ]
 }

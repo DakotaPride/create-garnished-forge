@@ -7,6 +7,11 @@
       "type": "spotlight",
       "item": "creategarnished:pound_cake",
       "text": "Pound Cake can be made by compacting \"1 pound\" of Eggs, Dough, Sugar, Cream, and Almond Extract.$(br)Quick sidenote, the measurements are probably not exact, so don't take the recipe too seriously."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:royal_cider",
+      "text": "The Glass of Royal Cider item can be placed down as a decorative item while sneaking. While it just be instantly broken, you can also shift+right-click to pick it back up."
     }
   ]
 }

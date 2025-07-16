@@ -15,6 +15,8 @@ public class CreateGarnishedParticles {
 
     public static final Supplier<SimpleParticleType> ELVEN_MYSTICAL_PARTICLE =
             PARTICLE_TYPES.register("elven_mystical_particle", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> HATCHET_PARTICLE =
+            PARTICLE_TYPES.register("hatchet", () -> new SimpleParticleType(true));
 
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);

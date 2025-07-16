@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "creategarnished:block/royal_cider_block",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "creategarnished:block/royal_cider_block",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "creategarnished:block/royal_cider_block"
+    },
+    "facing=south": {
+      "model": "creategarnished:block/royal_cider_block",
+      "y": 180
+    }
+  }
+}

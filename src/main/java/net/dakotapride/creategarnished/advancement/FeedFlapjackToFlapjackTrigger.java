@@ -10,7 +10,6 @@ import net.minecraft.server.level.ServerPlayer;
 import java.util.Optional;
 
 public class FeedFlapjackToFlapjackTrigger extends SimpleCriterionTrigger<FeedFlapjackToFlapjackTrigger.TriggerInstance> {
-    //private static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(CreateGarnished.ID, "the_one_who_started_it_all");
 
     @Override
     public Codec<TriggerInstance> codec() {

@@ -3,18 +3,17 @@ package net.dakotapride.creategarnished.registry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.advancement.DejojoTheAwsomeTrigger;
 import net.dakotapride.creategarnished.advancement.FeedFlapjackToFlapjackTrigger;
-import net.minecraft.advancements.CriteriaTriggers;
+import net.dakotapride.creategarnished.advancement.HatchetDropOnDefeatTrigger;
 import net.minecraft.advancements.CriterionTrigger;
-import net.minecraft.core.Registry;
+import net.minecraft.advancements.critereon.KilledTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class CreateGarnishedAdvancements {
-    private static DeferredRegister<CriterionTrigger<?>> CRITERION_TRIGGERS = DeferredRegister.create(BuiltInRegistries.TRIGGER_TYPES, CreateGarnished.ID);
+public class CreateGarnishedTriggers {
+    private static final DeferredRegister<CriterionTrigger<?>> CRITERION_TRIGGERS = DeferredRegister.create(BuiltInRegistries.TRIGGER_TYPES, CreateGarnished.ID);
 
     //public static DejojoTheAwsomeTrigger DEJOJO = new DejojoTheAwsomeTrigger();
 
@@ -22,6 +21,12 @@ public class CreateGarnishedAdvancements {
             CRITERION_TRIGGERS.register("the_one_who_started_it_all", DejojoTheAwsomeTrigger::new);
     public static final Supplier<FeedFlapjackToFlapjackTrigger> FLAPJACK =
             CRITERION_TRIGGERS.register("flapjack", FeedFlapjackToFlapjackTrigger::new);
+    public static final Supplier<KilledTrigger> KILLED_USING_HATCHET =
+            CRITERION_TRIGGERS.register("killed_using_hatchet", KilledTrigger::new);
+    public static final Supplier<KilledTrigger> BLOODLUST =
+            CRITERION_TRIGGERS.register("1000_hatchet_kills", KilledTrigger::new);
+    public static final Supplier<KilledTrigger> MONSTER =
+            CRITERION_TRIGGERS.register("monster", KilledTrigger::new);
 
     public static void register(IEventBus bus) {
         CRITERION_TRIGGERS.register(bus);

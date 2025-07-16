@@ -6,8 +6,11 @@ import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.creategarnished.particle.ElvenMysticalParticleType;
 import net.dakotapride.creategarnished.registry.*;
+import net.minecraft.client.particle.ExplodeParticle;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.stats.StatFormatter;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -18,6 +21,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
@@ -52,25 +56,34 @@ public class CreateGarnished {
 
         CreateGarnishedBlocks.register();
         CreateGarnishedItems.register();
-        GarnishedCreativeModeTabs.register(modEventBus);
+        CreateGarnishedCreativeModeTabs.register(modEventBus);
         CreateGarnishedFluids.register();
         CreateGarnishedParticles.register(modEventBus);
         CreateGarnishedStatusEffects.register(modEventBus);
         CreateGarnishedPotions.register(modEventBus);
 
-        CreateGarnishedAdvancements.register(modEventBus);
+        CreateGarnishedTriggers.register(modEventBus);
+        CreateGarnishedStatisics.STATS.register(modEventBus);
 
         CreateGarnishedConfigs.register(modLoadingContext, modContainer);
 
         //NeoForge.EVENT_BUS.register(this);
 
         //modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(CreateGarnished::enqueue);
 
         LOGGER.info("[WARNING] Create: Garnished Reworked EMI Compatibility is limited and may be incorrect depending on the config settings presented by the mod.");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         CreateGarnishedFluids.registerFluidInteractions();
+    }
+
+    private static void enqueue(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            Stats.CUSTOM.get(CreateGarnishedStatisics.HATCHET_KILLS.get(), StatFormatter.DEFAULT);
+            Stats.CUSTOM.get(CreateGarnishedStatisics.MONSTER_HATCHET_KILLS.get(), StatFormatter.DEFAULT);
+        });
     }
 
 //    private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -83,6 +96,14 @@ public class CreateGarnished {
         //LOGGER.info("HELLO from server starting");
     }
 
+    @EventBusSubscriber(modid = ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.DEDICATED_SERVER)
+    public static class ModEvents {
+        @SubscribeEvent
+        public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+            //BirchLogExtractingSapBlockEntity.registerCapabilities(event);
+        }
+    }
+
     @EventBusSubscriber(modid = ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
@@ -93,6 +114,7 @@ public class CreateGarnished {
         @SubscribeEvent
         public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
             event.registerSpriteSet(CreateGarnishedParticles.ELVEN_MYSTICAL_PARTICLE.get(), ElvenMysticalParticleType.Provider::new);
+            event.registerSpriteSet(CreateGarnishedParticles.HATCHET_PARTICLE.get(), ExplodeParticle.Provider::new);
         }
     }
 }

@@ -7,14 +7,14 @@ import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.item.*;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 
 public class CreateGarnishedItems {
 
     static {
-        CreateGarnished.REGISTRATE.setCreativeTab(GarnishedCreativeModeTabs.GARNISHED);
+        CreateGarnished.REGISTRATE.setCreativeTab(CreateGarnishedCreativeModeTabs.GARNISHED);
     }
 
     public static final ItemEntry<GarnishmentBookItem> GARNISHMENT_BOOK = CreateGarnished.REGISTRATE.item("garnishment_book", GarnishmentBookItem::new).register();
@@ -63,6 +63,7 @@ public class CreateGarnishedItems {
     public static final ItemEntry<HazelnutItem> HAZELNUT = CreateGarnished.REGISTRATE.item("hazelnut", HazelnutItem::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6F).build()))
             .register();
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_CHOCOLATE_TRUFFLE = CreateGarnished.REGISTRATE.item("incomplete_chocolate_truffle", SequencedAssemblyItem::new).register();
     public static final ItemEntry<Item> CHOCOLATE_TRUFFLE = CreateGarnished.REGISTRATE.item("chocolate_truffle", Item::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).build()))
             .register();
@@ -119,6 +120,54 @@ public class CreateGarnishedItems {
     public static final ItemEntry<RoyalCiderItem> ROYAL_CIDER = CreateGarnished.REGISTRATE.item("royal_cider", RoyalCiderItem::new)
             .properties(p -> p.stacksTo(4))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.royal_cider"))
+            .register();
+
+    public static final ItemEntry<PressurisedHatchetItem> PRESSURISED_HATCHET = CreateGarnished.REGISTRATE.item("pressurised_hatchet", PressurisedHatchetItem::new)
+            .properties(p -> p.stacksTo(1).durability(200).rarity(Rarity.UNCOMMON))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.pressurised_hatchet"))
+            .register();
+
+    public static final ItemEntry<Item> CRUSHED_HAZELNUT_POWDER = CreateGarnished.REGISTRATE.item("crushed_hazelnut_powder", Item::new).register();
+
+    public static final ItemEntry<FromHatchetItem> SNIFFER_FLUFF = CreateGarnished.REGISTRATE.item("sniffer_fluff", p -> new FromHatchetItem(EntityType.SNIFFER, p)).register();
+    public static final ItemEntry<SpikeItem> GUARDIAN_SPIKE = CreateGarnished.REGISTRATE.item("guardian_spike", p -> new SpikeItem(EntityType.GUARDIAN, p))
+            .properties(p -> p.attributes(SwordItem.createAttributes(Tiers.IRON, 3, -2.4F)))
+            .register();
+    public static final ItemEntry<SpikeItem> ELDER_GUARDIAN_SPIKE = CreateGarnished.REGISTRATE.item("elder_guardian_spike", p -> new SpikeItem(EntityType.ELDER_GUARDIAN, p))
+            .properties(p -> p.attributes(SwordItem.createAttributes(Tiers.DIAMOND, 5, -2.4F)))
+            .register();
+    public static final ItemEntry<FromHatchetItem> ELASTIC_STRAND = CreateGarnished.REGISTRATE.item("elastic_strand", p -> new FromHatchetItem(EntityType.SLIME, p)).register();
+    public static final ItemEntry<FromHatchetItem> FIERY_ELASTIC_STRAND = CreateGarnished.REGISTRATE.item("fiery_elastic_strand", p -> new FromHatchetItem(EntityType.MAGMA_CUBE, p)).register();
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_GLAZED_MONUMENT_MEDLEY = CreateGarnished.REGISTRATE.item("incomplete_glazed_monument_medley", SequencedAssemblyItem::new).register();
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_SLLIMY = CreateGarnished.REGISTRATE.item("incomplete_sllimy", SequencedAssemblyItem::new).register();
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_FIERY_SLLIMY = CreateGarnished.REGISTRATE.item("incomplete_fiery_sllimy", SequencedAssemblyItem::new).register();
+    public static final ItemEntry<Item> SLLIMY = CreateGarnished.REGISTRATE.item("sllimy", Item::new)
+            .properties(p -> p.stacksTo(16)
+                    .food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.8F)
+                            .usingConvertsTo(Items.GLASS_BOTTLE)
+                            .effect(() -> new MobEffectInstance(MobEffects.OOZING, 1200, 0,
+                                    false, false, true), 0.5F).build()))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.sllimy"))
+            .register();
+    public static final ItemEntry<Item> FIERY_SLLIMY = CreateGarnished.REGISTRATE.item("fiery_sllimy", Item::new)
+            .properties(p -> p.stacksTo(16)
+                    .food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.8F)
+                            .usingConvertsTo(Items.GLASS_BOTTLE)
+                            .effect(() -> new MobEffectInstance(MobEffects.OOZING, 1200, 0,
+                                    false, false, true), 0.25F)
+                            .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0,
+                                    false, false, true), 1.0F).build()))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.fiery_sllimy"))
+            .register();
+    public static final ItemEntry<Item> GLAZED_MONUMENT_MEDLEY = CreateGarnished.REGISTRATE.item("glazed_monument_medley", Item::new)
+            .properties(p -> p.stacksTo(4)
+                    .food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.8F)
+                            .usingConvertsTo(Items.BOWL)
+                            .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 3600, 0,
+                                    false, false, true), 1.0F)
+                            .effect(() -> new MobEffectInstance(MobEffects.CONDUIT_POWER, 1200, 0,
+                                    false, false, true), 0.10F).build()))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.glazed_monument_medley"))
             .register();
 
     public static void register() {}

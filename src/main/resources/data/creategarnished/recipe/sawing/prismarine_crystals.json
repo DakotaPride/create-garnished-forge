@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:guardian_spike"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "minecraft:prismarine_crystals"
+      }
+    }
+  ]
+}

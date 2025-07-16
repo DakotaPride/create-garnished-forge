@@ -11,6 +11,19 @@
     "creategarnished:bear_claw",
     "creategarnished:churchkhela",
     "creategarnished:pancakes",
-    "creategarnished:syrup_covered_pancakes"
+    "creategarnished:syrup_covered_pancakes",
+    "creategarnished:garlic_bread",
+    "creategarnished:garlic_bulb",
+    "creategarnished:crystalline_garlic_bulb",
+    "creategarnished:glazed_monument_medley",
+
+    {
+      "required": false,
+      "id": "#c:foods/jellies"
+    },
+    {
+      "required": false,
+      "id": "#c:foods/jelly"
+    }
   ]
 }

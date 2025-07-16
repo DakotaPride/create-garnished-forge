@@ -19,6 +19,8 @@ public class ClientConfig extends ConfigBase {
     public final ConfigFloat mushroomSlopTransparencyMultiplier =
             f(1, .125f, 256, "mushroomSlop", Comments.mushroomSlopTransparencyMultiplier);
 
+    public ConfigBool allowLuckyPlingSoundEvent = b(true, "allowLuckyPlingSoundEvent", Comments.allowLuckyPlingSoundEvent);
+
     @Override
     public String getName() {
         return "client";
@@ -31,5 +33,6 @@ public class ClientConfig extends ConfigBase {
         static String royalCiderTransparencyMultiplier = "The vision range though royal cider will be multiplied by this factor";
         static String beetrootJuiceTransparencyMultiplier = "The vision range though beetroot juice will be multiplied by this factor";
         static String mushroomSlopTransparencyMultiplier = "The vision range though mushroom slop will be multiplied by this factor";
+        static String allowLuckyPlingSoundEvent = "Controls whether or not the note block pling sound will play after defeating a mob with a hatchet while inflicted with the luck status effect.";
     }
 }
