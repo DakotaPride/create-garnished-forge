@@ -33,6 +33,10 @@ public class CreateGarnishedMobConditions extends MobConditions {
             if (source.getEntity() != null && source.getEntity() instanceof LivingEntity attacker && MobConditions.accept(attacker)) {
                 applyConditions(entity, attacker, source);
             }
+
+            if (source.getEntity() != null && source.getEntity() instanceof LivingEntity attacker && MobConditions.requireSpecificHatchetItem(attacker, Items.DIAMOND_SWORD)) {
+                createDropConditions(entity, EntityType.HUSK, attacker, Items.DIAMOND, 4, 100, source, false);
+            }
         }
     }
 

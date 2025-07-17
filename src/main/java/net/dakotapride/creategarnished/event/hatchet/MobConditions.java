@@ -1,8 +1,8 @@
 package net.dakotapride.creategarnished.event.hatchet;
 
 import net.dakotapride.creategarnished.config.HatchetConfig;
+import net.dakotapride.creategarnished.item.PressurisedHatchetItem;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
-import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.dakotapride.creategarnished.registry.CreateGarnishedStatisics;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTriggers;
 import net.minecraft.server.level.ServerLevel;
@@ -23,7 +23,11 @@ public class MobConditions {
     public static HatchetConfig config = CreateGarnishedConfigs.server().hatchet;
 
     public static boolean accept(LivingEntity attacker) {
-        return attacker.getMainHandItem().is(CreateGarnishedItems.PRESSURISED_HATCHET);
+        return attacker.getMainHandItem().getItem() instanceof PressurisedHatchetItem;
+    }
+
+    public static boolean requireSpecificHatchetItem(LivingEntity attacker, Item item) {
+        return attacker.getMainHandItem().is(item) && accept(attacker);
     }
 
     public static void createSoundEvents(LivingEntity attacker) {

@@ -2,12 +2,7 @@ package net.dakotapride.creategarnished.registry;
 
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.stats.StatFormatter;
-import net.minecraft.stats.StatType;
-import net.minecraft.stats.Stats;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 

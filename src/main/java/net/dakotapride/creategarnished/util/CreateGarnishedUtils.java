@@ -1,4 +1,4 @@
-package net.dakotapride.creategarnished.registry;
+package net.dakotapride.creategarnished.util;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;

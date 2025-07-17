@@ -3,7 +3,6 @@ package net.dakotapride.creategarnished.registry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.advancement.DejojoTheAwsomeTrigger;
 import net.dakotapride.creategarnished.advancement.FeedFlapjackToFlapjackTrigger;
-import net.dakotapride.creategarnished.advancement.HatchetDropOnDefeatTrigger;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.advancements.critereon.KilledTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -14,8 +13,6 @@ import java.util.function.Supplier;
 
 public class CreateGarnishedTriggers {
     private static final DeferredRegister<CriterionTrigger<?>> CRITERION_TRIGGERS = DeferredRegister.create(BuiltInRegistries.TRIGGER_TYPES, CreateGarnished.ID);
-
-    //public static DejojoTheAwsomeTrigger DEJOJO = new DejojoTheAwsomeTrigger();
 
     public static final Supplier<DejojoTheAwsomeTrigger> DEJOJO =
             CRITERION_TRIGGERS.register("the_one_who_started_it_all", DejojoTheAwsomeTrigger::new);

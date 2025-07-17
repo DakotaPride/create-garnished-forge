@@ -2,7 +2,7 @@ package net.dakotapride.creategarnished.mixin;
 
 import com.simibubi.create.content.kinetics.fan.processing.AllFanProcessingTypes;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
-import net.dakotapride.creategarnished.registry.CreateGarnishedUtils;
+import net.dakotapride.creategarnished.util.CreateGarnishedUtils;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;

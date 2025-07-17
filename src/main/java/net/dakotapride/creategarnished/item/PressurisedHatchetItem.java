@@ -1,6 +1,5 @@
 package net.dakotapride.creategarnished.item;
 
-import com.google.common.collect.ImmutableMap;
 import com.simibubi.create.content.equipment.armor.BacktankUtil;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
@@ -22,8 +21,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.bus.api.EventPriority;
@@ -33,13 +30,22 @@ import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
 import javax.annotation.Nullable;
-import java.util.Map;
 import java.util.Optional;
 
 @EventBusSubscriber
 public class PressurisedHatchetItem extends Item {
+    private Tier tier;
     public PressurisedHatchetItem(Properties properties) {
         super(properties.attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)).component(DataComponents.TOOL, Tiers.IRON.createToolProperties(BlockTags.MINEABLE_WITH_AXE)));
+    }
+
+    public PressurisedHatchetItem(Tier tier, Properties properties) {
+        super(properties.attributes(AxeItem.createAttributes(tier, 6.0F, -3.1F)).component(DataComponents.TOOL, tier.createToolProperties(BlockTags.MINEABLE_WITH_AXE)));
+        this.tier = tier;
+    }
+
+    public Tier getTier() {
+        return tier != null ? tier : Tiers.IRON;
     }
 
     @Override
@@ -175,11 +181,11 @@ public class PressurisedHatchetItem extends Item {
 
     @Override
     public int getEnchantmentValue() {
-        return Tiers.IRON.getEnchantmentValue();
+        return tier != null ? tier.getEnchantmentValue() : Tiers.IRON.getEnchantmentValue();
     }
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return Tiers.IRON.getRepairIngredient().test(repair) || super.isValidRepairItem(toRepair, repair);
+        return tier != null ? tier.getRepairIngredient().test(repair) : Tiers.IRON.getRepairIngredient().test(repair) || super.isValidRepairItem(toRepair, repair);
     }
 }

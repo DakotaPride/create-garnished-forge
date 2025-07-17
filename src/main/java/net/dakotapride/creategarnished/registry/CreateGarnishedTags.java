@@ -8,13 +8,15 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.material.Fluid;
 
 public class CreateGarnishedTags {
-    public static TagKey<Item> PANCAKES = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("pancakes"));
+    //public static TagKey<Item> PANCAKES = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("pancakes"));
     public static TagKey<Item> CAUSES_NUT_ALLERGY_CONSEQUENCES = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("causes_nut_allergy_consequences"));
     public static TagKey<EntityType<?>> FLAPJACK_ADJACENT_ENTITY = TagKey.create(BuiltInRegistries.ENTITY_TYPE.key(), CreateGarnished.asResource("acceptable_birbs_for_flapjack"));
-    public static TagKey<EntityType<?>> GELATINOUS_CREATURES = TagKey.create(BuiltInRegistries.ENTITY_TYPE.key(), ResourceLocation.fromNamespaceAndPath("c", "gelatinous_creatures"));
-    public static TagKey<EntityType<?>> GUARDIANS = TagKey.create(BuiltInRegistries.ENTITY_TYPE.key(), ResourceLocation.fromNamespaceAndPath("c", "guardians"));
+    //public static TagKey<EntityType<?>> GELATINOUS_CREATURES = TagKey.create(BuiltInRegistries.ENTITY_TYPE.key(), ResourceLocation.fromNamespaceAndPath("c", "gelatinous_creatures"));
+    //public static TagKey<EntityType<?>> GUARDIANS = TagKey.create(BuiltInRegistries.ENTITY_TYPE.key(), ResourceLocation.fromNamespaceAndPath("c", "guardians"));
+    public static TagKey<Fluid> APPLIES_NUT_ALLERGY = TagKey.create(BuiltInRegistries.FLUID.key(), CreateGarnished.asResource("applies_nut_allergy"));
 
     // Special foods
     public static TagKey<Item> JUNGLE_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/jungle"));
