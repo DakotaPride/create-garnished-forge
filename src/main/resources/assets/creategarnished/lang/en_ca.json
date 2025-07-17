@@ -138,6 +138,8 @@
   "item.creategarnished.praline": "Praline",
   "item.creategarnished.royal_cider": "Glass of Royal Cider",
   "item.creategarnished.royal_cider.tooltip.summary": "A drink fit for a monarch! And just like a monarch, _everyone will know who you are._",
+  "item.creategarnished.royal_cider.tooltip.condition1": "While Sneaking",
+  "item.creategarnished.royal_cider.tooltip.behaviour1": "Places down _decorative_ glass of _Royal Cider_.",
   "item.creategarnished.royal_cider_bucket": "Royal Cider Bucket",
   "item.creategarnished.sprinters_tea": "Sprinter's Tea",
   "item.creategarnished.sprinters_tea.tooltip.summary": "The perfect drink for swift travel- _Refreshing_ and _Rejuvenating_.",
