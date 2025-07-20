@@ -7,13 +7,13 @@
     },
     {
       "type": "fluid_stack",
-      "amount": 50,
+      "amount": 100,
       "fluid": "creategarnished:birch_sap"
     }
   ],
   "results": [
     {
-      "amount": 50,
+      "amount": 100,
       "id": "creategarnished:birch_syrup"
     }
   ]

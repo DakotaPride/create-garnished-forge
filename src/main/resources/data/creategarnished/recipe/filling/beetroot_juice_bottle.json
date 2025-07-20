@@ -6,7 +6,7 @@
     },
     {
       "type": "fluid_stack",
-      "amount": 100,
+      "amount": 250,
       "fluid": "creategarnished:beetroot_juice"
     }
   ],

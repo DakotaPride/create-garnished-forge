@@ -162,7 +162,6 @@ public class CreateGarnishedBlocks {
 
     public static final BlockEntry<RoyalCiderGlassBlock> ROYAL_CIDER_GLASS = CreateGarnished.REGISTRATE.block("royal_cider_block", RoyalCiderGlassBlock::new)
             .properties(p -> p.noOcclusion().sound(SoundType.GLASS).mapColor(MapColor.COLOR_PURPLE).instabreak())
-            // Deprecated
             .addLayer(() -> RenderType::cutout).register();
 
     // Creative Blocks
