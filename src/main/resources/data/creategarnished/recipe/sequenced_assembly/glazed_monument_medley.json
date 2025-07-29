@@ -19,7 +19,7 @@
           "item": "creategarnished:incomplete_glazed_monument_medley"
         },
         {
-          "item": "creategarnished:guardian_spike"
+          "tag": "c:lesser_guardian_spikes"
         }
       ],
       "results": [
@@ -37,7 +37,7 @@
           "item": "creategarnished:incomplete_glazed_monument_medley"
         },
         {
-          "item": "creategarnished:guardian_spike"
+          "tag": "c:lesser_guardian_spikes"
         }
       ],
       "results": [
@@ -55,7 +55,7 @@
           "item": "creategarnished:incomplete_glazed_monument_medley"
         },
         {
-          "item": "creategarnished:elder_guardian_spike"
+          "tag": "c:elder_guardian_spikes"
         }
       ],
       "results": [
@@ -73,7 +73,7 @@
           "item": "creategarnished:incomplete_glazed_monument_medley"
         },
         {
-          "item": "creategarnished:guardian_spike"
+          "tag": "c:lesser_guardian_spikes"
         }
       ],
       "results": [
@@ -91,7 +91,7 @@
           "item": "creategarnished:incomplete_glazed_monument_medley"
         },
         {
-          "item": "creategarnished:guardian_spike"
+          "tag": "c:lesser_guardian_spikes"
         }
       ],
       "results": [

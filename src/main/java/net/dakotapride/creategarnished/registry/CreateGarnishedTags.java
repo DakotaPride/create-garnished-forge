@@ -17,6 +17,7 @@ public class CreateGarnishedTags {
     //public static TagKey<EntityType<?>> GELATINOUS_CREATURES = TagKey.create(BuiltInRegistries.ENTITY_TYPE.key(), ResourceLocation.fromNamespaceAndPath("c", "gelatinous_creatures"));
     //public static TagKey<EntityType<?>> GUARDIANS = TagKey.create(BuiltInRegistries.ENTITY_TYPE.key(), ResourceLocation.fromNamespaceAndPath("c", "guardians"));
     public static TagKey<Fluid> APPLIES_NUT_ALLERGY = TagKey.create(BuiltInRegistries.FLUID.key(), CreateGarnished.asResource("applies_nut_allergy"));
+    public static TagKey<Item> HATCHETS = TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath("c", "tools/hatchets"));
 
     // Special foods
     public static TagKey<Item> JUNGLE_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/jungle"));

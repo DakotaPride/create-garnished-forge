@@ -35,13 +35,20 @@ import java.util.Optional;
 @EventBusSubscriber
 public class PressurisedHatchetItem extends Item {
     private Tier tier;
-    public PressurisedHatchetItem(Properties properties) {
+    private final boolean creative;
+    public PressurisedHatchetItem(Properties properties, boolean creative) {
         super(properties.attributes(AxeItem.createAttributes(Tiers.IRON, 6.0F, -3.1F)).component(DataComponents.TOOL, Tiers.IRON.createToolProperties(BlockTags.MINEABLE_WITH_AXE)));
+        this.creative = creative;
     }
 
-    public PressurisedHatchetItem(Tier tier, Properties properties) {
+    public PressurisedHatchetItem(Tier tier, Properties properties, boolean creative) {
         super(properties.attributes(AxeItem.createAttributes(tier, 6.0F, -3.1F)).component(DataComponents.TOOL, tier.createToolProperties(BlockTags.MINEABLE_WITH_AXE)));
         this.tier = tier;
+        this.creative = creative;
+    }
+
+    public boolean isCreative() {
+        return creative;
     }
 
     public Tier getTier() {
@@ -75,7 +82,7 @@ public class PressurisedHatchetItem extends Item {
 
                 level.setBlock(blockpos, optional.get(), 11);
                 level.gameEvent(GameEvent.BLOCK_CHANGE, blockpos, GameEvent.Context.of(player, optional.get()));
-                if (player != null) {
+                if (player != null && itemstack.isDamageableItem()) {
                     itemstack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
                 }
 
@@ -147,7 +154,7 @@ public class PressurisedHatchetItem extends Item {
         }
         if (!CreateGarnishedItems.PRESSURISED_HATCHET.isIn(itemInMainHand))
             return;
-        if (!BacktankUtil.canAbsorbDamage(player, maxUses()))
+        if (!BacktankUtil.canAbsorbDamage(player, maxUses()) && itemInMainHand.isDamageableItem())
             itemInMainHand.hurtAndBreak(2, player, equipmentSlot);
     }
 

@@ -122,9 +122,13 @@ public class CreateGarnishedItems {
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.royal_cider"))
             .register();
 
-    public static final ItemEntry<PressurisedHatchetItem> PRESSURISED_HATCHET = CreateGarnished.REGISTRATE.item("pressurised_hatchet", PressurisedHatchetItem::new)
+    public static final ItemEntry<PressurisedHatchetItem> PRESSURISED_HATCHET = CreateGarnished.REGISTRATE.item("pressurised_hatchet", p -> new PressurisedHatchetItem(p, false))
             .properties(p -> p.stacksTo(1).durability(200).rarity(Rarity.UNCOMMON))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.pressurised_hatchet"))
+            .register();
+    public static final ItemEntry<PressurisedHatchetItem> CREATIVE_PRESSURISED_HATCHET = CreateGarnished.REGISTRATE.item("creative_pressurised_hatchet", p -> new PressurisedHatchetItem(Tiers.NETHERITE, p, true))
+            .properties(p -> p.stacksTo(1).rarity(Rarity.EPIC))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.creative_pressurised_hatchet"))
             .register();
 
     public static final ItemEntry<Item> CRUSHED_HAZELNUT_POWDER = CreateGarnished.REGISTRATE.item("crushed_hazelnut_powder", Item::new).register();

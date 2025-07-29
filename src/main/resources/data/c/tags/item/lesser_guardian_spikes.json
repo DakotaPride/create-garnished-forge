@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "creategarnished:guardian_spike",
+
+    {
+      "required": false,
+      "id": "reliquary:guardian_spike"
+    }
+  ]
+}

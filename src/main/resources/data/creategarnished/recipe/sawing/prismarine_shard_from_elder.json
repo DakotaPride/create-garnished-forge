@@ -2,7 +2,7 @@
   "type": "create:cutting",
   "ingredients": [
     {
-      "item": "creategarnished:elder_guardian_spike"
+      "tag": "c:elder_guardian_spikes"
     }
   ],
   "processing_time": 400,

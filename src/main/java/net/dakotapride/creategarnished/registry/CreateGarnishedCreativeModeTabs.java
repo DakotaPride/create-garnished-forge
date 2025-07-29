@@ -97,6 +97,9 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedFluids.ROYAL_CIDER.get().getBucket());
             output.accept(CreateGarnishedFluids.BEETROOT_JUICE.get().getBucket());
             output.accept(CreateGarnishedFluids.MUSHROOM_SLOP.get().getBucket());
+
+            // Creative Items
+            output.accept(CreateGarnishedItems.CREATIVE_PRESSURISED_HATCHET);
         }
     }
 

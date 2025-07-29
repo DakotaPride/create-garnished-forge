@@ -1,9 +1,11 @@
 package net.dakotapride.creategarnished.event.hatchet;
 
 import com.simibubi.create.AllItems;
+import earth.terrarium.pastel.entity.PastelEntityTypes;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.config.HatchetConfig;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
+import net.dakotapride.creategarnished.util.ModIds;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -32,10 +34,7 @@ public class CreateGarnishedMobConditions extends MobConditions {
 
             if (source.getEntity() != null && source.getEntity() instanceof LivingEntity attacker && MobConditions.accept(attacker)) {
                 applyConditions(entity, attacker, source);
-            }
 
-            if (source.getEntity() != null && source.getEntity() instanceof LivingEntity attacker && MobConditions.requireSpecificHatchetItem(attacker, Items.DIAMOND_SWORD)) {
-                createDropConditions(entity, EntityType.HUSK, attacker, Items.DIAMOND, 4, 100, source, false);
             }
         }
     }
@@ -130,8 +129,10 @@ public class CreateGarnishedMobConditions extends MobConditions {
                 createDropConditions(entity, EntityType.ELDER_GUARDIAN, attacker, Items.PRISMARINE_CRYSTALS, config.prismarineCrystalsMaxCount.get(),
                         config.chanceToDropExtraPrismarineCrystals.get(), source, config.disableElderGuardianDrops.get());
             }
-            createDropConditions(entity, EntityType.GUARDIAN, attacker, CreateGarnishedItems.GUARDIAN_SPIKE.get(), config.guardianSpikeMaxCount.get(),
-                    config.chanceToDropGuardianSpike.get(), source, config.disableLesserGuardianDrops.get());
+            if (!ModIds.RELIQUARY.isLoaded()) {
+                createDropConditions(entity, EntityType.GUARDIAN, attacker, CreateGarnishedItems.GUARDIAN_SPIKE.get(), config.guardianSpikeMaxCount.get(),
+                        config.chanceToDropGuardianSpike.get(), source, config.disableLesserGuardianDrops.get());
+            }
             createDropConditions(entity, EntityType.ELDER_GUARDIAN, attacker, CreateGarnishedItems.ELDER_GUARDIAN_SPIKE.get(), config.elderGuardianSpikeMaxCount.get(),
                     config.chanceToDropElderGuardianSpike.get(), source, config.disableElderGuardianDrops.get());
         }
@@ -144,6 +145,9 @@ public class CreateGarnishedMobConditions extends MobConditions {
                         config.chanceToDropExtraString.get(), source, config.disableSpiderDrops.get());
                 createDropConditions(entity, EntityType.CAVE_SPIDER, attacker, Items.STRING, config.extraStringMaxCount.get(),
                         config.chanceToDropExtraString.get(), source, config.disableCaveSpiderDrops.get());
+                if (ModIds.PASTEL.isLoaded())
+                    createDropConditions(entity, PastelEntityTypes.ERASER.get(), attacker, Items.STRING, config.extraStringMaxCount.get(),
+                            config.chanceToDropExtraString.get(), source, config.disableGlobalHatchetDrops.get());
             }
         }
     }

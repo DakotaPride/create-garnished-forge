@@ -12,7 +12,7 @@ public class ServerConfig extends ConfigBase {
     public final EntityConfig entity = nested(0, EntityConfig::new,
             "Control how entities interact with content from Create: Garnished Reworked");
     public final HatchetConfig hatchet = nested(0, HatchetConfig::new,
-            "Sumthin'");
+            "Control how hatchets interact with loot drops or how the hatchet itself is handled");
 
     @Override
     public String getName() {

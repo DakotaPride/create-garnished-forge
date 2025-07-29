@@ -8,6 +8,7 @@
   "item.creategarnished.pressurised_hatchet.tooltip.condition2": "Когда надет баллон",
   "item.creategarnished.pressurised_hatchet.tooltip.behaviour2": "_Не_ тратится _прочность_. Вместо этого будет тратиться _воздух_ из баллона",
   "creategarnished.text.obtained_from_entity": "Добыто с сущности %s",
+  "creategarnished.text.mod_loaded.reliquary": "Reliquary Reincarnations is loaded, drop is replaced or removed",
   "item.creategarnished.elastic_strand": "Эластичная нить",
   "item.creategarnished.fiery_elastic_strand": "Огненная эластичная нить",
   "item.creategarnished.guardian_spike": "Шип стража",

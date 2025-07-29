@@ -22,9 +22,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "creategarnished:elder_guardian_spike"
-            ]
+            "items": "#c:elder_guardian_spikes"
           }
         ]
       }

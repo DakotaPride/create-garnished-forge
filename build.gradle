@@ -41,6 +41,7 @@ repositories {
     }
 
     maven { url = "https://api.modrinth.com/maven" }
+    maven { url = "https://cursemaven.com"}
 }
 
 // Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
@@ -150,6 +151,37 @@ dependencies {
     runtimeOnly ("maven.modrinth:jade-addons-forge:6.1.0+neoforge")
 
     implementation "vazkii.patchouli:Patchouli:${patchouli_minecraft_version}-${patchouli_version}-NEOFORGE"
+
+    // Comment out given compileOnly() or runtimeOnly() to remove from either development environment or game launch
+    // Compatibility
+    compileOnly ("maven.modrinth:reliquary-reincarnations:1.21.1-2.0.52.1264")
+    runtimeOnly ("maven.modrinth:reliquary-reincarnations:1.21.1-2.0.52.1264")
+
+    compileOnly ("maven.modrinth:create-ironworks:3.9.0")
+    runtimeOnly ("maven.modrinth:create-ironworks:3.9.0")
+
+    compileOnly ("maven.modrinth:oritech:6FLqYpTF")
+    runtimeOnly ("maven.modrinth:oritech:6FLqYpTF")
+    runtimeOnly ("maven.modrinth:owo-lib:0.12.15.5-beta.1+1.21")
+    runtimeOnly ("maven.modrinth:architectury-api:13.0.8+neoforge")
+    runtimeOnly ("maven.modrinth:athena-ctm:4.0.2")
+    runtimeOnly ("maven.modrinth:geckolib:DTo3uxPN")
+
+    compileOnly ("maven.modrinth:mekanism:10.7.14.79")
+    runtimeOnly ("maven.modrinth:mekanism:10.7.14.79")
+
+    compileOnly ("maven.modrinth:pastel-mod:1.1.3")
+    runtimeOnly ("maven.modrinth:pastel-mod:1.1.3")
+    runtimeOnly ("maven.modrinth:modonomicon:1.21.1-1.114.5")
+    runtimeOnly ("maven.modrinth:cloth-config:15.0.140+neoforge")
+
+    //compileOnly ("curse.maven:uniful-1302366:6771148")
+    //runtimeOnly ("curse.maven:uniful-1302366:6771148")
+
+
+    // Can't add compatibility with Garnished Additions as a result of it being an addon to the pre-rework version (Create: Garnished Reworked breaks with the pre-rework version installed)
+    //compileOnly ("maven.modrinth:garnished-additions:0.8.2")
+    //runtimeOnly ("maven.modrinth:garnished-additions:0.8.2")
 
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

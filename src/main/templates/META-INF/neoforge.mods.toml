@@ -100,6 +100,17 @@ config="${mod_id}.mixins.json"
     ordering="NONE"
     side="BOTH"
 
+
+# Incompatible Mods
+
+# Declare that one should not use two versions of the same minecraft mod alongside each other when they weren't designed with that in mind
+[[dependencies.${mod_id}]]
+modId = "garnished"
+type = "incompatible"
+reason = "Create: Garnished is the pre-reworked version of this mod and will cause parity issues. These two mods are not designed to work alongside each other, but as separate entities/options for players to choose from."
+ordering = "NONE"
+side = "BOTH"
+
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
 # stop your mod loading on the server for example.

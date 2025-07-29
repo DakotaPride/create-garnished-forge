@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
   "type": "create:mechanical_crafting",
   "accept_mirrored": true,
   "category": "misc",
@@ -24,7 +30,7 @@
       "item": "create:andesite_alloy"
     },
     "C": {
-      "item": "create:precision_mechanism"
+      "item": "mekanism:elite_control_circuit"
     }
   },
   "pattern": [

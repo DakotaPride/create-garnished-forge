@@ -1,9 +1,11 @@
 package net.dakotapride.creategarnished.event.hatchet;
 
+import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.config.HatchetConfig;
 import net.dakotapride.creategarnished.item.PressurisedHatchetItem;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedStatisics;
+import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTriggers;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -23,7 +25,7 @@ public class MobConditions {
     public static HatchetConfig config = CreateGarnishedConfigs.server().hatchet;
 
     public static boolean accept(LivingEntity attacker) {
-        return attacker.getMainHandItem().getItem() instanceof PressurisedHatchetItem;
+        return attacker.getMainHandItem().getItem() instanceof PressurisedHatchetItem || attacker.getMainHandItem().is(CreateGarnishedTags.HATCHETS);
     }
 
     public static boolean requireSpecificHatchetItem(LivingEntity attacker, Item item) {
@@ -64,6 +66,11 @@ public class MobConditions {
         if (attackerHasUnluck) {
             r = new Random().nextInt(1, 201);
         }
+
+        Item itemInHand = attacker.getMainHandItem().getItem();
+        if (itemInHand instanceof PressurisedHatchetItem hatchetItem && hatchetItem.isCreative())
+            chance = 100;
+
         int r0 = new Random().nextInt(1, count + 1);
         if (type == matchType && !disabled && !(config.disableHatchetDrops.get())) {
             if (r <= chance) {
@@ -83,6 +90,7 @@ public class MobConditions {
 
                 createSoundEvents(attacker);
             }
+            CreateGarnished.LOGGER.info("rolled random as {}, the chance is equal to {}, expecting to drop {}", r, chance, itemToDrop);
         }
     }
 }
