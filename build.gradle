@@ -45,6 +45,7 @@ repositories {
         url = "https://modmaven.dev"
     }
     maven { url "https://maven.shedaniel.me/" }
+    maven { url = "https://api.modrinth.com/maven" }
 }
 
 // Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
@@ -149,6 +150,14 @@ dependencies {
 
     compileOnly ("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}")
     runtimeOnly ("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}")
+
+    // Compat
+    compileOnly "maven.modrinth:farmers-delight:${farmers_delight_version}"
+    compileOnly "maven.modrinth:my-nethers-delight:${my_nethers_delight_version}"
+    compileOnly "maven.modrinth:create-aquatic-ambitions:${create_aquatic_ambitions_version}"
+    //implementation "maven.modrinth:farmers-delight:${farmers_delight_version}"
+    //implementation "maven.modrinth:my-nethers-delight:${my_nethers_delight_version}"
+    //implementation "maven.modrinth:create-aquatic-ambitions:${create_aquatic_ambitions_version}"
 
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

@@ -55,7 +55,9 @@
   "item.garnished.glow_ink_roll_slice": "Glow Ink Roll Slice",
   "item.garnished.anniversary_cake_slice": "Slice of Anniversary Cake",
   "item.garnished.brownie_walnuts_piece": "Piece of Brownie with Walnuts",
+  "block.garnished.sepia_fungus_colony": "Sepia Fungus Colony",
   "text.garnished.integration.farmersdelight.missing": "Please install Farmer's Delight!",
+  "text.garnished.integration.mynethersdelight.missing": "Please install My Nether's Delight!",
 
   "item.garnished.cashew": "Garnished Cashew",
   "item.garnished.ungarnished_cashew": "Ungarnished Cashew",

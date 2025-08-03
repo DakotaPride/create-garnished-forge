@@ -13,8 +13,10 @@
   ],
   "result": [
     {
-      "count": 6,
-      "id": "garnished:senile_bone"
+      "item": {
+        "count": 6,
+        "id": "garnished:senile_bone"
+      }
     }
   ],
   "tool": {

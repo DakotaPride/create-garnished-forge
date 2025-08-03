@@ -13,11 +13,13 @@
   ],
   "result": [
     {
-      "count": 4,
-      "id": "garnished:pecan_pie_slice"
+      "item": {
+        "count": 4,
+        "id": "garnished:pecan_pie_slice"
+      }
     }
   ],
   "tool": {
-    "tag": "c:tools/knives"
+    "tag": "farmersdelight:tools/knives"
   }
 }

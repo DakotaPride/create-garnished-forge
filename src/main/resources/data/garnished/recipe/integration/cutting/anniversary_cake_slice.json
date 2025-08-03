@@ -13,11 +13,13 @@
   ],
   "result": [
     {
-      "count": 8,
-      "id": "garnished:anniversary_cake_slice"
+      "item": {
+        "count": 8,
+        "id": "garnished:anniversary_cake_slice"
+      }
     }
   ],
   "tool": {
-    "tag": "c:tools/knives"
+    "tag": "farmersdelight:tools/knives"
   }
 }

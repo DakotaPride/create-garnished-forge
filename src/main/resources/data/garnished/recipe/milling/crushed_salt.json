@@ -1,4 +1,13 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:item_exists",
+        "item": "create_aquatic_ambitions:suspicious_rock"
+      }
+    }
+  ],
   "type": "create:milling",
   "ingredients": [
     {

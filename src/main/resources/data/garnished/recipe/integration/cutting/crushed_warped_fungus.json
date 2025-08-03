@@ -13,11 +13,13 @@
   ],
   "result": [
     {
-      "count": 3,
-      "id": "garnished:crushed_warped_fungus"
+      "item": {
+        "count": 3,
+        "id": "garnished:crushed_warped_fungus"
+      }
     }
   ],
   "tool": {
-    "tag": "c:tools/knives"
+    "tag": "farmersdelight:tools/knives"
   }
 }

@@ -13,11 +13,13 @@
   ],
   "result": [
     {
-      "count": 4,
-      "id": "garnished:brownie_walnuts_piece"
+      "item": {
+        "count": 4,
+        "id": "garnished:brownie_walnuts_piece"
+      }
     }
   ],
   "tool": {
-    "tag": "c:tools/knives"
+    "tag": "farmersdelight:tools/knives"
   }
 }

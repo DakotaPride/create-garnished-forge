@@ -53,6 +53,8 @@ public class GarnishedTags {
 	public static TagKey<Item> TERMINITE_INGOTS = commonTag("ingots/terminite", Registries.ITEM);
 	public static TagKey<Item> AETERNIUM_INGOTS = commonTag("ingots/aeternium", Registries.ITEM);
 
+	public static final TagKey<Block> MUSHROOM_COLONY_GROWABLE_ON = TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("farmersdelight", "mushroom_colony_growable_on"));
+
 	// public static TagKey<Item> JADE_GEMS = forgeTag("gems/jade");
 	//	public static TagKey<Item> TOPAZ_GEMS = forgeTag("gems/topaz");
 	//	public static TagKey<Item> AQUAMARINE_GEMS = forgeTag("gems/aquamarine");
