@@ -175,6 +175,12 @@ dependencies {
     runtimeOnly ("maven.modrinth:modonomicon:1.21.1-1.114.5")
     runtimeOnly ("maven.modrinth:cloth-config:15.0.140+neoforge")
 
+    compileOnly ("maven.modrinth:farmers-delight:1.21.1-1.2.8")
+    runtimeOnly ("maven.modrinth:farmers-delight:1.21.1-1.2.8")
+
+    compileOnly ("maven.modrinth:hominid:1.2.1")
+    runtimeOnly ("maven.modrinth:hominid:1.2.1")
+
     //compileOnly ("curse.maven:uniful-1302366:6771148")
     //runtimeOnly ("curse.maven:uniful-1302366:6771148")
 

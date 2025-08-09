@@ -8,6 +8,8 @@ public enum ModIds {
     PASTEL("pastel"),
     MEKANISM("mekanism"),
     ORITECH("oritech"),
+    FARMERS_DELIGHT("farmersdelight"),
+    HOMINID("hominid"),
 
 
 

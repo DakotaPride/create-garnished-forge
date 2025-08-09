@@ -9,6 +9,9 @@ public class HatchetConfig extends ConfigBase {
     public ConfigBool disableGlobalHatchetDrops = b(false, "disableGlobalHatchetDrops", Comments.disableGlobalHatchetDrops);
     public ConfigInt maxPressurisedHatchetActions = i(2000, 0, "maxPressurisedHatchetActions", Comments.maxPressurisedHatchetActions);
     public ConfigBool allowDropsFromBabyMobs = b(true, "allowDropsFromBabyMobs", Comments.allowDropsFromBabyMobs);
+    // Mainly a joke option
+    // https://youtu.be/K6mi8MFPoog - Thank you, Ford, for showing me this masterpiece that I somehow never saw
+    public ConfigBool allowShotgunAxe = b(false, "allowShotgunAxe", Comments.allowShotgunAxe);
 
     // Setting chance to 0 disables the individual drop without disabling the entire group of drops
 
@@ -151,6 +154,7 @@ public class HatchetConfig extends ConfigBase {
         static String disableGlobalHatchetDrops = "Disables special drops provided by hatchets from groups of mobs.";
         static String maxPressurisedHatchetActions = "Amount of free Pressurised Hatchet actions provided by one filled Copper Backtank. Set to 0 makes Pressurised Hatchets unbreakable";
         static String allowDropsFromBabyMobs = "Allows additional or unique drops to also be obtained through baby variant mobs. (how DARE you)";
+        static String allowShotgunAxe = "Allows for extra... 'functionality', if you will";
 
         static String disableZombieDrops = "Disables the special item drops from mobs tagged as zombies upon defeat.";
         static String chanceToDropLeather = "The chance to drop leather upon defeat.";
