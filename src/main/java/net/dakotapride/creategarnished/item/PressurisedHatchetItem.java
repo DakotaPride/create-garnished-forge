@@ -1,9 +1,10 @@
 package net.dakotapride.creategarnished.item;
 
 import com.simibubi.create.content.equipment.armor.BacktankUtil;
+import com.simibubi.create.content.equipment.tool.KnockbackPacket;
+import net.createmod.catnip.platform.CatnipServices;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
-import net.dakotapride.creategarnished.util.ModIds;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
@@ -12,20 +13,20 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.bus.api.EventPriority;
@@ -35,12 +36,12 @@ import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
+
+import static com.simibubi.create.content.equipment.tool.CardboardSwordItem.knockback;
 
 @EventBusSubscriber
 public class PressurisedHatchetItem extends Item {
@@ -142,6 +143,36 @@ public class PressurisedHatchetItem extends Item {
 
     private static int maxUses() {
         return CreateGarnishedConfigs.server().hatchet.maxPressurisedHatchetActions.get();
+    }
+
+    // -> CardboardSwordItem.cardboardSwordsCannotHurtYou
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void calculateKnockbackFromShotgun(AttackEntityEvent event) {
+        if (!CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get())
+            return;
+
+        Player attacker = event.getEntity();
+        if (!(event.getTarget() instanceof LivingEntity target))
+            return;
+        ItemStack stack = attacker.getItemInHand(InteractionHand.MAIN_HAND);
+
+        float knockbackStrength = (float) (attacker.getAttributeValue(Attributes.ATTACK_KNOCKBACK) + 20);
+        if (attacker.level() instanceof ServerLevel serverLevel)
+            knockbackStrength = EnchantmentHelper.modifyKnockback(serverLevel, stack, target, serverLevel.damageSources().playerAttack(attacker), knockbackStrength);
+        if (attacker.isSprinting() && attacker.getAttackStrengthScale(0.5f) > 0.9f)
+            ++knockbackStrength;
+
+        if (knockbackStrength <= 0)
+            return;
+
+        float yRot = attacker.getYRot();
+        knockback(target, knockbackStrength, yRot);
+
+        if (target instanceof ServerPlayer sp)
+            CatnipServices.NETWORK.sendToClient(sp, new KnockbackPacket(yRot, knockbackStrength));
+
+        attacker.setDeltaMovement(attacker.getDeltaMovement().multiply(0.6D, 1.0D, 0.6D));
+        attacker.setSprinting(false);
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
