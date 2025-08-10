@@ -2,7 +2,7 @@ package net.dakotapride.creategarnished.item;
 
 import com.simibubi.create.content.equipment.armor.BacktankUtil;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
-import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
+import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
 import net.dakotapride.creategarnished.util.ModIds;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
@@ -15,7 +15,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -24,13 +23,15 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
@@ -110,19 +111,19 @@ public class PressurisedHatchetItem extends Item {
         return context.getHand().equals(InteractionHand.MAIN_HAND) && player.getOffhandItem().is(Items.SHIELD) && !player.isSecondaryUseActive();
     }
 
-    private static Optional<BlockState> evaluateNewBlockState(Level level, BlockPos pos, @Nullable Player player, BlockState state, UseOnContext ctx) {
-        Optional<BlockState> optional = Optional.ofNullable(state.getToolModifiedState(ctx, net.neoforged.neoforge.common.ItemAbilities.AXE_STRIP, false));
+    private Optional<BlockState> evaluateNewBlockState(Level level, BlockPos pos, @Nullable Player player, BlockState state, UseOnContext ctx) {
+        Optional<BlockState> optional = Optional.ofNullable(state.getToolModifiedState(ctx, ItemAbilities.AXE_STRIP, false));
         if (optional.isPresent()) {
             level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
             return optional;
         } else {
-            Optional<BlockState> optional1 = Optional.ofNullable(state.getToolModifiedState(ctx, net.neoforged.neoforge.common.ItemAbilities.AXE_SCRAPE, false));
+            Optional<BlockState> optional1 = Optional.ofNullable(state.getToolModifiedState(ctx, ItemAbilities.AXE_SCRAPE, false));
             if (optional1.isPresent()) {
                 level.playSound(player, pos, SoundEvents.AXE_SCRAPE, SoundSource.BLOCKS, 1.0F, 1.0F);
                 level.levelEvent(player, 3005, pos, 0);
                 return optional1;
             } else {
-                Optional<BlockState> optional2 = Optional.ofNullable(state.getToolModifiedState(ctx, net.neoforged.neoforge.common.ItemAbilities.AXE_WAX_OFF, false));
+                Optional<BlockState> optional2 = Optional.ofNullable(state.getToolModifiedState(ctx, ItemAbilities.AXE_WAX_OFF, false));
                 if (optional2.isPresent()) {
                     level.playSound(player, pos, SoundEvents.AXE_WAX_OFF, SoundSource.BLOCKS, 1.0F, 1.0F);
                     level.levelEvent(player, 3004, pos, 0);
@@ -136,7 +137,7 @@ public class PressurisedHatchetItem extends Item {
 
     @Override
     public boolean canPerformAction(ItemStack stack, net.neoforged.neoforge.common.ItemAbility itemAbility) {
-        return net.neoforged.neoforge.common.ItemAbilities.DEFAULT_AXE_ACTIONS.contains(itemAbility);
+        return ItemAbilities.DEFAULT_AXE_ACTIONS.contains(itemAbility);
     }
 
     private static int maxUses() {
@@ -152,19 +153,7 @@ public class PressurisedHatchetItem extends Item {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void shotgun(BlockEvent.BreakEvent event) {
-        if (CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get()) {
-            if (ModIds.FARMERS_DELIGHT.isLoaded()) {
-                int barkAmount = 1 + new Random().nextInt(1, 3);
-
-                event.getLevel().addFreshEntity(new ItemEntity(
-                        ((Level)event.getLevel()),
-                        event.getPos().getX(),
-                        event.getPos().getY() + 1,
-                        event.getPos().getZ(),
-                        new ItemStack(ModItems.TREE_BARK.get(), barkAmount)
-                ));
-            }
-
+        if (CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get() && event.getPlayer().getItemInHand(InteractionHand.MAIN_HAND).is(CreateGarnishedTags.HATCHETS)) {
             if (event.getLevel() instanceof ServerLevel level && CreateGarnishedConfigs.client().allowShotgunSoundEvent.get()) {
                 level.playSound(null, event.getPos(), SoundEvents.ANVIL_LAND, event.getPlayer().getSoundSource(), 10.0F, 1.0F);
             }
@@ -187,11 +176,11 @@ public class PressurisedHatchetItem extends Item {
             return;
         EquipmentSlot equipmentSlot = EquipmentSlot.MAINHAND;
         ItemStack itemInMainHand = player.getMainHandItem();
-        if (!CreateGarnishedItems.PRESSURISED_HATCHET.isIn(itemInMainHand)) {
+        if (!itemInMainHand.is(CreateGarnishedTags.HATCHETS)) {
             itemInMainHand = player.getOffhandItem();
             equipmentSlot = EquipmentSlot.OFFHAND;
         }
-        if (!CreateGarnishedItems.PRESSURISED_HATCHET.isIn(itemInMainHand))
+        if (!itemInMainHand.is(CreateGarnishedTags.HATCHETS))
             return;
         if (!BacktankUtil.canAbsorbDamage(player, maxUses()) && itemInMainHand.isDamageableItem())
             itemInMainHand.hurtAndBreak(2, player, equipmentSlot);
@@ -204,11 +193,11 @@ public class PressurisedHatchetItem extends Item {
             return;
         EquipmentSlot equipmentSlot = EquipmentSlot.MAINHAND;
         ItemStack itemInMainHand = player.getMainHandItem();
-        if (!CreateGarnishedItems.PRESSURISED_HATCHET.isIn(itemInMainHand)) {
+        if (!itemInMainHand.is(CreateGarnishedTags.HATCHETS)) {
             itemInMainHand = player.getOffhandItem();
             equipmentSlot = EquipmentSlot.OFFHAND;
         }
-        if (!CreateGarnishedItems.PRESSURISED_HATCHET.isIn(itemInMainHand))
+        if (!itemInMainHand.is(CreateGarnishedTags.HATCHETS))
             return;
         if (!canShotgunAxeAbsorbDamage(player, maxUses()) && itemInMainHand.isDamageableItem())
             itemInMainHand.hurtAndBreak(4, player, equipmentSlot);
