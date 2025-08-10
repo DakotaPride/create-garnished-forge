@@ -156,6 +156,9 @@ public class PressurisedHatchetItem extends Item {
             return;
         ItemStack stack = attacker.getItemInHand(InteractionHand.MAIN_HAND);
 
+        if (!stack.is(CreateGarnishedTags.HATCHETS))
+            return;
+
         float knockbackStrength = (float) (attacker.getAttributeValue(Attributes.ATTACK_KNOCKBACK) + 20);
         if (attacker.level() instanceof ServerLevel serverLevel)
             knockbackStrength = EnchantmentHelper.modifyKnockback(serverLevel, stack, target, serverLevel.damageSources().playerAttack(attacker), knockbackStrength);
@@ -193,7 +196,7 @@ public class PressurisedHatchetItem extends Item {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void shotgunAttack(AttackEntityEvent event) {
-        if (CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get()) {
+        if (CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get() && event.getEntity().getMainHandItem().is(CreateGarnishedTags.HATCHETS)) {
             if (event.getEntity().level() instanceof ServerLevel level && CreateGarnishedConfigs.client().allowShotgunSoundEvent.get()) {
                 level.playSound(null, event.getEntity().blockPosition(), SoundEvents.ANVIL_LAND, event.getEntity().getSoundSource(), 10.0F, 1.0F);
             }
