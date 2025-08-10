@@ -5,6 +5,7 @@ import com.simibubi.create.content.equipment.tool.KnockbackPacket;
 import net.createmod.catnip.platform.CatnipServices;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
+import net.dakotapride.creategarnished.util.ModIds;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
@@ -27,6 +28,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.bus.api.EventPriority;
@@ -35,7 +37,9 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
+import vectorwing.farmersdelight.common.block.entity.CuttingBoardBlockEntity;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -201,6 +205,24 @@ public class PressurisedHatchetItem extends Item {
                 level.playSound(null, event.getEntity().blockPosition(), SoundEvents.ANVIL_LAND, event.getEntity().getSoundSource(), 10.0F, 1.0F);
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void onSneakPlaceTool(PlayerInteractEvent.RightClickBlock event) {
+        Level level = event.getLevel();
+        BlockPos pos = event.getPos();
+        Player player = event.getEntity();
+        ItemStack heldStack = player.getMainHandItem();
+        BlockEntity tileEntity = level.getBlockEntity(event.getPos());
+        if (ModIds.FARMERS_DELIGHT.isLoaded() && player.isSecondaryUseActive() && !heldStack.isEmpty() && tileEntity instanceof CuttingBoardBlockEntity && (heldStack.getItem() instanceof PressurisedHatchetItem)) {
+            boolean success = ((CuttingBoardBlockEntity)tileEntity).carveToolOnBoard(player.getAbilities().instabuild ? heldStack.copy() : heldStack);
+            if (success) {
+                level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.WOOD_PLACE, SoundSource.BLOCKS, 1.0F, 0.8F);
+                event.setCanceled(true);
+                event.setCancellationResult(InteractionResult.SUCCESS);
+            }
+        }
+
     }
 
     private static void findAndDamagePressurisedHatchet(Player player) {
