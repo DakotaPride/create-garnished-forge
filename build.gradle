@@ -155,9 +155,11 @@ dependencies {
     compileOnly "maven.modrinth:farmers-delight:${farmers_delight_version}"
     compileOnly "maven.modrinth:my-nethers-delight:${my_nethers_delight_version}"
     compileOnly "maven.modrinth:create-aquatic-ambitions:${create_aquatic_ambitions_version}"
+    compileOnly "maven.modrinth:create-dragons-plus:${create_dragons_plus_version}"
     //implementation "maven.modrinth:farmers-delight:${farmers_delight_version}"
     //implementation "maven.modrinth:my-nethers-delight:${my_nethers_delight_version}"
     //implementation "maven.modrinth:create-aquatic-ambitions:${create_aquatic_ambitions_version}"
+    //implementation "maven.modrinth:create-dragons-plus:${create_dragons_plus_version}"
 
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
