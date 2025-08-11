@@ -1,4 +1,22 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:and",
+      "values": [
+        {
+          "type": "create_dragons_plus:config_feature",
+          "feature": "create_dragons_plus:fluid/dragon_breath"
+        },
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:mod_loaded",
+            "modid": "create_dragons_plus"
+          }
+        }
+      ]
+    }
+  ],
   "type": "create:emptying",
   "ingredients": [
     {

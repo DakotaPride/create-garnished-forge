@@ -78,9 +78,9 @@
           "item": "garnished:incomplete_champion_omelette"
         },
         {
-          "type": "fluid_stack",
+          "type": "fluid_tag",
           "amount": 250,
-          "fluid": "garnished:dragon_breath"
+          "fluid_tag": "c:dragon_breath"
         }
       ],
       "results": [

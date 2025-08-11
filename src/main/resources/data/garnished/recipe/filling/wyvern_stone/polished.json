@@ -5,9 +5,9 @@
       "item": "garnished:polished_unstable_stone"
     },
     {
-      "type": "fluid_stack",
+      "type": "fluid_tag",
       "amount": 250,
-      "fluid": "garnished:dragon_breath"
+      "fluid_tag": "c:dragon_breath"
     }
   ],
   "results": [

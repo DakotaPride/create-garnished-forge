@@ -2,7 +2,7 @@
   "type": "create:filling",
   "ingredients": [
     {
-      "item": "garnished:polished_unstable_stone_stairs"
+      "item": "minecraft:glass_bottle"
     },
     {
       "type": "fluid_tag",
@@ -12,7 +12,9 @@
   ],
   "results": [
     {
-      "id": "garnished:polished_dragon_stone_stairs"
+      "item": {
+        "id": "minecraft:dragon_breath"
+      }
     }
   ]
 }
