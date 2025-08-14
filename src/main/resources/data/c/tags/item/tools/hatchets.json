@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "creategarnished:pressurised_hatchet"
+    "creategarnished:pressurised_hatchet",
+    "creategarnished:creative_pressurised_hatchet"
   ]
 }
