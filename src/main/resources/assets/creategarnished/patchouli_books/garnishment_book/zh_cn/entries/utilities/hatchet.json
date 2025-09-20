@@ -1,0 +1,48 @@
+{
+  "name": "使用气动手斧",
+  "icon": "creategarnished:pressurised_hatchet",
+  "category": "creategarnished:utilities",
+  "pages": [
+    {
+      "type": "spotlight",
+      "title": "气动手斧",
+      "item": "creategarnished:pressurised_hatchet",
+      "text": "气动手斧可以用于从特定生物身上获取特殊掉落物，也可以增加某些掉落物的掉落数量。$(br)类似于土豆加农炮与伸缩机械手，使用时会消耗耐久，但如果使用背罐中的空气供能则可以抵消耐久的消耗。"
+    },
+    {
+      "type": "spotlight",
+      "title": "弹性肌腱",
+      "item": "creategarnished:elastic_strand",
+      "text": "普通的弹性肌腱由史莱姆掉落。$(br)弹性肌腱可以使用动力锯加工成为黏液球，也可以用于罐装黏液麦芽糖的制作。"
+    },
+    {
+      "type": "spotlight",
+      "title": "炽热弹性肌腱",
+      "item": "creategarnished:fiery_elastic_strand",
+      "text": "炽热弹性肌腱由岩浆怪掉落。$(br)炽热弹性肌腱可以使用动力锯加工成为岩浆膏，也可以用于罐装炽热黏液麦芽糖的制作。"
+    },
+    {
+      "type": "spotlight",
+      "title": "守卫者尖牙",
+      "item": "creategarnished:guardian_spike",
+      "text": "守卫者尖牙由守卫者掉落。$(br)守卫者尖牙可以使用动力锯加工成为海晶碎片或海晶砂粒，也可以用于蜜汁神殿拼盘的制作。"
+    },
+    {
+      "type": "spotlight",
+      "title": "远古守卫者尖牙",
+      "item": "creategarnished:elder_guardian_spike",
+      "text": "远古守卫者尖牙由远古守卫者掉落。$(br)守卫者尖牙可以使用动力锯加工成为海晶碎片或海晶砂粒，也可以用于蜜汁神殿拼盘的制作。"
+    },
+    {
+      "type": "text",
+      "title": "守卫者尖牙作为武器",
+      "text": "两种守卫者尖牙都可以被当作类似于剑的武器，但无法附魔。"
+    },
+    {
+      "type": "spotlight",
+      "title": "嗅探兽绒毛",
+      "item": "creategarnished:sniffer_fluff",
+      "text": "嗅探兽绒毛无法被用于制作食物，但是可以用于制作一些装饰方块，它们的外观类似于嗅探兽那绿色的、苔藓一般的绒毛。"
+    }
+  ]
+}
