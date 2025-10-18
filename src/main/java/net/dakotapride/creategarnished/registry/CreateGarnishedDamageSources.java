@@ -15,6 +15,9 @@ public class CreateGarnishedDamageSources {
     public static DamageSource nutAllergy(Level level) {
         return source(CreateGarnishedDamageTypes.NUT_ALLERGY, level);
     }
+    public static DamageSource shock(Level level) {
+        return source(CreateGarnishedDamageTypes.SHOCK, level);
+    }
 
     private static DamageSource source(ResourceKey<DamageType> key, LevelReader level) {
         Registry<DamageType> registry = level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE);

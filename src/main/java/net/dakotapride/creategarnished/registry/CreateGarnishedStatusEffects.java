@@ -2,6 +2,8 @@ package net.dakotapride.creategarnished.registry;
 
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.effect.NutAllergyMobEffect;
+import net.dakotapride.creategarnished.effect.SoothingMobEffect;
+import net.dakotapride.creategarnished.effect.VoltStruckMobEffect;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
@@ -18,6 +20,14 @@ public class CreateGarnishedStatusEffects {
             (new NutAllergyMobEffect(MobEffectCategory.HARMFUL, 0xA5784B))
                     .addAttributeModifier(Attributes.ATTACK_DAMAGE, CreateGarnished.asResource("effect.nut_allergy"),
                             -4.0F, AttributeModifier.Operation.ADD_VALUE));
+    public static final DeferredHolder<MobEffect, MobEffect> SOOTHING = register("soothing",
+            (new SoothingMobEffect(MobEffectCategory.BENEFICIAL, 0xC3812F))
+                    .addAttributeModifier(Attributes.KNOCKBACK_RESISTANCE, CreateGarnished.asResource("effect.soothing.knockback_resistance"),
+                            1.0, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(Attributes.MOVEMENT_SPEED, CreateGarnished.asResource("effect.soothing.movement_speed"),
+                            0.1F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+    public static final DeferredHolder<MobEffect, MobEffect> VOLT_STRUCK = register("volt_struck",
+            (new VoltStruckMobEffect(MobEffectCategory.NEUTRAL, 0xF07AEB)));
 
     private static DeferredHolder<MobEffect, MobEffect> register(String name, MobEffect effect) {
         return MOB_EFFECTS.register(name, () -> effect);

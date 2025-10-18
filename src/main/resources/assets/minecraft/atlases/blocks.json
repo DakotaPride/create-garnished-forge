@@ -79,6 +79,14 @@
     {
       "type": "single",
       "resource": "creategarnished:fluid/royal_cider_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/corn_syrup_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/corn_syrup_still"
     }
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:pumpkin_alternatives"
+    },
+    {
+      "tag": "c:pumpkin_alternatives"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "creategarnished:cream"
+    },
+    {
+      "item": "creategarnished:fiery_elastic_strand"
+    }
+  ],
+  "results": [
+    {
+      "id": "creategarnished:pumpkin_spicy_fritters",
+      "count": 4
+    }
+  ]
+}

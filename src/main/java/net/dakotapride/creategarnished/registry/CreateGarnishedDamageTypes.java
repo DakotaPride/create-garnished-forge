@@ -10,6 +10,8 @@ public class CreateGarnishedDamageTypes {
             ELVEN_SWEET_BERRY_BUSH = key("elven_sweet_berry_bush");
     public static final ResourceKey<DamageType>
             NUT_ALLERGY = key("nut_allergy");
+    public static final ResourceKey<DamageType>
+            SHOCK = key("shocked");
 
     private static ResourceKey<DamageType> key(String name) {
         return ResourceKey.create(Registries.DAMAGE_TYPE, CreateGarnished.asResource(name));

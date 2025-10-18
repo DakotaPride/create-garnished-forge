@@ -4,8 +4,13 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BlockHelperMixin",
+    "GenericItemEmptyingMixin",
+    "GenericItemFillingMixin",
     "HauntingTypeMixin",
     "VanillaFluidTargetsMixin"
+  ],
+  "client": [
+    "GuiMixin"
   ],
   "injectors": {
     "defaultRequire": 1

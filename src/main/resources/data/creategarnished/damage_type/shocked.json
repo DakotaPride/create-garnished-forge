@@ -1,0 +1,6 @@
+{
+  "effects": "hurt",
+  "exhaustion": 0.6,
+  "message_id": "creategarnished.shocked",
+  "scaling": "always"
+}

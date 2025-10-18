@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "creategarnished:item/wrapped_candy",
+    "particle": "creategarnished:item/wrapped_candy1"
+  }
+}

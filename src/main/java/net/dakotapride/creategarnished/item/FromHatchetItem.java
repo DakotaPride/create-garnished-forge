@@ -11,15 +11,18 @@ import java.util.List;
 public class FromHatchetItem extends Item {
     EntityType<?> type;
     List<EntityType<?>> typeList;
+    boolean voltified;
 
-    public FromHatchetItem(EntityType<?> type, Properties properties) {
+    public FromHatchetItem(EntityType<?> type, boolean v, Properties properties) {
         super(properties);
         this.type = type;
+        this.voltified = v;
     }
 
-    public FromHatchetItem(List<EntityType<?>> typeList, Properties properties) {
+    public FromHatchetItem(List<EntityType<?>> typeList, boolean v, Properties properties) {
         super(properties);
         this.typeList = typeList;
+        this.voltified = v;
     }
 
     @Override

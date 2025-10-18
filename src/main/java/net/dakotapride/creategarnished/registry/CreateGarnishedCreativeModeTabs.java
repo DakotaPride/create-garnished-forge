@@ -81,11 +81,18 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.FIERY_SLLIMY);
             output.accept(CreateGarnishedItems.GLAZED_MONUMENT_MEDLEY);
 
+            output.accept(CreateGarnishedItems.SLIMY_COBWOB);
+            output.accept(CreateGarnishedItems.PUMPKIN_SPICY_FRITTERS);
+            output.accept(CreateGarnishedItems.CANDY_WRAPPING);
+            output.accept(CreateGarnishedItems.WRAPPED_CANDY);
+
             output.accept(CreateGarnishedItems.PEANUT_BUTTER_BOTTLE);
             output.accept(CreateGarnishedItems.BIRCH_SAP_BOTTLE);
             output.accept(CreateGarnishedItems.BIRCH_SYRUP_BOTTLE);
             output.accept(CreateGarnishedItems.BEETROOT_JUICE_BOTTLE);
             output.accept(CreateGarnishedItems.ROYAL_CIDER);
+            output.accept(CreateGarnishedItems.CORN_SYRUP_BOTTLE);
+            output.accept(CreateGarnishedItems.MYSTERIOUS_VOLT_BOTTLE);
 
             output.accept(CreateGarnishedItems.SPRINTERS_TEA);
             output.accept(CreateGarnishedItems.SWEET_TEA);

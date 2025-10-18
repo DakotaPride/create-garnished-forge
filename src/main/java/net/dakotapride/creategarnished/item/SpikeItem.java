@@ -1,11 +1,8 @@
 package net.dakotapride.creategarnished.item;
 
-import net.dakotapride.creategarnished.event.hatchet.ReliquaryReincarnationsMobConditions;
 import net.dakotapride.creategarnished.util.ModIds;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.*;
 import org.jetbrains.annotations.NotNull;

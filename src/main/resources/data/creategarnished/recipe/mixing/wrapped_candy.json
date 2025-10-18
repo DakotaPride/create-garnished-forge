@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "creategarnished:mysterious_volt_bottle"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "creategarnished:candy_wrapping"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 100,
+      "fluid_tag": "c:corn_syrup"
+    }
+  ],
+  "results": [
+    {
+      "id": "creategarnished:wrapped_candy",
+      "count": 2
+    }
+  ]
+}

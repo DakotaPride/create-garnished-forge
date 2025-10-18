@@ -19,8 +19,8 @@ public class ClientConfig extends ConfigBase {
     public final ConfigFloat mushroomSlopTransparencyMultiplier =
             f(1, .125f, 256, "mushroomSlop", Comments.mushroomSlopTransparencyMultiplier);
 
-    public ConfigBool allowLuckyPlingSoundEvent = b(true, "allowLuckyPlingSoundEvent", Comments.allowLuckyPlingSoundEvent);
-    public ConfigBool allowShotgunSoundEvent = b(true, "allowShotgunSoundEvent", Comments.allowShotgunSoundEvent);
+    public final ConfigBool allowLuckyPlingSoundEvent = b(true, "allowLuckyPlingSoundEvent", Comments.allowLuckyPlingSoundEvent);
+    public final ConfigBool allowShotgunSoundEvent = b(true, "allowShotgunSoundEvent", Comments.allowShotgunSoundEvent);
 
     @Override
     public String getName() {

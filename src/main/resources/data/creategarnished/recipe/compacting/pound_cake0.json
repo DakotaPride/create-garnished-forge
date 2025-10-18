@@ -1,0 +1,116 @@
+// GODS DAMNIT LEMME HAVE UNFATHOMABLE AMOUNTS OF INGREDIENTS IN THIS RECIPE
+
+//{
+//  "type": "create:compacting",
+//  "ingredients": [
+//    {
+//      "tag": "c:foods/dough"
+//    },
+//    {
+//      "tag": "c:foods/dough"
+//    },
+//    {
+//      "tag": "c:foods/dough"
+//    },
+//    {
+//      "tag": "c:foods/dough"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "minecraft:sugar"
+//    },
+//    {
+//      "item": "creategarnished:cream"
+//    },
+//    {
+//      "item": "creategarnished:cream"
+//    },
+//    {
+//      "item": "creategarnished:cream"
+//    },
+//    {
+//      "item": "creategarnished:cream"
+//    },
+//    {
+//      "tag": "c:eggs"
+//    },
+//    {
+//      "tag": "c:eggs"
+//    },
+//    {
+//      "tag": "c:eggs"
+//    },
+//    {
+//      "tag": "c:eggs"
+//    },
+//    {
+//      "tag": "c:eggs"
+//    },
+//    {
+//      "tag": "c:eggs"
+//    },
+//    {
+//      "tag": "c:eggs"
+//    },
+//    {
+//      "tag": "c:eggs"
+//    },
+//    {
+//      "type": "fluid_stack",
+//      "amount": 500,
+//      "fluid": "creategarnished:almond_extract"
+//    }
+//  ],
+//  "results": [
+//    {
+//      "count": 1,
+//      "item": {
+//        "id": "creategarnished:pound_cake"
+//      }
+//    }
+//  ]
+//}

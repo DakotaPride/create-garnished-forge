@@ -5,11 +5,14 @@ import com.simibubi.create.foundation.item.ItemDescription;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.item.*;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.alchemy.PotionContents;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 public class CreateGarnishedItems {
 
@@ -133,15 +136,15 @@ public class CreateGarnishedItems {
 
     public static final ItemEntry<Item> CRUSHED_HAZELNUT_POWDER = CreateGarnished.REGISTRATE.item("crushed_hazelnut_powder", Item::new).register();
 
-    public static final ItemEntry<FromHatchetItem> SNIFFER_FLUFF = CreateGarnished.REGISTRATE.item("sniffer_fluff", p -> new FromHatchetItem(EntityType.SNIFFER, p)).register();
+    public static final ItemEntry<FromHatchetItem> SNIFFER_FLUFF = CreateGarnished.REGISTRATE.item("sniffer_fluff", p -> new FromHatchetItem(EntityType.SNIFFER, false, p)).register();
     public static final ItemEntry<SpikeItem> GUARDIAN_SPIKE = CreateGarnished.REGISTRATE.item("guardian_spike", p -> new SpikeItem(EntityType.GUARDIAN, p))
             .properties(p -> p.attributes(SwordItem.createAttributes(Tiers.IRON, 3, -2.4F)))
             .register();
     public static final ItemEntry<SpikeItem> ELDER_GUARDIAN_SPIKE = CreateGarnished.REGISTRATE.item("elder_guardian_spike", p -> new SpikeItem(EntityType.ELDER_GUARDIAN, p))
             .properties(p -> p.attributes(SwordItem.createAttributes(Tiers.DIAMOND, 5, -2.4F)))
             .register();
-    public static final ItemEntry<FromHatchetItem> ELASTIC_STRAND = CreateGarnished.REGISTRATE.item("elastic_strand", p -> new FromHatchetItem(EntityType.SLIME, p)).register();
-    public static final ItemEntry<FromHatchetItem> FIERY_ELASTIC_STRAND = CreateGarnished.REGISTRATE.item("fiery_elastic_strand", p -> new FromHatchetItem(EntityType.MAGMA_CUBE, p)).register();
+    public static final ItemEntry<FromHatchetItem> ELASTIC_STRAND = CreateGarnished.REGISTRATE.item("elastic_strand", p -> new FromHatchetItem(EntityType.SLIME, false, p)).register();
+    public static final ItemEntry<FromHatchetItem> FIERY_ELASTIC_STRAND = CreateGarnished.REGISTRATE.item("fiery_elastic_strand", p -> new FromHatchetItem(EntityType.MAGMA_CUBE, false, p)).register();
     public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_GLAZED_MONUMENT_MEDLEY = CreateGarnished.REGISTRATE.item("incomplete_glazed_monument_medley", SequencedAssemblyItem::new).register();
     public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_SLLIMY = CreateGarnished.REGISTRATE.item("incomplete_sllimy", SequencedAssemblyItem::new).register();
     public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_FIERY_SLLIMY = CreateGarnished.REGISTRATE.item("incomplete_fiery_sllimy", SequencedAssemblyItem::new).register();
@@ -173,6 +176,31 @@ public class CreateGarnishedItems {
                                     false, false, true), 0.10F).build()))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.glazed_monument_medley"))
             .register();
+
+    public static final ItemEntry<Item> PUMPKIN_SPICY_FRITTERS = CreateGarnished.REGISTRATE.item("pumpkin_spicy_fritters", Item::new)
+            .properties(p -> p.stacksTo(16)
+                    .food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F)
+                            .effect(() -> new MobEffectInstance(CreateGarnishedStatusEffects.SOOTHING, 3600, 0), 1.0F).build())).register();
+    public static final ItemEntry<Item> CANDY_WRAPPING = CreateGarnished.REGISTRATE.item("candy_wrapping", Item::new)
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.candy_wrapping"))
+            .register();
+    public static final ItemEntry<Item> CORN_SYRUP_BOTTLE = CreateGarnished.REGISTRATE.item("corn_syrup_bottle", Item::new).register();
+    public static final ItemEntry<MysteriousVoltBottleItem> MYSTERIOUS_VOLT_BOTTLE = CreateGarnished.REGISTRATE.item("mysterious_volt_bottle", MysteriousVoltBottleItem::new)
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.mysterious_volt_bottle"))
+            .register();
+    public static final ItemEntry<WrappedCandyItem> WRAPPED_CANDY = CreateGarnished.REGISTRATE.item("wrapped_candy", WrappedCandyItem::new)
+            .properties(p -> p.stacksTo(16)
+                    .component(DataComponents.POTION_CONTENTS, PotionContents.EMPTY)
+                    .food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.6F).alwaysEdible().fast().build()))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.wrapped_candy"))
+            .register();
+    public static final ItemEntry<Item> SLIMY_COBWOB = CreateGarnished.REGISTRATE.item("slimy_cobwob", Item::new)
+            .properties(p -> p.stacksTo(8)
+                    .food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F)
+                            .effect(() -> new MobEffectInstance(MobEffects.WEAVING, 2400, 0), 0.5F)
+                            //.effect(() -> new MobEffectInstance(MobEffects.OOZING, 2400, 0), 0.5F)
+                            .build()))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.slimy_cobwob")).register();
 
     public static void register() {}
 

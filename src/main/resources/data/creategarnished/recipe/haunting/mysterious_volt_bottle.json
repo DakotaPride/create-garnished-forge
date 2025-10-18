@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "creategarnished:corn_syrup_bottle"
+    }
+  ],
+  "results": [
+    {
+      "id": "creategarnished:mysterious_volt_bottle"
+    }
+  ]
+}
