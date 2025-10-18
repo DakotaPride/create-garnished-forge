@@ -7,6 +7,7 @@ import net.dakotapride.garnished.registry.GarnishedTags;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -29,6 +30,7 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.GameRules;
@@ -95,7 +97,7 @@ public class HatchetToolItem extends DiggerItem {
     }
 
     @Override
-    public ItemStack applyEnchantments(ItemStack stack, List<EnchantmentInstance> enchantments) {
+    public @NotNull ItemStack applyEnchantments(ItemStack stack, List<EnchantmentInstance> enchantments) {
         return super.applyEnchantments(stack, enchantments);
     }
 
@@ -210,12 +212,23 @@ public class HatchetToolItem extends DiggerItem {
     }
 
     @Override
-    public boolean hurtEnemy(ItemStack pStack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
+    public boolean hurtEnemy(ItemStack stack, @NotNull LivingEntity target, @NotNull LivingEntity attacker) {
 //        pStack.hurtAndBreak(1, attacker, (entity) -> {
 //            entity.broadcastBreakEvent(EquipmentSlot.MAINHAND);
 //        });
 
-        pStack.hurtAndBreak(1, attacker, LivingEntity.getSlotForHand(attacker.getUsedItemHand()));
+        if (HatchetUtils.hasRejuvenate(attacker, stack) && attacker.getHealth() != attacker.getMaxHealth()) {
+            Registry<Enchantment> enchantmentRegistry = attacker.level().registryAccess().registryOrThrow(Registries.ENCHANTMENT);
+            int level = EnchantmentHelper.getEnchantmentLevel(enchantmentRegistry.getHolderOrThrow(HatchetUtils.rejuvenate), attacker);
+            // If max health is 20, then heal 4 health
+            // attacker.heal(attacker.getMaxHealth() * (0.20F * 1));
+
+            attacker.heal(attacker.getMaxHealth() * (0.10F * level));
+
+            stack.hurtAndBreak(1 + level, attacker, LivingEntity.getSlotForHand(attacker.getUsedItemHand()));
+        } else {
+            stack.hurtAndBreak(1, attacker, LivingEntity.getSlotForHand(attacker.getUsedItemHand()));
+        }
 
         return true;
     }

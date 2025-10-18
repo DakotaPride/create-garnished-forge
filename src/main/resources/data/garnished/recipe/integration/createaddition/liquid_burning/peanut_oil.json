@@ -5,11 +5,15 @@
       "modid": "createaddition"
     }
   ],
-  "type":"createaddition:liquid_burning",
-  "input": {
-    "fluid": "garnished:peanut_oil",
-    "amount": 1000
-  },
-  "burnTime": 24000,
+  "type": "createaddition:liquid_burning",
+  "burn_time": 24000,
+  "ingredients": [
+    {
+      "type": "fluid_tag",
+      "amount": 1000,
+      "fluid_tag": "garnished:peanut_oil"
+    }
+  ],
+  "results": [],
   "superheated": true
 }

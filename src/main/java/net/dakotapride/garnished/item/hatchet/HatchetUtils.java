@@ -42,6 +42,8 @@ public class HatchetUtils {
     static ResourceKey<Enchantment> quickStep = GarnishedEnchantments.QUICK_STEP;
     //
     static ResourceKey<Enchantment> leechingCurse = GarnishedEnchantments.LEECHING_CURSE;
+    //
+    static ResourceKey<Enchantment> rejuvenate = GarnishedEnchantments.REJUVENATE;
     // random shit
     public static final RandomSource random = RandomSource.create();
 
@@ -70,6 +72,10 @@ public class HatchetUtils {
 
     public static boolean hasLeechingCurse(LivingEntity entity, ItemStack stack) {
         return hasEnchantment(stack, GarnishedTags.LEECH_CURSE);
+    }
+
+    public static boolean hasRejuvenate(LivingEntity entity, ItemStack stack) {
+        return hasEnchantment(stack, GarnishedTags.REJUVENATE);
     }
 
     public static boolean hasQuickStep(LivingEntity entity, ItemStack stack) {
