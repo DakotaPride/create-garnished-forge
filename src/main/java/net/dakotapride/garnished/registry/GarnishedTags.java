@@ -26,6 +26,7 @@ public class GarnishedTags {
 	public static final TagKey<Fluid> FAN_FREEZING_PROCESSING_FLUID_TAG = garnishedTag("fan_processing_catalysts/freezing", Registries.FLUID);
 
 	public static final TagKey<Enchantment> FROST_WALKER = commonTag("frost_walker", Registries.ENCHANTMENT);
+	public static final TagKey<Enchantment> NOT_APPLICABLE_TO_HATCHETS = garnishedTag("not_applicable_to_hatchets", Registries.ENCHANTMENT);
 
 	public static final TagKey<Enchantment> RAVAGING = garnishedTag("ravaging", Registries.ENCHANTMENT);
 	public static final TagKey<Enchantment> SALVAGING = garnishedTag("salvaging", Registries.ENCHANTMENT);

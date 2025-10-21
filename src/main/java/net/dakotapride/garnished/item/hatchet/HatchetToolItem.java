@@ -93,13 +93,8 @@ public class HatchetToolItem extends DiggerItem {
         if (enchantment.getKey() == GarnishedEnchantments.LEECHING_CURSE)
             return true;
 
-        if (enchantment.getKey() == Enchantments.LOOTING)
-            return false;
-        if (enchantment.getKey() == Enchantments.SHARPNESS)
-            return false;
-        if (enchantment.getKey() == Enchantments.SMITE)
-            return false;
-        if (enchantment.getKey() == Enchantments.BANE_OF_ARTHROPODS)
+        // Strictly forbid these enchantments
+        if (enchantment.is(GarnishedTags.NOT_APPLICABLE_TO_HATCHETS))
             return false;
 
         return super.supportsEnchantment(stack, enchantment);
