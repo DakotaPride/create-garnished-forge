@@ -47,7 +47,7 @@ public class ReliquaryReincarnationsMobConditions extends MobConditions {
     public static void guardianReliquaryDrops(LivingEntity entity, LivingEntity attacker, DamageSource source) {
         if (ModIds.RELIQUARY.isLoaded())
             createDropConditions(entity, EntityType.GUARDIAN, attacker, ModItems.GUARDIAN_SPIKE.get(), config.guardianSpikeMaxCount.get(),
-                    config.chanceToDropGuardianSpike.get(), source, config.disableLesserGuardianDrops.get());
+                    config.chanceToDropGuardianSpike.get(), source, config.enableLesserGuardianDrops.get());
     }
 
     @EventBusSubscriber(modid = CreateGarnished.ID, bus = EventBusSubscriber.Bus.GAME)

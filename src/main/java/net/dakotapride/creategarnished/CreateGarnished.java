@@ -4,10 +4,12 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
+import net.dakotapride.creategarnished.entity.client.VoltfishRenderer;
 import net.dakotapride.creategarnished.particle.ElvenMysticalParticleType;
 import net.dakotapride.creategarnished.registry.*;
 import net.minecraft.client.particle.ExplodeParticle;
 import net.minecraft.client.particle.SpellParticle;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -63,6 +65,7 @@ public class CreateGarnished {
         CreateGarnishedParticles.register(modEventBus);
         CreateGarnishedStatusEffects.register(modEventBus);
         CreateGarnishedPotions.register(modEventBus);
+        CreateGarnishedEntityTypes.register(modEventBus);
 
         CreateGarnishedTriggers.register(modEventBus);
         CreateGarnishedStatisics.STATS.register(modEventBus);
@@ -112,7 +115,7 @@ public class CreateGarnished {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(CreateGarnishedEntityTypes.VOLTFISH.get(), VoltfishRenderer::new);
         }
 
         @SubscribeEvent

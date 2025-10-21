@@ -14,7 +14,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -77,7 +76,7 @@ public class PressurisedHatchetItem extends Item {
 
     @Override
     public float getAttackDamageBonus(Entity target, float damage, DamageSource damageSource) {
-        if (CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get())
+        if (CreateGarnishedConfigs.server().hatchet.enableShotgunAxe.get())
             return super.getAttackDamageBonus(target, damage, damageSource) + 6;
 
         return super.getAttackDamageBonus(target, damage, damageSource);
@@ -152,7 +151,7 @@ public class PressurisedHatchetItem extends Item {
     // -> CardboardSwordItem.cardboardSwordsCannotHurtYou
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void calculateKnockbackFromShotgun(AttackEntityEvent event) {
-        if (!CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get())
+        if (!CreateGarnishedConfigs.server().hatchet.enableShotgunAxe.get())
             return;
 
         Player attacker = event.getEntity();
@@ -184,14 +183,14 @@ public class PressurisedHatchetItem extends Item {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void consumeDurabilityOnBlockBreak(BlockEvent.BreakEvent event) {
-        if (!CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get())
+        if (!CreateGarnishedConfigs.server().hatchet.enableShotgunAxe.get())
             findAndDamagePressurisedHatchet(event.getPlayer());
         else shotgunAxeGoBrrrrButOW(event.getPlayer());
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void shotgun(BlockEvent.BreakEvent event) {
-        if (CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get() && event.getPlayer().getItemInHand(InteractionHand.MAIN_HAND).is(CreateGarnishedTags.HATCHETS)) {
+        if (CreateGarnishedConfigs.server().hatchet.enableShotgunAxe.get() && event.getPlayer().getItemInHand(InteractionHand.MAIN_HAND).is(CreateGarnishedTags.HATCHETS)) {
             if (event.getLevel() instanceof ServerLevel level && CreateGarnishedConfigs.client().allowShotgunSoundEvent.get()) {
                 level.playSound(null, event.getPos(), SoundEvents.ANVIL_LAND, event.getPlayer().getSoundSource(), 10.0F, 1.0F);
             }
@@ -200,7 +199,7 @@ public class PressurisedHatchetItem extends Item {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void shotgunAttack(AttackEntityEvent event) {
-        if (CreateGarnishedConfigs.server().hatchet.allowShotgunAxe.get() && event.getEntity().getMainHandItem().is(CreateGarnishedTags.HATCHETS)) {
+        if (CreateGarnishedConfigs.server().hatchet.enableShotgunAxe.get() && event.getEntity().getMainHandItem().is(CreateGarnishedTags.HATCHETS)) {
             if (event.getEntity().level() instanceof ServerLevel level && CreateGarnishedConfigs.client().allowShotgunSoundEvent.get()) {
                 level.playSound(null, event.getEntity().blockPosition(), SoundEvents.ANVIL_LAND, event.getEntity().getSoundSource(), 10.0F, 1.0F);
             }

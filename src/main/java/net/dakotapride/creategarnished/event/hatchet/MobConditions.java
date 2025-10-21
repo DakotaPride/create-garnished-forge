@@ -1,6 +1,5 @@
 package net.dakotapride.creategarnished.event.hatchet;
 
-import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.config.HatchetConfig;
 import net.dakotapride.creategarnished.item.PressurisedHatchetItem;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
@@ -23,6 +22,8 @@ import java.util.Random;
 
 public class MobConditions {
     public static HatchetConfig config = CreateGarnishedConfigs.server().hatchet;
+    public static boolean global = config.enableGlobalHatchetDrops.get();
+    public static boolean volt = config.enableVoltDrops.get();
 
     public static boolean accept(LivingEntity attacker) {
         return attacker.getMainHandItem().getItem() instanceof PressurisedHatchetItem || attacker.getMainHandItem().is(CreateGarnishedTags.HATCHETS);
@@ -52,7 +53,7 @@ public class MobConditions {
                                             int count,
                                             int chance,
                                             DamageSource source,
-                                            boolean disabled) {
+                                            boolean... disabled0) {
 
         EntityType<?> type = entity.getType();
 
@@ -72,7 +73,11 @@ public class MobConditions {
             chance = 100;
 
         int r0 = new Random().nextInt(1, count + 1);
-        if (type == matchType && !disabled && !(config.disableHatchetDrops.get())) {
+        boolean disabled1 = false;
+        for (boolean b : disabled0) {
+            disabled1 = b;
+        }
+        if (type == matchType && !disabled1 && !(config.enableHatchetDrops.get())) {
             if (r <= chance) {
                 entity.spawnAtLocation(new ItemStack(itemToDrop, r0));
                 if (attacker instanceof ServerPlayer player) {
@@ -90,7 +95,7 @@ public class MobConditions {
 
                 createSoundEvents(attacker);
             }
-            CreateGarnished.LOGGER.info("rolled random as {}, the chance is equal to {}, expecting to drop {}", r, chance, itemToDrop);
+            //CreateGarnished.LOGGER.info("rolled random as {}, the chance is equal to {}, expecting to drop {}", r, chance, itemToDrop);
         }
     }
 }

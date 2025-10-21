@@ -2,9 +2,6 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "item": "creategarnished:mysterious_volt_bottle"
-    },
-    {
       "item": "minecraft:sugar"
     },
     {

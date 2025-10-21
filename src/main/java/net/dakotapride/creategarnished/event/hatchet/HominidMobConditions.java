@@ -17,7 +17,7 @@ public class HominidMobConditions extends MobConditions {
 
 
     public static void applyConditions(LivingEntity entity, LivingEntity attacker, DamageSource source) {
-        if (!config.disableZombieDrops.get()) {
+        if (!config.enableZombieDrops.get()) {
             createHominidDropConditions(entity, HominidEntityCreator.FAMISHED.get(), attacker, Items.BONE, 2, 15, source);
             createHominidDropConditions(entity, HominidEntityCreator.FAMISHED.get(), attacker, Items.ROTTEN_FLESH, 2, 45, source);
             createHominidDropConditions(entity, HominidEntityCreator.FAMISHED.get(), attacker, Items.LEATHER, 2, 35, source);
@@ -32,7 +32,7 @@ public class HominidMobConditions extends MobConditions {
             createHominidDropConditions(entity, HominidEntityCreator.MELLIFIED.get(), attacker, Items.HONEYCOMB, 2, 35, source);
         }
 
-        if (!config.disableSkeletonDrops.get()) {
+        if (!config.enableSkeletonDrops.get()) {
             createHominidDropConditions(entity, HominidEntityCreator.FOSSILISED.get(), attacker, Items.STONE, 4, 65, source);
         }
 
