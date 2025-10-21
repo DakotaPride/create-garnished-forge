@@ -1,24 +1,16 @@
 package net.dakotapride.garnished.item.hatchet;
 
-import com.google.common.collect.ImmutableMap;
-import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.dakotapride.garnished.registry.GarnishedEnchantments;
 import net.dakotapride.garnished.registry.GarnishedTags;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -33,49 +25,18 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParam;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 
 public class HatchetToolItem extends DiggerItem {
-    protected static final Map<Block, Block> STRIPPABLES =
-            (new ImmutableMap.Builder<Block, Block>())
-                    .put(Blocks.OAK_WOOD, Blocks.STRIPPED_OAK_WOOD)
-                    .put(Blocks.OAK_LOG, Blocks.STRIPPED_OAK_LOG)
-                    .put(Blocks.DARK_OAK_WOOD, Blocks.STRIPPED_DARK_OAK_WOOD)
-                    .put(Blocks.DARK_OAK_LOG, Blocks.STRIPPED_DARK_OAK_LOG)
-                    .put(Blocks.ACACIA_WOOD, Blocks.STRIPPED_ACACIA_WOOD)
-                    .put(Blocks.ACACIA_LOG, Blocks.STRIPPED_ACACIA_LOG)
-                    .put(Blocks.BIRCH_WOOD, Blocks.STRIPPED_BIRCH_WOOD)
-                    .put(Blocks.BIRCH_LOG, Blocks.STRIPPED_BIRCH_LOG)
-                    .put(Blocks.JUNGLE_WOOD, Blocks.STRIPPED_JUNGLE_WOOD)
-                    .put(Blocks.JUNGLE_LOG, Blocks.STRIPPED_JUNGLE_LOG)
-                    .put(Blocks.SPRUCE_WOOD, Blocks.STRIPPED_SPRUCE_WOOD)
-                    .put(Blocks.SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG)
-                    .put(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM)
-                    .put(Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE)
-                    .put(Blocks.CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM)
-                    .put(Blocks.CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE)
-                    .put(Blocks.MANGROVE_WOOD, Blocks.STRIPPED_MANGROVE_WOOD)
-                    .put(Blocks.MANGROVE_LOG, Blocks.STRIPPED_MANGROVE_LOG).build();
 
     public HatchetToolItem(Tier tier, Properties properties) {
         super(tier, GarnishedTags.MINEABLE_WITH_HATCHET, properties);
@@ -103,42 +64,42 @@ public class HatchetToolItem extends DiggerItem {
 
     @Override
     public boolean supportsEnchantment(ItemStack stack, Holder<Enchantment> enchantment) {
-        if (enchantment == Enchantments.UNBREAKING)
+        if (enchantment.getKey() == Enchantments.UNBREAKING)
             return true;
-        if (enchantment == Enchantments.VANISHING_CURSE)
+        if (enchantment.getKey() == Enchantments.VANISHING_CURSE)
             return true;
-        if (enchantment == Enchantments.MENDING)
+        if (enchantment.getKey() == Enchantments.MENDING)
             return true;
-        if (enchantment == Enchantments.EFFICIENCY)
+        if (enchantment.getKey() == Enchantments.EFFICIENCY)
             return true;
-        if (enchantment == Enchantments.FORTUNE)
+        if (enchantment.getKey() == Enchantments.FORTUNE)
             return true;
-        if (enchantment == Enchantments.FIRE_ASPECT)
+        if (enchantment.getKey() == Enchantments.FIRE_ASPECT)
             return true;
-        if (enchantment == Enchantments.KNOCKBACK)
+        if (enchantment.getKey() == Enchantments.KNOCKBACK)
             return true;
-        if (enchantment == Enchantments.SILK_TOUCH)
+        if (enchantment.getKey() == Enchantments.SILK_TOUCH)
             return true;
-        if (enchantment == GarnishedEnchantments.SALVAGING)
+        if (enchantment.getKey() == GarnishedEnchantments.SALVAGING)
             return true;
-        if (enchantment == GarnishedEnchantments.RAVAGING)
+        if (enchantment.getKey() == GarnishedEnchantments.RAVAGING)
             return true;
-        if (enchantment == GarnishedEnchantments.STRIKING)
+        if (enchantment.getKey() == GarnishedEnchantments.STRIKING)
             return true;
-        if (enchantment == GarnishedEnchantments.QUICK_STEP)
+        if (enchantment.getKey() == GarnishedEnchantments.QUICK_STEP)
             return true;
-        if (enchantment == GarnishedEnchantments.REJUVENATE)
+        if (enchantment.getKey() == GarnishedEnchantments.REJUVENATE)
             return true;
-        if (enchantment == GarnishedEnchantments.LEECHING_CURSE)
+        if (enchantment.getKey() == GarnishedEnchantments.LEECHING_CURSE)
             return true;
 
-        if (enchantment == Enchantments.LOOTING)
+        if (enchantment.getKey() == Enchantments.LOOTING)
             return false;
-        if (enchantment == Enchantments.SHARPNESS)
+        if (enchantment.getKey() == Enchantments.SHARPNESS)
             return false;
-        if (enchantment == Enchantments.SMITE)
+        if (enchantment.getKey() == Enchantments.SMITE)
             return false;
-        if (enchantment == Enchantments.BANE_OF_ARTHROPODS)
+        if (enchantment.getKey() == Enchantments.BANE_OF_ARTHROPODS)
             return false;
 
         return super.supportsEnchantment(stack, enchantment);
@@ -183,18 +144,6 @@ public class HatchetToolItem extends DiggerItem {
         } else {
             return InteractionResult.PASS;
         }
-    }
-
-    @Nullable
-    public static BlockState getAxeStrippingState(BlockState originalState) {
-        Block block = STRIPPABLES.get(originalState.getBlock());
-        return block != null ? block.defaultBlockState().setValue(RotatedPillarBlock.AXIS, originalState.getValue(RotatedPillarBlock.AXIS)) : null;
-    }
-
-    private Optional<BlockState> getStripped(BlockState pUnstrippedState) {
-        return Optional.ofNullable(STRIPPABLES.get(pUnstrippedState.getBlock())).map((block) -> {
-            return block.defaultBlockState().setValue(RotatedPillarBlock.AXIS, pUnstrippedState.getValue(RotatedPillarBlock.AXIS));
-        });
     }
 
      @Override
