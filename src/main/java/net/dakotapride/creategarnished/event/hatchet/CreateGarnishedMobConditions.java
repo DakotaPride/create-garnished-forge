@@ -147,8 +147,9 @@ public class CreateGarnishedMobConditions extends MobConditions {
         createDropConditions(entity, EntityType.CAVE_SPIDER, attacker, Items.STRING, config.extraStringMaxCount.get(),
                 config.chanceToDropExtraString.get(), source, config.enableCaveSpiderDrops.get(), s, global);
 
-        createDropConditions(entity, PastelEntityTypes.ERASER.get(), attacker, Items.STRING, config.extraStringMaxCount.get(),
-                config.chanceToDropExtraString.get(), source, config.enableGlobalHatchetDrops.get(), s, ModIds.PASTEL.isLoaded());
+        if (ModIds.PASTEL.isLoaded())
+            createDropConditions(entity, PastelEntityTypes.ERASER.get(), attacker, Items.STRING, config.extraStringMaxCount.get(),
+                config.chanceToDropExtraString.get(), source, config.enableGlobalHatchetDrops.get(), s);
     }
 
     private static void registerSquidDropConditions(LivingEntity entity, LivingEntity attacker, DamageSource source) {

@@ -54,6 +54,6 @@ public class HominidMobConditions extends MobConditions {
     }
 
     public static void createHominidDropConditions(LivingEntity entity, EntityType<?> entityType, LivingEntity attacker, Item item, int maxCount, int chance, DamageSource source) {
-        createDropConditions(entity, entityType, attacker, item, maxCount, chance, source, !ModIds.HOMINID.isLoaded());
+        createDropConditions(entity, entityType, attacker, item, maxCount, chance, source, ModIds.HOMINID.isLoaded());
     }
 }

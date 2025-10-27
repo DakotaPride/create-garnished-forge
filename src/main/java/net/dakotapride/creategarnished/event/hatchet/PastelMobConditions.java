@@ -50,6 +50,6 @@ public class PastelMobConditions extends MobConditions {
     }
 
     public static void createPastelDropConditions(LivingEntity entity, EntityType<?> entityType, LivingEntity attacker, Item item, int maxCount, int chance, DamageSource source) {
-        createDropConditions(entity, entityType, attacker, item, maxCount, chance, source, !ModIds.PASTEL.isLoaded());
+        createDropConditions(entity, entityType, attacker, item, maxCount, chance, source, ModIds.PASTEL.isLoaded());
     }
 }

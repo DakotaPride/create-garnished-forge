@@ -65,6 +65,6 @@ public class ReliquaryReincarnationsMobConditions extends MobConditions {
     }
 
     public static void createReliquaryReincarnationsDropConditions(LivingEntity entity, EntityType<?> entityType, LivingEntity attacker, Item item, int maxCount, int chance, DamageSource source) {
-        createDropConditions(entity, entityType, attacker, item, maxCount, chance, source, !ModIds.RELIQUARY.isLoaded());
+        createDropConditions(entity, entityType, attacker, item, maxCount, chance, source, ModIds.RELIQUARY.isLoaded());
     }
 }
