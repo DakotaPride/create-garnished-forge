@@ -202,6 +202,14 @@ public class CreateGarnishedItems {
                             .build()))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.slimy_cobwob")).register();
 
+    public static final ItemEntry<Item> VOLTFISH_MEAT = CreateGarnished.REGISTRATE.item("voltfish_meat", Item::new).register();
+    public static final ItemEntry<Item> COOKED_VOLTFISH_MEAT = CreateGarnished.REGISTRATE.item("cooked_voltfish_meat", Item::new).register();
+    public static final ItemEntry<Item> TOUGHENED_SCALES = CreateGarnished.REGISTRATE.item("toughened_scales", Item::new).register();
+    public static final ItemEntry<Item> VOLATILE_ORGAN = CreateGarnished.REGISTRATE.item("volatile_organ", Item::new).register();
+
+    public static final ItemEntry<Item> POUND_CAKE_SLICE = CreateGarnished.REGISTRATE.item("pound_cake_slice", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).fast().build())).register();
+
     public static void register() {}
 
 }

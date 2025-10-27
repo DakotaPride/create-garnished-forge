@@ -16,6 +16,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CreateGarnishedStatusEffects {
     public static DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, CreateGarnished.ID);
+
     public static final DeferredHolder<MobEffect, MobEffect> NUT_ALLERGY = register("nut_allergy",
             (new NutAllergyMobEffect(MobEffectCategory.HARMFUL, 0xA5784B))
                     .addAttributeModifier(Attributes.ATTACK_DAMAGE, CreateGarnished.asResource("effect.nut_allergy"),

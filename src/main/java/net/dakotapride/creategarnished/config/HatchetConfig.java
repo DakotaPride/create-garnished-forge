@@ -17,53 +17,53 @@ public class HatchetConfig extends ConfigBase {
     // Setting chance to 0 disables the individual drop without disabling the entire group of drops
 
     public final ConfigGroup zombies = group(0, "zombies", "Controls drops from the mobs tagged as zombies.");
-    public ConfigBool enableZombieDrops = b(false, "enableZombieDrops", Comments.enableZombieDrops);
+    public ConfigBool enableZombieDrops = b(true, "enableZombieDrops", Comments.enableZombieDrops);
     public ConfigInt chanceToDropLeather = i(65, 1, 100, "chanceToDropLeather", Comments.chanceToDropLeather);
     public ConfigInt leatherMaxCount = i(2, 1, "leatherMaxCount", Comments.leatherMaxCount);
     public final ConfigGroup husk = group(1, "husk", "Controls drops from the Husk mob.");
-    public ConfigBool enableHuskDrops = b(false, "enableHuskDrops", Comments.enableHuskDrops);
+    public ConfigBool enableHuskDrops = b(true, "enableHuskDrops", Comments.enableHuskDrops);
     public ConfigInt chanceToDropGoldNugget = i(5, 1, 100, "chanceToDropGoldNugget", Comments.chanceToDropGoldNugget);
     public ConfigInt goldNuggetMaxCount = i(3, 1, "goldNuggetMaxCount", Comments.goldNuggetMaxCount);
     public final ConfigGroup drowned = group(1, "drowned", "Controls drops from the Drowned mob.");
-    public ConfigBool enableDrownedDrops = b(false, "enableDrownedDrops", Comments.enableDrownedDrops);
+    public ConfigBool enableDrownedDrops = b(true, "enableDrownedDrops", Comments.enableDrownedDrops);
     public ConfigInt chanceToDropCopperNugget = i(5, 1, 100, "chanceToDropCopperNugget", Comments.chanceToDropCopperNugget);
     public ConfigInt copperNuggetMaxCount = i(3, 1, "copperNuggetMaxCount", Comments.copperNuggetMaxCount);
 
     public final ConfigGroup skeletons = group(0, "skeletons", "Controls drops from the mobs tagged as skeletons.");
-    public ConfigBool enableSkeletonDrops = b(false, "enableSkeletonDrops", Comments.enableSkeletonDrops);
+    public ConfigBool enableSkeletonDrops = b(true, "enableSkeletonDrops", Comments.enableSkeletonDrops);
     public ConfigInt chanceToDropBoneMeal = i(45, 1, 100, "chanceToDropBoneMeal", Comments.chanceToDropBoneMeal);
     public ConfigInt boneMealMaxCount = i(2, 1, "boneMealMaxCount", Comments.boneMealMaxCount);
     public final ConfigGroup bogged = group(1, "bogged", "Controls drops from the Bogged mob.");
-    public ConfigBool enableBoggedDrops = b(false, "enableBoggedDrops", Comments.enableBoggedDrops);
+    public ConfigBool enableBoggedDrops = b(true, "enableBoggedDrops", Comments.enableBoggedDrops);
     public ConfigInt chanceToDropMossBlock = i(20, 1, 100, "chanceToDropMossBlock", Comments.chanceToDropMossBlock);
     public ConfigInt mossBlockMaxCount = i(3, 1, "mossBlockMaxCount", Comments.mossBlockMaxCount);
     public final ConfigGroup stray = group(1, "stray", "Controls drops from the Stray mob.");
-    public ConfigBool enableStrayDrops = b(false, "enableStrayDrops", Comments.enableStrayDrops);
+    public ConfigBool enableStrayDrops = b(true, "enableStrayDrops", Comments.enableStrayDrops);
     public final ConfigGroup witherSkeleton = group(1, "witherSkeleton", "Controls drops from the Wither Skeleton mob.");
-    public ConfigBool enableWitherSkeletonDrops = b(false, "enableWitherSkeletonDrops", Comments.enableWitherSkeletonDrops);
+    public ConfigBool enableWitherSkeletonDrops = b(true, "enableWitherSkeletonDrops", Comments.enableWitherSkeletonDrops);
     public ConfigInt chanceToDropExtraCoal = i(20, 1, 100, "chanceToDropExtraCoal", Comments.chanceToDropExtraCoal);
     public ConfigInt extraCoalMaxCount = i(2, 1, "extraCoalMaxCount", Comments.extraCoalMaxCount);
 
     public final ConfigGroup gelatinousCreatures = group(0, "gelatinousCreatures", "Controls drops from mobs tagged as gelatinous creatures.");
-    public ConfigBool enableGelatinousCreatureDrops = b(false, "enableGelatinousCreatureDrops", Comments.enableGelatinousCreatureDrops);
+    public ConfigBool enableGelatinousCreatureDrops = b(true, "enableGelatinousCreatureDrops", Comments.enableGelatinousCreatureDrops);
     public ConfigInt chanceToDropElasticStrand = i(25, 1, 100, "chanceToDropElasticStrand", Comments.chanceToDropElasticStrand);
     public ConfigInt elasticStrandMaxCount = i(2, 1, "elasticStrandMaxCount", Comments.elasticStrandMaxCount);
     public final ConfigGroup slime = group(1, "slime", "Controls drops from the Slime mob.");
-    public ConfigBool enableSlimeDrops = b(false, "enableSlimeDrops", Comments.enableSlimeDrops);
+    public ConfigBool enableSlimeDrops = b(true, "enableSlimeDrops", Comments.enableSlimeDrops);
     public ConfigInt chanceToDropExtraSlimeBalls = i(15, 1, 100, "chanceToDropSlimeBall", Comments.chanceToDropExtraSlimeBalls);
     public ConfigInt slimeBallMaxCount = i(2, 1, "slimeBallMaxCount", Comments.slimeBallMaxCount);
     public final ConfigGroup magmaCube = group(1, "magmaCube", "Controls drops from the Magma Cube mob.");
-    public ConfigBool enableMagmaCubeDrops = b(false, "enableMagmaCubeDrops", Comments.enableMagmaCubeDrops);
+    public ConfigBool enableMagmaCubeDrops = b(true, "enableMagmaCubeDrops", Comments.enableMagmaCubeDrops);
     public ConfigInt chanceToDropExtraMagmaCream = i(15, 1, 100, "chanceToDropExtraMagmaCream", Comments.chanceToDropExtraMagmaCream);
     public ConfigInt magmaCreamMaxCount = i(2, 1, "magmaCreamMaxCount", Comments.magmaCreamMaxCount);
 
     public final ConfigGroup shulker = group(0, "shulker", "Controls drops from the Shulker mob.");
-    public ConfigBool enableShulkerDrops = b(false, "enableShulkerDrops", Comments.enableShulkerDrops);
+    public ConfigBool enableShulkerDrops = b(true, "enableShulkerDrops", Comments.enableShulkerDrops);
     public ConfigInt chanceToDropExtraShulkerShells = i(15, 1, 100, "chanceToDropExtraShulkerShells", Comments.chanceToDropExtraShulkerShells);
     public ConfigInt shulkerShellMaxCount = i(1, 1, "shulkerShellMaxCount", Comments.shulkerShellMaxCount);
 
     public final ConfigGroup witch = group(0, "witch", "Controls drops from the Witch mob.");
-    public ConfigBool enableWitchDrops = b(false, "enableWitchDrops", Comments.enableWitchDrops);
+    public ConfigBool enableWitchDrops = b(true, "enableWitchDrops", Comments.enableWitchDrops);
     public ConfigInt chanceToDropExtraGlowstoneDust = i(15, 1, 100, "chanceToDropExtraGlowstoneDust", Comments.chanceToDropExtraGlowstoneDust);
     public ConfigInt glowstoneDustMaxCount = i(2, 1, "glowstoneDustMaxCount", Comments.glowstoneDustMaxCount);
     public ConfigInt chanceToDropExtraRedstoneDust = i(0, 1, 100, "chanceToDropExtraRedstoneDust", Comments.chanceToDropExtraRedstoneDust);
@@ -72,17 +72,17 @@ public class HatchetConfig extends ConfigBase {
     public ConfigInt netherWartMaxCount = i(1, 1, "netherWartMaxCount", Comments.netherWartMaxCount);
 
     public final ConfigGroup phantom = group(0, "phantom", "Controls drops from the Phantom mob.");
-    public ConfigBool enablePhantomDrops = b(false, "enablePhantomDrops", Comments.enablePhantomDrops);
+    public ConfigBool enablePhantomDrops = b(true, "enablePhantomDrops", Comments.enablePhantomDrops);
     public ConfigInt chanceToDropExtraPhantomMembranes = i(25, 1, 100, "chanceToDropExtraPhantomMembranes", Comments.chanceToDropExtraPhantomMembranes);
     public ConfigInt phantomMembraneMaxCount = i(1, 1, "phantomMembraneMaxCount", Comments.phantomMembraneMaxCount);
 
     public final ConfigGroup ravager = group(0, "ravager", "Controls drops from the Ravager mob.");
-    public ConfigBool enableRavagerDrops = b(false, "enableRavagerDrops", Comments.enableRavagerDrops);
+    public ConfigBool enableRavagerDrops = b(true, "enableRavagerDrops", Comments.enableRavagerDrops);
     public ConfigInt chanceToDropZincNugget = i(15, 1, 100, "chanceToDropZincNugget", Comments.chanceToDropZincNugget);
     public ConfigInt zincNuggetMaxCount = i(1, 1, "zincNuggetMaxCount", Comments.zincNuggetMaxCount);
 
     public final ConfigGroup sniffer = group(0, "sniffer", "Controls drops from the Sniffer mob.");
-    public ConfigBool enableSnifferDrops = b(false, "enableSnifferDrops", Comments.enableSnifferDrops);
+    public ConfigBool enableSnifferDrops = b(true, "enableSnifferDrops", Comments.enableSnifferDrops);
     public ConfigInt chanceToDropSnifferFluff = i(80, 1, 100, "chanceToDropSnifferFluff", Comments.chanceToDropSnifferFluff);
     public ConfigInt snifferFluffMaxCount = i(4, 1, "snifferFluffMaxCount", Comments.snifferFluffMaxCount);
 
@@ -91,59 +91,62 @@ public class HatchetConfig extends ConfigBase {
     public ConfigInt prismarineShardMaxCount = i(4, 1, "prismarineShardMaxCount", Comments.prismarineShardMaxCount);
     public ConfigInt chanceToDropExtraPrismarineCrystals = i(25, 1, 100, "chanceToDropExtraPrismarineCrystals", Comments.chanceToDropExtraPrismarineCrystals);
     public ConfigInt prismarineCrystalsMaxCount = i(2, 1, "prismarineCrystalsMaxCount", Comments.prismarineCrystalsMaxCount);
-    public ConfigBool enableGuardianDrops = b(false, "enableGuardianDrops", Comments.enableGuardianDrops);
+    public ConfigBool enableGuardianDrops = b(true, "enableGuardianDrops", Comments.enableGuardianDrops);
     public final ConfigGroup lesserGuardian = group(1, "lesserGuardian", "Controls drops from the regular Guardian mob.");
-    public ConfigBool enableLesserGuardianDrops = b(false, "enableLesserGuardianDrops", Comments.enableLesserGuardianDrops);
+    public ConfigBool enableLesserGuardianDrops = b(true, "enableLesserGuardianDrops", Comments.enableLesserGuardianDrops);
     public ConfigInt chanceToDropGuardianSpike = i(70, 1, 100, "chanceToDropGuardianSpike", Comments.chanceToDropGuardianSpike);
     public ConfigInt guardianSpikeMaxCount = i(2, 1, "guardianSpikeMaxCount", Comments.guardianSpikeMaxCount);
     public final ConfigGroup elderGuardian = group(1, "elderGuardian", "Controls drops from the Elder Guardian mob.");
-    public ConfigBool enableElderGuardianDrops = b(false, "enableElderGuardianDrops", Comments.enableElderGuardianDrops);
+    public ConfigBool enableElderGuardianDrops = b(true, "enableElderGuardianDrops", Comments.enableElderGuardianDrops);
     public ConfigInt chanceToDropElderGuardianSpike = i(70, 1, 100, "chanceToDropElderGuardianSpike", Comments.chanceToDropElderGuardianSpike);
     public ConfigInt elderGuardianSpikeMaxCount = i(2, 1, "elderGuardianSpikeMaxCount", Comments.elderGuardianSpikeMaxCount);
 
     public final ConfigGroup creeper = group(0, "creeper", "Controls drops from the Creeper mob.");
-    public ConfigBool enableCreeperDrops = b(false, "enableCreeperDrops", Comments.enableCreeperDrops);
+    public ConfigBool enableCreeperDrops = b(true, "enableCreeperDrops", Comments.enableCreeperDrops);
     public ConfigInt chanceToDropGunpowder = i(40, 1, 100, "chanceToDropGunpowder", Comments.chanceToDropExtraGunpowder);
     public ConfigInt gunpowderMaxCount = i(4, 1, "gunpowderMaxCount", Comments.extraGunpowderMaxCount);
     public final ConfigGroup ghast = group(0, "ghast", "Controls drops from the Ghast mob.");
-    public ConfigBool enableGhastDrops = b(false, "enableGhastDrops", Comments.enableGhastDrops);
+    public ConfigBool enableGhastDrops = b(true, "enableGhastDrops", Comments.enableGhastDrops);
     public ConfigInt chanceToDropExtraGhastTear = i(40, 1, 100, "chanceToDropGhastTear", Comments.chanceToDropExtraGhastTear);
     public ConfigInt extraGhastTearMaxCount = i(1, 1, "ghastTearMaxCount", Comments.extraGhastTearMaxCount);
 
     public final ConfigGroup breeze = group(0, "breeze", "Controls drops from the Breeze mob.");
-    public ConfigBool enableBreezeDrops = b(false, "enableBreezeDrops", Comments.enableBreezeDrops);
+    public ConfigBool enableBreezeDrops = b(true, "enableBreezeDrops", Comments.enableBreezeDrops);
     public ConfigInt chanceToDropExtraBreezeRod = i(40, 1, 100, "chanceToDropExtraBreezeRod", Comments.chanceToDropExtraBreezeRod);
     public ConfigInt extraBreezeRodMaxCount = i(1, 1, "extraBreezeRodMaxCount", Comments.extraBreezeRodMaxCount);
 
     public final ConfigGroup blaze = group(0, "blaze", "Controls drops from the Blaze mob.");
-    public ConfigBool enableBlazeDrops = b(false, "enableBlazeDrops", Comments.enableBlazeDrops);
+    public ConfigBool enableBlazeDrops = b(true, "enableBlazeDrops", Comments.enableBlazeDrops);
     public ConfigInt chanceToDropExtraBlazeRod = i(40, 1, 100, "chanceToDropExtraBlazeRod", Comments.chanceToDropExtraBlazeRod);
     public ConfigInt extraBlazeRodMaxCount = i(1, 1, "extraBlazeRodMaxCount", Comments.extraBlazeRodMaxCount);
 
     public final ConfigGroup enderman = group(0, "enderman", "Controls drops from the Enderman mob.");
-    public ConfigBool enableEndermanDrops = b(false, "enableEndermanDrops", Comments.enableEndermanDrops);
+    public ConfigBool enableEndermanDrops = b(true, "enableEndermanDrops", Comments.enableEndermanDrops);
     public ConfigInt chanceToDropExtraEnderPearl = i(40, 1, 100, "chanceToDropExtraEnderPearl", Comments.chanceToDropExtraEnderPearl);
     public ConfigInt extraEnderPearlMaxCount = i(1, 1, "extraEnderPearlMaxCount", Comments.extraEnderPearlMaxCount);
 
     public final ConfigGroup allSquids = group(0, "allSquids", "Controls drops from squid mobs.");
-    public ConfigBool enableAllSquidDrops = b(false, "enableAllSquidDrops", Comments.enableAllSquidDrops);
+    public ConfigBool enableAllSquidDrops = b(true, "enableAllSquidDrops", Comments.enableAllSquidDrops);
     public final ConfigGroup squid = group(1, "squid", "Controls drops from the Squid mob.");
-    public ConfigBool enableSquidDrops = b(false, "enableSquidDrops", Comments.enableSquidDrops);
+    public ConfigBool enableSquidDrops = b(true, "enableSquidDrops", Comments.enableSquidDrops);
     public ConfigInt chanceToDropExtraInkSac = i(40, 1, 100, "chanceToDropExtraInkSac", Comments.chanceToDropExtraInkSac);
     public ConfigInt extraInkSacMaxCount = i(4, 1, "extraInkSacMaxCount", Comments.extraInkSacMaxCount);
     public final ConfigGroup glowSquid = group(1, "glowSquid", "Controls drops from the Glow Squid mob.");
-    public ConfigBool enableGlowSquidDrops = b(false, "enableGlowSquidDrops", Comments.enableGlowSquidDrops);
+    public ConfigBool enableGlowSquidDrops = b(true, "enableGlowSquidDrops", Comments.enableGlowSquidDrops);
     public ConfigInt chanceToDropExtraGlowInkSac = i(40, 1, 100, "chanceToDropExtraGlowInkSac", Comments.chanceToDropExtraGlowInkSac);
     public ConfigInt extraGlowInkSacMaxCount = i(1, 1, "extraGlowInkSacMaxCount", Comments.extraGlowInkSacMaxCount);
 
     public final ConfigGroup allSpiders = group(0, "allSpiders", "Controls drops from all spider mobs.");
-    public ConfigBool enableAllSpiderDrops = b(false, "enableAllSpiderDrops", Comments.enableAllSpiderDrops);
+    public ConfigBool enableAllSpiderDrops = b(true, "enableAllSpiderDrops", Comments.enableAllSpiderDrops);
     public ConfigInt chanceToDropExtraString = i(40, 1, 100, "chanceToDropExtraString", Comments.chanceToDropExtraString);
     public ConfigInt extraStringMaxCount = i(4, 1, "extraStringMaxCount", Comments.extraStringMaxCount);
     public final ConfigGroup spider = group(1, "spider", "Controls drops from the Spider mob.");
-    public ConfigBool enableSpiderDrops = b(false, "enableSpiderDrops", Comments.enableSpiderDrops);
+    public ConfigBool enableSpiderDrops = b(true, "enableSpiderDrops", Comments.enableSpiderDrops);
     public final ConfigGroup caveSpider = group(1, "caveSpider", "Controls drops from the Cave Spider mob.");
-    public ConfigBool enableCaveSpiderDrops = b(false, "enableCaveSpiderDrops", Comments.enableCaveSpiderDrops);
+    public ConfigBool enableCaveSpiderDrops = b(true, "enableCaveSpiderDrops", Comments.enableCaveSpiderDrops);
+
+    public final ConfigGroup anomalies = group(0, "anomalies", "Controls drops from all anomaly mobs.");
+    public ConfigBool enableVoltfishAnomaly = b(true, "enableVoltfishAnomaly", Comments.enableVoltfishAnomaly);
 
     @Override
     public @NotNull String getName() {
@@ -154,9 +157,9 @@ public class HatchetConfig extends ConfigBase {
         static String enableHatchetDrops = "Enables special drops provided by hatchets.";
         static String enableGlobalHatchetDrops = "Enables special drops provided by hatchets from groups of mobs.";
         static String maxPressurisedHatchetActions = "Amount of free Pressurised Hatchet actions provided by one filled Copper Backtank. Set to 0 makes Pressurised Hatchets unbreakable";
-        static String enableDropsFromBabyMobs = "Allows additional or unique drops to also be obtained through baby variant mobs. (how DARE you)";
-        static String enableVoltDrops = "Allows for voltified items to drop";
-        static String enableShotgunAxe = "Allows for extra... 'functionality', if you will";
+        static String enableDropsFromBabyMobs = "Enables additional or unique drops to also be obtained through baby variant mobs. (how DARE you)";
+        static String enableVoltDrops = "Enables voltified items to drop";
+        static String enableShotgunAxe = "Enables extra... 'functionality', if you will";
 
         static String enableZombieDrops = "Enables the special item drops from mobs tagged as zombies upon defeat.";
         static String chanceToDropLeather = "The chance to drop leather upon defeat.";
@@ -270,5 +273,7 @@ public class HatchetConfig extends ConfigBase {
         static String enableElderGuardianDrops = "Enables the special item drops from elder guardians upon defeat.";
         static String chanceToDropElderGuardianSpike = "The chance to drop elder guardian spikes upon defeat.";
         static String elderGuardianSpikeMaxCount = "Max count for elder guardian spikes to drop upon defeat.";
+
+        static String enableVoltfishAnomaly = "Enables the occurrence of a voltfish being spawned after defeating certain fish.";
     }
 }

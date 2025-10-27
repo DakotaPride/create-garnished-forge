@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "creategarnished:pressurised_hatchet"
+    "#c:tools/hatchets"
   ]
 }

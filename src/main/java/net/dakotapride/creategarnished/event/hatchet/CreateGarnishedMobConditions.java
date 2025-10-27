@@ -3,6 +3,7 @@ package net.dakotapride.creategarnished.event.hatchet;
 import com.simibubi.create.AllItems;
 import earth.terrarium.pastel.entity.PastelEntityTypes;
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.registry.CreateGarnishedEntityTypes;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.dakotapride.creategarnished.util.ModIds;
 import net.minecraft.world.damagesource.DamageSource;
@@ -42,6 +43,8 @@ public class CreateGarnishedMobConditions extends MobConditions {
     }
 
     public static void applyConditions(LivingEntity entity, LivingEntity attacker, DamageSource source) {
+        createVoltStruckEffects(entity, EntityType.COD, CreateGarnishedEntityTypes.VOLTFISH.get(), attacker, config.enableVoltfishAnomaly.get());
+
         registerZombieDropConditions(entity, attacker, source);
         registerSkeletonDropConditions(entity, attacker, source);
         registerGelatinousCreatureDropConditions(entity, attacker, source);

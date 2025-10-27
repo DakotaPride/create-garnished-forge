@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:crystalline_garlic_bulb"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "creategarnished:minced_crystalline_garlic"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

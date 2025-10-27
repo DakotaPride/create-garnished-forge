@@ -1,6 +1,5 @@
 package net.dakotapride.creategarnished.mixin;
 
-import net.createmod.catnip.annotations.Environment;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.registry.CreateGarnishedStatusEffects;
 import net.minecraft.client.Minecraft;
@@ -8,14 +7,15 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-
-@Environment(Environment.EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 @Mixin(value = Gui.class, remap = false)
 public class GuiMixin {
 

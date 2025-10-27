@@ -5,10 +5,10 @@
       "item": "creategarnished:crystalline_garlic_bulb"
     }
   ],
-  "processing_time": 200,
+  "processing_time": 600,
   "results": [
     {
-      "count": 2,
+      "count": 4,
       "item": {
         "id": "creategarnished:minced_crystalline_garlic"
       }

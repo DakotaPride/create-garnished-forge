@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:pound_cake"
+    }
+  ],
+  "processing_time": 800,
+  "results": [
+    {
+      "count": 13,
+      "item": {
+        "id": "creategarnished:pound_cake_slice"
+      }
+    }
+  ]
+}
