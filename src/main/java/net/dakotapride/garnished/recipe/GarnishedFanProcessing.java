@@ -17,8 +17,6 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -31,8 +29,8 @@ import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 import java.util.List;
-import java.util.Optional;
 
+@SuppressWarnings("unused")
 public class GarnishedFanProcessing {
     public static final DeferredRegister<FanProcessingType> FAN_PROCESSING_TYPES = DeferredRegister.create(CreateBuiltInRegistries.FAN_PROCESSING_TYPE, CreateGarnished.ID);
 
@@ -55,9 +53,6 @@ public class GarnishedFanProcessing {
     public static final DeferredHolder<FanProcessingType, BrownDyeBlowingFanProcessingType> BROWN_DYE_BLOWING = register("brown_dye_blowing", new BrownDyeBlowingFanProcessingType());
 
     private static <T extends FanProcessingType> DeferredHolder<FanProcessingType, T> register(String id, T type) {
-        //return Registry.register(CreateBuiltInRegistries.FAN_PROCESSING_TYPE, CreateGarnished.asResource(id), type);
-        //FanProcessingTypeRegistry.register(CreateGarnished.asResource(id), type);
-        // return type;
         return FAN_PROCESSING_TYPES.register(id, () -> type);
     }
 
@@ -97,7 +92,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.FREEZING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), false))
                     .orElse(null);
         }
 
@@ -169,7 +164,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.RED_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -232,7 +227,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.ORANGE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -295,7 +290,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.YELLOW_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -358,7 +353,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.GREEN_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -421,7 +416,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.LIME_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -484,7 +479,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.BLUE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -547,7 +542,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -610,7 +605,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.CYAN_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -673,7 +668,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.PURPLE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -736,7 +731,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -799,7 +794,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.PINK_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -862,7 +857,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.BLACK_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -925,7 +920,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.GRAY_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -988,7 +983,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -1051,7 +1046,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.WHITE_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 
@@ -1114,7 +1109,7 @@ public class GarnishedFanProcessing {
 
             return level.getRecipeManager()
                     .getRecipeFor(GarnishedRecipeTypes.BROWN_DYE_BLOWING.getType(), new SingleRecipeInput(stack), level)
-                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value()))
+                    .map(recipeHolder -> RecipeApplier.applyRecipeOn(level, stack, recipeHolder.value(), true))
                     .orElse(null);
         }
 

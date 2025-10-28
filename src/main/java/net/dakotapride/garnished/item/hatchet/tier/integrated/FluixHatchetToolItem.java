@@ -19,7 +19,7 @@ public class FluixHatchetToolItem extends IntegratedHatchetToolItem {
         super(GarnishedUtils.ae2(), IntegratedMaterials.FLUIX, properties);
     }
 
-    public int getIntrinsicEnchantLevel(ItemStack stack, Holder<Enchantment> enchantment) {
+    public int getIntrinsicEnchantLevel(Holder<Enchantment> enchantment) {
         return enchantment == GarnishedEnchantments.RAVAGING ? 1 : 0;
     }
 

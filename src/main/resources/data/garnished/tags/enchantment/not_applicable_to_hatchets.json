@@ -4,6 +4,10 @@
     "minecraft:smite",
     "minecraft:bane_of_arthropods",
     "minecraft:looting",
+    "minecraft:sweeping_edge",
+    "minecraft:impaling",
+    "minecraft:breach",
+    "minecraft:density",
 
     {
       "required": false,
