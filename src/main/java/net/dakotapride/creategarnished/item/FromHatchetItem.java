@@ -13,16 +13,16 @@ public class FromHatchetItem extends Item {
     List<EntityType<?>> typeList;
     boolean voltified;
 
-    public FromHatchetItem(EntityType<?> type, boolean v, Properties properties) {
+    public FromHatchetItem(EntityType<?> type, boolean voltified, Properties properties) {
         super(properties);
         this.type = type;
-        this.voltified = v;
+        this.voltified = voltified;
     }
 
-    public FromHatchetItem(List<EntityType<?>> typeList, boolean v, Properties properties) {
+    public FromHatchetItem(List<EntityType<?>> typeList, boolean voltified, Properties properties) {
         super(properties);
         this.typeList = typeList;
-        this.voltified = v;
+        this.voltified = voltified;
     }
 
     @Override
@@ -34,5 +34,8 @@ public class FromHatchetItem extends Item {
             typeList.forEach(t -> {
                 text.add(Component.translatable("creategarnished.text.obtained_from_entity", Component.translatable(t.getDescriptionId()).withColor(0xBD8ACC)).withColor(0x7E5B87));
             });
+
+        if (voltified)
+            text.add(Component.translatable(""));
     }
 }

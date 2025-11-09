@@ -53,7 +53,11 @@ public class VoltfishModel<T extends VoltfishEntity> extends HierarchicalModel<T
         this.applyHeadRotation(netHeadYaw, headPitch);
 
         //this.animateWalk();
-        this.animate(entity.idleAnimationState, VoltfishAnimations.ANIM_VOLTFISH_IDLE, ageInTicks, 1F);
+        if (!entity.isAggressive()) {
+            this.animate(entity.idleAnimationState, VoltfishAnimations.ANIM_VOLTFISH_IDLE, ageInTicks, 1F);
+        } else {
+            this.animate(entity.idleAnimationState, VoltfishAnimations.ANIM_VOLTFISH_HASTEN, ageInTicks, 1F);
+        }
     }
 
     private void applyHeadRotation(float headYaw, float headPitch) {

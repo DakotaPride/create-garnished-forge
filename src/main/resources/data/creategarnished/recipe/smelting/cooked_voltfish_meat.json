@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": {
+    "item": "creategarnished:voltfish_meat"
+  },
+  "result": {
+    "id": "creategarnished:cooked_voltfish_meat"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

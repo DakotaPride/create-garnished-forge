@@ -45,6 +45,14 @@ public class CreateGarnishedMobConditions extends MobConditions {
     public static void applyConditions(LivingEntity entity, LivingEntity attacker, DamageSource source) {
         createVoltStruckEffects(entity, EntityType.COD, CreateGarnishedEntityTypes.VOLTFISH.get(), attacker, config.enableVoltfishAnomaly.get());
 
+        if (entity.getType() == CreateGarnishedEntityTypes.VOLTFISH.get()) {
+            if (entity.isOnFire())
+                createDropConditions(entity, CreateGarnishedEntityTypes.VOLTFISH.get(), attacker, CreateGarnishedItems.COOKED_VOLTFISH_MEAT.asItem(), config.extraVoltfishMeatMaxCount.get(), config.chanceToDropExtraVoltfishMeat.get(), source, config.enableVoltfishAnomaly.get());
+            else createDropConditions(entity, CreateGarnishedEntityTypes.VOLTFISH.get(), attacker, CreateGarnishedItems.VOLTFISH_MEAT.asItem(), config.extraVoltfishMeatMaxCount.get(), config.chanceToDropExtraVoltfishMeat.get(), source, config.enableVoltfishAnomaly.get());
+        }
+        createDropConditions(entity, CreateGarnishedEntityTypes.VOLTFISH.get(), attacker, CreateGarnishedItems.TOUGHENED_SCALES.asItem(), config.extraVoltfishScalesMaxCount.get(), config.chanceToDropExtraVoltfishScales.get(), source, config.enableVoltfishAnomaly.get());
+        createDropConditions(entity, CreateGarnishedEntityTypes.VOLTFISH.get(), attacker, CreateGarnishedItems.VOLATILE_ORGAN.asItem(), config.voltfishOrgansMaxCount.get(), config.chanceToDropVoltfishOrgans.get(), source, config.enableVoltfishAnomaly.get());
+
         registerZombieDropConditions(entity, attacker, source);
         registerSkeletonDropConditions(entity, attacker, source);
         registerGelatinousCreatureDropConditions(entity, attacker, source);
@@ -154,9 +162,10 @@ public class CreateGarnishedMobConditions extends MobConditions {
 
     private static void registerSquidDropConditions(LivingEntity entity, LivingEntity attacker, DamageSource source) {
         boolean s = config.enableAllSquidDrops.get();
-            createDropConditions(entity, EntityType.SQUID, attacker, Items.INK_SAC, config.extraInkSacMaxCount.get(),
-                    config.chanceToDropExtraInkSac.get(), source, config.enableSquidDrops.get(), s);
-            createDropConditions(entity, EntityType.GLOW_SQUID, attacker, Items.GLOW_INK_SAC, config.extraGlowInkSacMaxCount.get(),
-                    config.chanceToDropExtraGlowInkSac.get(), source, config.enableGlowSquidDrops.get(), s);
+
+        createDropConditions(entity, EntityType.SQUID, attacker, Items.INK_SAC, config.extraInkSacMaxCount.get(),
+                config.chanceToDropExtraInkSac.get(), source, config.enableSquidDrops.get(), s);
+        createDropConditions(entity, EntityType.GLOW_SQUID, attacker, Items.GLOW_INK_SAC, config.extraGlowInkSacMaxCount.get(),
+                config.chanceToDropExtraGlowInkSac.get(), source, config.enableGlowSquidDrops.get(), s);
     }
 }

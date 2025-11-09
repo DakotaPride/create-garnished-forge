@@ -9,6 +9,7 @@ import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.*;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -169,7 +170,7 @@ public class CreateGarnishedBlocks {
     public static final BlockEntry<CreativeBirchLogExtractingSapBlock> CREATIVE_BIRCH_SAP_LOG =
             CreateGarnished.REGISTRATE.block("creative_birch_sap_log", CreativeBirchLogExtractingSapBlock::new)
             .initialProperties(() -> Blocks.BIRCH_LOG)
-            .simpleItem()
+            .item().properties(p -> p.rarity(Rarity.EPIC)).build()
             .register();
 
     public static void register() {}

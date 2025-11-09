@@ -53,7 +53,7 @@ public class MobConditions {
             enabled1 = b;
         }
 
-        if (type == matchType && (entity.hasEffect(CreateGarnishedStatusEffects.VOLT_STRUCK) || attacker.hasEffect(CreateGarnishedStatusEffects.VOLT_STRUCK)) && enabled1 && config.enableHatchetDrops.get() && volt) {
+        if (type == matchType && attacker.hasEffect(CreateGarnishedStatusEffects.VOLT_STRUCK) && enabled1 && config.enableHatchetDrops.get() && volt) {
             Entity anomalyEntity = anomaly.create(attacker.level());
 
             anomalyEntity.setPos(entity.getPosition(0));

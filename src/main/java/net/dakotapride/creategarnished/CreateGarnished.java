@@ -6,6 +6,7 @@ import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.creategarnished.entity.client.VoltfishRenderer;
 import net.dakotapride.creategarnished.particle.ElvenMysticalParticleType;
+import net.dakotapride.creategarnished.recipe.CreateGarnishedRecipeSerializers;
 import net.dakotapride.creategarnished.registry.*;
 import net.minecraft.client.particle.ExplodeParticle;
 import net.minecraft.client.particle.SpellParticle;
@@ -66,6 +67,7 @@ public class CreateGarnished {
         CreateGarnishedStatusEffects.register(modEventBus);
         CreateGarnishedPotions.register(modEventBus);
         CreateGarnishedEntityTypes.register(modEventBus);
+        CreateGarnishedRecipeSerializers.register(modEventBus);
 
         CreateGarnishedTriggers.register(modEventBus);
         CreateGarnishedStatisics.STATS.register(modEventBus);

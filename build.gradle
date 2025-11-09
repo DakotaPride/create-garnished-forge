@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'net.neoforged.moddev' version '2.0.78'
+    id 'net.neoforged.moddev' version '2.0.107'
     id 'idea'
 }
 
@@ -137,8 +137,6 @@ dependencies {
     compileOnly ("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     runtimeOnly ("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
     implementation ("com.tterrag.registrate:Registrate:${registrate_version}")
-    //compileOnly (annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
-    //implementation ("io.github.llamalad7:mixinextras-neoforge:0.4.1")
 
     compileOnly ("mezz.jei:jei-${jei_minecraft_version}-common-api:${jei_version}")
     compileOnly ("mezz.jei:jei-${jei_minecraft_version}-neoforge-api:${jei_version}")

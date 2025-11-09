@@ -68,6 +68,7 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.BEAR_CLAW);
             output.accept(CreateGarnishedItems.CHURCHKHELA);
             output.accept(CreateGarnishedBlocks.POUND_CAKE);
+            output.accept(CreateGarnishedItems.POUND_CAKE_SLICE);
             output.accept(CreateGarnishedItems.ALMOND_PASTE);
             output.accept(CreateGarnishedItems.CREAM);
 
@@ -85,6 +86,11 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.PUMPKIN_SPICY_FRITTERS);
             output.accept(CreateGarnishedItems.CANDY_WRAPPING);
             output.accept(CreateGarnishedItems.WRAPPED_CANDY);
+            output.accept(CreateGarnishedItems.VOLTFISH_MEAT);
+            output.accept(CreateGarnishedItems.COOKED_VOLTFISH_MEAT);
+            output.accept(CreateGarnishedItems.VOLATILE_ORGAN);
+            output.accept(CreateGarnishedItems.TOUGHENED_SCALES);
+            output.accept(CreateGarnishedItems.MONSTROUS_TREAT);
 
             output.accept(CreateGarnishedItems.PEANUT_BUTTER_BOTTLE);
             output.accept(CreateGarnishedItems.BIRCH_SAP_BOTTLE);
@@ -107,6 +113,7 @@ public class CreateGarnishedCreativeModeTabs {
 
             // Creative Items
             output.accept(CreateGarnishedItems.CREATIVE_PRESSURISED_HATCHET);
+            output.accept(CreateGarnishedItems.VOLTFISH_SPAWN_EGG);
         }
     }
 

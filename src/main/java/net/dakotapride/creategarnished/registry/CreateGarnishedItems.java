@@ -12,7 +12,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.PotionContents;
-import net.neoforged.neoforge.registries.DeferredItem;
 
 public class CreateGarnishedItems {
 
@@ -20,7 +19,9 @@ public class CreateGarnishedItems {
         CreateGarnished.REGISTRATE.setCreativeTab(CreateGarnishedCreativeModeTabs.GARNISHED);
     }
 
-    public static final ItemEntry<GarnishmentBookItem> GARNISHMENT_BOOK = CreateGarnished.REGISTRATE.item("garnishment_book", GarnishmentBookItem::new).register();
+    public static final ItemEntry<GarnishmentBookItem> GARNISHMENT_BOOK = CreateGarnished.REGISTRATE.item("garnishment_book", GarnishmentBookItem::new)
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.garnishment_book"))
+            .register();
 
     public static final ItemEntry<GingerRootItem> GINGER_ROOT = CreateGarnished.REGISTRATE.item("ginger_root", GingerRootItem::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6F).build()))
@@ -180,7 +181,9 @@ public class CreateGarnishedItems {
     public static final ItemEntry<Item> PUMPKIN_SPICY_FRITTERS = CreateGarnished.REGISTRATE.item("pumpkin_spicy_fritters", Item::new)
             .properties(p -> p.stacksTo(16)
                     .food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F)
-                            .effect(() -> new MobEffectInstance(CreateGarnishedStatusEffects.SOOTHING, 3600, 0), 1.0F).build())).register();
+                            .effect(() -> new MobEffectInstance(CreateGarnishedStatusEffects.SOOTHING, 3600, 0), 1.0F).build()))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.pumpkin_spicy_fritters"))
+            .register();
     public static final ItemEntry<Item> CANDY_WRAPPING = CreateGarnished.REGISTRATE.item("candy_wrapping", Item::new)
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.candy_wrapping"))
             .register();
@@ -202,13 +205,26 @@ public class CreateGarnishedItems {
                             .build()))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.slimy_cobwob")).register();
 
-    public static final ItemEntry<Item> VOLTFISH_MEAT = CreateGarnished.REGISTRATE.item("voltfish_meat", Item::new).register();
-    public static final ItemEntry<Item> COOKED_VOLTFISH_MEAT = CreateGarnished.REGISTRATE.item("cooked_voltfish_meat", Item::new).register();
+    public static final ItemEntry<Item> VOLTFISH_MEAT = CreateGarnished.REGISTRATE.item("voltfish_meat", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.4F).build())).register();
+    public static final ItemEntry<Item> COOKED_VOLTFISH_MEAT = CreateGarnished.REGISTRATE.item("cooked_voltfish_meat", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F).build())).register();
     public static final ItemEntry<Item> TOUGHENED_SCALES = CreateGarnished.REGISTRATE.item("toughened_scales", Item::new).register();
-    public static final ItemEntry<Item> VOLATILE_ORGAN = CreateGarnished.REGISTRATE.item("volatile_organ", Item::new).register();
+    public static final ItemEntry<FromHatchetItem> VOLATILE_ORGAN = CreateGarnished.REGISTRATE.item("volatile_organ", p ->
+                    new FromHatchetItem(CreateGarnishedEntityTypes.VOLTFISH.get(), true, p))
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.1F)
+                    .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 600, 0), 1.0F).build())).register();
+    public static final ItemEntry<Item> MONSTROUS_TREAT = CreateGarnished.REGISTRATE.item("monstrous_treat", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(10).saturationModifier(1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1200, 1), 1.0F).build()))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.monstrous_treat")).register();
 
     public static final ItemEntry<Item> POUND_CAKE_SLICE = CreateGarnished.REGISTRATE.item("pound_cake_slice", Item::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).fast().build())).register();
+
+    public static final ItemEntry<SpawnEggItem> VOLTFISH_SPAWN_EGG = CreateGarnished.REGISTRATE.item("voltfish_spawn_egg",
+            properties -> new SpawnEggItem(CreateGarnishedEntityTypes.VOLTFISH.get(),
+                    0x7C6496, 0x291B38, properties)).register();
 
     public static void register() {}
 

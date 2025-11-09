@@ -1,18 +1,3 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "creategarnished:corn_syrup_bottle"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "creategarnished:candy_wrapping"
-    }
-  ],
-  "result": {
-    "id": "creategarnished:wrapped_candy"
-  }
+  "type": "creategarnished:wrapped_candy_from_wrapper_dyed_crafting"
 }
