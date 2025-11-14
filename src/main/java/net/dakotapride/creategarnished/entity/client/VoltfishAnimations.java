@@ -16,7 +16,7 @@ public class VoltfishAnimations {
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(1.5f, KeyframeAnimations.degreeVec(-2.5f, 0f, 0f),
+                            new Keyframe(1.5f, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
@@ -58,7 +58,7 @@ public class VoltfishAnimations {
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(1.5f/3, KeyframeAnimations.degreeVec(-2.5f, 0f, 0f),
+                            new Keyframe(1.5f/3, KeyframeAnimations.degreeVec(2.5f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(3f/3, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))

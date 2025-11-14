@@ -1,0 +1,23 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:volatile_organ"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "minecraft:bone"
+      }
+    },
+    {
+      "count": 2,
+      "item": {
+        "id": "creategarnished:voltfish_meat"
+      }
+    }
+  ]
+}

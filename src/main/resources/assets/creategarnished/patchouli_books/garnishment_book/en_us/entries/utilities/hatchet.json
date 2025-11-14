@@ -43,6 +43,12 @@
       "title": "Sniffer Fluff",
       "item": "creategarnished:sniffer_fluff",
       "text": "Sniffer Fluff, while cannot be made into food, can be used to make decorative building blocks that are akin to a Sniffer's green, moss-like coat."
+    },
+    {
+      "type": "spotlight",
+      "title": "Volatile Organ",
+      "item": "creategarnished:volatile_organ",
+      "text": "Volatile Organs are extracted from the guts of a Voltfish.$(br)These organs can be cut into a Bone and some pieces of Voltfish Meat."
     }
   ]
 }

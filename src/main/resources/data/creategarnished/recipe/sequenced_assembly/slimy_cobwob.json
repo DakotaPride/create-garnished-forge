@@ -1,0 +1,57 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:stick"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "item": {
+        "id": "creategarnished:slimy_cobwob"
+      }
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_slimy_cobwob"
+        },
+        {
+          "item": "minecraft:string"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_slimy_cobwob"
+          }
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "creategarnished:incomplete_slimy_cobwob"
+        },
+        {
+          "item": "creategarnished:elastic_strand"
+        }
+      ],
+      "results": [
+        {
+          "item": {
+            "id": "creategarnished:incomplete_slimy_cobwob"
+          }
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "item": {
+      "id": "creategarnished:incomplete_slimy_cobwob"
+    }
+  }
+}

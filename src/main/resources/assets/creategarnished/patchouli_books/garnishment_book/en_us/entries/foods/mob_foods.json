@@ -19,6 +19,21 @@
       "text": "Glazed Monument Medley can be made through a sequenced assembly by deploying a combination of several Guardian Spikes and Elder Guardian Spikes and then spouting Honey onto a Bowl. Upon consumption, it will have a chance to inflict the Conduit Power status effect for 1 minute and also inflict the Water Breathing status effect for 3 minutes."
     },
     {
+      "type": "spotlight",
+      "item": "creategarnished:slimy_cobwob",
+      "text": "Slimy Cobwob can be made through a sequenced assembly by deploying a couple pieces of String and Elastic Strands. Upon consumption, it will have a chance to inflict the Weaving status effect for 2 minutes."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:pumpkin_spicy_fritters",
+      "text": "Pumpkin Spicy Fritters can be made through mixing Fiery Elastic Strands, Sugar, Pumpkins, and Cream. Upon consumption, it will have a chance to inflict the Soothing status effect for 3 minutes."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:volt_skewer",
+      "text": "Volt Skewers can be made through mechanically crafting a Stick, a Volatile Organ, some Toughened Scales, and Cooked Voltfish together. Upon consumption, it will provide the Resistance status effect for 1 minute."
+    },
+    {
       "type": "relations",
       "entries": [
         "creategarnished:utilities/hatchet"

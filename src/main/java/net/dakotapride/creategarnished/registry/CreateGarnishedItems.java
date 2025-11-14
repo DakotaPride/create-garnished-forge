@@ -30,7 +30,7 @@ public class CreateGarnishedItems {
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6F).build()))
             .register();
     public static final ItemEntry<Item> PEANUT_BUTTER_BOTTLE = CreateGarnished.REGISTRATE.item("peanut_butter_bottle", Item::new)
-            .properties(p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.6F).usingConvertsTo(Items.GLASS_BOTTLE).build()))
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.6F).usingConvertsTo(Items.GLASS_BOTTLE).build()).craftRemainder(Items.GLASS_BOTTLE))
             .register();
     public static final ItemEntry<Item> PEANUT_BUTTER_COOKIE = CreateGarnished.REGISTRATE.item("peanut_butter_cookie", Item::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F).build()))
@@ -75,8 +75,10 @@ public class CreateGarnishedItems {
             .properties(p -> p.stacksTo(16).food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.6F)
                     .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600, 1), 1.0F).build()))
             .register();
-    public static final ItemEntry<Item> BIRCH_SAP_BOTTLE = CreateGarnished.REGISTRATE.item("birch_sap_bottle", Item::new).register();
-    public static final ItemEntry<Item> BIRCH_SYRUP_BOTTLE = CreateGarnished.REGISTRATE.item("birch_syrup_bottle", Item::new).register();
+    public static final ItemEntry<Item> BIRCH_SAP_BOTTLE = CreateGarnished.REGISTRATE.item("birch_sap_bottle", Item::new)
+            .properties(p -> p.craftRemainder(Items.GLASS_BOTTLE)).register();
+    public static final ItemEntry<Item> BIRCH_SYRUP_BOTTLE = CreateGarnished.REGISTRATE.item("birch_syrup_bottle", Item::new)
+            .properties(p -> p.craftRemainder(Items.GLASS_BOTTLE)).register();
 
     public static final ItemEntry<AlmondItem> ALMOND = CreateGarnished.REGISTRATE.item("almond", AlmondItem::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6F).build()))
@@ -86,7 +88,8 @@ public class CreateGarnishedItems {
             .properties(p -> p.stacksTo(16).food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6F)
                     .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 2), 1.0F).build()))
             .register();
-    public static final ItemEntry<Item> BEETROOT_JUICE_BOTTLE = CreateGarnished.REGISTRATE.item("beetroot_juice_bottle", Item::new).register();
+    public static final ItemEntry<Item> BEETROOT_JUICE_BOTTLE = CreateGarnished.REGISTRATE.item("beetroot_juice_bottle", Item::new)
+            .properties(p -> p.craftRemainder(Items.GLASS_BOTTLE)).register();
     public static final ItemEntry<Item> CHURCHKHELA = CreateGarnished.REGISTRATE.item("churchkhela", Item::new)
             .properties(p -> p.stacksTo(16).food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6F).build()))
             .register();
@@ -154,7 +157,8 @@ public class CreateGarnishedItems {
                     .food(new FoodProperties.Builder().nutrition(12).saturationModifier(0.8F)
                             .usingConvertsTo(Items.GLASS_BOTTLE)
                             .effect(() -> new MobEffectInstance(MobEffects.OOZING, 1200, 0,
-                                    false, false, true), 0.5F).build()))
+                                    false, false, true), 0.5F).build())
+                    .craftRemainder(Items.GLASS_BOTTLE))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.sllimy"))
             .register();
     public static final ItemEntry<Item> FIERY_SLLIMY = CreateGarnished.REGISTRATE.item("fiery_sllimy", Item::new)
@@ -164,7 +168,8 @@ public class CreateGarnishedItems {
                             .effect(() -> new MobEffectInstance(MobEffects.OOZING, 1200, 0,
                                     false, false, true), 0.25F)
                             .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0,
-                                    false, false, true), 1.0F).build()))
+                                    false, false, true), 1.0F).build())
+                    .craftRemainder(Items.GLASS_BOTTLE))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.fiery_sllimy"))
             .register();
     public static final ItemEntry<Item> GLAZED_MONUMENT_MEDLEY = CreateGarnished.REGISTRATE.item("glazed_monument_medley", Item::new)
@@ -187,8 +192,10 @@ public class CreateGarnishedItems {
     public static final ItemEntry<Item> CANDY_WRAPPING = CreateGarnished.REGISTRATE.item("candy_wrapping", Item::new)
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.candy_wrapping"))
             .register();
-    public static final ItemEntry<Item> CORN_SYRUP_BOTTLE = CreateGarnished.REGISTRATE.item("corn_syrup_bottle", Item::new).register();
+    public static final ItemEntry<Item> CORN_SYRUP_BOTTLE = CreateGarnished.REGISTRATE.item("corn_syrup_bottle", Item::new)
+            .properties(p -> p.craftRemainder(Items.GLASS_BOTTLE)).register();
     public static final ItemEntry<MysteriousVoltBottleItem> MYSTERIOUS_VOLT_BOTTLE = CreateGarnished.REGISTRATE.item("mysterious_volt_bottle", MysteriousVoltBottleItem::new)
+            .properties(p -> p.craftRemainder(Items.GLASS_BOTTLE))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.mysterious_volt_bottle"))
             .register();
     public static final ItemEntry<WrappedCandyItem> WRAPPED_CANDY = CreateGarnished.REGISTRATE.item("wrapped_candy", WrappedCandyItem::new)
@@ -197,6 +204,7 @@ public class CreateGarnishedItems {
                     .food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.6F).alwaysEdible().fast().build()))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.wrapped_candy"))
             .register();
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_SLIMY_COBWOB = CreateGarnished.REGISTRATE.item("incomplete_slimy_cobwob", SequencedAssemblyItem::new).register();
     public static final ItemEntry<Item> SLIMY_COBWOB = CreateGarnished.REGISTRATE.item("slimy_cobwob", Item::new)
             .properties(p -> p.stacksTo(8)
                     .food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F)
@@ -211,13 +219,13 @@ public class CreateGarnishedItems {
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F).build())).register();
     public static final ItemEntry<Item> TOUGHENED_SCALES = CreateGarnished.REGISTRATE.item("toughened_scales", Item::new).register();
     public static final ItemEntry<FromHatchetItem> VOLATILE_ORGAN = CreateGarnished.REGISTRATE.item("volatile_organ", p ->
-                    new FromHatchetItem(CreateGarnishedEntityTypes.VOLTFISH.get(), true, p))
+                    new FromHatchetItem(CreateGarnishedEntityTypes.VOLTFISH.get(), false, p))
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.1F)
                     .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 600, 0), 1.0F).build())).register();
-    public static final ItemEntry<Item> MONSTROUS_TREAT = CreateGarnished.REGISTRATE.item("monstrous_treat", Item::new)
+    public static final ItemEntry<Item> VOLT_SKEWER = CreateGarnished.REGISTRATE.item("volt_skewer", Item::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(10).saturationModifier(1.0F)
                     .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1200, 1), 1.0F).build()))
-            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.monstrous_treat")).register();
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.volt_skewer")).register();
 
     public static final ItemEntry<Item> POUND_CAKE_SLICE = CreateGarnished.REGISTRATE.item("pound_cake_slice", Item::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).fast().build())).register();

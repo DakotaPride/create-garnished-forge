@@ -1,0 +1,26 @@
+{
+  "name": "Candies",
+  "icon": "creategarnished:wrapped_candy",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:candy_wrapping",
+      "text": "Made from some Sniffer Fluff and Paper, this material can be used in the creation of Wrapped Candies."
+    },
+    {
+      "type": "creategarnished:wrapped_candy_crafting_recipe",
+      "input0": "minecraft:sugar",
+      "input1": "creategarnished:corn_syrup_bottle",
+      "input2": "creategarnished:candy_wrapping",
+      "output": "creategarnished:wrapped_candy",
+
+      "text": "Consuming a piece of wrapped candy will provide a random status effect, vanilla or modded.$(br)Right-clicking on a basin with potion contents will transfer 250mb (millibuckets) worth of contents to the wrapped candy, of which will now provide those effects upon consumption.",
+      "title": "Wrapped Candy"
+    },
+    {
+      "type": "text",
+      "text": "Both the Candy Wrapping and Wrapped Candy can be dyed similar to leather armour."
+    }
+  ]
+}

@@ -19,8 +19,12 @@
     "creategarnished:pumpkin_spicy_fritters",
     "creategarnished:wrapped_candy",
     "creategarnished:slimy_cobwob",
+    "creategarnished:pound_cake",
     "creategarnished:pound_cake_slice",
     "creategarnished:cooked_voltfish_meat",
+    "creategarnished:voltfish_meat",
+    "creategarnished:volatile_organ",
+    "creategarnished:volt_skewer",
 
     {
       "required": false,

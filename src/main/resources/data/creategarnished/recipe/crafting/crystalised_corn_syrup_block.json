@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "c:glass_blocks"
+    },
+    {
+      "item": "creategarnished:corn_syrup_bottle"
+    }
+  ],
+  "result": {
+    "id": "creategarnished:crystalised_corn_syrup_block",
+    "count": 2
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "create:mechanical_crafting",
+  "accept_mirrored": true,
+  "category": "",
+  "pattern": [
+    " SV",
+    " MS",
+    "#  "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "V": {
+      "item": "creategarnished:volatile_organ"
+    },
+    "S": {
+      "item": "creategarnished:toughened_scales"
+    },
+    "M": {
+      "item": "creategarnished:cooked_voltfish_meat"
+    }
+  },
+  "result": {
+    "id": "creategarnished:volt_skewer"
+  }
+}

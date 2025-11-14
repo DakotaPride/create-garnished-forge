@@ -90,7 +90,7 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.COOKED_VOLTFISH_MEAT);
             output.accept(CreateGarnishedItems.VOLATILE_ORGAN);
             output.accept(CreateGarnishedItems.TOUGHENED_SCALES);
-            output.accept(CreateGarnishedItems.MONSTROUS_TREAT);
+            output.accept(CreateGarnishedItems.VOLT_SKEWER);
 
             output.accept(CreateGarnishedItems.PEANUT_BUTTER_BOTTLE);
             output.accept(CreateGarnishedItems.BIRCH_SAP_BOTTLE);
@@ -171,6 +171,9 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedBlocks.PORPHYRY_PILLAR);
 
             output.accept(CreateGarnishedBlocks.CREAM_BLOCK);
+
+            output.accept(CreateGarnishedBlocks.CRYSTALISED_CORN_SYRUP_BLOCK);
+            output.accept(CreateGarnishedBlocks.TOUGHENED_SCALES_BLOCK);
 
             output.accept(CreateGarnishedBlocks.SNIFFER_FLUFF_BLOCK);
             output.accept(CreateGarnishedBlocks.SNIFFER_FLUFF_CARPET);

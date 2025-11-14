@@ -8,7 +8,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.*;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -164,6 +164,11 @@ public class CreateGarnishedBlocks {
     public static final BlockEntry<RoyalCiderGlassBlock> ROYAL_CIDER_GLASS = CreateGarnished.REGISTRATE.block("royal_cider_block", RoyalCiderGlassBlock::new)
             .properties(p -> p.noOcclusion().sound(SoundType.GLASS).mapColor(MapColor.COLOR_PURPLE).instabreak())
             .addLayer(() -> RenderType::cutout).register();
+
+    public static final BlockEntry<HalfTransparentBlock> CRYSTALISED_CORN_SYRUP_BLOCK = CreateGarnished.REGISTRATE.block("crystalised_corn_syrup_block", HalfTransparentBlock::new)
+            .initialProperties(() -> Blocks.ICE).properties(p -> p.mapColor(DyeColor.YELLOW).noOcclusion()).simpleItem().register();
+    public static final BlockEntry<Block> TOUGHENED_SCALES_BLOCK = CreateGarnished.REGISTRATE.block("toughened_scales_block", Block::new)
+            .initialProperties(() -> Blocks.BONE_BLOCK).properties(p -> p.mapColor(DyeColor.PURPLE)).simpleItem().register();
 
     // Creative Blocks
 

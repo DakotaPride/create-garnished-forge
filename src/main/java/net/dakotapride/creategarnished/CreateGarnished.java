@@ -12,8 +12,12 @@ import net.minecraft.client.particle.ExplodeParticle;
 import net.minecraft.client.particle.SpellParticle;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,6 +32,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
@@ -125,6 +130,22 @@ public class CreateGarnished {
             event.registerSpriteSet(CreateGarnishedParticles.ELVEN_MYSTICAL_PARTICLE.get(), ElvenMysticalParticleType.Provider::new);
             event.registerSpriteSet(CreateGarnishedParticles.HATCHET_PARTICLE.get(), ExplodeParticle.Provider::new);
             event.registerSpriteSet(CreateGarnishedParticles.VOLT.get(), SpellParticle.Provider::new);
+        }
+
+        @SubscribeEvent
+        public static void onAddPackFinders(AddPackFindersEvent event) {
+            if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+            }
+        }
+
+        private static void registerBuiltinResourcePack(AddPackFindersEvent event, String folder, PackSource source, boolean alwaysActive) {
+            event.addPackFinders(
+                    asResource("assets/creategarnished/resourcepacks/" + folder),
+                    PackType.CLIENT_RESOURCES,
+                    Component.literal(ID + "/" + folder),
+                    source,
+                    alwaysActive,
+                    Pack.Position.TOP);
         }
     }
 }

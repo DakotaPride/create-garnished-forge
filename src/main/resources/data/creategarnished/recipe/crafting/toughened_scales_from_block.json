@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "creategarnished:toughened_scales_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "creategarnished:toughened_scales"
+  }
+}
