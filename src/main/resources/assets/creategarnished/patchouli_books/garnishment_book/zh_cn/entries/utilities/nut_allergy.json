@@ -7,7 +7,7 @@
       "type": "spotlight",
       "title": "坚果过敏",
       "item": "minecraft:tipped_arrow[potion_contents={potion:'creategarnished:nut_allergy'}]",
-      "text": "如果你（故意地、不小心地）潜入了由坚果制成的流体中，你将会对坚果过敏，此时使用任何的坚果制品都将带来伤害。$(br)你也可以通过对箭注液250mB的花生酱来制作一支坚果过敏之箭。"
+      "text": "如果你（故意地、不小心地）接触到了由坚果制成的流体，你将会对坚果过敏，此时食用任何的坚果制品都将带来伤害。$(br)你也可以通过对箭注液250mB的花生酱来制作一支坚果过敏之箭。"
     }
   ]
 }
