@@ -1,0 +1,28 @@
+{
+  "name": "特殊怪物源食物",
+  "icon": "creategarnished:sllimy",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:sllimy",
+      "text": "罐装黏液麦芽糖由玻璃瓶与红色地毯、弹性肌腱、任意水果或浆果、糖序列组装而成，食用以后有概率获得1分钟的渗浆效果。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:fiery_sllimy",
+      "text": "罐装炽热黏液麦芽糖由玻璃瓶与紫色地毯、炽热弹性肌腱、任意下界植物、糖序列组装而成，食用以后有概率获得1分钟的渗浆效果与30秒的抗火效果。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:glazed_monument_medley",
+      "text": "蜜汁神殿拼盘由碗与多个守卫者尖牙、远古守卫者尖牙、最后注入蜂蜜的方式序列组装而成，食用以后有概率获得1分钟的潮涌能量效果，并必然获得3分钟的水下呼吸效果。"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "creategarnished:utilities/hatchet"
+      ]
+    }
+  ]
+}
