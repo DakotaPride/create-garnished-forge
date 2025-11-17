@@ -40,6 +40,7 @@ public class CreateGarnishedFluids {
     //public static final FluidEntry<VirtualFluid> BIRCH_SYRUP = REGISTRATE.virtualFluid("birch_syrup").register();
     //public static final FluidEntry<VirtualFluid> BEETROOT_JUICE = REGISTRATE.virtualFluid("beetroot_juice").register();
     public static final FluidEntry<VirtualFluid> CORN_SYRUP = REGISTRATE.virtualFluid("corn_syrup").register();
+    public static final FluidEntry<VirtualFluid> CARAMEL = REGISTRATE.virtualFluid("caramel").register();
 
     public static final FluidEntry<BaseFlowingFluid.Flowing> PEANUT_BUTTER =
             REGISTRATE.standardFluid("peanut_butter",

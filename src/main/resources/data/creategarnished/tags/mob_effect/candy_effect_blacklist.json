@@ -1,0 +1,351 @@
+{
+  "values": [
+    "minecraft:darkness",
+    "minecraft:trial_omen",
+    "minecraft:bad_omen",
+    "minecraft:hero_of_the_village",
+    "minecraft:slowness",
+
+    {
+      "required": false,
+      "id": "xaeroworldmap:no_world_map"
+    },
+    {
+      "required": false,
+      "id": "xaeroworldmap:no_world_map_harmful"
+    },
+    {
+      "required": false,
+      "id": "xaeroworldmap:no_cave_maps"
+    },
+    {
+      "required": false,
+      "id": "xaeroworldmap:no_cave_maps_harmful"
+    },
+
+    {
+      "required": false,
+      "id": "alexscaves:sugar_rush"
+    },
+
+    {
+      "required": false,
+      "id": "pastel:eternal_slumber"
+    },
+    {
+      "required": false,
+      "id": "spectrum:eternal_slumber"
+    },
+
+    {
+      "required": false,
+      "id": "pastel:fatal_slumber"
+    },
+    {
+      "required": false,
+      "id": "spectrum:fatal_slumber"
+    },
+
+    {
+      "required": false,
+      "id": "spectrum:divinity"
+    },
+    {
+      "required": false,
+      "id": "pastel:divinity"
+    },
+
+    {
+      "required": false,
+      "id": "beachparty:ocean_walk"
+    },
+    {
+      "required": false,
+      "id": "brewery:blackout"
+    },
+    {
+      "required": false,
+      "id": "brewery:combustion"
+    },
+    {
+      "required": false,
+      "id": "brewery:drunk"
+    },
+    {
+      "required": false,
+      "id": "brewery:explosion"
+    },
+    {
+      "required": false,
+      "id": "brewery:haley"
+    },
+    {
+      "required": false,
+      "id": "brewery:healingtouch"
+    },
+    {
+      "required": false,
+      "id": "brewery:lightning_strike"
+    },
+    {
+      "required": false,
+      "id": "brewery:mining"
+    },
+    {
+      "required": false,
+      "id": "brewery:pacify"
+    },
+    {
+      "required": false,
+      "id": "brewery:partystarter"
+    },
+    {
+      "required": false,
+      "id": "brewery:pintcharisma"
+    },
+    {
+      "required": false,
+      "id": "brewery:protectivetouch"
+    },
+    {
+      "required": false,
+      "id": "brewery:renewingtouch"
+    },
+    {
+      "required": false,
+      "id": "brewery:repulsion"
+    },
+    {
+      "required": false,
+      "id": "brewery:snowwhite"
+    },
+    {
+      "required": false,
+      "id": "brewery:toxictouch"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:cluck"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:dog_food"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:farmers_blessing"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:feast"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:grandmas_blessing"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:horse_fodder"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:rested"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:satiation"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:sustenance"
+    },
+    {
+      "required": false,
+      "id": "farm_and_charm:sweets"
+    },
+    {
+      "required": false,
+      "id": "herbalbrews:balanced"
+    },
+    {
+      "required": false,
+      "id": "herbalbrews:bonding"
+    },
+    {
+      "required": false,
+      "id": "herbalbrews:deeprush"
+    },
+    {
+      "required": false,
+      "id": "herbalbrews:feral"
+    },
+    {
+      "required": false,
+      "id": "herbalbrews:fortune"
+    },
+    {
+      "required": false,
+      "id": "herbalbrews:lifleech"
+    },
+    {
+      "required": false,
+      "id": "herbalbrews:tough"
+    },
+    {
+      "required": false,
+      "id": "vinery:armor_effect"
+    },
+    {
+      "required": false,
+      "id": "vinery:climbing_effect"
+    },
+    {
+      "required": false,
+      "id": "vinery:creeper_effect"
+    },
+    {
+      "required": false,
+      "id": "vinery:double_jump"
+    },
+    {
+      "required": false,
+      "id": "vinery:experience_effect"
+    },
+    {
+      "required": false,
+      "id": "vinery:frosty_armor"
+    },
+    {
+      "required": false,
+      "id": "vinery:health_effect"
+    },
+    {
+      "required": false,
+      "id": "vinery:jellie"
+    },
+    {
+      "required": false,
+      "id": "vinery:lava_walker"
+    },
+    {
+      "required": false,
+      "id": "vinery:luck_effect"
+    },
+    {
+      "required": false,
+      "id": "vinery:magnet"
+    },
+    {
+      "required": false,
+      "id": "vinery:party_effect"
+    },
+    {
+      "required": false,
+      "id": "vinery:resistance_effect"
+    },
+    {
+      "required": false,
+      "id": "vinery:teleport"
+    },
+    {
+      "required": false,
+      "id": "vinery:water_walker"
+    },
+    {
+      "required": false,
+      "id": "tombstone:ghostly_shape"
+    },
+    {
+      "required": false,
+      "id": "tombstone:diversion"
+    },
+    {
+      "required": false,
+      "id": "tombstone:preservation"
+    },
+    {
+      "required": false,
+      "id": "tombstone:unstable_intangibility"
+    },
+    {
+      "required": false,
+      "id": "tombstone:feather_fall"
+    },
+    {
+      "required": false,
+      "id": "tombstone:purification"
+    },
+    {
+      "required": false,
+      "id": "tombstone:true_sight"
+    },
+    {
+      "required": false,
+      "id": "tombstone:reach"
+    },
+    {
+      "required": false,
+      "id": "tombstone:lightning_resistance"
+    },
+    {
+      "required": false,
+      "id": "tombstone:frost_resistance"
+    },
+    {
+      "required": false,
+      "id": "tombstone:bait"
+    },
+    {
+      "required": false,
+      "id": "tombstone:bone_shield"
+    },
+    {
+      "required": false,
+      "id": "tombstone:aquatic_life"
+    },
+    {
+      "required": false,
+      "id": "tombstone:frostbite"
+    },
+    {
+      "required": false,
+      "id": "tombstone:earthly garden"
+    },
+    {
+      "required": false,
+      "id": "tombstone:discretion"
+    },
+    {
+      "required": false,
+      "id": "tombstone:mercy"
+    },
+    {
+      "required": false,
+      "id": "tombstone:restoration"
+    },
+    {
+      "required": false,
+      "id": "tombstone:incurable"
+    },
+    {
+      "required": false,
+      "id": "tombstone:decrepitude"
+    },
+    {
+      "required": false,
+      "id": "tombstone:weaver_walk"
+    },
+    {
+      "required": false,
+      "id": "tombstone:giant_strength"
+    },
+    {
+      "required": false,
+      "id": "tombstone:little_world"
+    },
+    {
+      "required": false,
+      "id": "tombstone:beyond_the_grave_bond"
+    }
+  ]
+}

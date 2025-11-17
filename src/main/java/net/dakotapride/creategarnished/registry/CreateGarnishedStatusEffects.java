@@ -3,6 +3,7 @@ package net.dakotapride.creategarnished.registry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.effect.NutAllergyMobEffect;
 import net.dakotapride.creategarnished.effect.SoothingMobEffect;
+import net.dakotapride.creategarnished.effect.StickyMobEffect;
 import net.dakotapride.creategarnished.effect.VoltStruckMobEffect;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -29,6 +30,10 @@ public class CreateGarnishedStatusEffects {
                             0.1F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
     public static final DeferredHolder<MobEffect, MobEffect> VOLT_STRUCK = register("volt_struck",
             (new VoltStruckMobEffect(MobEffectCategory.NEUTRAL, 0xF07AEB)));
+    public static final DeferredHolder<MobEffect, MobEffect> STICKY = register("sticky",
+            (new StickyMobEffect(MobEffectCategory.NEUTRAL, 0xCC5B39))
+                    .addAttributeModifier(Attributes.MOVEMENT_SPEED, CreateGarnished.asResource("effect.sticky.movement_speed"),
+                            -0.25F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     private static DeferredHolder<MobEffect, MobEffect> register(String name, MobEffect effect) {
         return MOB_EFFECTS.register(name, () -> effect);

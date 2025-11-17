@@ -5,13 +5,13 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.creategarnished.entity.client.VoltfishRenderer;
+import net.dakotapride.creategarnished.particle.CaramelParticle;
 import net.dakotapride.creategarnished.particle.ElvenMysticalParticleType;
 import net.dakotapride.creategarnished.recipe.CreateGarnishedRecipeSerializers;
 import net.dakotapride.creategarnished.registry.*;
 import net.minecraft.client.particle.ExplodeParticle;
 import net.minecraft.client.particle.SpellParticle;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -130,6 +130,7 @@ public class CreateGarnished {
             event.registerSpriteSet(CreateGarnishedParticles.ELVEN_MYSTICAL_PARTICLE.get(), ElvenMysticalParticleType.Provider::new);
             event.registerSpriteSet(CreateGarnishedParticles.HATCHET_PARTICLE.get(), ExplodeParticle.Provider::new);
             event.registerSpriteSet(CreateGarnishedParticles.VOLT.get(), SpellParticle.Provider::new);
+            event.registerSpriteSet(CreateGarnishedParticles.CARAMEL.get(), CaramelParticle.Provider::new);
         }
 
         @SubscribeEvent

@@ -9,10 +9,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
@@ -33,6 +30,9 @@ public class MysteriousVoltBottleItem extends Item {
             cloud.setParticle(CreateGarnishedParticles.VOLT.get());
             cloud.addEffect(new MobEffectInstance(CreateGarnishedStatusEffects.VOLT_STRUCK, 100, 0));
             level.addFreshEntity(cloud);
+
+            stack.shrink(1);
+            player.addItem(new ItemStack(Items.GLASS_BOTTLE));
             return stack;
         }
 

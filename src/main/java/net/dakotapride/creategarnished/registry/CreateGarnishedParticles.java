@@ -20,6 +20,8 @@ public class CreateGarnishedParticles {
             PARTICLE_TYPES.register("hatchet", () -> new SimpleParticleType(true));
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> VOLT =
             PARTICLE_TYPES.register("volt", () -> new SimpleParticleType(false));
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> CARAMEL =
+            PARTICLE_TYPES.register("caramel", () -> new SimpleParticleType(false));
 
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);

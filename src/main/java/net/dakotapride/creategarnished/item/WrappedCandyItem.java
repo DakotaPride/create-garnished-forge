@@ -1,6 +1,8 @@
 package net.dakotapride.creategarnished.item;
 
+import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.registry.CreateGarnishedSounds;
+import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -42,6 +44,13 @@ public class WrappedCandyItem extends Item {
 
         if (!level.isClientSide) {
             int random = new Random().nextInt(BuiltInRegistries.MOB_EFFECT.size());
+
+
+            if (BuiltInRegistries.MOB_EFFECT.getHolder(random).isPresent()
+                    && BuiltInRegistries.MOB_EFFECT.getHolder(random).get().is(CreateGarnishedTags.BLACKLISTED_FROM_CANDY)) {
+                random = new Random().nextInt(BuiltInRegistries.MOB_EFFECT.size());
+                //CreateGarnished.LOGGER.info("Effect was rerolled, as it was blacklisted");
+            }
 
             if (!itemStack.getOrDefault(DataComponents.POTION_CONTENTS, PotionContents.EMPTY).hasEffects())
                 livingEntity.addEffect(new MobEffectInstance(BuiltInRegistries.MOB_EFFECT.getHolder(random).orElseThrow(), 140, 2));

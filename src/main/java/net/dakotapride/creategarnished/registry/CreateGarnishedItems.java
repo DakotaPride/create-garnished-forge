@@ -230,6 +230,11 @@ public class CreateGarnishedItems {
     public static final ItemEntry<Item> POUND_CAKE_SLICE = CreateGarnished.REGISTRATE.item("pound_cake_slice", Item::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).fast().build())).register();
 
+    public static final ItemEntry<Item> CARAMELISED_APPLE = CreateGarnished.REGISTRATE.item("caramelised_apple", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F)
+                    //.effect(() -> new MobEffectInstance(CreateGarnishedStatusEffects.STICKY, 600), 1.0F)
+                    .build())).register();
+
     public static final ItemEntry<SpawnEggItem> VOLTFISH_SPAWN_EGG = CreateGarnished.REGISTRATE.item("voltfish_spawn_egg",
             properties -> new SpawnEggItem(CreateGarnishedEntityTypes.VOLTFISH.get(),
                     0x7C6496, 0x291B38, properties)).register();

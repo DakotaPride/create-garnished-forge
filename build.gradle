@@ -180,6 +180,11 @@ dependencies {
     compileOnly ("maven.modrinth:hominid:1.2.1")
     // runtimeOnly ("maven.modrinth:hominid:1.2.1")
 
+    compileOnly ("maven.modrinth:journeymap:vyOPsWNv")
+    compileOnly ("maven.modrinth:xaeros-world-map:1.39.12_NeoForge_1.21")
+
+    //compileOnly ("curse.maven:corail-tombstone-243707:6919850")
+
     //compileOnly ("curse.maven:uniful-1302366:6771148")
     //runtimeOnly ("curse.maven:uniful-1302366:6771148")
 

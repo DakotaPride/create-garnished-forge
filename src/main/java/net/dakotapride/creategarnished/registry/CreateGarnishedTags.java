@@ -5,6 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
@@ -26,4 +27,6 @@ public class CreateGarnishedTags {
     public static TagKey<Item> BIRCH_FOREST_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/birch"));
 
     public static TagKey<Biome> IS_ACCEPTED_FLOWER_BIOME = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", "is_flower_biome"));
+
+    public static TagKey<MobEffect> BLACKLISTED_FROM_CANDY = TagKey.create(Registries.MOB_EFFECT, ResourceLocation.fromNamespaceAndPath("creategarnished", "candy_effect_blacklist"));
 }
