@@ -441,6 +441,7 @@ public class GarnishedTabs {
 		@Override
 		public void accept(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {
 			output.accept(GarnishedBlocks.SOLIDIFIED_GARNISH_BLOCK.asStack());
+			output.accept(GarnishedBlocks.SOLIDIFIED_GARNISH_BRICKS.asStack());
 
 			output.accept(GarnishedBlocks.BLOCK_OF_ENDER_JELLY.asStack());
 			output.accept(GarnishedBlocks.UNGARNISHED_NUT_BLOCK.asStack());

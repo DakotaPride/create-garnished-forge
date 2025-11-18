@@ -239,6 +239,10 @@ public class GarnishedBlocks {
 			REGISTRATE.block("solidified_garnish", SolidifiedGarnishBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem().register();
+	public static final BlockEntry<SolidifiedGarnishBlock> SOLIDIFIED_GARNISH_BRICKS =
+			REGISTRATE.block("solidified_garnish_bricks", SolidifiedGarnishBlock::new)
+					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+					.simpleItem().register();
 
 	public static final BlockEntry<SepiaFungusBlock> SEPIA_FUNGUS =
 			REGISTRATE.block("sepia_fungus", SepiaFungusBlock::new)

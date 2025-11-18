@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "garnished:solidified_garnish"
+    }
+  },
+  "result": {
+    "id": "garnished:solidified_garnish_bricks"
+  }
+}
