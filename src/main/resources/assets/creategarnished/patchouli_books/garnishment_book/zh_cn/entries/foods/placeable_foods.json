@@ -7,6 +7,11 @@
       "type": "spotlight",
       "item": "creategarnished:pound_cake",
       "text": "磅蛋糕由鸡蛋、面团、奶油以及杏仁提取物各一磅制作而成。$(br)PS：原料的用量可能不太准确，所以别把它当一回事。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:royal_cider",
+      "text": "皇家西打在潜行并右键的情况下可以以装饰方块的形式放置于地面上。它可以被瞬间破坏，当然你也可以通过潜行右键的方式将其拾取。"
     }
   ]
 }

@@ -43,6 +43,12 @@
       "title": "嗅探兽绒毛",
       "item": "creategarnished:sniffer_fluff",
       "text": "嗅探兽绒毛无法被用于制作食物，但是可以用于制作一些装饰方块，它们的外观类似于嗅探兽那绿色的、苔藓一般的绒毛。"
+    },
+    {
+      "type": "spotlight",
+      "title": "不稳器官",
+      "item": "creategarnished:volatile_organ",
+      "text": "不稳器官需要从伏特鱼的腹部取出。$(br)可以被切制成为一个骨头以及几片伏特鱼肉。"
     }
   ]
 }
