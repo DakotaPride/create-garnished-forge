@@ -19,6 +19,21 @@
       "text": "蜜汁神殿拼盘由碗与多个守卫者尖牙、远古守卫者尖牙、最后注入蜂蜜的方式序列组装而成，食用以后有概率获得1分钟的潮涌能量效果，并必然获得3分钟的水下呼吸效果。"
     },
     {
+      "type": "spotlight",
+      "item": "creategarnished:slimy_cobwob",
+      "text": "黏液棉花糖由线与弹性肌腱序列组装而成，食用以后有概率获得1分钟的盘丝效果。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:pumpkin_spicy_fritters",
+      "text": "香辣南瓜馅饼由炽热弹性肌腱、糖、南瓜与奶油混合搅拌而成，食用以后有概率获得3分钟的镇静效果。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:volt_skewer",
+      "text": "伏特烤串由木棍、不稳器官、坚硬鱼鳞与熟伏特鱼肉动力合成而成，食用以后必然获得1分钟的抗性提升效果。"
+    },
+    {
       "type": "relations",
       "entries": [
         "creategarnished:utilities/hatchet"

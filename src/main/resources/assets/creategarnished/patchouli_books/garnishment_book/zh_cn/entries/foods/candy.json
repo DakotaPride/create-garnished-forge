@@ -1,0 +1,26 @@
+{
+  "name": "糖果",
+  "icon": "creategarnished:wrapped_candy",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:candy_wrapping",
+      "text": "这种东西由嗅探兽毛皮与纸制成，可以用来制作纸包糖果。"
+    },
+    {
+      "type": "creategarnished:wrapped_candy_crafting_recipe",
+      "input0": "minecraft:sugar",
+      "input1": "creategarnished:corn_syrup_bottle",
+      "input2": "creategarnished:candy_wrapping",
+      "output": "creategarnished:wrapped_candy",
+
+      "text": "食用一个纸包糖果能够获得一种随机的（原版或模组添加的）状态效果。$(br)右键装有药水的工作盆将会消耗250mB药水并使糖果携带这种效果。",
+      "title": "纸包糖果"
+    },
+    {
+      "type": "text",
+      "text": "糖纸与纸包糖果都能够被染色，类似于皮革盔甲。"
+    }
+  ]
+}
