@@ -14,4 +14,7 @@ public class CreateGarnishedTreeGrower {
     public static final TreeGrower ALMOND = new TreeGrower("almond", 0.5F,
             Optional.empty(), Optional.empty(),
             Optional.of(CreateGarnishedFeatureKeys.ALMOND), Optional.empty(), Optional.empty(), Optional.empty());
+    public static final TreeGrower CHESTNUT = new TreeGrower("chestnut", 0.5F,
+            Optional.empty(), Optional.empty(),
+            Optional.of(CreateGarnishedFeatureKeys.CHESTNUT), Optional.empty(), Optional.empty(), Optional.empty());
 }

@@ -162,14 +162,38 @@ public class CreateGarnishedBlocks {
             .register();
 
     public static final BlockEntry<RoyalCiderGlassBlock> ROYAL_CIDER_GLASS = CreateGarnished.REGISTRATE.block("royal_cider_block", RoyalCiderGlassBlock::new)
-            .properties(p -> p.noOcclusion().sound(SoundType.GLASS).mapColor(MapColor.COLOR_PURPLE).instabreak())
-            .addLayer(() -> RenderType::cutout).register();
+            .properties(p -> p.noOcclusion().sound(SoundType.GLASS).mapColor(MapColor.COLOR_PURPLE).instabreak()).register();
+    public static final BlockEntry<RoyalCiderGlassBlock> CARAMEL_ROYAL_CIDER_GLASS = CreateGarnished.REGISTRATE.block("caramel_royal_cider_block", RoyalCiderGlassBlock::new)
+            .properties(p -> p.noOcclusion().sound(SoundType.GLASS).mapColor(MapColor.COLOR_PURPLE).instabreak()).register();
 
     public static final BlockEntry<HalfTransparentBlock> CRYSTALISED_CORN_SYRUP_BLOCK = CreateGarnished.REGISTRATE.block("crystalised_corn_syrup_block", HalfTransparentBlock::new)
             .initialProperties(() -> Blocks.ICE).properties(p -> p.mapColor(DyeColor.YELLOW).noOcclusion()).simpleItem().register();
     public static final BlockEntry<Block> TOUGHENED_SCALES_BLOCK = CreateGarnished.REGISTRATE.block("toughened_scales_block", Block::new)
             .initialProperties(() -> Blocks.BONE_BLOCK).properties(p -> p.mapColor(DyeColor.PURPLE)).simpleItem().register();
 
+    public static final BlockEntry<WildCropBlock> WILD_MINT = CreateGarnished.REGISTRATE.block("wild_mint", WildCropBlock::new)
+            .properties(p -> p.noOcclusion().noCollission().mapColor(MapColor.TERRACOTTA_GREEN).sound(SoundType.GRASS))
+            .simpleItem()
+            .register();
+    public static final BlockEntry<WildCropBlock> WILD_PEPPERMINT = CreateGarnished.REGISTRATE.block("wild_peppermint", WildCropBlock::new)
+            .properties(p -> p.noOcclusion().noCollission().mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).sound(SoundType.GRASS))
+            .simpleItem()
+            .register();
+    public static final BlockEntry<LeavesBlock> CHESTNUT_LEAVES = CreateGarnished.REGISTRATE.block("chestnut_leaves", LeavesBlock::new)
+            .initialProperties(() -> Blocks.OAK_LEAVES)
+            .properties(p -> p.noOcclusion().sound(SoundType.GRASS))
+            .simpleItem()
+            .register();
+    public static final BlockEntry<CropBarrelBlock> CHESTNUT_BARREL = CreateGarnished.REGISTRATE.block("chestnut_barrel", CropBarrelBlock::new)
+            .item().onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.storage_barrel")).build()
+            .initialProperties(() -> Blocks.BARREL).register();
+    public static final BlockEntry<ChestnutSaplingBlock> CHESTNUT_SAPLING = CreateGarnished.REGISTRATE.block("chestnut_sapling", ChestnutSaplingBlock::new)
+            .properties(p -> p.noCollission().noOcclusion().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY))
+            .register();
+    public static final BlockEntry<GumdropBlock> GUMDROPS = CreateGarnished.REGISTRATE.block("gumdrops", GumdropBlock::new)
+            .properties(p -> p.sound(SoundType.SLIME_BLOCK)).register();
+    public static final BlockEntry<GingerbreadCookieBlock> GINGERBREAD_COOKIE = CreateGarnished.REGISTRATE.block("gingerbread_cookie", GingerbreadCookieBlock::new)
+            .properties(p -> p.sound(SoundType.SNOW).noOcclusion()).register();
     // Creative Blocks
 
     public static final BlockEntry<CreativeBirchLogExtractingSapBlock> CREATIVE_BIRCH_SAP_LOG =

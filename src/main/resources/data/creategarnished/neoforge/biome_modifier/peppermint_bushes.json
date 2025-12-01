@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": ["minecraft:plains"],
+  "features": "creategarnished:peppermint_bush",
+  "step": "vegetal_decoration"
+}

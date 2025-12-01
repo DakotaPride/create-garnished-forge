@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "creategarnished:royal_cider_bucket",
-    "creategarnished:royal_cider"
+    "creategarnished:royal_cider",
+    "creategarnished:caramel_topped_royal_cider"
   ]
 }

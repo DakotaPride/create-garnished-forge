@@ -13,6 +13,7 @@ import net.minecraft.world.level.material.Fluid;
 
 public class CreateGarnishedTags {
     //public static TagKey<Item> PANCAKES = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("pancakes"));
+    public static TagKey<Item> NUT_SAPLINGS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("nut_saplings"));
     public static TagKey<Item> CAUSES_NUT_ALLERGY_CONSEQUENCES = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("causes_nut_allergy_consequences"));
     public static TagKey<EntityType<?>> FLAPJACK_ADJACENT_ENTITY = TagKey.create(BuiltInRegistries.ENTITY_TYPE.key(), CreateGarnished.asResource("acceptable_birbs_for_flapjack"));
     //public static TagKey<EntityType<?>> GELATINOUS_CREATURES = TagKey.create(BuiltInRegistries.ENTITY_TYPE.key(), ResourceLocation.fromNamespaceAndPath("c", "gelatinous_creatures"));

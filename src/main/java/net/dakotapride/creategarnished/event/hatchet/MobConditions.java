@@ -1,7 +1,6 @@
 package net.dakotapride.creategarnished.event.hatchet;
 
 import net.dakotapride.creategarnished.config.HatchetConfig;
-import net.dakotapride.creategarnished.entity.VoltfishEntity;
 import net.dakotapride.creategarnished.item.PressurisedHatchetItem;
 import net.dakotapride.creategarnished.registry.*;
 import net.minecraft.server.level.ServerLevel;

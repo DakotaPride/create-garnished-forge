@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "ingredient": {
+    "item": "creategarnished:chestnut"
+  },
+  "result": {
+    "id": "creategarnished:roasted_chestnut"
+  },
+  "experience": 0.35,
+  "cookingtime": 300
+}

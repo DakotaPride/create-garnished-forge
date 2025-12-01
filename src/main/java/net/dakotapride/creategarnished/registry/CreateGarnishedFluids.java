@@ -36,6 +36,8 @@ public class CreateGarnishedFluids {
     public static final FluidEntry<VirtualFluid> SPRINTERS_TEA = REGISTRATE.virtualFluid("sprinters_tea").register();
     public static final FluidEntry<VirtualFluid> SWEET_TEA = REGISTRATE.virtualFluid("sweet_tea").register();
     public static final FluidEntry<VirtualFluid> ELVEN_TEA = REGISTRATE.virtualFluid("elven_tea").register();
+    public static final FluidEntry<VirtualFluid> MINT_TEA = REGISTRATE.virtualFluid("mint_tea").register();
+    public static final FluidEntry<VirtualFluid> EGGNOG = REGISTRATE.virtualFluid("eggnog").register();
     public static final FluidEntry<VirtualFluid> BIRCH_SAP = REGISTRATE.virtualFluid("birch_sap").register();
     //public static final FluidEntry<VirtualFluid> BIRCH_SYRUP = REGISTRATE.virtualFluid("birch_syrup").register();
     //public static final FluidEntry<VirtualFluid> BEETROOT_JUICE = REGISTRATE.virtualFluid("beetroot_juice").register();

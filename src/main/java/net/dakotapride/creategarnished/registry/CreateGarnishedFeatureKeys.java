@@ -10,6 +10,7 @@ public class CreateGarnishedFeatureKeys {
     public static final ResourceKey<ConfiguredFeature<?, ?>> HAZELNUT = createKey("hazelnut_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SAP_FILLED_BIRCH = createKey("sap_filled_birch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALMOND = createKey("almond_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CHESTNUT = createKey("chestnut_tree");
 
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String pName) {

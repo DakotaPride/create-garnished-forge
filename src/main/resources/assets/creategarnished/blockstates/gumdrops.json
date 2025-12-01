@@ -1,0 +1,67 @@
+{
+  "variants": {
+    "gumdrops=1,facing=east": {
+      "model": "creategarnished:block/gumdrops0",
+      "y": 90
+    },
+    "gumdrops=2,facing=east": {
+      "model": "creategarnished:block/gumdrops1",
+      "y": 90
+    },
+    "gumdrops=3,facing=east": {
+      "model": "creategarnished:block/gumdrops2",
+      "y": 90
+    },
+    "gumdrops=4,facing=east": {
+      "model": "creategarnished:block/gumdrops3",
+      "y": 90
+    },
+
+    "gumdrops=1,facing=west": {
+      "model": "creategarnished:block/gumdrops0",
+      "y": 270
+    },
+    "gumdrops=2,facing=west": {
+      "model": "creategarnished:block/gumdrops1",
+      "y": 270
+    },
+    "gumdrops=3,facing=west": {
+      "model": "creategarnished:block/gumdrops2",
+      "y": 270
+    },
+    "gumdrops=4,facing=west": {
+      "model": "creategarnished:block/gumdrops3",
+      "y": 270
+    },
+
+    "gumdrops=1,facing=north": {
+      "model": "creategarnished:block/gumdrops0"
+    },
+    "gumdrops=2,facing=north": {
+      "model": "creategarnished:block/gumdrops1"
+    },
+    "gumdrops=3,facing=north": {
+      "model": "creategarnished:block/gumdrops2"
+    },
+    "gumdrops=4,facing=north": {
+      "model": "creategarnished:block/gumdrops3"
+    },
+
+    "gumdrops=1,facing=south": {
+      "model": "creategarnished:block/gumdrops0",
+      "y": 180
+    },
+    "gumdrops=2,facing=south": {
+      "model": "creategarnished:block/gumdrops1",
+      "y": 180
+    },
+    "gumdrops=3,facing=south": {
+      "model": "creategarnished:block/gumdrops2",
+      "y": 180
+    },
+    "gumdrops=4,facing=south": {
+      "model": "creategarnished:block/gumdrops3",
+      "y": 180
+    }
+  }
+}

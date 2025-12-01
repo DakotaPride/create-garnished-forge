@@ -5,6 +5,8 @@
     "minecraft:bad_omen",
     "minecraft:hero_of_the_village",
     "minecraft:slowness",
+    "creategarnished:sticky",
+    "creategarnished:nut_allergy",
 
     {
       "required": false,

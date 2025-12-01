@@ -72,6 +72,9 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.ALMOND_PASTE);
             output.accept(CreateGarnishedItems.CREAM);
 
+            output.accept(CreateGarnishedItems.CHESTNUT);
+            output.accept(CreateGarnishedItems.ROASTED_CHESTNUT);
+
             output.accept(CreateGarnishedItems.ELASTIC_STRAND);
             output.accept(CreateGarnishedItems.FIERY_ELASTIC_STRAND);
             output.accept(CreateGarnishedItems.GUARDIAN_SPIKE);
@@ -100,9 +103,21 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.CORN_SYRUP_BOTTLE);
             output.accept(CreateGarnishedItems.MYSTERIOUS_VOLT_BOTTLE);
 
+            output.accept(CreateGarnishedItems.CARAMELISED_APPLE);
+            output.accept(CreateGarnishedItems.CARAMEL_TOPPED_ROYAL_CIDER);
+            output.accept(CreateGarnishedItems.PEPPERMINT_BARK);
+            output.accept(CreateGarnishedItems.CANDY_CANE);
+            output.accept(CreateGarnishedItems.GUMDROPS);
+            output.accept(CreateGarnishedItems.GINGERBREAD_LOAF);
+            output.accept(CreateGarnishedItems.GINGERBREAD_COOKIE);
+            for (CreateGarnishedItems.GingerbreadCookieTypes types : CreateGarnishedItems.GingerbreadCookieTypes.values())
+                output.accept(types.getItem());
+
             output.accept(CreateGarnishedItems.SPRINTERS_TEA);
             output.accept(CreateGarnishedItems.SWEET_TEA);
             output.accept(CreateGarnishedItems.ELVEN_TEA);
+            output.accept(CreateGarnishedItems.MINT_TEA);
+            output.accept(CreateGarnishedItems.EGGNOG);
 
             output.accept(CreateGarnishedFluids.PEANUT_BUTTER.get().getBucket());
             output.accept(CreateGarnishedFluids.BIRCH_SYRUP.get().getBucket());
@@ -114,6 +129,7 @@ public class CreateGarnishedCreativeModeTabs {
             // Creative Items
             output.accept(CreateGarnishedItems.CREATIVE_PRESSURISED_HATCHET);
             output.accept(CreateGarnishedItems.VOLTFISH_SPAWN_EGG);
+            output.accept(CreateGarnishedItems.SQUIRREL_SPAWN_EGG);
         }
     }
 
@@ -127,11 +143,14 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedBlocks.WILD_PEANUT);
             output.accept(CreateGarnishedBlocks.WILD_GINGER_ROOT);
             output.accept(CreateGarnishedBlocks.WILD_GARLIC);
+            output.accept(CreateGarnishedBlocks.WILD_MINT);
+            output.accept(CreateGarnishedBlocks.WILD_PEPPERMINT);
 
             output.accept(CreateGarnishedBlocks.PEANUT_BARREL);
             output.accept(CreateGarnishedBlocks.PINE_NUT_BARREL);
             output.accept(CreateGarnishedBlocks.HAZELNUT_BARREL);
             output.accept(CreateGarnishedBlocks.ALMOND_BARREL);
+            output.accept(CreateGarnishedBlocks.CHESTNUT_BARREL);
             output.accept(CreateGarnishedBlocks.SWEET_BERRY_BARREL);
             output.accept(CreateGarnishedBlocks.ELVEN_SWEET_BERRY_BARREL);
             output.accept(CreateGarnishedBlocks.GARLIC_BARREL);
@@ -140,6 +159,7 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedBlocks.HAZELNUT_LEAVES);
             output.accept(CreateGarnishedBlocks.ALMOND_LEAVES);
             output.accept(CreateGarnishedBlocks.BLOSSOMING_ALMOND_LEAVES);
+            output.accept(CreateGarnishedBlocks.CHESTNUT_LEAVES);
             output.accept(CreateGarnishedBlocks.BIRCH_SAP_LOG);
 
 //            output.accept(CreateGarnishedBlocks.PINE_NUT_SAPLING);

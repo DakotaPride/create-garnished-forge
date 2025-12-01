@@ -4,7 +4,8 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
-import net.dakotapride.creategarnished.entity.client.VoltfishRenderer;
+import net.dakotapride.creategarnished.entity.squirrel.client.SquirrelRenderer;
+import net.dakotapride.creategarnished.entity.voltfish.client.VoltfishRenderer;
 import net.dakotapride.creategarnished.particle.CaramelParticle;
 import net.dakotapride.creategarnished.particle.ElvenMysticalParticleType;
 import net.dakotapride.creategarnished.recipe.CreateGarnishedRecipeSerializers;
@@ -123,6 +124,7 @@ public class CreateGarnished {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(CreateGarnishedEntityTypes.VOLTFISH.get(), VoltfishRenderer::new);
+            EntityRenderers.register(CreateGarnishedEntityTypes.SQUIRREL.get(), SquirrelRenderer::new);
         }
 
         @SubscribeEvent
@@ -136,14 +138,15 @@ public class CreateGarnished {
         @SubscribeEvent
         public static void onAddPackFinders(AddPackFindersEvent event) {
             if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+                registerBuiltinResourcePack(event, "old_porphyry", "Old Porphyry Textures", PackSource.BUILT_IN, false);
             }
         }
 
-        private static void registerBuiltinResourcePack(AddPackFindersEvent event, String folder, PackSource source, boolean alwaysActive) {
+        private static void registerBuiltinResourcePack(AddPackFindersEvent event, String folder, String name, PackSource source, boolean alwaysActive) {
             event.addPackFinders(
                     asResource("assets/creategarnished/resourcepacks/" + folder),
                     PackType.CLIENT_RESOURCES,
-                    Component.literal(ID + "/" + folder),
+                    Component.literal(name),
                     source,
                     alwaysActive,
                     Pack.Position.TOP);

@@ -5,8 +5,10 @@ import net.dakotapride.creategarnished.registry.CreateGarnishedBlocks;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.color.item.ItemColors;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -32,6 +34,7 @@ public class CreateGarnishedColourManager {
 
         colors.register((blockState, tintGetter, blockPos, i) -> FoliageColor.getEvergreenColor(), CreateGarnishedBlocks.PINE_NUT_LEAVES.get());
         colors.register((blockState, tintGetter, blockPos, i) -> FoliageColor.getBirchColor(), CreateGarnishedBlocks.HAZELNUT_LEAVES.get());
+        colors.register((blockState, tintGetter, blockPos, i) -> tintGetter != null && blockPos != null ? BiomeColors.getAverageFoliageColor(tintGetter, blockPos) : FoliageColor.getDefaultColor(), CreateGarnishedBlocks.CHESTNUT_LEAVES.get());
     }
 
     public static synchronized void itemColourProvider(BlockColors colors, ItemColors itemColors) {
@@ -41,6 +44,6 @@ public class CreateGarnishedColourManager {
         };
 
         itemColors.register(itemBlockColourHandler,
-                CreateGarnishedBlocks.PINE_NUT_LEAVES.get(), CreateGarnishedBlocks.HAZELNUT_LEAVES.get());
+                CreateGarnishedBlocks.PINE_NUT_LEAVES.get(), CreateGarnishedBlocks.HAZELNUT_LEAVES.get(), CreateGarnishedBlocks.CHESTNUT_LEAVES.get());
     }
 }

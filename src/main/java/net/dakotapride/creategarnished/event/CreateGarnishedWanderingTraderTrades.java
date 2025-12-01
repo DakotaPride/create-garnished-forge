@@ -40,6 +40,9 @@ public class CreateGarnishedWanderingTraderTrades {
         rareTrades.add((entity, randomSource) -> new MerchantOffer(
                 new ItemCost(Items.EMERALD, 12),
                 new ItemStack(CreateGarnishedItems.ELVEN_TEA.get(), 1), 2, 10, 0.2f));
+        rareTrades.add((entity, randomSource) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 12),
+                new ItemStack(CreateGarnishedItems.MINT_TEA.get(), 1), 4, 10, 0.2f));
 
         // Nuts
         genericTrades.add((entity, randomSource) -> new MerchantOffer(
@@ -54,6 +57,9 @@ public class CreateGarnishedWanderingTraderTrades {
         genericTrades.add((entity, randomSource) -> new MerchantOffer(
                 new ItemCost(Items.EMERALD, 1),
                 new ItemStack(CreateGarnishedItems.ALMOND.get(), 4), 3, 10, 0.2f));
+        genericTrades.add((entity, randomSource) -> new MerchantOffer(
+                new ItemCost(Items.EMERALD, 1),
+                new ItemStack(CreateGarnishedItems.CHESTNUT.get(), 4), 3, 10, 0.2f));
 
         // Soups/Stews
         rareTrades.add((entity, randomSource) -> new MerchantOffer(

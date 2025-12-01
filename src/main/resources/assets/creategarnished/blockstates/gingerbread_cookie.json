@@ -1,0 +1,112 @@
+{
+  "variants": {
+    "gingerbread_cookie_variant=none,facing=east": {
+      "model": "creategarnished:block/gingerbread_cookie",
+      "y": 90
+    },
+    "gingerbread_cookie_variant=transrights,facing=east": {
+      "model": "creategarnished:block/gingerbread_cookie_transrights",
+      "y": 90
+    },
+    "gingerbread_cookie_variant=goggles,facing=east": {
+      "model": "creategarnished:block/gingerbread_cookie_goggles",
+      "y": 90
+    },
+    "gingerbread_cookie_variant=creeper,facing=east": {
+      "model": "creategarnished:block/gingerbread_cookie_creeper",
+      "y": 90
+    },
+    "gingerbread_cookie_variant=infected,facing=east": {
+      "model": "creategarnished:block/gingerbread_cookie_infected",
+      "y": 90
+    },
+    "gingerbread_cookie_variant=grub,facing=east": {
+      "model": "creategarnished:block/gingerbread_cookie_grub",
+      "y": 90
+    },
+    "gingerbread_cookie_variant=flea,facing=east": {
+      "model": "creategarnished:block/gingerbread_cookie_flea",
+      "y": 90
+    },
+
+    "gingerbread_cookie_variant=none,facing=west": {
+      "model": "creategarnished:block/gingerbread_cookie",
+      "y": 270
+    },
+    "gingerbread_cookie_variant=transrights,facing=west": {
+      "model": "creategarnished:block/gingerbread_cookie_transrights",
+      "y": 270
+    },
+    "gingerbread_cookie_variant=goggles,facing=west": {
+      "model": "creategarnished:block/gingerbread_cookie_goggles",
+      "y": 270
+    },
+    "gingerbread_cookie_variant=creeper,facing=west": {
+      "model": "creategarnished:block/gingerbread_cookie_creeper",
+      "y": 270
+    },
+    "gingerbread_cookie_variant=infected,facing=west": {
+      "model": "creategarnished:block/gingerbread_cookie_infected",
+      "y": 270
+    },
+    "gingerbread_cookie_variant=grub,facing=west": {
+      "model": "creategarnished:block/gingerbread_cookie_grub",
+      "y": 270
+    },
+    "gingerbread_cookie_variant=flea,facing=west": {
+      "model": "creategarnished:block/gingerbread_cookie_flea",
+      "y": 270
+    },
+
+    "gingerbread_cookie_variant=none,facing=north": {
+      "model": "creategarnished:block/gingerbread_cookie"
+    },
+    "gingerbread_cookie_variant=transrights,facing=north": {
+      "model": "creategarnished:block/gingerbread_cookie_transrights"
+    },
+    "gingerbread_cookie_variant=goggles,facing=north": {
+      "model": "creategarnished:block/gingerbread_cookie_goggles"
+    },
+    "gingerbread_cookie_variant=creeper,facing=north": {
+      "model": "creategarnished:block/gingerbread_cookie_creeper"
+    },
+    "gingerbread_cookie_variant=infected,facing=north": {
+      "model": "creategarnished:block/gingerbread_cookie_infected"
+    },
+    "gingerbread_cookie_variant=grub,facing=north": {
+      "model": "creategarnished:block/gingerbread_cookie_grub"
+    },
+    "gingerbread_cookie_variant=flea,facing=north": {
+      "model": "creategarnished:block/gingerbread_cookie_flea"
+    },
+
+    "gingerbread_cookie_variant=none,facing=south": {
+      "model": "creategarnished:block/gingerbread_cookie",
+      "y": 180
+    },
+    "gingerbread_cookie_variant=transrights,facing=south": {
+      "model": "creategarnished:block/gingerbread_cookie_transrights",
+      "y": 180
+    },
+    "gingerbread_cookie_variant=goggles,facing=south": {
+      "model": "creategarnished:block/gingerbread_cookie_goggles",
+      "y": 180
+    },
+    "gingerbread_cookie_variant=creeper,facing=south": {
+      "model": "creategarnished:block/gingerbread_cookie_creeper",
+      "y": 180
+    },
+    "gingerbread_cookie_variant=infected,facing=south": {
+      "model": "creategarnished:block/gingerbread_cookie_infected",
+      "y": 180
+    },
+    "gingerbread_cookie_variant=grub,facing=south": {
+      "model": "creategarnished:block/gingerbread_cookie_grub",
+      "y": 180
+    },
+    "gingerbread_cookie_variant=flea,facing=south": {
+      "model": "creategarnished:block/gingerbread_cookie_flea",
+      "y": 180
+    }
+  }
+}

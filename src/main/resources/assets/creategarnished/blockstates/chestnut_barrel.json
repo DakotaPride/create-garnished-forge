@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "creategarnished:block/chestnut_barrel",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "creategarnished:block/chestnut_barrel",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "creategarnished:block/chestnut_barrel",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "creategarnished:block/chestnut_barrel",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "creategarnished:block/chestnut_barrel"
+    },
+    "facing=west": {
+      "model": "creategarnished:block/chestnut_barrel",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

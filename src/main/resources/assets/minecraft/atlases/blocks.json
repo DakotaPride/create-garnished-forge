@@ -87,6 +87,22 @@
     {
       "type": "single",
       "resource": "creategarnished:fluid/corn_syrup_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/caramel_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/caramel_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/mint_tea_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/mint_tea_still"
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:candy_cane"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 6,
+      "item": {
+        "id": "creategarnished:peppermint_bark"
+      }
+    }
+  ]
+}

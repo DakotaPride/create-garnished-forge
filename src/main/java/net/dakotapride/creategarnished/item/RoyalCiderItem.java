@@ -1,6 +1,8 @@
 package net.dakotapride.creategarnished.item;
 
 import net.dakotapride.creategarnished.registry.CreateGarnishedBlocks;
+import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
+import net.dakotapride.creategarnished.registry.CreateGarnishedStatusEffects;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -20,6 +22,17 @@ public class RoyalCiderItem extends BlockItem {
                         .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 60 * 20, 0, false, false, false), 1.0F)
                         .effect(() -> new MobEffectInstance(MobEffects.LUCK, 3 * 60 * 20, 0, false, false, false), 1.0F)
                 .usingConvertsTo(Items.GLASS_BOTTLE).build()));
+    }
+
+    public static class Caramel extends BlockItem {
+        public Caramel(Properties properties) {
+            super(CreateGarnishedBlocks.CARAMEL_ROYAL_CIDER_GLASS.get(), properties.food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.8F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3 * 60 * 20, 0, false, true, false), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.LUCK, 3 * 60 * 20, 0, false, false, false), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 60 * 20, 1, false, false, false), 0.5F)
+                    .effect(() -> new MobEffectInstance(CreateGarnishedStatusEffects.STICKY, 2 * 60 * 20, 1, false, false, false), 0.25F)
+                    .usingConvertsTo(Items.GLASS_BOTTLE).build()));
+        }
     }
 
     public static VoxelShape makeShape(){
@@ -46,7 +59,7 @@ public class RoyalCiderItem extends BlockItem {
 
     @Override
     public String getDescriptionId(ItemStack stack) {
-        return "item.creategarnished.royal_cider";
+        return stack.is(CreateGarnishedItems.CARAMEL_TOPPED_ROYAL_CIDER) ? "item.creategarnished.caramel_topped_royal_cider" : "item.creategarnished.royal_cider";
     }
 
     @Override

@@ -1,0 +1,20 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "creategarnished:caramel"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "creategarnished:caramelised_apple"
+      }
+    }
+  ]
+}

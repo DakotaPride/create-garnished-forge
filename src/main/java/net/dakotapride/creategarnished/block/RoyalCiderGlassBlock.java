@@ -1,6 +1,7 @@
 package net.dakotapride.creategarnished.block;
 
 import net.dakotapride.creategarnished.item.RoyalCiderItem;
+import net.dakotapride.creategarnished.registry.CreateGarnishedBlocks;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -35,8 +36,11 @@ public class RoyalCiderGlassBlock extends Block {
             level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
             level.playSound(player, pos, SoundEvents.GLASS_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
 
-            if (!player.isCreative())
-                player.addItem(new ItemStack(CreateGarnishedItems.ROYAL_CIDER.get()));
+            if (!player.isCreative()) {
+                if (state.is(CreateGarnishedBlocks.CARAMEL_ROYAL_CIDER_GLASS)) {
+                    player.addItem(new ItemStack(CreateGarnishedItems.CARAMEL_TOPPED_ROYAL_CIDER.get()));
+                } else player.addItem(new ItemStack(CreateGarnishedItems.ROYAL_CIDER.get()));
+            }
 
             return InteractionResult.SUCCESS;
         }

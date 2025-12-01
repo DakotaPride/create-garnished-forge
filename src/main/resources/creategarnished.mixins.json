@@ -3,6 +3,7 @@
   "package": "net.dakotapride.creategarnished.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AbstractIllagerMixin",
     "BlockHelperMixin",
     "GenericItemEmptyingMixin",
     "GenericItemFillingMixin",

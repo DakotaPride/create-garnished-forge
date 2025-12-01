@@ -4,6 +4,7 @@ import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.block.GingerbreadCookieBlock;
 import net.dakotapride.creategarnished.item.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -12,6 +13,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.PotionContents;
+
+import java.util.Locale;
 
 public class CreateGarnishedItems {
 
@@ -234,11 +237,78 @@ public class CreateGarnishedItems {
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F)
                     //.effect(() -> new MobEffectInstance(CreateGarnishedStatusEffects.STICKY, 600), 1.0F)
                     .build())).register();
+    public static final ItemEntry<RoyalCiderItem.Caramel> CARAMEL_TOPPED_ROYAL_CIDER = CreateGarnished.REGISTRATE.item("caramel_topped_royal_cider", RoyalCiderItem.Caramel::new)
+            .properties(p -> p.stacksTo(4))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.royal_cider_caramel"))
+            .register();
+    public static final ItemEntry<MintTeaItem> MINT_TEA = CreateGarnished.REGISTRATE.item("mint_tea", MintTeaItem::new)
+            .properties(p -> p.stacksTo(16))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.mint_tea"))
+            .register();
+    public static final ItemEntry<Item> PEPPERMINT_BARK = CreateGarnished.REGISTRATE.item("peppermint_bark", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).fast()
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 120, 3), 1.0F).build()))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.pepperment_bark"))
+            .register();
+    public static final ItemEntry<Item> CANDY_CANE = CreateGarnished.REGISTRATE.item("candy_cane", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.4F).fast()
+                    .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 240, 1), 1.0F).build()))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.candy_cane"))
+            .register();
+    public static final ItemEntry<ChestnutItem> CHESTNUT = CreateGarnished.REGISTRATE.item("chestnut", ChestnutItem::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6F).build()))
+            .register();
+    public static final ItemEntry<Item> ROASTED_CHESTNUT = CreateGarnished.REGISTRATE.item("roasted_chestnut", Item::new)
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(10).saturationModifier(0.6F).build()))
+            .register();
+    public static final ItemEntry<Item> CRACKED_CHESTNUT = CreateGarnished.REGISTRATE.item("cracked_chestnut", Item::new).register();
+    public static final ItemEntry<EggnogItem> EGGNOG = CreateGarnished.REGISTRATE.item("eggnog", EggnogItem::new).register();
+    public static final ItemEntry<BlockItem> GUMDROPS = CreateGarnished.REGISTRATE.item("gumdrops",
+            properties -> new BlockItem(CreateGarnishedBlocks.GUMDROPS.get(), properties))
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build())).register();
+    public static final ItemEntry<Item> GINGERBREAD_LOAF = CreateGarnished.REGISTRATE.item("gingerbread_loaf", Item::new).register();
+    public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_GINGERBREAD_COOKIE = CreateGarnished.REGISTRATE.item("incomplete_gingerbread_cookie", SequencedAssemblyItem::new).register();
+    public static final ItemEntry<GingerbreadCookieItem> GINGERBREAD_COOKIE = CreateGarnished.REGISTRATE.item("gingerbread_cookie", properties -> new GingerbreadCookieItem(
+            "", GingerbreadCookieBlock.GingerbreadCookieVariants.NONE, CreateGarnishedBlocks.GINGERBREAD_COOKIE.get(), properties))
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F).build())).register();
+
+    enum GingerbreadCookieTypes {
+        TRANSRIGHTS(GingerbreadCookieBlock.GingerbreadCookieVariants.TRANSRIGHTS),
+        CREEPER(GingerbreadCookieBlock.GingerbreadCookieVariants.CREEPER),
+        GOGGLES(GingerbreadCookieBlock.GingerbreadCookieVariants.GOGGLES),
+        // WHITE(), -> Became the regular, basic cookie texture
+        //HOLLOW(),
+        INFECTED(GingerbreadCookieBlock.GingerbreadCookieVariants.INFECTED),
+        GRUB(GingerbreadCookieBlock.GingerbreadCookieVariants.GRUB),
+        FLEA(GingerbreadCookieBlock.GingerbreadCookieVariants.FLEA),
+
+
+        ;
+
+        final ItemEntry<GingerbreadCookieItem> item;
+
+        GingerbreadCookieTypes(GingerbreadCookieBlock.GingerbreadCookieVariants variant) {
+            this.item = CreateGarnished.REGISTRATE.item("gingerbread_cookie_" + name().toLowerCase(Locale.ROOT),
+                            properties -> new GingerbreadCookieItem(name().toLowerCase(Locale.ROOT), variant, CreateGarnishedBlocks.GINGERBREAD_COOKIE.get(), properties))
+                    .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F).build())).register();
+        }
+
+        public ItemEntry<GingerbreadCookieItem> getItem() {
+            return item;
+        }
+
+        private static void furretWalk() {}
+    }
 
     public static final ItemEntry<SpawnEggItem> VOLTFISH_SPAWN_EGG = CreateGarnished.REGISTRATE.item("voltfish_spawn_egg",
             properties -> new SpawnEggItem(CreateGarnishedEntityTypes.VOLTFISH.get(),
                     0x7C6496, 0x291B38, properties)).register();
+    public static final ItemEntry<SpawnEggItem> SQUIRREL_SPAWN_EGG = CreateGarnished.REGISTRATE.item("squirrel_spawn_egg",
+            properties -> new SpawnEggItem(CreateGarnishedEntityTypes.SQUIRREL.get(),
+                    0xA09D9A, 0x7E7A77, properties)).register();
 
-    public static void register() {}
+    public static void register() {
+        GingerbreadCookieTypes.furretWalk();
+    }
 
 }
