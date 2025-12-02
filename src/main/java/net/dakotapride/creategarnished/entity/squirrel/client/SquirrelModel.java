@@ -85,33 +85,11 @@ public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T
         return LayerDefinition.create(meshdefinition, 32, 32);
     }
 
-    //    @Override
-//    public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float partialTick) {
-//        super.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTick);
-//        if (entity.isInSittingPose()) {
-//            this.main.y -= 1.0F;
-//            this.head.yRot -= 27.5F;
-//            this.head.x -= 0.25F;
-//            this.arms.xRot -= 80.0F;
-//            this.arms.y += 0.25F;
-//            this.left2.zRot -= 2.5F;
-//            this.right2.zRot += 2.5F;
-//            this.tail.xRot -= 31.6655F;
-//            this.tail.yRot += 47.6632F;
-//            this.tail.zRot -= 65.4028F;
-//            this.foot.yRot -= 15.0F;
-//            this.foot.y += 1.0F;
-//            this.foot2.yRot -= 2.5F;
-//            this.foot2.y += 1.0F;
-//        }
-//    }
-
     @Override
     public void setupAnim(SquirrelEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.applyHeadRotation(netHeadYaw, headPitch);
 
-        //this.animate(entity.sitAnimationState, SquirrelAnimations.ANIM_SQUIRREL_SITTING, ageInTicks, 1.0F);
         this.animateWalk(SquirrelAnimations.ANIM_SQUIRREL_WALK, limbSwing, limbSwingAmount, 2.0F, 2.5F);
         this.animate(entity.idleAnimationState, SquirrelAnimations.ANIM_SQUIRREL_IDLE, ageInTicks, 1.0F);
         this.animate(entity.sittingAnimationState, SquirrelAnimations.ANIM_SQUIRREL_SITTING, ageInTicks, 1.0F);
