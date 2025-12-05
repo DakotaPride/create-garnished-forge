@@ -1,0 +1,37 @@
+{
+  "type": "create:compacting",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "creategarnished:wild_mint"
+    },
+    {
+      "item": "creategarnished:wild_peppermint"
+    },
+    {
+      "tag": "c:dyes"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "count": 6,
+      "item": {
+        "id": "creategarnished:gumdrops"
+      }
+    }
+  ]
+}

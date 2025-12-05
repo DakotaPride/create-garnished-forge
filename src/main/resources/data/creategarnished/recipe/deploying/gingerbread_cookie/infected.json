@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "creategarnished:gingerbread_cookie"
+    },
+    {
+      "item": "minecraft:sculk_vein"
+    }
+  ],
+  "results": [
+    {
+      "id": "creategarnished:gingerbread_cookie_infected"
+    }
+  ]
+}

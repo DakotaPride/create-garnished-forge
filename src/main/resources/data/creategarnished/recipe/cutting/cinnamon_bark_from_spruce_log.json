@@ -1,0 +1,23 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:spruce_log"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 1,
+      "item": {
+        "id": "creategarnished:cinnamon_bark"
+      }
+    },
+    {
+      "count": 1,
+      "item": {
+        "id": "minecraft:stripped_spruce_log"
+      }
+    }
+  ]
+}

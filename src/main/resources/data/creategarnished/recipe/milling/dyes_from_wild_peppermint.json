@@ -1,0 +1,23 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "creategarnished:wild_peppermint"
+    }
+  ],
+  "results": [
+    {
+      "chance": 0.65,
+      "count": 2,
+      "item": {
+        "id": "minecraft:lime_dye"
+      }
+    },
+    {
+      "chance": 0.15,
+      "item": {
+        "id": "minecraft:green_dye"
+      }
+    }
+  ]
+}

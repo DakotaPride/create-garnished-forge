@@ -103,6 +103,14 @@
     {
       "type": "single",
       "resource": "creategarnished:fluid/mint_tea_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/eggnog_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/eggnog_still"
     }
   ]
 }

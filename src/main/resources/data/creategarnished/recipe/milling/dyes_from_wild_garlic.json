@@ -1,0 +1,29 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "creategarnished:wild_garlic"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": {
+        "id": "creategarnished:garlic_bulb"
+      }
+    },
+    {
+      "chance": 0.65,
+      "count": 2,
+      "item": {
+        "id": "minecraft:green_dye"
+      }
+    },
+    {
+      "chance": 0.15,
+      "item": {
+        "id": "minecraft:brown_dye"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "creategarnished:gingerbread_cookie"
+    },
+    {
+      "tag": "minecraft:wool"
+    }
+  ],
+  "results": [
+    {
+      "id": "creategarnished:gingerbread_cookie_flea"
+    }
+  ]
+}

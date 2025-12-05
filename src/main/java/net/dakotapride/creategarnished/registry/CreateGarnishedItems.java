@@ -266,7 +266,11 @@ public class CreateGarnishedItems {
     public static final ItemEntry<BlockItem> GUMDROPS = CreateGarnished.REGISTRATE.item("gumdrops",
             properties -> new BlockItem(CreateGarnishedBlocks.GUMDROPS.get(), properties))
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build())).register();
+    public static final ItemEntry<Item> GINGERBREAD_FLOUR = CreateGarnished.REGISTRATE.item("gingerbread_flour", Item::new).register();
+    public static final ItemEntry<Item> GINGERBREAD_DOUGH = CreateGarnished.REGISTRATE.item("gingerbread_dough", Item::new).register();
     public static final ItemEntry<Item> GINGERBREAD_LOAF = CreateGarnished.REGISTRATE.item("gingerbread_loaf", Item::new).register();
+    public static final ItemEntry<Item> CINNAMON_BARK = CreateGarnished.REGISTRATE.item("cinnamon_bark", Item::new).register();
+    public static final ItemEntry<Item> CINNAMON_STICK = CreateGarnished.REGISTRATE.item("cinnamon_stick", Item::new).register();
     public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_GINGERBREAD_COOKIE = CreateGarnished.REGISTRATE.item("incomplete_gingerbread_cookie", SequencedAssemblyItem::new).register();
     public static final ItemEntry<GingerbreadCookieItem> GINGERBREAD_COOKIE = CreateGarnished.REGISTRATE.item("gingerbread_cookie", properties -> new GingerbreadCookieItem(
             "", GingerbreadCookieBlock.GingerbreadCookieVariants.NONE, CreateGarnishedBlocks.GINGERBREAD_COOKIE.get(), properties))

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "ingredient": {
+    "item": "creategarnished:gingerbread_dough"
+  },
+  "result": {
+    "id": "creategarnished:gingerbread_loaf"
+  },
+  "experience": 0.35,
+  "cookingtime": 600
+}

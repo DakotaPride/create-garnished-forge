@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "creategarnished:cream"
+    },
+    {
+      "tag": "creategarnished:nuts"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 100,
+      "fluid_tag": "c:milk"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "creategarnished:eggnog"
+    }
+  ]
+}

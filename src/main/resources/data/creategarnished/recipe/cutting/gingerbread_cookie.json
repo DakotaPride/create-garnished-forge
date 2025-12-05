@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:gingerbread_loaf"
+    }
+  ],
+  "processing_time": 600,
+  "results": [
+    {
+      "count": 6,
+      "item": {
+        "id": "creategarnished:gingerbread_cookie"
+      }
+    }
+  ]
+}

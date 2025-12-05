@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "creategarnished:gingerbread_flour"
+    }
+  ],
+  "results": [
+    {
+      "id": "creategarnished:gingerbread_dough"
+    }
+  ]
+}

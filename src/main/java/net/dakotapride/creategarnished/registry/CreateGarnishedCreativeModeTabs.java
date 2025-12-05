@@ -50,6 +50,8 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.PINE_NUT);
             output.accept(CreateGarnishedItems.ELVEN_SWEET_BERRIES);
             output.accept(CreateGarnishedItems.GARLIC_BULB);
+            output.accept(CreateGarnishedItems.CINNAMON_BARK);
+            output.accept(CreateGarnishedItems.CINNAMON_STICK);
             output.accept(CreateGarnishedItems.VEGETABLE_STEW);
             output.accept(CreateGarnishedItems.GARLIC_BREAD);
             output.accept(CreateGarnishedItems.PINE_NUT_FLOUR);
@@ -108,6 +110,8 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.PEPPERMINT_BARK);
             output.accept(CreateGarnishedItems.CANDY_CANE);
             output.accept(CreateGarnishedItems.GUMDROPS);
+            output.accept(CreateGarnishedItems.GINGERBREAD_FLOUR);
+            output.accept(CreateGarnishedItems.GINGERBREAD_DOUGH);
             output.accept(CreateGarnishedItems.GINGERBREAD_LOAF);
             output.accept(CreateGarnishedItems.GINGERBREAD_COOKIE);
             for (CreateGarnishedItems.GingerbreadCookieTypes types : CreateGarnishedItems.GingerbreadCookieTypes.values())

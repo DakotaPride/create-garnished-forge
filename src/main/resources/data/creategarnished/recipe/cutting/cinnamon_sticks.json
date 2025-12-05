@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "creategarnished:cinnamon_bark"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 4,
+      "item": {
+        "id": "creategarnished:cinnamon_stick"
+      }
+    }
+  ]
+}
