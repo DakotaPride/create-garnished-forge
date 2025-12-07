@@ -10,12 +10,16 @@ import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.entity.squirrel.SquirrelEntity;
 import net.minecraft.client.animation.definitions.CamelAnimation;
 import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.ParrotModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.AnimationState;
+import net.minecraft.world.entity.animal.Parrot;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
@@ -24,6 +28,7 @@ public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T
     private final ModelPart head;
     private final ModelPart ears;
     private final ModelPart body;
+    private final ModelPart body2;
     private final ModelPart arms;
     private final ModelPart right;
     private final ModelPart left;
@@ -39,6 +44,7 @@ public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T
         this.head = this.main.getChild("head");
         this.ears = this.head.getChild("ears");
         this.body = this.main.getChild("body");
+        this.body2 = this.body.getChild("body2");
         this.arms = this.body.getChild("arms");
         this.right = this.arms.getChild("right");
         this.left = this.arms.getChild("left");
@@ -62,7 +68,9 @@ public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T
         PartDefinition ears = head.addOrReplaceChild("ears", CubeListBuilder.create().texOffs(8, 19).addBox(0.5F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, new CubeDeformation(0.0F))
                 .texOffs(10, 19).addBox(-1.5F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, -0.5F));
 
-        PartDefinition body = main.addOrReplaceChild("body", CubeListBuilder.create().texOffs(2, 2).addBox(-1.4375F, -1.75F, -5.1563F, 3.0F, 2.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-0.0313F, 0.75F, 2.5781F));
+        PartDefinition body = main.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(-0.0313F, 0.75F, 2.5781F));
+
+        PartDefinition body2 = body.addOrReplaceChild("body2", CubeListBuilder.create().texOffs(2, 2).addBox(-1.4375F, -1.75F, -5.1563F, 3.0F, 2.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
         PartDefinition arms = body.addOrReplaceChild("arms", CubeListBuilder.create(), PartPose.offset(0.0625F, -0.25F, -5.0313F));
 
@@ -93,6 +101,7 @@ public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T
         this.animateWalk(SquirrelAnimations.ANIM_SQUIRREL_WALK, limbSwing, limbSwingAmount, 2.0F, 2.5F);
         this.animate(entity.idleAnimationState, SquirrelAnimations.ANIM_SQUIRREL_IDLE, ageInTicks, 1.0F);
         this.animate(entity.sittingAnimationState, SquirrelAnimations.ANIM_SQUIRREL_SITTING, ageInTicks, 1.0F);
+        this.animate(entity.dancingAnimationState, SquirrelAnimations.ANIM_SQUIRREL_DANCING, ageInTicks, 2.0F);
     }
 
     private void applyHeadRotation(float headYaw, float headPitch) {
