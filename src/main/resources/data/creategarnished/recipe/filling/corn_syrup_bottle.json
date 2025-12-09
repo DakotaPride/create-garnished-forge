@@ -5,9 +5,9 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "type": "fluid_stack",
+      "type": "fluid_tag",
       "amount": 250,
-      "fluid": "creategarnished:corn_syrup"
+      "fluid_tag": "c:corn_syrup"
     }
   ],
   "results": [

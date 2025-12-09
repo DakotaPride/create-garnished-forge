@@ -1,0 +1,28 @@
+{
+  "name": "Ginger Processing",
+  "icon": "creategarnished:gingerbread_flour",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:cinnamon_stick",
+      "text": "Utilising Sandpaper on spruce logs will yield a large piece of Cinnamon Bark, which can be cut in a Mechanical Saw into Cinnamon Sticks."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:gingerbread_flour",
+      "text": "Combining Flour, a Ginger Root, and a Cinnamon Stick together in a crafting grid will provide some Gingerflour. This can then be washed, similar to regular flour, into Gingerdough, then smoked into a Loaf of Gingerbread."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:gingerbread_cookie",
+      "text": "Sending a Gingerbread Loaf into a Mechanical Saw will result in the creation of Gingerbread Cookies, of which can be used to decorate your builds or as a small treat for the holidays!$(br)There are additional variants that serve the same purpose, just differing in texture."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "creategarnished:biome_specifics/jungle"
+      ]
+    }
+  ]
+}

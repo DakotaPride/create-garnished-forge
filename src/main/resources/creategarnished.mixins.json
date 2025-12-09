@@ -11,7 +11,8 @@
     "VanillaFluidTargetsMixin"
   ],
   "client": [
-    "GuiMixin"
+    "GuiMixin",
+    "LevelRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

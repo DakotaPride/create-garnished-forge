@@ -33,6 +33,26 @@ public class RoyalCiderItem extends BlockItem {
                     .effect(() -> new MobEffectInstance(CreateGarnishedStatusEffects.STICKY, 2 * 60 * 20, 1, false, false, false), 0.25F)
                     .usingConvertsTo(Items.GLASS_BOTTLE).build()));
         }
+
+        @Override
+        protected boolean canPlace(BlockPlaceContext context, BlockState state) {
+            return Screen.hasShiftDown();
+        }
+
+        @Override
+        public String getDescriptionId(ItemStack stack) {
+            return "item.creategarnished.caramel_topped_royal_cider";
+        }
+
+        @Override
+        public int getUseDuration(ItemStack stack, LivingEntity entity) {
+            return 42;
+        }
+
+        @Override
+        public UseAnim getUseAnimation(ItemStack stack) {
+            return UseAnim.DRINK;
+        }
     }
 
     public static VoxelShape makeShape(){
@@ -59,7 +79,7 @@ public class RoyalCiderItem extends BlockItem {
 
     @Override
     public String getDescriptionId(ItemStack stack) {
-        return stack.is(CreateGarnishedItems.CARAMEL_TOPPED_ROYAL_CIDER) ? "item.creategarnished.caramel_topped_royal_cider" : "item.creategarnished.royal_cider";
+        return "item.creategarnished.royal_cider";
     }
 
     @Override

@@ -21,6 +21,16 @@
     {
       "type": "text",
       "text": "Both the Candy Wrapping and Wrapped Candy can be dyed similar to leather armour."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:candy_cane",
+      "text": "Mixing a combination of Corn Syrup, Peppermint, and other assorted ingredients, you can make a Peppermint Cane!"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:peppermint_bark",
+      "text": "Sending a Peppermint Cane through a Mechanical Saw will provide a bunch of Peppermint Bark, if you're in more of a rush!"
     }
   ]
 }

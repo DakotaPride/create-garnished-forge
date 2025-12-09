@@ -24,6 +24,28 @@
       "images": [
         "creategarnished:textures/gui/patchouli/elven_sweet_berries.png"
       ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:garlic_bulb",
+      "text": "Throughout taiga biomes, Wild Garlic can be found sprouting from the ground which can be broken to produce Bulbs of Garlic. You can replant these bulbs onto Farmland to replenish your supply of Garlic."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_garlic.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_mint",
+      "text": "Throughout taiga biomes, Wild Mint can be found sprouting from the ground. Using Bone Meal on this plant will have a chance to spread it, renewing your supply of the resource!"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_mint.png"
+      ]
     }
   ]
 }

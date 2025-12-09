@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": ["minecraft:plains"],
+  "features": "creategarnished:chestnut_tree",
+  "step": "vegetal_decoration"
+}

@@ -102,11 +102,11 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.BIRCH_SYRUP_BOTTLE);
             output.accept(CreateGarnishedItems.BEETROOT_JUICE_BOTTLE);
             output.accept(CreateGarnishedItems.ROYAL_CIDER);
+            output.accept(CreateGarnishedItems.CARAMEL_TOPPED_ROYAL_CIDER);
             output.accept(CreateGarnishedItems.CORN_SYRUP_BOTTLE);
             output.accept(CreateGarnishedItems.MYSTERIOUS_VOLT_BOTTLE);
 
             output.accept(CreateGarnishedItems.CARAMELISED_APPLE);
-            output.accept(CreateGarnishedItems.CARAMEL_TOPPED_ROYAL_CIDER);
             output.accept(CreateGarnishedItems.PEPPERMINT_BARK);
             output.accept(CreateGarnishedItems.CANDY_CANE);
             output.accept(CreateGarnishedItems.GUMDROPS);

@@ -2,18 +2,18 @@
   "type": "create:filling",
   "ingredients": [
     {
-      "item": "minecraft:glass_bottle"
+      "item": "creategarnished:royal_cider"
     },
     {
       "type": "fluid_tag",
       "amount": 250,
-      "fluid_tag": "c:eggnog"
+      "fluid_tag": "c:caramel"
     }
   ],
   "results": [
     {
       "item": {
-        "id": "creategarnished:eggnog"
+        "id": "creategarnished:caramel_topped_royal_cider"
       }
     }
   ]

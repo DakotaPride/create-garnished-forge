@@ -3,6 +3,7 @@ package net.dakotapride.creategarnished.item;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -29,6 +30,10 @@ public class EggnogItem extends Item {
 
         if (!level.isClientSide()) {
             livingEntity.removeEffect(effectsList.get(f).getEffect());
+            int k = random.nextInt(5);
+            // uh oh, alcohol sickness or sum shi, GOOD LUCK
+            if (k == 1)
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 1, false, false, false));
         }
 
 

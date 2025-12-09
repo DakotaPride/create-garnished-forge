@@ -30,11 +30,13 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.BodyRotationControl;
-import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.ai.util.LandRandomPos;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.armadillo.Armadillo;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -48,9 +50,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.EventHooks;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
@@ -77,30 +79,6 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
         super(entityType, level);
         this.setTame(false, false);
         this.setCanPickUpLoot(true);
-    }
-
-    @Override
-    public @NotNull MoveControl getMoveControl() {
-        return new MoveControl(this) {
-            @Override
-            public void tick() {
-                if (!SquirrelEntity.this.isDancing()) {
-                    super.tick();
-                }
-            }
-        };
-    }
-
-    @Override
-    protected @NotNull BodyRotationControl createBodyControl() {
-        return new BodyRotationControl(this) {
-            @Override
-            public void clientTick() {
-                if (!SquirrelEntity.this.isDancing()) {
-                    super.clientTick();
-                }
-            }
-        };
     }
 
     @Override
@@ -245,7 +223,7 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
 
     @Override
     public void aiStep() {
-        if (this.jukebox == null || !this.jukebox.closerToCenterThan(this.position(), 3.46) || !this.level().getBlockState(this.jukebox).is(Blocks.JUKEBOX)) {
+        if (this.jukebox == null || !this.jukebox.closerToCenterThan(this.position(), 16) || !this.level().getBlockState(this.jukebox).is(Blocks.JUKEBOX)) {
             setDancing(false);
             this.jukebox = null;
         }
@@ -385,9 +363,13 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
             return false;
         } else if (!this.isTame()) {
             return false;
+        } else if (this.isDancing()) {
+            return false;
         } else if (!(otherAnimal instanceof SquirrelEntity squirrel)) {
             return false;
         } else if (!squirrel.isTame()) {
+            return false;
+        } else if (squirrel.isDancing()) {
             return false;
         } else {
             return !squirrel.isInSittingPose() && this.isInLove() && squirrel.isInLove();
@@ -402,7 +384,7 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
             --this.idleAnimationTimeout;
         }
 
-        if (this.isInSittingPose() && sittingAnimationTimeout <= 0) {
+        if (!this.isDancing() && this.isInSittingPose() && sittingAnimationTimeout <= 0) {
             sittingAnimationTimeout = 20; // Length in ticks of your animation
             sittingAnimationState.start(this.tickCount);
         } else {
@@ -508,7 +490,7 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
         public boolean canUse() {
             if (!SquirrelEntity.this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty()) {
                 return false;
-            } else if (SquirrelEntity.this.getTarget() == null && SquirrelEntity.this.getLastHurtByMob() == null) {
+            } else if (SquirrelEntity.this.getLastHurtByMob() == null) {
                 if (SquirrelEntity.this.isDancing()) {
                     return false;
                 } else if (SquirrelEntity.this.getRandom().nextInt(reducedTickDelay(10)) != 0) {
@@ -561,6 +543,8 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
             if (SquirrelEntity.this.isTame())
                 if (this.nextStartTick > 0) {
                     --this.nextStartTick;
+                    return false;
+                } else if (SquirrelEntity.this.isDancing()) {
                     return false;
                 } else if (this.findNearestBlock()) {
                     this.nextStartTick = reducedTickDelay(20);
@@ -656,6 +640,8 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
             if (SquirrelEntity.this.isTame())
                 if (this.nextStartTick > 0) {
                     --this.nextStartTick;
+                    return false;
+                } else if (SquirrelEntity.this.isDancing()) {
                     return false;
                 } else if (this.findNearestBlock()) {
                     this.nextStartTick = reducedTickDelay(20);

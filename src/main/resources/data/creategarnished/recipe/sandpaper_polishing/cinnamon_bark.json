@@ -1,0 +1,13 @@
+{
+  "type": "create:sandpaper_polishing",
+  "ingredients": [
+    {
+      "tag": "minecraft:spruce_logs"
+    }
+  ],
+  "results": [
+    {
+      "id": "creategarnished:cinnamon_bark"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Plains",
+  "icon": "creategarnished:wild_peppermint",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:chestnut",
+      "text": "Occasionally in Plains biomes, you can find Chestnuts growing on oak trees. You can replant these nuts to grow back into trees for a renewable source of both wood and Chestnuts."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/chestnut_tree.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_peppermint",
+      "text": "Throughout plains biomes, Wild Peppermint can be found sprouting from the ground. Using Bone Meal on this plant will have a chance to spread it, renewing your supply of the resource!"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_peppermint.png"
+      ]
+    }
+  ]
+}
