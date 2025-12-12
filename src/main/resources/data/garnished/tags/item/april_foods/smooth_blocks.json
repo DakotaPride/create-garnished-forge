@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "garnished:smooth_carnotite",
+    "garnished:smooth_abyssal_stone",
+    "garnished:smooth_wyvern_stone",
+    "garnished:smooth_unstable_stone",
+    "garnished:smooth_zultanite",
+    "garnished:smooth_red_zultanite",
+    "garnished:smooth_orange_zultanite",
+    "garnished:smooth_yellow_zultanite",
+    "garnished:smooth_green_zultanite",
+    "garnished:smooth_lime_zultanite",
+    "garnished:smooth_blue_zultanite",
+    "garnished:smooth_light_blue_zultanite",
+    "garnished:smooth_cyan_zultanite",
+    "garnished:smooth_purple_zultanite",
+    "garnished:smooth_magenta_zultanite",
+    "garnished:smooth_pink_zultanite",
+    "garnished:smooth_black_zultanite",
+    "garnished:smooth_gray_zultanite",
+    "garnished:smooth_light_gray_zultanite",
+    "garnished:smooth_white_zultanite",
+    "garnished:smooth_brown_zultanite"
+  ]
+}

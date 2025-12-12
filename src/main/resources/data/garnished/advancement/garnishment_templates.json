@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "garnished:garnishment_template"
+    },
+    "title": {
+      "translate": "advancement.garnished.garnishment_templates"
+    },
+    "description": {
+      "translate": "advancement.garnished.garnishment_templates.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "garnished:nut_tree",
+  "criteria": {
+    "garnishment_template": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#garnished:april_foods/garnishment_templates"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "garnishment_template"
+    ]
+  ]
+}

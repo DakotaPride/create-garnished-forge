@@ -1,0 +1,19 @@
+{
+  "type": "create:deploying",
+  "keep_held_item": true,
+  "ingredients": [
+    {
+      "item": "create:dough"
+    },
+    {
+      "item": "garnished:garnishment_template_chestnut"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "garnished:ungarnished_chestnut"
+      }
+    }
+  ]
+}

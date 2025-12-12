@@ -30,22 +30,6 @@
           "item": "garnished:incomplete_senile_sweet_scorchia"
         },
         {
-          "item": "garnished:salt_compound"
-        }
-      ],
-      "results": [
-        {
-          "id": "garnished:incomplete_senile_sweet_scorchia"
-        }
-      ]
-    },
-    {
-      "type": "create:deploying",
-      "ingredients": [
-        {
-          "item": "garnished:incomplete_senile_sweet_scorchia"
-        },
-        {
           "item": "garnished:garnish_powder"
         }
       ],

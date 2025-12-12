@@ -15,14 +15,6 @@
                   "is_baby": false
                 }
               }
-            },
-            {
-              "condition": "minecraft:table_bonus",
-              "enchantment": "garnished:salvaging",
-              "chances": [
-                0.083,
-                0.083
-              ]
             }
           ]
         }

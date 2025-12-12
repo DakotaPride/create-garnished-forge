@@ -13,9 +13,6 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "garnished:salt_compound"
-    },
-    {
       "item": "garnished:garnish_powder"
     },
     {

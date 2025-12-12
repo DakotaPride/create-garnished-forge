@@ -40,10 +40,6 @@ public class PutridStewFoodItem extends Item implements IGarnishedUtilities {
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
 		}
 
-		if (livingEntity.hasEffect(GarnishedEffects.AVERSION)) {
-			livingEntity.removeEffect(GarnishedEffects.AVERSION);
-		}
-
 		if (stack.isEmpty()) {
 			return new ItemStack(Items.BOWL);
 		} else {

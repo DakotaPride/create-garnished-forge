@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "garnished:putrid_stew"
+    },
+    "title": {
+      "translate": "advancement.garnished.allergy"
+    },
+    "description": {
+      "translate": "advancement.garnished.allergy.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "garnished:nut_tree",
+  "criteria": {
+    "allergy": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "garnished:aversion": {}
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "allergy"
+    ]
+  ]
+}

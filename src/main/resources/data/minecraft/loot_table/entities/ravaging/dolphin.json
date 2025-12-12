@@ -5,13 +5,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:heart_of_the_sea",
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.0625
-            }
-          ]
+          "name": "minecraft:heart_of_the_sea"
         }
       ]
     }

@@ -63,7 +63,7 @@ public class GarnishedTags {
 	//	public static TagKey<Item> RUBY_GEMS = forgeTag("gems/ruby");
 	//	public static TagKey<Item> AMETRINE_GEMS = forgeTag("gems/ametrine");
 
-	private static <F> TagKey<F> garnishedTag(String name, ResourceKey<Registry<F>> key) {
+	public static <F> TagKey<F> garnishedTag(String name, ResourceKey<Registry<F>> key) {
 		return TagKey.create(key, CreateGarnished.asResource(name));
 	}
 

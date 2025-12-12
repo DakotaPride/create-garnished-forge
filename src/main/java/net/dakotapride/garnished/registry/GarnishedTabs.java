@@ -1,12 +1,10 @@
 package net.dakotapride.garnished.registry;
 
-import com.simibubi.create.AllCreativeModeTabs;
 import net.dakotapride.garnished.CreateGarnished;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.ApiStatus;
@@ -48,6 +46,17 @@ public class GarnishedTabs {
 
 		@Override
 		public void accept(CreativeModeTab.@NotNull ItemDisplayParameters parameters, CreativeModeTab.@NotNull Output output) {
+			output.accept(GarnishedItems.GARNISHMENT_TEMPLATE);
+			output.accept(GarnishedItems.CASHEW_GARNISHMENT_TEMPLATE);
+			output.accept(GarnishedItems.WALNUT_GARNISHMENT_TEMPLATE);
+			output.accept(GarnishedItems.ALMOND_GARNISHMENT_TEMPLATE);
+			output.accept(GarnishedItems.PECAN_GARNISHMENT_TEMPLATE);
+			output.accept(GarnishedItems.PISTACHIO_GARNISHMENT_TEMPLATE);
+			output.accept(GarnishedItems.MACADAMIA_GARNISHMENT_TEMPLATE);
+			output.accept(GarnishedItems.BUHG_GARNISHMENT_TEMPLATE);
+			output.accept(GarnishedItems.HAZELNUT_GARNISHMENT_TEMPLATE);
+			output.accept(GarnishedItems.CHESTNUT_GARNISHMENT_TEMPLATE);
+
 			output.accept(GarnishedItems.CRACKED_CASHEW.asStack());
 			output.accept(GarnishedItems.UNGARNISHED_CASHEW.asStack());
 			output.accept(GarnishedItems.CASHEW.asStack());
@@ -363,8 +372,8 @@ public class GarnishedTabs {
 			output.accept(GarnishedItems.POLAR_BEAR_HIDE.asStack());
 			output.accept(GarnishedItems.POLAR_HIDE_SCRATCH_PAPER.asStack());
 
-			output.accept(GarnishedItems.CRUSHED_SALT_COMPOUND.asStack());
-			output.accept(GarnishedItems.SALT_COMPOUND.asStack());
+//			output.accept(GarnishedItems.CRUSHED_SALT_COMPOUND.asStack());
+//			output.accept(GarnishedItems.SALT_COMPOUND.asStack());
 
 			output.accept(GarnishedItems.APPLE_CIDER.asStack());
 			output.accept(GarnishedItems.CRYPTIC_APPLE_CIDER.asStack());
@@ -447,7 +456,7 @@ public class GarnishedTabs {
 			output.accept(GarnishedBlocks.UNGARNISHED_NUT_BLOCK.asStack());
 			output.accept(GarnishedBlocks.GARNISHED_NUT_BLOCK.asStack());
 			output.accept(GarnishedBlocks.GARNISH_COMPOUND_BLOCK.asStack());
-			output.accept(GarnishedBlocks.SALT_COMPOUND_BLOCK.asStack());
+//			output.accept(GarnishedBlocks.SALT_COMPOUND_BLOCK.asStack());
 			output.accept(GarnishedBlocks.ETHEREAL_COMPOUND_BLOCK.asStack());
 			output.accept(GarnishedBlocks.MULCH_BLOCK.asStack());
 

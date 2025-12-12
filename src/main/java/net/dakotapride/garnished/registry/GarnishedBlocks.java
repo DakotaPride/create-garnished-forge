@@ -30,6 +30,9 @@ import static net.dakotapride.garnished.registry.GarnishedCT.woodenWindowPaneBlo
 public class GarnishedBlocks {
 	private static final CreateRegistrate REGISTRATE = CreateGarnished.registrate();
 
+	public static final BlockEntry<Block> SUGAR_CUBE = REGISTRATE.block("sugar_cube", Block::new)
+			.initialProperties(() -> Blocks.STONE).properties(p -> p.mapColor(MapColor.WOOL)).register();
+
 	public static final BlockEntry<Block> NUT_PLANT =
 			REGISTRATE.block("nut_plant", Block::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
@@ -550,11 +553,12 @@ public class GarnishedBlocks {
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.BONE_BLOCK).register();
-	public static final BlockEntry<Block> SALT_COMPOUND_BLOCK =
-			REGISTRATE.block("salt_compound_block", Block::new)
-					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
-					.simpleItem()
-					.initialProperties(() -> Blocks.BONE_BLOCK).register();
+	// Too salty damnit
+//	public static final BlockEntry<Block> SALT_COMPOUND_BLOCK =
+//			REGISTRATE.block("salt_compound_block", Block::new)
+//					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
+//					.simpleItem()
+//					.initialProperties(() -> Blocks.BONE_BLOCK).register();
 	public static final BlockEntry<Block> ETHEREAL_COMPOUND_BLOCK =
 			REGISTRATE.block("ethereal_compound_block", Block::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))

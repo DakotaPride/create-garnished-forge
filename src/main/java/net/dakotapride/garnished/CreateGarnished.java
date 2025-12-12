@@ -18,13 +18,17 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
@@ -45,29 +49,13 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("garnished")
 public class CreateGarnished {
-
-
-
-
-    // T.ODO: FIX THE RAVAGING LOOT TABLES
-    // T.ODO: FIX THE SALVAGING LOOT TABLES
-    // T.ODO: FIX FAN PROCESSING TYPES
-    // T.ODO: FIX FAN PROCESSING RECIPE TYPES
-    // T.ODO: FIX STRIKING DAMAGE MULTIPLIER NOT BEING APPLIED NO MATTER THE ENCHANTMENT LEVEL - WAS APPARENTLY NEVER AN ISSUE, MINECRAFT JUST CHANGED HOW DAMAGE IS SHOWN IN THE TOOLTIP FOR SOME REASON
-    // T.ODO: PORT ALL RECIPES TO HAVE "item": { "id": "<ITEM>" } because of 1.21 changes
-    // T.ODO: MAKE SURE THAT ALL RECIPES USING A HEAT REQUIREMENT ARE FORMATTED CORRECTLY
-    // T.ODO: MAKE SURE THAT ALL RECIPES USING PROCESSING SPEED ARE FORMATTED CORRECTLY
-    // T.ODO: MAKE WANDERING TRADER PROVIDE INGREDIENTS AND CERTAIN OTHER ITEMS FROM GARNISHED
-
-
-
-
     // Directly reference a slf4j logger
     public static final String ID = "garnished";
     public static final String NAME = "Create: Garnished";
@@ -179,6 +167,45 @@ public class CreateGarnished {
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
     }
+// Attempted to make cheese, hell no, minecraft did not like that
+//    @EventBusSubscriber(modid = ID, bus = EventBusSubscriber.Bus.MOD)
+//    public static class ModEvents {
+//        @SubscribeEvent
+//        public static void registerOverrides(RegisterEvent event) {
+//            event.register(BuiltInRegistries.ITEM.key(),
+//                    ResourceLocation.withDefaultNamespace("end_stone"),
+//                    () -> new BlockItem(Blocks.END_STONE, new Item.Properties()
+//                            .food(new FoodProperties.Builder()
+//                                    .nutrition(2)
+//                                    .saturationModifier(0.6F)
+//                                    .fast().build())));
+//            event.register(BuiltInRegistries.ITEM.key(),
+//                    ResourceLocation.withDefaultNamespace("end_stone_bricks"),
+//                    () -> new BlockItem(Blocks.END_STONE_BRICKS, new Item.Properties()
+//                            .food(new FoodProperties.Builder()
+//                                    .nutrition(8)
+//                                    .saturationModifier(0.6F)
+//                                    .fast().build())));
+//            event.register(BuiltInRegistries.ITEM.key(),
+//                    ResourceLocation.withDefaultNamespace("end_stone_brick_slab"),
+//                    () -> new BlockItem(Blocks.END_STONE_BRICK_SLAB, new Item.Properties()
+//                            .food(new FoodProperties.Builder()
+//                                    .nutrition(4)
+//                                    .saturationModifier(0.6F).build())));
+//            event.register(BuiltInRegistries.ITEM.key(),
+//                    ResourceLocation.withDefaultNamespace("end_stone_brick_stairs"),
+//                    () -> new BlockItem(Blocks.END_STONE_BRICK_STAIRS, new Item.Properties()
+//                            .food(new FoodProperties.Builder()
+//                                    .nutrition(6)
+//                                    .saturationModifier(0.6F).build())));
+//            event.register(BuiltInRegistries.ITEM.key(),
+//                    ResourceLocation.withDefaultNamespace("end_stone_brick_wall"),
+//                    () -> new BlockItem(Blocks.END_STONE_BRICK_WALL, new Item.Properties()
+//                            .food(new FoodProperties.Builder()
+//                                    .nutrition(6)
+//                                    .saturationModifier(0.6F).build())));
+//        }
+//    }
 
     @EventBusSubscriber(modid = ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {

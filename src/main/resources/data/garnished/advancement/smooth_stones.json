@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "garnished:smooth_wyvern_stone"
+    },
+    "title": {
+      "translate": "advancement.garnished.smooth_blocks"
+    },
+    "description": {
+      "translate": "advancement.garnished.smooth_blocks.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "garnished:nut_tree",
+  "criteria": {
+    "smooth_blocks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#garnished:april_foods/smooth_blocks"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "smooth_blocks"
+    ]
+  ]
+}

@@ -5,12 +5,23 @@
     {
       "item": "garnished:bitter_almond"
     },
-    {
-      "item": "garnished:salt_compound"
-    },
-    {
-      "item": "garnished:salt_compound"
-    },
+    [
+      {
+        "item": "minecraft:end_stone"
+      },
+      {
+        "item": "minecraft:end_stone_bricks"
+      },
+      {
+        "item": "minecraft:end_stone_brick_slab"
+      },
+      {
+        "item": "minecraft:end_stone_brick_stairs"
+      },
+      {
+        "item": "minecraft:end_stone_brick_wall"
+      }
+    ],
     {
       "type": "fluid_stack",
       "amount": 500,

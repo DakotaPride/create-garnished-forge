@@ -3,15 +3,18 @@ package net.dakotapride.garnished.block.cake;
 import com.mojang.serialization.MapCodec;
 import net.dakotapride.garnished.registry.GarnishedAdvancementUtils;
 import net.dakotapride.garnished.registry.GarnishedBlockEntities;
+import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.dakotapride.garnished.registry.GarnishedItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -116,6 +119,8 @@ public class AnniversaryCakeBlock extends BaseEntityBlock {
             // GarnishedAdvancements.ANNIVERSARY_CAKE.awardTo(pPlayer);
             if (pPlayer instanceof ServerPlayer) {
                 GarnishedAdvancementUtils.CONSUME_ANNIVERSARY_CAKE_SLICE.get().trigger((ServerPlayer) pPlayer);
+                pPlayer.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
+                pPlayer.displayClientMessage(Component.translatable("text.garnished.april_foods.aversion_reason.7"), true);
             }
             if (i < 5) {
                 pLevel.setBlock(pPos, pState.setValue(BITES, Integer.valueOf(i + 1)), 3);

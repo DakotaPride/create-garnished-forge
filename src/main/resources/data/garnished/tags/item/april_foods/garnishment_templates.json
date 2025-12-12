@@ -1,0 +1,14 @@
+{
+  "values": [
+    "garnished:garnishment_template",
+    "garnished:garnishment_template_cashew",
+    "garnished:garnishment_template_walnut",
+    "garnished:garnishment_template_almond",
+    "garnished:garnishment_template_pecan",
+    "garnished:garnishment_template_pistachio",
+    "garnished:garnishment_template_macadamia",
+    "garnished:garnishment_template_peanut",
+    "garnished:garnishment_template_hazelnut",
+    "garnished:garnishment_template_chestnut"
+  ]
+}

@@ -15,12 +15,6 @@
               }
             }
           ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.125
-            }
-          ]
         }
       ]
     },
@@ -38,12 +32,6 @@
                 "max": 2
               }
             }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.083
-            }
           ]
         },
         {
@@ -56,12 +44,6 @@
                 "min": 1,
                 "max": 3
               }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.125
             }
           ]
         }

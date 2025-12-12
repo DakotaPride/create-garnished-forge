@@ -10,7 +10,7 @@
       "translate": "advancement.garnished.nut_tree.description",
       "color": "#DBA213"
     },
-    "background": "garnished:textures/gui/advancements/backgrounds/nut_planks.png",
+    "background": "garnished:textures/block/smooth_zultanite.png",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,

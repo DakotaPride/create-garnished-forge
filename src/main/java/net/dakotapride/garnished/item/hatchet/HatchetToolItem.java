@@ -1,5 +1,7 @@
 package net.dakotapride.garnished.item.hatchet;
 
+import com.simibubi.create.content.equipment.tool.KnockbackPacket;
+import net.createmod.catnip.platform.CatnipServices;
 import net.dakotapride.garnished.registry.GarnishedEnchantments;
 import net.dakotapride.garnished.registry.GarnishedTags;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -7,9 +9,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
@@ -29,18 +33,76 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
+import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Optional;
 
+import static com.simibubi.create.content.equipment.tool.CardboardSwordItem.knockback;
+
+@EventBusSubscriber
 public class HatchetToolItem extends DiggerItem {
 
     public HatchetToolItem(Tier tier, Properties properties) {
         super(tier, GarnishedTags.MINEABLE_WITH_HATCHET, properties);
     }
+
+    // -> CardboardSwordItem.cardboardSwordsCannotHurtYou
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void calculateKnockbackFromShotgun(AttackEntityEvent event) {
+
+        Player attacker = event.getEntity();
+        if (!(event.getTarget() instanceof LivingEntity target))
+            return;
+        ItemStack stack = attacker.getItemInHand(InteractionHand.MAIN_HAND);
+
+        if (!stack.is(GarnishedTags.HATCHETS_TAG))
+            return;
+
+        float knockbackStrength = (float) (attacker.getAttributeValue(Attributes.ATTACK_KNOCKBACK) + 100);
+        if (attacker.level() instanceof ServerLevel serverLevel)
+            knockbackStrength = EnchantmentHelper.modifyKnockback(serverLevel, stack, target, serverLevel.damageSources().playerAttack(attacker), knockbackStrength);
+        if (attacker.isSprinting() && attacker.getAttackStrengthScale(0.5f) > 0.9f)
+            ++knockbackStrength;
+
+        if (knockbackStrength <= 0)
+            return;
+
+        float yRot = attacker.getYRot();
+        knockback(target, knockbackStrength, yRot);
+
+        if (target instanceof ServerPlayer sp)
+            CatnipServices.NETWORK.sendToClient(sp, new KnockbackPacket(yRot, knockbackStrength));
+
+        attacker.setDeltaMovement(attacker.getDeltaMovement().multiply(0.6D, 1.0D, 0.6D));
+        attacker.setSprinting(false);
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void shotgun(BlockEvent.BreakEvent event) {
+        if (event.getPlayer().getItemInHand(InteractionHand.MAIN_HAND).is(GarnishedTags.HATCHETS_TAG)) {
+            if (event.getLevel() instanceof ServerLevel level) {
+                level.playSound(null, event.getPos(), SoundEvents.ANVIL_LAND, event.getPlayer().getSoundSource(), 10.0F, 1.0F);
+            }
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void shotgunAttack(AttackEntityEvent event) {
+        if (event.getEntity().getMainHandItem().is(GarnishedTags.HATCHETS_TAG)) {
+            if (event.getEntity().level() instanceof ServerLevel level) {
+                level.playSound(null, event.getEntity().blockPosition(), SoundEvents.ANVIL_LAND, event.getEntity().getSoundSource(), 10.0F, 1.0F);
+            }
+        }
+    }
+
 
     public static @NotNull ItemAttributeModifiers createAttributes(Tier tier, float damage, float speed) {
         return ItemAttributeModifiers.builder()

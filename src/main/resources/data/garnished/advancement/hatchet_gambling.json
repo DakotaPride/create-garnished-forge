@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "id": "garnished:golden_hatchet"
+    },
+    "title": {
+      "translate": "advancement.garnished.hatchet_gambling"
+    },
+    "description": {
+      "translate": "advancement.garnished.hatchet_gambling.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "garnished:nut_tree",
+  "criteria": {
+    "hatchet_gambling": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "items": "#c:tools/hatchets"
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "hatchet_gambling"
+    ]
+  ]
+}

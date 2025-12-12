@@ -1,7 +1,6 @@
 package net.dakotapride.garnished.registry;
 
 import com.simibubi.create.AllItems;
-import com.simibubi.create.content.equipment.sandPaper.SandPaperItem;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
@@ -17,6 +16,10 @@ import net.dakotapride.garnished.item.wood.NutBoatItem;
 import net.dakotapride.garnished.item.wood.NutChestBoatItem;
 import net.dakotapride.garnished.item.wood.NutSignItem;
 import net.dakotapride.garnished.item.wood.SepiaSignItem;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tiers;
@@ -25,6 +28,27 @@ import net.minecraft.world.item.Tiers;
 public class GarnishedItems {
 
 	private static final CreateRegistrate REGISTRATE = CreateGarnished.registrate();
+
+	public static final ItemEntry<Item> GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
+	public static final ItemEntry<Item> CASHEW_GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template_cashew", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
+	public static final ItemEntry<Item> BUHG_GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template_peanut", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
+	public static final ItemEntry<Item> WALNUT_GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template_walnut", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
+	public static final ItemEntry<Item> HAZELNUT_GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template_hazelnut", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
+	public static final ItemEntry<Item> CHESTNUT_GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template_chestnut", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
+	public static final ItemEntry<Item> PISTACHIO_GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template_pistachio", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
+	public static final ItemEntry<Item> PECAN_GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template_pecan", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
+	public static final ItemEntry<Item> ALMOND_GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template_almond", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
+	public static final ItemEntry<Item> MACADAMIA_GARNISHMENT_TEMPLATE = REGISTRATE.item("garnishment_template_macadamia", Item::new)
+			.properties(p -> p.rarity(Rarity.RARE).stacksTo(1)).register();
 
 	// Cashews
 	public static final ItemEntry<CrackedCashewItem> CRACKED_CASHEW =
@@ -244,12 +268,13 @@ public class GarnishedItems {
 			REGISTRATE.item("bitter_apple_cider", BitterAppleCiderFoodItem::new).register();
 
 	// Salt Compounds
-	public static final ItemEntry<Item> CRUSHED_SALT_COMPOUND =
-			REGISTRATE.item("crushed_salt", Item::new).register();
-	public static final ItemEntry<Item> SALT_COMPOUND =
-			REGISTRATE.item("salt_compound", Item::new).register();
-	public static final ItemEntry<SequencedAssemblyItem> UNPROCESSED_SALT_COMPOUND =
-			REGISTRATE.item("unprocessed_salt_compound", SequencedAssemblyItem::new).register();
+	// Too spicy, remove this shit
+//	public static final ItemEntry<Item> CRUSHED_SALT_COMPOUND =
+//			REGISTRATE.item("crushed_salt", Item::new).register();
+//	public static final ItemEntry<Item> SALT_COMPOUND =
+//			REGISTRATE.item("salt_compound", Item::new).register();
+//	public static final ItemEntry<SequencedAssemblyItem> UNPROCESSED_SALT_COMPOUND =
+//			REGISTRATE.item("unprocessed_salt_compound", SequencedAssemblyItem::new).register();
 
 	// Unique Uses
 	public static final ItemEntry<BottledPeanutOilItem> BOTTLED_PEANUT_OIL =
@@ -774,8 +799,9 @@ public class GarnishedItems {
 					.properties(p -> p.rarity(Rarity.EPIC)).register();
 	public static final ItemEntry<Item> FRAIL_ENDER_DRAGON_EGG_SHELL =
 			REGISTRATE.item("frail_ender_egg_shell", Item::new).register();
-	public static final ItemEntry<Item> SUGAR_CUBE =
-			REGISTRATE.item("sugar_cube", Item::new).register();
+	public static final ItemEntry<BlockItem> SUGAR_CUBE =
+			REGISTRATE.item("sugar_cube", p -> new BlockItem(GarnishedBlocks.SUGAR_CUBE.get(), p)).properties(p -> p.food(new FoodProperties.Builder().fast()
+					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60 * 10, 99), 1.0F).build())).register();
 
 	public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_ENDER_DRAGON_EGG =
 			REGISTRATE.item("incomplete_ender_dragon_egg", SequencedAssemblyItem::new)

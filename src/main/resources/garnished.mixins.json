@@ -11,7 +11,9 @@
     "LivingEntityMixin",
     "compat.ResurgentSoilBlockMixin"
   ],
-  "client": [],
+  "client": [
+    "GuiMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },

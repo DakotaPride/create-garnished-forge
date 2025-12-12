@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "id": "garnished:iron_hatchet"
+    },
+    "title": {
+      "translate": "advancement.garnished.hatchet_shotgun"
+    },
+    "description": {
+      "translate": "advancement.garnished.hatchet_shotgun.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "garnished:nut_tree",
+  "criteria": {
+    "hatchet_shotgun": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "items": "#c:tools/hatchets"
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "hatchet_shotgun"
+    ]
+  ]
+}

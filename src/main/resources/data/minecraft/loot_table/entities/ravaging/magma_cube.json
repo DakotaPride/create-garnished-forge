@@ -11,12 +11,6 @@
               "function": "minecraft:set_count",
               "count": 1
             }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.0625
-            }
           ]
         },
         {
@@ -27,12 +21,6 @@
               "function": "minecraft:set_count",
               "count": 1
             }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.0625
-            }
           ]
         },
         {
@@ -42,12 +30,6 @@
             {
               "function": "minecraft:set_count",
               "count": 1
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.0625
             }
           ]
         }
@@ -67,12 +49,6 @@
                 "max": 3
               }
             }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.125
-            }
           ]
         },
         {
@@ -85,12 +61,6 @@
                 "min": 1,
                 "max": 2
               }
-            }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.083
             }
           ]
         }

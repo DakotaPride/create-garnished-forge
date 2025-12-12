@@ -14,31 +14,11 @@
                 "max": 4
               }
             }
-          ],
-          "conditions": [
-            {
-              "condition": "minecraft:table_bonus",
-              "enchantment": "garnished:salvaging",
-              "chances": [
-                0.1666,
-                0.25
-              ]
-            }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:glow_lichen",
-          "conditions": [
-            {
-              "condition": "minecraft:table_bonus",
-              "enchantment": "garnished:salvaging",
-              "chances": [
-                0.125,
-                0.1666
-              ]
-            }
-          ]
+          "name": "minecraft:glow_lichen"
         }
       ]
     }

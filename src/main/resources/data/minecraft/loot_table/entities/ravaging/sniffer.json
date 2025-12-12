@@ -24,10 +24,6 @@
                   "is_baby": false
                 }
               }
-            },
-            {
-              "condition": "minecraft:random_chance",
-              "chance": 0.25
             }
           ]
         }

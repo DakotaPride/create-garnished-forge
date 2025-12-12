@@ -1,0 +1,17 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "create:iron_sheet"
+    }
+  ],
+  "processing_time": 25,
+  "results": [
+    {
+      "count": 3,
+      "item": {
+        "id": "garnished:garnishment_template"
+      }
+    }
+  ]
+}
