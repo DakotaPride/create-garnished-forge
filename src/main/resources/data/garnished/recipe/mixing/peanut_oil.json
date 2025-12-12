@@ -3,10 +3,10 @@
   "heat_requirement": "heated",
   "ingredients": [
     {
-      "item": "garnished:garnish_powder"
+      "item": "garnished:malodorous_mixture"
     },
     {
-      "item": "garnished:garnish_powder"
+      "item": "garnished:malodorous_mixture"
     },
     {
       "item": "garnished:peanut"

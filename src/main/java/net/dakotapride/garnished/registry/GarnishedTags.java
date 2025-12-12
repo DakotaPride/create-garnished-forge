@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 
 public class GarnishedTags {
+	public static TagKey<Item> DUNE_CURSE = garnishedTag("april_foods/dune_cursed_items", Registries.ITEM);
 
 	public static TagKey<Item> AVERSION_FOODS_TAG = garnishedTag("aversion_foods", Registries.ITEM);
 	public static TagKey<Item> HATCHETS_TAG = commonTag("tools/hatchets", Registries.ITEM);

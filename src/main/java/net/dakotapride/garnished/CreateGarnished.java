@@ -6,12 +6,14 @@ import net.createmod.catnip.lang.FontHelper;
 import net.dakotapride.garnished.block.cake.AnniversaryCakeBlockRenderer;
 import net.dakotapride.garnished.entity.render.NutBoatRenderer;
 import net.dakotapride.garnished.neoforge.LootModifiers;
+import net.dakotapride.garnished.particle.InverseSpellParticle;
 import net.dakotapride.garnished.recipe.GarnishedFanProcessing;
 import net.dakotapride.garnished.registry.*;
 import net.dakotapride.garnished.registry.recipe.GarnishedRecipeTypes;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.particle.SpellParticle;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -45,6 +47,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.event.lifecycle.InterModEnqueueEvent;
 import net.neoforged.fml.event.lifecycle.InterModProcessEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
@@ -100,6 +103,8 @@ public class CreateGarnished {
         GarnishedItemAttributeTypes.register(eventBus);
         //eventBus.addListener(CreateGarnished::onRegister);
         //eventBus.addListener(EventPriority.LOWEST, CreateGarnishedDatagen::gatherData);
+
+        GarnishedParticles.register(eventBus);
 
         REGISTRATE.registerEventListeners(eventBus);
         // Register the setup method for modloading
@@ -209,6 +214,11 @@ public class CreateGarnished {
 
     @EventBusSubscriber(modid = ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
+
+        @SubscribeEvent
+        public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(GarnishedParticles.MUMMY.get(), InverseSpellParticle.Provider::new);
+        }
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 

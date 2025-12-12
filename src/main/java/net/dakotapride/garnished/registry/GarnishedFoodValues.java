@@ -52,7 +52,7 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     }
 
     // Overworld
-    public static final FoodProperties UNGARNISHED_NUT = ow_min().effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 240), 1.0f).build();
+    public static final FoodProperties UNGARNISHED_NUT = ow_min().effect(() -> new MobEffectInstance(GarnishedEffects.AVERSION, 2400), 1.0f).build();
     public static final FoodProperties
             GARNISHED_NUT = generic(4, 0.20f).build(),
             SWEETENED_NUT = generic((int) mod(4, false), 0.20f).build(),
@@ -185,7 +185,8 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
             .effect(() -> new MobEffectInstance(GarnishedEffects.THORNS, 700, 4), 1.0F).build(); // 100% chance of occurring
 
     // Nether
-    public static final FoodProperties PEANUT_OIL_AND_CINDER_SANDWICH = generic(7, 0.70f).build(); // 15% chance of occurring
+    public static final FoodProperties PEANUT_OIL_AND_CINDER_SANDWICH = generic(7, 0.70f)
+            .effect(() -> new MobEffectInstance(GarnishedEffects.DAMAGE_VULNERABILITY, 1200, 0), 1.0F).build(); // 15% chance of occurring
     public static final FoodProperties TOPHET_BREW = generic(7, 0.60f).build(); // 90% chance of occurring
     public static final FoodProperties GRIM_STEW = generic(9, 0.60f).build(); // 75% chance of occurring
     public static final FoodProperties WEEPING_TANGLE = generic(8, 0.40f).build(); // 60% chance of occurring

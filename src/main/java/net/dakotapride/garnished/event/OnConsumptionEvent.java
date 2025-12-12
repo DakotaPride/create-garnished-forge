@@ -50,45 +50,36 @@ public class OnConsumptionEvent {
         Random random = new Random();
         int f = random.nextInt(1000);
 
-        if (entity instanceof Player player) {
+        if (entity instanceof Player player && player.hasEffect(GarnishedEffects.AVERSION)) {
             if (f == 1) {
                 player.displayClientMessage(mes("dork"), true);
             } else {
                 if (activeItem.is(ASSEMBLY_NUT_FOODS)) {
                     player.displayClientMessage(mes(4), true);
-                    player.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
                 }
                 if (activeItem.is(FILLING_NUT_FOODS)) {
                     player.displayClientMessage(mes(6), true);
-                    player.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
                 }
                 if (activeItem.is(COMPACTING_NUT_FOODS)) {
                     player.displayClientMessage(mes(9), true);
-                    player.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
                 }
                 if (activeItem.is(MIXING_NUT_FOODS)) {
                     player.displayClientMessage(mes(5), true);
-                    player.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
                 }
                 if (activeItem.is(MINOR_CRAFTING_NUT_FOODS)) {
                     player.displayClientMessage(mes(2), true);
-                    player.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
                 }
                 if (activeItem.is(OBVIOUS_NUT_FOODS)) {
                     player.displayClientMessage(mes(1), true);
-                    player.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
                 }
                 if (activeItem.is(NAMED_NUT_FOODS)) {
                     player.displayClientMessage(mes(3), true);
-                    player.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
                 }
                 if (activeItem.is(WARDEN_NUT_FOODS)) {
                     player.displayClientMessage(mes(8), true);
-                    player.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
                 }
                 if (activeItem.is(GarnishedItems.NUTTY_MELODY)) {
                     player.displayClientMessage(mes(7), true);
-                    player.addEffect(new MobEffectInstance(GarnishedEffects.AVERSION, 60 * 5, 1));
                 }
             }
         }

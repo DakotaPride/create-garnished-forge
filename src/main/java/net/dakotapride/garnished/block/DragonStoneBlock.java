@@ -1,6 +1,8 @@
 package net.dakotapride.garnished.block;
 
+import net.dakotapride.garnished.registry.GarnishedAdvancementUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
@@ -21,6 +23,8 @@ public class DragonStoneBlock extends Block {
     @Override
     public void stepOn(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Entity entity) {
         SpecialEffectsBlock.Wyvern.getEffects(level, pos, state, entity);
+        if (entity instanceof ServerPlayer serverPlayer)
+            GarnishedAdvancementUtils.WYVERN_EFFECTS.get().trigger(serverPlayer);
 
         super.stepOn(level, pos, state, entity);
     }

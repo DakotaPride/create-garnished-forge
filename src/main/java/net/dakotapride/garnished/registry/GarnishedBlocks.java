@@ -559,8 +559,8 @@ public class GarnishedBlocks {
 //					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 //					.simpleItem()
 //					.initialProperties(() -> Blocks.BONE_BLOCK).register();
-	public static final BlockEntry<Block> ETHEREAL_COMPOUND_BLOCK =
-			REGISTRATE.block("ethereal_compound_block", Block::new)
+	public static final BlockEntry<EtherealCompoundBlock> ETHEREAL_COMPOUND_BLOCK =
+			REGISTRATE.block("ethereal_compound_block", EtherealCompoundBlock::new)
 					.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
 					.simpleItem()
 					.initialProperties(() -> Blocks.BONE_BLOCK).register();

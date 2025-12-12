@@ -4,6 +4,7 @@ import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.effect.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -39,8 +40,10 @@ public class GarnishedEffects {
 
 	public static DeferredHolder<MobEffect, MobEffect> THORNS = EFFECTS.register("thorns", ThornsMobEffect::new);
 	public static DeferredHolder<MobEffect, MobEffect> MUMMIFICATION = EFFECTS.register("mummification", () -> new MummificationMobEffect()
-			.addAttributeModifier(Attributes.MOVEMENT_SPEED, CreateGarnished.asResource("garnished."),
-					-0.015, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+			.addAttributeModifier(Attributes.MOVEMENT_SPEED, CreateGarnished.asResource("garnished.mummification.movement_speed"),
+					-0.15, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+			.addAttributeModifier(Attributes.ATTACK_DAMAGE, CreateGarnished.asResource("garnished.mummification.attack_damage"),
+					-10.0D, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 	public static DeferredHolder<MobEffect, MobEffect> FREEZING = EFFECTS.register("freezing", FreezingMobEffect::new);
 
@@ -51,6 +54,15 @@ public class GarnishedEffects {
 					0.045, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
 			.addAttributeModifier(Attributes.ATTACK_DAMAGE, CreateGarnished.asResource("garnished.augmented.attack_damage"),
 					-0.20, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+	public static DeferredHolder<MobEffect, MobEffect> YEETED = EFFECTS.register("yeeted", () -> new YeetedMobEffect()
+			.addAttributeModifier(Attributes.JUMP_STRENGTH, CreateGarnished.asResource("garnished.yeeted.jump_strength"),
+					100.0D, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+	public static DeferredHolder<MobEffect, MobEffect> DAMAGE_VULNERABILITY = EFFECTS.register("vulnerable", () -> new VulnerableMobEffect()
+			.addAttributeModifier(Attributes.MAX_HEALTH, CreateGarnished.asResource("garnished.vulnerable.max_health"),
+					-0.5D, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+			.addAttributeModifier(Attributes.KNOCKBACK_RESISTANCE, CreateGarnished.asResource("garnished.vulnerable.knockback_resistance"),
+					-5.0D, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 	public static final DeferredHolder<Potion, Potion> AVERSION_POTION = POTIONS.register("aversion",
 			() -> new Potion(new MobEffectInstance(AVERSION, 2400)));

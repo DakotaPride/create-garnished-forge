@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "garnished:peanut_oil"
+    },
+    "title": {
+      "translate": "advancement.garnished.consume_evil_peanut_oil"
+    },
+    "description": {
+      "translate": "advancement.garnished.consume_evil_peanut_oil.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "garnished:nut_tree",
+  "criteria": {
+    "consume_evil_peanut_oil": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "#garnished:april_foods/evil_peanut_oil"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "consume_evil_peanut_oil"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -107,40 +107,24 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
         }
 
         public static void getEffects(Level level, BlockPos pos, BlockState state, Entity entity) {
-            RandomSource random = RandomSource.create();
-            int effect_list = random.nextInt(10);
-            int effect_trigger = random.nextInt(6);
-
             if (entity instanceof LivingEntity living && !level.isClientSide) {
 
-                if (effect_trigger == 1 && effect_list >= 0 && effect_list <= 10) {
-                    switch (effect_list) {
-                        case 0 -> applyEffectIfNotPresent(living, MobEffects.LUCK);
-                        case 1 -> applyEffectIfNotPresent(living, MobEffects.MOVEMENT_SPEED);
-                        case 2 -> applyEffectIfNotPresent(living, MobEffects.JUMP);
-                        case 3 -> applyEffectIfNotPresent(living, MobEffects.DAMAGE_RESISTANCE);
-                        case 4 -> applyEffectIfNotPresent(living, MobEffects.REGENERATION);
-                        case 5 -> applyEffectIfNotPresent(living, MobEffects.GLOWING);
-                        case 6 -> applyEffectIfNotPresent(living, MobEffects.DAMAGE_BOOST);
-                        case 7 -> applyEffectIfNotPresent(living, MobEffects.DIG_SPEED);
-                        case 8 -> applyEffectIfNotPresent(living, MobEffects.FIRE_RESISTANCE);
-                        case 9 -> applyEffectIfNotPresent(living, MobEffects.NIGHT_VISION);
-                        case 10 -> applyEffectIfNotPresent(living, MobEffects.INVISIBILITY);
-                        default -> throw new IllegalStateException("Unexpected value: " + effect_list);
-                    }
-                }
-
-                if (living.getBlockStateOn().is(GarnishedPaletteStoneTypes.DRAGON_STONE.getBlock().get())) {
-                    //System.out.println("Value provided from the mathematical equation, random.nextInt(10): " + effect_list);
-                    //System.out.println("Value provided from the mathematical equation, random.nextInt(6): " + effect_trigger);
-                }
+                applyEffectIfNotPresent(living, MobEffects.LUCK);
+                applyEffectIfNotPresent(living, MobEffects.MOVEMENT_SPEED);
+                applyEffectIfNotPresent(living, MobEffects.JUMP);
+                applyEffectIfNotPresent(living, MobEffects.DAMAGE_RESISTANCE);
+                applyEffectIfNotPresent(living, MobEffects.REGENERATION);
+                applyEffectIfNotPresent(living, MobEffects.GLOWING);
+                applyEffectIfNotPresent(living, MobEffects.DAMAGE_BOOST);
+                applyEffectIfNotPresent(living, MobEffects.DIG_SPEED);
+                applyEffectIfNotPresent(living, MobEffects.FIRE_RESISTANCE);
+                applyEffectIfNotPresent(living, MobEffects.NIGHT_VISION);
+                applyEffectIfNotPresent(living, MobEffects.INVISIBILITY);
             }
-
         }
 
         private static void applyEffectIfNotPresent(LivingEntity living, Holder<MobEffect> effect) {
-            if (living.hasEffect(effect)) {
-            } else {
+            if (!living.hasEffect(effect)) {
                 living.addEffect(new MobEffectInstance(effect, tick * 15, 0));
             }
         }

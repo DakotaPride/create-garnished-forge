@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.item;
 
+import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -12,6 +13,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -26,7 +28,9 @@ public class BottledPeanutOilItem extends Item {
 	private static final int DRINK_DURATION = 40;
 
 	public BottledPeanutOilItem(Properties properties) {
-		super(properties.stacksTo(8).food(GarnishedFoodValues.generic(3, 0.20f).build()));
+		super(properties.stacksTo(8).food(GarnishedFoodValues.generic(3, 0.20f)
+				.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 1), 1.0F)
+				.effect(() -> new MobEffectInstance(GarnishedEffects.DAMAGE_VULNERABILITY, 1200, 0), 1.0F).build()));
 	}
 
 	@Override

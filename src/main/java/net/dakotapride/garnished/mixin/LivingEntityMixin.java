@@ -1,9 +1,7 @@
 package net.dakotapride.garnished.mixin;
 
-import net.dakotapride.garnished.registry.GarnishedAdvancementUtils;
 import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.minecraft.core.Holder;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;

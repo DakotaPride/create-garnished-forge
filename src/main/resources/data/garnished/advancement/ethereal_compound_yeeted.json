@@ -1,0 +1,42 @@
+{
+  "display": {
+    "icon": {
+      "id": "garnished:ethereal_compound"
+    },
+    "title": {
+      "translate": "advancement.garnished.ethereal_compound_yeeted"
+    },
+    "description": {
+      "translate": "advancement.garnished.ethereal_compound_yeeted.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "garnished:nut_tree",
+  "criteria": {
+    "fall_from_height": {
+      "trigger": "minecraft:fall_from_height",
+      "conditions": {
+        "player": {
+          "effects": {
+            "garnished:yeeted": {}
+          }
+        },
+        "distance": {
+          "y": {
+            "min": 1000
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "fall_from_height"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

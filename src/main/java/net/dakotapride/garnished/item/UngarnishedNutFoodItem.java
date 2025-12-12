@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.item;
 
+import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
@@ -20,6 +21,6 @@ public class UngarnishedNutFoodItem extends Item implements IGarnishedUtilities 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, TooltipContext context, List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 		// tooltip.add(Component.translatable(ungarnishedText()).withStyle(standard()));
-		addEffectTooltip(tooltip, MobEffects.CONFUSION, 240);
+		addEffectTooltip(tooltip, GarnishedEffects.AVERSION, 240);
 	}
 }

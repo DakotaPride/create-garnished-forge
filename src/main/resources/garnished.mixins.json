@@ -9,6 +9,7 @@
     "EnderManMixin",
     "FluidReactionsMixin",
     "LivingEntityMixin",
+    "PlayerMixin",
     "compat.ResurgentSoilBlockMixin"
   ],
   "client": [
