@@ -8,7 +8,8 @@
     "GenericItemEmptyingMixin",
     "GenericItemFillingMixin",
     "HauntingTypeMixin",
-    "VanillaFluidTargetsMixin"
+    "VanillaFluidTargetsMixin",
+    "WalkNodeEvaluatorMixin"
   ],
   "client": [
     "GuiMixin",

@@ -1,0 +1,143 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "creategarnished:gingerbread_cookie",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "creategarnished:gingerbread_cookie",
+                  "properties": {
+                    "gingerbread_cookie_variant": "none"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "creategarnished:gingerbread_cookie_transrights",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "creategarnished:gingerbread_cookie",
+                  "properties": {
+                    "gingerbread_cookie_variant": "transrights"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "creategarnished:gingerbread_cookie_creeper",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "creategarnished:gingerbread_cookie",
+                  "properties": {
+                    "gingerbread_cookie_variant": "creeper"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "creategarnished:gingerbread_cookie_goggles",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "creategarnished:gingerbread_cookie",
+                  "properties": {
+                    "gingerbread_cookie_variant": "goggles"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "creategarnished:gingerbread_cookie_infected",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "creategarnished:gingerbread_cookie",
+                  "properties": {
+                    "gingerbread_cookie_variant": "infected"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "creategarnished:gingerbread_cookie_grub",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "creategarnished:gingerbread_cookie",
+                  "properties": {
+                    "gingerbread_cookie_variant": "grub"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "creategarnished:gingerbread_cookie_flea",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "creategarnished:gingerbread_cookie",
+                  "properties": {
+                    "gingerbread_cookie_variant": "flea"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "creategarnished:blocks/gingerbread_cookie"
+}

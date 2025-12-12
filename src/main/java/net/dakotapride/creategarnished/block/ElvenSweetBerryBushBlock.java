@@ -6,8 +6,6 @@ import net.dakotapride.creategarnished.registry.CreateGarnishedDamageSources;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.dakotapride.creategarnished.registry.CreateGarnishedParticles;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -18,6 +16,7 @@ import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -32,6 +31,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -39,19 +39,22 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
 import org.jetbrains.annotations.NotNull;
-import org.joml.Vector3f;
+import org.jetbrains.annotations.Nullable;
 
 public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableBlock {
     public static final MapCodec<ElvenSweetBerryBushBlock> CODEC = simpleCodec(ElvenSweetBerryBushBlock::new);
-    private static final float HURT_SPEED_THRESHOLD = 0.003F;
-    public static final int MAX_AGE = 3;
-    public static final IntegerProperty AGE;
-    private static final VoxelShape SAPLING_SHAPE;
-    private static final VoxelShape MID_GROWTH_SHAPE;
+    public static IntegerProperty AGE = BlockStateProperties.AGE_3;;
+    private static final VoxelShape SAPLING_SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);;
+    private static final VoxelShape MID_GROWTH_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 
     public ElvenSweetBerryBushBlock(Properties pProperties) {
         super(pProperties);
         this.registerDefaultState((this.stateDefinition.any()).setValue(AGE, 0));
+    }
+
+    @Override
+    public @Nullable PathType getAdjacentBlockPathType(BlockState state, BlockGetter level, BlockPos pos, @Nullable Mob mob, PathType originalType) {
+        return PathType.DANGER_OTHER;
     }
 
     @Override
@@ -154,11 +157,5 @@ public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableB
     public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
         int i = Math.min(3, pState.getValue(AGE) + 1);
         pLevel.setBlock(pPos, pState.setValue(AGE, i), 2);
-    }
-
-    static {
-        AGE = BlockStateProperties.AGE_3;
-        SAPLING_SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 8.0, 13.0);
-        MID_GROWTH_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
     }
 }

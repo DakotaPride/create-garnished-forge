@@ -33,7 +33,11 @@ public class CreateGarnishedStatusEffects {
     public static final DeferredHolder<MobEffect, MobEffect> STICKY = register("sticky",
             (new StickyMobEffect(MobEffectCategory.NEUTRAL, 0xCC5B39))
                     .addAttributeModifier(Attributes.MOVEMENT_SPEED, CreateGarnished.asResource("effect.sticky.movement_speed"),
-                            -0.25F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+                            -0.25F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(Attributes.GRAVITY, CreateGarnished.asResource("effect.sticky.gravity"),
+                            0.25F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(Attributes.JUMP_STRENGTH, CreateGarnished.asResource("effect.sticky.jump_strength"),
+                            0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     private static DeferredHolder<MobEffect, MobEffect> register(String name, MobEffect effect) {
         return MOB_EFFECTS.register(name, () -> effect);

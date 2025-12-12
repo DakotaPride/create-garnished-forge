@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "creategarnished:caramel_topped_royal_cider"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "creategarnished:blocks/caramel_royal_cider_block"
+}
