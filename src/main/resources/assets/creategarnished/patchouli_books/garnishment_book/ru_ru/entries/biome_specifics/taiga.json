@@ -25,6 +25,28 @@
       "images": [
         "creategarnished:textures/gui/patchouli/elven_sweet_berries.png"
       ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:garlic_bulb",
+      "text": "В таёжных биомах из земли можно найти дикий чеснок, который прорастает и разламывается, образуя луковицы. Эти луковицы можно пересадить на пахотные земли, чтобы пополнить запасы чеснока."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_garlic.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_mint",
+      "text": "В таёжных биомах дикая мята растёт из земли. Использование костной муки на этом растении даст шанс распространить его, пополнив запасы этого ресурса!"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_mint.png"
+      ]
     }
   ]
 }

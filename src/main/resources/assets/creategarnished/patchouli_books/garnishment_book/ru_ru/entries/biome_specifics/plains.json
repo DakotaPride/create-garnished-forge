@@ -1,0 +1,29 @@
+{
+  "name": "Равнины",
+  "icon": "creategarnished:wild_peppermint",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:chestnut",
+      "text": "В равнинных биомах иногда можно найти каштаны, растущие на дубах. Вы можете пересадить эти орехи, чтобы они снова выросли в деревья, обеспечивая возобновляемый источник древесины и каштанов."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/chestnut_tree.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_peppermint",
+      "text": "В равнинных биомах дикая перечная мята произрастает из земли. Использование костной муки на этом растении позволит ему распространиться, пополнив запасы этого ресурса!"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_peppermint.png"
+      ]
+    }
+  ]
+}
