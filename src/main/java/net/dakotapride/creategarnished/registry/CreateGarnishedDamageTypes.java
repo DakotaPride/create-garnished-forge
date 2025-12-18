@@ -11,6 +11,8 @@ public class CreateGarnishedDamageTypes {
     public static final ResourceKey<DamageType>
             NUT_ALLERGY = key("nut_allergy");
     public static final ResourceKey<DamageType>
+            NUT_ACHE = key("nut_ache");
+    public static final ResourceKey<DamageType>
             SHOCK = key("shocked");
 
     private static ResourceKey<DamageType> key(String name) {

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "creategarnished:nutium_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_axe"
+  },
+  "result": {
+    "count": 1,
+    "id": "creategarnished:nutium_axe"
+  },
+  "template": {
+    "item": "creategarnished:nutium_upgrade"
+  }
+}

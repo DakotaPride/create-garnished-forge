@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "creategarnished:nutium_block"
+    }
+  ],
+  "result": {
+    "id": "creategarnished:nutium_ingot",
+    "count": 9
+  }
+}

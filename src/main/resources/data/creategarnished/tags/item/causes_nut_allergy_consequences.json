@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "#c:foods/nuts",
-    "#c:foods/pancakes",
+    "#creategarnished:pancakes",
     "creategarnished:peanut_butter_cookie",
     "creategarnished:peanut_butter_bottle",
     "creategarnished:churchkhela",

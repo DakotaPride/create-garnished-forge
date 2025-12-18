@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:nutium_hoe"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.break_nutium_hoe"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.break_nutium_hoe.desc",
+      "color": "#DBA213"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "creategarnished:root",
+  "criteria": {
+    "break_nutium_hoe": {
+      "trigger": "minecraft:item_durability_changed",
+      "conditions": {
+        "item": {
+          "items": "creategarnished:nutium_hoe"
+        },
+        "durability": 0
+      }
+    }
+  },
+  "requirements": [
+    [
+      "break_nutium_hoe"
+    ]
+  ]
+}

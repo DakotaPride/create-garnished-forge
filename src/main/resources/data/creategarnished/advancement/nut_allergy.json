@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:peanut_butter_bottle"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.nut_allergy"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.nut_allergy.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "creategarnished:root",
+  "criteria": {
+    "nut_allergy": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "creategarnished:nut_allergy": {}
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "nut_allergy"
+    ]
+  ]
+}

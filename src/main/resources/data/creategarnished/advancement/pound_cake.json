@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:pound_cake"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.pound_cake"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.pound_cake.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "creategarnished:root",
+  "criteria": {
+    "pound_cake": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "creategarnished:pound_cake"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "pound_cake"
+    ]
+  ]
+}

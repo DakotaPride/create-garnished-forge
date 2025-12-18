@@ -1,6 +1,7 @@
 package net.dakotapride.creategarnished.registry;
 
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.entity.gingerbread_man.GingerManiacEntity;
 import net.dakotapride.creategarnished.entity.squirrel.SquirrelEntity;
 import net.dakotapride.creategarnished.entity.voltfish.VoltfishEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -20,6 +21,9 @@ public class CreateGarnishedEntityTypes {
     public static final Supplier<EntityType<SquirrelEntity>> SQUIRREL = ENTITY_TYPES.register("squirrel",
             () -> EntityType.Builder.of(SquirrelEntity::new, MobCategory.CREATURE)
                     .sized(0.5F, 0.2F).eyeHeight(0.05F).build("squirrel"));
+    public static final Supplier<EntityType<GingerManiacEntity>> GINGERMANIAC = ENTITY_TYPES.register("gingermaniac",
+            () -> EntityType.Builder.of(GingerManiacEntity::new, MobCategory.MONSTER)
+                    .sized(0.35F, 0.55F).eyeHeight(0.45F).build("gingermaniac"));
 
     public static void register(IEventBus bus) {
         ENTITY_TYPES.register(bus);

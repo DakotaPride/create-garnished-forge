@@ -27,6 +27,7 @@ public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T
     private final ModelPart main;
     private final ModelPart head;
     private final ModelPart ears;
+    private final ModelPart hat;
     private final ModelPart body;
     private final ModelPart body2;
     private final ModelPart arms;
@@ -43,6 +44,7 @@ public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T
         this.main = root.getChild("main");
         this.head = this.main.getChild("head");
         this.ears = this.head.getChild("ears");
+        this.hat = this.head.getChild("hat");
         this.body = this.main.getChild("body");
         this.body2 = this.body.getChild("body2");
         this.arms = this.body.getChild("arms");
@@ -67,6 +69,9 @@ public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T
 
         PartDefinition ears = head.addOrReplaceChild("ears", CubeListBuilder.create().texOffs(8, 19).addBox(0.5F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, new CubeDeformation(0.0F))
                 .texOffs(10, 19).addBox(-1.5F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, -0.5F));
+
+        PartDefinition hat = head.addOrReplaceChild("hat", CubeListBuilder.create().texOffs(16, 2).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 1.0F, 4.0F, new CubeDeformation(0.0F))
+                .texOffs(7, 21).addBox(-1.5F, -8.0F, -1.5F, 3.0F, 8.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -1.0F, -1.0F, -0.0873F, 0.0F, 0.0F));
 
         PartDefinition body = main.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(-0.0313F, 0.75F, 2.5781F));
 

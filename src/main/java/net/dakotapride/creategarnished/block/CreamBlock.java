@@ -18,7 +18,7 @@ public class CreamBlock extends Block {
         if (entity instanceof ItemEntity) {
             return 1.0F;
         } else {
-            return 0.80F;
+            return 0.20F;
         }
     }
 }

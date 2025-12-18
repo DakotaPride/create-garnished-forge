@@ -8,6 +8,7 @@
     "GenericItemEmptyingMixin",
     "GenericItemFillingMixin",
     "HauntingTypeMixin",
+    "LivingEntityMixin",
     "VanillaFluidTargetsMixin",
     "WalkNodeEvaluatorMixin"
   ],

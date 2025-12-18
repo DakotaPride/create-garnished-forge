@@ -26,6 +26,8 @@ public class SquirrelRenderer extends MobRenderer<SquirrelEntity, SquirrelModel<
         }
         if ("Quirrel".equalsIgnoreCase(name))
             return CreateGarnished.asResource("textures/entity/squirrel/quirrel.png");
+        if ("Dimmadome".equalsIgnoreCase(name))
+            return CreateGarnished.asResource("textures/entity/squirrel/dimmadome.png");
         return CreateGarnished.asResource("textures/entity/squirrel/" + squirrelEntity.getVariant().getName() + ".png");
     }
 

@@ -5,9 +5,11 @@ import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.event.ProvideEffectsFromConsumptionEvent;
 import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -100,8 +102,10 @@ public class PoundCakeBlock extends Block {
             if (isInBiome && CreateGarnishedConfigs.server().entity.provideSpecialEffectsFromBiome.get()) {
                 player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 120 * 20, 1, false, false, false));
             }
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 120 * 20, 99, false, false, false));
             int i = state.getValue(BITES);
             level.gameEvent(player, GameEvent.EAT, pos);
+            player.displayClientMessage(Component.translatable("creategarnished.text.april_foods.pound_cake_slow_movement").withStyle(ChatFormatting.RED), true);
             if (i < 6) {
                 level.setBlock(pos, state.setValue(BITES, Integer.valueOf(i + 1)), 3);
             } else {

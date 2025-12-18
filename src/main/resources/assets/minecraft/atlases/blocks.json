@@ -111,6 +111,14 @@
     {
       "type": "single",
       "resource": "creategarnished:fluid/eggnog_still"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/nut_alloy_compound_flow"
+    },
+    {
+      "type": "single",
+      "resource": "creategarnished:fluid/nut_alloy_compound_still"
     }
   ]
 }

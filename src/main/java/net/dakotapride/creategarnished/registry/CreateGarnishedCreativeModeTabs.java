@@ -116,6 +116,7 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.GINGERBREAD_COOKIE);
             for (CreateGarnishedItems.GingerbreadCookieTypes types : CreateGarnishedItems.GingerbreadCookieTypes.values())
                 output.accept(types.getItem());
+            output.accept(CreateGarnishedItems.VENGEFUL_GINGERBREAD_COOKIE);
 
             output.accept(CreateGarnishedItems.SPRINTERS_TEA);
             output.accept(CreateGarnishedItems.SWEET_TEA);
@@ -130,10 +131,24 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedFluids.BEETROOT_JUICE.get().getBucket());
             output.accept(CreateGarnishedFluids.MUSHROOM_SLOP.get().getBucket());
 
+            output.accept(CreateGarnishedItems.NUTIUM_INGOT);
+            output.accept(CreateGarnishedItems.NUTIUM_NUGGET);
+            output.accept(CreateGarnishedItems.NUTIUM_HELMET);
+            output.accept(CreateGarnishedItems.NUTIUM_CHESTPLATE);
+            output.accept(CreateGarnishedItems.NUTIUM_LEGGINGS);
+            output.accept(CreateGarnishedItems.NUTIUM_BOOTS);
+            output.accept(CreateGarnishedItems.NUTIUM_SWORD);
+            output.accept(CreateGarnishedItems.NUTIUM_PICKAXE);
+            output.accept(CreateGarnishedItems.NUTIUM_AXE);
+            output.accept(CreateGarnishedItems.NUTIUM_SHOVEL);
+            output.accept(CreateGarnishedItems.NUTIUM_HOE);
+            output.accept(CreateGarnishedItems.NUTIUM_UPGRADE);
+
             // Creative Items
             output.accept(CreateGarnishedItems.CREATIVE_PRESSURISED_HATCHET);
             output.accept(CreateGarnishedItems.VOLTFISH_SPAWN_EGG);
             output.accept(CreateGarnishedItems.SQUIRREL_SPAWN_EGG);
+            output.accept(CreateGarnishedItems.GINGERMANIAC_SPAWN_EGG);
         }
     }
 
@@ -195,6 +210,8 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedBlocks.PORPHYRY_PILLAR);
 
             output.accept(CreateGarnishedBlocks.CREAM_BLOCK);
+
+            output.accept(CreateGarnishedBlocks.NUTIUM_BLOCK);
 
             output.accept(CreateGarnishedBlocks.CRYSTALISED_CORN_SYRUP_BLOCK);
             output.accept(CreateGarnishedBlocks.TOUGHENED_SCALES_BLOCK);

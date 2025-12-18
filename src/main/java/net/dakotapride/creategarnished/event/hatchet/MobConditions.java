@@ -65,7 +65,7 @@ public class MobConditions {
                                             LivingEntity attacker,
                                             Item itemToDrop,
                                             int count,
-                                            int chance,
+                                            int unusedChance,
                                             DamageSource source,
                                             boolean... enabled0) {
 
@@ -82,9 +82,7 @@ public class MobConditions {
             r = new Random().nextInt(1, 201);
         }
 
-        Item itemInHand = attacker.getMainHandItem().getItem();
-        if (itemInHand instanceof PressurisedHatchetItem hatchetItem && hatchetItem.isCreative())
-            chance = 100;
+        int chance = 100;
 
         int r0 = new Random().nextInt(1, count + 1);
         boolean enabled1 = false;

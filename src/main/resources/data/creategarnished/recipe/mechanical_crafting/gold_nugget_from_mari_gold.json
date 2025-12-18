@@ -1,0 +1,23 @@
+{
+  "type": "create:mechanical_crafting",
+  "accept_mirrored": true,
+  "category": "misc",
+  "pattern": [
+    "XXXXXXXX",
+    "XXXXXXXX",
+    "XXXXXXXX",
+    "XXXXXXXX",
+    "XXXXXXXX",
+    "XXXXXXXX",
+    "XXXXXXXX",
+    "XXXXXXXX"
+  ],
+  "key": {
+    "X": {
+      "item": "creategarnished:marigold"
+    }
+  },
+  "result": {
+    "id": "minecraft:gold_nugget"
+  }
+}

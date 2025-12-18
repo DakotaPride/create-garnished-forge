@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:vengeful_gingerbread_cookie"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.gingermaniac"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.gingermaniac.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "creategarnished:root",
+  "criteria": {
+    "gingermaniac_defeat": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "creategarnished:gingermaniac"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "gingermaniac_defeat"
+    ]
+  ]
+}

@@ -6,6 +6,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.GingerbreadCookieBlock;
 import net.dakotapride.creategarnished.item.*;
+import net.dakotapride.creategarnished.util.CreateGarnishedUtils;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -32,7 +33,7 @@ public class CreateGarnishedItems {
     public static final ItemEntry<PeanutItem> PEANUT = CreateGarnished.REGISTRATE.item("peanut", PeanutItem::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6F).build()))
             .register();
-    public static final ItemEntry<Item> PEANUT_BUTTER_BOTTLE = CreateGarnished.REGISTRATE.item("peanut_butter_bottle", Item::new)
+    public static final ItemEntry<PeanutButterBottleItem> PEANUT_BUTTER_BOTTLE = CreateGarnished.REGISTRATE.item("peanut_butter_bottle", PeanutButterBottleItem::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.6F).usingConvertsTo(Items.GLASS_BOTTLE).build()).craftRemainder(Items.GLASS_BOTTLE))
             .register();
     public static final ItemEntry<Item> PEANUT_BUTTER_COOKIE = CreateGarnished.REGISTRATE.item("peanut_butter_cookie", Item::new)
@@ -93,7 +94,7 @@ public class CreateGarnishedItems {
             .register();
     public static final ItemEntry<Item> BEETROOT_JUICE_BOTTLE = CreateGarnished.REGISTRATE.item("beetroot_juice_bottle", Item::new)
             .properties(p -> p.craftRemainder(Items.GLASS_BOTTLE)).register();
-    public static final ItemEntry<Item> CHURCHKHELA = CreateGarnished.REGISTRATE.item("churchkhela", Item::new)
+    public static final ItemEntry<ChurchkhelaFoodItem> CHURCHKHELA = CreateGarnished.REGISTRATE.item("churchkhela", ChurchkhelaFoodItem::new)
             .properties(p -> p.stacksTo(16).food(new FoodProperties.Builder().nutrition(6).saturationModifier(0.6F).build()))
             .register();
 
@@ -230,7 +231,7 @@ public class CreateGarnishedItems {
                     .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1200, 1), 1.0F).build()))
             .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.volt_skewer")).register();
 
-    public static final ItemEntry<Item> POUND_CAKE_SLICE = CreateGarnished.REGISTRATE.item("pound_cake_slice", Item::new)
+    public static final ItemEntry<SliceOfPoundCakeItem> POUND_CAKE_SLICE = CreateGarnished.REGISTRATE.item("pound_cake_slice", SliceOfPoundCakeItem::new)
             .properties(p -> p.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).fast().build())).register();
 
     public static final ItemEntry<Item> CARAMELISED_APPLE = CreateGarnished.REGISTRATE.item("caramelised_apple", Item::new)
@@ -304,12 +305,45 @@ public class CreateGarnishedItems {
         private static void furretWalk() {}
     }
 
+    public static ItemEntry<VengefulCookieItem> VENGEFUL_GINGERBREAD_COOKIE = CreateGarnished.REGISTRATE.item("vengeful_gingerbread_cookie",
+            properties -> new VengefulCookieItem(CreateGarnishedEntityTypes.GINGERMANIAC.get(), properties))
+            .onRegister(s -> ItemDescription.useKey(s, "item.creategarnished.vengeful_gingerbread_cookie")).register();
+
     public static final ItemEntry<SpawnEggItem> VOLTFISH_SPAWN_EGG = CreateGarnished.REGISTRATE.item("voltfish_spawn_egg",
             properties -> new SpawnEggItem(CreateGarnishedEntityTypes.VOLTFISH.get(),
                     0x7C6496, 0x291B38, properties)).register();
     public static final ItemEntry<SpawnEggItem> SQUIRREL_SPAWN_EGG = CreateGarnished.REGISTRATE.item("squirrel_spawn_egg",
             properties -> new SpawnEggItem(CreateGarnishedEntityTypes.SQUIRREL.get(),
                     0xA09D9A, 0x7E7A77, properties)).register();
+    public static final ItemEntry<SpawnEggItem> GINGERMANIAC_SPAWN_EGG = CreateGarnished.REGISTRATE.item("gingermaniac_spawn_egg",
+            properties -> new SpawnEggItem(CreateGarnishedEntityTypes.GINGERMANIAC.get(),
+                    0x875D33, 0x5B2919, properties)).register();
+
+    public static ItemEntry<MiscNutiumItem> NUTIUM_INGOT = CreateGarnished.REGISTRATE.item("nutium_ingot", MiscNutiumItem::new).register();
+    public static ItemEntry<MiscNutiumItem> NUTIUM_NUGGET = CreateGarnished.REGISTRATE.item("nutium_nugget", MiscNutiumItem::new).register();
+
+    public static ItemEntry<NutiumArmourItem> NUTIUM_HELMET = CreateGarnished.REGISTRATE.item("nutium_helmet",
+            properties -> new NutiumArmourItem(ArmorItem.Type.HELMET, properties)).register();
+    public static ItemEntry<NutiumArmourItem> NUTIUM_CHESTPLATE = CreateGarnished.REGISTRATE.item("nutium_chestplate",
+            properties -> new NutiumArmourItem(ArmorItem.Type.CHESTPLATE, properties)).register();
+    public static ItemEntry<NutiumArmourItem> NUTIUM_LEGGINGS = CreateGarnished.REGISTRATE.item("nutium_leggings",
+            properties -> new NutiumArmourItem(ArmorItem.Type.LEGGINGS, properties)).register();
+    public static ItemEntry<NutiumArmourItem> NUTIUM_BOOTS = CreateGarnished.REGISTRATE.item("nutium_boots",
+            properties -> new NutiumArmourItem(ArmorItem.Type.BOOTS, properties)).register();
+
+    public static ItemEntry<NutiumTools.Sword> NUTIUM_SWORD = CreateGarnished.REGISTRATE.item("nutium_sword",
+            properties -> new NutiumTools.Sword(CreateGarnishedTiers.NUTIUM, properties.attributes(SwordItem.createAttributes(CreateGarnishedTiers.NUTIUM, 4, -2.4F)))).register();
+    public static ItemEntry<NutiumTools.Pickaxe> NUTIUM_PICKAXE = CreateGarnished.REGISTRATE.item("nutium_pickaxe",
+            properties -> new NutiumTools.Pickaxe(CreateGarnishedTiers.NUTIUM, properties.attributes(PickaxeItem.createAttributes(CreateGarnishedTiers.NUTIUM, 1.0F, -2.8F)))).register();
+    public static ItemEntry<NutiumTools.Axe> NUTIUM_AXE = CreateGarnished.REGISTRATE.item("nutium_axe",
+            properties -> new NutiumTools.Axe(CreateGarnishedTiers.NUTIUM, properties.attributes(AxeItem.createAttributes(CreateGarnishedTiers.NUTIUM, 5.0F, -3.0F)))).register();
+    public static ItemEntry<NutiumTools.Shovel> NUTIUM_SHOVEL = CreateGarnished.REGISTRATE.item("nutium_shovel",
+            properties -> new NutiumTools.Shovel(CreateGarnishedTiers.NUTIUM, properties.attributes(ShovelItem.createAttributes(CreateGarnishedTiers.NUTIUM, 1.5F, -3.0F)))).register();
+    public static ItemEntry<NutiumTools.Hoe> NUTIUM_HOE = CreateGarnished.REGISTRATE.item("nutium_hoe",
+            properties -> new NutiumTools.Hoe(CreateGarnishedTiers.NUTIUM, properties.attributes(HoeItem.createAttributes(CreateGarnishedTiers.NUTIUM, -4.0F, 0.0F)))).register();
+
+    public static ItemEntry<SmithingTemplateItem> NUTIUM_UPGRADE = CreateGarnished.REGISTRATE.item("nutium_upgrade",
+            properties -> CreateGarnishedUtils.createNutiumUpgradeTemplate()).register();
 
     public static void register() {
         GingerbreadCookieTypes.furretWalk();

@@ -1,0 +1,45 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:nutium_chestplate"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.nutium_armour"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.nutium_armour.desc",
+      "color": "#DBA213"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "creategarnished:root",
+  "criteria": {
+    "nutium_armour": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "creategarnished:nutium_helmet"
+          },
+          {
+            "items": "creategarnished:nutium_chestplate"
+          },
+          {
+            "items": "creategarnished:nutium_leggings"
+          },
+          {
+            "items": "creategarnished:nutium_boots"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "nutium_armour"
+    ]
+  ]
+}

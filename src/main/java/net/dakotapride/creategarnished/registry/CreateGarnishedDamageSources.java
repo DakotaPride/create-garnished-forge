@@ -15,6 +15,9 @@ public class CreateGarnishedDamageSources {
     public static DamageSource nutAllergy(Level level) {
         return source(CreateGarnishedDamageTypes.NUT_ALLERGY, level);
     }
+    public static DamageSource nutAche(Level level) {
+        return source(CreateGarnishedDamageTypes.NUT_ACHE, level);
+    }
     public static DamageSource shock(Level level) {
         return source(CreateGarnishedDamageTypes.SHOCK, level);
     }

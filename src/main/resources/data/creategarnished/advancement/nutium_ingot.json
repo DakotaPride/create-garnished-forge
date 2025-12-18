@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:nutium_ingot"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.nutium_ingot"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.nutium_ingot.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "creategarnished:root",
+  "criteria": {
+    "nutium_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "creategarnished:nutium_ingot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "nutium_ingot"
+    ]
+  ]
+}

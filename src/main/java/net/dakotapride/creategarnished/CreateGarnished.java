@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import net.createmod.catnip.lang.FontHelper;
+import net.dakotapride.creategarnished.entity.gingerbread_man.client.GingerManiacRenderer;
 import net.dakotapride.creategarnished.entity.squirrel.client.SquirrelRenderer;
 import net.dakotapride.creategarnished.entity.voltfish.client.VoltfishRenderer;
 import net.dakotapride.creategarnished.particle.CaramelParticle;
@@ -125,6 +126,7 @@ public class CreateGarnished {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(CreateGarnishedEntityTypes.VOLTFISH.get(), VoltfishRenderer::new);
             EntityRenderers.register(CreateGarnishedEntityTypes.SQUIRREL.get(), SquirrelRenderer::new);
+            EntityRenderers.register(CreateGarnishedEntityTypes.GINGERMANIAC.get(), GingerManiacRenderer::new);
         }
 
         @SubscribeEvent

@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "create:cinder_flour"
+    },
+    {
+      "item": "creategarnished:peanut"
+    },
+    {
+      "item": "creategarnished:pine_nut"
+    },
+    {
+      "item": "creategarnished:almond"
+    },
+    {
+      "item": "creategarnished:hazelnut"
+    },
+    {
+      "item": "creategarnished:chestnut"
+    }
+  ],
+  "results": [
+    {
+      "amount": 100,
+      "id": "creategarnished:nut_alloy_compound"
+    }
+  ]
+}

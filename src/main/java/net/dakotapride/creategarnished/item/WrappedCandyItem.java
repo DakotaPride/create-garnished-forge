@@ -1,6 +1,5 @@
 package net.dakotapride.creategarnished.item;
 
-import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.registry.CreateGarnishedSounds;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
 import net.minecraft.core.component.DataComponents;
@@ -47,7 +46,7 @@ public class WrappedCandyItem extends Item {
 
 
             if (BuiltInRegistries.MOB_EFFECT.getHolder(random).isPresent()
-                    && BuiltInRegistries.MOB_EFFECT.getHolder(random).get().is(CreateGarnishedTags.BLACKLISTED_FROM_CANDY)) {
+                    && BuiltInRegistries.MOB_EFFECT.getHolder(random).get().is(CreateGarnishedTags.BLACKLISTED_FROM_APPLICATION)) {
                 random = new Random().nextInt(BuiltInRegistries.MOB_EFFECT.size());
                 //CreateGarnished.LOGGER.info("Effect was rerolled, as it was blacklisted");
             }

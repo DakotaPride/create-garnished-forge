@@ -44,6 +44,8 @@ public class CreateGarnishedFluids {
     public static final FluidEntry<VirtualFluid> CORN_SYRUP = REGISTRATE.virtualFluid("corn_syrup").register();
     public static final FluidEntry<VirtualFluid> CARAMEL = REGISTRATE.virtualFluid("caramel").register();
 
+    public static final FluidEntry<VirtualFluid> NUT_ALLOY_COMPOUND = REGISTRATE.virtualFluid("nut_alloy_compound").register();
+
     public static final FluidEntry<BaseFlowingFluid.Flowing> PEANUT_BUTTER =
             REGISTRATE.standardFluid("peanut_butter",
                             SolidRenderedPlaceableFluidType.create(0xA2774B,
@@ -133,122 +135,54 @@ public class CreateGarnishedFluids {
 
     public static void register() {}
 
-    private static void provideFluidInteraction(FluidType colliding_fluid, FluidType met_fluid, Block from_source, Block from_flowing) {
-        FluidInteractionRegistry.addInteraction(colliding_fluid, new FluidInteractionRegistry.InteractionInformation(
-                met_fluid,
-                fluidState -> {
-                    if (fluidState.isSource()) {
-                        return from_source.defaultBlockState();
-                    } else {
-                        return from_flowing.defaultBlockState();
-                    }
-                }
-        ));
-    }
+//    private static void provideFluidInteraction(FluidType colliding_fluid, FluidType met_fluid, Block from_source, Block from_flowing) {
+//        FluidInteractionRegistry.addInteraction(colliding_fluid, new FluidInteractionRegistry.InteractionInformation(
+//                met_fluid,
+//                fluidState -> {
+//                    if (fluidState.isSource()) {
+//                        return from_source.defaultBlockState();
+//                    } else {
+//                        return from_flowing.defaultBlockState();
+//                    }
+//                }
+//        ));
+//    }
 
+    // You like porphyry, right?
     public static void registerFluidInteractions() {
         FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 BIRCH_SYRUP.get().getFluidType(),
-                fluidState -> {
-                    if (CreateGarnishedConfigs.server().stoneGeneration.allowCrimsiteFluidInteraction.get()) {
-                        if (fluidState.isSource()) {
-                            return AllPaletteStoneTypes.CRIMSITE.getBaseBlock().get().defaultBlockState();
-                        } else {
-                            return CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().get().defaultBlockState();
-                        }
-                    } else {
-                        return CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().get().defaultBlockState();
-                    }
-                }
+                fluidState -> CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState()
         ));
 
         FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 PEANUT_BUTTER.get().getFluidType(),
-                fluidState -> {
-                    if (CreateGarnishedConfigs.server().stoneGeneration.allowDripstoneFluidInteraction.get()) {
-                        return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get().defaultBlockState();
-                    } else {
-                        if (fluidState.isSource()) {
-                            return Blocks.STONE.defaultBlockState();
-                        } else {
-                            return Blocks.COBBLESTONE.defaultBlockState();
-                        }
-                    }
-                }
+                fluidState -> CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState()
         ));
 
         FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 ALMOND_EXTRACT.get().getFluidType(),
-                fluidState -> {
-                    if (CreateGarnishedConfigs.server().stoneGeneration.allowPackedMudFluidInteraction.get()) {
-                        return Blocks.PACKED_MUD.defaultBlockState();
-                    } else {
-                        if (fluidState.isSource()) {
-                            return Blocks.STONE.defaultBlockState();
-                        } else {
-                            return Blocks.COBBLESTONE.defaultBlockState();
-                        }
-                    }
-                }
+                fluidState -> CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState()
         ));
 
         FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 MUSHROOM_SLOP.get().getFluidType(),
-                fluidState -> {
-                    if (CreateGarnishedConfigs.server().stoneGeneration.allowPackedMudFluidInteraction.get()) {
-                        return Blocks.PACKED_MUD.defaultBlockState();
-                    } else {
-                        if (fluidState.isSource()) {
-                            return Blocks.STONE.defaultBlockState();
-                        } else {
-                            return Blocks.COBBLESTONE.defaultBlockState();
-                        }
-                    }
-                }
+                fluidState -> CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState()
         ));
 
         FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 BEETROOT_JUICE.get().getFluidType(),
-                fluidState -> {
-                    if (CreateGarnishedConfigs.server().stoneGeneration.allowGraniteFluidInteraction.get()) {
-                        return AllPaletteStoneTypes.GRANITE.getBaseBlock().get().defaultBlockState();
-                    } else {
-                        if (fluidState.isSource()) {
-                            return Blocks.STONE.defaultBlockState();
-                        } else {
-                            return Blocks.COBBLESTONE.defaultBlockState();
-                        }
-                    }
-                }
+                fluidState -> CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState()
         ));
 
         FluidInteractionRegistry.addInteraction(NeoForgeMod.LAVA_TYPE.value(), new FluidInteractionRegistry.InteractionInformation(
                 ROYAL_CIDER.get().getFluidType(),
-                fluidState -> {
-                    if (CreateGarnishedConfigs.server().stoneGeneration.allowAsurineFluidInteraction.get()) {
-                        if (fluidState.isSource()) {
-                            return AllPaletteStoneTypes.ASURINE.getBaseBlock().get().defaultBlockState();
-                        } else {
-                            return Blocks.CRYING_OBSIDIAN.defaultBlockState();
-                        }
-                    } else {
-                        return Blocks.CRYING_OBSIDIAN.defaultBlockState();
-                    }
-                }
+                fluidState -> CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState()
         ));
     }
 
     public static @NotNull BlockState getFluidInteraction(FluidState fluidState) {
-        Fluid fluid = fluidState.getType();
-        if (fluid.isSame(BIRCH_SYRUP.get()))
-            return CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState();
-        if (fluid.isSame(PEANUT_BUTTER.get()) && CreateGarnishedConfigs.server().stoneGeneration.allowDripstoneFluidInteraction.get())
-            return AllPaletteStoneTypes.DRIPSTONE.getBaseBlock().get().defaultBlockState();
-        if (fluid.isSame(ALMOND_EXTRACT.get()) && CreateGarnishedConfigs.server().stoneGeneration.allowGraniteFluidInteraction.get())
-            return AllPaletteStoneTypes.GRANITE.getBaseBlock().get().defaultBlockState();
-        if (fluid.isSame(ROYAL_CIDER.get()))
-            return Blocks.CRYING_OBSIDIAN.defaultBlockState();
-        return Blocks.COBBLESTONE.defaultBlockState();
+        return CreateGarnishedStoneTypes.PORPHYRY.getStoneType().getBaseStoneBlock().getDefaultState();
     }
 
     private static class SolidRenderedPlaceableFluidType extends AllFluids.TintedFluidType {

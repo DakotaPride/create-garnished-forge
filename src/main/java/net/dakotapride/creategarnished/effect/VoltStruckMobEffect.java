@@ -26,9 +26,14 @@ public class VoltStruckMobEffect extends MobEffect {
 
     @Override
     public boolean applyEffectTick(LivingEntity entity, int i) {
+        float damageCount = 1.0F;
+        if (entity.isInWater()) {
+            damageCount = 2.0F;
+        }
+
         Registry<DamageType> dTypeReg = entity.damageSources().damageTypes;
         Holder.Reference<DamageType> dType = dTypeReg.getHolder(CreateGarnishedDamageTypes.SHOCK).orElse(dTypeReg.getHolderOrThrow(DamageTypes.MAGIC));
-        entity.hurt(new DamageSource(dType), 1.0F);
+        entity.hurt(new DamageSource(dType), damageCount);
 
         return true;
     }

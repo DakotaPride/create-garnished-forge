@@ -1,0 +1,20 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "creategarnished:nut_alloy_compound"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "creategarnished:nutium_upgrade"
+      }
+    }
+  ]
+}

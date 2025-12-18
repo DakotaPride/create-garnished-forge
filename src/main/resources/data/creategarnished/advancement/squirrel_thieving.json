@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:chestnut"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.squirrel_thieving"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.squirrel_thieving.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "creategarnished:root",
+  "criteria": {
+    "squirrel_thieving": {
+      "trigger": "creategarnished:squirrel_thieving"
+    }
+  },
+  "requirements": [
+    [
+      "squirrel_thieving"
+    ]
+  ]
+}

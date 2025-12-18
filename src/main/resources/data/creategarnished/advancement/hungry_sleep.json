@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:brown_bed"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.hungry_sleep"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.hungry_sleep.desc",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "creategarnished:root",
+  "criteria": {
+    "hungry_sleep": {
+      "trigger": "creategarnished:attempt_sleep_while_hungry"
+    }
+  },
+  "requirements": [
+    [
+      "hungry_sleep"
+    ]
+  ]
+}

@@ -1,8 +1,7 @@
 package net.dakotapride.creategarnished.registry;
 
 import net.dakotapride.creategarnished.CreateGarnished;
-import net.dakotapride.creategarnished.advancement.DejojoTheAwsomeTrigger;
-import net.dakotapride.creategarnished.advancement.FeedFlapjackToFlapjackTrigger;
+import net.dakotapride.creategarnished.advancement.*;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.advancements.critereon.KilledTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -24,6 +23,12 @@ public class CreateGarnishedTriggers {
             CRITERION_TRIGGERS.register("1000_hatchet_kills", KilledTrigger::new);
     public static final Supplier<KilledTrigger> MONSTER =
             CRITERION_TRIGGERS.register("monster", KilledTrigger::new);
+    public static final Supplier<SquirrelThievingTrigger> SQUIRREL_THIEVING =
+            CRITERION_TRIGGERS.register("squirrel_thieving", SquirrelThievingTrigger::new);
+    public static final Supplier<SleepInBedWhileHungryTrigger> ATTEMPT_SLEEP_WHILE_HUNGRY =
+            CRITERION_TRIGGERS.register("attempt_sleep_while_hungry", SleepInBedWhileHungryTrigger::new);
+    public static final Supplier<ElectrocutedTrigger> ELECTROCUTED =
+            CRITERION_TRIGGERS.register("electrocuted", ElectrocutedTrigger::new);
 
     public static void register(IEventBus bus) {
         CRITERION_TRIGGERS.register(bus);

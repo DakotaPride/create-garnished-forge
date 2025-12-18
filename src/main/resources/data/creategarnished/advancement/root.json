@@ -10,7 +10,7 @@
       "translate": "advancement.creategarnished.root.description",
       "color": "#DBA213"
     },
-    "background": "creategarnished:textures/gui/advancements.png",
+    "background": "creategarnished:textures/block/nutium_block.png",
     "frame": "task",
     "show_toast": false,
     "announce_to_chat": false,

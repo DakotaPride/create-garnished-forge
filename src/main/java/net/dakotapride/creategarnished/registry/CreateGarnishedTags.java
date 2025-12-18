@@ -29,5 +29,5 @@ public class CreateGarnishedTags {
 
     public static TagKey<Biome> IS_ACCEPTED_FLOWER_BIOME = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", "is_flower_biome"));
 
-    public static TagKey<MobEffect> BLACKLISTED_FROM_CANDY = TagKey.create(Registries.MOB_EFFECT, ResourceLocation.fromNamespaceAndPath("creategarnished", "candy_effect_blacklist"));
+    public static TagKey<MobEffect> BLACKLISTED_FROM_APPLICATION = TagKey.create(Registries.MOB_EFFECT, CreateGarnished.asResource("candy_effect_blacklist"));
 }

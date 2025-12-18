@@ -1,13 +1,14 @@
 package net.dakotapride.creategarnished.event;
 
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.entity.gingerbread_man.GingerManiacEntity;
+import net.dakotapride.creategarnished.entity.gingerbread_man.client.GingerManiacModel;
 import net.dakotapride.creategarnished.entity.squirrel.SquirrelEntity;
 import net.dakotapride.creategarnished.entity.squirrel.client.SquirrelModel;
 import net.dakotapride.creategarnished.entity.voltfish.VoltfishEntity;
 import net.dakotapride.creategarnished.entity.voltfish.client.VoltfishModel;
 import net.dakotapride.creategarnished.registry.CreateGarnishedEntityTypes;
 import net.minecraft.world.entity.SpawnPlacementTypes;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -22,12 +23,14 @@ public class CreateGarnishedMobCreationEvents {
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(VoltfishModel.LAYER_LOCATION, VoltfishModel::createBodyLayer);
         event.registerLayerDefinition(SquirrelModel.LAYER_LOCATION, SquirrelModel::createBodyLayer);
+        event.registerLayerDefinition(GingerManiacModel.LAYER_LOCATION, GingerManiacModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(CreateGarnishedEntityTypes.VOLTFISH.get(), VoltfishEntity.createAttributes().build());
         event.put(CreateGarnishedEntityTypes.SQUIRREL.get(), SquirrelEntity.createAttributes().build());
+        event.put(CreateGarnishedEntityTypes.GINGERMANIAC.get(), GingerManiacEntity.createAttributes().build());
     }
 
     @SubscribeEvent

@@ -7,6 +7,7 @@ import com.simibubi.create.foundation.item.ItemDescription;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.*;
+import net.dakotapride.creategarnished.item.MiscNutiumBlockItem;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Rarity;
@@ -194,6 +195,10 @@ public class CreateGarnishedBlocks {
             .properties(p -> p.sound(SoundType.SLIME_BLOCK)).register();
     public static final BlockEntry<GingerbreadCookieBlock> GINGERBREAD_COOKIE = CreateGarnished.REGISTRATE.block("gingerbread_cookie", GingerbreadCookieBlock::new)
             .properties(p -> p.sound(SoundType.SNOW).noOcclusion()).register();
+
+    public static final BlockEntry<Block> NUTIUM_BLOCK = CreateGarnished.REGISTRATE.block("nutium_block", Block::new)
+            .item(MiscNutiumBlockItem::new).build().register();
+
     // Creative Blocks
 
     public static final BlockEntry<CreativeBirchLogExtractingSapBlock> CREATIVE_BIRCH_SAP_LOG =

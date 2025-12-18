@@ -3,6 +3,8 @@ package net.dakotapride.creategarnished.entity.squirrel;
 import net.dakotapride.creategarnished.registry.CreateGarnishedEntityTypes;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
+import net.dakotapride.creategarnished.registry.CreateGarnishedTriggers;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.SectionPos;
@@ -14,6 +16,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -51,12 +54,14 @@ import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.PathType;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.EventHooks;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.IntFunction;
 import java.util.function.Predicate;
 
@@ -71,6 +76,7 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
     private static final EntityDataAccessor<Integer> DATA_TYPE_ID = SynchedEntityData.defineId(SquirrelEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> EAT_COUNTER = SynchedEntityData.defineId(SquirrelEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> DANCING = SynchedEntityData.defineId(SquirrelEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> THIEVING = SynchedEntityData.defineId(SquirrelEntity.class, EntityDataSerializers.BOOLEAN);
 
     @javax.annotation.Nullable
     private BlockPos jukebox;
@@ -175,6 +181,7 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
         builder.define(DATA_TYPE_ID, 0);
         builder.define(EAT_COUNTER, 0);
         builder.define(DANCING, false);
+        builder.define(THIEVING, false);
     }
 
     @Override
@@ -209,9 +216,18 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
 
         this.goalSelector.addGoal(11, new SearchForItemsGoal());
+        this.goalSelector.addGoal(12, new AnimalLootChestsGoal(this, 50));
 
         this.goalSelector.addGoal(7, new MoveToFarmlandGoal(this, 1.0F, 240));
         this.goalSelector.addGoal(7, new MoveToTreePlantableBlockGoal(this, 1.0F, 240));
+    }
+
+    public boolean isThieving() {
+        return this.entityData.get(THIEVING);
+    }
+
+    public void setThieving(boolean thieving) {
+        this.entityData.set(THIEVING, thieving);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
