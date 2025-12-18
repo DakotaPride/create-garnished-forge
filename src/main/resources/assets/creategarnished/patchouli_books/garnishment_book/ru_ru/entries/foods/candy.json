@@ -1,0 +1,36 @@
+{
+  "name": "Сладости",
+  "icon": "creategarnished:wrapped_candy",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:candy_wrapping",
+      "text": "Этот материал, изготовленный из пуха Нюхача и бумаги, можно использовать для создания конфет в обертке."
+    },
+    {
+      "type": "creategarnished:wrapped_candy_crafting_recipe",
+      "input0": "minecraft:sugar",
+      "input1": "creategarnished:corn_syrup_bottle",
+      "input2": "creategarnished:candy_wrapping",
+      "output": "creategarnished:wrapped_candy",
+
+      "text": "Употребление завёрнутой конфеты вызовет случайный эффект состояния, как в ванильной, так и в модифицированной версии игры.$(br)ПКМ по чаше с содержимым зелья перенесёт содержимое объёмом 250mb в завёрнутую конфету, которая теперь будет вызывать указанные эффекты при употреблении.",
+      "title": "Завернутые конфеты"
+    },
+    {
+      "type": "text",
+      "text": "И обертку для конфет, и завернутые конфеты можно окрашивать аналогично кожаной броне."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:candy_cane",
+      "text": "Смешав кукурузный сироп, мяту и другие ингредиенты, вы можете приготовить мятный леденец!"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:peppermint_bark",
+      "text": "Если вы спешите, то, пропустив стебель мяты через механическую пилу, вы получите много мятной коры!"
+    }
+  ]
+}
