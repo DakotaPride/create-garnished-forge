@@ -46,6 +46,12 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.PEANUT);
             output.accept(CreateGarnishedItems.GINGER_ROOT);
             output.accept(CreateGarnishedItems.PEANUT_BUTTER_COOKIE);
+            output.accept(CreateGarnishedItems.GINGERBREAD_FLOUR);
+            output.accept(CreateGarnishedItems.GINGERBREAD_DOUGH);
+            output.accept(CreateGarnishedItems.GINGERBREAD_LOAF);
+            output.accept(CreateGarnishedItems.GINGERBREAD_COOKIE);
+            for (CreateGarnishedItems.GingerbreadCookieTypes types : CreateGarnishedItems.GingerbreadCookieTypes.values())
+                output.accept(types.getItem());
 
             output.accept(CreateGarnishedItems.PINE_NUT);
             output.accept(CreateGarnishedItems.ELVEN_SWEET_BERRIES);
@@ -110,12 +116,6 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.PEPPERMINT_BARK);
             output.accept(CreateGarnishedItems.CANDY_CANE);
             output.accept(CreateGarnishedItems.GUMDROPS);
-            output.accept(CreateGarnishedItems.GINGERBREAD_FLOUR);
-            output.accept(CreateGarnishedItems.GINGERBREAD_DOUGH);
-            output.accept(CreateGarnishedItems.GINGERBREAD_LOAF);
-            output.accept(CreateGarnishedItems.GINGERBREAD_COOKIE);
-            for (CreateGarnishedItems.GingerbreadCookieTypes types : CreateGarnishedItems.GingerbreadCookieTypes.values())
-                output.accept(types.getItem());
 
             output.accept(CreateGarnishedItems.SPRINTERS_TEA);
             output.accept(CreateGarnishedItems.SWEET_TEA);
