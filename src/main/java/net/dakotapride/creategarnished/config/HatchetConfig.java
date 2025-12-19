@@ -5,8 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("unused")
 public class HatchetConfig extends ConfigBase {
-    public ConfigBool enableHatchetDrops = b(false, "enableHatchetDrops", Comments.enableHatchetDrops);
-    public ConfigBool enableGlobalHatchetDrops = b(false, "enableGlobalHatchetDrops", Comments.enableGlobalHatchetDrops);
+    public ConfigBool enableHatchetDrops = b(true, "enableHatchetDrops", Comments.enableHatchetDrops);
+    public ConfigBool enableGlobalHatchetDrops = b(true, "enableGlobalHatchetDrops", Comments.enableGlobalHatchetDrops);
     public ConfigInt maxPressurisedHatchetActions = i(2000, 0, "maxPressurisedHatchetActions", Comments.maxPressurisedHatchetActions);
     public ConfigBool enableDropsFromBabyMobs = b(true, "enableDropsFromBabyMobs", Comments.enableDropsFromBabyMobs);
     public ConfigBool enableVoltDrops = b(true, "enableVoltDrops", Comments.enableVoltDrops);
