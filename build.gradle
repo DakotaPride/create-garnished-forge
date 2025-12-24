@@ -15,7 +15,7 @@ tasks.named('wrapper', Wrapper).configure {
 }
 
 String buildNumber = System.getenv("GITHUB_RUN_NUMBER")
-version = "${mod_version}+${minecraft_version}-neoforged" + (buildNumber != null ? "-${buildNumber}" : "")
+version = "april-foods-26-neoforged" + (buildNumber != null ? "-${buildNumber}" : "")
 
 group = mod_group_id
 
