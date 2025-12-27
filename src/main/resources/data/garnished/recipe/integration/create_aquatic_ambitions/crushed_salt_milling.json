@@ -20,13 +20,6 @@
       }
     },
     {
-      "chance": 0.10,
-      "count": 1,
-      "item": {
-        "id": "minecraft:iron_nugget"
-      }
-    },
-    {
       "id": "create_aquatic_ambitions:calcium_rich_powder"
     },
     {
