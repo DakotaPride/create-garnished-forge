@@ -130,6 +130,7 @@
   "fluid.creategarnished.mushroom_slop": "Mushroom Slop",
   "fluid.creategarnished.mint_tea": "Mint Tea",
   "entity.creategarnished.voltfish": "Voltfish",
+  "entity.creategarnished.squirrel": "Squirrel",
   "item.creategarnished.almond": "Almond",
   "item.creategarnished.almond_extract_bucket": "Almond Extract Bucket",
   "item.creategarnished.almond_paste": "Almond Paste",
@@ -301,6 +302,15 @@
   "advancement.creategarnished.pumpkin_spicy_fritters.description": "Consume a Pumpkin Spicy Fritter while taking a seat\n§7(Hidden Advancement)",
   "advancement.creategarnished.wrapped_candy_consumption.title": "Did... The Wrapper...",
   "advancement.creategarnished.wrapped_candy_consumption.description": "Yep, you forgot to unwrap your candy. Have fun!\n§7(Hidden Advancement)",
+
+  "advancement.creategarnished.gumdrops_set.title": "You've Found The Buttons!",
+  "advancement.creategarnished.gumdrops_set.description": "Assemble a complete quartet of Gumdrops \n§7(Hidden Advancement)",
+  "advancement.creategarnished.obtain_chestnuts.title": "Roasting Over an Open Fire",
+  "advancement.creategarnished.obtain_chestnuts.description": "Find Chestnuts growing on a tree in a Plains",
+  "advancement.creategarnished.obtain_mint_bushes.title": "Freshly Scented",
+  "advancement.creategarnished.obtain_mint_bushes.description": "Find both Wild Mint and Wild Peppermint in a Taiga and Plains respectively",
+  "advancement.creategarnished.tame_squirrel.title": "You're My Friend Now",
+  "advancement.creategarnished.tame_squirrel.description": "Befriend a squirrel",
 
   "death.attack.creategarnished.elvenSweetBerryBush": "%1$s was poked to death by an elven sweet berry bush",
   "death.attack.creategarnished.elvenSweetBerryBush.player": "%1$s was poked to death by an elven sweet berry bush whilst trying to escape %2$s",
