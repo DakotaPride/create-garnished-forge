@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "carnotite_variants",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "garnished:cut_carnotite"
+    }
+  },
+  "result": {
+    "item": "garnished:cut_carnotite_wall",
+    "count": 6
+  }
+}

@@ -13,8 +13,8 @@
     },
     {
       "chance": 0.45,
-      "item": "minecraft:red_dye",
-      "count": 1
+      "count": 1,
+      "item": "minecraft:red_dye"
     }
   ]
 }

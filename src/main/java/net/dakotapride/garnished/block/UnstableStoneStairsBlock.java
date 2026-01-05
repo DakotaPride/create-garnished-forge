@@ -1,6 +1,7 @@
 package net.dakotapride.garnished.block;
 
 import net.dakotapride.garnished.registry.GarnishedBlocks;
+import net.dakotapride.garnished.registry.GarnishedPaletteStoneTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
@@ -11,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class UnstableStoneStairsBlock extends StairBlock {
     public UnstableStoneStairsBlock(Properties pProperties) {
-        super(() -> GarnishedBlocks.UNSTABLE_STONE.get().defaultBlockState(), pProperties);
+        super(() -> GarnishedPaletteStoneTypes.UNSTABLE_STONE.getBlock().get().defaultBlockState(), pProperties);
     }
 
     @Override

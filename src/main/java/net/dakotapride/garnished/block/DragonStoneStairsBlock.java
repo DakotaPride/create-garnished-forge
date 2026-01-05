@@ -1,6 +1,7 @@
 package net.dakotapride.garnished.block;
 
 import net.dakotapride.garnished.registry.GarnishedBlocks;
+import net.dakotapride.garnished.registry.GarnishedPaletteStoneTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -11,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DragonStoneStairsBlock extends StairBlock {
     public DragonStoneStairsBlock(Properties properties) {
-        super(() -> GarnishedBlocks.DRAGON_STONE.get().defaultBlockState(), properties);
+        super(() -> GarnishedPaletteStoneTypes.DRAGON_STONE.getBlock().get().defaultBlockState(), properties);
     }
 
     @Override

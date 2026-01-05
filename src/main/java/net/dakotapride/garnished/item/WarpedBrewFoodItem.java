@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class WarpedBrewFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public WarpedBrewFoodItem(Properties properties) {
-		super(5, 0.55F, properties.food(GarnishedFoodValues.WARPED_BREW).stacksTo(1));
+		super(5, 55F, properties.food(GarnishedFoodValues.WARPED_BREW).stacksTo(1));
 	}
 
 	@Override

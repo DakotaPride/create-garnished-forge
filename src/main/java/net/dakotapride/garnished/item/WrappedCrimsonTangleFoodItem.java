@@ -29,7 +29,7 @@ public class WrappedCrimsonTangleFoodItem extends Item implements IGarnishedUtil
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.FIRE_RESISTANCE, 2, tangle_dur);
-		addChanceForEffect(tooltip, 0.80F);
+		addChanceForEffect(tooltip, 80F);
 	}
 
 	@Override
@@ -41,10 +41,10 @@ public class WrappedCrimsonTangleFoodItem extends Item implements IGarnishedUtil
 		}
 
 		if (stack.isEmpty()) {
-			return new ItemStack(GarnishedItems.SILICA_HARDENED_WRAP);
+			return new ItemStack(GarnishedItems.SILICA_HARDENED_WRAP.get());
 		} else {
 			if (livingEntity instanceof Player && !((Player)livingEntity).getAbilities().instabuild) {
-				ItemStack itemStack = new ItemStack(GarnishedItems.SILICA_HARDENED_WRAP);
+				ItemStack itemStack = new ItemStack(GarnishedItems.SILICA_HARDENED_WRAP.get());
 				Player player = (Player)livingEntity;
 				if (!player.getInventory().add(itemStack)) {
 					player.drop(itemStack, false);

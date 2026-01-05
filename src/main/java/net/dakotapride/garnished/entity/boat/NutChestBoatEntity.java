@@ -11,9 +11,11 @@ import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class NutChestBoatEntity extends ChestBoat {
-    private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_ID_TYPE =
+            SynchedEntityData.defineId(NutChestBoatEntity.class, EntityDataSerializers.INT);
 
     public NutChestBoatEntity(EntityType<? extends ChestBoat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -28,13 +30,10 @@ public class NutChestBoatEntity extends ChestBoat {
     }
 
     @Override
-    public Item getDropItem() {
-        switch (getModVariant()) {
-            case NUT -> {
-                return GarnishedItems.NUT_CHEST_BOAT.get();
-            }
-        }
-        return super.getDropItem();
+    public @NotNull Item getDropItem() {
+        return switch (getModVariant()) {
+            case NUT -> GarnishedItems.NUT_CHEST_BOAT.get();
+        };
     }
 
     public void setVariant(NutBoatEntity.Type pVariant) {

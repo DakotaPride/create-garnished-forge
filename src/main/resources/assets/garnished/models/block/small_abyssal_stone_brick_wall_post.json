@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "garnished:block/small_abyssal_stone_bricks"
+  }
+}

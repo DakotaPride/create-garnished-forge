@@ -19,6 +19,6 @@ public class CookedTenebrousMeatFoodItem extends Item implements IGarnishedUtili
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.REGENERATION, 200F);
-		addChanceForEffect(tooltip, 0.85F);
+		addChanceForEffect(tooltip, 85F);
 	}
 }

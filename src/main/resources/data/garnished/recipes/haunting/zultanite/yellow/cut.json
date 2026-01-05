@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "garnished:cut_yellow_zultanite"
+    }
+  ],
+  "results": [
+    {
+      "item": "garnished:cut_carnotite"
+    }
+  ]
+}

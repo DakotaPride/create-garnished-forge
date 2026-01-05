@@ -1,7 +1,6 @@
 package net.dakotapride.garnished.block;
 
 import net.dakotapride.garnished.item.IGarnishedUtilities;
-import net.dakotapride.garnished.registry.GarnishedBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -109,7 +108,7 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
             int effect_list = random.nextInt(10);
             int effect_trigger = random.nextInt(6);
 
-            if (entity instanceof LivingEntity living) {
+            if (entity instanceof LivingEntity living && !level.isClientSide) {
 
                 if (effect_trigger == 1 && effect_list >= 0 && effect_list <= 10) {
                     switch (effect_list) {
@@ -127,18 +126,12 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
                         default -> throw new IllegalStateException("Unexpected value: " + effect_list);
                     }
                 }
-
-                if (living.getBlockStateOn().is(GarnishedBlocks.DRAGON_STONE.get())) {
-                    //System.out.println("Value provided from the mathematical equation, random.nextInt(10): " + effect_list);
-                    //System.out.println("Value provided from the mathematical equation, random.nextInt(6): " + effect_trigger);
-                }
             }
 
         }
 
         private static void applyEffectIfNotPresent(LivingEntity living, MobEffect effect) {
-            if (living.hasEffect(effect)) {
-            } else {
+            if (!living.hasEffect(effect)) {
                 living.addEffect(new MobEffectInstance(effect, tick * 15, 0));
             }
         }

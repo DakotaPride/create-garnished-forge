@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class VoidStroganoffFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public VoidStroganoffFoodItem(Properties properties) {
-		super(1, 1.0F, properties.food(GarnishedFoodValues.VOID_STROGANOFF).stacksTo(1));
+		super(1, 100, properties.food(GarnishedFoodValues.VOID_STROGANOFF).stacksTo(1));
 	}
 
 	@Override

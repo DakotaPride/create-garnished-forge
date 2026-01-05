@@ -25,7 +25,7 @@ public class DesolateStewFoodItem extends Item implements IGarnishedUtilities {
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, GarnishedEffects.COGNATE.get(), 2, cognate_dur);
-		addChanceForEffect(tooltip, 0.20F);
+		addChanceForEffect(tooltip, 20F);
 	}
 
 	@Override

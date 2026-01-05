@@ -6,7 +6,7 @@
     },
     {
       "amount": 250,
-      "fluid": "garnished:dragon_breath",
+      "fluidTag": "forge:dragon_breath",
       "nbt": {}
     }
   ],

@@ -18,13 +18,13 @@
     },
     {
       "chance": 0.25,
-      "item": "minecraft:glowstone_dust",
-      "count": 2
+      "count": 2,
+      "item": "minecraft:glowstone_dust"
     },
     {
       "chance": 0.05,
-      "item": "minecraft:glowstone_dust",
-      "count": 1
+      "count": 1,
+      "item": "minecraft:glowstone_dust"
     }
   ]
 }

@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class CashewSorbetDelightFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public CashewSorbetDelightFoodItem(Properties properties) {
-		super(0, 0.80F, properties.food(GarnishedFoodValues.CASHEW_SORBET_DELIGHT).stacksTo(1));
+		super(0, 80F, properties.food(GarnishedFoodValues.CASHEW_SORBET_DELIGHT).stacksTo(1));
 	}
 
 	@Override

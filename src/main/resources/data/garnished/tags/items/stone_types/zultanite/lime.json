@@ -9,14 +9,22 @@
     "garnished:polished_lime_zultanite",
     "garnished:chiseled_lime_zultanite_bricks",
     "garnished:smooth_lime_zultanite",
+    "garnished:cut_lime_zultanite",
+    "garnished:small_lime_zultanite_bricks",
     "garnished:polished_lime_zultanite_stairs",
     "garnished:lime_zultanite_brick_stairs",
     "garnished:smooth_lime_zultanite_stairs",
+    "garnished:cut_lime_zultanite_stairs",
+    "garnished:small_lime_zultanite_brick_stairs",
     "garnished:polished_lime_zultanite_slab",
     "garnished:lime_zultanite_brick_slab",
     "garnished:smooth_lime_zultanite_slab",
+    "garnished:cut_lime_zultanite_slab",
+    "garnished:small_lime_zultanite_brick_slab",
     "garnished:polished_lime_zultanite_wall",
     "garnished:lime_zultanite_brick_wall",
-    "garnished:smooth_lime_zultanite_wall"
+    "garnished:smooth_lime_zultanite_wall",
+    "garnished:cut_lime_zultanite_wall",
+    "garnished:small_lime_zultanite_brick_wall"
   ]
 }

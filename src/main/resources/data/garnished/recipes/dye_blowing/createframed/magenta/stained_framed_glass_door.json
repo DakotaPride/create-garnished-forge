@@ -7,14 +7,18 @@
   ],
   "type": "garnished:magenta_dye_blowing",
   "ingredients": [
-    {
-      "tag": "createframed:stained_framed_glass_doors"
-    }
+    [
+      {
+        "item": "create:framed_glass_door"
+      },
+      {
+        "tag": "createframed:stained_framed_glass_doors"
+      }
+    ]
   ],
   "results": [
     {
-      "item": "createframed:magenta_stained_framed_glass_door",
-      "count": 1
+      "item": "createframed:magenta_stained_framed_glass_door"
     }
   ]
 }

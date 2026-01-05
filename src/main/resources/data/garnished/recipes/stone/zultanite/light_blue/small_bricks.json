@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "light_blue_zultanite_variants",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "garnished:small_light_blue_zultanite_brick_slab"
+    }
+  },
+  "result": {
+    "item": "garnished:small_light_blue_zultanite_bricks"
+  }
+}

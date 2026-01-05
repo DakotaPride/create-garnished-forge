@@ -13,8 +13,8 @@
     },
     {
       "chance": 0.25,
-      "item": "garnished:bok_choy_seeds",
-      "count": 1
+      "count": 1,
+      "item": "garnished:bok_choy_seeds"
     }
   ]
 }

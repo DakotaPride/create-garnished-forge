@@ -14,11 +14,13 @@ import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.IntFunction;
 
 public class NutBoatEntity extends Boat {
-    private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(Boat.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_ID_TYPE =
+            SynchedEntityData.defineId(NutBoatEntity.class, EntityDataSerializers.INT);
 
     public NutBoatEntity(EntityType<? extends Boat> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -33,7 +35,7 @@ public class NutBoatEntity extends Boat {
     }
 
     @Override
-    public Item getDropItem() {
+    public @NotNull Item getDropItem() {
         return switch (getModVariant()) {
             case NUT -> GarnishedItems.NUT_BOAT.get();
         };
@@ -62,7 +64,7 @@ public class NutBoatEntity extends Boat {
         }
     }
 
-    public static enum Type implements StringRepresentable {
+    public enum Type implements StringRepresentable {
         NUT(GarnishedBlocks.NUT_PLANKS.get(), "nut");
 
         private final String name;
@@ -70,7 +72,7 @@ public class NutBoatEntity extends Boat {
         public static final StringRepresentable.EnumCodec<NutBoatEntity.Type> CODEC = StringRepresentable.fromEnum(NutBoatEntity.Type::values);
         private static final IntFunction<Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
 
-        private Type(Block pPlanks, String pName) {
+        Type(Block pPlanks, String pName) {
             this.name = pName;
             this.planks = pPlanks;
         }

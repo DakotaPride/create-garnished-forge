@@ -13,8 +13,7 @@
     },
     {
       "chance": 0.10,
-      "item": "garnished:garnish_compound",
-      "count": 2
+      "item": "garnished:garnish_compound"
     }
   ]
 }

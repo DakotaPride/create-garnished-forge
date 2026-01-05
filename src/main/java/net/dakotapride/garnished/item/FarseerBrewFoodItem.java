@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class FarseerBrewFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public FarseerBrewFoodItem(Properties properties) {
-		super(3, 0.80F, properties.food(GarnishedFoodValues.FARSEER_BREW).stacksTo(1));
+		super(3, 80F, properties.food(GarnishedFoodValues.FARSEER_BREW).stacksTo(1));
 	}
 
 	@Override

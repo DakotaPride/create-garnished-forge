@@ -1,6 +1,6 @@
 package net.dakotapride.garnished.block;
 
-import net.dakotapride.garnished.registry.GarnishedBlocks;
+import net.dakotapride.garnished.registry.GarnishedPaletteStoneTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class AbyssalStoneStairsBlock extends StairBlock {
     public AbyssalStoneStairsBlock(Properties properties) {
-        super(() -> GarnishedBlocks.ABYSSAL_STONE.get().defaultBlockState(), properties);
+        super(() -> GarnishedPaletteStoneTypes.ABYSSAL_STONE.getBlock().get().defaultBlockState(), properties);
     }
 
     @Override

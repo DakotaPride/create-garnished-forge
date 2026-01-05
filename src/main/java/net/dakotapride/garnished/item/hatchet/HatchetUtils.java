@@ -23,7 +23,7 @@ public class HatchetUtils {
     // Minimum Level: 1
     //
     // Grants the player PVE/PVP benefits depending on the situation
-	// Grants additional drops depending on the level
+    // Grants additional drops depending on the level
     static Enchantment ravaging = GarnishedEnchantments.RAVAGING.get();
     // Information
     // Maximum Level: 4
@@ -39,6 +39,8 @@ public class HatchetUtils {
     static Enchantment quickStep = GarnishedEnchantments.QUICK_STEP.get();
     //
     static Enchantment leechingCurse = GarnishedEnchantments.LEECHING_CURSE.get();
+    //
+    static Enchantment rejuvenate = GarnishedEnchantments.REJUVENATE.get();
     // random shit
     public static final RandomSource random = RandomSource.create();
 
@@ -54,31 +56,35 @@ public class HatchetUtils {
     }
 
     public static boolean hasRavaging(LivingEntity entity) {
-        return hasEnchantment(ravaging, entity);
+        return hasEnchantment(entity, ravaging);
     }
 
     public static boolean hasSalvaging(LivingEntity entity) {
-        return hasEnchantment(salvaging, entity);
+        return hasEnchantment(entity, salvaging);
     }
 
     public static boolean hasStriking(LivingEntity entity) {
-        return hasEnchantment(striking, entity);
+        return hasEnchantment(entity, striking);
     }
 
     public static boolean hasLeechingCurse(LivingEntity entity) {
-        return hasEnchantment(leechingCurse, entity);
+        return hasEnchantment(entity, leechingCurse);
     }
 
     public static boolean hasQuickStep(LivingEntity entity) {
-        return hasEnchantment(quickStep, entity);
+        return hasEnchantment(entity, quickStep);
+    }
+
+    public static boolean hasRejuvenate(LivingEntity entity) {
+        return hasEnchantment(entity, rejuvenate);
     }
 
     public static boolean canApplyRavagingEffects(LivingEntity entity) {
-        return entity.getMainHandItem().is(GarnishedTags.HATCHETS_TAG) && hasEnchantment(ravaging, entity) && entity.getHealth() <= (entity.getMaxHealth() / 2);
+        return entity.getMainHandItem().is(GarnishedTags.HATCHETS_TAG) && hasEnchantment(entity, ravaging) && entity.getHealth() <= (entity.getMaxHealth() / 2);
     }
 
     public static boolean canApplyQuickStepEffects(LivingEntity entity) {
-        return entity.getMainHandItem().is(GarnishedTags.HATCHETS_TAG) && hasEnchantment(quickStep, entity) && entity.getHealth() <= (entity.getMaxHealth() / 2);
+        return entity.getMainHandItem().is(GarnishedTags.HATCHETS_TAG) && hasEnchantment(entity, quickStep) && entity.getHealth() <= (entity.getMaxHealth() / 2);
     }
 
     public static boolean canBeUsedToStripLogs(ItemStack stack) {
@@ -86,7 +92,7 @@ public class HatchetUtils {
     }
 
     @Unique
-    private static boolean hasEnchantment(Enchantment enchantment, LivingEntity entity) {
+    private static boolean hasEnchantment(LivingEntity entity, Enchantment enchantment) {
         return EnchantmentHelper.getEnchantmentLevel(enchantment, entity) > 0;
     }
 

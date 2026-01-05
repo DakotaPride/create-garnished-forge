@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class ShelledDumplingFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public ShelledDumplingFoodItem(Properties properties) {
-		super(3, 0.50F, properties.food(GarnishedFoodValues.SHELLED_DUMPLING).stacksTo(16));
+		super(3, 50F, properties.food(GarnishedFoodValues.SHELLED_DUMPLING).stacksTo(16));
 	}
 }

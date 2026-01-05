@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 public class ChorusCocktailItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	private static final int DRINK_DURATION = 40;
 	public ChorusCocktailItem(Properties properties) {
-		super(3, 1.0F, properties.food(GarnishedFoodValues.CHORUS_COCKTAIL).stacksTo(16));
+		super(3, 100, properties.food(GarnishedFoodValues.CHORUS_COCKTAIL).stacksTo(16));
 	}
 
 	@Override

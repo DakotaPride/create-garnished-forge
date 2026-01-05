@@ -17,8 +17,8 @@
     },
     {
       "count": 3,
-      "item": "garnished:dimmed_scale",
-      "chance": 0.20
+      "chance": 0.20,
+      "item": "garnished:dimmed_scale"
     }
   ]
 }

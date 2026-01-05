@@ -5,7 +5,7 @@ import net.minecraft.world.item.Item;
 
 public class RawPolarBearMeatItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public RawPolarBearMeatItem(Properties properties) {
-		super(1, 0.05F, properties.food(GarnishedFoodValues.RAW_POLAR_BEAR_MEAT));
+		super(1, 05F, properties.food(GarnishedFoodValues.RAW_POLAR_BEAR_MEAT));
 	}
 
 }

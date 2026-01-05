@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "amount": 250,
+      "fluidTag": "forge:dragon_breath",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:dragon_breath"
+    }
+  ]
+}

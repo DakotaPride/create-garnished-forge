@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class BottledMalodorousMixtureFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public BottledMalodorousMixtureFoodItem(Properties properties) {
-		super(5, 0.15F, properties.food(GarnishedFoodValues.BOTTLED_MALODOROUS_MIXTURE).stacksTo(16));
+		super(5, 15F, properties.food(GarnishedFoodValues.BOTTLED_MALODOROUS_MIXTURE).stacksTo(16));
 	}
 
 	@Override

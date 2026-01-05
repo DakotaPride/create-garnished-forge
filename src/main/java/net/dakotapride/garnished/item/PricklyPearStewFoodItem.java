@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class PricklyPearStewFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public PricklyPearStewFoodItem(Properties properties) {
-		super(2, 0.45F, properties.food(GarnishedFoodValues.PRICKLY_PEAR_STEW).stacksTo(1));
+		super(2, 45F, properties.food(GarnishedFoodValues.PRICKLY_PEAR_STEW).stacksTo(1));
 	}
 
 	@Override

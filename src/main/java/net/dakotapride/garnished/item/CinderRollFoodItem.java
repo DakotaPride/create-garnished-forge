@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class CinderRollFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public CinderRollFoodItem(Properties properties) {
-		super(5, 1.0F, properties.food(GarnishedFoodValues.CINDER_ROLL).stacksTo(16));
+		super(5, 100, properties.food(GarnishedFoodValues.CINDER_ROLL).stacksTo(16));
 	}
 }

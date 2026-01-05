@@ -19,6 +19,6 @@ public class ChorusCookieFoodItem extends Item implements IGarnishedUtilities {
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.MOVEMENT_SPEED, 2, 200F);
-		addChanceForEffect(tooltip, 0.50F);
+		addChanceForEffect(tooltip, 50F);
 	}
 }

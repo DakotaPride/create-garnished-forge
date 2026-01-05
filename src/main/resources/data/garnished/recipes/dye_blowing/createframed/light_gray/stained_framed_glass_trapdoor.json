@@ -7,14 +7,18 @@
   ],
   "type": "garnished:light_gray_dye_blowing",
   "ingredients": [
-    {
-      "tag": "createframed:stained_framed_glass_trapdoors"
-    }
+    [
+      {
+        "item": "create:framed_glass_trapdoor"
+      },
+      {
+        "tag": "createframed:stained_framed_glass_trapdoors"
+      }
+    ]
   ],
   "results": [
     {
-      "item": "createframed:light_gray_stained_framed_glass_trapdoor",
-      "count": 1
+      "item": "createframed:light_gray_stained_framed_glass_trapdoor"
     }
   ]
 }

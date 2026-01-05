@@ -1,0 +1,19 @@
+{
+  "type": "garnished:freezing",
+  "ingredients": [
+    {
+      "item": "garnished:mastic_paste_magenta"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:magenta_dye",
+      "count": 2
+    },
+    {
+      "chance": 0.25,
+      "item": "minecraft:magenta_dye",
+      "count": 1
+    }
+  ]
+}

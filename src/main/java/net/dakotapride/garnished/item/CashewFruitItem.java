@@ -35,7 +35,7 @@ public class CashewFruitItem extends Item implements IGarnishedUtilities {
 		//		}
 
 		addEffectTooltip(tooltip, MobEffects.POISON, cashew_dur);
-		addChanceForEffect(tooltip, 0.25F);
+		addChanceForEffect(tooltip, 25F);
 	}
 
 	@Override

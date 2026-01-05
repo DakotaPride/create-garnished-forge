@@ -18,13 +18,13 @@
     },
     {
       "chance": 0.10,
-      "item": "garnished:void_dust",
-      "count": 1
+      "count": 1,
+      "item": "garnished:void_dust"
     },
     {
       "chance": 0.10,
-      "item": "garnished:void_dust",
-      "count": 1
+      "count": 1,
+      "item": "garnished:void_dust"
     }
   ]
 }

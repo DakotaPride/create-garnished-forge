@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "garnished:item/salt_compound"
+    "layer0": "garnished:item/salt_compound0"
   }
 }

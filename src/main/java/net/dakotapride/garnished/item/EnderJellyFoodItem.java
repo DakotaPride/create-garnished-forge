@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class EnderJellyFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public EnderJellyFoodItem(Properties properties) {
-		super(0, 1.0F, properties.food(GarnishedFoodValues.ENDER_JELLY));
+		super(0, 100, properties.food(GarnishedFoodValues.ENDER_JELLY));
 	}
 }

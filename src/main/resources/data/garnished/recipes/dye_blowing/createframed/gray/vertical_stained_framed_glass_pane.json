@@ -7,14 +7,18 @@
   ],
   "type": "garnished:gray_dye_blowing",
   "ingredients": [
-    {
-      "tag": "createframed:vertical_stained_framed_glass_panes"
-    }
+    [
+      {
+        "item": "create:vertical_framed_glass_pane"
+      },
+      {
+        "tag": "createframed:vertical_stained_framed_glass_panes"
+      }
+    ]
   ],
   "results": [
     {
-      "item": "createframed:vertical_gray_stained_framed_glass_pane",
-      "count": 1
+      "item": "createframed:vertical_gray_stained_framed_glass_pane"
     }
   ]
 }

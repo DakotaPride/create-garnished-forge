@@ -23,11 +23,11 @@ import java.util.List;
 public class CrypticAppleCiderFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	private static final int DRINK_DURATION = 40;
 	public CrypticAppleCiderFoodItem(Properties properties) {
-		super(6, 1.0F, properties.stacksTo(8).food(GarnishedFoodValues.CRYPTIC_APPLE_CIDER));
+		super(6, 100, properties.stacksTo(8).food(GarnishedFoodValues.CRYPTIC_APPLE_CIDER));
 	}
 
 	@Override
-	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
+	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level pLevel, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 //		if (!Screen.hasShiftDown()) {
 //			tooltip.add(Component.translatable("text.garnished.hold_shift").withStyle(ChatFormatting.DARK_GRAY));
 //		} else {
@@ -46,9 +46,9 @@ public class CrypticAppleCiderFoodItem extends ConditionalEffectItem implements 
 		tooltip.add(Component.translatable("text.garnished.effect.clears_wither", "Wither").withStyle(ChatFormatting.GOLD));
 		tooltip.add(Component.literal(""));
 		addEffectTooltip(tooltip, MobEffects.DAMAGE_BOOST, cr_cider_dur);
-		addChanceForEffect(tooltip, 0.50F);
+		addChanceForEffect(tooltip, 50F);
 		addEffectTooltip(tooltip, MobEffects.MOVEMENT_SLOWDOWN, cr_cider_dur);
-		addChanceForEffect(tooltip, 0.50F);
+		addChanceForEffect(tooltip, 50F);
 	}
 
 	@Override

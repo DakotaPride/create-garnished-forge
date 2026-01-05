@@ -8,14 +8,14 @@
       "item": "garnished:solemn_dust"
     },
     {
+      "amount": 100,
       "fluid": "minecraft:water",
-      "amount": 100
+      "nbt": {}
     }
   ],
   "results": [
     {
-      "item": "garnished:bristled_tortilla",
-      "count": 1
+      "item": "garnished:bristled_tortilla"
     }
   ]
 }

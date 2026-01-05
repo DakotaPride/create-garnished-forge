@@ -11,5 +11,6 @@
     "amount": 1000
   },
   "burnTime": 24000,
-  "superheated": true
+  "superheated": true,
+  "results": []
 }

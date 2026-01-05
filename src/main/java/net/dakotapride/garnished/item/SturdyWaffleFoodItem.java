@@ -19,6 +19,6 @@ public class SturdyWaffleFoodItem extends Item implements IGarnishedUtilities {
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.DAMAGE_RESISTANCE, 400F);
-		addChanceForEffect(tooltip, 0.75F);
+		addChanceForEffect(tooltip, 75F);
 	}
 }

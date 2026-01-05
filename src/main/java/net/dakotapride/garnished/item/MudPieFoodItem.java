@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.item;
 
+import net.dakotapride.garnished.registry.GarnishedDamageSource;
 import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
@@ -27,6 +28,8 @@ public class MudPieFoodItem extends Item implements IGarnishedUtilities {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayer, stack);
 			serverPlayer.awardStat(Stats.ITEM_USED.get(this));
 		}
+
+		livingEntity.hurt(level.damageSources().source(GarnishedDamageSource.MULCH_MUNCHING), 1.0F);
 
 		if (stack.isEmpty()) {
 			return new ItemStack(Items.BOWL);

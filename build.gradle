@@ -150,6 +150,8 @@ repositories {
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://maven.tterrag.com" } // Registrate
     maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
+
+    maven { url = "https://api.modrinth.com/maven" }
 }
 
 dependencies {
@@ -181,6 +183,14 @@ dependencies {
 
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${curios_minecraft_version}")
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${curios_minecraft_version}")
+
+    // Compat
+    compileOnly "maven.modrinth:farmers-delight:${minecraft_version}-${farmers_delight_version}"
+    compileOnly "maven.modrinth:my-nethers-delight:${minecraft_version}-${my_nethers_delight_version}"
+    compileOnly "maven.modrinth:create-aquatic-ambitions:${minecraft_version}-${create_aquatic_ambitions_version}"
+    //implementation "maven.modrinth:farmers-delight:${farmers_delight_version}"
+    //implementation "maven.modrinth:my-nethers-delight:${my_nethers_delight_version}"
+    //implementation "maven.modrinth:create-aquatic-ambitions:${create_aquatic_ambitions_version}"
 
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

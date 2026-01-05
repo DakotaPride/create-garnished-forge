@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:magenta_dye_blowing",
+  "ingredients": [
+    [
+      {
+        "item": "createframed:cardboard_window"
+      },
+      {
+        "tag": "createframed:dyed_cardboard_windows"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "item": "createframed:magenta_cardboard_window"
+    }
+  ]
+}

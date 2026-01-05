@@ -9,14 +9,22 @@
     "garnished:polished_pink_zultanite",
     "garnished:chiseled_pink_zultanite_bricks",
     "garnished:smooth_pink_zultanite",
+    "garnished:cut_pink_zultanite",
+    "garnished:small_pink_zultanite_bricks",
     "garnished:polished_pink_zultanite_stairs",
     "garnished:pink_zultanite_brick_stairs",
     "garnished:smooth_pink_zultanite_stairs",
+    "garnished:cut_pink_zultanite_stairs",
+    "garnished:small_pink_zultanite_brick_stairs",
     "garnished:polished_pink_zultanite_slab",
     "garnished:pink_zultanite_brick_slab",
     "garnished:smooth_pink_zultanite_slab",
+    "garnished:cut_pink_zultanite_slab",
+    "garnished:small_pink_zultanite_brick_slab",
     "garnished:polished_pink_zultanite_wall",
     "garnished:pink_zultanite_brick_wall",
-    "garnished:smooth_pink_zultanite_wall"
+    "garnished:smooth_pink_zultanite_wall",
+    "garnished:cut_pink_zultanite_wall",
+    "garnished:small_pink_zultanite_brick_wall"
   ]
 }

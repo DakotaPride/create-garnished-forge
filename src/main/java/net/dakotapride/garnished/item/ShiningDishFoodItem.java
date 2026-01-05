@@ -25,7 +25,7 @@ public class ShiningDishFoodItem extends Item implements IGarnishedUtilities {
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.GLOWING, 300F);
-		addChanceForEffect(tooltip, 0.45F);
+		addChanceForEffect(tooltip, 45F);
 	}
 
 	@Override

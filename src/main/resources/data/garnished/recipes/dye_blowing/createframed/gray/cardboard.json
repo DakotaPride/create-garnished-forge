@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:gray_dye_blowing",
+  "ingredients": [
+    [
+      {
+        "item": "create:cardboard_block"
+      },
+      {
+        "tag": "createframed:dyed_cardboard_blocks"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "item": "createframed:gray_cardboard_block"
+    }
+  ]
+}

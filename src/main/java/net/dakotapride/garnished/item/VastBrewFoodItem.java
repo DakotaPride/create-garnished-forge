@@ -25,7 +25,7 @@ public class VastBrewFoodItem extends Item implements IGarnishedUtilities {
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
 		addEffectTooltip(tooltip, MobEffects.WATER_BREATHING, 400F);
-		addChanceForEffect(tooltip, 0.30F);
+		addChanceForEffect(tooltip, 30F);
 	}
 
 	@Override

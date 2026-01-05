@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:green_dye_blowing",
+  "ingredients": [
+    [
+      {
+        "item": "createframed:cardboard_window_pane"
+      },
+      {
+        "tag": "createframed:dyed_cardboard_window_panes"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "item": "createframed:green_cardboard_window_pane"
+    }
+  ]
+}

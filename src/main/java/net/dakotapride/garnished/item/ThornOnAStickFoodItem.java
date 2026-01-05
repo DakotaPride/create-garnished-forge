@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class ThornOnAStickFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public ThornOnAStickFoodItem(Properties properties) {
-		super(2, 1.0F, properties.food(GarnishedFoodValues.THORN_ON_A_STICK).stacksTo(16));
+		super(2, 100, properties.food(GarnishedFoodValues.THORN_ON_A_STICK).stacksTo(16));
 	}
 }

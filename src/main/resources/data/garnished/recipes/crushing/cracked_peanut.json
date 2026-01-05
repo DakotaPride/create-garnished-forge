@@ -13,8 +13,8 @@
     },
     {
       "chance": 0.25,
-      "item": "garnished:cracked_peanut",
-      "count": 1
+      "count": 1,
+      "item": "garnished:cracked_peanut"
     }
   ]
 }

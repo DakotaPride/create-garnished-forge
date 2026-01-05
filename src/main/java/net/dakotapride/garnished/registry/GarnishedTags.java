@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 
@@ -23,6 +24,8 @@ public class GarnishedTags {
 	public static final TagKey<Item> ENDER_DUSTS_TAG = forgeTag("ender_dusts", Registries.ITEM);
 	public static final TagKey<Block> FAN_FREEZING_PROCESSING_TAG = garnishedTag("fan_processing_catalysts/freezing", Registries.BLOCK);
 	public static final TagKey<Fluid> FAN_FREEZING_PROCESSING_FLUID_TAG = garnishedTag("fan_processing_catalysts/freezing", Registries.FLUID);
+
+	public static final TagKey<Enchantment> NOT_APPLICABLE_TO_HATCHETS = garnishedTag("not_applicable_to_hatchets", Registries.ENCHANTMENT);
 
 	// Integrated Tags
 	public static TagKey<Item> ZINC_INGOTS = forgeTag("ingots/zinc", Registries.ITEM);
@@ -42,6 +45,8 @@ public class GarnishedTags {
 	public static TagKey<Item> THALLASIUM_INGOTS = forgeTag("ingots/thallasium", Registries.ITEM);
 	public static TagKey<Item> TERMINITE_INGOTS = forgeTag("ingots/terminite", Registries.ITEM);
 	public static TagKey<Item> AETERNIUM_INGOTS = forgeTag("ingots/aeternium", Registries.ITEM);
+
+	public static final TagKey<Block> MUSHROOM_COLONY_GROWABLE_ON = TagKey.create(Registries.BLOCK, new ResourceLocation("farmersdelight", "mushroom_colony_growable_on"));
 
 	// public static TagKey<Item> JADE_GEMS = forgeTag("gems/jade");
 	//	public static TagKey<Item> TOPAZ_GEMS = forgeTag("gems/topaz");

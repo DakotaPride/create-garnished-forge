@@ -7,14 +7,18 @@
   ],
   "type": "garnished:cyan_dye_blowing",
   "ingredients": [
-    {
-      "tag": "createframed:stained_tiled_glass_panes"
-    }
+    [
+      {
+        "item": "create:tiled_glass_pane"
+      },
+      {
+        "tag": "createframed:stained_tiled_glass_panes"
+      }
+    ]
   ],
   "results": [
     {
-      "item": "createframed:cyan_stained_tiled_glass_pane",
-      "count": 1
+      "item": "createframed:cyan_stained_tiled_glass_pane"
     }
   ]
 }

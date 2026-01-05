@@ -13,13 +13,13 @@
     },
     {
       "chance": 0.45,
-      "item": "garnished:senile_bone",
-      "count": 2
+      "count": 2,
+      "item": "garnished:senile_bone"
     },
     {
       "chance": 0.15,
-      "item": "garnished:senile_dust",
-      "count": 1
+      "count": 1,
+      "item": "garnished:senile_dust"
     }
   ]
 }

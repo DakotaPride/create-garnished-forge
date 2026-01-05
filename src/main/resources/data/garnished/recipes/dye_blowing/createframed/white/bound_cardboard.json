@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "createframed"
+    }
+  ],
+  "type": "garnished:white_dye_blowing",
+  "ingredients": [
+    [
+      {
+        "item": "create:bound_cardboard_block"
+      },
+      {
+        "tag": "createframed:dyed_bound_cardboard_blocks"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "item": "createframed:bound_white_cardboard_block"
+    }
+  ]
+}

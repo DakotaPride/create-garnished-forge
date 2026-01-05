@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class TophetBrewFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public TophetBrewFoodItem(Properties properties) {
-		super(5, 0.90F, properties.food(GarnishedFoodValues.TOPHET_BREW).stacksTo(1));
+		super(5, 90F, properties.food(GarnishedFoodValues.TOPHET_BREW).stacksTo(1));
 	}
 
 	@Override

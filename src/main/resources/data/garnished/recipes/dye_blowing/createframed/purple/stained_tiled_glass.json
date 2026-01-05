@@ -7,14 +7,18 @@
   ],
   "type": "garnished:purple_dye_blowing",
   "ingredients": [
-    {
-      "tag": "createframed:stained_tiled_glass"
-    }
+    [
+      {
+        "item": "create:tiled_glass"
+      },
+      {
+        "tag": "createframed:stained_tiled_glass"
+      }
+    ]
   ],
   "results": [
     {
-      "item": "createframed:purple_stained_tiled_glass",
-      "count": 1
+      "item": "createframed:purple_stained_tiled_glass"
     }
   ]
 }

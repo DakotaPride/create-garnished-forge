@@ -1,0 +1,19 @@
+{
+  "type": "garnished:freezing",
+  "ingredients": [
+    {
+      "item": "garnished:mastic_paste_light_blue"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:light_blue_dye",
+      "count": 2
+    },
+    {
+      "chance": 0.25,
+      "item": "minecraft:light_blue_dye",
+      "count": 1
+    }
+  ]
+}

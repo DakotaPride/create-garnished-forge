@@ -13,18 +13,18 @@
     },
     {
       "chance": 0.25,
-      "item": "minecraft:magenta_dye",
-      "count": 1
+      "count": 1,
+      "item": "minecraft:magenta_dye"
     },
     {
       "chance": 0.1,
-      "item": "minecraft:pink_dye",
-      "count": 1
+      "count": 1,
+      "item": "minecraft:pink_dye"
     },
     {
       "chance": 0.15,
-      "item": "garnished:bristled_flour",
-      "count": 1
+      "count": 1,
+      "item": "garnished:bristled_flour"
     }
   ]
 }

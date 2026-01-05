@@ -9,14 +9,22 @@
     "garnished:polished_abyssal_stone",
     "garnished:chiseled_abyssal_stone_bricks",
     "garnished:smooth_abyssal_stone",
+    "garnished:cut_abyssal_stone",
+    "garnished:small_abyssal_stone_bricks",
     "garnished:polished_abyssal_stone_stairs",
     "garnished:abyssal_stone_brick_stairs",
     "garnished:smooth_abyssal_stone_stairs",
+    "garnished:cut_abyssal_stone_stairs",
+    "garnished:small_abyssal_stone_brick_stairs",
     "garnished:polished_abyssal_stone_slab",
     "garnished:abyssal_stone_brick_slab",
     "garnished:smooth_abyssal_stone_slab",
+    "garnished:cut_abyssal_stone_slab",
+    "garnished:small_abyssal_stone_brick_slab",
     "garnished:polished_abyssal_stone_wall",
     "garnished:abyssal_stone_brick_wall",
-    "garnished:smooth_abyssal_stone_wall"
+    "garnished:smooth_abyssal_stone_wall",
+    "garnished:cut_abyssal_stone_wall",
+    "garnished:small_abyssal_stone_brick_wall"
   ]
 }

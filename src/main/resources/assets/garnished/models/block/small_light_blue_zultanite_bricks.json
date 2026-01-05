@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "garnished:block/small_light_blue_zultanite_bricks"
+  }
+}

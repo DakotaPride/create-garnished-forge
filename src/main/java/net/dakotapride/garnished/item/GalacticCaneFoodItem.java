@@ -12,7 +12,7 @@ import java.util.List;
 
 public class GalacticCaneFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
     public GalacticCaneFoodItem(Properties properties) {
-        super(0, 0.35F, properties.stacksTo(16).food(GarnishedFoodValues.GALACTIC_CANE));
+        super(0, 35F, properties.stacksTo(16).food(GarnishedFoodValues.GALACTIC_CANE));
     }
 
 	@Override

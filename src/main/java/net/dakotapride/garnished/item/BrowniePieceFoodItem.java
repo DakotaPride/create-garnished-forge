@@ -21,7 +21,7 @@ public class BrowniePieceFoodItem extends FarmersDelightItem implements IGarnish
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) playerentity, stack);
 
         if (!world.isClientSide)
-            entity.addEffect(triggerConditionalEffect(0, 0.25F));
+            triggerConditionalEffect(0, 25F, entity);
 
         return super.finishUsingItem(stack, world, entity);
     }

@@ -9,12 +9,12 @@
   "results": [
     {
       "count": 2,
-      "item": "garnished:pansophical_petal"
+      "item":  "garnished:pansophical_petal"
     },
     {
       "chance": 0.45,
-      "item": "minecraft:cyan_dye",
-      "count": 1
+      "count": 1,
+      "item": "minecraft:cyan_dye"
     }
   ]
 }

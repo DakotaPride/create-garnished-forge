@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class PiquantPretzelFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public PiquantPretzelFoodItem(Properties properties) {
-		super(5, 1.0F, properties.food(GarnishedFoodValues.PIQUANT_PRETZEL).stacksTo(16));
+		super(5, 100, properties.food(GarnishedFoodValues.PIQUANT_PRETZEL).stacksTo(16));
 	}
 }

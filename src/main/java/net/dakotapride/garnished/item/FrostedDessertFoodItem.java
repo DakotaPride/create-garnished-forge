@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class FrostedDessertFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public FrostedDessertFoodItem(Properties properties) {
-		super(1, 0.85F, properties.food(GarnishedFoodValues.FROSTED_DESSERT).stacksTo(1));
+		super(1, 85F, properties.food(GarnishedFoodValues.FROSTED_DESSERT).stacksTo(1));
 	}
 
 	@Override

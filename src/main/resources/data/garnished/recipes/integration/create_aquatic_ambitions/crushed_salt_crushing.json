@@ -1,0 +1,44 @@
+{
+  "conditions": [
+    {
+      "type": "forge:item_exists",
+      "item": "create_aquatic_ambitions:suspicious_rock"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "create:limestone"
+    }
+  ],
+  "processingTime": 150,
+  "results": [
+    {
+      "count": 1,
+      "item": "garnished:crushed_salt"
+    },
+    {
+      "chance": 0.10,
+      "count": 2,
+      "item": "minecraft:iron_nugget"
+    },
+    {
+      "chance": 0.05,
+      "count": 2,
+      "item": {
+        "item": "create:zinc_nugget"
+      }
+    },
+    {
+      "item": "create_aquatic_ambitions:calcium_rich_powder"
+    },
+    {
+      "chance": 0.5,
+      "item": "create_aquatic_ambitions:calcium_rich_powder"
+    },
+    {
+      "chance": 0.05,
+      "item": "create_aquatic_ambitions:suspicious_rock"
+    }
+  ]
+}

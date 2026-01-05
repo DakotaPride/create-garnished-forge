@@ -1,0 +1,6 @@
+{
+  "parent": "create:item/cardboard_package_12x12",
+  "textures": {
+    "0": "garnished:item/package/nuts"
+  }
+}

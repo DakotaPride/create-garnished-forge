@@ -31,7 +31,7 @@ public abstract class EnderManMixin extends Monster implements NeutralMob {
 
     @Override
     public boolean isAngryAt(@NotNull LivingEntity target) {
-        return target.hasEffect(GarnishedEffects.FLAGRANT.get());
+        return target.hasEffect(GarnishedEffects.FLAGRANT.get()) && !target.hasEffect(GarnishedEffects.COGNATE.get());
     }
 
 

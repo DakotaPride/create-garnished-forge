@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class WalnutGorgeCreamFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public WalnutGorgeCreamFoodItem(Properties properties) {
-		super(0, 0.75F, properties.food(GarnishedFoodValues.WALNUT_GORGE_CREAM).stacksTo(1));
+		super(0, 75F, properties.food(GarnishedFoodValues.WALNUT_GORGE_CREAM).stacksTo(1));
 	}
 
 	@Override

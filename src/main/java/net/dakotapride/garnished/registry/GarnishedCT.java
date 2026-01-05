@@ -94,15 +94,19 @@ public class GarnishedCT {
 
 
 
-    private static CTSpriteShiftEntry omni(String name) {
+    static CTSpriteShiftEntry omni(String name) {
         return getCT(AllCTTypes.OMNIDIRECTIONAL, name);
     }
 
-    private static CTSpriteShiftEntry horizontal(String name) {
+    static CTSpriteShiftEntry horizontal(String name) {
         return getCT(AllCTTypes.HORIZONTAL, name);
     }
 
-    private static CTSpriteShiftEntry vertical(String name) {
+    static CTSpriteShiftEntry horizontalKryppers(String name) {
+        return getCT(AllCTTypes.HORIZONTAL_KRYPPERS, name);
+    }
+
+    static CTSpriteShiftEntry vertical(String name) {
         return getCT(AllCTTypes.VERTICAL, name);
     }
 
@@ -111,18 +115,29 @@ public class GarnishedCT {
     public static final CTSpriteShiftEntry NUT_WINDOW_PANE = vertical("nut_window");
     public static final CTSpriteShiftEntry SEPIA_WINDOW_PANE = vertical("sepia_window");
     public static final CTSpriteShiftEntry AMBER_REMNANT_BLOCK = omni("amber_remnant_block");
-    //public static final CTSpriteShiftEntry NUMBING_PARCHMENT = omni("numbing_parchment_block");
+    public static CTSpriteShiftEntry
+            CARNOTITE_HORIZONTAL = horizontalKryppers("layered_carnotite"),
+            ABYSSAL_STONE_HORIZONTAL = horizontalKryppers("layered_abyssal_stone"),
+            RITUALISTIC_STONE_HORIZONTAL = horizontalKryppers("layered_ritualistic_stone"),
+            UNSTABLE_STONE_HORIZONTAL = horizontalKryppers("layered_unstable_stone"),
+            DRAGON_STONE_HORIZONTAL = horizontalKryppers("layered_dragon_stone"),
+
+    CARNOTITE_OMNI = omni("layered_carnotite_cap"),
+            ABYSSAL_STONE_OMNI = omni("layered_abyssal_stone_cap"),
+            RITUALISTIC_STONE_OMNI = omni("layered_ritualistic_stone_cap"),
+            UNSTABLE_STONE_OMNI = omni("layered_unstable_stone_cap"),
+            DRAGON_STONE_OMNI = omni("layered_dragon_stone_cap");
 
     private static SpriteShiftEntry get(String originalLocation, String targetLocation) {
         return SpriteShifter.get(CreateGarnished.asResource(originalLocation), CreateGarnished.asResource(targetLocation));
     }
 
-    private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName, String connectedTextureName) {
+    static CTSpriteShiftEntry getCT(CTType type, String blockTextureName, String connectedTextureName) {
         return CTSpriteShifter.getCT(type, CreateGarnished.asResource("block/" + blockTextureName),
                 CreateGarnished.asResource("block/" + connectedTextureName + "_connected"));
     }
 
-    private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName) {
+    static CTSpriteShiftEntry getCT(CTType type, String blockTextureName) {
         return getCT(type, blockTextureName, blockTextureName);
     }
 

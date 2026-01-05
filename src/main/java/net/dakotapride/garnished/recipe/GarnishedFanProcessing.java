@@ -1,9 +1,7 @@
 package net.dakotapride.garnished.recipe;
 
-import com.simibubi.create.Create;
 import com.simibubi.create.api.registry.CreateBuiltInRegistries;
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
-import com.simibubi.create.content.kinetics.fan.processing.FanProcessingTypeRegistry;
 import com.simibubi.create.foundation.recipe.RecipeApplier;
 import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
 import net.createmod.catnip.theme.Color;
@@ -21,7 +19,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.registries.DeferredRegister;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
@@ -105,7 +102,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             FREEZING_WRAPPER.setItem(0, stack);
             Optional<FreezingFanRecipe> recipe = GarnishedRecipeTypes.FREEZING.find(FREEZING_WRAPPER, level);
-            return recipe.map(freezingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, freezingFanRecipe)).orElse(null);
+            return recipe.map(freezingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, freezingFanRecipe, false)).orElse(null);
         }
 
         @Override
@@ -170,7 +167,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.RED_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -185,7 +182,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x8E1919, 0xBC4343, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.RED_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.RED.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -226,7 +223,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.ORANGE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -241,7 +238,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0xA5562E, 0xB7793A, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.ORANGE_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.ORANGE.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -282,7 +279,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.YELLOW_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -297,7 +294,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0xB28835, 0xCCB751, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.YELLOW_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.YELLOW.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -338,7 +335,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.GREEN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -353,7 +350,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x438E29, 0x82BB49, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.GREEN_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.GREEN.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -394,7 +391,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIME_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -409,7 +406,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x37C646, 0x72E560, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.LIME_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.LIME.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -450,7 +447,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BLUE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -465,7 +462,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x265B7F, 0x4CA0AD, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.BLUE_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.BLUE.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -506,7 +503,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIGHT_BLUE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -521,7 +518,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x3C89AE, 0x58CED5, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.LIGHT_BLUE_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.LIGHT_BLUE.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -562,7 +559,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.CYAN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -577,7 +574,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x3E8A7C, 0x67C6A0, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.CYAN_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.CYAN.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -618,7 +615,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.PURPLE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -633,7 +630,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x572499, 0x8139B2, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.PURPLE_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.PURPLE.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -674,7 +671,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.MAGENTA_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -689,7 +686,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0xA12FC6, 0xD346DB, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.MAGENTA_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.MAGENTA.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -730,7 +727,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.PINK_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -745,7 +742,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0xC9508D, 0xE36CBF, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.PINK_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.PINK.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -786,7 +783,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BLACK_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -801,7 +798,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x06161E, 0x102F33, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.BLACK_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.BLACK.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -842,7 +839,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.GRAY_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -857,7 +854,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x2D333D, 0x475156, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.GRAY_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.GRAY.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -898,7 +895,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.LIGHT_GRAY_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -913,7 +910,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x7587A3, 0x9AB1BC, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.LIGHT_GRAY_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.LIGHT_GRAY.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -954,7 +951,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.WHITE_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -969,7 +966,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0xC0C4E0, 0xE6E9F4, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.WHITE_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.WHITE.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override
@@ -1010,7 +1007,7 @@ public class GarnishedFanProcessing {
         public List<ItemStack> process(ItemStack stack, Level level) {
             BLOWING_WRAPPER.setItem(0, stack);
             Optional<DyeBlowingFanRecipe> recipe = GarnishedRecipeTypes.BROWN_DYE_BLOWING.find(BLOWING_WRAPPER, level);
-            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe)).orElse(null);
+            return recipe.map(dyeBlowingFanRecipe -> RecipeApplier.applyRecipeOn(level, stack, dyeBlowingFanRecipe, true)).orElse(null);
         }
 
         @Override
@@ -1025,7 +1022,7 @@ public class GarnishedFanProcessing {
             particleAccess.setColor(Color.mixColors(0x614332, 0x825B43, random.nextFloat()));
             particleAccess.setAlpha(.5f);
             if (random.nextFloat() < 1 / 16f)
-                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, GarnishedBlocks.BROWN_MASTIC_BLOCK.get().defaultBlockState()), .25f);
+                particleAccess.spawnExtraParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.BROWN.getBlock().get().defaultBlockState()), .25f);
         }
 
         @Override

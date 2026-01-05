@@ -1,0 +1,13 @@
+{
+  "type": "garnished:brown_dye_blowing",
+  "ingredients": [
+    {
+      "item": "create:scorchia"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:scoria"
+    }
+  ]
+}

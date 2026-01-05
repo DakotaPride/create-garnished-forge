@@ -54,7 +54,12 @@ public abstract class LivingEntityMixin extends Entity {
 		}
 
 		if (HatchetUtils.canApplyRavagingEffects(entity)) {
-			entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1));
+			int ampR = new Random().nextInt(4);
+			int appR = new Random().nextInt(99);
+			if (ampR <= 1)
+				ampR = 2;
+			if (appR>=35)
+				entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, (ampR-1)));
 		}
 	}
 

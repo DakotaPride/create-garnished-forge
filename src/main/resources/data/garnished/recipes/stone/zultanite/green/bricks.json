@@ -2,16 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "group": "green_zultanite_variants",
   "pattern": [
-    "##",
     "##"
   ],
   "key": {
     "#": {
-      "item": "garnished:polished_green_zultanite"
+      "item": "garnished:green_zultanite_brick_slab"
     }
   },
   "result": {
-    "item": "garnished:green_zultanite_bricks",
-    "count": 4
+    "item": "garnished:green_zultanite_bricks"
   }
 }

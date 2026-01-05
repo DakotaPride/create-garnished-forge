@@ -1,0 +1,23 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mynethersdelight"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "garnished:sepia_fungus_colony"
+    }
+  ],
+  "result": [
+    {
+      "count": 5,
+      "item": "garnished:sepia_fungus"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knife"
+  }
+}

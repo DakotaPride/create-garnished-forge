@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "carnotite_variants",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "garnished:small_carnotite_bricks"
+    }
+  },
+  "result": {
+    "item": "garnished:small_carnotite_brick_stairs",
+    "count": 4
+  }
+}

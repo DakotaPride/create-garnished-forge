@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class CashewSorbetScoopFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public CashewSorbetScoopFoodItem(Properties properties) {
-		super(0, 0.65F, properties.food(GarnishedFoodValues.CASHEW_SORBET_SCOOP));
+		super(0, 65F, properties.food(GarnishedFoodValues.CASHEW_SORBET_SCOOP));
 	}
 }

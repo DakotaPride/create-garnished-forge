@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "garnished:small_magenta_zultanite_brick_slab"
+    }
+  ],
+  "results": [
+    {
+      "item": "garnished:small_abyssal_stone_brick_slab"
+    }
+  ]
+}

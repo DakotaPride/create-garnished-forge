@@ -1,4 +1,13 @@
 {
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:item_exists",
+        "item": "create_aquatic_ambitions:suspicious_rock"
+      }
+    }
+  ],
   "type": "create:crushing",
   "ingredients": [
     {
@@ -13,13 +22,13 @@
     },
     {
       "chance": 0.10,
-      "item": "minecraft:iron_nugget",
-      "count": 2
+      "count": 2,
+      "item": "minecraft:iron_nugget"
     },
     {
       "chance": 0.05,
-      "item": "create:zinc_nugget",
-      "count": 2
+      "count": 2,
+      "item": "create:zinc_nugget"
     }
   ]
 }

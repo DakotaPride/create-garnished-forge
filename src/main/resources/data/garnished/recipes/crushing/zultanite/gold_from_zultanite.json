@@ -9,18 +9,18 @@
   "results": [
     {
       "count": 2,
-      "item": "minecraft:gold_nugget",
-      "chance": 0.10
+      "chance": 0.10,
+      "item": "minecraft:gold_nugget"
     },
     {
       "count": 1,
-      "item": "minecraft:gold_nugget",
-      "chance": 0.05
+      "chance": 0.05,
+      "item": "minecraft:gold_nugget"
     },
     {
       "count": 1,
-      "item": "minecraft:quartz",
-      "chance": 0.05
+      "chance": 0.05,
+      "item": "minecraft:quartz"
     }
   ]
 }

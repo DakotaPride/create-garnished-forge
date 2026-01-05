@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class MeatScrapsFoodItem extends ConditionalEffectItem implements IGarnishedUtilities {
 	public MeatScrapsFoodItem(Properties properties) {
-		super(4, 1.0F, properties.food(GarnishedFoodValues.MEAT_SCRAPS));
+		super(4, 100, properties.food(GarnishedFoodValues.MEAT_SCRAPS));
 	}
 }

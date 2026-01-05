@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "garnished:cut_purple_zultanite_wall"
+    }
+  ],
+  "results": [
+    {
+      "item": "garnished:cut_abyssal_stone_wall"
+    }
+  ]
+}
