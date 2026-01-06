@@ -26,9 +26,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.registry.ModEnchantments;
 
+import java.util.List;
 import java.util.Optional;
 
 public class HatchetToolItem extends DiggerItem implements Vanishable {
@@ -67,13 +70,19 @@ public class HatchetToolItem extends DiggerItem implements Vanishable {
         if (enchantment == GarnishedEnchantments.LEECHING_CURSE.get())
             return true;
 
-        if (enchantment == Enchantments.MOB_LOOTING)
+        List<Enchantment> enchantments = List.of(
+                Enchantments.MOB_LOOTING,
+                Enchantments.SHARPNESS,
+                Enchantments.SMITE,
+                Enchantments.BANE_OF_ARTHROPODS,
+                Enchantments.SWEEPING_EDGE,
+                Enchantments.IMPALING
+        );
+
+        if (enchantments.contains(enchantment))
             return false;
-        if (enchantment == Enchantments.SHARPNESS)
-            return false;
-        if (enchantment == Enchantments.SMITE)
-            return false;
-        if (enchantment == Enchantments.BANE_OF_ARTHROPODS)
+
+        if (ModList.get().isLoaded("farmersdelight") && enchantment == ModEnchantments.BACKSTABBING.get())
             return false;
 
         return super.canApplyAtEnchantingTable(stack, enchantment);
