@@ -33,7 +33,7 @@ public interface IGarnishedUtilities {
 	int sugar_high_dur = tick * 25;
 
 	default void addEffectTooltip(List<Component> tooltip, Holder<MobEffect> effect, int amplifier, float duration) {
-		tooltip.add(Component.translatable("text.garnished.applies_effect", Component.translatable(effect.value().getDescriptionId()), amplifier, formatDuration(new MobEffectInstance(effect), duration, 1)).withStyle(effect.value().getCategory().getTooltipFormatting()));
+		tooltip.add(Component.translatable("text.garnished.applies_effect", Component.translatable(effect.value().getDescriptionId()), formatAmplifier(amplifier), formatDuration(new MobEffectInstance(effect), duration, 1)).withStyle(effect.value().getCategory().getTooltipFormatting()));
 	}
 
 	default void addEffectTooltip(List<Component> tooltip, Holder<MobEffect> effect, float duration) {
@@ -52,6 +52,23 @@ public interface IGarnishedUtilities {
 		if (Screen.hasShiftDown()) {
 			tooltip.add(Component.translatable("text.garnished.applies_effect.chance", chance + "%").withStyle(ChatFormatting.GRAY));
 		}
+	}
+
+	default String formatAmplifier(int amplifier) {
+		List<Integer> integers = List.of(10, 9, 5, 4, 1);
+		List<String> integersConvertTo = List.of("X", "IX", "V", "IV", "I");
+
+		if (amplifier <= 0)
+			return String.valueOf(amplifier);
+
+		StringBuilder converted = new StringBuilder();
+		for (int i = 0; i < integers.size(); i++) {
+			while (amplifier >= integers.get(i)) {
+				converted.append(integersConvertTo.get(i));
+				amplifier -= integers.get(i);
+			}
+		}
+		return converted.toString();
 	}
 
 	default Component formatDuration(MobEffectInstance effect, float duration, float durationFactor) {
