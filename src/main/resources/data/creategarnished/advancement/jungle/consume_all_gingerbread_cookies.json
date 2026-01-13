@@ -1,0 +1,90 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:gingerbread_cookie_creeper"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.consume_all_gingerbread_cookies.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.consume_all_gingerbread_cookies.description",
+      "color": "#DBA213"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "creategarnished:jungle/obtain_ginger_root",
+  "criteria": {
+    "transrights": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "creategarnished:gingerbread_cookie_transrights"
+        }
+      }
+    },
+    "creeper": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "creategarnished:gingerbread_cookie_creeper"
+        }
+      }
+    },
+    "goggles": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "creategarnished:gingerbread_cookie_goggles"
+        }
+      }
+    },
+    "infected": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "creategarnished:gingerbread_cookie_infected"
+        }
+      }
+    },
+    "grub": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "creategarnished:gingerbread_cookie_grub"
+        }
+      }
+    },
+    "flea": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "creategarnished:gingerbread_cookie_flea"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "transrights"
+    ],
+    [
+      "creeper"
+    ],
+    [
+      "goggles"
+    ],
+    [
+      "infected"
+    ],
+    [
+      "grub"
+    ],
+    [
+      "flea"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

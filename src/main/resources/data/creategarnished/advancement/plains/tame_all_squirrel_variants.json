@@ -1,0 +1,96 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:roasted_chestnut"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.tame_all_squirrel_variants.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.tame_all_squirrel_variants.description",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "creategarnished:plains/tame_squirrel",
+  "criteria": {
+    "forest": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "creategarnished:squirrel",
+              "nbt": "{Type:gray}"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tame_animal"
+    },
+    "plains": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "creategarnished:squirrel",
+              "nbt": "{Type:orange_gray}"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tame_animal"
+    },
+    "snowy": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "creategarnished:squirrel",
+              "nbt": "{Type:white_spotted}"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tame_animal"
+    },
+    "taiga": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "creategarnished:squirrel",
+              "nbt": "{Type:black}"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:tame_animal"
+    }
+  },
+  "requirements": [
+    [
+      "forest"
+    ],
+    [
+      "plains"
+    ],
+    [
+      "snowy"
+    ],
+    [
+      "taiga"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
