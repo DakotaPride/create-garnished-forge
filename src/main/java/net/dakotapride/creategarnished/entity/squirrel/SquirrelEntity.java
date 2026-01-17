@@ -1,5 +1,6 @@
 package net.dakotapride.creategarnished.entity.squirrel;
 
+import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
 import net.dakotapride.creategarnished.registry.CreateGarnishedEntityTypes;
 import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
@@ -47,6 +48,7 @@ import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.EventHooks;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
@@ -262,17 +264,22 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
     }
 
     private void handleEating() {
-        if (!this.isEating() && !this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty()
-                && this.isValidToConsumePersonally(this.getItemBySlot(EquipmentSlot.MAINHAND)) && this.random.nextInt(40) == 1) {
+        ItemStack stack = this.getMainHandItem();
+        int range = 40;
+
+        if (this.isEating() && stack.isEmpty() && !this.isValidToConsumePersonally(stack))
+            return;
+
+        if (this.random.nextInt(range) == 1) {
             this.eat(true);
-        } else if (this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty()) {
+        } else if (stack.isEmpty()) {
             this.eat(false);
         }
 
         if (this.isEating()) {
             this.addEatingParticles();
-            if (!this.level().isClientSide && this.getEatCounter() > 40 && this.random.nextInt(20) == 1) {
-                if (this.getEatCounter() > 50 && this.isValidToConsumePersonally(this.getItemBySlot(EquipmentSlot.MAINHAND))) {
+            if (!this.level().isClientSide && this.getEatCounter() > range && this.random.nextInt(20) == 1) {
+                if (this.getEatCounter() > 50 && this.isValidToConsumePersonally(stack)) {
                     if (!this.level().isClientSide) {
                         this.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
                         this.gameEvent(GameEvent.EAT);
@@ -291,7 +298,7 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
         if (this.getEatCounter() % 5 == 0) {
             this.playSound(SoundEvents.GENERIC_EAT, 0.5F + 0.5F * (float)this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
 
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 2; i++) {
                 Vec3 vec3 = new Vec3(((double)this.random.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double)this.random.nextFloat() - 0.5) * 0.1);
                 vec3 = vec3.xRot(-this.getXRot() * (float) (Math.PI / 180.0));
                 vec3 = vec3.yRot(-this.getYRot() * (float) (Math.PI / 180.0));
@@ -409,6 +416,9 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
             this.setupAnimationStates();
         }
 
+
+        if (CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
+            return;
         this.handleEating();
     }
 
@@ -416,12 +426,16 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
     @Override
     public boolean canTakeItem(ItemStack itemstack) {
         EquipmentSlot equipmentslot = this.getEquipmentSlotForItem(itemstack);
+        if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
+            return false;
         return this.getItemBySlot(equipmentslot).isEmpty() && equipmentslot == EquipmentSlot.MAINHAND && this.isFood(itemstack) && super.canTakeItem(itemstack);
     }
 
     @Override
     public boolean canHoldItem(ItemStack stack) {
         ItemStack itemstack = this.getItemBySlot(EquipmentSlot.MAINHAND);
+        if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
+            return false;
         return itemstack.isEmpty() && this.isFood(stack);
     }
 
@@ -442,11 +456,11 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
         this.level().addFreshEntity(itementity);
     }
 
-    /**
-     * Tests if this entity should pick up a weapon or an armor piece. Entity drops current weapon or armor if the new one is better.
-     */
     @Override
-    protected void pickUpItem(ItemEntity itemEntity) {
+    protected void pickUpItem(@NotNull ItemEntity itemEntity) {
+        if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
+            return;
+
         ItemStack itemstack = itemEntity.getItem();
         if (this.canHoldItem(itemstack)) {
             int i = itemstack.getCount();
@@ -482,6 +496,9 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
 
         @Override
         public boolean canUse() {
+            if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
+                return false;
+
             if (!SquirrelEntity.this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty()) {
                 return false;
             } else if (SquirrelEntity.this.getLastHurtByMob() == null) {
@@ -534,6 +551,9 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
 
         @Override
         public boolean canUse() {
+            if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
+                return false;
+
             if (SquirrelEntity.this.isTame())
                 if (this.nextStartTick > 0) {
                     --this.nextStartTick;
@@ -631,6 +651,9 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
 
         @Override
         public boolean canUse() {
+            if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
+                return false;
+
             if (SquirrelEntity.this.isTame())
                 if (this.nextStartTick > 0) {
                     --this.nextStartTick;
@@ -724,7 +747,7 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
         }
     }
 
-    public static enum Type implements StringRepresentable {
+    public enum Type implements StringRepresentable {
         BLACK(0, "black"), // Tassel-eared Squirrel, Taiga variant
         GRAY(1, "gray"), // Eastern Gray Squirrel, Generic (Forest) variant
         ORANGE_GRAY(2, "orange_gray"), // Fox Squirrel, Generic (Plains) variant

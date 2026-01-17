@@ -16,8 +16,8 @@
   ],
   "spawners": {
     "type": "creategarnished:squirrel",
-    "maxCount": 6,
-    "minCount": 4,
-    "weight": 20
+    "maxCount": 3,
+    "minCount": 1,
+    "weight": 10
   }
 }
