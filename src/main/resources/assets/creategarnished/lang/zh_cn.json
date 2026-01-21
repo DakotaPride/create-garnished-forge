@@ -47,7 +47,7 @@
     "item.minecraft.splash_potion.effect.nut_allergy": "喷溅型坚果过敏药水",
     "item.minecraft.lingering_potion.effect.nut_allergy": "滞留型坚果过敏药水",
     "effect.creategarnished.soothing": "镇静",
-    "effect.creategarnished.sticky": "Sticky",
+    "effect.creategarnished.sticky": "黏糊",
     "effect.creategarnished.volt_struck": "带电",
     "block.creategarnished.almond_barrel": "桶装杏仁",
     "block.creategarnished.almond_leaves": "杏仁树叶",
@@ -308,4 +308,5 @@
     "death.attack.creategarnished.shocked.player": "%2$s把%1$s绑上了电椅",
     "stat.creategarnished.hatchet_kills": "使用气动手斧击杀生物并获得独特掉落物次数",
     "stat.creategarnished.monster_hatchet_kills": "使用气动手斧击杀幼年生物并获得独特掉落物次数"
+
 }
