@@ -1,0 +1,29 @@
+{
+  "name": "平原",
+  "icon": "creategarnished:wild_peppermint",
+  "category": "creategarnished:biome_specifics",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:chestnut",
+      "text": "在平原里，有时你可以看到板栗长在橡树上。你可以将板栗种植在地上，以持续收获橡木与板栗。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/chestnut_tree.png"
+      ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_peppermint",
+      "text": "在平原里，你可以找到生长在地上的野生胡椒薄荷。对其使用骨粉有概率使其扩散，这可以作为产生胡椒薄荷的方式。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_peppermint.png"
+      ]
+    }
+  ]
+}
