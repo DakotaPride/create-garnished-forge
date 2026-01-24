@@ -24,6 +24,17 @@
       "images": [
         "creategarnished:textures/gui/patchouli/elven_sweet_berries.png"
       ]
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "creategarnished:wild_mint",
+      "text": "在针叶林里，你可以找到生长在地上的野生薄荷。对其使用骨粉有概率使其扩散，这可以作为产生薄荷的方式。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "creategarnished:textures/gui/patchouli/wild_mint.png"
+      ]
     }
   ]
 }
