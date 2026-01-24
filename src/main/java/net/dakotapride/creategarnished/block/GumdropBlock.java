@@ -33,7 +33,7 @@ public class GumdropBlock extends Block implements SimpleWaterloggedBlock {
 
     public GumdropBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(GUMDROPS, Integer.valueOf(1)).setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(GUMDROPS, 1).setValue(FACING, Direction.NORTH));
     }
 
     @Override
@@ -61,11 +61,6 @@ public class GumdropBlock extends Block implements SimpleWaterloggedBlock {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
-    /**
-     * Update the provided state given the provided neighbor direction and neighbor state, returning a new state.
-     * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately returns its solidified counterpart.
-     * Note that this method should ideally consider only the specific direction passed in.
-     */
     @Override
     protected BlockState updateShape(
             BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {

@@ -12,6 +12,16 @@
       "type": "spotlight",
       "item": "creategarnished:royal_cider",
       "text": "The Glass of Royal Cider item can be placed down as a decorative item while sneaking. While it just be instantly broken, you can also shift+right-click to pick it back up."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:gumdrops",
+      "text": "Gumdrops can be placed on the ground in groups of up to 4 to be a decorative, festive treat."
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:gingerbread_cookie",
+      "text": "All variants of gingerbread cookies can be placed and stacked up to 6 times to decorate your festivities space."
     }
   ]
 }

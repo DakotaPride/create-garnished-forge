@@ -49,6 +49,9 @@ public class ProvideEffectsFromConsumptionEvent {
         BIRCH_FOREST(CreateGarnishedTags.BIRCH_FOREST_SPECIAL_FOODS, Tags.Biomes.IS_BIRCH_FOREST, MobEffects.MOVEMENT_SPEED),
         TAIGA(CreateGarnishedTags.TAIGA_SPECIAL_FOODS, BiomeTags.IS_TAIGA, MobEffects.INVISIBILITY),
 
+        PLAINS(CreateGarnishedTags.PLAINS_SPECIAL_FOODS, BiomeTags.HAS_VILLAGE_PLAINS, MobEffects.DAMAGE_RESISTANCE),
+        CHERRY_GROVE(CreateGarnishedTags.CHERRY_GROVE_SPECIAL_FOODS, CreateGarnishedTags.IS_CHERRY_GROVE, MobEffects.REGENERATION),
+        DEEP_DARK(CreateGarnishedTags.DEEP_DARK_SPECIAL_FOODS, CreateGarnishedTags.IS_DEEP_DARK_ADJACENT, MobEffects.ABSORPTION),
 
         ;
 

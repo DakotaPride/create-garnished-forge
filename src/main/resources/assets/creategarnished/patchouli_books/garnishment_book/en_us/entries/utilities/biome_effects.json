@@ -32,6 +32,24 @@
       "title": "Birch Forests",
       "item": "creategarnished:syrup_covered_pancakes",
       "text": "Foods originating from the Birch Forest or Old Growth Birch Forest biome will provide you with Speed II for 2 minutes."
+    },
+    {
+      "type": "spotlight",
+      "title": "Plains",
+      "item": "creategarnished:chestnut",
+      "text": "Foods originating from the Plains or adjacent biomes will provide you with Resistance II for 2 minutes."
+    },
+    {
+      "type": "spotlight",
+      "title": "Cherry Grove",
+      "item": "creategarnished:gingerbread_cookie_transrights",
+      "text": "Foods originating from the Cherry Grove biome will provide you with Regeneration II for 2 minutes."
+    },
+    {
+      "type": "spotlight",
+      "title": "Deep Dark",
+      "item": "creategarnished:gingerbread_cookie_infected",
+      "text": "Foods originating from the Deep Dark biome will provide you with Absorption II for 2 minutes."
     }
   ]
 }

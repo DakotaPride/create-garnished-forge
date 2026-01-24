@@ -1,0 +1,6 @@
+{
+	"parent": "creategarnished:block/gingerbread_cookie_count_5",
+	"textures": {
+		"0": "creategarnished:block/gingerbread_cookie_creeper"
+	}
+}

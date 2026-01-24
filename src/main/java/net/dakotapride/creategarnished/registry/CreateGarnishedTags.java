@@ -26,8 +26,13 @@ public class CreateGarnishedTags {
     public static TagKey<Item> TAIGA_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/taiga"));
     public static TagKey<Item> FLOWER_FOREST_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/flower"));
     public static TagKey<Item> BIRCH_FOREST_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/birch"));
+    public static TagKey<Item> PLAINS_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/plains"));
+    public static TagKey<Item> CHERRY_GROVE_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/cherry_grove"));
+    public static TagKey<Item> DEEP_DARK_SPECIAL_FOODS = TagKey.create(BuiltInRegistries.ITEM.key(), CreateGarnished.asResource("special_foods/deep_dark"));
 
     public static TagKey<Biome> IS_ACCEPTED_FLOWER_BIOME = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", "is_flower_biome"));
+    public static TagKey<Biome> IS_DEEP_DARK_ADJACENT = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", "is_deep_dark"));
+    public static TagKey<Biome> IS_CHERRY_GROVE = TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", "is_cherry_grove"));
 
     public static TagKey<MobEffect> BLACKLISTED_FROM_CANDY = TagKey.create(Registries.MOB_EFFECT, ResourceLocation.fromNamespaceAndPath("creategarnished", "candy_effect_blacklist"));
 }

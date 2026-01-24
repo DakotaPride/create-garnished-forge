@@ -6,7 +6,9 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.GingerbreadCookieBlock;
 import net.dakotapride.creategarnished.item.*;
+import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -269,22 +271,30 @@ public class CreateGarnishedItems {
     public static final ItemEntry<Item> GINGERBREAD_FLOUR = CreateGarnished.REGISTRATE.item("gingerbread_flour", Item::new).register();
     public static final ItemEntry<Item> GINGERBREAD_DOUGH = CreateGarnished.REGISTRATE.item("gingerbread_dough", Item::new).register();
     public static final ItemEntry<Item> GINGERBREAD_LOAF = CreateGarnished.REGISTRATE.item("gingerbread_loaf", Item::new)
-            .properties(p -> p.food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.6F).build())).register();
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F).build())).register();
     public static final ItemEntry<Item> CINNAMON_BARK = CreateGarnished.REGISTRATE.item("cinnamon_bark", Item::new).register();
     public static final ItemEntry<Item> CINNAMON_STICK = CreateGarnished.REGISTRATE.item("cinnamon_stick", Item::new).register();
     public static final ItemEntry<GingerbreadCookieItem> GINGERBREAD_COOKIE = CreateGarnished.REGISTRATE.item("gingerbread_cookie", properties -> new GingerbreadCookieItem(
             "", GingerbreadCookieBlock.GingerbreadCookieVariants.NONE, CreateGarnishedBlocks.GINGERBREAD_COOKIE.get(), properties))
-            .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F).build())).register();
+            .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F).alwaysEdible().build())).register();
+
+    public static final FoodProperties GOGGLES_FOOD_PROPERTIES = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6F)
+            .effect(() -> new MobEffectInstance(CreateGarnishedStatusEffects.SOOTHING, 200, 0, true, false, true), 1.0F).alwaysEdible().build();
+    public static final FoodProperties GRUB_FOOD_PROPERTIES = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6F)
+            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 200, 1, true, false, true), 1.0F).alwaysEdible().build();
+    public static final FoodProperties FLEA_FOOD_PROPERTIES = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6F)
+            .effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 1, true, false, true), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 200, 1, true, false, true), 1.0F).alwaysEdible().build();
 
     enum GingerbreadCookieTypes {
-        TRANSRIGHTS(GingerbreadCookieBlock.GingerbreadCookieVariants.TRANSRIGHTS),
-        CREEPER(GingerbreadCookieBlock.GingerbreadCookieVariants.CREEPER),
-        GOGGLES(GingerbreadCookieBlock.GingerbreadCookieVariants.GOGGLES),
+        TRANSRIGHTS(GingerbreadCookieBlock.GingerbreadCookieVariants.TRANSRIGHTS), // Regen from Cherry Groves
+        CREEPER(GingerbreadCookieBlock.GingerbreadCookieVariants.CREEPER), // Resistance from Plains
+        GOGGLES(GingerbreadCookieBlock.GingerbreadCookieVariants.GOGGLES, GOGGLES_FOOD_PROPERTIES), // Soothing from consumption
         // WHITE(), -> Became the regular, basic cookie texture
         //HOLLOW(),
-        INFECTED(GingerbreadCookieBlock.GingerbreadCookieVariants.INFECTED),
-        GRUB(GingerbreadCookieBlock.GingerbreadCookieVariants.GRUB),
-        FLEA(GingerbreadCookieBlock.GingerbreadCookieVariants.FLEA),
+        INFECTED(GingerbreadCookieBlock.GingerbreadCookieVariants.INFECTED), // Absorption from Deep Dark
+        GRUB(GingerbreadCookieBlock.GingerbreadCookieVariants.GRUB, GRUB_FOOD_PROPERTIES), // Health Boost from consumption
+        FLEA(GingerbreadCookieBlock.GingerbreadCookieVariants.FLEA, FLEA_FOOD_PROPERTIES), // Slow Falling + Health Boost from consumption
 
 
         ;
@@ -294,7 +304,13 @@ public class CreateGarnishedItems {
         GingerbreadCookieTypes(GingerbreadCookieBlock.GingerbreadCookieVariants variant) {
             this.item = CreateGarnished.REGISTRATE.item("gingerbread_cookie_" + name().toLowerCase(Locale.ROOT),
                             properties -> new GingerbreadCookieItem(name().toLowerCase(Locale.ROOT), variant, CreateGarnishedBlocks.GINGERBREAD_COOKIE.get(), properties))
-                    .properties(p -> p.food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.4F).build())).register();
+                    .properties(p -> p.food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.6F).alwaysEdible().build())).register();
+        }
+
+        GingerbreadCookieTypes(GingerbreadCookieBlock.GingerbreadCookieVariants variant, FoodProperties foodProperties) {
+            this.item = CreateGarnished.REGISTRATE.item("gingerbread_cookie_" + name().toLowerCase(Locale.ROOT),
+                            properties -> new GingerbreadCookieItem(name().toLowerCase(Locale.ROOT), variant, CreateGarnishedBlocks.GINGERBREAD_COOKIE.get(), properties))
+                    .properties(p -> p.food(foodProperties)).register();
         }
 
         public ItemEntry<GingerbreadCookieItem> getItem() {

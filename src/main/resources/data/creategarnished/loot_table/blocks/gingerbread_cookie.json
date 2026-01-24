@@ -13,8 +13,118 @@
           "type": "minecraft:alternatives",
           "children": [
             {
-              "type": "minecraft:item",
+              "type": "minecraft:alternatives",
               "name": "creategarnished:gingerbread_cookie",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "2"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "4"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "5"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "6"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 6
+                    }
+                  ]
+                }
+              ],
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
@@ -31,8 +141,118 @@
           "type": "minecraft:alternatives",
           "children": [
             {
-              "type": "minecraft:item",
-              "name": "creategarnished:gingerbread_cookie_transrights",
+              "type": "minecraft:alternatives",
+              "name": "creategarnished:gingerbread_cookie",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_transrights",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_transrights",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "2"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_transrights",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_transrights",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "4"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_transrights",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "5"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_transrights",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "6"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 6
+                    }
+                  ]
+                }
+              ],
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
@@ -49,26 +269,118 @@
           "type": "minecraft:alternatives",
           "children": [
             {
-              "type": "minecraft:item",
-              "name": "creategarnished:gingerbread_cookie_creeper",
-              "conditions": [
+              "type": "minecraft:alternatives",
+              "name": "creategarnished:gingerbread_cookie",
+              "children": [
                 {
-                  "condition": "minecraft:block_state_property",
-                  "block": "creategarnished:gingerbread_cookie",
-                  "properties": {
-                    "gingerbread_cookie_variant": "creeper"
-                  }
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_goggles",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_goggles",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "2"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_goggles",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_goggles",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "4"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_goggles",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "5"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_goggles",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "6"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 6
+                    }
+                  ]
                 }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:alternatives",
-          "children": [
-            {
-              "type": "minecraft:item",
-              "name": "creategarnished:gingerbread_cookie_goggles",
+              ],
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
@@ -85,8 +397,246 @@
           "type": "minecraft:alternatives",
           "children": [
             {
-              "type": "minecraft:item",
-              "name": "creategarnished:gingerbread_cookie_infected",
+              "type": "minecraft:alternatives",
+              "name": "creategarnished:gingerbread_cookie",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_creeper",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_creeper",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "2"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_creeper",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_creeper",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "4"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_creeper",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "5"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_creeper",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "6"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 6
+                    }
+                  ]
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "creategarnished:gingerbread_cookie",
+                  "properties": {
+                    "gingerbread_cookie_variant": "creeper"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:alternatives",
+              "name": "creategarnished:gingerbread_cookie",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_infected",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_infected",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "2"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_infected",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_infected",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "4"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_infected",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "5"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_infected",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "6"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 6
+                    }
+                  ]
+                }
+              ],
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
@@ -103,8 +653,118 @@
           "type": "minecraft:alternatives",
           "children": [
             {
-              "type": "minecraft:item",
-              "name": "creategarnished:gingerbread_cookie_grub",
+              "type": "minecraft:alternatives",
+              "name": "creategarnished:gingerbread_cookie",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_grub",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_grub",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "2"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_grub",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_grub",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "4"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_grub",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "5"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_grub",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "6"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 6
+                    }
+                  ]
+                }
+              ],
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
@@ -121,8 +781,118 @@
           "type": "minecraft:alternatives",
           "children": [
             {
-              "type": "minecraft:item",
-              "name": "creategarnished:gingerbread_cookie_flea",
+              "type": "minecraft:alternatives",
+              "name": "creategarnished:gingerbread_cookie",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_flea",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "1"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_flea",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "2"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_flea",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "3"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_flea",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "4"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_flea",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "5"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "creategarnished:gingerbread_cookie_flea",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "creategarnished:gingerbread_cookie",
+                      "properties": {
+                        "cookie_count": "6"
+                      }
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": 6
+                    }
+                  ]
+                }
+              ],
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
