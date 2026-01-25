@@ -1,0 +1,28 @@
+{
+  "name": "生姜相关",
+  "icon": "creategarnished:gingerbread_flour",
+  "category": "creategarnished:foods",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "creategarnished:cinnamon_stick",
+      "text": "对云杉原木使用砂纸可以获得肉桂皮，后者可以使用动力锯加工成为肉桂棒。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:gingerbread_flour",
+      "text": "在工作台中使用面粉、生姜、肉桂棒可以合成一些姜汁面粉。可以通过批量洗涤制成姜汁面团，加工方式类似于普通的小麦面粉。姜汁面团可以被烘烤为姜汁面包。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:gingerbread_cookie",
+      "text": "使用动力锯可以将姜汁面包切割成为姜饼，它可以用来装点你的家，也可以作为闲暇时的美味小点。$(br)姜饼有多种裱花，它们除外观不同外，没有其他的区别。"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "creategarnished:biome_specifics/jungle"
+      ]
+    }
+  ]
+}
