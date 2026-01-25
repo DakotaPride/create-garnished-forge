@@ -1,5 +1,6 @@
 {
   "type": "create:crushing",
+  "processing_time": 150,
   "ingredients": [
     {
       "tag": "c:pine_nuts"

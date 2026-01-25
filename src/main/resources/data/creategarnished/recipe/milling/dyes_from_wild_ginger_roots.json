@@ -1,5 +1,6 @@
 {
   "type": "create:milling",
+  "processing_time": 50,
   "ingredients": [
     {
       "item": "creategarnished:wild_ginger_root"

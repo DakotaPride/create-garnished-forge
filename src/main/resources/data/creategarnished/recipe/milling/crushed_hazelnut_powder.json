@@ -1,5 +1,6 @@
 {
   "type": "create:milling",
+  "processing_time": 100,
   "ingredients": [
     {
       "tag": "c:hazelnuts"
