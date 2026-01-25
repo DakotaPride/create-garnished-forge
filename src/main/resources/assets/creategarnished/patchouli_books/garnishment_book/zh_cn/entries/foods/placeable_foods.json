@@ -12,6 +12,16 @@
       "type": "spotlight",
       "item": "creategarnished:royal_cider",
       "text": "皇家西打在潜行并右键的情况下可以以装饰方块的形式放置于地面上。它可以被瞬间破坏，当然你也可以通过潜行右键的方式将其拾取。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:gumdrops",
+      "text": "软糖可以以最多一组四个的方式被放置在地上，以成为一种装饰性的节日美食。"
+    },
+    {
+      "type": "spotlight",
+      "item": "creategarnished:gingerbread_cookie",
+      "text": "姜饼有多种裱花，可以将最多6个同种裱花的姜饼放置在一起。"
     }
   ]
 }

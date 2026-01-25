@@ -32,6 +32,24 @@
       "title": "桦木森林",
       "item": "creategarnished:syrup_covered_pancakes",
       "text": "来自桦木森林、原始桦木森林的食物能够提供2分钟的迅捷II效果。"
+    },
+    {
+      "type": "spotlight",
+      "title": "平原",
+      "item": "creategarnished:chestnut",
+      "text": "来自平原及其附近的食物能够提供2分钟的抗性提升II效果。"
+    },
+    {
+      "type": "spotlight",
+      "title": "樱花树林",
+      "item": "creategarnished:gingerbread_cookie_transrights",
+      "text": "来自樱花树林的食物能够提供2分钟的生命恢复II效果。"
+    },
+    {
+      "type": "spotlight",
+      "title": "深暗之域",
+      "item": "creategarnished:gingerbread_cookie_infected",
+      "text": "来自深暗之域的食物能够提供2分钟的伤害吸收II效果。"
     }
   ]
 }
