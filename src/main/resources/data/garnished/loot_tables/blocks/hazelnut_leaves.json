@@ -24,13 +24,11 @@
                     {
                       "condition": "minecraft:match_tool",
                       "predicate": {
-                        "predicates": {
-                          "minecraft:enchantments": [
-                            {
-                              "enchantments": "minecraft:silk_touch"
-                            }
-                          ]
-                        }
+                        "enchantments": [
+                          {
+                            "enchantment": "minecraft:silk_touch"
+                          }
+                        ]
                       }
                     }
                   ]
@@ -62,13 +60,11 @@
               {
                 "condition": "minecraft:match_tool",
                 "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "fortune"
-                      }
-                    ]
-                  }
+                  "enchantments": [
+                    {
+                      "enchantment": "minecraft:fortune"
+                    }
+                  ]
                 }
               }
             ]
@@ -129,13 +125,11 @@
               {
                 "condition": "minecraft:match_tool",
                 "predicate": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "silk_touch"
-                      }
-                    ]
-                  }
+                  "enchantments": [
+                    {
+                      "enchantment": "minecraft:silk_touch"
+                    }
+                  ]
                 }
               }
             ]
