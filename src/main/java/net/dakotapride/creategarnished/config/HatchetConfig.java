@@ -14,6 +14,9 @@ public class HatchetConfig extends ConfigBase {
     // https://youtu.be/K6mi8MFPoog - Thank you, Ford, for showing me this masterpiece that I somehow never saw
     public ConfigBool enableShotgunAxe = b(false, "enableShotgunAxe", Comments.enableShotgunAxe);
 
+    public final ConfigBool allowLuckyPlingSoundEvent = b(true, "allowLuckyPlingSoundEvent", Comments.allowLuckyPlingSoundEvent);
+    public final ConfigBool allowShotgunSoundEvent = b(true, "allowShotgunSoundEvent", Comments.allowShotgunSoundEvent);
+
     // Setting chance to 0 disables the individual drop without disabling the entire group of drops
 
     public final ConfigGroup zombies = group(0, "zombies", "Controls drops from the mobs tagged as zombies.");
@@ -167,6 +170,9 @@ public class HatchetConfig extends ConfigBase {
         static String enableDropsFromBabyMobs = "Enables additional or unique drops to also be obtained through baby variant mobs. (how DARE you)";
         static String enableVoltDrops = "Enables voltified items to drop";
         static String enableShotgunAxe = "Enables extra... 'functionality', if you will";
+
+        static String allowLuckyPlingSoundEvent = "Controls whether or not the note block pling sound will play after defeating a mob with a hatchet while inflicted with the luck status effect.";
+        static String allowShotgunSoundEvent = "Controls whether or not the anvil fall sound will play after breaking a log with a hatchet.";
 
         static String enableZombieDrops = "Enables the special item drops from mobs tagged as zombies upon defeat.";
         static String chanceToDropLeather = "The chance to drop leather upon defeat.";

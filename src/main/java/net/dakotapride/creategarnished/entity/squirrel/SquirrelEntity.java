@@ -22,6 +22,7 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.ByIdMap;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.DifficultyInstance;
@@ -33,6 +34,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -494,47 +496,40 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
             this.setFlags(EnumSet.of(Flag.MOVE));
         }
 
+
+
         @Override
         public boolean canUse() {
-            if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
-                return false;
-
             if (!SquirrelEntity.this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty()) {
                 return false;
-            } else if (SquirrelEntity.this.getLastHurtByMob() == null) {
-                if (SquirrelEntity.this.isDancing()) {
-                    return false;
-                } else if (SquirrelEntity.this.getRandom().nextInt(reducedTickDelay(10)) != 0) {
-                    return false;
-                } else {
-                    List<ItemEntity> list = SquirrelEntity.this.level().getEntitiesOfClass(ItemEntity.class,
-                            SquirrelEntity.this.getBoundingBox().inflate(8.0F, 8.0F, 8.0F), SquirrelEntity.ALLOWED_ITEMS);
-                    return !list.isEmpty() && SquirrelEntity.this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty();
-                }
-            } else {
+            } else if (SquirrelEntity.this.getRandom().nextInt(reducedTickDelay(10)) != 0) {
                 return false;
+            } else if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get()) {
+                return false;
+            } else if (SquirrelEntity.this.isDancing()) {
+                return false;
+            } else {
+                List<ItemEntity> list = SquirrelEntity.this.level()
+                        .getEntitiesOfClass(ItemEntity.class, SquirrelEntity.this.getBoundingBox().inflate(CreateGarnishedConfigs.server().entity.squirrelItemSearchRadius.get()), SquirrelEntity.ALLOWED_ITEMS);
+                return !list.isEmpty() && SquirrelEntity.this.getItemBySlot(EquipmentSlot.MAINHAND).isEmpty();
             }
         }
 
         @Override
         public void tick() {
-            List<ItemEntity> list = SquirrelEntity.this.level().getEntitiesOfClass(ItemEntity.class,
-                    SquirrelEntity.this.getBoundingBox().inflate(8.0F, 8.0F, 8.0F), SquirrelEntity.ALLOWED_ITEMS);
+            List<ItemEntity> list = SquirrelEntity.this.level().getEntitiesOfClass(ItemEntity.class, SquirrelEntity.this.getBoundingBox().inflate(CreateGarnishedConfigs.server().entity.squirrelItemSearchRadius.get()), SquirrelEntity.ALLOWED_ITEMS);
             ItemStack itemstack = SquirrelEntity.this.getItemBySlot(EquipmentSlot.MAINHAND);
             if (itemstack.isEmpty() && !list.isEmpty()) {
                 SquirrelEntity.this.getNavigation().moveTo(list.get(0), 1.2F);
             }
-
         }
 
         @Override
         public void start() {
-            List<ItemEntity> list = SquirrelEntity.this.level().getEntitiesOfClass(ItemEntity.class,
-                    SquirrelEntity.this.getBoundingBox().inflate(8.0F, 8.0F, 8.0F), SquirrelEntity.ALLOWED_ITEMS);
+            List<ItemEntity> list = SquirrelEntity.this.level().getEntitiesOfClass(ItemEntity.class, SquirrelEntity.this.getBoundingBox().inflate(CreateGarnishedConfigs.server().entity.squirrelItemSearchRadius.get()), SquirrelEntity.ALLOWED_ITEMS);
             if (!list.isEmpty()) {
                 SquirrelEntity.this.getNavigation().moveTo(list.get(0), 1.2F);
             }
-
         }
     }
 
@@ -544,14 +539,14 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
         private int ticksSinceReachedGoal;
 
         public MoveToFarmlandGoal(SquirrelEntity entity, double speedModifier, int searchRange) {
-            super(entity, speedModifier, 24, searchRange);
+            super(entity, speedModifier, CreateGarnishedConfigs.server().entity.squirrelBlockSearchRadius.get(), searchRange);
             //this.blockToRemove = blockToRemove;
             this.entity = entity;
         }
 
         @Override
         public boolean canUse() {
-            if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
+            if (!CreateGarnishedConfigs.server().entity.squirrelsAttemptToPlantNutCrops.get())
                 return false;
 
             if (SquirrelEntity.this.isTame())
@@ -644,14 +639,14 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
         private int ticksSinceReachedGoal;
 
         public MoveToTreePlantableBlockGoal(SquirrelEntity entity, double speedModifier, int searchRange) {
-            super(entity, speedModifier, 24, searchRange);
+            super(entity, speedModifier, CreateGarnishedConfigs.server().entity.squirrelBlockSearchRadius.get(), searchRange);
             //this.blockToRemove = blockToRemove;
             this.entity = entity;
         }
 
         @Override
         public boolean canUse() {
-            if (!CreateGarnishedConfigs.server().entity.squirrelsPickUpDroppedFoods.get())
+            if (!CreateGarnishedConfigs.server().entity.squirrelsAttemptToPlantNutCrops.get())
                 return false;
 
             if (SquirrelEntity.this.isTame())

@@ -97,8 +97,13 @@ public class PoundCakeBlock extends Block {
             player.getFoodData().eat(8, 0.8F);
             Holder<Biome> biome = player.level().getBiome(player.blockPosition());
             boolean isInBiome = biome.is(CreateGarnishedTags.IS_ACCEPTED_FLOWER_BIOME);
-            if (isInBiome && CreateGarnishedConfigs.server().entity.provideSpecialEffectsFromBiome.get()) {
-                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 120 * 20, 1, false, false, false));
+            if (isInBiome && CreateGarnishedConfigs.server().item.provideSpecialEffectsFromBiome.get()) {
+                player.addEffect(new MobEffectInstance(MobEffects.REGENERATION,
+                        CreateGarnishedConfigs.server().item.statusEffectDurationInSeconds.get() * 20,
+                        CreateGarnishedConfigs.server().item.statusEffectAmplifier.get(),
+                        CreateGarnishedConfigs.server().item.isAmbient.get(),
+                        CreateGarnishedConfigs.server().item.isVisible.get(),
+                        CreateGarnishedConfigs.server().item.showIcon.get()));
             }
             int i = state.getValue(BITES);
             level.gameEvent(player, GameEvent.EAT, pos);

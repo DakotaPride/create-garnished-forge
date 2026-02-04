@@ -36,7 +36,7 @@ public class MobConditions {
         if (level instanceof ServerLevel server && attacker instanceof ServerPlayer player) {
             server.playSound(null, player.getX(), player.getY(), player.getZ(),
                     SoundEvents.SOUL_ESCAPE, player.getSoundSource(), 2.0F, 1.0F);
-            if (player.hasEffect(MobEffects.LUCK) && CreateGarnishedConfigs.client().allowLuckyPlingSoundEvent.get()) {
+            if (player.hasEffect(MobEffects.LUCK) && CreateGarnishedConfigs.server().hatchet.allowLuckyPlingSoundEvent.get()) {
                 server.playSound(null, player.getX(), player.getY(), player.getZ(),
                         SoundEvents.NOTE_BLOCK_PLING, player.getSoundSource(), 0.5F, 1.0F);
             }

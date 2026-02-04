@@ -97,7 +97,7 @@ public class ElvenSweetBerryBushBlock extends BushBlock implements BonemealableB
         double d0 = (double)pos.getX() + vec3.x;
         double d1 = (double)pos.getZ() + vec3.z;
 
-        if (CreateGarnishedConfigs.server().block.elvenSweetBerryBushParticles.get())
+        if (CreateGarnishedConfigs.client().elvenSweetBerryBushParticles.get())
             for(int i = 0; i < age; ++i) {
                 if (random.nextBoolean()) {
                     level.addParticle(CreateGarnishedParticles.ELVEN_MYSTICAL_PARTICLE.get(), d0 + random.nextDouble() / (double)5.0F, (double)pos.getY() + (((double)0.5F) - random.nextDouble()), d1 + random.nextDouble() / (double)5.0F, 0.0F, 0.0F, 0.0F);

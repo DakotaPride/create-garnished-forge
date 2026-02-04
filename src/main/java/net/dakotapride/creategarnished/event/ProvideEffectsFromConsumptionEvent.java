@@ -28,7 +28,7 @@ public class ProvideEffectsFromConsumptionEvent {
         LivingEntity entity = event.getEntity();
         Holder<Biome> biome = entity.level().getBiome(entity.blockPosition());
 
-        if (CreateGarnishedConfigs.server().entity.provideSpecialEffectsFromBiome.get())
+        if (CreateGarnishedConfigs.server().item.provideSpecialEffectsFromBiome.get())
             for (YoinkFromHereList list : YoinkFromHereList.values()) {
                 boolean isInBiome = biome.is(list.getBiomeTagKey());
 
@@ -40,7 +40,12 @@ public class ProvideEffectsFromConsumptionEvent {
     }
 
     private static void pullEffect(LivingEntity entity, Holder<MobEffect> effectHolder) {
-        entity.addEffect(new MobEffectInstance(effectHolder, 120 * 20, 1, false, false, false));
+        entity.addEffect(new MobEffectInstance(effectHolder,
+                CreateGarnishedConfigs.server().item.statusEffectDurationInSeconds.get() * 20,
+                CreateGarnishedConfigs.server().item.statusEffectAmplifier.get(),
+                CreateGarnishedConfigs.server().item.isAmbient.get(),
+                CreateGarnishedConfigs.server().item.isVisible.get(),
+                CreateGarnishedConfigs.server().item.showIcon.get()));
     }
 
     enum YoinkFromHereList {

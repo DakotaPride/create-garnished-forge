@@ -31,7 +31,7 @@ public class PancakesItem extends Item {
                     animal.level().playSound(null, animal.getX(), animal.getY(), animal.getZ(), SoundEvents.GENERIC_EAT, animal.getSoundSource(), 1.0F, 1.0F + (animal.getRandom().nextFloat() - animal.getRandom().nextFloat()) * 0.2F);
                 }
 
-                if (!animal.level().isClientSide && CreateGarnishedConfigs.server().item.tameUponFlapjackAdvancement.get()) {
+                if (!animal.level().isClientSide && CreateGarnishedConfigs.server().entity.tameUponFlapjackAdvancement.get()) {
                     if (animal.getRandom().nextInt(10) == 0 && !EventHooks.onAnimalTame(animal, player)) {
                         animal.tame(player);
                         animal.level().broadcastEntityEvent(animal, (byte)7);

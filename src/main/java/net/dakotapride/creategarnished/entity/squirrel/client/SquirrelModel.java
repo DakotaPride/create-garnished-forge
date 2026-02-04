@@ -24,20 +24,20 @@ import net.neoforged.api.distmarker.OnlyIn;
 public class SquirrelModel<T extends SquirrelEntity> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(CreateGarnished.asResource("squirrel"), "main");
-    private final ModelPart main;
-    private final ModelPart head;
-    private final ModelPart ears;
-    private final ModelPart body;
-    private final ModelPart body2;
-    private final ModelPart arms;
-    private final ModelPart right;
-    private final ModelPart left;
-    private final ModelPart legs;
-    private final ModelPart left2;
-    private final ModelPart foot;
-    private final ModelPart right2;
-    private final ModelPart foot2;
-    private final ModelPart tail;
+    public final ModelPart main;
+    public final ModelPart head;
+    public final ModelPart ears;
+    public final ModelPart body;
+    public final ModelPart body2;
+    public final ModelPart arms;
+    public final ModelPart right;
+    public final ModelPart left;
+    public final ModelPart legs;
+    public final ModelPart left2;
+    public final ModelPart foot;
+    public final ModelPart right2;
+    public final ModelPart foot2;
+    public final ModelPart tail;
 
     public SquirrelModel(ModelPart root) {
         this.main = root.getChild("main");
