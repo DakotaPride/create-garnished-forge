@@ -15,7 +15,7 @@
     "announce_to_chat": true,
     "hidden": true
   },
-  "parent": "creategarnished:mobs/mysterious_volt_bottle",
+  "parent": "creategarnished:spooky_month/mysterious_volt_bottle",
   "criteria": {
     "defeat_anomaly": {
       "trigger": "minecraft:player_killed_entity",
