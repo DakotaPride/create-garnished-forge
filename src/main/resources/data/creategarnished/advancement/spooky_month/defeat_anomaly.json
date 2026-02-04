@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "creategarnished:volatile_organ"
+    },
+    "title": {
+      "translate": "advancement.creategarnished.defeat_anomaly.title"
+    },
+    "description": {
+      "translate": "advancement.creategarnished.defeat_anomaly.description",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "creategarnished:mobs/mysterious_volt_bottle",
+  "criteria": {
+    "defeat_anomaly": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "#creategarnished:hatchet/anomalies"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "defeat_anomaly"
+    ]
+  ]
+}
