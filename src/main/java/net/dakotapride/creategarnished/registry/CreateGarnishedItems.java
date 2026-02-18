@@ -286,7 +286,7 @@ public class CreateGarnishedItems {
             .effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 1, true, false, true), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 200, 1, true, false, true), 1.0F).alwaysEdible().build();
 
-    enum GingerbreadCookieTypes {
+    public enum GingerbreadCookieTypes {
         TRANSRIGHTS(GingerbreadCookieBlock.GingerbreadCookieVariants.TRANSRIGHTS), // Regen from Cherry Groves
         CREEPER(GingerbreadCookieBlock.GingerbreadCookieVariants.CREEPER), // Resistance from Plains
         GOGGLES(GingerbreadCookieBlock.GingerbreadCookieVariants.GOGGLES, GOGGLES_FOOD_PROPERTIES), // Soothing from consumption
@@ -315,6 +315,10 @@ public class CreateGarnishedItems {
 
         public ItemEntry<GingerbreadCookieItem> getItem() {
             return item;
+        }
+
+        public Item asItem() {
+            return item.asItem();
         }
 
         private static void furretWalk() {}

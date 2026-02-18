@@ -7,8 +7,11 @@ import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.createmod.catnip.theme.Color;
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.item.MushroomSlopBucketItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -127,8 +130,7 @@ public class CreateGarnishedFluids {
                             .slopeFindDistance(3)
                             .explosionResistance(100f))
                     .source(BaseFlowingFluid.Source::new) // TODO: remove when Registrate fixes FluidBuilder
-                    .bucket()
-                    .build()
+                    .bucket(MushroomSlopBucketItem::new).build()
                     .register();
 
     public static void register() {}

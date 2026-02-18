@@ -128,6 +128,9 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
                     float f = foodproperties != null ? (float)foodproperties.nutrition() : 1.0F;
                     this.heal(2.0F * f);
                     itemstack.consume(1, player);
+                    if (foodproperties != null && foodproperties.usingConvertsTo().isPresent()) {
+                        player.addItem(new ItemStack(foodproperties.usingConvertsTo().orElseThrow().getItem(), 1));
+                    }
                     this.gameEvent(GameEvent.EAT); // Neo: add EAT game event
                     return InteractionResult.sidedSuccess(this.level().isClientSide());
                 } else {
@@ -143,7 +146,11 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
                     }
                 }
             } else if (isFood(itemstack)) {
+                FoodProperties foodproperties = itemstack.getFoodProperties(this);
                 itemstack.consume(1, player);
+                if (foodproperties != null && foodproperties.usingConvertsTo().isPresent()) {
+                    player.addItem(new ItemStack(foodproperties.usingConvertsTo().orElseThrow().getItem(), 1));
+                }
                 this.tryToTame(player);
                 return InteractionResult.SUCCESS;
             } else {
