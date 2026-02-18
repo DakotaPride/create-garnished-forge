@@ -133,7 +133,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_RED_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_RED_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_RED_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -196,7 +197,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_ORANGE_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_ORANGE_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_ORANGE_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -259,7 +261,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_YELLOW_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_YELLOW_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_YELLOW_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -322,7 +325,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_GREEN_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_GREEN_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_GREEN_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -385,7 +389,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_LIME_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_LIME_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_LIME_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -448,7 +453,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_BLUE_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_BLUE_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_BLUE_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -511,7 +517,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_LIGHT_BLUE_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_LIGHT_BLUE_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_LIGHT_BLUE_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -574,7 +581,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_CYAN_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_CYAN_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_CYAN_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -637,7 +645,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_PURPLE_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_PURPLE_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_PURPLE_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -700,7 +709,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_MAGENTA_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_MAGENTA_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_MAGENTA_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -763,7 +773,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_PINK_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_PINK_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_PINK_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -826,7 +837,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_BLACK_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_BLACK_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_BLACK_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -889,7 +901,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_GRAY_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_GRAY_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_GRAY_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -952,7 +965,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_LIGHT_GRAY_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_LIGHT_GRAY_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_LIGHT_GRAY_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -1015,7 +1029,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_WHITE_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_WHITE_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_WHITE_PROCESSING_BLOCK_TAG);
         }
 
         @Override
@@ -1078,7 +1093,8 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedTags.FAN_BROWN_PROCESSING_FLUID_TAG);
+            BlockState blockState = level.getBlockState(pos);
+            return fluidState.is(GarnishedTags.FAN_BROWN_PROCESSING_FLUID_TAG) || blockState.is(GarnishedTags.FAN_BROWN_PROCESSING_BLOCK_TAG);
         }
 
         @Override

@@ -42,6 +42,23 @@ public class GarnishedTags {
 	public static final TagKey<Fluid> FAN_WHITE_PROCESSING_FLUID_TAG = garnishedTag("fan_processing_catalysts/dye/white", Registries.FLUID);
 	public static final TagKey<Fluid> FAN_BROWN_PROCESSING_FLUID_TAG = garnishedTag("fan_processing_catalysts/dye/brown", Registries.FLUID);
 
+	public static final TagKey<Block> FAN_RED_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/red", Registries.BLOCK);
+	public static final TagKey<Block> FAN_ORANGE_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/orange", Registries.BLOCK);
+	public static final TagKey<Block> FAN_YELLOW_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/yellow", Registries.BLOCK);
+	public static final TagKey<Block> FAN_GREEN_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/green", Registries.BLOCK);
+	public static final TagKey<Block> FAN_LIME_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/lime", Registries.BLOCK);
+	public static final TagKey<Block> FAN_BLUE_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/blue", Registries.BLOCK);
+	public static final TagKey<Block> FAN_LIGHT_BLUE_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/light_blue", Registries.BLOCK);
+	public static final TagKey<Block> FAN_CYAN_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/cyan", Registries.BLOCK);
+	public static final TagKey<Block> FAN_PURPLE_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/purple", Registries.BLOCK);
+	public static final TagKey<Block> FAN_MAGENTA_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/magenta", Registries.BLOCK);
+	public static final TagKey<Block> FAN_PINK_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/pink", Registries.BLOCK);
+	public static final TagKey<Block> FAN_BLACK_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/black", Registries.BLOCK);
+	public static final TagKey<Block> FAN_GRAY_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/gray", Registries.BLOCK);
+	public static final TagKey<Block> FAN_LIGHT_GRAY_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/light_gray", Registries.BLOCK);
+	public static final TagKey<Block> FAN_WHITE_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/white", Registries.BLOCK);
+	public static final TagKey<Block> FAN_BROWN_PROCESSING_BLOCK_TAG = garnishedTag("fan_processing_catalysts/dye/brown", Registries.BLOCK);
+
 	public static final TagKey<Enchantment> FROST_WALKER = commonTag("frost_walker", Registries.ENCHANTMENT);
 	public static final TagKey<Enchantment> NOT_APPLICABLE_TO_HATCHETS = garnishedTag("not_applicable_to_hatchets", Registries.ENCHANTMENT);
 
