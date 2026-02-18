@@ -4,7 +4,7 @@
     "garnished:flowing_cyan_mastic_resin",
     {
       "required": false,
-      "id": "c:dyes/cyan"
+      "id": "#c:dyes/cyan"
     }
   ]
 }

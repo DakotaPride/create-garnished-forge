@@ -4,7 +4,7 @@
     "garnished:flowing_black_mastic_resin",
     {
       "required": false,
-      "id": "c:dyes/black"
+      "id": "#c:dyes/black"
     }
   ]
 }

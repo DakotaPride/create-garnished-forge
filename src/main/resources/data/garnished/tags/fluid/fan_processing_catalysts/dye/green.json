@@ -4,7 +4,7 @@
     "garnished:flowing_green_mastic_resin",
     {
       "required": false,
-      "id": "c:dyes/green"
+      "id": "#c:dyes/green"
     }
   ]
 }

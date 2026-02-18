@@ -4,7 +4,7 @@
     "garnished:flowing_pink_mastic_resin",
     {
       "required": false,
-      "id": "c:dyes/pink"
+      "id": "#c:dyes/pink"
     }
   ]
 }

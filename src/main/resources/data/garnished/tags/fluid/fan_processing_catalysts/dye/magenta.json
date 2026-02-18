@@ -4,7 +4,7 @@
     "garnished:flowing_magenta_mastic_resin",
     {
       "required": false,
-      "id": "c:dyes/magenta"
+      "id": "#c:dyes/magenta"
     }
   ]
 }
