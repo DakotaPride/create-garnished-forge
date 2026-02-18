@@ -1,0 +1,10 @@
+{
+  "values": [
+    "garnished:light_gray_mastic_resin",
+    "garnished:flowing_light_gray_mastic_resin",
+    {
+      "required": false,
+      "id": "c:dyes/light_gray"
+    }
+  ]
+}

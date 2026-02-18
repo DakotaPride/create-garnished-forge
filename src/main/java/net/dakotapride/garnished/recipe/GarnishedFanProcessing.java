@@ -5,10 +5,7 @@ import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
 import com.simibubi.create.foundation.recipe.RecipeApplier;
 import net.createmod.catnip.theme.Color;
 import net.dakotapride.garnished.CreateGarnished;
-import net.dakotapride.garnished.registry.GarnishedDamageSource;
-import net.dakotapride.garnished.registry.GarnishedFluids;
-import net.dakotapride.garnished.registry.GarnishedTags;
-import net.dakotapride.garnished.registry.ZultaniteStoneTypes;
+import net.dakotapride.garnished.registry.*;
 import net.dakotapride.garnished.registry.recipe.GarnishedRecipeTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -136,7 +133,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.RED_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.RED_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_RED_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -172,7 +169,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.RED.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -199,7 +196,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.ORANGE_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.ORANGE_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_ORANGE_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -235,7 +232,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.ORANGE.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -262,7 +259,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.YELLOW_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.YELLOW_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_YELLOW_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -298,7 +295,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.YELLOW.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -325,7 +322,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.GREEN_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.GREEN_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_GREEN_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -361,7 +358,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.GREEN.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -388,7 +385,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.LIME_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.LIME_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_LIME_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -424,7 +421,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.LIME.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -451,7 +448,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.BLUE_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.BLUE_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_BLUE_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -487,7 +484,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.BLUE.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -514,7 +511,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.LIGHT_BLUE_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.LIGHT_BLUE_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_LIGHT_BLUE_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -550,7 +547,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.LIGHT_BLUE.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -577,7 +574,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.CYAN_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.CYAN_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_CYAN_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -613,7 +610,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.CYAN.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -640,7 +637,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.PURPLE_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.PURPLE_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_PURPLE_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -676,7 +673,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.PURPLE.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -703,7 +700,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.MAGENTA_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.MAGENTA_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_MAGENTA_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -739,7 +736,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.MAGENTA.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -766,7 +763,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.PINK_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.PINK_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_PINK_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -802,7 +799,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.PINK.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -829,7 +826,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.BLACK_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.BLACK_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_BLACK_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -865,7 +862,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.BLACK.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -892,7 +889,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.GRAY_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.GRAY_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_GRAY_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -928,7 +925,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.GRAY.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -955,7 +952,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.LIGHT_GRAY_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.LIGHT_GRAY_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_LIGHT_GRAY_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -991,7 +988,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.LIGHT_GRAY.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -1018,7 +1015,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.WHITE_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.WHITE_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_WHITE_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -1054,7 +1051,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.WHITE.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override
@@ -1081,7 +1078,7 @@ public class GarnishedFanProcessing {
         @Override
         public boolean isValidAt(Level level, BlockPos pos) {
             FluidState fluidState = level.getFluidState(pos);
-            return fluidState.is(GarnishedFluids.BROWN_MASTIC_RESIN.get().getSource()) || fluidState.is(GarnishedFluids.BROWN_MASTIC_RESIN.get().getFlowing());
+            return fluidState.is(GarnishedTags.FAN_BROWN_PROCESSING_FLUID_TAG);
         }
 
         @Override
@@ -1117,7 +1114,7 @@ public class GarnishedFanProcessing {
         public void spawnProcessingParticles(Level level, Vec3 pos) {
             if (level.random.nextInt(8) != 0)
                 return;
-            level.addParticle(ParticleTypes.ITEM_SLIME, pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
+            level.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ZultaniteStoneTypes.BROWN.getSlimeLikeBlock().getDefaultState()), pos.x, pos.y + .25f, pos.z, 0, 1 / 16f, 0);
         }
 
         @Override

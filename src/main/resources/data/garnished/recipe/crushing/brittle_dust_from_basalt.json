@@ -1,4 +1,13 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:item_exists",
+        "item": "createsifter:crushed_basalt"
+      }
+    }
+  ],
   "type": "create:crushing",
   "ingredients": [
     [

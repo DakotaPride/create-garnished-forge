@@ -1,0 +1,10 @@
+{
+  "values": [
+    "garnished:white_mastic_resin",
+    "garnished:flowing_white_mastic_resin",
+    {
+      "required": false,
+      "id": "c:dyes/white"
+    }
+  ]
+}

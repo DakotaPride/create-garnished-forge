@@ -1,0 +1,10 @@
+{
+  "values": [
+    "garnished:black_mastic_resin",
+    "garnished:flowing_black_mastic_resin",
+    {
+      "required": false,
+      "id": "c:dyes/black"
+    }
+  ]
+}

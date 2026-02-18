@@ -1,0 +1,10 @@
+{
+  "values": [
+    "garnished:pink_mastic_resin",
+    "garnished:flowing_pink_mastic_resin",
+    {
+      "required": false,
+      "id": "c:dyes/pink"
+    }
+  ]
+}

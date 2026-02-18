@@ -1,14 +1,11 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:not",
-      "value": {
-        "type": "neoforge:item_exists",
-        "item": "createsifter:crushed_basalt"
-      }
+      "type": "neoforge:item_exists",
+      "item": "createsifter:crushed_basalt"
     }
   ],
-  "type": "create:milling",
+  "type": "create:crushing",
   "ingredients": [
     [
       {
@@ -36,6 +33,12 @@
       "count": 1,
       "item": {
         "id": "garnished:brittle_dust"
+      }
+    },
+    {
+      "count": 1,
+      "item": {
+        "id": "createsifter:crushed_basalt"
       }
     }
   ]

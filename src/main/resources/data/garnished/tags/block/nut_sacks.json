@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "garnished:peanut_sack",
+    "garnished:walnut_sack",
+    "garnished:pistachio_sack",
+    "garnished:pecan_sack",
+    "garnished:hazelnut_sack",
+    "garnished:almond_sack",
+    "garnished:cashew_sack",
+    "garnished:macadamia_sack",
+    "garnished:chestnut_sack"
+  ]
+}
