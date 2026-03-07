@@ -26,6 +26,12 @@
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "garnished:config_filter"
+    },
+    {
+      "type": "garnished:sepia_fungus_tree_config_filter"
     }
   ]
 }

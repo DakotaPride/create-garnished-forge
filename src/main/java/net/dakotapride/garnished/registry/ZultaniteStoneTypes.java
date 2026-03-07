@@ -3,11 +3,9 @@ package net.dakotapride.garnished.registry;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.dakotapride.garnished.CreateGarnished;
+import net.dakotapride.garnished.block.MasticBlock;
 import net.dakotapride.garnished.block.ZultaniteStairsBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.Locale;
@@ -35,7 +33,7 @@ public enum ZultaniteStoneTypes {
 
     ;
 
-    private final BlockEntry<Block> slimeLikeBlock;
+    private final BlockEntry<MasticBlock> slimeLikeBlock;
     private final BlockEntry<Block> block;
     private final BlockEntry<SlabBlock> slabBlock;
     private final BlockEntry<ZultaniteStairsBlock> stairsBlock;
@@ -68,11 +66,10 @@ public enum ZultaniteStoneTypes {
         CreateRegistrate REGISTRATE = CreateGarnished.registrate();
 
 
-        slimeLikeBlock = REGISTRATE.block("mastic_block", Block::new)
+        slimeLikeBlock = REGISTRATE.block("mastic_block", MasticBlock::new)
                 //.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
                 .simpleItem()
-                .initialProperties(() -> Blocks.SLIME_BLOCK)
-                .properties(properties -> properties.mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).noOcclusion().instabreak()).register();
+                .properties(properties -> properties.mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).sound(SoundType.SLIME_BLOCK).noOcclusion().instabreak()).register();
 
         block = REGISTRATE.block("zultanite", Block::new)
                 //.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
@@ -212,11 +209,10 @@ public enum ZultaniteStoneTypes {
         CreateRegistrate REGISTRATE = CreateGarnished.registrate();
 
 
-        slimeLikeBlock = REGISTRATE.block(id + "_mastic_block", Block::new)
+        slimeLikeBlock = REGISTRATE.block(id + "_mastic_block", MasticBlock::new)
                 //.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
                 .simpleItem()
-                .initialProperties(() -> Blocks.SLIME_BLOCK)
-                .properties(properties -> properties.mapColor(color).noOcclusion().instabreak()).register();
+                .properties(properties -> properties.mapColor(color).sound(SoundType.SLIME_BLOCK).noOcclusion().instabreak()).register();
 
         block = REGISTRATE.block(id + "_zultanite", Block::new)
                 //.blockstate((ctx, pov) -> pov.simpleBlock(ctx.get(), AssetLookup.standardModel(ctx, pov)))
@@ -351,7 +347,7 @@ public enum ZultaniteStoneTypes {
                 .properties(properties -> properties.mapColor(color)).register();
     }
 
-    public BlockEntry<Block> getSlimeLikeBlock() {
+    public BlockEntry<MasticBlock> getSlimeLikeBlock() {
         return slimeLikeBlock;
     }
 

@@ -1,8 +1,7 @@
 package net.dakotapride.garnished.block;
 
+import net.dakotapride.garnished.GarnishedConfigs;
 import net.dakotapride.garnished.item.IGarnishedUtilities;
-import net.dakotapride.garnished.registry.GarnishedBlocks;
-import net.dakotapride.garnished.registry.GarnishedPaletteStoneTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
@@ -22,6 +21,9 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
     public static class Abyssal {
 
         public static void getParticles(BlockState state, Level level, BlockPos pos, RandomSource random) {
+            if (!GarnishedConfigs.client().abyssalStoneParticles.get())
+                return;
+
             for(int i = 0; i < 4; ++i) {
                 double d0 = (double) pos.getX() + random.nextDouble();
                 double d1 = (double) pos.getY() + random.nextDouble();
@@ -43,8 +45,8 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
         }
 
         public static void getEffects(Level level, BlockPos pos, BlockState state, Entity entity) {
-            if (entity instanceof LivingEntity living) {
-                living.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 300, 0));
+            if (entity instanceof LivingEntity living && GarnishedConfigs.server().block.providesBlindness.get()) {
+                living.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, tick * GarnishedConfigs.server().block.blindnessDuration.get(), 0));
             }
 
         }
@@ -74,10 +76,8 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
         }
 
         public static void getEffects(Level level, BlockPos pos, BlockState state, Entity entity) {
-            RandomSource random = RandomSource.create();
-
-            if (entity instanceof LivingEntity living) {
-                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, 1));
+            if (entity instanceof LivingEntity living && GarnishedConfigs.server().block.providesSpeed.get()) {
+                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, tick * GarnishedConfigs.server().block.speedDuration.get(), GarnishedConfigs.server().block.speedAmplifier.get()));
             }
 
         }
@@ -86,6 +86,9 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
     public static class Wyvern {
 
         public static void getParticles(BlockState state, Level level, BlockPos pos, RandomSource random) {
+            if (!GarnishedConfigs.client().wyvernStoneParticles.get())
+                return;
+
             for(int i = 0; i < 8; ++i) {
                 double d0 = (double) pos.getX() + random.nextDouble();
                 double d1 = (double) pos.getY() + random.nextDouble();
@@ -111,38 +114,40 @@ public class SpecialEffectsBlock implements IGarnishedUtilities {
             int effect_list = random.nextInt(10);
             int effect_trigger = random.nextInt(6);
 
+            if (!GarnishedConfigs.server().block.providesRandomEffects.get())
+                return;
+
             if (entity instanceof LivingEntity living && !level.isClientSide) {
 
                 if (effect_trigger == 1 && effect_list >= 0 && effect_list <= 10) {
                     switch (effect_list) {
-                        case 0 -> applyEffectIfNotPresent(living, MobEffects.LUCK);
-                        case 1 -> applyEffectIfNotPresent(living, MobEffects.MOVEMENT_SPEED);
-                        case 2 -> applyEffectIfNotPresent(living, MobEffects.JUMP);
-                        case 3 -> applyEffectIfNotPresent(living, MobEffects.DAMAGE_RESISTANCE);
-                        case 4 -> applyEffectIfNotPresent(living, MobEffects.REGENERATION);
-                        case 5 -> applyEffectIfNotPresent(living, MobEffects.GLOWING);
-                        case 6 -> applyEffectIfNotPresent(living, MobEffects.DAMAGE_BOOST);
-                        case 7 -> applyEffectIfNotPresent(living, MobEffects.DIG_SPEED);
-                        case 8 -> applyEffectIfNotPresent(living, MobEffects.FIRE_RESISTANCE);
-                        case 9 -> applyEffectIfNotPresent(living, MobEffects.NIGHT_VISION);
-                        case 10 -> applyEffectIfNotPresent(living, MobEffects.INVISIBILITY);
+                        case 0 -> applyEffectIfNotPresent(living, MobEffects.LUCK, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 1 -> applyEffectIfNotPresent(living, MobEffects.MOVEMENT_SPEED, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 2 -> applyEffectIfNotPresent(living, MobEffects.JUMP, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 3 -> applyEffectIfNotPresent(living, MobEffects.DAMAGE_RESISTANCE, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 4 -> applyEffectIfNotPresent(living, MobEffects.REGENERATION, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 5 -> applyEffectIfNotPresent(living, MobEffects.GLOWING, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 6 -> applyEffectIfNotPresent(living, MobEffects.DAMAGE_BOOST, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 7 -> applyEffectIfNotPresent(living, MobEffects.DIG_SPEED, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 8 -> applyEffectIfNotPresent(living, MobEffects.FIRE_RESISTANCE, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 9 -> applyEffectIfNotPresent(living, MobEffects.NIGHT_VISION, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
+                        case 10 -> applyEffectIfNotPresent(living, MobEffects.INVISIBILITY, GarnishedConfigs.server().block.effectsDuration.get(), GarnishedConfigs.server().block.effectsAmplifier.get());
                         default -> throw new IllegalStateException("Unexpected value: " + effect_list);
                     }
-                }
-
-                if (living.getBlockStateOn().is(GarnishedPaletteStoneTypes.DRAGON_STONE.getBlock().get())) {
-                    //System.out.println("Value provided from the mathematical equation, random.nextInt(10): " + effect_list);
-                    //System.out.println("Value provided from the mathematical equation, random.nextInt(6): " + effect_trigger);
                 }
             }
 
         }
 
         private static void applyEffectIfNotPresent(LivingEntity living, Holder<MobEffect> effect) {
-            if (living.hasEffect(effect)) {
-            } else {
-                living.addEffect(new MobEffectInstance(effect, tick * 15, 0));
-            }
+            applyEffectIfNotPresent(living, effect, tick * 15, 0);
+        }
+
+        private static void applyEffectIfNotPresent(LivingEntity living, Holder<MobEffect> effect, int durationSeconds, int amplifier) {
+            if (living.hasEffect(effect))
+                return;
+
+            living.addEffect(new MobEffectInstance(effect, tick * durationSeconds, amplifier));
         }
     }
 }

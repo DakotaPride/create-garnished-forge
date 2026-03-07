@@ -16,6 +16,7 @@
   "text.garnished.conditional_effect.from_bad_omen_conditions.present": "If Bad Omen is present:",
   "text.garnished.conditional_effect.from_flame": "If the player is on fire:",
   "text.garnished.conditional_effect.cryptic_apple_cider": " Can inflict either Strength or Slowness",
+  "text.garnished.conditional_effect.config_disabled": "Conditional Effects disabled in Server Config",
   "text.garnished.senile_sweet.brew_potion": "Can be used to brew Potions of %s",
   "text.garnished.hold_shift": "Hold [§7Shift§8] for Summary",
   "text.garnished.holding_shift": "Hold [§fShift§8] for Summary",

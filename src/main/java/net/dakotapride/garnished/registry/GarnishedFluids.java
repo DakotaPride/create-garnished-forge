@@ -9,6 +9,7 @@ import com.tterrag.registrate.builders.FluidBuilder;
 import com.tterrag.registrate.util.entry.FluidEntry;
 import net.createmod.catnip.theme.Color;
 import net.dakotapride.garnished.CreateGarnished;
+import net.dakotapride.garnished.fluid.GarnishedFlowingFluid;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
@@ -50,7 +51,7 @@ public class GarnishedFluids implements Fluids {
 							.tickRate(25)
 							.slopeFindDistance(3)
 							.explosionResistance(100f))
-					.source(BaseFlowingFluid.Source::new)
+					.source((properties) -> new GarnishedFlowingFluid.Source(properties, GarnishedGamerules.RULE_LIQUID_GARNISH_SOURCE_CONVERSION))
 					.bucket()
 					.tag(AllTags.commonItemTag("buckets/garnish"))
 					.build()
@@ -65,7 +66,7 @@ public class GarnishedFluids implements Fluids {
 							.tickRate(25)
 							.slopeFindDistance(3)
 							.explosionResistance(100f))
-					.source(BaseFlowingFluid.Source::new)
+					.source((properties) -> new GarnishedFlowingFluid.Source(properties, GarnishedGamerules.RULE_APPLE_CIDER_SOURCE_CONVERSION))
 					.bucket()
 					.tag(AllTags.commonItemTag("buckets/apple_cider"))
 					.build()
@@ -80,7 +81,7 @@ public class GarnishedFluids implements Fluids {
 							.tickRate(25)
 							.slopeFindDistance(3)
 							.explosionResistance(100f))
-					.source(BaseFlowingFluid.Source::new)
+					.source((properties) -> new GarnishedFlowingFluid.Source(properties, GarnishedGamerules.RULE_PEANUT_OIL_SOURCE_CONVERSION))
 					.bucket()
 					.tag(AllTags.commonItemTag("buckets/peanut_oil"))
 					.build()
@@ -95,7 +96,7 @@ public class GarnishedFluids implements Fluids {
 							.tickRate(25)
 							.slopeFindDistance(3)
 							.explosionResistance(100f))
-					.source(BaseFlowingFluid.Source::new)
+					.source((properties) -> new GarnishedFlowingFluid.Source(properties, GarnishedGamerules.RULE_CASHEW_MIXTURE_SOURCE_CONVERSION))
 					.bucket()
 					.tag(AllTags.commonItemTag("buckets/cashew_mixture"))
 					.build()
@@ -110,7 +111,7 @@ public class GarnishedFluids implements Fluids {
 						.tickRate(25)
 						.slopeFindDistance(3)
 						.explosionResistance(100f))
-				.source(BaseFlowingFluid.Source::new)
+				.source((properties) -> new GarnishedFlowingFluid.Source(properties, GarnishedGamerules.RULE_MASTIC_FLUIDS_SOURCE_CONVERSION))
 				.bucket()
 				.tag(AllTags.commonItemTag("buckets/mastic_resin"))
 				.build()
@@ -147,7 +148,7 @@ public class GarnishedFluids implements Fluids {
 							.explosionResistance(100f))
 					// Currently brokek
 					//.block((NonNullSupplier<? extends BaseFlowingFluid.Flowing> pProperties, BlockBehaviour.Properties pProperties2) -> new DragonBreathFluidBlock(pProperties2)).build()
-					.source(BaseFlowingFluid.Source::new)
+					.source((properties) -> new GarnishedFlowingFluid.Source(properties, GarnishedGamerules.RULE_DRAGON_BREATH_SOURCE_CONVERSION))
 					.bucket()
 					.tag(AllTags.commonItemTag("buckets/dragon_breath"))
 					.build()
@@ -163,7 +164,7 @@ public class GarnishedFluids implements Fluids {
 							.tickRate(25)
 							.slopeFindDistance(3)
 							.explosionResistance(100f))
-					.source(BaseFlowingFluid.Source::new)
+					.source((properties) -> new GarnishedFlowingFluid.Source(properties, GarnishedGamerules.RULE_SWEET_TEA_SOURCE_CONVERSION))
 					// Replicate Create mod's tea fluid to not have a bucket
 					.bucket()
 					.tag(AllTags.commonItemTag("buckets/sweet_tea"))

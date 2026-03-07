@@ -15,6 +15,12 @@
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "garnished:config_filter"
+    },
+    {
+      "type": "garnished:pansophical_daisy_config_filter"
     }
   ]
 }

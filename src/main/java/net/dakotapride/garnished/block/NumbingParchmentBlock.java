@@ -1,5 +1,6 @@
 package net.dakotapride.garnished.block;
 
+import net.dakotapride.garnished.GarnishedConfigs;
 import net.dakotapride.garnished.item.IGarnishedUtilities;
 import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.dakotapride.garnished.registry.GarnishedTags;
@@ -25,12 +26,15 @@ public class NumbingParchmentBlock extends Block implements IGarnishedUtilities 
 
     @Override
     public void stepOn(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Entity entity) {
+        if (!GarnishedConfigs.server().block.providesSlowness.get())
+            return;
+
         if (entity instanceof LivingEntity living && !(living instanceof Stray || living instanceof PolarBear) && !living.isSteppingCarefully()) {
             if (EnchantmentHelper.hasTag(living.getItemBySlot(EquipmentSlot.FEET), GarnishedTags.FROST_WALKER)) {
                 living.addEffect(new MobEffectInstance(GarnishedEffects.FREEZING, tick * 12, 0));
                 living.setTicksFrozen(tick * 15);
             } else {
-                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, tick * 6, 1));
+                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, tick * GarnishedConfigs.server().block.slownessDuration.get(), GarnishedConfigs.server().block.slownessAmplifier.get()));
             }
         }
     }
@@ -42,12 +46,15 @@ public class NumbingParchmentBlock extends Block implements IGarnishedUtilities 
 
         @Override
         public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
+            if (!GarnishedConfigs.server().block.providesSlowness.get())
+                return;
+
             if (entity instanceof LivingEntity living && !(living instanceof Stray || living instanceof PolarBear) && !living.isSteppingCarefully()) {
                 if (EnchantmentHelper.hasTag(living.getItemBySlot(EquipmentSlot.FEET), GarnishedTags.FROST_WALKER)) {
                     living.addEffect(new MobEffectInstance(GarnishedEffects.FREEZING, tick * 12, 0));
                     living.setTicksFrozen(tick * 15);
                 } else {
-                    living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, tick * 6, 1));
+                    living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, tick * GarnishedConfigs.server().block.slownessDuration.get(), GarnishedConfigs.server().block.slownessAmplifier.get()));
                 }
             }
         }

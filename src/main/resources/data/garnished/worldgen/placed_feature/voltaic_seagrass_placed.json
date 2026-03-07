@@ -14,6 +14,12 @@
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "garnished:config_filter"
+    },
+    {
+      "type": "garnished:voltaic_sea_grass_config_filter"
     }
   ]
 }

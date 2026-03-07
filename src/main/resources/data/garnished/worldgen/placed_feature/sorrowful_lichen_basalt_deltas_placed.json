@@ -31,6 +31,12 @@
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "garnished:config_filter"
+    },
+    {
+      "type": "garnished:sorrowful_lichen_config_filter"
     }
   ]
 }

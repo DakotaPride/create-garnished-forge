@@ -2,12 +2,10 @@ package net.dakotapride.garnished.item;
 
 import net.dakotapride.garnished.CreateGarnished;
 import net.dakotapride.garnished.registry.GarnishedEffects;
-import net.dakotapride.garnished.registry.GarnishedFoodValues;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.util.Mth;
 import net.minecraft.util.StringUtil;
 import net.minecraft.world.effect.MobEffect;

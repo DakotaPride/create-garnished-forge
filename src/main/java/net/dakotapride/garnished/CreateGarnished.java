@@ -34,6 +34,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -84,6 +85,7 @@ public class CreateGarnished {
     }
 
     public CreateGarnished(IEventBus eventBus, ModContainer modContainer) {
+        ModLoadingContext modLoadingContext = ModLoadingContext.get();
 
         //GarnishedEntities.ENTITIES.register(eventBus);
         GarnishedEntities.register(eventBus);
@@ -120,6 +122,10 @@ public class CreateGarnished {
         eventBus.addListener(this::enqueueIMC);
         // Register the processIMC method for modloading
         eventBus.addListener(this::processIMC);
+
+        GarnishedPlacementModifiers.register(eventBus);
+
+        GarnishedConfigs.register(modLoadingContext, modContainer);
 
         // Register ourselves for server and other game events we are interested in
         NeoForge.EVENT_BUS.register(this);

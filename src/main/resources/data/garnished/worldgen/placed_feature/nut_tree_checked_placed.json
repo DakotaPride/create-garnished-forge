@@ -28,6 +28,12 @@
           }
         ]
       }
+    },
+    {
+      "type": "garnished:config_filter"
+    },
+    {
+      "type": "garnished:nut_tree_config_filter"
     }
   ]
 }

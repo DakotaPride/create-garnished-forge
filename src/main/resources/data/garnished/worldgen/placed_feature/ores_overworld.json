@@ -21,7 +21,10 @@
       }
     },
     {
-      "type": "create:config_filter"
+      "type": "garnished:config_filter"
+    },
+    {
+      "type": "garnished:ritualistic_stone_config_filter"
     }
   ]
 }

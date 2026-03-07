@@ -24,6 +24,7 @@ public class GarnishedTags {
 	public static final TagKey<Item> ENDER_DUSTS_TAG = commonTag("ender_dusts", Registries.ITEM);
 	public static final TagKey<Block> FAN_FREEZING_PROCESSING_TAG = garnishedTag("fan_processing_catalysts/freezing", Registries.BLOCK);
 	public static final TagKey<Fluid> FAN_FREEZING_PROCESSING_FLUID_TAG = garnishedTag("fan_processing_catalysts/freezing", Registries.FLUID);
+	public static final TagKey<Fluid> LIQUEFIED_MASTIC_RESIN_FLUID_TAG = garnishedTag("mastic_resin", Registries.FLUID);
 
 	public static final TagKey<Fluid> FAN_RED_PROCESSING_FLUID_TAG = garnishedTag("fan_processing_catalysts/dye/red", Registries.FLUID);
 	public static final TagKey<Fluid> FAN_ORANGE_PROCESSING_FLUID_TAG = garnishedTag("fan_processing_catalysts/dye/orange", Registries.FLUID);

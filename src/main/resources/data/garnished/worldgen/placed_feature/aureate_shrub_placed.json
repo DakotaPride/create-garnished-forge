@@ -15,6 +15,12 @@
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "garnished:config_filter"
+    },
+    {
+      "type": "garnished:aureate_shrub_config_filter"
     }
   ]
 }
