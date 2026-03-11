@@ -2,6 +2,7 @@ package net.dakotapride.garnished.block.cake;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import net.dakotapride.garnished.GarnishedConfigs;
 import net.dakotapride.garnished.registry.GarnishedBlocks;
 import net.dakotapride.garnished.registry.GarnishedItems;
 import net.minecraft.client.Minecraft;
@@ -21,6 +22,9 @@ public class AnniversaryCakeBlockRenderer implements BlockEntityRenderer<Anniver
     @Override
     public void render(AnniversaryCakeBlockEntity blockEntity, float tick, @NotNull PoseStack poseStack,
                        @NotNull MultiBufferSource buffer, int light, int overlay) {
+        if (!GarnishedConfigs.client().renderNutsOnAnniversaryCakeInWorld.get())
+            return;
+
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
 
         ItemStack topper = GarnishedItems.NUT_MIX.get().asItem().getDefaultInstance();
