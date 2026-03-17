@@ -1,5 +1,7 @@
 package net.dakotapride.garnished.item;
 
+import net.dakotapride.garnished.CreateGarnished;
+import net.dakotapride.garnished.GarnishedConfigs;
 import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -12,6 +14,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -26,15 +32,19 @@ public class ConditionalEffectItem extends Item implements IGarnishedUtilities {
         this.chance = chance;
     }
 
+	public int getValue() {
+		return value;
+	}
+
+	public float getChance() {
+		return chance;
+	}
+
     @Override
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level world, @NotNull LivingEntity entity) {
         Player playerentity = entity instanceof Player ? (Player) entity : null;
         if (playerentity instanceof ServerPlayer)
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) playerentity, stack);
-
-        if (!world.isClientSide)
-			triggerConditionalEffect(value, chance, entity);
-            //entity.addEffect(triggerConditionalEffect(value, chance));
 
         return super.finishUsingItem(stack, world, entity);
     }

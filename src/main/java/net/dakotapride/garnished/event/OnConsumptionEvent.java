@@ -1,5 +1,7 @@
 package net.dakotapride.garnished.event;
 
+import net.dakotapride.garnished.GarnishedConfigs;
+import net.dakotapride.garnished.item.ConditionalEffectItem;
 import net.dakotapride.garnished.registry.GarnishedDamageSource;
 import net.dakotapride.garnished.registry.GarnishedEffects;
 import net.dakotapride.garnished.registry.GarnishedItems;
@@ -9,6 +11,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
@@ -33,5 +36,10 @@ public class OnConsumptionEvent {
         if (activeItem.is(GarnishedItems.MUD_PIE.get())) {
             entity.hurt(level.damageSources().source(GarnishedDamageSource.MULCH_MUNCHING), 1.0F);
         }
+
+
+        if (GarnishedConfigs.server().item.conditionalEffectsUponConsumption.get()
+                && activeItem.getItem() instanceof ConditionalEffectItem conditionalEffectItem)
+            conditionalEffectItem.triggerConditionalEffect(conditionalEffectItem.getValue(), conditionalEffectItem.getChance(), entity);
     }
 }
