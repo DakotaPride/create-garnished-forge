@@ -51,6 +51,10 @@ public class ConditionalEffectItem extends Item implements IGarnishedUtilities {
 
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+		if (!GarnishedConfigs.server().item.conditionalEffectsUponConsumption.get()) {
+			tooltip.add(Component.translatable("text.garnished.conditional_effect.config_disabled").withStyle(ChatFormatting.RED));
+			tooltip.add(Component.literal(""));
+		}
 
 		if (value == 0) {
 			tooltip.add(Component.literal(""));
