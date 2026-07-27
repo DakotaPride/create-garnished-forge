@@ -1,6 +1,8 @@
 package net.dakotapride.creategarnished.event;
 
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.entity.bucketfish.BucketFishEntity;
+import net.dakotapride.creategarnished.entity.bucketfish.client.BucketFishModel;
 import net.dakotapride.creategarnished.entity.squirrel.SquirrelEntity;
 import net.dakotapride.creategarnished.entity.squirrel.client.SquirrelModel;
 import net.dakotapride.creategarnished.entity.voltfish.VoltfishEntity;
@@ -22,12 +24,14 @@ public class CreateGarnishedMobCreationEvents {
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(VoltfishModel.LAYER_LOCATION, VoltfishModel::createBodyLayer);
         event.registerLayerDefinition(SquirrelModel.LAYER_LOCATION, SquirrelModel::createBodyLayer);
+        event.registerLayerDefinition(BucketFishModel.LAYER_LOCATION, BucketFishModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(CreateGarnishedEntityTypes.VOLTFISH.get(), VoltfishEntity.createAttributes().build());
         event.put(CreateGarnishedEntityTypes.SQUIRREL.get(), SquirrelEntity.createAttributes().build());
+        event.put(CreateGarnishedEntityTypes.BUCKETFISH.get(), BucketFishEntity.createAttributes().build());
     }
 
     @SubscribeEvent

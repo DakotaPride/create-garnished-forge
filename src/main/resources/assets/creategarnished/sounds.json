@@ -4,5 +4,17 @@
       "creategarnished:candy_wrapper_wrinkles"
     ],
     "subtitle": "subtitle.creategarnished.candy_wrapper_wrinkles"
+  },
+  "squirrel_hurt": {
+    "sounds": [
+      "minecraft:entity.panda.hurt"
+    ],
+    "subtitle": "subtitle.creategarnished.squirrel_hurt"
+  },
+  "squirrel_death": {
+    "sounds": [
+      "minecraft:entity.panda.death"
+    ],
+    "subtitle": "subtitle.creategarnished.squirrel_death"
   }
 }

@@ -1,9 +1,6 @@
 package net.dakotapride.creategarnished.entity.squirrel;
 
-import net.dakotapride.creategarnished.registry.CreateGarnishedConfigs;
-import net.dakotapride.creategarnished.registry.CreateGarnishedEntityTypes;
-import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
-import net.dakotapride.creategarnished.registry.CreateGarnishedTags;
+import net.dakotapride.creategarnished.registry.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.SectionPos;
@@ -342,12 +339,12 @@ public class SquirrelEntity extends TamableAnimal implements VariantHolder<Squir
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return SoundEvents.PANDA_HURT;
+        return CreateGarnishedSounds.SQUIRREL_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return SoundEvents.PANDA_DEATH;
+        return CreateGarnishedSounds.SQUIRREL_DEATH.get();
     }
 
     @Override

@@ -234,7 +234,9 @@
 
   "item.minecraft.tipped_arrow.effect.nut_allergy": "Contaminated Arrow of Nut Allergen",
 
-  "subtitle.creategarnished.candy_wrapper_wrinkles": "Candy Wrapper Wrinkling",
+  "subtitle.creategarnished.candy_wrapper_wrinkles": "Candy wrapper wrinkling",
+  "subtitle.creategarnished.squirrel_hurt": "Squirrel hurts",
+  "subtitle.creategarnished.squirrel_death": "Squirrel dies",
 
 
   "itemGroup.creategarnished.tab": "Create: Garnished",

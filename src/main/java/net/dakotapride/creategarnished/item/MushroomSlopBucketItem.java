@@ -7,8 +7,11 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.NotNull;
 
@@ -29,10 +32,9 @@ public class MushroomSlopBucketItem extends BucketItem {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        HitResult hit = player.pick(player.getAttributeValue(Attributes.BLOCK_INTERACTION_RANGE), 0.0F, false);
-
-        if (hit.getType() != HitResult.Type.BLOCK) {
+        BlockHitResult blockhitresult = getPlayerPOVHitResult(level, player, this.content == Fluids.EMPTY ? ClipContext.Fluid.SOURCE_ONLY : ClipContext.Fluid.NONE);
+        if (blockhitresult.getType() == HitResult.Type.MISS)
             return ItemUtils.startUsingInstantly(level, player, hand);
-        } else return super.use(level, player, hand);
+        else return super.use(level, player, hand);
     }
 }

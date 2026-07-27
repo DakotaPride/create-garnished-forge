@@ -1,6 +1,7 @@
 package net.dakotapride.creategarnished.registry;
 
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.dakotapride.creategarnished.entity.bucketfish.BucketFishEntity;
 import net.dakotapride.creategarnished.entity.squirrel.SquirrelEntity;
 import net.dakotapride.creategarnished.entity.voltfish.VoltfishEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -20,6 +21,9 @@ public class CreateGarnishedEntityTypes {
     public static final Supplier<EntityType<SquirrelEntity>> SQUIRREL = ENTITY_TYPES.register("squirrel",
             () -> EntityType.Builder.of(SquirrelEntity::new, MobCategory.CREATURE)
                     .sized(0.5F, 0.2F).eyeHeight(0.05F).build("squirrel"));
+    public static final Supplier<EntityType<BucketFishEntity>> BUCKETFISH = ENTITY_TYPES.register("bucketfish",
+            () -> EntityType.Builder.of(BucketFishEntity::new, MobCategory.WATER_CREATURE)
+                    .sized(0.5F, 0.65F).eyeHeight(0.4F).build("bucketfish"));
 
     public static void register(IEventBus bus) {
         ENTITY_TYPES.register(bus);

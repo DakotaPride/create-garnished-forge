@@ -13,6 +13,8 @@ public class CreateGarnishedSounds {
             DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, CreateGarnished.ID);
 
     public static final DeferredHolder<SoundEvent, SoundEvent> CANDY_WRAPPER_WRINKLES = registerSoundEvent("candy_wrapper_wrinkles");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SQUIRREL_HURT = registerSoundEvent("squirrel_hurt");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SQUIRREL_DEATH = registerSoundEvent("squirrel_death");
 
     private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(CreateGarnished.ID, name);
