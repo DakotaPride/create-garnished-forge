@@ -1,0 +1,23 @@
+{
+  "type": "garnished:freezing",
+  "ingredients": [
+    {
+      "item": "garnished:mastic_paste_cyan"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:cyan_dye"
+      },
+      "count": 2
+    },
+    {
+      "chance": 0.25,
+      "item": {
+        "id": "minecraft:cyan_dye"
+      },
+      "count": 1
+    }
+  ]
+}

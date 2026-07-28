@@ -1,0 +1,23 @@
+{
+  "type": "garnished:freezing",
+  "ingredients": [
+    {
+      "item": "garnished:mastic_paste_lime"
+    }
+  ],
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:lime_dye"
+      },
+      "count": 2
+    },
+    {
+      "chance": 0.25,
+      "item": {
+        "id": "minecraft:lime_dye"
+      },
+      "count": 1
+    }
+  ]
+}
