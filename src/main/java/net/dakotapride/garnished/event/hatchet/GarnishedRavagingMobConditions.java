@@ -107,7 +107,7 @@ public class GarnishedRavagingMobConditions extends MobConditions {
 
         if (fitWithinBounds(50))
             createBasicRavagingDropConditions(entity, EntityType.MAGMA_CUBE, attacker, Items.MAGMA_CREAM, 3, 12.5F);
-        else createBasicSalvagingDropConditions(entity, EntityType.MAGMA_CUBE, attacker, GarnishedItems.MOLTEN_REMNANT.get(), 2, 8.3F);
+        else createBasicRavagingDropConditions(entity, EntityType.MAGMA_CUBE, attacker, GarnishedItems.MOLTEN_REMNANT.get(), 2, 8.3F);
     }
 
     private static void createPiglinDropConditions(LivingEntity entity, LivingEntity attacker) {

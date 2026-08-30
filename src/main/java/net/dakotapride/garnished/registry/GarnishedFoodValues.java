@@ -168,6 +168,7 @@ public enum GarnishedFoodValues implements IGarnishedUtilities {
     public static final FoodProperties CHILLED_APPLE = generic(5, 0.40f).build(); // 50% chance of occurring
     public static final FoodProperties RAW_POLAR_BEAR_MEAT = generic(5, 0.20f).build(); // 5% chance of occurring
     public static final FoodProperties COOKED_POLAR_BEAR_MEAT = ow_max().build(); // 35% chance of occurring
+    public static final FoodProperties MASTICK = generic(OVERWORLD_MIN.nutrition * 2, OVERWORLD_MIN.saturation * 2).build(); // 100% chance of occurring
     // TECHNICALLY, does not qualify as they don't actually contain any ingredients from snowy biomes
     public static final FoodProperties EXPLORERS_CONCOCTION = ow_max().build();
     // Generic "desert" foods - no not dessert you fuck

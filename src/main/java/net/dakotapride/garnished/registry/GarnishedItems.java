@@ -788,6 +788,10 @@ public class GarnishedItems {
 	public static final ItemEntry<BoardedPulpFoodItem> BOARDED_PULP =
 			REGISTRATE.item("boarded_pulp", BoardedPulpFoodItem::new).register();
 
+	// Post Update 6
+	public static final ItemEntry<MaStickFoodItem> MASTICK =
+			REGISTRATE.item("mastick", MaStickFoodItem::new).register();
+
 	// Farmer's Delight Items
 	public static final ItemEntry<PecanPieSliceFoodItem> PECAN_PIE_SLICE =
 			REGISTRATE.item("pecan_pie_slice", PecanPieSliceFoodItem::new).register();

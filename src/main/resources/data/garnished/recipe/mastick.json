@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " FX",
+    " XF",
+    "S  "
+  ],
+  "key": {
+    "X": {
+      "tag": "garnished:mastic_resin"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "F": {
+      "item": "garnished:frost"
+    }
+  },
+  "result": {
+    "id": "garnished:mastick",
+    "count": 1
+  }
+}
