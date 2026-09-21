@@ -6,15 +6,14 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import net.dakotapride.creategarnished.CreateGarnished;
 import net.dakotapride.creategarnished.block.GingerbreadCookieBlock;
 import net.dakotapride.creategarnished.item.*;
-import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.PotionContents;
+import net.minecraft.world.item.component.CustomData;
 
 import java.util.Locale;
 
@@ -324,6 +323,69 @@ public class CreateGarnishedItems {
         private static void furretWalk() {}
     }
 
+    public enum BucketfishTypes {
+        RED(0),
+        ORANGE(1),
+        YELLOW(2),
+        GREEN(3),
+        LIME(4),
+        BLUE(5),
+        LIGHT_BLUE(6),
+        CYAN(7),
+        PURPLE(8),
+        MAGENTA(9),
+        PINK(10),
+        BLACK(11),
+        GRAY(12),
+        LIGHT_GRAY(13),
+        WHITE(14),
+        BROWN(15),
+        BASIC(16),
+
+        ;
+
+        final int id;
+
+        final ItemEntry<BucketfishBucketItem> bucketItem;
+        final ItemEntry<Item> jellyItem;
+
+        BucketfishTypes(int id) {
+            this.id = id;
+            if (id < 15) {
+                this.bucketItem = CreateGarnished.REGISTRATE.item("bucket_of_" + name().toLowerCase(Locale.ROOT) + "_bucketfish",
+                        properties -> new BucketfishBucketItem(properties.stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY))).register();
+                this.jellyItem = CreateGarnished.REGISTRATE.item(name().toLowerCase(Locale.ROOT) + "_bucketfish_jelly",
+                        properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.2F).build()))).register();
+            } else {
+                this.bucketItem = CreateGarnished.REGISTRATE.item("bucket_of_bucketfish",
+                        properties -> new BucketfishBucketItem(properties.stacksTo(1).component(DataComponents.BUCKET_ENTITY_DATA, CustomData.EMPTY))).register();
+                this.jellyItem = CreateGarnished.REGISTRATE.item("bucketfish_jelly",
+                        properties -> new Item(properties.food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.2F).build()))).register();
+            }
+        }
+
+        public ItemEntry<BucketfishBucketItem> getBucketItem() {
+            return bucketItem;
+        }
+
+        public ItemEntry<Item> getJellyItem() {
+            return jellyItem;
+        }
+
+        public Item bucketAsItem() {
+            return bucketItem.asItem();
+        }
+
+        public Item jellyAsItem() {
+            return jellyItem.asItem();
+        }
+
+        public int getId() {
+            return id;
+        }
+        private static void furretWalk() {}
+    }
+
     public static final ItemEntry<SpawnEggItem> VOLTFISH_SPAWN_EGG = CreateGarnished.REGISTRATE.item("voltfish_spawn_egg",
             properties -> new SpawnEggItem(CreateGarnishedEntityTypes.VOLTFISH.get(),
                     0x7C6496, 0x291B38, properties)).register();
@@ -333,6 +395,7 @@ public class CreateGarnishedItems {
 
     public static void register() {
         GingerbreadCookieTypes.furretWalk();
+        BucketfishTypes.furretWalk();
     }
 
 }

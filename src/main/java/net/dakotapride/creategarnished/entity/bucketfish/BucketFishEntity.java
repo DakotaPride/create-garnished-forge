@@ -1,7 +1,8 @@
 package net.dakotapride.creategarnished.entity.bucketfish;
 
-import it.unimi.dsi.fastutil.doubles.DoubleDoubleImmutablePair;
+import net.dakotapride.creategarnished.registry.CreateGarnishedItems;
 import net.minecraft.Util;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -13,12 +14,17 @@ import net.minecraft.util.ByIdMap;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.animal.AbstractFish;
-import net.minecraft.world.entity.animal.axolotl.Axolotl;
-import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.animal.Bucketable;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShearsItem;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.function.IntFunction;
 
-public class BucketFishEntity extends AbstractFish implements VariantHolder<BucketFishEntity.Type> {
+public class BucketFishEntity extends AbstractFish implements VariantHolder<BucketFishEntity.Type>, Bucketable {
     private static final EntityDataAccessor<Integer> DATA_TYPE_ID = SynchedEntityData.defineId(BucketFishEntity.class, EntityDataSerializers.INT);
 
     public final AnimationState idleAnimationState = new AnimationState();
@@ -37,13 +43,69 @@ public class BucketFishEntity extends AbstractFish implements VariantHolder<Buck
     }
 
     @Override
+    public void saveToBucketTag(ItemStack stack) {
+        super.saveToBucketTag(stack);
+        CustomData.update(DataComponents.BUCKET_ENTITY_DATA, stack,
+                compoundTag -> compoundTag.putString("Type", this.getVariant().getName()));
+    }
+
+    @Override
     protected @NotNull SoundEvent getFlopSound() {
         return SoundEvents.SALMON_FLOP;
     }
 
     @Override
     public @NotNull ItemStack getBucketItemStack() {
-        return null;
+        ItemStack stack;
+        switch (this.getVariant()) {
+            case RED -> stack = CreateGarnishedItems.BucketfishTypes.RED.bucketAsItem().getDefaultInstance();
+            case ORANGE -> stack = CreateGarnishedItems.BucketfishTypes.ORANGE.bucketAsItem().getDefaultInstance();
+            case YELLOW -> stack = CreateGarnishedItems.BucketfishTypes.YELLOW.bucketAsItem().getDefaultInstance();
+            case GREEN -> stack = CreateGarnishedItems.BucketfishTypes.GREEN.bucketAsItem().getDefaultInstance();
+            case LIME -> stack = CreateGarnishedItems.BucketfishTypes.LIME.bucketAsItem().getDefaultInstance();
+            case BLUE -> stack = CreateGarnishedItems.BucketfishTypes.BLUE.bucketAsItem().getDefaultInstance();
+            case LIGHT_BLUE -> stack = CreateGarnishedItems.BucketfishTypes.LIGHT_BLUE.bucketAsItem().getDefaultInstance();
+            case CYAN -> stack = CreateGarnishedItems.BucketfishTypes.CYAN.bucketAsItem().getDefaultInstance();
+            case PURPLE -> stack = CreateGarnishedItems.BucketfishTypes.PURPLE.bucketAsItem().getDefaultInstance();
+            case MAGENTA -> stack = CreateGarnishedItems.BucketfishTypes.MAGENTA.bucketAsItem().getDefaultInstance();
+            case PINK -> stack = CreateGarnishedItems.BucketfishTypes.PINK.bucketAsItem().getDefaultInstance();
+            case BLACK -> stack = CreateGarnishedItems.BucketfishTypes.BLACK.bucketAsItem().getDefaultInstance();
+            case GRAY -> stack = CreateGarnishedItems.BucketfishTypes.GRAY.bucketAsItem().getDefaultInstance();
+            case LIGHT_GRAY -> stack = CreateGarnishedItems.BucketfishTypes.LIGHT_GRAY.bucketAsItem().getDefaultInstance();
+            case WHITE -> stack = CreateGarnishedItems.BucketfishTypes.WHITE.bucketAsItem().getDefaultInstance();
+            case BROWN -> stack = CreateGarnishedItems.BucketfishTypes.BROWN.bucketAsItem().getDefaultInstance();
+            default -> stack = CreateGarnishedItems.BucketfishTypes.BASIC.bucketAsItem().getDefaultInstance();
+        }
+
+        CustomData.update(DataComponents.BUCKET_ENTITY_DATA, stack,
+                compoundTag -> compoundTag.putString("Type", this.getVariant().getName()));
+
+        return stack;
+    }
+
+    public @NotNull ItemStack getJellyItem() {
+        ItemStack stack;
+        switch (this.getVariant()) {
+            case RED -> stack = CreateGarnishedItems.BucketfishTypes.RED.jellyAsItem().getDefaultInstance();
+            case ORANGE -> stack = CreateGarnishedItems.BucketfishTypes.ORANGE.jellyAsItem().getDefaultInstance();
+            case YELLOW -> stack = CreateGarnishedItems.BucketfishTypes.YELLOW.jellyAsItem().getDefaultInstance();
+            case GREEN -> stack = CreateGarnishedItems.BucketfishTypes.GREEN.jellyAsItem().getDefaultInstance();
+            case LIME -> stack = CreateGarnishedItems.BucketfishTypes.LIME.jellyAsItem().getDefaultInstance();
+            case BLUE -> stack = CreateGarnishedItems.BucketfishTypes.BLUE.jellyAsItem().getDefaultInstance();
+            case LIGHT_BLUE -> stack = CreateGarnishedItems.BucketfishTypes.LIGHT_BLUE.jellyAsItem().getDefaultInstance();
+            case CYAN -> stack = CreateGarnishedItems.BucketfishTypes.CYAN.jellyAsItem().getDefaultInstance();
+            case PURPLE -> stack = CreateGarnishedItems.BucketfishTypes.PURPLE.jellyAsItem().getDefaultInstance();
+            case MAGENTA -> stack = CreateGarnishedItems.BucketfishTypes.MAGENTA.jellyAsItem().getDefaultInstance();
+            case PINK -> stack = CreateGarnishedItems.BucketfishTypes.PINK.jellyAsItem().getDefaultInstance();
+            case BLACK -> stack = CreateGarnishedItems.BucketfishTypes.BLACK.jellyAsItem().getDefaultInstance();
+            case GRAY -> stack = CreateGarnishedItems.BucketfishTypes.GRAY.jellyAsItem().getDefaultInstance();
+            case LIGHT_GRAY -> stack = CreateGarnishedItems.BucketfishTypes.LIGHT_GRAY.jellyAsItem().getDefaultInstance();
+            case WHITE -> stack = CreateGarnishedItems.BucketfishTypes.WHITE.jellyAsItem().getDefaultInstance();
+            case BROWN -> stack = CreateGarnishedItems.BucketfishTypes.BROWN.jellyAsItem().getDefaultInstance();
+            default -> stack = CreateGarnishedItems.BucketfishTypes.BASIC.jellyAsItem().getDefaultInstance();
+        }
+
+        return stack;
     }
 
     @Override
@@ -55,8 +117,9 @@ public class BucketFishEntity extends AbstractFish implements VariantHolder<Buck
 
                 this.knockback(0.8F, d0, d1);
             }
+            return false;
         }
-        return false;
+        return super.hurt(source, amount);
     }
 
     @Override
@@ -89,6 +152,17 @@ public class BucketFishEntity extends AbstractFish implements VariantHolder<Buck
 
             return super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
         }
+    }
+
+    @Override
+    protected InteractionResult mobInteract(Player player, InteractionHand hand) {
+        if (player.getItemInHand(hand).getItem() instanceof ShearsItem && !player.getCooldowns().isOnCooldown(player.getItemInHand(hand).getItem())) {
+            this.level().addFreshEntity(new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), this.getJellyItem()));
+            this.playSound(SoundEvents.HONEY_BLOCK_STEP, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            player.getCooldowns().addCooldown(player.getItemInHand(hand).getItem(), 20);
+            return InteractionResult.SUCCESS;
+        }
+        return super.mobInteract(player, hand);
     }
 
     private void setupAnimationStates() {

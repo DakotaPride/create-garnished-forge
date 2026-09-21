@@ -1,14 +1,18 @@
 package net.dakotapride.creategarnished.registry;
 
 import net.dakotapride.creategarnished.CreateGarnished;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.CustomData;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Locale;
 
 //@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class CreateGarnishedCreativeModeTabs {
@@ -117,11 +121,22 @@ public class CreateGarnishedCreativeModeTabs {
             output.accept(CreateGarnishedItems.CANDY_CANE);
             output.accept(CreateGarnishedItems.GUMDROPS);
 
+            for (CreateGarnishedItems.BucketfishTypes bucketfishTypes : CreateGarnishedItems.BucketfishTypes.values()) {
+                output.accept(bucketfishTypes.getJellyItem());
+            }
+
             output.accept(CreateGarnishedItems.SPRINTERS_TEA);
             output.accept(CreateGarnishedItems.SWEET_TEA);
             output.accept(CreateGarnishedItems.ELVEN_TEA);
             output.accept(CreateGarnishedItems.MINT_TEA);
             output.accept(CreateGarnishedItems.EGGNOG);
+
+            for (CreateGarnishedItems.BucketfishTypes bucketfishTypes : CreateGarnishedItems.BucketfishTypes.values()) {
+                ItemStack stack = bucketfishTypes.getBucketItem().asStack();
+                CustomData.update(DataComponents.BUCKET_ENTITY_DATA, stack,
+                        compoundTag -> compoundTag.putString("Type", bucketfishTypes.name().toLowerCase(Locale.ROOT)));
+                output.accept(stack);
+            }
 
             output.accept(CreateGarnishedFluids.PEANUT_BUTTER.get().getBucket());
             output.accept(CreateGarnishedFluids.BIRCH_SYRUP.get().getBucket());

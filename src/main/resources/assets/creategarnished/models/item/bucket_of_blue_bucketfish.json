@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "creategarnished:item/bucket_of_blue_bucketfish"
+  }
+}
