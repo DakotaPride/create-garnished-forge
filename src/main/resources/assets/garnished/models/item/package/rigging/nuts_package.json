@@ -1,5 +1,5 @@
 {
-  "parent": "create:item/cardboard_package_12x12",
+  "parent": "create:item/package/rigging_12x12",
   "textures": {
     "0": "garnished:item/package/nuts",
     "particle": "garnished:item/package/nuts"
